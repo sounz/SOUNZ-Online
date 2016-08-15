@@ -1,0 +1,21 @@
+<!-- NOT USED ANYMORE -->
+<% contactinfo_type = @contactinfo_type unless @contactinfo_type == nil%>
+<% if @role != nil && !@role.organisation_id.blank?
+contactinfo_types = get_organisation_contactinfo_types(@role.role_id)
+else
+contactinfo_types = RoleContactinfo.get_role_contactinfo_types_array
+end
+%>
+<% if contactinfo_types != nil%>
+<div align="right">
+<label>Show </label>
+<%= select_tag('role_contactinfo[contactinfo_type]', 
+options_for_select(contactinfo_types, contactinfo_type)) %>
+</div>
+<% if params[:action] != 'new' && 
+      params[:action] != 'copy_contactinfo' && 
+      (params[:action] != 'associated_organisation_contactinfos' && !@new_role) %>
+<%=observe_field("role_contactinfo[contactinfo_type]", 
+                 :url => { :action => :contactinfo_type_change, :id => @role.id },:with => "'type='+value", :complete => visual_effect( :highlight ) )%>
+<% end %>
+<% end %>

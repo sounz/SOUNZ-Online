@@ -1,0 +1,32 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+campaign_mailout1:
+  campaign_mailout_id: 1
+  marketing_campaign_id:  1
+  mailout_type: e                                                                                                                                                                                                                   
+  mailout_description: Electronic Mailout April 2007 
+  mailout_status: s       
+  main_content:
+  secondary_content:
+  general_note:
+  blind_send: true
+  mail_merge: false
+  sent_timestamp: 2007-04-18 09:00:00
+  created_at: 2007-04-18 08:00:00
+  updated_at: 2007-04-18 09:00:00
+  updated_by: 2
+  
+campaign_mailout2:
+  campaign_mailout_id: 2
+  marketing_campaign_id:  1
+  mailout_type: p                                                                                                                                                                                                                   
+  mailout_description: Postal Mailout April 2007
+  mailout_status: p       
+  main_content:
+  secondary_content:
+  general_note:
+  blind_send: false
+  mail_merge: true
+  sent_timestamp:
+  created_at: 2007-04-18 10:00:00
+  updated_at: 2007-04-18 10:00:00
+  updated_by: 2

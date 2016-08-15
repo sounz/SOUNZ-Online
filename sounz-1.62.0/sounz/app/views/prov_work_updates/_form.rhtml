@@ -1,0 +1,305 @@
+  <br>
+  <p>
+	<b>Name:</b><br>
+	<%= f.text_field :name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+	<b>Email:</b><br>
+	<%= f.text_field :email, :size => standard_edit_cols  %>
+  </p>
+  
+  <p>Please complete one entry for each work you wish to lodge. All information will be verified by 
+  SOUNZ before publication to the website</p>
+  
+  <h2>Work Details</h2>
+  
+  <p>
+    Title of Work<br>
+    <%= f.text_field :work_title, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    Composed by<br>
+    <%= f.text_field :composed_by, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    Description<br>
+    <%= f.text_area :description, :cols => standard_edit_cols, :rows => 4%>
+  </p>
+
+  <p>
+    Instrumentation<br>
+    <%= f.text_area :instrumentation, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Duration <%= f.text_field :work_duration, :size => 10 %>
+  </p>
+
+  <p>
+    Difficulty level: &nbsp;&nbsp;&nbsp;&nbsp;
+    Beginner <%= f.check_box :difficulty_beginner %>&nbsp;&nbsp;&nbsp;&nbsp;
+    Intermediate <%= f.check_box :difficulty_intermediate %>&nbsp;&nbsp;&nbsp;&nbsp;
+    Advanced <%= f.check_box :difficulty_advanced %>
+  </p>
+  
+  <p>This work is suitable for the following groups: (eg. children, community orchestra, etc.)<br />
+    <%= f.text_area :suitable_for, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+  
+  
+  <p>
+    This work is suitable for: <br />
+    The Big Sing <%= f.check_box :suitable_for_youth %><br />
+    The NZCT Chamber Music Contest <%= f.check_box :sacred %>
+  </p>
+
+  <p>
+    Year of creation <%= f.text_field :year_creation, :size => 10 %>&nbsp;&nbsp;&nbsp;&nbsp;
+    Year revised <%= f.text_field :year_revised, :size => 10 %>
+  </p>
+
+  <p>
+    Revision note<br>
+    <%= f.text_area :revision_note, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Contents<br>
+    (eg. description of movements)<br>
+    <%= f.text_area :contents, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Commissioning information<br>
+    <%= f.text_area :commissioning_info, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Text information<br>
+    (Please include author and title of any text used as well as any copyright restrictions 
+    which exist. Unless noted otherwise we will assume that all copyright on the text has been cleared.)<br>
+    <%= f.text_area :text_info, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Language/s<br>
+    <%= f.text_field :languages, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    Dedication<br>
+    <%= f.text_field :dedication, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Programme Note</b><br>
+    Programme notes are displayed online.<br/>
+    100 - 200 words<br>
+    <%= f.text_area :programme_note, :cols => standard_edit_cols, :rows => 10 %>
+  </p>
+
+  <p>
+    <b>First performance</b><br>
+    Date <%= f.text_field :first_perf_day, :size => 2 %> <%= f.text_field :first_perf_month, :size => 2 %> <%= f.text_field :first_perf_year, :size => 4 %>
+    <span class="instruction">dd/mm/yyyy</span><br>
+    Venue <br>
+    <%= f.text_field :venue, :size => standard_edit_cols %><br>
+    City<br>
+    <%= f.text_field :city, :size => standard_edit_cols %>
+  </p>
+  
+  <p>
+    Performers<br>
+    <%= f.text_area :performers, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Other performances<br>
+    <%= f.text_area :other_performances, :cols => standard_edit_cols, :rows => 6 %>
+  </p>
+
+  <p>
+    <b>Score Information</b>
+  </p>
+  
+   <table>
+      <tr>
+       <td>I will be lodging a score</td>
+       <td><%= f.check_box :will_lodge_score %> <span class="instruction">(please tick if 'yes')</span></td>
+      </tr>
+      <tr>
+       <td>I will be lodging parts </td>
+       <td><%= f.check_box :will_lodge_parts %> <span class="instruction">(please tick if 'yes')</span></td>
+      </tr>
+    </table>
+   
+    If yes, is it: &nbsp;&nbsp;&nbsp;&nbsp;<%= f.check_box :format_pdf %> pdf &nbsp;&nbsp;&nbsp;&nbsp;
+                   <%= f.check_box :format_hardcopy %> hardcopy<br><br>
+  
+
+  <p>
+    The following pages can be displayed as a sample on SOUNZ Online:<br />
+    (up to 8 pages)
+    <%= f.text_field :score_sample, :size => standard_edit_cols %>
+  </p>
+
+  <table>
+    <tr>
+      <td colspan="2">
+      </td>
+    </tr>
+    <tr>
+      <td>I give SOUNZ the license to sell this score by hardcopy</td>
+      <td><%= f.check_box :for_sale_hardcopy %></td>
+    </tr>
+    <tr>
+      <td>I give SOUNZ the license to sell this score by download</td>
+      <td><%= f.check_box :for_sale_download %></td>
+    </tr>
+    <tr>
+      <td>I give SOUNZ the license to hire (applies to choral and large instrumental works)</td>
+      <td><%= f.check_box :for_hire_parts_only %></td>
+    </tr>
+  </table>
+  <br>
+  <p>
+    If this score has been commercially published please give details here<br>
+    <%= f.text_area :commercial_publish_details, :cols => standard_edit_cols, :rows => 4  %>
+  </p>
+
+  <p>
+    <b>Recording Information</b>
+  </p>
+
+  <p>
+    I will be lodging a recording &nbsp;&nbsp;&nbsp;&nbsp;<%= f.check_box :will_lodge_recording %><span class="instruction">(please tick if 'yes')</span>
+  </p>
+  <p>
+    Performers<br>
+    <%= f.text_area :recording_performers, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+  
+  <p>
+    Date of recording <%= f.text_field :recording_date, :size => 10 %>
+  </p>
+
+  <p>
+    Duration of recording <%= f.text_field :recording_duration, :size => 10 %>
+  </p>
+
+  <p>
+    I have permission from the recording owner and performers to include a sample from this recording on the
+    SOUNZ website. &nbsp;&nbsp;&nbsp;&nbsp;<%= f.check_box :recording_permission %><span class="instruction">(please tick if 'yes')</span><br>
+    
+    If yes, please describe your preferred sample in minutes and seconds (eg. 1'12"-1'59")<br>
+    <%= f.text_field :pref_sample_in_minutes, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    I give SOUNZ the license to sell this recording by download <%= f.check_box :for_sale_download_licence %>
+  </p>
+
+  <p>
+    If this recording has been commercially released, please give details here.<br>
+    <%= f.text_area :commercial_release_details, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    <b>Media on Demand</b>
+  </p>
+  
+  <p>
+    This recording (video or audio) can be streamed on SOUNZ Online <%= f.check_box :streamable %><br />
+    I have obtained the appropriate permissions to allow online streaming <%= f.check_box :streamable_permission %>
+  </p>
+  
+  <p>
+    A link can be provided below for embedding on SOUNZ Online (eg. youtube, vimeo, etc.)
+    <%= f.text_area :other_materials, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    <b>Influences and genres</b><br>
+  </p>
+  
+  <p>
+    This work belongs to the following genre/s<br>
+    <%= f.text_field :genres_and_influences, :size => standard_edit_cols %>
+  </p>
+
+  <table>
+    <tr>
+      <td colspan="2">This work is influenced by the following (check as many as apply):
+    </tr>
+    <tr>
+      <td>Maori Culture</td>
+      <td><%= f.check_box :influence_maori %></td>
+    </tr>
+    <tr>
+      <td>Landscape - NZ</td>
+      <td><%= f.check_box :influence_landscape %></td>
+    </tr>
+    <tr>
+      <td>Culture - NZ</td>
+      <td><%= f.check_box :influence_culture_nz %></td>
+    </tr>
+    <tr>
+      <td>Culture - South Pacific</td>
+      <td><%= f.check_box :influence_culture_pacific %></td>
+    </tr>
+    <tr>
+      <td>Sacred</td>
+      <td><%= f.check_box :influence_culture_other %></td>
+    </tr>
+    <tr>
+      <td>Religion/Spirituality</td>
+      <td><%= f.check_box :influence_religion_spirit %></td>
+    </tr>
+    <tr>
+      <td>Language and Literature</td>
+      <td><%= f.check_box :influence_lang_lit %></td>
+    </tr>
+    <tr>
+      <td>Performing/Visual Arts</td>
+      <td><%= f.check_box :influence_perf_or_visual %></td>
+    </tr>
+    <tr>
+      <td>Politics</td>
+      <td><%= f.check_box :influence_politics %></td>
+    </tr>
+    <tr>
+      <td>History</td>
+      <td><%= f.check_box :influence_history %></td>
+    </tr>
+    <tr>
+      <td>Maths and Science</td>
+      <td><%= f.check_box :influence_maths_science %></td>
+    </tr>
+    <tr>
+      <td>No theme (ie. my work is entirely abstract)</td>
+      <td><%= f.check_box :influence_none_abstract %></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <h2>Further Information</h2>
+  (not displayed online)
+  
+  <br><br>
+  <p>
+    Are there any restrictions on the performance of this work?<br>
+    <%= f.text_area :restriction_info, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Who owns copyright in this work?<br>
+    <%= f.text_area :copyright_owner, :cols => standard_edit_cols, :rows => 4 %>
+  </p>
+
+  <p>
+    Is there any other information about this work you would like us to know?<br>
+    <%= f.text_area :other_info, :cols => standard_edit_cols, :rows => 4 %>
+  </p>

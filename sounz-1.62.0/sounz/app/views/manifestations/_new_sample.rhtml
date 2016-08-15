@@ -1,0 +1,14 @@
+<span class="actionButton">	
+<%=link_to_remote "Cancel New Sample", 
+:url => {:controller => :manifestations, :action => :cancel_add_sample_form, :id => manifestation}, :update => "new_sample_form" %>
+</span>
+
+
+<% remote_form_for(:manifestation, :url => {:action => 'create_sample', :id => manifestation}) do |form| %>
+<div id="sampleFormContents">
+  <%= render :partial => 'sample_form', :locals =>{:manifestation => manifestation, :statuses => @statuses} %>
+</div>
+  <%= submit_tag "Save and Add Files" %>
+<% end %>
+
+

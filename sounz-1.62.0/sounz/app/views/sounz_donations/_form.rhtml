@@ -1,0 +1,19 @@
+<%= error_messages_for 'sounz_donation' %>
+
+<!--[form:sounz_donation]-->
+<p><label for="sounz_donation_sounz_donation_price">SOUNZ donation price</label><br/>
+<%= text_field 'sounz_donation', 'sounz_donation_price'  %></p>
+
+<p><label for="sounz_donation_sounz_donation_description">SOUNZ donation description</label><br/>
+<%= text_area 'sounz_donation', 'sounz_donation_description'  %></p>
+
+<p><label for="sounz_donation_created_at">Created at</label><br/>
+<%= datetime_select 'sounz_donation', 'created_at'  %></p>
+
+<p><label for="sounz_donation_updated_at">Updated at</label><br/>
+<%= datetime_select 'sounz_donation', 'updated_at'  %></p>
+
+<p><label for="sounz_donation_updated_by">Updated by</label><br/>
+<%= text_field 'sounz_donation', 'updated_by'  %></p>
+<!--[eoform:sounz_donation]-->
+

@@ -1,0 +1,15 @@
+mimetype1:
+  mime_type_id: 1
+  mime_category_id: 1
+  mime_type_desc: "application/pdf"
+  display_order: 0
+mimetype2:
+  mime_type_id: 2
+  mime_category_id: 1
+  mime_type_desc: "application/mp3"
+  display_order: 0
+mimetype3:
+  mime_type_id: 3
+  mime_category_id: 2
+  mime_type_desc: "image/jpg"
+  display_order: 0

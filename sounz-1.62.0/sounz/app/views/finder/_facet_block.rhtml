@@ -1,0 +1,82 @@
+<%facet_id = "facet_"+facet[:name].tableize.gsub(' ','_')%>
+<%facet_name_id = "name_" + facet_id%>
+<%
+display = "closed"
+if @search_details.toggles != nil
+display = "open" if @search_details.toggles[facet_id]
+end
+%>
+<ul class="facetHeading <%= display %>" id="<%=facet_id%>">
+<li>
+<h2>
+  <!--<span class="facet_arrow" style="display:<%=display%>;" id="<%=facet_name_id%>">&raquo;</span>-->
+  <a href='/finder/toggle_facet_block/<%=facet_id%>?mode=<%=@search_page%>' onclick="new Ajax.Request('/finder/toggle_facet_block/<%=facet_id%>?mode=<%=@search_page%>', {asynchronous:true, evalScripts:true}); return false;">
+
+<%=
+	 #The parameter facet[:params] is parameters to REMOVE from the upward links
+	#This facilitates the undrilling effect
+      if facet[:subfacet].blank?
+        facet[:name]
+      else
+        link_to_facet_title ""+facet[:name], @page_to_link_to,  facet[:params]
+      end
+      %>
+
+      <%=
+	 #Subfacets are involved in the middle level
+      if !facet[:subfacet].blank?
+        result = ' &raquo; '
+
+		#This is the mid level
+        if facet[:target].blank?
+          result += h facet[:subfacet]
+        #This is the 3rd level
+		else 
+          result += link_to_facet_title ""+facet[:subfacet], @page_to_link_to, facet[:params][1]
+        end
+        result
+      end
+      -%>
+<%
+#when both a target and subtarget are expressed (as in people/composer/composer/full represented) we 
+#need to show more
+if !facet[:sub_target].blank? and !facet[:sub_target].blank?-%>
+<%=  link_to_facet_title ' &raquo; ' +facet[:target], @page_to_link_to, facet[:params][2] %>
+<%= ' &raquo; ' + facet[:sub_target].to_s  %>
+<%else
+#we only to check the target var, and if it exists show text, unlinked
+%>
+<%= ' &raquo; ' + facet[:target].to_s if !facet[:target].blank? %>
+<%end%>
+</a></h2>
+<%
+style = "none"
+if @search_details.toggles != nil
+	current_toggle_state = @search_details.toggles[facet_id]
+	current_toggle_state = false if current_toggle_state==nil
+end
+
+style="block" if !facet[:subfacet].blank? || (current_toggle_state==true)
+%>
+
+<ul class="facetItems" id="list_<%=facet_id%>">
+
+  <%
+ # if facet[:target].blank? and facet[:data].is_a?(Array)
+
+ if  facet[:data].is_a?(Array)
+    #facet[:data].each do |category|
+	for category in facet[:data]
+		RAILS_DEFAULT_LOGGER.debug "CATEGORY/COUNT: #{category} / #{category[:count]}" if facet[:facet_name]=='day'
+		facet_count = category[:count]
+		if !facet_count.blank? && facet_count != 0
+		 -%>
+	  <li class="facetItem"><%= link_to_facet category[:name],facet_count, facet[:facet_name], category[:category], @page_to_link_to %></li>
+	  	<% 
+	  	end
+	end
+end 
+-%>
+</ul>
+</li>
+</ul>

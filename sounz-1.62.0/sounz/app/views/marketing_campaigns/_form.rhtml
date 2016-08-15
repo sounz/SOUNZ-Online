@@ -1,0 +1,83 @@
+<fieldset>
+<legend>Marketing Campaign Details</legend>
+<%= error_messages_for 'marketing_campaign' %>
+
+<!--[form:marketing_campaign]-->
+<table>
+<tr>
+<th><label for="marketing_campaign_campaign_name">Campaign name</label></th>
+<td><%= text_field 'marketing_campaign', 'campaign_name', :cols => standard_edit_cols %></td>
+</tr>
+<tr>
+<th><label for="marketing_campaign_campaign_description">Campaign description</label></th>
+<td><%= text_area 'marketing_campaign', 'campaign_description', :cols => standard_edit_cols, 
+                                                                :rows => standard_edit_rows  %>
+</td>
+</tr>
+<tr>
+<th><label for="marketing_campaign_campaign_status">Campaign status</label></th>
+<td><%= select_tag 'marketing_campaign[campaign_status]', 
+                   options_for_select( [['In-progress','i'], ['Finished','f']] , 
+                   selected = @marketing_campaign.campaign_status),
+                   { :multiple => false } %>
+<%=observe_field("marketing_campaign[campaign_status]", :url => {:action => :finished_date_boxes}, :with => "'id='+value") %>
+</td>
+</tr>
+<tr id="finished_date_boxes">
+<% if @marketing_campaign.campaign_status == 'f'%>
+<th><label for="marketing_campaign_finished_at">Finished at</label></th>
+<td><%= date_field('mark_campaign_finish_date', 'finish_date', :value => @finish_date, :size => 15) %>
+&nbsp;<%= text_field 'mark_campaign_finish_time', 'finish_time', :value => @finish_time, :size => 5 %></td>
+<% end %>
+</tr>
+<tr>
+<th><label for="marketing_campaign_project_name">Project</label></th>
+<td><%= link_to @marketing_campaign.project.project_title, {:controller => 'projects',
+                                                            :action => 'edit',
+                                                            :id => @marketing_campaign.project.project_id} %>
+<%= hidden_field_tag 'marketing_campaign[project_id]', @marketing_campaign.project.project_id %>
+</td>
+</tr>
+<tr>
+<th><label for="marketing_campaign_project_name">Campaign Manager</label></th>
+<td>
+<%= collection_select(:marketing_campaign, :campaign_manager, @marketing_campaign.project.project_team_members, :project_team_member_id, :member_full_name,  
+                      { :prompt => '-- Select a campaign manager --', :selected => @marketing_campaign.campaign_manager }
+                      ) 
+%>
+<%= observe_field('marketing_campaign_campaign_manager', :url => {:action => :change_campaign_manager }, 
+                      :complete => visual_effect(:highlight, "marketing_campaign_campaign_manager", :duration => 0.5), 
+                      :with => "'person='+escape($('marketing_campaign_campaign_manager').value)"+
+                               "+ '&campaign='+'"+@marketing_campaign.marketing_campaign_id.to_s+"'")
+%>
+</td>
+</tr>
+
+<% if params[:action] != 'new' && params[:action] != 'copy' %>
+<% if @marketing_campaign.created_at != nil %>
+<tr>
+<th><label for="marketing_campaign_created_at">Created at</label></th>
+<td><%= dby_date(@marketing_campaign.created_at)  %></td>
+</tr>
+<% end %>
+
+<% if @marketing_campaign.updated_at != nil %>
+<tr>
+<th><label for="marketing_campaign_updated_at">Updated at</label></th>
+<td><%= dby_date(@marketing_campaign.updated_at) %></td>
+</tr>
+<% end %>
+
+<% if @marketing_campaign.updated_by %>
+<tr>
+<th><label for="marketing_campaign_updated_by">Updated by</label></th>
+<td><%=h get_user(@marketing_campaign.updated_by).username %></td>
+</tr>
+<% end %>
+
+</table>
+
+<% end %>
+
+<!--[eoform:marketing_campaign]-->
+</fieldset>

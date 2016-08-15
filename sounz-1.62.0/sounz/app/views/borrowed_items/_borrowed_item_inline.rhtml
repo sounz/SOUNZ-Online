@@ -1,0 +1,62 @@
+<p>
+<%if borrowed_item.hired_out==true%>
+<b><font color='green'>HIRED ITEM</font></b><br>
+<% else %>
+<b><font color='green'>BORROWED ITEM</font></b><br>
+<%end%>
+</p>
+
+<%if borrowed_item.item.manifestation != nil%>
+<b>Manifestation:</b> (<%=borrowed_item.item.manifestation.manifestation_code%>) <%= link_to borrowed_item.item.manifestation.manifestation_title, :controller => :manifestations, :action => :edit, :id => borrowed_item.item.manifestation.id, :backlink => request.env['PATH_INFO'] %><br/>
+<%end%>
+
+
+<%if borrowed_item.item.resource != nil%>
+<b>Resource Code:</b> <%=borrowed_item.item.resource.resource_code%></b><br/>
+<b>Resource Title:</b> <%= link_to borrowed_item.item.resource.resource_title, :controller => :resources, :action => :edit, :id => borrowed_item.item.resource.id, :backlink => request.env['PATH_INFO'] %><br/> 
+<%end%>
+
+<b>Item Physical Description:</b> <%=borrowed_item.item.physical_description%><br/>
+<b>Borrowing note:</b>
+<%if !borrowed_item.borrowing_note.blank? %>
+<%= link_to borrowed_item.borrowing_note, :controller => :borrowed_items, :action => :edit, :id => borrowed_item.id , :backlink => request.env['PATH_INFO'] %><br/>
+<%else%>
+<%= link_to "create", :controller => :borrowed_items, :action => :edit, :id => borrowed_item.id , :backlink => request.env['PATH_INFO'] %><br/>
+<%end%>
+<%if borrowed_item.hired_out==true%> 
+<b>Hired date:</b>
+<%else%>
+<b>Borrowed date:</b>
+<%end%>
+ <%=borrowed_item.date_borrowed%><br/>
+<b>Renewed date:</b> <%=borrowed_item.date_renewed%><br/>
+<b>Return date due:</b> <%=borrowed_item.date_due%><br/>
+
+<%if Time.now() >= Time.parse(borrowed_item.date_due.to_s)  %>
+
+<b><font color='red'>ITEM IS OVERDUE!</font></b>
+
+<%end%>
+
+<%form_tag :controller => :logins, :action => 'extendLoan', :id=> login.id, :from => from, :borrowed_item => borrowed_item.borrowed_item_id do %>
+<%if borrowed_item.hired_out==true%> 
+Extend the hire
+<%else%>
+Extend the loan
+<%end%>
+of this item to this user by <%= text_field_tag 'days_to_extend','7', :size => 2%> days<br/>
+You can enter a negative number in this field if you make a mistake or wish to adjust the due date of an item back.<br/>
+<%=submit_tag 'Extend this loan'%>
+<%end%>
+<p/>
+
+<%form_tag :controller => :logins, :action => 'markReturned', :id => login.id, :from => from, :borrowed_item => borrowed_item.borrowed_item_id do %>
+Click the button below to set this item manually returned.<br/>
+<%=submit_tag 'Mark this item returned'%>
+
+<%end%>
+<p><hr/></p>
+
+
+
+

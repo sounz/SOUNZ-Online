@@ -1,0 +1,11 @@
+<div class="section">
+<h1>Find Distinction Instances</h1>
+</div>
+
+<%= link_to "View the list of all distinction instances", :action => :list %>
+<br/><br/>
+
+<form action="/distinction_instances/find" method="get">
+	<input type="text" size="30" name="searchTerm">
+	<%= submit_tag "Search" %>
+</form>

@@ -1,0 +1,4 @@
+<%for service in @services%>
+<p>Sign up for a <%=service.sounz_service_name%> (<%=service.sounz_service_price%>): <%=link_to_remote( image_tag('/images/button-buy.gif'),:update => "shopping_cart",:url =>{ :controller => :cart,:action => :add_product_to_cart, :type=>'service', :method => 'sale', :id => service.sounz_service_id})%></a></p>
+<p><%=service.sounz_service_description%></p>
+<%end%>

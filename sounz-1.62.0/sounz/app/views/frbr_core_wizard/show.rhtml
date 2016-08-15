@@ -1,0 +1,122 @@
+<%#=render :partial => "steps"%><p/>
+<%#=render :partial => @frbr_core["step"]%>
+
+<html>
+<head>
+<script src="/javascripts/extra/prototype.js" type="text/javascript"></script>
+<script src="/javascripts/extra/scriptaculous.js" type="text/javascript"></script>
+<script src="/javascripts/extra/wz_jsgraphics.js" type="text/javascript"></script>
+
+<script>
+function uniq()
+	{
+	return new Date().getTime();  
+	}
+
+function handleDrag(element)
+	{
+	$('message').innerHTML="handles dragged "+uniq();
+	drawLines();
+	}
+
+function drawLines()
+	{
+	jg.clear();
+	jg.setColor("#ff0000"); // red
+  	jg.drawLine(10, 113, 220, 55); // co-ordinates related to"myCanvas"
+  	jg.paint();
+	}
+
+function dragged(element)
+	{
+	newObjectName=element.id+"_"+uniq();
+	var x = Element.getStyle(element,'left')
+        var y = Element.getStyle(element,'top')
+	newnode=Builder.node('div',{id: newObjectName,left: x, top: y},'Hello,'+element.id+' world');
+	newnode.appendChild(Builder.node('div',{id: "handle_"+newObjectName},'O'));
+        $('canvas').appendChild(newnode);
+	new Draggable (newObjectName,{});
+	new Draggable ("handle_"+newObjectName,{revert: true});
+	Droppables.add("handle_"+newObjectName,{onDrop:handleDrag});
+	}
+</script>
+</head>
+<body>
+<table width='100%' height="100%" border=1><tr>
+<td id='canvas' valign="top">
+<div id='message'>
+</div>
+</td>
+<td style="width:200px;' valign="top">
+<div id='tools'><font size='1'>
+Tools will include:
+<ul>
+<li>load a network from db, e.g. find work and traverse all links, adding objects to the canvas for editing</li>
+<li>save network - take the connected collection of classes built in the controller and put the stuff back in the db</li>
+</ul></font>
+</div>
+<div id='currentObject'>
+
+the currently selected object should be displayed here - 
+defaults to new object, option to search db to use existing object
+
+</div>
+<hr>
+<div id='objectPalette'>
+<b>Drag these objects to the canvas:</b>
+
+<div id='object_superwork' class='frbr_object'>
+Superwork
+</div>
+<div id='object_work' class='frbr_object'>
+Work
+</div>
+<div id='object_expression' class='frbr_object'>
+Expression
+</div>
+<div id='object_manifestation' class='frbr_object'>
+Manifestation
+</div>
+<div id='object_item' class='frbr_object'>
+Item
+</div>
+<div id='object_sample' class='frbr_object'>
+Sample
+</div>
+<div id='object_contributor' class='frbr_object'>
+Contributor
+</div>
+<div id='object_event' class='frbr_object'>
+Event
+</div>
+<div id='object_venue' class='frbr_object'>
+Venue
+</div>
+<div id='object_distinction' class='frbr_object'>
+Distinction
+</div>
+
+
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
+<script type="text/javascript" language="javascript">
+var jg = new jsGraphics("canvas"); 
+Droppables.add('canvas',{onDrop: dragged, accept: 'frbr_object'});
+ new Draggable('object_superwork', {revert:true} );
+ new Draggable('object_work', {revert:true} );
+ new Draggable('object_expression', {revert:true} );
+ new Draggable('object_manifestation', {revert:true} );
+ new Draggable('object_item', {revert:true} );
+ new Draggable('object_sample', {revert:true} );
+ new Draggable('object_contributor', {revert:true} );
+ new Draggable('object_event', {revert:true} );
+ new Draggable('object_venue', {revert:true} );
+ new Draggable('object_distinction', {revert:true} );
+
+
+</script>
+

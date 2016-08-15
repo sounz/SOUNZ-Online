@@ -1,0 +1,45 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<div class='search_item'>
+  
+  <div class="admin">
+    <ul>
+      <li><%=show_tap_edit_link_for(object.role, 'CAN_EDIT_CONTRIBUTOR_PROFILE')%></li>
+      <li><%= icons_for(object, @login)%></li>
+    </ul>
+  </div>
+
+  
+<%if ! object.role.person.blank?%>
+  <h3>
+    <%= ContributorsHelper.get_link_depending_on_role_type(object.role, @login)%>
+    <%
+    status = object.composer_status_as_public_site_string
+    if !status.blank?%>(<%=status%>)<%end%>
+  </h3>
+
+  <%=get_summary_for_text(convert_to_html(object.profile), SUMMARY_LENGTH)%>
+
+  <td align="right">
+  <%=AttachmentHelper.render_search_image(object, :thumb)%>
+  </td></tr><p>
+  <%else
+  #This is the organisation case
+  %>
+  <%
+  if !object.role.blank?
+  role_contactinfo = object.role.get_preferred_role_contactinfo
+  role_contactinfo = object.role.get_default_role_contactinfo if role_contactinfo.blank?
+  contactinfo = role_contactinfo.contactinfo
+  end 
+  %>
+
+  <td><h3><%= ContributorsHelper.get_link_depending_on_role_type(object.role, @login)%><% if object.role.role_type.is_venue?%>, <%= contactinfo.locality unless contactinfo.blank?%><% end %></h3>
+	  <%=get_summary_for_text(convert_to_html(object.profile), SUMMARY_LENGTH)%>
+	  </td><td><%=AttachmentHelper.render_search_image(object, :thumb)%></td>
+  <%end%>
+
+</div>
+
+
+

@@ -1,0 +1,16 @@
+<%if @name == 'about'
+	if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_TAP') ||
+		PrivilegesHelper.has_permission?(@login,'CAN_EDIT_CRM') ||
+		PrivilegesHelper.has_permission?(@login,'CAN_EDIT_CONTENT')
+	%>
+	<table class="versionDetails">
+		<tr>
+			<th>Rev</th><td><%=VersionHelper::SUBVERSION_REVISION%></td>
+		</tr>
+		<tr>
+			<td colspan="2"><pre><%=VersionHelper::CHANGE_NOTES%></pre></td>
+		</tr>
+	</table>
+<%
+end
+end%>

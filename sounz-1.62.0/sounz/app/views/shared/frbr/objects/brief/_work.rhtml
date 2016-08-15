@@ -1,0 +1,9 @@
+<b><%=object.work_title%>
+<%if !object.year_of_creation.blank?%> (<%=object.year_of_creation%>)<%end%>
+
+<% composers = object.composers
+if !composers.blank?
+%>
+<%=composers.map{|r|r.contributor_names}.join(',')%>
+<%end%>
+</b>&nbsp;<%= icons_for(object, @login)%><br>

@@ -1,0 +1,95 @@
+region1:
+  region_id: 1
+  region_name: Northland
+  country_id: 158
+
+region2:
+  region_id: 2
+  region_name: Auckland
+  country_id: 158
+
+region3:
+  region_id: 3
+  region_name: Waikato
+  country_id: 158
+
+region4:
+  region_id: 4
+  region_name: Bay of Plenty
+  country_id: 158
+
+region5:
+  region_id: 5
+  region_name: East Coast
+  country_id: 158
+
+region6:
+  region_id: 6
+  region_name: Rotorua-Taupo
+  country_id: 158
+
+region7:
+  region_id: 7
+  region_name: Taranaki
+  country_id: 158
+
+region8:
+  region_id: 8
+  region_name: Wanganui-Manawatu
+  country_id: 158
+
+region9:
+  region_id: 9
+  region_name: Hawkes Bay
+  country_id: 158
+
+region10:
+  region_id: 10
+  region_name: Wairarapa
+  country_id: 158
+
+region11:
+  region_id: 11
+  region_name: Wellington
+  country_id: 158
+
+region12:
+  region_id: 12
+  region_name: Nelson-Marlborough
+  country_id: 158
+
+region13:
+  region_id: 13
+  region_name: West Coast
+  country_id: 158
+
+region14:
+  region_id: 14
+  region_name: Canterbury
+  country_id: 158
+
+region15:
+  region_id: 15
+  region_name: Otago
+  country_id: 158
+
+region16:
+  region_id: 16
+  region_name: Southland
+  country_id: 158
+
+region17:
+  region_id: 17
+  region_name: North Island
+  country_id: 158
+
+region18:
+  region_id: 18
+  region_name: South Island
+  country_id: 158
+
+region19:
+  region_id: 19
+  region_name: National
+  country_id: 158
+  

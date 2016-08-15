@@ -1,0 +1,9 @@
+<h2>Editing setting</h2>
+
+<% form_tag :action => 'update', :id => @setting do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @setting %> |
+<%= link_to 'Back to list', :action => 'list' %>

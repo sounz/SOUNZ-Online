@@ -1,0 +1,22 @@
+<%
+person_categorisations = @person.people_categorizations
+ if person_categorisations && !person_categorisations.empty? %>
+
+ 
+<% 
+for pc in person_categorisations
+subcat = pc.marketing_subcategory
+%>
+<span id="<%=generate_id(pc)%>">
+ <%= link_to_remote( "Delete", :url => { :controller => 'roles', :controller => 'people_categorizations',:action => 'destroy_categorisation_for_person', :id => @person, :subcatid => subcat.marketing_subcategory_id  }, :confirm => 'Are you sure?' ) %>
+
+<strong><%=subcat.to_cat_subcat_s%></strong></span><br>
+<%end%>
+
+<% else %>
+  <% if params[:action] == 'show' %>
+    <p>There is no marketing categorisation associated with this person</p>
+  <% end %>
+<% end %>
+
+

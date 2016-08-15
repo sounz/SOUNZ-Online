@@ -1,0 +1,9 @@
+<% if @deceased %>
+    <th><label for="person_year_of_death">Date of death</label></th>
+    <td><%= select_year(@person.year_of_death,   :start_year => 1800, 
+                                                 :end_year => Time.now.year,
+                                                 :field_name => 'year_of_death', 
+                                                 :include_blank => true )%></td>
+<% else %>
+    <th></th><td></td>
+<% end %>

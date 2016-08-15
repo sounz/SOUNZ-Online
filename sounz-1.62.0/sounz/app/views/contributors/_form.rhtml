@@ -1,0 +1,114 @@
+  <fieldset>
+    <%if @role.person != nil%>
+    <legend>Contributor Details for <%=@role.person.full_name%></legend>
+    <%else%>
+    <legend>Contributor Details for <%=@role.organisation.organisation_name%></legend>
+    <%end%>
+    <table>
+      <tr>
+        <th><label for="contributor_known_as">Known as</label></th>
+        <td><%= text_field 'contributor', 'known_as', :size => 20 %><br/>
+        <span class="note"><i>People contributors should be entered in 'Last name, First names' format</i></span>
+        </td>
+      </tr>
+      
+      <% if !@person.blank?%>
+      <tr>
+        <th><label for="person_year_of_birth">Year of birth</label></th>
+        
+        <td><%= select_year(@person.year_of_birth,   :start_year => 1800, 
+                                                     :end_year => Time.now.year,
+                                                     :field_name => 'year_of_birth', 
+                                                     :include_blank => true )%></td>
+      </tr>
+      <tr>
+        <th><label for="person_deceased">Deceased</label></th>
+        <td><%= check_box 'person', 'deceased' %></td>
+      </tr>
+      <tr id="deceased_date_box">
+        <th></th><td></td>
+      </tr>
+        <%= observe_field('person_deceased', :url => {:controller => :contributors, :action => :deceased_date_box, :id => @person}, :with => 'deceased') %>
+      <script type="text/javascript">
+        Event.observe(window, 'load', function() {
+        <%= remote_function :url => {:controller => :contributors, :action => :deceased_date_box, :id => @person}, :with => "'deceased=' + ($('person_deceased').checked ? '1' : '0')" %>
+        });
+      </script>
+      <% else %>
+      <% if !@organisation.blank? %>
+      <tr>
+        <th><label for="organisation_year_of_establishment">Year of establishment</label></th>
+        <td><%= select_year(@organisation.year_of_establishment,   :start_year => 1800, 
+                                                                   :end_year => Time.now.year,
+                                                                   :field_name => 'year_of_establishment', 
+                                                                   :include_blank => true )%></td>
+      </tr>
+      <% end %>
+      <% end %>
+      <tr>
+        <th><label for="contributor_profile">Biography</label></th>
+        <td><%= text_area 'contributor', 'profile', :rows => 3*standard_edit_rows, :cols => standard_edit_cols %></td>
+      </tr>
+      <tr>
+        <th><label for="contributor_profile_source">Biography source</label></th>
+        <td><%= text_area 'contributor', 'profile_source', :rows => 3*standard_edit_rows, :cols => standard_edit_cols %></td>
+      </tr>
+    </table>
+  </fieldset>
+  
+  <fieldset>
+    <legend class="composer">Composer Info</legend>
+    <table>
+     <tr>
+        <th><label for="contributor_pull_quote" class="composer">Pull Quote</label></th>
+        <td><%= text_area 'contributor', 'pull_quote', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+     </tr>
+     <tr>
+        <th><label for="contributor_profile_other" class="composer">Biography other</label></th>
+        <td><%= text_area 'contributor', 'profile_other', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+     </tr>
+     <tr>
+        <th><label for="contributor_composer_status" class="composer">Composer Status</label></th>
+        <td><%= select 'contributor', 'composer_status', DropDown.composer_tiers.to_dropdown, :include_blank => '-- Select a composer status --' %></td>
+     </tr>
+     <% if !@person.blank?%>
+     <tr>
+        <th><label for="person_gender" class="composer">Gender</label></th>
+        <td><%= select('person', 'gender', DropDown.genders.to_dropdown) %></td>
+     </tr>
+     <% end %>
+     <tr>
+        <th><label for="contributor_apra_member" class="composer">APRA Member</label></th>
+        <td><%= check_box "contributor", "apra_member" %></td>
+      </tr>
+      <tr>
+        <th><label for="contributor_canz_member" class="composer">CANZ Member</label></th>
+        <td><%= check_box "contributor", "canz_member" %></td>
+      </tr>
+      <tr>
+        <th><label for="contributor_legacy4d_identity_code" class="composer">4D legacy code</label></th>
+        <td><%= text_field 'contributor', 'legacy4d_identity_code', :size => 4, :maxlength => 4  %></td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset>    
+  <legend>Notes</legend>
+    <table>  
+      <tr>
+        <th><label for="contributor_permission_note">Permissions note</label</th>
+        <td><%= text_area 'contributor', 'permission_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+      </tr>
+      <tr>
+        <th><label for="contributor_internal_note">Internal note</label</th>
+        <td><%= text_area 'contributor', 'internal_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+      </tr>
+      <tr>
+        <th><label for="contributor_status_id">Status</label></th>
+        <td><%= collection_select('contributor', "status_id", 
+           Status.find(:all, :conditions => ['status_desc NOT ILIKE ?', '%approved%']), 
+           :status_id, :status_desc ) %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  

@@ -1,0 +1,25 @@
+<h1>Listing exam_set_works</h1>
+
+<table>
+  <tr>
+  <% for column in ExamSetWork.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for exam_set_work in @exam_set_works %>
+  <tr>
+  <% for column in ExamSetWork.content_columns %>
+    <td><%=h exam_set_work.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => exam_set_work %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => exam_set_work %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => exam_set_work }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @exam_set_works %>
+
+<%= link_to 'New exam_set_work', :action => 'new' %>

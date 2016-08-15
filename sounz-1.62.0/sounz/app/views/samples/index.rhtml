@@ -1,0 +1,32 @@
+<h1>Listing samples</h1>
+
+<table>
+  <tr>
+    <th>Manifestation</th>
+    <th>Status</th>
+    <th>Sample description</th>
+    <th>Sample copyright</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th>Updated by</th>
+  </tr>
+  
+<% for sample in @samples %>
+  <tr>
+    <td><%=h sample.manifestation_id %></td>
+    <td><%=h sample.status_id %></td>
+    <td><%=h sample.sample_description %></td>
+    <td><%=h sample.sample_copyright %></td>
+    <td><%=h sample.created_at %></td>
+    <td><%=h sample.updated_at %></td>
+    <td><%=h sample.updated_by %></td>
+    <td><%= link_to 'Show', sample_path(sample) %></td>
+    <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
+    <td><%= link_to 'Destroy', sample_path(sample), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'New sample', new_sample_path %>

@@ -1,0 +1,2 @@
+<span class="actionButton" ><%=link_to_remote 'Set event has Dates',  :url=> {:id=>@event.id,:action => 'enable_dates'}, :method => :get%></span>
+<%=hidden_field "date", "enabled", :value => "no"%>

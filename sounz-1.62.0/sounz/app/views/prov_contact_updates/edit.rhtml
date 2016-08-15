@@ -1,0 +1,21 @@
+<h1>Your Contact Information</h1>
+
+<p>Please fill in the appropriate details so that we can add you to our contact list</p>
+
+<p>We will not give your contact details to anyone else.  We will use them to keep in contact with you within the course of our normal business and to provide the types of information that you select on this form.  You may, at any time, request to see the contact information that we have for you.  You may also, at any time, request that we remove your contact information from our database.</p>
+<%= error_messages_for :prov_contact_updates %>
+
+<% form_for(:prov_contact_updates, :url => prov_contact_update_path(@prov_contact_updates), :html => { :method => :put }) do |f| %>
+ 
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<p/>Status:<br><%= select("prov_contact_updates", "status_id", @statuses.to_dropdown) %></p>
+
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', prov_contact_update_path(@prov_contact_updates) %> |
+<%= link_to 'Back', prov_contact_updates_path %>

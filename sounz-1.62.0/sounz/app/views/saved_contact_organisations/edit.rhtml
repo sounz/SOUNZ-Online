@@ -1,0 +1,9 @@
+<h1>Editing saved_contact_organisation</h1>
+
+<% form_tag :action => 'update', :id => @saved_contact_organisation do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @saved_contact_organisation %> |
+<%= link_to 'Back', :action => 'list' %>

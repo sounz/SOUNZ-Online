@@ -1,0 +1,78 @@
+venue_1000:
+  venue_id: 1000
+  status_id: 1
+  venue_name: "Adam Concert Room, NZ School of Music Kelburn"
+  contactinfo_id: 1
+  
+venue_1001:
+  venue_id: 1001
+  status_id: 1
+  venue_name: "Hunter Council Chamber, Victoria University"
+  contactinfo_id: 1
+  
+venue_1002:
+  venue_id: 1002
+  status_id: 1
+  venue_name: "Hunter Council Chamber, Victoria University"
+  contactinfo_id: 1
+  
+venue_1003:
+  venue_id: 1003
+  status_id: 1
+  venue_name: "Wellington Town Hall"
+  contactinfo_id: 1
+  
+venue_1004:
+  venue_id: 1004
+  status_id: 1
+  venue_name: "Founders Theatre, Hamilton"
+  contactinfo_id: 1
+  
+venue_1005:
+  venue_id: 1005
+  status_id: 1
+  venue_name: "Auckland Town Hall"
+  contactinfo_id: 1
+  
+venue_1006:
+  venue_id: 1006
+  status_id: 1
+  venue_name: "Auckland Town Hall"
+  contactinfo_id: 1
+  
+venue_1007:
+  venue_id: 1007
+  status_id: 1
+  venue_name: "Auckland Town Hall"
+  contactinfo_id: 1
+  
+venue_1008:
+  venue_id: 1008
+  status_id: 1
+  venue_name: "Dunedin Town Hall"
+  contactinfo_id: 1
+  
+venue_1009:
+  venue_id: 1009
+  status_id: 1
+  venue_name: "Christchurch Town Hall"
+  contactinfo_id: 1
+  
+venue_1010:
+  venue_id: 1010
+  status_id: 1
+  venue_name: "Michael Fowler Centre, Wellington"
+  contactinfo_id: 1
+  
+venue_1011:
+  venue_id: 1011
+  status_id: 1
+  venue_name: "Michael Fowler Centre, Wellington"
+  contactinfo_id: 1
+  
+venue_1012:
+  venue_id: 1012
+  status_id: 1
+  venue_name: "Soundings Theatre, Te Papa, Wellington"
+  contactinfo_id: 1
+  

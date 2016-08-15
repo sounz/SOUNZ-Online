@@ -1,0 +1,10 @@
+<%if object != nil%>
+<input type="hidden" id="contributor_contactinfo_id" name="contributor[contactinfo_id]" value="<%=object.contactinfo_id%>">
+
+<%=object.street%><br>
+<%=object.po_box%><br>
+<%=object.locality%><br>
+<%=object.postcode%><br>
+<%else%>
+<b>No contactinfo assigned!</b>
+<%end%>

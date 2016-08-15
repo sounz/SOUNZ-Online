@@ -1,0 +1,15 @@
+development:
+  server: smtp.mail.catalyst.net.nz
+  port: 25
+  domain: catalyst.net.nz
+  authentication:
+  username:
+  password:
+production:
+  server: smtp.mail.catalyst.net.nz
+  port: 465
+  domain: catalyst.net.nz
+  authentication:
+  username:
+  password:
+#  tls: true

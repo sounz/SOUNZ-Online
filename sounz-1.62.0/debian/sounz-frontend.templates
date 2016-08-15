@@ -1,0 +1,81 @@
+Template: sounz/apache_servername
+Type: string
+Default: sounz.org.nz
+Description: ServerName:
+ The ServerName for this SOUNZ frontend. This is essentially the
+ domain of the website which is the public access to the application.
+
+Template: sounz/apache_serveraliases
+Type: string
+Default: www.sounz.org.nz sounz-production.catalyst.net.nz
+Description: ServerAliases:
+ Alternative domains for the application. This is an optional field
+ which can contain a space-delimited list of alias domains.
+
+Template: sounz/apache_documentroot
+Type: string
+Default: /var/www/sounz
+Description: DocumentRoot:
+ The physical directory which contains the document root for this
+ application. This is where the applications static content lives.
+
+Template: sounz/mongrel_host
+Type: string
+Default: localhost
+Description: Mongrel server host:
+ The hostname or IP address of the server which has the Solr server
+ running on it. Leave this defaulted if it is on the localhost.
+
+Template: sounz/mongrel_ports
+Type: string
+Default: 3001
+Description: Mongrel server port(s):
+ A list of ports that the mongrel servers are listening on. This
+ can be a single port, or a space-delimited list of ports. You
+ must specify at least ONE port here.
+ .
+ NOTE: the ports must match the list that you provide when
+ installing the 'sounz-app' package.
+
+Template: sounz/db_name
+Type: string
+Default: sounz
+Description: Database name:
+ The name of the Postgresql database that the SOUNZ packages
+ will all be connecting to. This will set up various config
+ files and assign the 'production' database to the name you give.
+ .
+ For the rails application it will also set up database names for
+ test and development environments as the name you give, suffixed
+ with '_test' and '_dev' respectively.
+
+Template: sounz/db_host
+Type: string
+Default: localhost
+Description: Database host machine:
+ The name of the server which hosts the database for SOUNZ.
+ If this is the same machine as the application, then just leave this
+ as the default 'localhost'.
+
+Template: sounz/db_port
+Type: string
+Default: 5432
+Description: Database port:
+ The port that the Postgreql database is listening on. Normally
+ this will be 5432, the default port for Postgres.
+
+Template: sounz/db_user
+Type: string
+Default: sounz
+Description: Database connection user:
+ The name of the Postgresql user which will connect to the
+ database. If this user does not exist, then it will be created for
+ you automatically (note this is a Postgres user, not a Unix user).
+
+Template: sounz/db_passwd
+Type: string
+Description: Database connection password:
+ A password to use for the database connection (as the user
+ you specified earlier). Often this is just left blank, which is to
+ say 'no password required'.
+ 

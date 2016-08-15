@@ -1,0 +1,18 @@
+<%= error_messages_for 'superwork' %>
+
+<!--[form:superwork]-->
+<p><label for="superwork_superwork_title">Title</label><br>
+<%= text_field 'superwork', 'superwork_title' , :size => standard_edit_cols %></p>
+
+<p><label for="superwork_superwork_title_alt">Alternative/Parallel Title</label><br>
+<%= text_field 'superwork', 'superwork_title_alt', :size => standard_edit_cols  %></p>
+
+<p><label for="superwork_source_material_note">Source Material Note</label><br>
+<%= text_area 'superwork', 'source_material_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+
+<p>Status:
+<%= select("superwork", "status_id", @statuses.to_dropdown) %></p>
+
+<!--[eoform:superwork]-->
+

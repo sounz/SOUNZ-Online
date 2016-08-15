@@ -1,0 +1,57 @@
+<li id="<%= generate_id(item) %>">
+<span class="actionButton"><%= link_to_remote "Delete", :confirm => 'Are you sure you wish to delete '+item.physical_description.to_s+'?', :url => {:controller => 'items', :action => :delete_item, :id => generate_id(entity), :item_id => item.item_id}%></span>
+<span class="actionButton"><%= link_to_remote "Update", :url => {:controller => 'items', :action => :show_item_update_form, :id => generate_id(entity), :item_id => item.item_id }%></span>
+<%# item.item_id %>:&nbsp;
+<% if !item.manifestation.blank? %>
+<%=item.manifestation.manifestation_code%>&nbsp;
+<%= item.manifestation.manifestation_type.manifestation_type_desc %>&nbsp;
+(<%= item.manifestation.format.format_desc %>)
+<% end %>
+<% if !item.resource.blank? %>
+<%= item.resource.resource_code%>&nbsp;
+<%= item.resource.resource_type.resource_type_desc %>&nbsp;
+(<%= item.resource.format.format_desc %>)
+<% end %>
+<%= ' - ' + item.physical_description unless item.physical_description.blank? %>
+
+<%if item.item_type.item_type_desc.to_s=='Sale item'%>
+	<br><b>AVAILABLE FOR SALE</b> 
+	<%if !item.manifestation.blank? && !item.manifestation.available_for_sale%>
+	(<font color="#f00">Note: Manifestation is not marked as available for sale!</font>)
+	<%end%>
+	<%if !item.resource.blank? && !item.resource.available_for_sale%>
+	(<font color="#f00">Note: Resource is not marked as available for sale!</font>)
+	<%end%>
+<%end%>
+
+<%if item.item_type.item_type_desc.to_s=='Music library item' || item.item_type.item_type_desc.to_s=='Resource library item' %>
+
+<%if item.out_on_loan_or_hire%>
+	<br><b>ON LOAN/HIRE</b> to 
+	<%myBorrowedItem=BorrowedItem.find(:all,:conditions => ['item_id=? and active=true and reserved is not true',item.item_id ]).first()%>
+	<%if myBorrowedItem != nil%>
+		<%myLogin=Login.find(myBorrowedItem.login_id)%>
+			<%if myLogin.person != nil%>
+				<%=link_to myLogin.username, :action=>:privileges_list, :controller =>:people, :id=>myBorrowedItem.login.person_id%> 
+ 			<%else%>
+ 				Login has no person assigned! 
+ 				<%=link_to myLogin.username, :action=>:edit, :controller =>:logins, :id=>myBorrowedItem.login_id%> 
+ 			<%end%>
+ 			from: 
+ 			<%if ! myBorrowedItem.date_borrowed.blank?%> <%=separate_date_time(myBorrowedItem.date_borrowed)[:date]%><%end%> to: <%if ! myBorrowedItem.date_due.blank?%><%=separate_date_time(myBorrowedItem.date_due)[:date]%><%end%>
+	<%end%> 
+
+<%else%>
+
+<br/><b>AVAILABLE FOR LOAN</b>
+
+	<%if !item.manifestation.blank? && !item.manifestation.available_for_loan%>
+	(<font color="#f00">Note: Manifestation is not marked as available for loan!</font>)
+	<%end%>
+	<%if !item.resource.blank? && !item.resource.available_for_loan%>
+	(<font color="#f00">Note: Resource is not marked as available for loan!</font>)
+	<%end%>
+<%end%>
+<%end%>
+
+</li>

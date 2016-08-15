@@ -1,0 +1,37 @@
+# Log rotations for sounz-app
+
+# Main production application logfile
+_SOUNZ_LOGS_/sounz-app/production.log {
+        missingok
+        size 50M
+        rotate 3
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}
+
+# Test application logfile
+_SOUNZ_LOGS_/sounz-app/test.log {
+        missingok
+        size 10M
+        rotate 2
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}
+
+# Development application logfile
+_SOUNZ_LOGS_/sounz-app/development.log {
+        missingok
+        size 10M
+        rotate 2
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}

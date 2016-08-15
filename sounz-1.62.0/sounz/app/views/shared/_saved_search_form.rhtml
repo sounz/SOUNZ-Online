@@ -1,0 +1,8 @@
+<a name="saveSearch"></a>
+<%
+#Note search types are passed in using locals
+form_tag :action => 'save_search_from_form', :controller => :saved_searches do %>
+<label class="formText" for="save_search_form_search_name">Save this search as: </label> <%=text_field 'save_search_form','search_name', :size => 20, :class => 'text'%>
+<%=hidden_field 'save_search_form','search_type', :value=>search_type%>
+<input type="image" src="/images/button-savecurrentsearch.gif" value="Submit" alt="Save this Search" class="public_button">
+<% end %>

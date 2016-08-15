@@ -1,0 +1,16 @@
+<h1>Editing prov_composer_bios</h1>
+
+<%= error_messages_for :prov_composer_bios %>
+
+<% form_for(:prov_composer_bios, :url => prov_composer_bio_path(@prov_composer_bios), :html => { :method => :put }) do |f| %>
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<p/>Status:<br><%= select("prov_composer_bios", "status_id", @statuses.to_dropdown) %></p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', prov_composer_bio_path(@prov_composer_bios) %> |
+<%= link_to 'Back', prov_composer_bio_path %>

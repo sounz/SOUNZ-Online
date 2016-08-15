@@ -1,0 +1,28 @@
+sounz
+=====
+
+This package was first debianised on Thu, 04 Oct 2007 10:34:35 +1300
+by Paul Waite <paul@catalyst.net.nz>.
+
+The software is copyright (c) 2007, SOUNZ.
+
+This software is licensed under the terms of the GNU General Public
+License, which requires source code to be available to users
+on request. Full source code for the package is available by email
+from Paul Waite (see above).
+
+On Debian systems, the complete text of the GNU General Public License
+is usually found in:
+  /usr/share/common-licenses/GPL
+
+Swift Mailer
+============
+TO acquire this software from source please go to http://www.swiftmailer.org
+or directly to http://sourceforge.net/projects/swiftmailer/ where the
+tarball may be downloaded.
+
+This software is licenced under the GPL.
+On Debian systems, the complete text of the GNU General Public License
+is usually found in:
+  /usr/share/common-licenses/GPL
+

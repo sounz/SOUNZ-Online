@@ -1,0 +1,5 @@
+<%if @country.blank? %>
+Select a country
+<% else%>
+<%=  render :partial => 'show_regions_for_country', :locals => {:country => @country }%>
+<%end%>

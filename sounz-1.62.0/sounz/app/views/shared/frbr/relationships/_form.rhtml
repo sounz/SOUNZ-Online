@@ -1,0 +1,61 @@
+
+<%
+if object != nil
+unique_relationships = object.relationships.uniq	
+
+
+%>
+
+<table style="width:100%;">
+<%for rel in unique_relationships%>
+    <%
+    #special_case
+    logger.debug(rel.to_yaml)
+    #if object.frbr_type=='distinction_instance'
+    #reltype=RelationshipType.find(:all, :conditions=>['relationship_type_desc=?','Distinction']).first
+    #else
+    reltype=RelationshipType.find(rel.relationship_type_id)
+    #end%>
+    <%logger.debug("RELTYPE: #{reltype.to_yaml}")%>
+    <%my_entity=EntityType.entityIdToType(rel.ent_entity_type_id)%>
+    <%if EntityType.entityIdToType(rel.ent_entity_type_id) == object.frbr_type then my_entity=EntityType.entityIdToType(rel.entity_type_id) end%>
+    <%related_objects=eval('rel.'+my_entity+'s')%>
+    <%for related_object in related_objects%>
+        <%if rel.entity_type_id == rel.ent_entity_type_id then%>
+        <%if related_object.id != object.id then%>
+
+		<tr id="<%=generate_id(related_object)%>">
+			<td>
+		<%if rel.is_editable?%>
+		<span class="actionButton">
+		<%= link_to_remote( "REMOVE",:update => "frbr_relationships",:url =>{ :controller => :association, :action => :delete_ajax, :object_id => object.frbr_id, :object_type => object.frbr_type, :relationship_id => rel.id})%>
+	</span><%end%>
+	</td>
+	
+	<td><%=object.frbr_ui_desc%>
+            <b><%=reltype.relationship_type_desc%></b> <%=my_entity%> <%=render :partial => '/shared/frbr/objects/brief/'+related_object.frbr_type, :locals =>{:object => related_object}%>
+		</td>
+		</tr>
+		
+        <%end%>
+      <%else%>
+
+		<tr id="<%=generate_id(related_object)%>">
+			<td>
+			<%if rel.is_editable?%>
+			<span class="actionButton">
+			<%= link_to_remote( "REMOVE",:update => "frbr_relationships",:url =>{ :controller => :association, :action => 				:delete_ajax, :object_id => object.frbr_id, :object_type => object.frbr_type, :relationship_id => rel.id})%>
+		</span><%end%>
+		</td>
+		<td><%=object.frbr_ui_desc%>
+      <b><%=reltype.relationship_type_desc%></b> <%=my_entity%> <%=render :partial => '/shared/frbr/objects/brief/'+related_object.frbr_type, :locals =>{:object => related_object}%>
+		</td></tr>
+      <%end%>
+    <%end%>
+
+  <%end%>
+</table>
+
+<%else%>
+<p>ERROR - object was nil for relationship rendering</p>
+<%end%>

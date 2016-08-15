@@ -1,0 +1,8 @@
+<h1>Editing Borrowed Item</h1>
+
+<% form_tag :action => 'update', :id => @borrowed_item, :from => @from do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%= link_to 'List', :action => 'list' %>

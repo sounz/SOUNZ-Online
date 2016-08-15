@@ -1,0 +1,11 @@
+<div style="background: #DEE;">
+<span class="actionButton">	
+<%=link_to_remote "Cancel Update", 
+:url => { :controller => 'items', :action => :cancel_item_form, :id => generate_id(entity), :item_id => item} %>
+</span>
+
+<% remote_form_for(:item, :url => {:controller => 'items', :action => 'update_item', :id => generate_id(entity), :item_id => item }) do |form| %>
+  <%= render :partial => 'items/form', :locals =>{:item => item } %>
+  <%= submit_tag "Save" %>
+<% end %>
+</div>

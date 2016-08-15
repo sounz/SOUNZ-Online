@@ -1,0 +1,257 @@
+<% content_for :page_title do %>
+<div id='long'>Search Contacts Advanced</div>
+<%end%>
+
+<% title 'Search Contacts - Advanced Search' %>
+<h2>Search Contacts - Advanced</h2> 
+
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_contacts, :action => :advanced, :from => 'reset_search'}, {:class => 'public_button'} %>
+
+<%= form_remote_tag :url => {:action => :find_role_contactinfos},
+  :update => 'search_results',
+  :id => "contact_search_form", 
+  :before => "Element.show('spinner')",
+  :complete => "Element.hide('spinner')"
+%>
+<table>
+  <tr>
+    <th><label for="search_person" title="Filter by person name. You don't have to enter the whole name">Person name</th>
+    <td><%= text_field :search, :person, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :person_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_role_title" title="Filter by role title. You don't have to enter the whole title">Role title</label></th>
+    <td><%= text_field :search, :role_title, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :role_title_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_organisation" title="Filter by organisation name or abbreviation. You don't have to enter the whole name">Organisation name</label></th>
+    <td><%= text_field :search, :organisation_name, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :organisation_name_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_organisation_abbreviation" title="Filter by organisation abbreviation. You don't have to enter the whole name">Organisation abbreviation</label></th>
+    <td><%= text_field :search, :organisation_abbrev, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :organisation_abbrev_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_locality" title="Filter by locality. You don't have to enter the whole word">Locality</label></th>
+    <td><%= text_field :search, :locality, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :locality_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_postcode" title="Filter by postcode">Post code</label></th>
+    <td><%= text_field :search, :postcode, :size => 10, :class => 'text' %></td>
+    <td><%= check_box :search, :postcode_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_created_at" title="Filter by created date (click in the boxes to get a calendar)">Created at</label></th>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :created_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :created_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_updated_at" title="Filter by updated date (click in the boxes to get a calendar)">Updated at</label></th>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :updated_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :updated_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_internal_note" title="Filter by contact info internal note. You don't have to enter the whole word">Contact Internal note</label></th>
+    <td><%= text_field :search, :internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :internal_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  
+  
+  <tr>
+    <th><label for="search_internal_note_person" title="Filter by person internal note. You don't have to enter the whole word">Internal note</label></th>
+    <td><%= text_field :search, :person_internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :person_internal_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  
+  
+  <tr>
+    <th><label for="search_saved_list" title="Filter by saved list name. You don't have to enter the whole name">Saved list name</label></th>
+    <td><%= text_field :search, :saved_list, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :saved_list_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_marketing_campaign" title="Filter by marketing campaign name. You don't have to enter the whole name">Marketing campaign name</label></th>
+    <td><%= text_field :search, :marketing_campaign, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :marketing_campaign_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  
+  <% #default_country    = Country.get_default_country
+     #default_country_id = nil
+     #default_country_id = default_country.country_id unless default_country.blank?
+  %>
+  
+  <tr>
+    <th><label for="search_country_id" title="Filter by what country the contact is in">Country</label></th>
+    <td><%= select('search', "country_id", Country.to_dropdown(:text => 'country_name', :include_blank => "All Countries"), :selected => @search.country_id.to_i
+                   ) 
+        %>
+    </td>
+    <td><%= check_box :search, :country_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_region_id" title="Filter by region, if the country selected has regions">Region</label></th>
+    <td  colspan="2">
+    <div id="region-selector">
+    <% if !@search.country_id.blank? %>
+      <%= select('search', 'region_id', Region.find(:all, :conditions => ['country_id =?', @search.country_id], :order => 'region_order').collect {|r| [ r.region_name, r.region_id ] }, :prompt => 'All Regions', :selected => @search.region_id.to_i )
+      %>
+    <% else %>
+      All countries and regions will be searched for
+    <% end %>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_category_filter" title="Filter by what marketing categorisations the contacts have. Multiple choice is possible">Marketing categorisation</label></th>
+    <td  colspan="2">
+    <select id="search_category_filter" multiple="multiple" size="10" name="search[category_filter][]">
+          
+      <%= option_groups_from_collection_for_multiple_select(MarketingCategory.find(:all, :order => :abbreviation), 
+                                                            "marketing_subcategories", 
+                                                            "abbreviation", 
+                                                            "marketing_subcategory_id", 
+                                                            "abbreviation", 
+                                                            selected_keys = @search.category_filter,
+                                                            include_blank = "-- No selection --"
+         ) 
+      %>
+    </select>    
+   </td>
+  </tr>
+  <tr>
+    <th><label for="search_role_id_ids" title="Filter by what roles the contacts have. Multiple choice is possible">Role type</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'role_id_ids', 
+                             RoleType.find(:all, :order => 'display_order').collect {|r| [r.role_type_id, r.role_type_desc] }, 
+                             selected_array = @search.role_id_ids,
+                             size = 10,
+                             include_blank = "-- No selection --"
+        )
+    %>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_membership_id_ids" title="Filter by what memberships the contacts have. Multiple choice is possible">Membership type</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'membership_id_ids', 
+                             MemberType.find(:all, :order => 'member_type_desc').collect {|m| [m.member_type_id, m.member_type_desc] }, 
+                             selected_array = @search.membership_id_ids,
+                             size = 5,
+                             include_blank = "-- No selection --"
+        )
+    %>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_status_id_ids" title="Filter by what statuses the contacts have. Multiple choice is possible">Role status</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'role_status_id_ids', 
+                             Status.find(:all, :conditions => ['status_desc NOT ILIKE (?)', '%published%'], :order => 'status_desc').collect {|s| [s.status_id, s.status_desc] }, 
+                             selected_array = @search.role_status_id_ids,
+                             size = 5,
+                             include_blank = "-- No selection --"
+        )
+    %>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_contributor_status_id_ids" title="Filter by what statuses the contacts have in contributor role. Multiple choice is possible"> Contributor status</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'contributor_status_id_ids', 
+                             Status.find(:all, :conditions => ['status_desc NOT ILIKE (?)', '%approved%'], :order => 'status_desc').collect {|s| [s.status_id, s.status_desc] }, 
+                             selected_array = @search.contributor_status_id_ids,
+                             size = 5,
+                             include_blank = "-- No selection --"
+        )
+    %>
+    </td>
+  </tr>
+  
+  <tr>
+    <th><label for="search_role_contactinfo_types" title="Filter by address types the contacts have">Address type</label></th>
+    <td colspan="2">
+    <%= select('search', 'role_contactinfo_type', DropDown.role_contactinfo_types.to_dropdown, :include_blank => '-- All types --')
+    %>
+    </td>
+  </tr>
+  
+  <% options = { "no" => "0", "yes" => "1" } %>
+  
+  <tr>
+    <th><label for="search_people_only">Is Person?</label></th>
+    <td colspan="2"><%=select :search, :has_person, options,
+		                      :prompt => "-- No selection --" %>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_contributors_only">Is Contributor?</label></th>
+    <td colspan="2"><%=select(:search, :has_contributor, options,
+		                      :prompt => "-- No selection --" )%>
+    
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_has_email">Has email?</label></th>
+    <td colspan="2"><%=select(:search, :has_email, options,
+		                      :prompt => "-- No selection --" )%>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_has_website">Has website?</label></th>
+    <td colspan="2"><%=select(:search, :has_website, options,
+		                      :prompt => "-- No selection --" )%>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_has_phone">Has phone?</label></th>
+    <td colspan="2"><%=select(:search, :has_phone, options,
+		                      :prompt => "-- No selection --" )%>
+    </td>
+  </tr>
+  <tr><td colspan="3">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_contacts, :action => :advanced, :from => 'reset_search'}, {:class => 'public_button'} %></td>
+     <td colspan="2" align="right"> <input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+
+</form>
+
+</br>
+<%= render :partial => 'use_saved_list_form'%>
+
+<%= observe_field("search_country_id", :update => "region-selector",:url => {:action => "country_chosen"}, :with => "'id='+value") %>
+  
+<div id="search_results"></div>
+<%= render :partial => 'shared/spinner' %>
+
+<div id="selected_results">
+  <%= render :partial => 'selected_contacts'
+  %>
+</div>
+
+<div id="pagination">
+<%= render :partial => "shared/page_links_remote", :locals => { :paginator => @selected_contacts_pages, :params => { :url => { :action => :selected_results } } } unless @selected_contacts_pages.blank? %>
+</div>
+
+<div id="adding_contacts_links">
+<%= render :partial => 'adding_contacts_links'%>
+</div>
+
+<%= render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :advanced_search} %>

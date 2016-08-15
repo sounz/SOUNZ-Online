@@ -1,0 +1,89 @@
+communication_type1:
+  communication_type_id: 1
+  communication_type_desc: Sales
+
+communication_type2:
+  communication_type_id: 2
+  communication_type_desc: Library
+
+communication_type3:
+  communication_type_id: 3
+  communication_type_desc: Repertoire Search
+
+communication_type4:
+  communication_type_id: 4
+  communication_type_desc: Programme notes/ Work info
+
+communication_type5:
+  communication_type_id: 5
+  communication_type_desc: Composer/Performer bio Info
+
+communication_type6:
+  communication_type_id: 6
+  communication_type_desc: Event Info
+
+communication_type7:
+  communication_type_id: 7
+  communication_type_desc: Info about SOUNZ (inc. projects)
+
+communication_type8:
+  communication_type_id: 8
+  communication_type_desc: Contact Info
+
+communication_type9:
+  communication_type_id: 9
+  communication_type_desc: Industry Info/ Advice
+
+communication_type10:
+  communication_type_id: 10
+  communication_type_desc: Membership Info
+
+communication_type11:
+  communication_type_id: 11
+  communication_type_desc: General Music Info
+
+communication_type12:
+  communication_type_id: 12
+  communication_type_desc: Donation
+
+communication_type13:
+  communication_type_id: 13
+  communication_type_desc: Other/ General
+
+
+communication_type14:
+  communication_type_id: 14
+  communication_type_desc: Education
+
+communication_type15:
+  communication_type_id: 15
+  communication_type_desc: News
+
+communication_type16:
+  communication_type_id: 16
+  communication_type_desc: Events
+
+communication_type17:
+  communication_type_id: 17
+  communication_type_desc: Product
+
+communication_type18:
+  communication_type_id: 18
+  communication_type_desc: Membership
+
+communication_type19:
+  communication_type_id: 19
+  communication_type_desc: Donations
+
+communication_type20:
+  communication_type_id: 20
+  communication_type_desc: Media
+
+communication_type21:
+  communication_type_id: 21
+  communication_type_desc: Mixed
+
+communication_type22:
+  communication_type_id: 22
+  communication_type_desc: Other
+

@@ -1,0 +1,56 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => [],
+			:main_internal_heading => object.expression_title,
+			:subheading => nil,
+			:links => nil,
+			:text => object.mode.mode_desc,
+			:object => object #for the select this button
+}
+%>
+<div class="section">
+<%=convert_to_html(object.general_note)%>
+<table width="100%">
+	<tr><td>Start</td><td><%=dby_date(object.expression_start)%></td></tr>
+	<%if object.expression_finish%>
+	<tr><td>Finish</td><td><%=dby_date(object.expression_finish)%></td></tr>
+	<%end%>
+	
+	<tr><td>Edition</td><td><%=object.get_edition_as_string%></td></tr>
+	<% if !object.premiere.blank?%>
+	<tr><td>Premiere? </td><td><%=object.get_premiere_as_string%></td></tr>
+	<%end%>
+	
+	<tr><td>Mode</td><td><%=object.mode.mode_desc.capitalize%></td></tr>
+	
+	<tr><td>Language</td><td><%= object.expression_languages.collect{ |el| el.language.language_name }.join(', ')%></td></tr>	
+	
+	<% if !object.duration_human_readable.blank? %>
+	<tr><td>Duration</td><td NOWRAP><%= object.duration_human_readable%></td></tr>
+    <% end %>
+	
+    <%if object.use_restriction_note%><tr><td>Notes on Use Restriction</td><td><%=object.use_restriction_note%></td></tr><%end%>
+	<tr><td>Partial Expression?</td><td><%=object.partial_information%></td></tr>
+	<tr><td>Partial Expression Note</td><td><%= strip_paragraph_formatting(convert_to_html(object.partial_expression_note)) unless object.partial_expression_note.blank? %></td></tr>
+    <% if PrivilegesHelper.has_link_permission?(@login, object)%>
+    <tr><td>Parent Work</td><td><%= link_to object.work.work_title, :controller => "works", :action => "show" , :id => object.work%></td></tr>
+    <% end %>
+</table>
+
+</div>
+
+<%=show_relationships_if_permission(object)%>
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note, use_restriction_note, supress_times, created_at,updated_at, updated_by, status"}%>
+
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to "Edit", :controller => "expressions", :action => "edit", :id => object %> | 
+<%= link_to "Add Another Expression to '"+object.work.work_title+"'", :controller => "expressions", :action => "new_from_work", :work_id => object.work %>|
+<%= link_to "Add Manifestation to Expression", new_manifestation_for_expression_url(:id => object)%>
+</div>
+<br/>
+<%=render :partial => 'shared/last_updated_by', :locals => {:object => object}%>
+<%end%>

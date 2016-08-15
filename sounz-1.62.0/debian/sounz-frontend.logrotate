@@ -1,0 +1,15 @@
+# Log rotations for sounz-frontend
+
+# Apache access logfiles
+_SOUNZ_LOGS_/apache2/*.log {
+        missingok
+        daily
+        size 20M
+        rotate 10
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+        sharedscripts
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}

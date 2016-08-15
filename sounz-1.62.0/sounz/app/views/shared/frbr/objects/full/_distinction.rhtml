@@ -1,0 +1,114 @@
+<%
+website = nil
+sites = object.contactinfo.get_list_of_websites
+website = sites[0] if sites.length > 0
+%>
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => [], #object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => object.award_name,
+			:text => nil,
+			:subheading => nil,
+			:links => website,
+			:object => object #for the select this button
+}
+%>
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<div class='section'>
+<h2>Award Information</h2>
+<%=show_note(object.award_info)%>
+</div>
+
+<div class='section'>
+	<table>
+	<%=show_value_for_table_row("Established", h(object.awarded_since_year), @login)%>
+	<%=show_value_for_table_row("Frequency", h(object.frequency), @login)%>
+	</table>	
+</div>
+
+<%
+supporters = PrivilegesHelper.permitted_objects(@login, object.composite_supporters)
+if supporters.length > 0
+%>
+<div class="section">
+<dl>
+	<%= render :partial => 'shared/frbr/objects/common/dt_list_of_contributors',
+	 :locals => {:name => "Supported by", :contributors => supporters, :value=> ""}%>
+</dl>
+</div>
+<%end%>
+
+<%
+opportunities = PrivilegesHelper.permitted_objects(@login, object.current_opportunities)
+if opportunities.length > 0
+%>
+<div class="section">
+<dt>Opportunity:</dt><dd>
+<ul class="inlineList">
+<% for opportunity in opportunities %>
+<li><%= link_to opportunity.event_title, {:controller => 'events', :action => :show, :id => opportunity.id} %></li>
+<% end%>
+</ul>
+</dd>
+</div>
+<%end%>
+
+<%= render :partial => 'shared/frbr/objects/full/distinction/distinction_links', :locals => {:object => object}%>
+
+<%
+instances = PrivilegesHelper.permitted_objects(@login, object.distinction_instances)
+if !instances.length.blank?
+%>
+
+<div class="section">
+
+<table>
+
+<%for distinction_instance in instances%>
+<tr>
+
+<td width="35%"><%=link_to_if PrivilegesHelper.has_link_permission?(@login, distinction_instance), distinction_instance.frbr_ui_desc, :action => :show, :controller => :distinction_instances, :id => distinction_instance%>
+</td>
+<td width="65%">
+
+<table width="100%">
+<% for recipient in distinction_instance.composite_recipients%>
+<tr>
+<% if recipient.class == Role%>
+<td colspan="2">
+<%=ContributorsHelper.get_link_depending_on_role_type(recipient, @login)%>
+</td>
+<% else %>
+<td width="50%">
+<% recipient.composite_authors.each do |author| %>
+<%=ContributorsHelper.get_link_depending_on_role_type(author, @login)%>
+<br/>
+<% end %>
+</td>
+<td width="50%">
+<%=link_to_if  PrivilegesHelper.has_link_permission?(@login, recipient), recipient.frbr_ui_desc, :action => :show, :controller => recipient.class.to_s.tableize, :id => recipient.id%>
+</td>
+<% end %>
+</tr>
+<% end%>
+</table>
+</td>
+</tr>
+<%end%>
+
+</table>
+
+</div>
+<%end%>
+	
+	
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note, general_note, created_at,updated_at, updated_by, status"}%>
+
+<%=show_edit_links_if_permission(object, 'CAN_EDIT_DISTINCTION')%>
+
+
+
+

@@ -1,0 +1,34 @@
+<%
+associated_contact_string = communication.associated_contact_string(@from)
+entity = convert_id_to_model(associated_contact_string)
+from = associated_contact_string.split('_').shift
+
+link_name = communication.communication_subject
+link_name = link_name + ' - ' + communication.get_associated_contact_name('person') if !communication.get_associated_contact_name('person').blank?
+link_name = link_name + ' - ' + communication.get_associated_contact_name('organisation') if !communication.get_associated_contact_name('organisation').blank?
+%>
+
+<td valign="top">
+<%=link_to link_name, :controller => 'communications', 
+                                                :action => :edit, 
+                                                :id => entity, 
+                                                :from => from, 
+                                                :communication => communication 
+%>
+<div class="date_in_list">Created at <%=dmyhm_date(communication.created_at)%>
+<% if !communication.closed_at.blank? %>&nbsp;
+Closed at <%= dmyhm_date(communication.closed_at)%>
+<% end %></div>
+<%=convert_to_html(summary_of(communication.communication_note, 200))%>
+
+<div align="right">
+<%= link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedCommunications",
+                            :url =>{ :controller => :search_communications, 
+                                     :action => :add_to_selected_communications, 
+                                     :selected_communication => communication.communication_id,
+                                     :from => from})%>&nbsp;
+</div>
+<br><br>
+</td>
+
+

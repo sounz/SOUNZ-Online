@@ -1,0 +1,3 @@
+page.replace_html 'mailout_main_content', :partial => 'main_content_fields', :locals => {:campaign_mailout => @campaign_mailout}
+page.replace_html 'campaign_mailout_secondary_content', @campaign_mailout.secondary_content
+page.replace_html 'change_notification', "<td id=\"change_notification\"><span class=\"errorExplanation\">Click on \'Save\' to save change to \'Main content\' and \'Secondary content\'</span></td>"

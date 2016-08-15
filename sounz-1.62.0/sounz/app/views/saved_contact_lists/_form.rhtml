@@ -1,0 +1,33 @@
+<%= error_messages_for 'saved_contact_list' %>
+
+<!--[form:saved_contact_list]-->
+<table>
+<tr>
+<th><label for="saved_contact_list_list_name">Name of List</label></th>
+<td><%= text_field 'saved_contact_list', 'list_name', :size => standard_edit_cols %></td>
+</tr>
+<% if params[:action] != 'new' && params[:action] != 'copy' && params[:action] != 'create' %>
+<% if !@saved_contact_list.created_at.blank? %>
+<tr>
+<th><label for="saved_contact_list_created_at">Created at</label></th>
+<td><%= dby_date(@saved_contact_list.created_at)  %></td>
+</tr>
+<% end %>
+
+<% if !@saved_contact_list.updated_at.blank? %>
+<tr>
+<th><label for="saved_contact_list_updated_at">Updated at</label></th>
+<td><%= dby_date(@saved_contact_list.updated_at) %></td>
+</tr>
+<% end %>
+
+<% if !@saved_contact_list.updated_by.blank? %>
+<tr>
+<th><label for="saved_contact_list_updated_by">Updated by</label></th>
+<td><%=h get_user(@saved_contact_list.updated_by).username %></td>
+</tr>
+<% end %>
+<% end %>
+</table>
+<!--[eoform:saved_contact_list]-->
+

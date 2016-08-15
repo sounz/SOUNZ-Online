@@ -1,0 +1,8 @@
+<% for column in SavedContactOrganisation.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @saved_contact_organisation.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @saved_contact_organisation %> |
+<%= link_to 'Back', :action => 'list' %>

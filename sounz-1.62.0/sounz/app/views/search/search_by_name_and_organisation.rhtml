@@ -1,0 +1,9 @@
+Results here, <%=Time.now%>
+
+You searched for <%=@person_query%>
+
+<ul>
+<%for person in @people%>
+<li><%=person.full_name%></li>
+<%end%>
+</ul>

@@ -1,0 +1,342 @@
+#! /bin/bash
+# postinst script for sounz
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+if [ -e /usr/share/debconf/confmodule ]
+then
+  . /usr/share/debconf/confmodule
+  db_version 2.0
+fi
+
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=sounz
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+
+# Main processing..
+case "$1" in
+  configure)
+    # continue below
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    exit 0
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SET DEFAULTED CONFIG VARS
+
+# Local Defaults..
+APACHE_VHOST="*"   # This is hardwired, to suit std apache2 setup
+APACHE_SERVERNAME=sounz.org.nz
+APACHE_SERVERALIASES=
+APACHE_DOCUMENTROOT=/var/www/sounz
+MONGREL_HOST=localhost
+MONGREL_PORTS=3001
+DB_NAME=sounz
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=sounz
+DB_PASSWD=
+
+# Basic configuration already exists - read it in now
+PACKAGE_CONFDIR=/etc/${PACKAGE}
+PACKAGE_CONF=${PACKAGE_CONFDIR}/${PACKAGE}.conf
+if [ -f $PACKAGE_CONF ] ; then
+ . $PACKAGE_CONF
+else
+  tell "ERROR: $PACKAGE configuration $PACKAGE_CONF not found."
+  exit 1
+fi 
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# FUNCTIONS
+
+# Grab SOUNZ common functions..
+if [ -f ${SOUNZ_HOME}/install/install-funcs.sh ] ; then
+  . ${SOUNZ_HOME}/install/install-funcs.sh
+else
+  echo "Error: failed to load SOUNZ common functions from ${SOUNZ_HOME}/install"
+  exit 2
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DEBCONF
+# Notes: We only acquire the debconf database value and use it if our
+# config file value is still as yet undefined.
+
+# These are not stored in sounz.conf
+db_get ${PACKAGE}/apache_serveraliases
+if [ "$RET" != "" ] ; then
+  APACHE_SERVERALIASES=$RET
+  APACHE_SERVERALIASES=`echo $APACHE_SERVERALIASES|tr ' ' '|'`
+fi
+
+if [ "$APACHE_SERVERNAME" = "_APACHE_SERVERNAME_" ] ; then
+  db_get ${PACKAGE}/apache_servername
+  if [ "$RET" != "" ] ; then
+    APACHE_SERVERNAME=$RET
+  fi
+fi
+
+if [ "$APACHE_DOCUMENTROOT" = "_APACHE_DOCUMENTROOT_" ] ; then
+  db_get ${PACKAGE}/apache_documentroot
+  if [ "$RET" != "" ] ; then
+    APACHE_DOCUMENTROOT=$RET
+  fi
+fi
+
+if [ "$MONGREL_HOST" = "_MONGREL_HOST_" ] ; then
+  db_get ${PACKAGE}/mongrel_host
+  if [ "$RET" != "" ] ; then
+    MONGREL_HOST=$RET
+  fi
+fi
+
+if [ "$MONGREL_PORTS" = "_MONGREL_PORTS_" ] ; then
+  db_get ${PACKAGE}/mongrel_ports
+  if [ "$RET" != "" ] ; then
+    MONGREL_PORTS=$RET
+  fi
+fi
+
+if [ "$DB_NAME" = "_DB_NAME_" ] ; then
+  db_get ${PACKAGE}/db_name
+  if [ "$RET" != "" ] ; then
+    DB_NAME=$RET
+  fi
+fi
+
+if [ "$DB_HOST" = "_DB_HOST_" ] ; then
+  db_get ${PACKAGE}/db_host
+  if [ "$RET" != "" ] ; then
+    DB_HOST=$RET
+  fi
+fi
+
+if [ "$DB_PORT" = "_DB_PORT_" ] ; then
+  db_get ${PACKAGE}/db_port
+  if [ "$RET" != "" ] ; then
+    DB_PORT=$RET
+  fi
+fi
+
+if [ "$DB_USER" = "_DB_USER_" ] ; then
+  db_get ${PACKAGE}/db_user
+  if [ "$RET" != "" ] ; then
+    DB_USER=$RET
+  fi
+fi
+
+if [ "$DB_PASSWD" = "_DB_PASSWD_" ] ; then
+  db_get ${PACKAGE}/db_passwd
+  if [ "$RET" != "" ] ; then
+    DB_PASSWD=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CONF FILE
+# This substitutes the relevant paths into this config file, but
+# only if we haven't already done it..
+
+if [ -d $PACKAGE_CONFDIR ]
+then
+  # Plug in the relevant values to the SOUNZ config..
+	sub_vars $PACKAGE_CONFDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+	sub_vars $PACKAGE_CONFDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+	sub_vars $PACKAGE_CONFDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+	sub_vars $PACKAGE_CONFDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+	sub_vars $PACKAGE_CONFDIR "_ADMIN_EMAIL_" "$ADMIN_EMAIL"
+	sub_vars $PACKAGE_CONFDIR "_MONGREL_HOST_" "$MONGREL_HOST"
+	sub_vars $PACKAGE_CONFDIR "_MONGREL_PORTS_" "$MONGREL_PORTS"
+	sub_vars $PACKAGE_CONFDIR "_APACHE_SERVERNAME_" "$APACHE_SERVERNAME"
+	sub_vars $PACKAGE_CONFDIR "_APACHE_DOCUMENTROOT_" "$APACHE_DOCUMENTROOT"
+    sub_vars $PACKAGE_CONFDIR "_DB_NAME_" "$DB_NAME"
+    sub_vars $PACKAGE_CONFDIR "_DB_HOST_" "$DB_HOST"
+    sub_vars $PACKAGE_CONFDIR "_DB_PORT_" "$DB_PORT"
+    sub_vars $PACKAGE_CONFDIR "_DB_USER_" "$DB_USER"
+    sub_vars $PACKAGE_CONFDIR "_DB_PASSWD_" "$DB_PASSWD"
+
+  # Always assert proper ownership & perms..
+  chown -R ${SOUNZ_USER}:${SOUNZ_USER} $PACKAGE_CONFDIR
+  chmod -R 0644 $PACKAGE_CONFDIR
+  find $PACKAGE_CONFDIR -type d -exec chmod 0775 {} \;
+else
+  tell "SOUNZ configuration $PACKAGE_CONF not found."
+  exit 3
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# APACHE SETUP
+
+# Detect the APACHE configuration settings. Sets up the following vars:
+# APACHE_NAME     # Name of the apache instance eg. 'apache2'
+# APACHE_CONFDIR  # Configuration files live here
+# APACHE_CONFSYS  # Type of config system: 'ap2', 'confd' or 'httpd'
+# APACHE_CONF     # Path to main apache configuration file
+# APACHE_USER     # User apache runs as eg. 'www-data'
+# APACHE_GROUP    # Group apache runs under eg. 'www-data'
+if [ -f ${SOUNZ_HOME}/install/detect-apache.sh ] ; then
+  . ${SOUNZ_HOME}/install/detect-apache.sh
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DOCUMENTROOT
+# This is usually /var/www/sounz, however if we are installing our
+# package on a production server we are likely to have a common data
+# volume/partition, which is mounted as /data and if so we have to
+# use it for our apache documentroot.
+
+mkthisdir ${APACHE_DOCUMENTROOT}
+chown -R ${SOUNZ_USER}:${SOUNZ_USER} ${APACHE_DOCUMENTROOT}
+chmod -R ug+rw ${APACHE_DOCUMENTROOT}
+chmod -R o+r ${APACHE_DOCUMENTROOT}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# APACHE CONFIGURATION
+set -f
+${SOUNZ_HOME}/install/config-apache.sh $APACHE_VHOST $APACHE_SERVERNAME "$APACHE_SERVERALIASES" $ADMIN_EMAIL $APACHE_DOCUMENTROOT $MONGREL_HOST $MONGREL_PORTS
+set +f
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DOCUMENTROOT CONTENT
+# Set up the documentroot static content area.
+
+# Public directories, and image catalogue storage area
+PUBLIC_DIRS="icons images includes javascripts stylesheets swf"
+for PUBDIR in $PUBLIC_DIRS ; do
+  PKGDIR=${SOUNZ_HOME}/sounz/public/${PUBDIR}
+  # All of these dirs are required. If they aren't there
+  # then we create 'em.
+  mkthisdir $PKGDIR
+  if [ -d $PKGDIR ] ; then
+    # Symlink into documentroot
+    if [ -d ${APACHE_DOCUMENTROOT}/${PUBDIR} -o -L ${APACHE_DOCUMENTROOT}/${PUBDIR} ] ; then
+      rm -rf ${APACHE_DOCUMENTROOT}/${PUBDIR}
+    fi
+    ln -s ${PKGDIR} ${APACHE_DOCUMENTROOT}/${PUBDIR}
+  fi
+done
+
+# SOUNZ app public directories which contain growing/varying content.
+# These have to be symlinked in from the application data area.
+#  media_items - where all the mp3 clips live
+#  uploads     - content (eg PDFs) uploaded & linked to by hrefs
+PUBLIC_VAR_DIRS="media_items"
+for PUBDIR in $PUBLIC_VAR_DIRS ; do
+  # Assert physical data dir
+  mkthisdir ${SOUNZ_DATA}/${PUBDIR}
+  PKGDIR=${SOUNZ_HOME}/sounz/public/${PUBDIR}
+  if [ -d $PKGDIR -o -L $PKGDIR ] ; then
+    rm -rf $PKGDIR
+  fi
+  # Symlink back to the sounz application 'public' area
+  ln -s ${SOUNZ_DATA}/${PUBDIR} $PKGDIR
+  
+  # Also symlink into documentroot
+  if [ -d ${APACHE_DOCUMENTROOT}/${PUBDIR} -o -L ${APACHE_DOCUMENTROOT}/${PUBDIR} ] ; then
+    rm -rf ${APACHE_DOCUMENTROOT}/${PUBDIR}
+  fi
+  ln -s ${PKGDIR} ${APACHE_DOCUMENTROOT}/${PUBDIR}
+done
+
+# SOUNZ data directories which need to be accessible to the
+# webserver.
+DATA_DIRS="catalog download"
+for DATADIR in $DATA_DIRS ; do
+  PHYDIR=${SOUNZ_DATA}/${DATADIR}
+  WWWDIR=${APACHE_DOCUMENTROOT}/${DATADIR}
+  # Assert physical data dir
+  mkthisdir $PHYDIR
+  # Remove pre-existing
+  if [ -d $WWWDIR -o -L $WWWDIR ] ; then
+    rm -rf $WWWDIR
+  fi
+  # Assert the symlink
+  ln -s $PHYDIR $WWWDIR
+done
+
+# Zencart sub-system
+ZENCART=${SOUNZ_HOME}/zencart
+if [ -d $ZENCART ] ; then
+  # Symlink into documentroot
+  if [ -d ${APACHE_DOCUMENTROOT}/zencart -o -L ${APACHE_DOCUMENTROOT}/zencart ] ; then
+    rm -rf ${APACHE_DOCUMENTROOT}/zencart
+  fi
+  ln -s ${ZENCART} ${APACHE_DOCUMENTROOT}/zencart
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# ZENCART CONFIGS
+# Symlink Zencart configs back into the Zencart tree.
+
+PACKAGE_CONFIG="configure.php"
+ZENCART_CONFIGDIR=${SOUNZ_HOME}/zencart/includes
+ZENCART_CONFIG="configure.php"
+if [ -f ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG} ] ; then
+  # Clear existing file & symlink back in application tree..
+  if [ -e ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG} ] ; then
+    rm -f ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG}
+  fi
+  # Make symlink
+  ln -s ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG} ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG}
+else
+  tell "Error: missing config file ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG}"
+  exit 6
+fi
+
+PACKAGE_CONFIG="admin-configure.php"
+ZENCART_CONFIGDIR=${SOUNZ_HOME}/zencart/admin/includes
+ZENCART_CONFIG="configure.php"
+if [ -f ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG} ] ; then
+  # Clear existing file & symlink back in application tree..
+  if [ -e ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG} ] ; then
+    rm -f ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG}
+  fi
+  # Make symlink
+  ln -s ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG} ${ZENCART_CONFIGDIR}/${ZENCART_CONFIG}
+else
+  tell "Error: missing config file ${PACKAGE_CONFDIR}/zencart/${PACKAGE_CONFIG}"
+  exit 7
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# LOGROTATE SUBS
+# Substitute our paths etc. into any logrotate scripts we installed.
+ROTDIR=/etc/logrotate.d
+sub_vars $ROTDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+sub_vars $ROTDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+sub_vars $ROTDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+sub_vars $ROTDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+sub_vars $ROTDIR "_ADMIN_EMAIL_" "$ADMIN_EMAIL"
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+#DEBHELPER#
+
+exit 0

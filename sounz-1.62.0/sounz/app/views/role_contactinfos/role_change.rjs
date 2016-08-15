@@ -1,0 +1,2 @@
+# NOT USED ANYMORE
+page.redirect_to :action => @action, :id => @role_contactinfo

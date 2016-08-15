@@ -1,0 +1,28 @@
+<li>
+  <h4><%= link_to_if PrivilegesHelper.has_link_permission?(@login, manifestation), manifestation.manifestation_title, :controller => :manifestations, :action => :show, :id => manifestation%>&nbsp;
+    <%if manifestation.publication_year%>Year: <%=manifestation.publication_year%>&nbsp;<%end%>
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') %>
+      <span class="actionButton"><%= link_to 'Edit', :controller => :manifestations, :action => :edit, :id => manifestation %></span>
+    <%end%>
+  </h4>
+
+  <div class="details">
+    <%if !manifestation.is_a_recording?%>
+      <%=manifestation.manifestation_type.manifestation_type_desc.camelize.gsub('::S', 's')%> | <%end%>
+      <%=manifestation.format.format_desc.camelize.gsub('::S', 's')%><br><%search_image_render = AttachmentHelper.render_search_image(manifestation, :thumb)
+      if !search_image_render.blank?%>
+        <%= link_to_if PrivilegesHelper.has_link_permission?(@login, manifestation), search_image_render, :controller => :manifestations, :action => :show, :id => manifestation%>
+    <%end%>
+  </div>
+
+  <div class="price">
+    <%if !manifestation.item_cost.blank? && manifestation.item_cost > 0%><%=number_to_currency(manifestation.item_cost)%><%end%>
+  </div>
+
+  <ul class="actions">
+    <li class="buy"><%=render :partial => 'shared/frbr/objects/full/manifestation/buy_button', :locals => {:object => manifestation}%></li>
+    <li class="borrow"><%=render :partial => 'shared/frbr/objects/full/manifestation/borrow_button', :locals => {:object => manifestation}%></li>
+    <li class="hire"><%=render :partial => 'shared/frbr/objects/full/manifestation/hire_button', :locals => {:object => manifestation}%></li>
+  </ul>
+  
+</li>

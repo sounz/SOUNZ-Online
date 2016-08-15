@@ -1,0 +1,5 @@
+<%if @country == nil%>
+All countries and regions will be searched for
+<% else%>
+<%=  render :partial => 'shared/show_regions_for_country', :locals => {:country => @country, :regions => @country.regions}%>
+<%end%>

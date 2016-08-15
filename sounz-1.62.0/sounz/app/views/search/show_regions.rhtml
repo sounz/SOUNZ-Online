@@ -1,0 +1,8 @@
+This is some regions for <%=@country.country_name%>
+
+<% form_tag ({:action => 'not_required'}, :id => 'search_region_form') do %>
+
+
+<%= select('region', 'region_name', @regions.to_dropdown(  'region_name')) %>
+<% end %>
+

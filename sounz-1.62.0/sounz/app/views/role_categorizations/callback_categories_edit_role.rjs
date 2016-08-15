@@ -1,0 +1,2 @@
+page.replace_html 'role_categorization_form', :partial => 'role_categorization_form'
+page.replace_html 'role_categorization_list', :partial => 'role_categorization_list'

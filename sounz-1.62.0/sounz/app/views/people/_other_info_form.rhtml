@@ -1,0 +1,43 @@
+<% disabled = true
+disabled = false if PrivilegesHelper.has_permission?(@login, 'CAN_PUBLISH_CRM')
+%>
+
+<fieldset>
+  <legend>Person Other Info</legend>
+  <table>
+    <tr>
+      <th><label for="person_salutation">Salutation</label></th>
+      <td><%= text_field 'person', 'salutation'  %></td>
+    </tr>
+    <tr>
+      <th><label for="person_variant_name">Variant name</label></th>
+      <td><%= text_field 'person', 'variant_name' %></td>
+    </tr>
+    <tr>
+      <th><label for="person_internal_note">Internal note</label></th>
+      <td><%= text_area 'person', 'internal_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></td>
+    </tr>
+    <tr>
+      <th><label for="person_status_id">Status</label></th>
+      <td><%= select 'person', 'status_id', @statuses.to_dropdown, {}, {:disabled => disabled} %></td>
+    </tr>
+    <% if params[:action] != 'new' && params[:action] != 'create' %>
+    <% if @person.created_at != nil %>
+    <tr>
+      <th><label for="person_created_at">Created at</label></th>
+      <td><%= dby_date(@person.created_at) %></td>
+    </tr>
+    <% end %>
+    <% if @person.updated_at != nil %>
+    <tr>
+      <th><label for="person_updated_at">Updated at</label></th>
+      <td><%= dby_date(@person.updated_at)  %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <th><label for="person_updated_by">Updated by</label></th>
+      <td><%=h get_user(@person.updated_by).username %></td>
+    </tr>
+    <% end %>
+  </table>
+</fieldset>

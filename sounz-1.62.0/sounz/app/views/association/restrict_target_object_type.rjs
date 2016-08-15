@@ -1,0 +1,4 @@
+page << "document.getElementById('association_entity_b_type').disabled = false;"
+page << "document.getElementById('searchText').disabled = false;"
+page.replace_html 'association_entity_b_type', options_from_collection_for_select(@valid_target_entities,"id","entity_type")
+page.visual_effect :highlight, 'association_entity_b_type'

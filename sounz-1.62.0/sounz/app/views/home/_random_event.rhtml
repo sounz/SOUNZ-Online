@@ -1,0 +1,17 @@
+<%
+
+attachment = AttachmentHelper.find_front_page_image(@random_event)
+image_path="error.jpg"
+if !attachment.blank?
+	image_path = get_random_spotlight_image(attachment.media_item)	
+end
+
+-%>
+
+
+<div class='featured_item three' style='background-image: url("<%=image_path%>");'>
+    <h2><a href='/finder/shows/events/'>Events</a></h2>
+    <img class='overlay' src='/images/overlay-three.png' alt='' >
+    <p style='top: 114px;'>Featured: <%=link_to h(@random_event.event_title), :action => 'show', :id => @random_event,
+:controller => 'events'%></p>
+</div><!-- /#featured_item three -->

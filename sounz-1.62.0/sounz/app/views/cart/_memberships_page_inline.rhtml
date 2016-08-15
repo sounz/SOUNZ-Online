@@ -1,0 +1,26 @@
+<p><br/></p>
+<h1>SOUNZ Library Memberships and Donations</h1>
+<br/>
+<div class="section">
+<p>On this page you can register a <a href="#library_membership">Individual Library Member</a> of SOUNZ or make an <a href="#donations">Online Donation</a>.
+<p>Membership allows you to make the most of our services and to show your support for New Zealand music. We advise reading the terms and conditions of our memberships before adding them to your shopping cart.</p>
+<p><a href="/cm_contents/show/10">Library Membership Terms and Conditions</a></p>
+<p><a href="/cm_contents/show/12">General Terms and Conditions</a></p>
+</div>
+
+<div class="section">
+<div id="library_membership"></div>
+<h3>SOUNZ Library Membership</h3>
+<p>Order online and borrow from our extensive collection of more than 5,500 scores, recordings and publications for up to two months by buying an individual membership for the SOUNZ library. Organisational memberships are also available. Further details <a href="/content/membership#Library">here</a></p>
+<%=render :partial => '/cart/memberships_inline', :locals =>{:services=>@library_services}%>
+<p/>
+</div>
+
+<p><br/></p>
+<div id="donations"></div>
+<h3>Donations</h3>
+<p>The Centre for New Zealand Music is a charitable trust and as such relies on the financial support and advocacy of a wide range of individuals and organisations to carry out its work. Your support is greatly appreciated.</p>
+
+<%=render :partial => '/cart/donations_inline'%>
+
+<p>All donations over $5 are tax deductible for NZ tax-payers. Find out more about donating to SOUNZ <a href="/content/about#Donations">here<a>.</p>

@@ -1,0 +1,4 @@
+page.replace_html 'contactinfo_details', :partial => 'contactinfos/form', :locals => { :role_contactinfo => nil,
+                                                                                       :contactinfo => @contactinfo,
+                                                                                       :default_contactinfo => @default_contactinfo
+}                                                                                    

@@ -1,0 +1,19 @@
+<% content_for :tabbed_menu do %>
+<%
+# WR#51688
+no_of_related_organisations = nil
+no_of_related_organisations = "(" +@organisation.organisation_related_organisations.length.to_s+")" if !@organisation.organisation_related_organisations.blank? && @organisation.organisation_related_organisations.length > 0
+%>
+
+<ul id='sub_navigation_small' class='people'>
+<%=render_tab('Organisation',          :edit,              selected_tab, {:controller => :organisations,     :action => :edit, :id => @organisation})%>
+<%=render_tab("Related Organisations #{no_of_related_organisations}", :related,           selected_tab, {:controller => :organisations,     :action => :related, :id => @organisation})%>
+<%=render_tab('Roles',                 :roles,             selected_tab, {:controller => :organisations,     :action => :roles, :id => @organisation})%>
+<%=render_tab('Communications',        :communications,    selected_tab, {:controller => :communications,    :action => :entity_communication_list, :id => @organisation, :from => 'organisation'})%>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BORROWED_ITEM')%>
+<%=render_tab('Privileges', :privileges, selected_tab, {:controller => :organisations, :action => :privileges_list, :id => @organisation})%>
+<% end %>
+
+</ul>
+<%end%>

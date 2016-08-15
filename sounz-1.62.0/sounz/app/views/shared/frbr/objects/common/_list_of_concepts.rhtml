@@ -1,0 +1,26 @@
+<%
+concepts = PrivilegesHelper.permitted_objects(@login, concepts)
+
+#If the title is blank render as an inline list, otherwise block it inside a section with an h2
+if !concepts.blank?%>
+<%if title.blank?%>
+<ul class="inlineList">
+	<%
+	for concept in concepts
+	%>
+	<li><%=link_to  concept.concept_name, :controller => 'concepts', :action => 'show', :id => concept%></li>
+	<%end%>	
+</ul>
+<%else%>
+<div class="section">
+	<h2><%=title%></h2>
+<%
+#Pass in a local param called concepts
+for concept in concepts
+%>
+<%=link_to concept.concept_name, :controller => 'concepts', :action => 'show', :id => concept%>
+<%end%>
+
+</div>
+<%end%>
+<%end%>

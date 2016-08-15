@@ -1,0 +1,20 @@
+<h1><%= "RSS feeds on " + Setting.get_value(Setting::WEBSITE_URL)%></h1>
+
+<br/>
+
+<table>
+  
+  <% for feed in @rss_feeds 
+     action = feed.strip.gsub(' ', '_').downcase
+  %>
+   <tr>
+    <th>
+        <%= link_to(image_tag('/icons/feed-icon.gif'), {:action => action}, :class => 'public_button') %>&nbsp;&nbsp;
+        <%= link_to feed, :action => action %>
+    </th>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= link_to "http://" + Setting.get_value(Setting::WEBSITE_URL) + "/rss_feeds/#{action}", :action => action %></td>
+   </tr>
+  <% end %>
+  
+</table>  

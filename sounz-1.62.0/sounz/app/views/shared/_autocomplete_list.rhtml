@@ -1,0 +1,3 @@
+<ul class="autocomplete_items">
+<% for item in @items do -%><li class="autocomplete_item"><%=item.send(field).strip %></li><% end -%>
+</ul>

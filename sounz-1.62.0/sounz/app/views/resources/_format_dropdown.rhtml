@@ -1,0 +1,7 @@
+<p/>Format: <br>
+<%if !@resource.resource_type.blank?%>
+ <%= select("resource", "format_id", @formats.to_dropdown('format_desc'),
+:prompt => "-- Please select a format --") %>
+<%else%>
+<i>Please select a resource type - the available formats will appear here</i>
+<%end%>

@@ -1,0 +1,7 @@
+if @successful_destroy
+  page.visual_effect :highlight, @dom_id
+  page.visual_effect :fold, @dom_id
+  page.visual_effect :fade, @dom_id
+else
+  page << "alert('The detachment failed in this instance');"
+end

@@ -1,0 +1,14 @@
+<%
+attachment = AttachmentHelper.find_front_page_image(@random_contributor)
+if !attachment.blank?
+	image_path = get_random_spotlight_image(attachment.media_item, gravity = Magick::NorthGravity)	
+end
+-%>
+<div class='featured_item two' style='background-image: url("<%=image_path%>");'>
+    <h2><a href='/finder/shows/people/'>People</a></h2>
+    <img src='/images/overlay-two.png' alt=''>
+    <p style='top: 114px;'>Featured:
+	
+	 <%= ContributorsHelper.get_link_depending_on_role_type(@random_contributor.role, @login)%>
+</p>
+</div>

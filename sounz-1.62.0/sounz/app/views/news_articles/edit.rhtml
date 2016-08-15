@@ -1,0 +1,26 @@
+<div class="newsArticles">
+<% login = Login.find(session[:login]) 
+if PrivilegesHelper.has_permission?(login, 'CAN_EDIT_CONTENT')%>
+<h2>Editing '<%= @news_article.headline %>' news article</h2>
+
+<%= uses_tinymce%>
+
+<% form_tag :action => 'update', :id => @news_article do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', 
+  :locals => { :delete_url => { :controller => 'news_articles', :action => 'destroy', :id => @news_article}, 
+  :delete_confirm => 'Are you sure you wish to delete this news article?' } %>
+<% end %>
+
+<br>
+<% if @news_article.article_type.match('n')%>
+<%= link_to "Show", {:controller => 'news_articles', :action => 'show', :id => @news_article} %>
+<% end %>
+
+<% if @news_article.article_type.match('p')%>
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @news_article}%>
+<% else %>
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @news_article, :mode => :cm_content}%>
+<% end %>
+<% end %>
+</div>

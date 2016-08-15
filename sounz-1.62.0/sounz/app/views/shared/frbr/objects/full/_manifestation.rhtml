@@ -1,0 +1,114 @@
+<% 
+type_and_format = @manifestation.manifestation_type.manifestation_type_desc + ' | ' + @manifestation.format.format_desc
+type_and_format = @manifestation.format.format_desc if @manifestation.manifestation_type.manifestation_type_desc.match('Not-applicable')
+%>
+
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => object.manifestation_title,
+			:main_heading => "Recording",
+			:subheading => nil,
+			:links => nil,
+			:text => type_and_format,
+			:object => object #for the select this button
+}
+%>
+
+<% if !object.general_note.blank?%>
+<div class="section">
+<%=show_note(object.general_note)%>
+</div>
+<% end %>
+
+<div class="buy-hire">
+<ul class="availability-details">
+  <% if !object.item_cost.blank? && object.item_cost > 0 %>
+    <li class="price">
+        <%=number_to_currency(object.item_cost)  %>
+    </li>
+  <% end %>
+  <li>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/buy_button', :locals => {:object => object}%>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/borrow_button', :locals => {:object => object}%>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/hire_button', :locals => {:object => object}%>
+  </li>
+</ul>
+</div>
+
+<%= render :partial => 'shared/frbr/objects/common/works_from_expressions_list',
+:locals => {:object => object, :expressions => object.expressions}
+%>
+
+<% if object.performers_of_expressions.length > 0 || object.related_manifestations.length > 0 %>
+<div class="section">
+<h2>Featuring</h2>
+
+<%= render :partial => 'shared/frbr/objects/common/list_of_contributors', 
+:locals => {:object => object, :contributors => object.performers_of_expressions, :title => ""}%>
+
+<%for manif in PrivilegesHelper.permitted_objects(@login, object.related_manifestations)%>
+<%= icons_for(manif, @login)%><%= link_to manif.manifestation_title, :controller => :manifestations, :action => :show, :id => manif.id%>&nbsp;<%=show_tap_edit_link_for(manif, 'CAN_EDIT_TAP')%>
+<br/>
+<%end%>
+</div>
+<% end %>
+
+<% if object.all_publishers.length > 0%>
+<div class="section">
+<%= render :partial => 'shared/frbr/objects/common/list_of_contributors', 
+:locals => {:object => object, :contributors => object.all_publishers, :title => "Featuring"}%>
+</div>
+<% end %>
+
+<% if !(object.publisher_note.blank? and object.imprint.blank? and object.publication_year.blank? and
+        object.series_title.blank? and object.isrc.blank? and object.funder.blank? and object.copyright.blank? and object.dedication_note.blank? and object.collation.blank?)
+%>
+<div class="section">
+<table>
+<%
+publishers = []
+publishers = object.publishers + object.licensers
+%>
+<%=show_value_for_table_row("Publisher Note",  h(object.publisher_note), @login)%>
+<%=show_value_for_table_row("Imprint",  h(object.imprint), @login)%>
+<%=show_value_for_table_row("Series Title",  h(object.series_title), @login)%>
+<%=show_value_for_table_row("ISBN",  h(object.isbn), @login)%>
+<%=show_value_for_table_row("ISMN",  h(object.ismn), @login)%>
+<%=show_value_for_table_row("ISRC",  h(object.isrc), @login)%>
+<%=show_value_for_table_row("ISSN",  h(object.issn), @login)%>
+<%=show_value_for_table_row("Publication Year",  h(object.publication_year), @login)%>
+
+<% if !object.funder.blank?%>
+<tr><th class="informationRowHeader">Funded by</th><td><%=show_value_for_table_row_with_inline_contributors('', '', object.funder, @login).gsub(/^&nbsp;/, '')%></td></tr>
+<% end %>
+
+<%=show_value_for_table_row("Copyright",  h(object.copyright), @login)%>
+<%=show_value_for_table_row("Collation", h(object.collation), @login)%>
+<%=show_value_for_table_row("Dedication Note",  h(object.dedication_note), @login)%>
+</table>
+</div>
+<% end %>
+
+<% if !object.exam_set_works.blank? %>
+<div class="section">
+<h2>Examination Info</h2>
+<ul>
+<%for exam in object.exam_set_works%>
+<li><%= exam.examboard.examboard_name + ": " + exam.grade_notes%></li>
+<%end%>	
+</ul>
+</div>
+<% end %>
+
+<%= render :partial => 'shared/frbr/objects/full/manifestation/manifestation_links', :locals => {:object => object}%>
+<% if !object.sounzmedia.blank? && !object.is_embedded? %>
+	<%= render :partial => 'shared/public_pages/player', :locals => {:object => object }%>                                                        
+<% elsif object.is_embedded? %>
+	<%= object.sounzmedia %>	
+<% end %>
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "parts_location_external, internal_note, mw_code, clonable, downloadable, freight_code, created_at, updated_at, updated_by, status"}%>
+
+<%=show_relationships_if_permission(object)%>
+<%=show_edit_links_if_permission(object)%>

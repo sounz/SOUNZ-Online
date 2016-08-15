@@ -1,0 +1,26 @@
+<%
+if !object.blank?
+  the_object = object.objectData #bypass FRBR data
+%>
+  <%= hidden_field :expression, :work_id, :value => the_object.work_id %>
+  <span class="ToolText" onMouseOver="javascript:this.className='toolTextHover'" onMouseOut="javascript:this.className='toolText'">
+	<b><%=the_object.frbr_ui_desc%>
+	<%if !the_object.year_of_creation.blank?%> (<%=the_object.year_of_creation%>)<%end%>
+
+	<% composers = the_object.composers
+	if !composers.blank?
+	%>
+	<%=composers.map{|r|r.contributor_names}.join(',')%>
+	<%end%>
+	</b><img src="/icons/work.jpg" alt="Work Icon" height="12"/><br>
+
+        <span>
+          <b>Description:</b> <%=the_object.work_description%><br>
+          <b>Assigned Category:</b> <%=the_object.main_category.work_subcategory_desc%><br>
+          <b>Year:</b> <%=the_object.year_of_creation%><br>
+          <%if !the_object.intended_duration.blank?%><b>Duration:</b> <%=the_object.duration_human_readable%><br><%end%>
+        </span>	
+  </span>
+<%else%>
+No assigned work
+<%end%>

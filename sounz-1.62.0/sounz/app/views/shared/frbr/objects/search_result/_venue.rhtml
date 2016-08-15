@@ -1,0 +1,12 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<h4><a href="/venues/show/<%=object.venue_id%>"><%=object.venue_name%></a></h4>
+
+<%=convert_to_html(object.venue_description)%>
+
+<%if object.general_note%>
+<%=convert_to_html(object.general_note)%>
+<%end%>
+
+<%=render :partial => '/contactinfos/show_inline', :locals => {:contactinfo => object.contactinfo}%>
+
+Status: <%=object.status.status_desc%><br>

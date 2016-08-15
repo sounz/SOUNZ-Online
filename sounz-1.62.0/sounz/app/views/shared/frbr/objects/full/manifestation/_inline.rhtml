@@ -1,0 +1,128 @@
+<div class="padding">
+
+
+<h4><%= link_to_if PrivilegesHelper.has_link_permission?(@login, manifestation), manifestation.manifestation_title, :controller => :manifestations, :action => :show, :id => manifestation%>&nbsp;<%if manifestation.publication_year%>Year: <%=manifestation.publication_year%><%end%>
+
+<%=show_tap_edit_link_for(manifestation)%>
+</h4>
+
+<%
+publishers = []
+publishers = manifestation.publishers + manifestation.licensers
+publishers = PrivilegesHelper.permitted_objects(@login, publishers)
+
+if publishers.length > 0
+%>
+<b>Publisher:</b>
+<ul class="inlineList">
+<%for role in publishers%>
+<li><%=ContributorsHelper.get_link_depending_on_role_type(role, @login)%></li>
+<% end %>
+</ul>
+<% elsif !manifestation.publisher_note.blank? %>
+<b>Publisher Note:</b>
+<ul class="inlineList">
+<li><%= manifestation.publisher_note %></li>
+</ul>
+<%end%>
+
+<%releasers = PrivilegesHelper.permitted_objects(@login, manifestation.releasers)
+if releasers.length > 0
+%>
+<b>Released by:</b>
+<ul class="inlineList">
+<%for role in releasers%>
+<li><%=ContributorsHelper.get_link_depending_on_role_type(role, @login)%></li>
+<% end %>
+</ul>
+<%end%>
+
+<%search_image_render = AttachmentHelper.render_search_image(manifestation, :thumb)
+if !search_image_render.blank?
+%>
+<%= link_to_if PrivilegesHelper.has_link_permission?(@login, manifestation), search_image_render, :controller => :manifestations, :action => :show, :id => manifestation%>
+<%end%>
+<%= convert_to_html(description_teaser(manifestation.general_note, manifestation))%>
+
+</div><!--/padding-->
+
+<% if !manifestation.format.format_desc.match('CD') && !manifestation.manifestation_type.manifestation_type_desc.match('Not-applicable')%>
+
+<% samples = PrivilegesHelper.permitted_objects(@login, manifestation.samples) %>
+<%for sample in samples%>
+<%for sample_attachment in sample.sample_attachments%>
+<%= render :partial => 'shared/attachments/sample_attachment_with_icon', :locals => {:sample_attachment => sample_attachment, :manifestation => sample.manifestation}%>
+<%end%>
+<%end%>
+<% end %>
+
+
+<!--
+
+<table cellspacing='0'>
+<tr>
+<td colspan='3' class='spacer'></td>
+</tr>
+<tr><td colspan="3" align="left"></td></tr>
+<tr>
+<td style='' class='sample'>
+<%if !manifestation.is_a_recording?%>
+<%=manifestation.manifestation_type.manifestation_type_desc.camelize.gsub('::S', 's')%><br/>
+<%end%>
+<%=manifestation.format.format_desc.camelize.gsub('::S', 's')%>
+</td>
+<td style='width:90px;' class='price'><span><%if !manifestation.item_cost.blank? and manifestation.item_cost > 0%><%=number_to_currency(manifestation.item_cost)%><br><%end%></span></td>
+<td style='width:90px;' class='purchase'>
+<%=render :partial => 'shared/frbr/objects/full/manifestation/buy_button', :locals => {:object => manifestation}%><br/>
+<%=render :partial => 'shared/frbr/objects/full/manifestation/borrow_button', :locals => {:object => manifestation}%><br/>
+<%=render :partial => 'shared/frbr/objects/full/manifestation/hire_button', :locals => {:object => manifestation}%>
+</td>
+</tr>
+
+<tr>
+<td colspan='3' class='spacer'></td>
+</tr>
+</table>
+
+-->
+
+<ul class="availability-details">
+  <li>
+    <%if !manifestation.is_a_recording?%>
+      <%=manifestation.manifestation_type.manifestation_type_desc.camelize.gsub('::S', 's')%>
+    <%end%>
+    <%=manifestation.format.format_desc.camelize.gsub('::S', 's')%>
+  </li>
+
+<%if !manifestation.item_cost.blank? and manifestation.item_cost > 0%>
+  <li class="price"><span><%=number_to_currency(manifestation.item_cost)%></span></li>
+<%end%>
+  <li>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/buy_button', :locals => {:object => manifestation}%>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/borrow_button', :locals => {:object => manifestation}%>
+    <%=render :partial => 'shared/frbr/objects/full/manifestation/hire_button', :locals => {:object => manifestation}%>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>

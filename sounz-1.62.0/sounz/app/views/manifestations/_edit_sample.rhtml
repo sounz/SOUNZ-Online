@@ -1,0 +1,9 @@
+<%
+generated_id = generate_id(sample)
+@is_after_cancel = false if @is_after_cancel == nil
+%>
+<li id="<%=generated_id%>">
+<span class="actionButton"><%= link_to_remote "Delete", :confirm => 'Are you sure you wish to delete '+sample.sample_description+'?', :url => {:controller => :manifestations, :action => :delete_sample, :id => manifestation, :sample_id => sample, :method=> :delete}%></span>
+<span class="actionButton"><%= link_to_remote "Update", :url => {:controller => :manifestations, :action => :show_sample_update_form, :id => manifestation, :sample_id => sample, :method => :get }%></span>
+<%=sample.sample_description%> <%if ! sample.expression_id.blank?%><%=Expression.find(sample.expression_id).expression_title%><%end%>
+</li>

@@ -1,0 +1,1708 @@
+sounz (1.63.0) precise; urgency=low
+
+  * WR241590 - fixing basic searches broken by Solr upgrade 
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Fri, 22 May 2015 13:00:09 +1000
+
+sounz (1.62.0) precise; urgency=low
+
+  * New release with disabling SSLv3 protocol in payment module
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Mon, 01 Dec 2014 09:00:53 +1100
+
+sounz (1.61.0) precise; urgency=low
+
+  * Bumping new release 
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Mon, 04 Aug 2014 08:47:52 +1000
+
+sounz (1.60.13) precise; urgency=low
+
+  * WR #228067: Logo replacement on homepage
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Thu, 31 Jul 2014 15:01:57 +1000
+
+sounz (1.60.12) precise; urgency=low
+
+  * Change gs dependency to ghostscript
+
+ -- Darryl Hamilton <darrylh@catalyst.net.nz>  Mon, 24 Mar 2014 12:07:28 +1300
+
+sounz (1.60.11) precise; urgency=low
+
+  * WR216533 - Bug fix for sign up from checkout 
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Thu, 14 Nov 2013 12:51:43 +1300
+
+sounz (1.60.10) precise; urgency=low
+
+  * WR215564 - flash media player in content pages. 
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Tue, 29 Oct 2013 11:14:46 +1300
+
+sounz (1.60.9) maverick; urgency=low
+
+  * WR212272 - Mailchimp  
+  * WR214156 - Bug fix paginator for MOD
+  * WR212284 - Bug fix layout search results
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Thu, 12 Sep 2013 11:45:41 +1200
+
+sounz (1.60.8) maverick; urgency=low
+
+  * WR212282 - fix bug in ZenCart and adjust download text 
+
+ -- Darryl Hamilton <darrylh@catalyst.net.nz>  Wed, 21 Aug 2013 11:42:42 +1200
+
+sounz (1.60.7) maverick; urgency=low
+
+  * WR212281 - change how works are indexed 
+
+ -- Darryl Hamilton <darrylh@catalyst.net.nz>  Mon, 19 Aug 2013 14:48:14 +1200
+
+sounz (1.60.6) maverick; urgency=low
+
+  * WR208829 - updated SOUNZNews link
+  * WR209568 - layout bug fixes
+  * WR209321 - composer name green when hover
+  * WR209059 - removed clear button from online forms; favicon update
+  * WR209094 - layout bug fix headings 
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Tue, 06 Aug 2013 14:07:50 +1200
+
+sounz (1.60.5) precise; urgency=low
+
+  * WR209534 Embedded MODs split into video and audio
+  * WR208864 CRM search issues bug fix
+  * WR208799 alignment of dates on work page bug fix
+  * WR209713 layout for oportunities bug fix
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Wed, 26 Jun 2013 10:45:56 +1200
+
+sounz (1.60.4) maverick; urgency=low
+
+  * WR208589 - replication to Megadeth
+  * WR208695 - bug fix for non-published manifestation showing on search results 
+  * WR208694 - adding links to TAP menu
+
+ -- Dennie Meduna <dennie@orthenkung>  Mon, 20 May 2013 12:37:03 +1200
+
+sounz (1.60.3) maverick; urgency=low
+
+  * WR92987 - SOUNZ re-theming and other updates.
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Tue, 14 May 2013 16:24:35 +1200
+
+sounz (1.60.0) precise; urgency=low
+
+  * WR81790 - upgrade to Debian 6 
+
+ -- Dennie Meduna <dennie@catalyst.net.nz>  Mon, 04 Mar 2013 10:03:57 +1300
+
+sounz (1.57.12) maverick; urgency=low
+
+  * WR202790 - moved noscript tag to stop facebook sourcing it. 
+
+ -- Dennie Meduna <dennie@orthenkung>  Wed, 23 Jan 2013 12:30:58 +1300
+
+sounz (1.57.11) maverick; urgency=low
+
+  * WR93099 - Bug fix MoD related Expressions.
+
+ -- Dennie Meduna <dennie@orthenkung>  Tue, 20 Nov 2012 16:36:52 +1300
+
+sounz (1.57.10) precise; urgency=low
+
+  * WR200345
+
+ -- dennie <dennie@beam>  Wed, 31 Oct 2012 10:58:46 +1300
+
+sounz (1.57.9) karmic; urgency=low
+
+  * WR9837 - updating shipping costs 
+
+ -- Dennie <dennie@freedom>  Wed, 19 Sep 2012 08:32:38 +1200
+
+sounz (1.57.8) karmic; urgency=low
+
+  * WR93096 - removed "recorders" from "all the supporters of a manifestation / resource".
+
+ -- Dennie <dennie@freedom>  Tue, 26 Jun 2012 13:44:20 +1200
+
+sounz (1.57.7) karmic; urgency=low
+
+  * WR93112 - Update for advanced contact search
+
+ -- Dennie <dennie@freedom>  Wed, 09 May 2012 15:40:30 +1300
+
+sounz (1.57.6) karmic; urgency=low
+
+  * WR89460 - Automated Library Membership Message Changes
+
+ -- Dennie <dennie@freedom>  Wed, 28 Mar 2012 15:24:30 +1300
+
+sounz (1.57.5) karmic; urgency=low
+
+  * WR85535 - further text changes
+
+ -- Dennie <dennie@freedom>  Tue, 08 Nov 2011 10:32:46 +1300
+
+sounz (1.57.4) karmic; urgency=low
+
+  * WR85535 - Main navigation and form updates 
+
+ -- Dennie <dennie@freedom>  Mon, 31 Oct 2011 11:55:17 +1300
+
+sounz (1.57.3) karmic; urgency=low
+
+  * WR81732 - updated DPS configuration 
+
+ -- Dennie <dennie@freedom>  Tue, 14 Jun 2011 16:17:50 +1200
+
+sounz (1.57.2) karmic; urgency=low
+
+  * WR80915 - Bug fix for year facet
+
+ -- Dennie <dennie@freedom>  Thu, 19 May 2011 14:48:02 +1200
+
+sounz (1.57.1) karmic; urgency=low
+
+  * WR80771 - Bug fix for region field on advanced contact search 
+
+ -- Dennie <dennie@freedom>  Mon, 16 May 2011 09:29:28 +1200
+
+sounz (1.57.0) karmic; urgency=low
+
+  * WR79790 - allowing font tag attributes for tinyMCE 
+
+ -- Dennie <dennie@freedom>  Thu, 14 Apr 2011 14:48:55 +1200
+
+sounz (1.56.0) karmic; urgency=low
+
+  * WR78474 - Fixing session variable to allow multiple tabs for work edit screen.
+
+ -- Dennie <dennie@freedom>  Wed, 09 Mar 2011 15:48:38 +1300
+
+sounz (1.55.0) karmic; urgency=low
+
+  * WR77402 - Show availablity if only relations to resources exist 
+
+ -- Dennie <dennie@freedom>  Wed, 02 Feb 2011 12:18:57 +1300
+
+sounz (1.54.0) karmic; urgency=low
+
+  * WR75416 - Show Availability in search results if related Manifestation of any type exists. 
+
+ -- Dennie <dennie@freedom>  Mon, 15 Nov 2010 09:31:47 +1300
+
+sounz (1.53.0) karmic; urgency=low
+
+  * WR74923 - PO Box changed to 27347
+  * WR75266 - fixing bad headers for HTML Emails
+
+ -- Dennie <dennie@freedom>  Wed, 10 Nov 2010 11:06:13 +1300
+
+sounz (1.52.0) karmic; urgency=low
+
+  * WR74907 - wording changes for checkout pages
+  * Some minor bugfixes 
+
+ -- Dennie <dennie@freedom>  Mon, 01 Nov 2010 15:20:16 +1300
+
+sounz (1.51.0) intrepid; urgency=low
+
+  *  WR70957 - media on demand 
+
+ -- Dennie <dennie@freedom>  Wed, 07 Jul 2010 14:14:14 +1200
+
+sounz (1.50.0) intrepid; urgency=low
+
+  * WR70841 - Display JS notice, updated peoples controller validation to let people without JS sign up.
+
+  * WR69621 - dont alter the anchor link in wwysiwyg editor.
+
+  * WR70807 - Bug fix creating resources and manifestations.
+
+  * WR70669 - bug fix for resource search. 
+  * WR#72223 - shipping cost for NZ Standard zone 
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Wed, 21 Jul 2010 14:14:18 +1000
+
+sounz (1.49.0) intrepid; urgency=low
+
+  * WR#70807 - bug fix for resources. 
+
+ -- Dennie <dennie@freedom>  Mon, 31 May 2010 11:23:44 +1200
+
+sounz (1.48.0) intrepid; urgency=low
+
+  * WR#70669 - bug fix for resource search 
+
+ -- Dennie <dennie@freedom>  Tue, 18 May 2010 15:01:40 +1200
+
+sounz (1.47.0) karmic; urgency=low
+
+  * WR#70515 - Library order to non-Library member - fixing bug where loan/sale
+    products ids were set to the same value (nextval of sounz_product_id sequence)
+    as identical queries are cached by default starting from Rails 2.0
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Wed, 12 May 2010 21:54:51 +1000
+
+sounz (1.46.0) karmic; urgency=low
+
+  [ Liuba Kazakov ]
+  * WR#69808 - Fixing zencart address book that didn't get contact info
+    details if street or building info were empty; fixing Building details
+    of contact info not showing in Ecommerce part of the system
+  * WR#70103 - Fixing bug in failed_orders_check script provoked by rails
+    upgrade 
+  * WR#70163 - Fixing an Ecommerce bug where if a new customer did skip the Verify
+    Postal Address screen of SOUNZ Online and was buying some virtual
+    products (that do not require shipping details) was going into
+    redirection loop 
+  * WR#70163 - Fixing SOUNZ Online Memberships and Donations page that doesn't allow 
+    to buy memberships/donations for non-authenticated users
+
+  [ Dennie ]
+  * WR#69621 - Not replacing path in wysiwyg editor
+  
+
+ -- Dennie <dennie@freedom>  Mon, 03 May 2010 09:40:01 +1200
+
+sounz (1.45.0) karmic; urgency=low
+
+  [ Liuba Kazakov ]
+  * WR#69092 - Advanced Contact Search - fixing bug in 'Or use saved
+    contact list' option
+  * WR#67091 - Advanced Contact Search: 'No selection' option for 
+    multiple selection boxes 
+  * WR#67101 - Add 'Created at' to Advanced Search (music) and Adv.
+    Manifestation/ Resource Search 
+  * WR#67087 - Event 'Is performed by' Role relationship
+  * WR#67103 - News page - searching for phrases 
+
+  [ Dennie ]
+  * WR#67112 - Added link 'Roles' to go to people/roles/xxx
+  * WR#67075 - Added deadline date for Opportunities in event search results
+  * WR#67094 - Added jump field to music, people, events and advanced contact search (/finder/show/* and search_contacts/advanced)
+  * WR#69334 - Overwrite title performance to works performed
+  * WR#69372 - Upgrade to use will_paginate for all list 
+
+ -- Liuba Kazakov <liuba@catalyst-au.net>  Thu, 08 Apr 2010 16:39:15 +1000
+
+sounz (1.44.0) intrepid; urgency=low
+
+  * 1.44.0
+  * bug fixes for WR69092 
+
+ -- Dennie <dennie@freedom>  Wed, 24 Mar 2010 11:39:30 +1300
+
+sounz (1.43.3) stable; urgency=low
+
+  * WR#69092 - Fixing bug in Availability facets
+  * WR#69092 - Refer to the columns by column name in PGresult
+    object - that fixes a lot of bugs reported in the WR 
+
+ -- Liuba Kazakov <liuba@kronos>  Tue, 23 Mar 2010 11:09:30 +1100
+
+sounz (1.43.2) intrepid; urgency=low
+
+  * 1.43.2
+  * bug fix for coutry facets 
+
+ -- Dennie <dennie@freedom>  Mon, 22 Mar 2010 16:06:05 +1300
+
+sounz (1.43.1) intrepid; urgency=low
+
+  * 1.43.1
+  * bug fix for country facets on events
+  * updated debian files for config and disbled gems install 
+
+ -- Dennie <dennie@freedom>  Mon, 22 Mar 2010 11:30:56 +1300
+
+sounz (1.43.0) intrepid; urgency=low
+
+  * 1.43.0
+  * Rails upgrade for server upgrade to Debian 5.0
+  * upgraded gems and code updates for deprecated API 
+
+ -- Dennie <dennie@freedom>  Wed, 10 Mar 2010 09:04:04 +1300
+
+sounz (1.42.0) stable; urgency=low
+
+  * WR#67113 - New button - free
+  * WR#68632 - Expiring Library members Saved Contact Lists - fixing buggy case
+    for organisations-members
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Tue, 02 Mar 2010 10:11:47 +1100
+
+sounz (1.41.0) hardy; urgency=low
+
+  [ Liuba Kazakov ]
+  * WR#51735 - ECOMMERCE - deferred login for buying
+  * Fixes to Ecommerce/zencart processing - there is no address fields
+    validation in zencart except javascript validation in the address
+    forms, that doesn't always work well for SOUNZ Online as a customer
+    can surpass initial Verify Postal Address form - as a result, blank
+    default address and a customer is not prompted to enter any address
+  * WR#66486 - Advanced events search - dates not working - fixing bug
+  * WR#53728 - Add Quicklinks to Events facets.
+    NOTE: Rebuild Event solr indexes
+  * WR#68285 - Swap logo on home page 
+
+  [ Dennie ]
+  * WR#67034 - 1) Made Manifestation title into link to take the user to the manifestation edit screen.2) Added borrowed item note 3) Made borrowed item note into link to take the user to the item edit screen. 4) Made both edit screens return to previous page if saved. 5) bug fix for borrowed / hired item display 
+
+  * WR#67035 - added borrowing note to assign login step e.g. /loan_item/show/7372
+
+  * WR#67039 - added image link for communications page in crm search results
+
+  * WR#50261 - changed wording for some lables
+
+  * WR#50264 - remove (c) strings
+
+  * WR#51589 - Added "New Search" link to advanced music search results
+
+  * WR#51707 - Changed back to search links to say Return to XXX Search
+
+  * WR#67066 - Added person internal note to advanced contact search, Bug fixes for indexing
+
+  * WR#67044 - Added Donate link to home page and application navigation.
+
+  * WR#53710 - Added field works contents to the public advanced music search.
+
+  * WR#67050 - Changed contributor list of performers to appear in separate lines.
+
+  * WR#67063 - Changed to display 20 results for the projects page.
+
+  * WR#67034 - Linked Resource title to resource edit page. Moved boorowing note under physical description.
+
+  * WR#67050 - Made link appear bold.
+
+  * WR#67049 - Added country and region contactdetail information to the new web user sign up form as manditory fields.
+
+  * WR#67052 - Added button for checkout process.
+
+  * WR#67671 - Added FAQ link, Move link to bottom of the list for internal pages
+
+  * WR#67058 - Changed facets for music search to group 2000 - 2009 and 2010 onwards
+
+  * WR#67036 - Added image arrow to facets headings.
+
+  * WR#51855 - Added ":" after Influences. Moved Admin Only section above Related items.
+
+  * WR#67057 - multiply items in shopping card, including downloadable items
+
+  * WR#67096 - changed to display at least the name and role name / title.
+
+  * WR#67106 - Changed "Related Resources" to "Resources" only.
+
+  * WR#67109 - Corrected spelling.
+
+  * WR#53725 - Added Commissioned Note to advanced search /advanced_finder/work
+
+  * WR#67879 - Dispaly building info on event venue.
+
+  * WR#67077 and 67076 - Added children concepts where there where none; Created two new children (Flemish and Dutch; Irish or Celtic) for Culture - other (Influence) and Culture - other (Theme)
+
+  * WR#67079 - If there is no publisher relationship but the manifestation has a publisher note, display it; For manifestations only display the publisher note without the list of publishers. 
+
+  * WR#67104 - Added "Arranged by" information for works.  E.g. http://staging.sounz.org.nz/works/show/13896
+
+  * WR#67043 - Added list of items to select which one get included in the reminder Email.
+
+  * WR#67100 - bug fix to display ISBN , ISMN, ISSN, ISRC info to manifestation and resource pages; changed order of publication year and series title
+
+  * WR#67078 - added work description in a separate row underneath work title, contributor and duration but before the expression note.
+
+  * WR#67061 - splitt name on space delimiter as quick fix
+
+  * WR#67068 - Added edit link for manifestations in Availability drop down on music searches  based on permissions of logged in user.
+
+  * WR#67067 - Added Library Items to the Admin section on Manifestations
+
+  * WR#67082 - Added edit link for works based on login
+
+  * WR#67105 - added US territories, sort regions alphabetically, special case for NZ regions, bug fix distinctions
+
+ -- Dennie <dennie@freedom>  Tue, 16 Feb 2010 16:42:49 +1300
+
+sounz (1.40.0) hardy; urgency=low
+
+  * WR#67057 - Adding more than one item at a time to shopping cart - fixing bug
+    where borrowed items do not have count parameter
+  * WR#67043 - Added the opportunity to overwrite salutation for reminder notice
+  * Fixing bug where Members Login boxes where not displaying clarifications. Changing
+    'Username' to 'Email' to make it clearer for users.
+  * WR#67039 - New link and button for organisation communications
+  * WR#51855 - Returned deleted/misplaced info bits in Work show screen
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Fri, 05 Feb 2010 13:23:53 +1100
+
+sounz (1.39.0) stable; urgency=low
+
+  * New release 
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Wed, 03 Feb 2010 08:48:46 +1100
+
+sounz (1.38.1) intrepid; urgency=low
+
+  [ Dennie ]
+  * minor bug fix for durations in recources
+
+  [ Liuba Kazakov ]
+  * WR#64152 - Catalogue (Manifestation) Codes - skipping a number - reset the
+    seq_manifestation_code sequence counter value when the new manifestation creation
+    is failing due to validation errors.
+  * WR#67258 - Ecommerce - problem for one customer using IE8 - fixing bug where old
+    contact info values were displayed when saving new details was failing due to
+    validation errors
+  * WR#67041 - Advanced search for borrowed items 
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Tue, 02 Feb 2010 12:17:30 +1100
+
+sounz (1.38.0) intrepid; urgency=low
+
+  * Bug fix WR65479 - changed events_cintroller typo
+  * robots.txt to disallow crawlers (This got missed somehow and needs finer settings, just committing so it will be in the next version)
+
+ -- Dennie <dennie@freedom>  Fri, 09 Oct 2009 11:51:30 +1300
+
+sounz (1.37.0) stable; urgency=low
+
+  * Hold 'All regions' value in Advanced Contributor/Event searches
+  * WR#63756 - Fixed the link Forgotten password to lead to SOUNZ Online instead of
+    Zencart (SOUNZ Ecommerce) as the Zencart forgotten password functionality is not
+    linked in any way to/does not update our SOUNZ Online
+  * SOUNZ Ecommerce (zencart) - Added flag - DB_ERROR_REPORTING - to avoid
+    database errors to be displayed to users on production 
+
+ -- Liuba Kazakov <liuba@koshka.catalyst.net.nz>  Thu, 23 Jul 2009 13:03:19 +1000
+
+sounz (1.36.0) stable; urgency=low
+
+  * WR#62010 - Bidding form email link not working - fixing exception
+  * WR#62057 - Orders failed to be created as the types of zencartorders
+    columns limited to certain characters long, we don't have any limits
+    in sounz database for address columns, hence, for consistency and to
+    avoid any other problems, change the address column types from
+    'character varying' to 'text'
+  * Fixing layout of expired membership email - plain version
+  * WR#62385 - Contact Advanced search  - region not holding
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Thu, 28 May 2009 08:09:53 +1000
+
+sounz (1.35.0) stable; urgency=low
+
+  * WR#61710 - Advanced Manifestation Resource Search - fixing
+    search by MW Code and Publication Year
+  * WR#61795:
+    state/region order attributes are not mandatory anymore;
+    refined error situations handling to keep the entered parameters in the
+    fields
+  * Modified DR database update-db.sh script to not try to dump and then
+    drop the database if it is already dropped. Affects standby server only.
+  * Altered the /etc/hosts.allow updater to just replicate all lines in the
+    /etc/sounz/hosts.allow file. Altered the format of that file to suit.
+
+ -- Liuba Kazakov <liuba@koshka>  Thu, 07 May 2009 13:11:03 +1000
+
+sounz (1.34.0) stable; urgency=low
+
+  * WR#61486 - Content Pages - fixing the bug where a content
+    page has to be published so that a Content Editor can see
+    its content
+  * WR#61000 - Contributor Forms display - changed display cases
+    as per request
+  * WR#61419 - new provider form - SOUNZtender bidding 
+
+ -- Liuba Kazakov <liuba@koshka>  Tue, 28 Apr 2009 16:02:43 +1000
+
+sounz (1.33.0) stable; urgency=low
+
+  * WR#61044 - Advanced Events Search - Country selection not available
+  * Fixing bug in Event Advanced search where search by locality/region
+    was not returning correct results as they were missing the info from
+    default_contactinfos
+    NOTE: Event solr indexes need to be rebuild
+  * WR#61094 - Fixing search by full name in CRM Contacts search
+  * Added searching processing with 'Not' option included in Event
+    Advanced Search, for some reasons, it was missed from
+    implementation, although user interface was showing it
+  * WR#61111 - Fixing Venue search
+    NOTE: Role solr indexes need to be rebuild
+  * WR#61112 - Country selection missing in Advanced People Search -
+    implemented solr search by country and region
+    NOTE: Contributor solr indexes need to be rebuild   
+
+ -- Liuba Kazakov <liuba@koshka>  Tue, 07 Apr 2009 17:29:34 +1000
+
+sounz (1.32.0) stable; urgency=low
+
+  * Integration of the application with Solr 1.3 version
+  * Fixing bug in Music Advanced search where searching by Contains Sample Score
+    was not returning results
+  * Fixing bug in Advanced Music search where searching for 'For borrowing' was
+    returning only works/resource available for hire.
+  * Use of solr instead of sql when searching for Works/Resources 'For sale',
+    'For borrowing', 'For download'
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Thu, 02 Apr 2009 19:59:06 +1100
+
+sounz (1.31.0) stable; urgency=low
+
+  * Added missing stripping of some of the illegal characters to text solr
+    fields
+  * Strip control characters that are not legal in xml to avoid Solr 1.3
+    crashing - some preparation work for switching to Solr 1.3 version
+  * Fixing bugs in Distinction Instance searches
+  * Fixing bugs in CRM Contacts search
+  * Refinements to sounz-app package installation to allow sounz to be
+    compatible with the versions of apollo that provide config clusters
+    [Paul Waite] 
+
+ -- Liuba Kazakov <liuba@koshka>  Tue, 31 Mar 2009 15:44:12 +1100
+
+sounz (1.30.0) stable; urgency=low
+
+  * WR#59800 - People/Events facets - regions: 'National' not showing - fixed
+  * WR#59460 - Fixed Advanced Contact searches when searching for multiple
+    marketing categories, roles, statuses, memberships. Refined the results
+    sorting
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Tue, 10 Feb 2009 12:17:26 +1100
+
+sounz (1.29.0) stable; urgency=low
+
+  * WR#59124 - Removed 'UNKNOWN' work categories - not needed anymore
+  * WR#59123 - Format -> Samples facets of Music should read: Audio, Scores, Video
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Mon, 22 Dec 2008 09:52:13 +1100
+
+sounz (1.28.0) stable; urgency=low
+
+  * WR#58042 - Changed Creative NZ logo
+  * WR#58303 - Distinction Instance - Alt name for award showing on public version -
+    removed the alt name display
+  * WR#58277 - Fixed the bug where a borrowed item that was reserved online, was displayed
+    as borrowed by one user although in reality it has been out on loan with another user
+  * WR#58277 - Changed loan period from 90 to 60 days - requested by client 
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Thu, 18 Dec 2008 11:06:54 +1100
+
+sounz (1.27.0) stable; urgency=low
+
+  * WR#57859 - Added cancel transaction processing to allow administrators
+    to deal with reversed transactions
+  * Fixed line breaks in html version of the failed orders notification email 
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Thu, 27 Nov 2008 13:14:27 +1100
+
+sounz (1.26.0) stable; urgency=low
+
+  * WR#56331 - Checkout problem for the virtual products - fixed the bug
+  * WR#56345 - use contributor.destroy_self method to delete the contributor
+    object from saved searches upon deletion of the contributor role/profile
+  * WR#57647 - Fixed the bug in creating new event and using 'Set all 
+    times to midnight' to supress times process; some further refinements to
+    processing
+
+ -- Liuba Kazakov <liuba@rusalka.wgtn.cat-it.co.nz>  Wed, 12 Nov 2008 13:18:27 +1100
+
+sounz (1.25.0) stable; urgency=low
+
+  * WR#56089 - Failed order fixing UI and functionality
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Fri, 22 Aug 2008 13:08:00 +1200
+
+sounz (1.24.0) stable; urgency=low
+
+  * WR#55627 - Changes to Distinctions public pages layouts and information
+    displayed as per note dated 18:04 11-08-2008
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Fri, 15 Aug 2008 14:28:00 +1200
+
+sounz (1.23.0) stable; urgency=low
+
+  * WR#54904 - Added scripts/cron/failed_orders_check.rb script that
+    checks for any successful dps pxpay transactions that do not have
+    an order id assigned to them and sends email notification to a 
+    SOUNZ admin
+  * WR#56007 - added db/patches/clear_entries_to_be_deleted_patch.sql
+    with patches for deleting TAP/CRM entries marked to be deleted
+  * WR#55959 - fixed the bug/made email address case-insensitive 
+  * WR#54904 - Added DPS/PaymentExpress PxPay module for zen cart
+  * WR#55530 - Script to delete extra role contactinfos of the same
+    contactinfo type
+  * WR#55195 - Publisher display on availability
+  * WR#55174 - Double quotes cause 'sorry' screen on work
+  * WR#55172 - Wiki text not showing
+  * WR#55056 - Contributor can't be unticked - fixed bugs
+  * WR#54985 - Do not use stock check processing
+  * WR#41964 - Fixed the bug when the correct user who was creating copies of
+    the events and expressions was not recorded in the relationships updated_by
+    field
+  * Use FasterCSV for parsing uploaded moneyworks reports in Moneyworks
+    data check - it is more flexible and catered for common ways of
+    formatting csv file
+  * WR#54908 - CRM - marketing campaign contacts not showing after it is 
+    sent - fixed the bug.
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Wed, 11 Jun 2008 09:32:00 +1200
+
+sounz (1.22.0) stable; urgency=low
+
+  * Removed the condition to write ssh keys files only if they do not exist
+    from sounz.postinst, so that the new keys can be easily roll out
+  * Re-generated SSH keys (part of OpenSSL weak keys fixup).
+  * Fixed postinsts for sounz-frontend and sounz-app so that the data
+    dirs for uploading are catered for/asserted.
+
+ -- Paul Waite <paul@catalyst.net.nz>  Tue, 10 Jun 2008 10:22:00 +1200
+
+sounz (1.21.0) stable; urgency=low
+  * WR#54857 - Create new work/ new event - showing before search is done
+  * WR#54838 - Display of contributor forms on community page
+  * WR#53575 - Fixed the bug in Ecommerce where a user (without 'Person' role)
+    is prompted to login again when checking out. Also, hided 'Previous orders'
+    link for a user that does not have a 'Person' or 'Organisation' role - a
+    user without 'Person'/'Organisation' role does not exist as an ecommerce
+    customer 
+  * WR#53721 - Added new field 'is_contributor' BOOL to Roles to distinguish
+    contributors from those with contributor role and processing for it
+  * WR#53723 - Distinction Instance show - change in wording
+  * WR#53722 - Added 'Jazz/Jazz' as a concept of 'Genre' and 'Influence' 
+    type
+  * WR#54720 - fixed the bug where a user signs up again with the existent
+    username
+  * WR#53662 - paginating the 'Mailout Contacts' section of Campaign 
+    Mailout processing; some changes/refinements to make the editing of
+    mailout contacts more efficient
+  * WR#51338 - Moneyworks products data checker (against TAP data)
+  * WR#53662 - paginating the 'Saved List Contacts' section processing;
+    some changes/refinements to make the editing of saved contact lists 
+    more efficient
+  * WR#54530 - fixed bug in the default contactinfos processing
+  * WR#53662 - paginating the 'Selected Results' and 'Or use saved contact 
+    list' sections of CRM searches, some refinements to selection logic due
+    to changes
+  * WR#54423 - Campaign Mailout Contacts - do not show 'Unspecified' role
+    type
+  * WR#54447 - Signing up - fixed validation bug
+  * Filtered out the password parameter from logs
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Mon, 26 May 2008 09:21:00 +1300
+
+sounz (1.20.0) stable; urgency=low
+  * WR#51622 - set the link to go to 'info@sounz.org.nz'
+  * WR#53914 - deleting logins with email type usernames and without 
+    person/organisation associated with them
+  * WR#54334 - Creating a person - name duplication
+  * WR#53703 - Opportunity Event - Anonymous entry dropdown not 'holding'
+  * WR#53701 - removed 'Approved' from statuses on TAP advanced searches
+  * WR#53914 - Logins where CRM name is email address - fixed buggy processing 
+    creating login record even if a person/role creation is failed
+  * WR#42492 - replace 'Person' role type by 'Unspecified' role type if a login 
+    does not exist for that person
+  * WR#42492 - added script scripts/create_person_role_for_person_logins.rb 
+    that is creating a role of 'Person' type for person records that do have
+    logins assigned to them but do not have a role of 'Person' type that is
+    needed for Ecommerce - note dated 17:07 19-05-2008
+    IMPORTANT: run ruby create_person_role_for_person_logins.rb after the
+    release deployment
+  * WR#53720 - Tidy the display of Resources and Manifestations (and 'Admin Only'
+    section of other TAP entities)
+  * WR#53719 - Gap between 'edit' and 'mark returned' on borrowed items list
+  * WR#53718 - Login needs 'password' in the box to match 'user name'
+  * WR#51727 - EMAIL NEWS - signup from front page - if the user's default 
+    role contactinfo (the role contactinfo of 'postal' type of 'Person'/
+    'Organisation' role) is not already in the 'Requested Email updates' 
+    saved list, the 'Please send me email updates' button is displayed on 
+    the front (index) page. When the user clicks on the button:
+    - the user is redirected to 'people/new_web_user', if he/she is not 
+    logged in
+    - the user's default role contactinfo is added to the saved list, if
+    he/she is logged in. If the process fails for some reasons (no default
+    role contactinfo), an email-notification is sent to a SOUNZ administrator
+  * WR#54159 - Status on Contributor Profile screen - removed 'approved'
+  * WR#50306 - CRM Advanced search- adding address types
+    IMPORTANT: re-build indexes of RoleContactinfos
+  * WR#52681 - Editing widget for Exam Board Info
+  * WR#53854 - SOUNZNews Magazine - linking the pdfs of past magazines
+  * WR#53250 - Recipients for Test Email for Marketing Campaign
+  * WR#50907 - BUY/ BORROW - layout
+  * WR#51729 - FORMS - Product provider form
+  * WR#42492 - Events - assignment of a venue makes the event contact info 
+    details to default to the venue 'Physical' (if non-empty) or 'Postal' 
+    contact info.
+  * WR#42492 - CRM - adding a role to an organisation and/or person contacts -
+    new person role contact infos default to 'Person' role (role without an
+    organisation, later once the new 'preferred' concept is implemented 
+    (WR#50281) can be easily replaced by 'preferred' role) contact infos and
+    new organisation role contact infos default to 'Organisation'/'General'
+    role contact infos.
+    IMPORTANT: run scripts/fix_default_contactinfos.rb and re-build indexes of
+    RoleContactinfos
+  * WR#50274 - TAP/CRM - cleanup of entries to be deleted
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Wed, 21 May 2008 14:21:00 +1300
+
+sounz (1.19.0) stable; urgency=low
+  * WR#54334 - Creating a person - name duplication
+  * WR#53703 - Opportunity Event - Anonymous entry dropdown not 'holding'
+  * WR#53701 - removed 'Approved' from statuses on TAP advanced searches
+  * WR#53914 - Logins where CRM name is email address - fixed buggy processing 
+    creating login record even if a person/role creation is failed
+  * WR#42492 - replace 'Person' role type by 'Unspecified' role type if a login 
+    does not exist for that person
+  * WR#42492 - added script scripts/create_person_role_for_person_logins.rb 
+    that is creating a role of 'Person' type for person records that do have
+    logins assigned to them but do not have a role of 'Person' type that is
+    needed for Ecommerce - note dated 17:07 19-05-2008
+    IMPORTANT: run ruby create_person_role_for_person_logins.rb after the
+    release deployment
+  * WR#53720 - Tidy the display of Resources and Manifestations (and 'Admin Only'
+    section of other TAP entities)
+  * WR#53719 - Gap between 'edit' and 'mark returned' on borrowed items list
+  * WR#53718 - Login needs 'password' in the box to match 'user name'
+  * WR#51727 - EMAIL NEWS - signup from front page - if the user's default 
+    role contactinfo (the role contactinfo of 'postal' type of 'Person'/
+    'Organisation' role) is not already in the 'Requested Email updates' 
+    saved list, the 'Please send me email updates' button is displayed on 
+    the front (index) page. When the user clicks on the button:
+    - the user is redirected to 'people/new_web_user', if he/she is not 
+    logged in
+    - the user's default role contactinfo is added to the saved list, if
+    he/she is logged in. If the process fails for some reasons (no default
+    role contactinfo), an email-notification is sent to a SOUNZ administrator
+  * WR#54159 - Status on Contributor Profile screen - removed 'approved'
+  * WR#50306 - CRM Advanced search- adding address types
+    IMPORTANT: re-build indexes of RoleContactinfos
+  * WR#52681 - Editing widget for Exam Board Info
+  * WR#53854 - SOUNZNews Magazine - linking the pdfs of past magazines
+  * WR#53250 - Recipients for Test Email for Marketing Campaign
+  * WR#50907 - BUY/ BORROW - layout
+  * WR#51729 - FORMS - Product provider form
+  * WR#42492 - Events - assignment of a venue makes the event contact info 
+    details to default to the venue 'Physical' (if non-empty) or 'Postal' 
+    contact info.
+  * WR#42492 - CRM - adding a role to an organisation and/or person contacts -
+    new person role contact infos default to 'Person' role (role without an
+    organisation, later once the new 'preferred' concept is implemented 
+    (WR#50281) can be easily replaced by 'preferred' role) contact infos and
+    new organisation role contact infos default to 'Organisation'/'General'
+    role contact infos.
+    IMPORTANT: run scripts/fix_default_contactinfos.rb and re-build indexes of
+    RoleContactinfos
+  * WR#50274 - TAP/CRM - cleanup of entries to be deleted
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Tue, 6 May 2008 17:38:00 +1300
+
+sounz (1.18.0) stable; urgency=low
+  * WR#50274 - disabling 'Delete' of Project edit screen if a project
+    cannot be deleted (have the marketing campaigns with the campaign
+    mailouts or have the marketing campaigns with the 'Campaign manager'
+    set to a project member.
+  * WR#51612 - PERFORMANCE HISTORY/ EVENTS - links to events
+  * WR#50613 - FRBR Links - on various entities display pages
+  * WR#51726 - SONLINE NEWS - keyword search for archived articles
+  * WR#53212 - Some freight costs need changing
+  * WR#50287 - MANIFESTATION - new field for parts location
+  * WR#51765 - TAP - further additional category for works
+  * WR#51124 - WORKS/ MANIFESTATIONS/ RESOURCES - display of permissions
+  * WR#51526 - PERMISSIONS - transferring info from Work to 
+    Manifestations - added scripts/migrate_permission_info.rb script
+  * WR#51829 - CRM - deactivating a role
+  * WR#42384 - Expression Advanced Search
+    IMPORTANT: Expression solr indexes need to be rebuild
+  * Moved 'Status' field searching for Person/Organisation status from
+    Advanced Contacts Search (it will have Role status instead) to 
+    Contacts Search, which is more appropriate place for it - WR#51829
+    IMPORTANT: Person/Organisation models need solr re-indexing
+  * Added 'Composer/Author' sort option to Music/Advanced Music public
+    searches
+  * WR#53473 - Transformed 'known_as' of people contributors to 
+    'Last name, First names' format; updated People facets methods;
+    added 'known_as_public' method which is used now on all public
+    screens
+    IMPORTANT: Run scripts/transform_person_contributor_known_as.rb
+    and re-build all solr indexes!!!
+  * WR#53634 - Contributors without contributor role coming up in FRBR 
+    relationships
+  * WR#50274 - delete projects starting with 'Delete' in their titles
+  * WR#53517 - Manifestation codes - less than 1000 mixed up again
+  * WR#51688 - CRM - related organisation info needs to be displayed
+  * WR#51767 - Event update form - an amendment
+  * WR#51730 - Work Update form - a couple of amendments
+  * WR#51681 - Advanced Music Seach  - a couple of amendments to wording
+  * WR#51709 - Listings with Contributors - need more details to display
+  * WR#51131 - BACK links - from content pages
+  * WR#53571 - Fixing layout of heading for public pages
+  * WR#51591 - ADVANCED SEARCH - TAP works; Manifestation/ Resource - added
+    internal note search field
+  * WR#42384 - Advanced Manif/Resource Search - added Item types drop-down 
+    as per point 2 in the note dated 15:26 20-02-2008
+  * WR#52209 - Advanced Manif/Resource Search - add freight code
+  * WR#53459 - New customer able to see details of another customer's order-
+    it's turned out that when a new user joins in as a guest through 
+    'create_web_user', that user is only logged in into the application but
+    not into zencart area - fixed that problem.
+  * WR#53473 - added the rule of initials and one word 'known as' of person
+    contributor as a temporary not including all cases solution before the
+    note dated 13:17 18-04-2008 of the WR is implemented
+  * WR#51718 - fixed a bug for Event dates public display
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Fri, 18 Apr 2008 12:42:00 +1300
+
+sounz (1.17.0) stable; urgency=low
+  * WR#51718 - Tidy of graphic design elements - various places
+  * WR#53473 - People facets - Starts with - some odd results
+  * WR#53462 - CRM - getting the person name link to display on organisation 
+    page
+  * WR#50291 - changed the page title of distinctions to 'Awards'
+  * WR#51731 - page titles
+  * WR#51713 - Music/Advanced Music search (public) sort facility
+  * WR#51060 - EVENT opportunities - added date facets
+    IMPORTANT: Event entity should be re-indexed
+  * WR#52087 - Foreign Library Members loan orders processing
+  * WR#53237 - Marketing campaign - copying of images from sample project -
+    fixed the bug in the processing
+  * WR#52089 - Contributor Profile - breakage on
+    contributor/writer/ screen: added views for 'Writer' contributor
+  * WR#50294 - added Distinction Instance cloning facility
+  * WR#50291 - 'Opportunity' Event subfacets for Event search
+    IMPORTANT: Event entity should be re-indexed
+  * WR#50291 - 'Awards Received' facets for People search
+    IMPORTANT: Contributor entity should be re-indexed
+  * Distinction type migration script - scripts/migrate_distinction_types.rb
+  * WR#50291 - Added distinction_types and distinction_distinction_types tables
+    to allow multiple assigning of distinction types to a Distinction.
+  * WR#53204 - Removing relationship from distinction breakage - fixed the bug
+    provoked by special case for distinction_instance objects that is not needed
+    anymore.
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Tue, 8 Apr 2008 09:36:00 +1300
+
+sounz (1.16.0) stable; urgency=low
+  * Simple text search for Distinction Instances as requested in WR#50294
+  * WR#50294 - DISTINCTIONS - relationships and display
+  * WR#50385 - DISTINCTIONS and OPPORTUNITIES - relationships
+  * WR#52670 - Sales order Status update email - fixed bugs where the values
+    were not displayed in the content of the Status update email
+  * WR#51734 - ECOMMERCE - order confirmation forms - rewording to downloads
+  * WR#51172 - Availability/Hire facet
+  * WR#52981 - MANIFESTATION - a couple of layout bugs
+  * WR#51697 - CONTRIBUTOR info display
+  * WR#51695 - Front page  and finder/show pages - changes to wording
+  * WR#51703 - Advanced Music search (public)- when text-field search parameters
+    are empty, sorted the search results by work/resource title in ascending order
+  * WR#50260 - CRM - Icons for postal, physical and billing addresses -
+    added icons to CRM searches and saved contact lists.
+  * WR#50282 - implemented cloning saved lists, events, expressions facility
+  * WR#50297 - implemented News and New Products RSS feeds
+  * Removed '(c)' (internal flag for contributors) from People facets
+  * WR#50301 - changed solr schema.xml to include solr.ISOLatin1AccentFilterFactory 
+    and nz.net.catalyst.solr.maori.MaoriMacronsFilterFactory classes to allow
+    indexing/searching using Maori macrons and other special characters;
+    small changes and refinements in the searches code due to the above change
+  * WR#52688 - FACETS - Other Pathways 
+  * WR#52205 - FACETS - Music categories
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Fri, 14 Mar 2008 17:56:00 +1300
+
+sounz (1.15.0) stable; urgency=low
+  * WR#51184 - refinements as per Scilla's requests in WR
+  * WR#52208 - Exam Board Info - display on Manifestation view screen
+  * WR#52640 - News Articles break - fixed a bug
+  * WR#52636 - Break in contributor profile - fixed a bug
+  * WR#51699 - Quicklinks searches: replaced quicklink check boxes (multi 
+    choice search) by radio buttons (one option only) as per request in the 
+    note dated 16:35 10-03-2008
+  * WR#51700 - FACETS: resource types - implemented resource type facets
+    as defined in WR for the music search
+  * WR#52605 - display of related manifestations on Resource show screen
+  * WR#51184 - script to migrate 4D duration data into expression duration
+    field
+  * WR#51184 - borrowed items listings are sorted by date borrowed descending
+    order; changed - 'RESERVED FOR LOAN' to 'ITEM NOT ASSIGNED'
+  * WR#50286 - clear out Manifestation duration field; added duration field 
+    (and relevant processing, UI) to Expression
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Mon, 10 Mar 2008 17:13:00 +1300
+
+sounz (1.14.0) stable; urgency=low
+  * WR#51184 - make items 'trapped' by testing available for loan and
+    delete inactive borrowed items records (as it was testing). [liuba]
+  * WR#42857 - deleted 'Not-applicable' type from resource types. [liuba]
+  * WR#51699 - Implemented Quicklinks searches for Music search. [liuba]
+  * WR#51184 - LIBRARY borrowings - process/ freight - new way of processing
+    online borrowings as per Liuba's note dated 16:27 04-03-2008. [liuba]
+  * WR#51184 - LIBRARY borrowings - process/ freight - refinements/changes as 
+    per Liuba's note dated 3/03/08 18:26. [liuba]
+  * WR#50826 - MEMBERSHIP - signing up - lots of little things- if a user
+    is not logged in, 'Buy' buttons for memberships and donations are displayed
+    in disabled mode (as requested in Scilla's note 01/03/08). [liuba] 
+  * WR#52386 - Blank content instead of email content in some mail server -
+    bug is fixed. [liuba]
+  * Implementation of Membership maintenance UI and processing; fixed person/
+    organisation Privileges UI and processing. [liuba]
+  * Added controller_restrictions for hire_item and loan_item controllers for
+    a privilege CAN_EDIT_BORROWED_ITEM.[liuba]
+  * 'Privileges' tab is now accessible for users with 'CAN_EDIT_BORROWED_ITEM'
+    (as Pete has put some borrowed items processing on 'Privileges' tab) but
+    all login editing controls are not available to them; also, added methods
+    for managing borrowed items to organisations controller and appropriate
+    privileges (WR#52314 - Shopping Online for 'Organisation' login). [liuba]
+  * WR#52381 - Submission forms 'behaving badly' - fixed a bug in Contact
+    Updates submission listing; added 'Updated' field with updated_at to 
+    all form submission listings. [liuba]
+  * WR#52246 - Advanced search (TAP Works) - relationship break - fixed bugs
+    causing breaks. [liuba]
+  * Added: event, audio/video recordings, pending, item, manifestation icons
+  * WR#52258 - Date/time format in contributor events display - the date is 
+    displayed without time; if start and end date exist both are displayed;
+    if there is only a start date, then only start date is displayed. [liuba]
+  * WR#42857 - fixed bugs, implemented the requirement where a user can indicate 
+    what entity to search (Manifestation, Resource or both). [liuba]
+  * WR#52229 - Break from event/people 'simple search' button - fixed
+    the bug. [liuba]
+  * WR#52259 - Order of listings for performances case sensitive -
+    fixed to be not case sensitive. [liuba]
+  * Implemented Expiring/Expired memberships processing.
+  * Fixed a bug when 'Anniversary' category was displayed twice in 
+    'Occasional Music' facet of Music facets.
+  * WR#52142 - Wikitext - partial expression note for scores. [liuba]
+  * WR#52091 - Manifestation Formats - list is incorrect - manifestation
+    formats for 'Not-Applicable' as per 
+    Manifestation_Resource_Formats_and_Types190208.xls attached to WR.
+  * Added sounz_service_id foreign key to memberships table to identify 
+    between library membership types. 
+    IMPORTANT: Please run add_sounz_service_id_to_memberships.rb to assign
+    appropriate sounz_service_id to existent memberships. [liuba]
+  * WR#52056 - Deleting Partial Expression Note by unchecking partial 
+    expression box - fixed the bug. [liuba]
+  * Implemented Reserve Product for Loan logic for products that have all
+    their items on loan at the moment of the new customer request. Such 
+    products cannot be issued from zencart and would need to be processed 
+    manually. Briefly, the process - if all items of the product available for 
+    loan are currently loaned by other customers, display 'Reserve' button. 
+    On click on 'Reserve' button, Loan Request email is sent out to SOUNZ 
+    administrator and the request can be later processed by SOUNZ administrator 
+    manually from Resource/Manifestation edit screen (very similar process to 
+    Hire product).[liuba]
+  * WR#50981 - BUYING - changing the address - changed labels of address fields
+    of zencart to be more consistent with SOUNZ Online. [liuba]
+  * WR#50272 - CRM and TAP statuses - deleted 'Published' from
+    Contact, Contributor, Composer Bios, Events, Work updates and Feedbacks
+    provider forms. [liuba]
+  * Changed create_add_products method of zencart/includes/classes/order.php
+    to use date() function of php for date_purchased field of zencartorders
+    as this data is used when creating a Moneyworks export file and results
+    in 'now()' string been exported as the value of date_purchased. [liuba]
+  * WR#51189 - 'Hire' button is active when any user is logged in;
+    any authenticated user can hire an item. [liuba]
+  * Fixed a bug where 'Make Inactive' on Borrowed Items page was not 
+    setting the appropriate item to be available for hire/loan.
+  * WR#50826 - fixed a bug where a click on 'Continue the Checkout Process'
+    provoked a breakage if none of the address details was entered. [liuba]
+  * WR#50826 - small fixes as noted on 08/02/08. [liuba]
+  * WR#51710 - Added Resource 'is_described_by' Resource relationship
+    to be displayed in the 'Featuring' section of Resource display
+    screen. [liuba]
+  * WR#52005 - RESOURCE - items can't be added - fixed the bug
+    provoked by suppression of 'number of items to add' parameter in
+    the UI form (is it not needed anymore?) but leaving it in the 
+    'create_item' method. [liuba]
+  * WR#51737 - fixed the case for buying memberships. [liuba]
+  * WR#51189 - fixed the breakage when hiring a Manifestation/Resource;
+    added hire button to availability sections, etc. [liuba]
+  * WR#51882 - ECOMMERCE - message typos - replaced occurrences of 'SOUNZ
+    Catalogue' by 'SOUNZ Music Search'. [liuba]
+  
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Thu, 7 Feb 2008 10:33:00 +1300
+
+sounz (1.13.0) stable; urgency=low
+  * production release
+  
+ -- Pete Black <pete@catalyst.net.nz>  Tue, 5 Feb 2008 16:10:00 +1300
+ 
+sounz (1.12.2) stable; urgency=low
+  * bumped for new release
+
+ -- Pete Black <pete@catalyst.net.nz>  Tue, 5 Feb 2008 13:57:00 +1300
+
+sounz (1.12.1) stable; urgency=low
+  * bumped for new release
+
+ -- Pete Black <pete@catalyst.net.nz>  Tue, 5 Feb 2008 12:08:00 +1300
+
+sounz (1.12.0) stable; urgency=low
+  * WR#50406 - Scilla's note of 05/02/2008: Role title is added to 
+    Person name line, organisation name is displayed on separate line - 
+    for labels.[liuba]
+  * WR#50406 - 	Implement new mailout contact scheme - small addition:
+    'Person' role title is not written into the database.[liuba]
+  * WR#51754 - Reindexing of Associated Objects in SOLR after a Deletion
+    [liuba]
+  * Replaced object.solr_save by object.save in 
+    RelationshipHelper.add_frbr_relationship and 
+    RelationshipHelper.destroy_relationship_and_update_solr, so that
+    after_save method of frbr_observer.rb is called for solr updates of
+    associated objects. [liuba]
+  * WR#51065 - MANIFESTATION CODE - display on manifestation show page with 
+    main category - added manifestation code and Work main category (for 
+    scores only) to be displayed in Admin Only section of Manifestation 
+    display page; small fixes in display of labels in Admin Only section.
+    Also, added Work main category (for scores only) to be displayed after 
+    manifestation code on Manifestation edit page [liuba] 
+  * WR#51702 - Umbrella events (those with 'children' events) are treated 
+    differently - their finish date is not indexed in solr for facets 
+    search (starting date is indexed as finished date instead - the same 
+    processing as for events without finish date needed for facets), so 
+    that they are not shown in facets as happening on every day of the 
+    date range. 
+    IMPORTANT: Event model requires solr indexes to be rebuild for that change.
+    [liuba]
+  * WR#51905 - CRM - clicking on role/contact info break - role contactinfos 
+    affected are those of people's roles in organisations where 'postal'
+    role_contactinfo did not exist, provoked by the import of organisations 
+    without creating 3 sets of role_contactinfos, added processing to create 
+    appropriate (missing) role_contactinfo for organisation primary role in
+    default_contactinfos_update method of role.rb - this fixes the bug. 
+    [liuba] 
+  * WR#51883 - SONLINE  - selected results working selectively - fixed a bug
+    where selected results in session were displayed only to not-logged-users
+    [liuba]
+  * WR#51881 - WORK UPDATE FORM - break when pressing submit - breakage was
+    caused by the call to the incorrect model in show confirmation - fixed. 
+    [liuba]
+  * WR#51853 - TAP - works - display of difficulty note - added Difficulty
+    Note section to Works show page. [liuba]
+  * Sorted person's roles in person's role list (Person Edit, Roles pages)
+    The sorting order is: person Person role followed by person roles by 
+    role name in alphabetical ascending order. [liuba]
+  * WR#51725 - CRM - ordering of contacts on organistion page - organisation
+    roles are now displayed in special order - general organisation role,
+    followed by organisation roles without people in alphabetical ascending
+    order of role name and then, organisation roles that have people associated 
+    with them in alphabetical ascending order of person's last name. [liuba]
+  * Fixed a bug in Manifestation/Resource Advanced search where a combination
+    of solr and sql searches for both entities (Manifestation/Resource) was
+    not filtering properly when searching by applicable to one entity only
+    fields (ex. manifestation format or resource format, etc). [liuba]
+  * WR#41964 - Relationship updated_by Field Hard Coded - get rid of
+    hard-coded login_id = 1 by passing editing user login parameter to 
+    RelationshipHelper.add_frbr_relationship(). Note: for some scripts
+    that were previously used to create testing data, hard-coded login_id=1
+    is left. [liuba]
+  * Added controller_restrictions for hard_association_controller.rb methods
+    for 'CAN_EDIT_TAP' privilege.[liuba]
+  * Centralised privileges logic for CRM that checks whether an editing user 
+    does have permission to publish CRM, if not, sets status of person or 
+    organisation entities to 'Pending' and reindexes entity solr indexes and
+    entity role contactinfos in Role.crm_privileges_check(login, role). [liuba]
+  * WR#51527 - SUPERWORK - new ones created without composer - added composers names
+    to the superwork title created by default from the associated work name. [liuba]
+  * Changed the search-as-you-type composers search when creating a Work to
+    a delayed search - the search is started when a user stops typing in the search
+    textbox. [liuba] 
+  * WR#42414 - Remove duplicate work relationships of type 'Is evidence of' -
+    added script delete_duplicated_relatiosnips.rb [liuba]
+  * WR#51298 - commented out 'Releasers' frbr relationship from Manifestation show 
+    page as this is a duplicated info of Publisher field on the screen. [liuba]
+  * WR#51061 - DISTINCTION Instance - 'masked' by default - changed status default 
+    to 'Pending'. [liuba]
+  * WR#51710 -Added the relationships: 'Is funded by' to Manifestation -> Role and
+    Resource -> Role; 'Describes' to Resource -> Resource. [liuba]
+  * Added 'CAN_EDIT_SALES_HISTORY' privilege, assigned
+    'CAN_EDIT_SALES_HISTORY' and 'CAN_EDIT_BORROWED_ITEM' to
+    Administrator and TAP Administrator users; added appropriate
+    controller_restrictions, etc. [liuba]
+  * WR#51720 - EXPRESSION - not showing the partial expression note -
+    added partial expression note to be shown on Expression show page
+    and in Performance History, Events sections of Work show page.
+    [liuba]
+  * Perms changes to /data/sounz/app/download to allow 'sounzreports' user to
+    upload content via MacFusion. [paul]
+  * SOLR reindexing no longer blocks searching
+  * WR51512 - added change password functionality
+  * WR51172 - changes to music facet names
+  * Changed flash notice (error from forms) to red, as grey was not obvious
+  * WR50289 - make site specific and additional category [gordon]
+  * WR51487 - fixed the ability to add logins to a person [gordon]
+  * WR42440 - added genre of Taonga Pouro to Maori Music concept [gordon]
+  * Facets now toggleable without Javascript. [gordon]
+  * WR50259 - Pouru / Pouro fix [gordon]
+  * WR51473 - Lowercase person search as searches in capital letters failed. [gordon]
+  * WR51473 - can now do CRM searches for "Firstname Lastname", e.g. "Gareth Farr" [gordon]
+  * WR#51440 - fixed dates typo. [liuba]
+  * WR#51194 - Image Alignment for Resources in Search Results - right-aligned
+    Resource image. [liuba]
+  * WR#51111 - MANIFESTATION display - 'not available' is confusing - replaced
+    'Not Available' with 'Sample', put size of the sample after 'Sample',
+    replaced sample icons by those used in search results for consistency.
+    [liuba]
+  * WR#42543 - made the organisation name to be displayed in italic in the 
+    person's role contactinfo record of the search results to facilitate 
+    its spotting in the list. [liuba]
+  * WR#51506 - Manifestation/Resource Advanced search - saved search not working -
+    fixed a bug in Works Advanced, Contributors Advanced, Events Advanced, 
+    Manifestation/Resource Advanced searches when only 'new' searches were
+    processed and results for the repeated searches were taken from session, this
+    provoked different error situations reported in the WR, etc. [liuba]
+  * Added controller restriction for /advanced_finder/type_formats, for a privilege 
+    CAN_VIEW_TAP. [liuba]
+  * WR#51533 - TINY MCE - bullet points don't show - default style for the site content
+    is not to show bullet points for unordered lists - added special style for the 
+    content of CM pages to display bullets. [liuba]
+  * Added replacement processing for image url in main content field of campaign 
+    mailout as extra precaution to make sure that even when old templates 
+    (mailout contents) are used, the images link correctly to the current host - 
+    this fixes the problem of previous release when images urls (if main content 
+    is reused) display old 'production.sounz.org.nz'. [liuba]
+  * WR#50002 - enhancements to News Articles functionality: 'Home' page displays
+    max 2 feature articles; added a restriction, so that there are only 2 'feature'
+    articles (with 'Published' status only, 'Pending' aGordon Andersonrticles can have unlimited 
+    number of 'feature' articles) of 'Story' type at any time - when new 'feature'
+    article is added, the oldest 'feature' article is set to false; added check 
+    that sets 'feature' parameter to false for archived article. [liuba]
+  * WR#50272 - CRM and TAP - statuses - removed 'Approved' status from Sample
+    statuses drop-down list. [liuba]
+  * WR#51552 - Sales History - updating status breaks. [liuba]
+  * WR#51597 - WORKS - Difficulty display on show page - hide 'Unknown' diffuculty
+    [liuba]
+  * WR#42479 - TAP - Advanced search testing - applied some stripping to work 
+    title search parameter, similar to FinderHelper.strip(string) but leaving
+    quotes in - this fix a bug, when a search with a dot in the title returns
+    no results. [liuba]
+  * WR#51596 - Fixed Manifestation show page to display only samples relating 
+    to a particular manifestation. [liuba]
+  * WR#51593 - LOGINS - edit should be save - renamed submit button to 'Save'
+    [liuba]
+  * WR#51608 - EVENTS - entering a new event - workflow - separated 'Venue'
+    widget from the event form, made it appear once an event has been created 
+    and consistent with other relationship widgets. [liuba]
+  * WR#51609 - EXPRESSION - wiki text not showing on Performance history -
+    added the method to convert wiki text to html. [liuba]
+  * WR#51610 - WIKITEXT - Italic affecting search results. [liuba]
+  * WR#51613 - UMBRELLA EVENT - added date field to related events listing on 
+    Event show, sorted related events by date. [liuba]
+  * WR#51204 - EVENT- general note and links. [liuba]
+  * WR#51592 - Page numbers - navigation for searches - the current page in
+    pagination is not displayed as a link anymore to make it clear for user
+    his/her current position in the list. [liuba]
+  * WR#51392 - CRM - search order of results - the following organisation 
+    fields are searched now in CRM basic search as requested by SOUNZ: 
+    organisation_name, organisation_abbrev, known_as and related organisations 
+    organisation_name, organisation_abbrev. Also, added to person search
+    known_as field.
+    IMPORTANT: Person, Organisation models require solr indexes to be rebuild. 
+    [liuba]
+  * WR#51640 - CRM - navigation from logins back to privileges - added
+    'Privileges' link to Login edit page. [liuba]
+  * WR#51687 - Resource show page break fix. [liuba]
+  * WR#51686 - Works Availability Resource section - Duplicated image fix and 
+    uncommented the price info. [liuba]
+  * WR#51679 - MANIFESTATION/ RESOURCE - cost = 0.0 - hidden 0.00 price from
+    Manifestation/Resource show pages [liuba]
+  * WR#51689 - CONTRIBUTOR - display of role has "this is ... " sentence -
+    removed testing sentence.[liuba]
+  * WR#51701 - FACETS - music - typo in Other pathways - fixed type. [liuba]
+  * WR#51721 - Provider forms - listing page displays now forms with 'Pending'
+    and 'Approved' status (1 months old); also, 'Show all' option has been
+    added to display the listing of all forms; status field is added to the
+    listing of the forms. [liuba]
+    
+ -- Gordon Anderson <gordon@catalyst.net.nz>  Mon, 6 Jan 2008 16:37:00 +1300
+
+sounz (1.11.0) stable; urgency=low
+
+  * Implemented new config-zencart.sh script which sets up zencart with
+    required database records to suit the current server status. This is
+    called by all status-changing scripts, debconf, and post replication
+    of the database to standby server.
+  * Make standby.sounz.org use DPS test account
+  * WR#51390 - Default availability to not shown
+  * WR#51391 - MANIFESTION - display missing price - added price info.
+    [liuba]
+  * WR#51396 - EVENTS - ordering of dates for events. [liuba]
+  * WR#42479 - TAP Advanced Search - made the works advanced search
+    more precise by removing wildcard characters and replacing 'OR'
+    operator by 'AND'; special processing for Title (work) field allowing
+    user to wrap the search terms into quotes to make the search by Title
+    even more precise. [liuba]
+  * WR#51380 - EMAIL NEWs - anchor required in Tiny MCE - added anchor.
+    [liuba]
+  * Some database schema tidy-ups as part of datamodel syncing [paul]
+  * WR#50256 - CRM - layout of screens - fixed the layouts as requested
+    [liuba]
+  * WR#51236 - RESOURCE - display: added licensers to 'Publisher'
+    section; fixed the bug where 'Featuring' section was not displayed
+    on Resource show/view; added missing associations: describes, 
+    documents, recorded by, released by, is related to . [liuba]
+  * WR#42543 - CRM - advanced search Marketing Cats and Roles - 
+    implemented the logic requested when if a person has a role in the
+    organisation, the person receives marketing categorisation of the
+    general role of the organisation (the list of categories is displayed
+    in Marketing Categorisation section of person's role, for info only,
+    without editing controls). [liuba]
+  * WR#50356 - added tooltip - 'Please login to buy' to Buy button of
+    Manifestations and Resources. [liuba]
+  * WR#51335 - PERFOMANCE Histories - date ordering - fixed the order
+    of past performances: premiere is the first in the listing followed
+    by other performances starting with the oldest and with the most 
+    recent at the bottom of the list. [liuba]
+  * WR#51350 - EVENT- not all venues showing in searches - on updating
+    contributor details, the appropriate Role (the entity searched in) 
+    solr indexes were not updated. Added the command to update Role's
+    indexes. [liuba]    
+  * WR#51339 - fixed a bug where newly created events were assigned
+    the login id equal to 1 (currently, username 'gordon') instead of
+    the login id of the editing user. [liuba]
+  * Fixed a bug where the 'Saved Searches' form was not showing
+    when for facets searches. [liuba]
+  * Added zencart/php_includes dir to the tree. This was missing on
+    the last build - either failed add before or went awol [paul]
+  * WR#42857 - Fixes for MANIFESTATION/RESOURCE Advanced search.
+    IMPORTANT: Manifestation and Resource models require solr indexes 
+    to be rebuild. [liuba]
+  * WR#50540 - CRM - order of returned search results - added 
+    the highest boost to person's last name and second high boost to
+    person's first names search parameters and added solr score parameter
+    to search results sorting, so that the search results in CRM searches
+    first display the last name and then first name matches, sorted by
+    person's last and then first name as requested by SOUNZ. [liuba]
+  * WR#51296 - changed country_name from 'Taiwan, Province of China' to 
+    'Taiwan'. [liuba]   
+
+ -- Paul Waite <paul@catalyst.net.nz>  Sat, 15 Dec 2007 17:20:34 +1300
+
+sounz (1.10.0) stable; urgency=low
+
+  * WR51125 - Removed repeated profile field [gordon]
+  * WR#51275 - Moved the section with RESOURCE - buy/ borrow buttons to be
+    displayed after Description - Author/ Publisher section. [liuba]
+  * WR#51299 - JOIN Page - doesn't have links to People/ Music/ Events - added
+    the links to the menu. [liuba]
+  * WR51279 - Fix for "floral tribute" bug.  Was due to a </div> being a <div> [gordon]
+  * WR51261 - CRM search now delays search until typing done [gordon]
+  * WR51205 - Advanced event search uses venues [gordon]
+  * Events now ordered so that opportunities use deadline, and if the
+    field is blank index them under the year 2037 [gordon]
+  * People contributors now order on last name [gordon]
+  * People contributors now show correctly under letter facets (wrong
+    index of array meant using first instead of last name) [gordon]
+
+ -- Paul Waite <paul@catalyst.net.nz>  Wed, 12 Dec 2007 16:28:23 +1300
+
+sounz (1.9.0) stable; urgency=low
+
+  * WR51172 - Added manifestation titles to what is searched for Work
+  * WR51172 - Add available for purchase, loan, hire facets to Music
+    search [gordon]
+  * WR50920 - Composers cannot be deleted in the association widget
+    [gordon]
+  * WR50712 - fixed order of works and contributors to respect numbers
+    and case insensitivity [gordon]
+  * Changed indexing script so that publicly visible SOLR searches are
+    fixed first [gordon]
+  * WR50259 - mainly spelling fixes [gordon]
+  * Added privilege parameter to show_edit_links_if_permission(object, 
+    privilege='CAN_EDIT_TAP')and show_tap_edit_link_for(object, 
+    privilege='CAN_EDIT_TAP', text='Edit', ignore_class=false), default 
+    to 'CAN_EDIT_TAP', to accommodate the special privileges for Events, 
+    Distinctions, Contributors and Roles. [liuba] 
+  * Small change to icon_for - to show object icons for user with 
+    'CAN_VIEW_TAP' privilege instead of 'CAN_EDIT_TAP'. [liuba]
+  * WR#51145 - changed duration display to be consistent with duration 
+    display in search results- 20' or 3'54" rather than 00:20:00 or 
+    00:03:54. [liuba]
+  * WR#51202 - Select a Region in Events Advanced Search Breaks - fixed.
+    [liuba]
+  * WR#51203 - added blank option '--All Statuses--' which is displayed
+    as a default instead of 'Approved'. [liuba]
+  * WR#50540 - CRM contact lists sorting - fix for names starting with
+    lower case and for upper case abbreviations - all names get 
+    transformed to lower case for sorting to work smoothly.[liuba] 
+  * WR#51091 - FRONT PAGE - contributor rotation - made the contributors
+    selection random and distinct. [liuba]
+  * Added width parameter to the News Articles listing in table format,
+    so that article images are displayed strictly right-aligned, without
+    depending on the size of article contents. [liuba]
+  * WR#50871 - RESOURCE - search display - added anchor to Resource show
+    page, so that 'Availability' links to its section with Buy/Borrow 
+    buttons. [liuba]
+  * WR#51123 - changed people/organisations statuses from 'Published' to 
+    'Pending' (there should be no 'Published' status in CRM entities)
+    IMPORTANT: RoleContactinfo model require solr indexes to be rebuild. 
+    [liuba]
+  * WR#51123 - Added person/organisation/contributor status icons to all 
+    the CRM listings (search results, selected lists, saved contact lists)
+    (except mailout lists) as discussed with Stephen Gibbs, SOUNZ. [liuba]
+  * WR#51237 - FACETS - 'available as' samples not all showing
+    WR#51092 - SAMPLES - searching for them has odd results 
+    The "bug" in those WRs has been provoked by the recent changes in 
+    the database schema when an appropriate Expression can be added 
+    to the Sample to allow a way for Samples that are attached to a 
+    Manifestation of, for example, 'CD' format but which are for a 
+    single Expression (track) off that CD to be catalogued and displayed.
+    So, now we have the Samples that can be associated to Works through 
+    their Manifestations and those that can be associated through Work 
+    Expressions (before Samples were associated to Works only through 
+    their Manifestations). The following logic/implementation does solve
+    the bug: to get to Work Samples, we do check each of Work Expression
+    Manifestations Samples, if a sample expression id is the same as that 
+    expression id or if a sample expression id is empty, then this is a
+    Work Sample. 
+    IMPORTANT: Work model require solr indexes to be rebuild. [liuba]
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Mon, 10 Dec 2007 11:42:00 +1300
+
+sounz (1.8.0) stable; urgency=low
+
+  * Altered healthcheck so that it returns OK when servers are stopped
+    eg. for upgrade or maintenance [paul]
+  * Add build-depends on 'debra' package. If you need to build the system
+    then first get this package and install it [paul]
+  * WR#51182 - added cronjob to delete sessions older than 7 days from
+    SOUNZ_HOME/sounz/tmp/sessions. This will run every morning.
+  * WR#51123 - added links to listing page to go directly to relevant person
+    or organisation.
+  * WR#51039 - Remove google analytics for editors
+  * WR#51143 - Now show 10 results (as before) but paginate correctly
+  * WR#51094 - Fix multiple-sample score manifestations
+  * WR#51123 - changed search results in CRM to show status and login
+  * WR#51095 - login edit now shows correct member types, not those of the
+    person who is editing
+  * WR#51091 - now shows more performers, as previously only those contributors
+    with ICON images were showing.
+  * WR#51083 - Display composer names correctly spaced out with line breaks
+  * WR#50908 - deleted lots of things that start with Delete
+  * WR#41819 - reindex of Superwork fixed superwork search problem
+  * WR#51508 - adding the missing four regions to Canada
+  * Updated hosts.allow with new SOUNZ static IP 202.154.159.26
+  * WR#50894 - Added code in postinst to move the default (/usr/share/sounz)
+    application location to specific one (/app/sounz) if the new partition
+    is present on the server.
+  * WR#50540 - Added sorting of contacts - by last name of contact (person)
+    (although the people names are displayed starting with first_names fields
+    as requested by SOUNZ in WR#42585) ascending order, then by first names
+    of contact (person) ascending order, then by organisation name of contact
+    or by organisation abbreviation of contact ascending order - in CRM
+    search results, CRM saved contact lists and campaign mailouts. 
+    IMPORTANT: Organisation and RoleContactinfo models require solr indexes 
+    to be rebuild. [liuba]
+  * Added login parameter to person.create_self, organisation.create_self,
+    role.create_self methods to implement the privileges logic for SOUNZ 
+    administrators in CRM. Note some of the processing of solr updating
+    of roles and contact infos is currently commented out - it puts such
+    a load on solr (due to the updates of different related objects in CRM
+    and TAP) that it breaks from time to time on my machine. [liuba]
+  * WR#50519: if solr search was returning 0 results (ex. no work existed 
+    with the particular work category assigned to it), all sql query results 
+    were added as 'filteredResults', which is wrong in the case where there 
+    were search terms for solr search - added the processing for that case
+    [liuba]
+  * WR#50908 - changed the logic for displaying not-'Published' objects on 
+    the public part of the site - previously they were displayed but without
+    links to their details, now we hide them completely from the public part
+    of the website, so that if an object is flagged as 'Masked'/'Withdrawn'/
+    'Pending', it is not shown to a user without 'CAN_VIEW_TAP' permission.
+    [liuba]
+  * WR#42479 - TAP - Advanced search testing - fixed bugs. [liuba]
+  * WR#51084 - SELECTED RESULTS - added controller_restrictions for users
+    who have privilege 'CAN_SAVE_SEARCH'. [liuba]
+  * WR#51072 - News Articles - Enhancements. [liuba]
+  * WR#51059 - RELATIONSHIPS - duplicates appearing in search results - bug
+    has been provoked by the use of two queries - one for roles with people
+    associated with them and another for roles with organisations associated
+    with them, in some cases they were returning the same results - addition
+    of unique filter fixed the problem. [liuba]
+  * WR#51097 - NEWS and EVENTS - ordering by date - sorted 'Archived' news
+    by date in descending order; sorted Events Search Results by date/time
+    in ascending order and then by city in ascending order. 
+    IMPORTANT: Event model requires solr indexes to be rebuild. [liuba]
+  * Fixed the Events Advanced Search, so that in case when there are only
+    solr search parameters given, it does not do sql filtering. [liuba]
+  * WR#51122 - changed the name of the 'Requested SOUNZ Newsletter' saved 
+    contact list to 'Requested Email Updates'. [liuba]
+  * WR#50417 - SONLINE - Event search and display pages audit - deleted
+    separate 'Contact Details' section, made 'Venue and Booking Details'
+    section (including 'booking note') to be displayed even if there is
+    no venue assigned to an event. [liuba]
+  * WR#51145 - WORK DISPLAY - duration missing - added 'Duration' field,
+    hide 'Programme Note' if not available. [liuba]
+
+ -- Paul Waite <paul@catalyst.net.nz>  Thu, 29 Nov 2007 14:25:00 +1300
+
+sounz (1.7.0) stable; urgency=low
+
+  * The line under the tabs is now correctly positioned for Internet
+    Explorer (verified on IE5, IE5.55, IE6, IE7
+  * Fixed spacing in FRBR links views for contributors (due to nested
+    div class=section)
+  * Page links on show in FRBR lists if required (more than 20 results)
+  * Fixed number of FRBR results for roles commissioned - was too high
+    due to error in the self referential case.
+  * WR50923 - fix for searching for "noise", was due to nil values
+    not being dealt with correctly
+  * Removed word SAMPLE from music sample popup in header
+  * WR#50925 - IMAGES - cannot be detached or deleted - fixed the bug
+    in the condition [liuba]
+  * WR#50918 - Fixed privileges to allow public to view distinction
+    recipients; convert display of distinction_instance.instance_info to 
+    HTML [liuba]
+  * Update zencart views to drop the 'product needs items to be buyable'
+    requirement
+  * WR#50933 fix broken score links
+  * Added a spinner as the 'detaching' of organisations in Role and
+    Contact infos takes a while for a contributor role types due to solr
+    updating of all frbr relationships and this is an ajax method,
+    there was no way for users to track that the process was still
+    running - WR#50054 [liuba]
+  * WR#50921 fix sample display to remove strange behaviour
+  * WR#50951 - Fixed the bugs in deletion of distinction_instances and
+    made the award year to be selected if set [liuba]
+  * WR#50950 - WORKS/ Show screen - break in performance history
+  * WR#50969 - RESOURCE - can't edit one - fixed item widget to allow
+    case for resources [liuba]
+  * WR#50982 - MEMBERSHIP - sign up page has short menu - added cart controller
+    to the list of controllers that have Music, Events, People links in the main
+    menu [liuba]
+  * WR#50983 - MENU - on content/ and non-facet pages - the facets border has
+    been appearing on non-facet pages - facets division - removed it from 
+    layout/application.rhtml to facets views [liuba]
+  * WR#50189 - changed the Communication Search (and CRM Advanced Contacts search
+    for consistency) - CRM advanced searches - term joins from 'OR' to 'AND', so
+    that the searches return results that contain all the terms and not one of the
+    terms in a field requested [liuba]
+     
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Mon, 26 Nov 2007 09:39:00 +1300
+
+sounz (1.6.0) stable; urgency=low
+
+  * WIP - remove before release.
+  * WR#50912 - CONTRIBUTOR - italics not showing links to recordings and 
+    layout - added show_note() method for converting into HTML 
+    the object description if object is Manifestation [liuba]
+  * WR50899 - add "to" date in search results
+  * WR - can now create a new sample
+  * WR50899 - event facet fixes
+  * WR50903 - fix for sample upload
+  * WR50904 - can now create a new manifestation again
+  * WR#50901 - BORROW buttons - added 'Library Members only' tool tip
+    [liuba]
+  * WR#50914 - BUY/ BORROW on Manifestation show pages - moved section
+    between general note and Music section. [liuba]
+  * WR#50911 - MANIFESTATION - display of score manifestations -
+    if Manifestation type description is not 'Not-applicable', display
+    manifestation type desc | manifestation format desc [liuba]
+  * Set status from 'Published' to 'Withdrawn' for the works marked to 
+    'delete' so that they are not displayed in public search results
+    [liuba]
+  * Fixed Work Available as facet
+  * Added copyright to sample popups, video and audio
+  * Added check if ZENCART is not enabled (ZENCART_ENABLED variable), 
+    hide donation and membership 'Buy' buttons
+
+ -- Paul Waite <paul@catalyst.net.nz>  Sun, 25 Nov 2007 12:39:00 +1300
+
+sounz (1.5.0) stable; urgency=low
+
+  * Fixes to show samples in correct arrangement on page [pete]
+  * Can now create a new sample [gordon]
+  * WR50899 - event facet fixes [gordon]
+  * WR50903 - fix for sample upload [gordon]
+  * WR50904 - can now create a new manifestation again [gordon]
+  * WR#50889 - FRONT PAGE - membership link in menu - changed the
+    link [liuba]
+  * WR#50895 - SEARCH RESULTS - programme note dropdown loses
+    formatting [liuba]
+  * WR#50900 - PEOPLE and EVENT SEARCH  - wording on page [liuba]
+  * WR#50897 - BUY BUTTONS - some but not many appearing and in
+    odd places [liuba, pete]
+  * WR#50891 - PERFORMANCE HISTORY - display [liuba]
+  * WR#50905 - RESOURCE - display - removed extra 'Series Title' [liuba]
+  * WR#50389 - hide UNKNOWN(25), UNKNOWN(27) work categories from
+    Advanced Music Search (public) [liuba]
+  * WR#50893 - hide display of samples if a Manifestation is of
+    'CD' format or 'Not-applicable' type [liuba]
+  * WR#50898 - FEEDBACK form - added 'Music Search' link [liuba]
+  * WR#50865 - JOINING UP -  a few things [pete] [liuba]
+  
+ -- Paul Waite <paul@catalyst.net.nz>  Sat, 24 Nov 2007 23:00:00 +1300
+
+sounz (1.4.0) stable; urgency=low
+
+  * WR #50871 - RESOURCE - search display [liuba]
+  * Changes to provider forms pages, new web user and memberships_page pages
+    as requested by Scilla [liuba]
+  * Added processing to allow users to attach 'pdf' to cm pages. [liuba]
+
+ -- Liuba Kazakov <liuba@catalyst.net.nz>  Fri, 23 Nov 2007 15:34:00 +1300
+
+sounz (1.3.0) stable; urgency=low
+
+  * WR50413 - fix for self referential relationships in frbr_helper [gordon]
+  * Some HTML injection fixes [gordon]
+  * Removed TEST from expression description [gordon]
+  * Show composer forms for composers and users who have
+   'CAN_EDIT_CONTENT' privilege (was showing them for all but a composer!)[gordon]
+  * WR50834 Everyone is a superuser fixed
+  * WR#50389 - ADVANCED MUSIC (public) SEARCH - break. [liuba]
+  * Added Captcha to new web user form. [liuba]
+  * WR#50003 - Added instructions on how to create new cm pages, different
+    refinements to display, added Page status functionality with
+    'Pending' and 'Published' statuses available, etc. [liuba]
+  * WR#50003 - Added 'anchor' to cm pages. [liuba]
+
+ -- Paul Waite <paul@catalyst.net.nz>  Thu, 22 Nov 2007 13:15:00 +1300
+
+sounz (1.2.0) stable; urgency=low
+
+  * WR50800 - Fixed category facets so that main category gets faceted
+  * WR50807 - If only one page dont show links in search results for pages
+  * WR50795 - Fix score sample link
+  * WR50731 - Unconfused influence display
+  * WR50798 - Change to behaviour for when you enter incorrect login details
+  * WR50717 - Fix for page 2 always being the next for a list of compositions (e.g. Gillian Whitehead)
+  * WIP - remove when releasing.
+  * WR#50430 - Changed the page_title of concept relationships. [liuba]
+  * WR#50586 - NEWS - thumnail added beside each story (first image 
+    attached to the article). [liuba]
+  * WR#50720 - Alter 'Back to Music' links - changed to 'New 
+    Music/People/Event Search. [liuba]
+  * WR#50268 - GRAPHIC DESIGN - general/ Springload audit - display 
+    fixes. [liuba]
+  * WR#50592 - GRAPHIC DESIGN - buttons on public version of site -
+    added buttons.[liuba]  
+  * Fixed a bug reported in WR#50189 where saving communication with
+    'Longer than week' priority status was breaking
+  * Added search related buttons to CRM searches and changed some style
+    so that CRM searches look consistent to TAP searches
+  * WR50424 - Distinction and distinction instance display, fixes to frbr methods
+  * WR50712 - Reordered facet searches when no search term provided.
+  * WR50732 - Can now search with hyphens
+  * WR50717 - Fix for page 2 always being the next for a list of compositions (e.g. Gillian Whitehead)
+
+ -- Gordon Anderson <gordon@catalyst.net.nz>  Tue, 20 Nov 2007 14:57:00 +1300
+
+sounz (1.1.0) stable; urgency=low
+
+  * WR50604 - Fixed captions for manfiestations attachments [gordon]
+  * WR50596 - Fix captions for contributor images [gordon]
+  * WR50442 - search and display of work [gordon]
+  * WR50456 - display of recording / resource [gordon]
+  * WR50608 - samples reencoded with correct rate to keep Flash happy [gordon]
+  * WR50622 - Fixed unknown facet [gordon]
+  * WR50623 - Facet and typo fixes [gordon]
+  * WR50580 - Price showing for manifestation [gordon]
+  * WR50607 - Flash player popups [gordon]
+  * WR50617 - Works FRBR relationships at bottom of display [gordon]
+  * WR50616 - Addition of composite FRBR rels and name changing [gordon]
+  * WR50618 - Selected works now showing [gordon]
+  * WR50456 - resource / manifestation view fixes [gordon]
+  * WR50623 - spelling fixes in other pathways [gordon]
+  * WR#50003 - added 'anchor' facility to TinyMCE. [liuba]
+  * WR#50413 - SONLINE - People Search and Contributor/Composer display
+  * WR50442 - Alterations to work view, including search
+  * Added show link to editing of contributor
+  * Small refinement to mailouts - hide 'Send Email' if mailout type is
+    postal. [liuba]
+  * WR#50598 - Only images relating to published entities should
+    show on front page. [liuba]
+  * WR#50588 - Only published contributors with composer or performer 
+    roles show on front page [liuba]
+  * WR#50421 - Display if Opportunity  page [liuba]
+  * WR#50434 - Venue display [liuba]
+  * WR#50595 - Graphic Design - Add/Remove icons added for selected 
+    widgets [liuba]
+  * Allowing to select/remove entities in Selected Results widget 
+    to public as requested by SOUNZ. [liuba]
+  * Fixes to borrowing process, zencart ordering process
+  * Misc DB changes to support extended ERP borrowing functionality   
+  * WR#50273 Expressions added to samples (separate patch - sample_patch.sql required)
+  	need to fix work display, and add actual files through attachment script 
+  * WR#41886 added 128k/192k mp3 entries for recordings , supress display on scores
+  * WR#50298 add paid/unpaid status and gui to memberships.
+
+ -- Pete Black <pete@catalyst.net.nz>  Mon, 19 Nov 2007 13:43:00 +1300
+
+
+sounz (1.0.3) stable; urgency=low
+
+  * WR50615 - Fixed concept edit to hold type [gordon]
+  * Reordered concept listing. [gordon]
+  * Superwork popup fixed (due to version helper variable renaming)
+    [gordon]
+  * WR#50556 -added controller_restrictions for ajax methods of advanced
+    finder populating concepts and work subcategories drop-down list,
+    this solves the bug reported in WR. [liuba]
+  * WR#50603 - added 'There were no results matching your request'
+    message. [liuba]
+  * WR#50593 - removed breadcrumbs - 'history' widget [liuba]
+  * WR#50590 - removed 'Results Filter' from facets table and changed the
+    explan text [liuba]
+  * Zencart integration - test credit card transactions now possible with
+    production [pete]
+  * Additional controller restriction fixups to enable new user
+    signup [pete]
+  * Changes to item handling [pete]
+
+ -- Pete Black <pete@catalyst.net.nz>  Thu, 15 Nov 2007 10:06:00 +1300
+
+sounz (1.0.2) stable; urgency=low
+
+  * Added nomen, role_title, organisation_name, building, street, suburb,
+    locality, postcode, region, country fields to mailout_contacts as
+    per WR #50406. [liuba]
+  * Changes in mailout contact scheme where we combine the 'raw' contactinfo
+    fields into the address_lines_ fields - (mailout_contact.generate_address_lines)
+    - and those are used in csv file when doing the export of contacts. [liuba]
+  * Added controller_restrictions and privileges checks for provider forms, 
+    borrowed items and cart. [liuba]
+  * Added 'CAN_EDIT_BORROWED_ITEM' privilege and assigned it to 'Administrator'
+    and 'CRM Administrator' member types. [liuba]
+  * WR50103 - distinction instance relationship breaking [gordon]
+  * WR42809 - dont show duplicate manifestations on work show page [gordon]
+  * WR50278 - search changes to be tested by Sounz [gordon]
+  * WR50341 - searches other than CAN_VIEW_TAP privilege only show published
+    results [gordon]
+  * Front page images now more portrait than previously. [gordon]
+  * WR50378 - fixed rendering of video / mp3 samples [gordon]
+  * Made changelog visible to privileged users. [gordon]
+  * Fixed work layouts for search results [gordon]
+  * Fixed style-related issues [gordon]
+  * Various zencart-related changes. [gordon]
+  * Miscellaneous fixes to manifestations, items [gordon] 
+
+ -- Paul Waite <paul@catalyst.net.nz>  Sun, 11 Nov 2007 18:59:00 +1300
+
+sounz (1.0.1) stable; urgency=low
+
+  * Refined the debian package postinsts so that they use the 'tell()' script
+    function to emit (echo) messages, and 'getans()' to read input. This
+    should suppress messages when there is no /dev/tty terminal available
+    eg. for remote package installs. [paul]
+  * The database upgrade patch applier now dumps the database before applying
+    any patches. An example 'do nothing' patch has been included with
+    this upgrade to test this. [paul]
+  * The Apache configuration file generator (config-apache.sh) now asks if
+    existing conf file should be re-created. Usually it shouldn't be, unless
+    some changes have been made. [paul]
+  * Removed sounz-doc package. Wastes time building this every time. Will
+    just leave it as legacy in SVN repo. [paul]
+  * Introduced /etc/sounz/sounz.changes file which contains the changes from
+    the latest version in the changelog. [paul]
+  * Provided a new 'make' target. A 'make deploy' is now possible which
+    enables make deployment direct to the target server(s) including
+    debian package installation.
+
+ -- Paul Waite <paul@catalyst.net.nz>  Sat, 10 Nov 2007 11:19:00 +1300
+
+sounz (1.0.0) stable; urgency=low
+
+  * Initial package.
+
+ -- Paul Waite <paul@catalyst.net.nz>  Sun, 14 Oct 2007 12:06:00 +1300
+

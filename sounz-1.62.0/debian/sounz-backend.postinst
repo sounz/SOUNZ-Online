@@ -1,0 +1,410 @@
+#! /bin/bash
+# postinst script for sounz
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+if [ -e /usr/share/debconf/confmodule ]
+then
+  . /usr/share/debconf/confmodule
+  db_version 2.0
+fi
+
+echo  "starting sounz-backend.postinstall.-echo"
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=sounz
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+
+# Main processing..
+case "$1" in
+  configure)
+    # continue below
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    exit 0
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+echo "default config vars"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SET DEFAULTED CONFIG VARS
+
+# Basic configuration already exists - read it in now
+PACKAGE_CONFDIR=/etc/${PACKAGE}
+PACKAGE_CONF=${PACKAGE_CONFDIR}/${PACKAGE}.conf
+if [ -f $PACKAGE_CONF ] ; then
+ . $PACKAGE_CONF
+else
+  echo "ERROR: $PACKAGE configuration $PACKAGE_CONF not found."
+  exit 1
+fi 
+
+# Local defaults..
+DB_NAME=sounz
+DB_HOST=localhost  # hard-wired for a backend server
+DB_PORT=5432
+DB_USER=sounz
+DB_PASSWD=
+PACKAGE_CONFDIR=/etc/${PACKAGE}
+PACKAGE_CONF=${PACKAGE_CONFDIR}/${PACKAGE}.conf
+
+echo "common functions"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# FUNCTIONS
+
+# Grab SOUNZ common functions..
+if [ -f ${SOUNZ_HOME}/install/install-funcs.sh ] ; then
+  . ${SOUNZ_HOME}/install/install-funcs.sh
+else
+  echo "Error: failed to load SOUNZ common functions from ${SOUNZ_HOME}/install"
+  exit 2
+fi
+
+echo "debconf settings"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DEBCONF SETTINGS
+# Notes: We only acquire the debconf database value and use it if our
+# config file value is still as yet undefined.
+#
+# We don't have a DB_HOST in this debconf, since the backend is
+# always the database machine, and therefore always 'localhost'.
+
+if [ "$DB_NAME" = "_DB_NAME_" ] ; then
+  db_get ${PACKAGE}/db_name
+  if [ "$RET" != "" ] ; then
+    DB_NAME=$RET
+  fi
+fi
+
+if [ "$DB_PORT" = "_DB_PORT_" ] ; then
+  db_get ${PACKAGE}/db_port
+  if [ "$RET" != "" ] ; then
+    DB_PORT=$RET
+  fi
+fi
+
+if [ "$DB_USER" = "_DB_USER_" ] ; then
+  db_get ${PACKAGE}/db_user
+  if [ "$RET" != "" ] ; then
+    DB_USER=$RET
+  fi
+fi
+
+if [ "$DB_PASSWD" = "_DB_PASSWD_" ] ; then
+  db_get ${PACKAGE}/db_passwd
+  if [ "$RET" != "" ] ; then
+    DB_PASSWD=$RET
+  fi
+fi
+
+echo "conf file"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CONF FILE
+# This substitutes the relevant vars into this config file.
+
+if [ -d $PACKAGE_CONFDIR ]
+then
+  # Plug in the relevant values to the SOUNZ config..
+  sub_vars $PACKAGE_CONFDIR "_DB_NAME_" "$DB_NAME"
+  sub_vars $PACKAGE_CONFDIR "_DB_PORT_" "$DB_PORT"
+  sub_vars $PACKAGE_CONFDIR "_DB_USER_" "$DB_USER"
+  sub_vars $PACKAGE_CONFDIR "_DB_PASSWD_" "$DB_PASSWD"
+
+  # Always assert proper ownership & perms..
+  chown -R ${SOUNZ_USER}:${SOUNZ_USER} $PACKAGE_CONFDIR
+  chmod -R 0644 $PACKAGE_CONFDIR
+  find $PACKAGE_CONFDIR -type d -exec chmod 0775 {} \;
+else
+  tell "SOUNZ configuration $PACKAGE_CONF not found."
+  exit 3
+fi
+
+echo "cron file"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CRON FILE
+# This substitutes the relevant vars into this crontab file.
+
+CRONDIR=/etc/cron.d
+CRONTAB=${CRONDIR}/sounz-backend
+if [ -f $CRONTAB ]
+then
+  if grep -q -i -e "_SOUNZ_HOME_" $CRONTAB
+  then
+    WRK=`tempfile -p cronjob`
+
+    sed -e "s;_SOUNZ_USER_;$SOUNZ_USER;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+    sed -e "s;_SOUNZ_HOME_;$SOUNZ_HOME;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+    sed -e "s;_SOUNZ_LOGS_;$SOUNZ_LOGS;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+
+    # Do they want them to run? ..
+    do_cron=0
+    db_get sounz/enable_backend_cronjobs
+    if [ "$RET" = "true" ] ; then
+      sed -e "s;#NORUN#;;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+      do_cron=1
+    fi
+
+	  # Replication settings
+	  # Rationale: Order of data transfer for SOUNZ DR is:
+	  #  1. database snapshot
+	  #  2. rsync replication (data, home, database snapshot)
+	  #  3. update standby database
+	  if [ "$STATUS" != "production_alone" ] ; then
+		  db_get ${PACKAGE}/sounz_db_cron
+		  REPLIC_FREQ=$RET
+		
+		  case $REPLIC_FREQ in
+		    Daily)
+		      # Snapshot every day in the small hours
+		      DB_SNAP_CRON="20 2"
+		      DB_UPDT_CRON="29 2"
+		      ;;
+		    Four-hourly)
+		      # Snapshot every 4 hours
+		      DB_SNAP_CRON="20 */4"
+		      DB_UPDT_CRON="29 */4"
+		      ;;
+		    Hourly)
+		      # Snapshot every hour
+		      DB_SNAP_CRON="20 *"
+		      DB_UPDT_CRON="29 *"
+		      ;;
+		    Testing)
+		      # Snapshot every 5 mins
+		      DB_SNAP_CRON="0,5,10,15,20,25,30,35,40,45,50,55 *"
+		      DB_UPDT_CRON="4,9,14,19,24,29,34,39,44,49,54,59 *"
+		      ;;
+		    *)
+		      # No replication
+		      DB_SNAP_CRON=
+		      DB_UPDT_CRON=
+		      ;;
+		  esac
+
+      if [ "$DB_SNAP_CRON" != "" ] ; then
+		    sed -e "s;_DB_SNAP_CRON_;$DB_SNAP_CRON;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+		    if [ $do_cron -eq 1 ] ; then
+		      sed -e "s;#NOSNAP#;;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+		    fi
+      fi
+
+      if [ "$DB_UPDT_CRON" != "" ] ; then
+		    sed -e "s;_DB_UPDT_CRON_;$DB_UPDT_CRON;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+		    if [ $do_cron -eq 1 ] ; then
+		      sed -e "s;#NOUPDT#;;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+		    fi
+      fi
+
+    fi
+    rm -f $WRK
+  fi
+fi
+
+echo "DB env"
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DATABASE ENVIRONMENT
+
+# Now set paths to our executables
+PG_INITD=/etc/init.d/postgresql
+PSQL=`which psql`
+CREATEDB=`which createdb`
+CREATELANG=`which createlang`
+
+echo "db inst"
+# DB INSTALLATION
+# Try to detect the Postgres security settings, since these will determine
+# what we can and cannot do in the way of configuration from here.
+# First, let's locate the config files..
+if [ "$PG_CONF" != "" ] ; then
+  PG_HBA=${PG_CONF}/pg_hba.conf
+  # Local connection settings - postgres user
+  LPTRUST=`perl -n -e "m;^local[\s]+all[\s]+postgres[\s]+trust$; && print;" ${PG_HBA}`
+  LPTRUST_ENTRY="local all postgres trust"
+
+  # Local connection settings - database user
+  LUTRUST=`perl -n -e "m;^local[\s]+all[\s]+${DB_USER}[\s]+trust$; && print;" ${PG_HBA}`
+  LUTRUST_ENTRY="local all $DB_USER trust"
+
+  # Remote host connection settings - postgres user
+  HPTRUST=`perl -n -e "m;^host[\s]+all[\s]+postgres[\s]+127.0.0.1[\s]+255.255.255.255[\s]+trust$; && print;" ${PG_HBA}`
+  HPTRUST_ENTRY="host all postgres 127.0.0.1 255.255.255.255 trust"
+
+  # Remote host connection settings - database user
+  HUTRUST=`perl -n -e "m;^host[\s]+${DB_NAME}[\s]+${DB_USER}[\s]+127.0.0.1[\s]+255.255.255.255[\s]+trust$; && print;" ${PG_HBA}`
+  HUTRUST_ENTRY="host $DB_NAME $DB_USER 127.0.0.1 255.255.255.255 trust"
+  
+  if [ "$LPTRUST" = "" -o "$LUTRUST" = "" -o "$HPTRUST" = "" -o "$HUTRUST" = "" ] ; then
+  	tell ""
+    tell "Postgres Security Settings:"
+    tell "Your current Postgres security settings do not have a 'trust' set up for"
+    tell "local database connections for '$DB_NAME'. This will probably prevent"
+    tell "this script from doing its job. The script can fix this by putting"
+    tell "the following into your ${PG_HBA}"
+    tell "file for you, otherwise you can set something similar up yourself:"
+    tell ""
+    if [ "$LPTRUST" = "" ] ; then
+      tell $LPTRUST_ENTRY
+    fi
+    if [ "$HPTRUST" = "" ] ; then
+      tell $HPTRUST_ENTRY
+    fi
+    if [ "$LUTRUST" = "" ] ; then
+      tell $LUTRUST_ENTRY
+    fi
+    if [ "$HUTRUST" = "" ] ; then
+      tell $HUTRUST_ENTRY
+    fi
+    # Read ANS from commandline, or if we are in a non-interactive
+    # mode then set ANS to "y"
+    tell ""
+    tell -n "Make postgres security changes now? [Yn]:"
+    getans "y"
+    [ "$ANS" = "" ] && ANS="y"
+    if [ "$ANS" = "y" -o "$ANS" = "Y" -o "$ANS" = "yes" ] ; then
+      PG_HBA_NEW=${PG_HBA}.new
+      DONE=0
+      (while read line ; do
+        echo $line >> $PG_HBA_NEW
+        if [ $DONE -eq 0 ] ; then
+          A=`echo $line | perl -n -e "m;(^# Put your actual configuration here)|(^# TYPE ); && print;"`
+          if [ "$A" != "" ] ; then
+            if [ "$LPTRUST" = "" ] ; then
+              echo $LPTRUST_ENTRY >> $PG_HBA_NEW
+            fi
+            if [ "$HPTRUST" = "" ] ; then
+              echo $HPTRUST_ENTRY >> $PG_HBA_NEW
+            fi
+            if [ "$LUTRUST" = "" ] ; then
+              echo $LUTRUST_ENTRY >> $PG_HBA_NEW
+            fi
+            if [ "$HUTRUST" = "" ] ; then
+              echo $HUTRUST_ENTRY >> $PG_HBA_NEW
+            fi
+            DONE=1
+          fi
+        fi
+      done) < $PG_HBA
+      TSTAMP=`date +'%F_%H%M%S'`
+      mv $PG_HBA ${PG_HBA}.${TSTAMP}
+      mv $PG_HBA_NEW $PG_HBA
+      tell "security changes have been made"
+      tell "re-loading Postgresql with the new config.."
+      $PG_INITD reload
+    else
+      tell "Ok, no changes - installation will proceed, but you are on your own!"
+    fi
+  else
+    tell "Postgresql security settings are ok, no changes necessary"
+  fi
+fi
+
+echo "db checks"
+# Make sure all of the required database connection users are present. These
+# include the application connection user $DB_USER, but we also need the
+# users for admin and reports usage, so we assert those here. 
+DBUSERS="$DB_USER sounz_reports"
+for DBUSER in $DBUSERS ; do
+  USER=`$PSQL --tuples-only --username postgres --dbname template1 --command "SELECT usename FROM pg_user WHERE usename='$DBUSER'" | tr -d ' '`
+  if [ "$USER" != "$DBUSER" ] ; then
+  	# Create the user, with no password
+    tell "creating database user '${DBUSER}'.."
+    $PSQL --username postgres --dbname template1 --command "CREATE USER $DBUSER CREATEDB"
+  else
+    tell "database user '$DBUSER' present."
+  fi
+done
+
+# Set password for main connection user, if given..
+if [ "$DB_PASSWD" != "" ] ; then
+  $PSQL --username postgres --dbname template1 --command "ALTER USER $DB_USER WITH ENCRYPTED PASSWORD '$DB_PASSWD'"
+fi
+
+# Check there is a SOUNZ database (usually there will be)
+DB=`$PSQL --tuples-only --username postgres --dbname template1 --command "SELECT datname FROM pg_database WHERE datname='$DB_NAME'" | tr -d ' '`
+if [ "$DB" = "" ] ; then
+  tell "creating the database $DB_NAME now.."
+  su - postgres -c "${CREATEDB} --username ${DB_USER} --encoding UTF-8 ${DB_NAME}"
+  if [ $? -eq 0 ] ; then
+  	if [ -f ${SOUNZ_HOME}/db/sounz-online-schema-postgres.sql ] ; then
+      $PSQL --username $DB_USER --file ${SOUNZ_HOME}/db/sounz-online-schema-postgres.sql $DB_NAME
+      tell "Note: the database has been created only as an empty schema."
+  	fi
+  else
+    tell "Error: failed to create PostgreSQL database '${DB_NAME}'."
+    tell "Maybe a problem in your PostgreSQL configuration?"
+    exit 8
+  fi
+else
+  tell "database '$DB_NAME' already exists."
+fi
+
+echo "lang check"
+
+# Assert plpgsql language is present
+su - postgres -c "${CREATELANG} plpgsql ${DB_NAME}" || true
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DATABASE AUTO-UPGRADE
+# Tend to possible patches provided with an upgrade, and if so use
+# them to apply the relevant schema and/or data changes.
+
+# Application version file and current (new) version
+APP_VERSION="unknown"
+VERSIONFILE=${PACKAGE_CONFDIR}/${PACKAGE}.version
+if [ -f $VERSIONFILE ] ; then
+  APP_VERSION=`cat $VERSIONFILE`
+fi
+
+# Upgrade database schema, if we can
+if [ -x ${SOUNZ_HOME}/install/upgrade-db.sh ] ; then
+  . ${SOUNZ_HOME}/install/upgrade-db.sh
+else
+  tell "Error: ${SOUNZ_HOME}/install/upgrade-db.sh not found."
+  exit 5
+fi
+
+echo "zencart config"
+# Now configure it for zencart..
+${SOUNZ_HOME}/install/config-zencart.sh
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# LOGROTATE SUBS
+# Substitute our paths etc. into any logrotate scripts we installed.
+ROTDIR=/etc/logrotate.d
+sub_vars $ROTDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+sub_vars $ROTDIR "_ADMIN_EMAIL_" "$ADMIN_EMAIL"
+sub_vars $ROTDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+sub_vars $ROTDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+sub_vars $ROTDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+#DEBHELPER#
+
+echo "done"
+
+exit 0

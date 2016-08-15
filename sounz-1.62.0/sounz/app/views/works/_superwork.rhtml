@@ -1,0 +1,7 @@
+<%if !object.blank?%>
+<strong><%=object.objectData.superwork_title%></strong>
+<input type="hidden" id="work_superwork_id" name="work[superwork_id]" value="<%=object.objectData.superwork_id%>"/>
+<%=action_button(link_to_new 'Edit', 600,400,:action => 'editSuperwork' ,:controller => :works, :id => @work, :superwork_id => object.objectData.superwork_id)%>
+<%else%>
+<b>If you do not assign a different superwork, a new superwork will be automatically created, with the superwork title in the following format 'Work Title - Composer Name'.</b>
+<%end%>

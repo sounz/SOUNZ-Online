@@ -1,0 +1,5 @@
+if !@login.blank?
+page.redirect_to :controller => :home, :action => :index
+else
+page.redirect_to :controller => :people, :action => :new_web_user
+end

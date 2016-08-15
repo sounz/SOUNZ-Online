@@ -1,0 +1,300 @@
+1372081|2030000005079|Westpark Drive|Russley|22/12/2006 14:16:19|22/12/2006 14:16:19|LT 375817 ELS/05/00/06 fol 141|O|bclark  |1|N|C
+1372082|2030000005081|Cris Lodge Courts|Hornby|22/12/2006 14:35:01|22/12/2006 14:35:01|ELS/05/00/06 Fol 142|O|bclark  |1|N|C
+1372083|2030000005083|Shearwater Drive|Kaikoura|05/01/2007 12:43:02|05/01/2007 12:43:02|DP 374056|O|bclark  |1|N|C
+1372084|2030000005085|Tauhou Place|Kaikoura|05/01/2007 12:45:23|05/01/2007 12:45:23|DP 374056|O|bclark  |1|N|C
+1372085|2030000005087|Pukeko Place|Kaikoura|05/01/2007 12:46:45|05/01/2007 12:46:45|DP 374056|O|bclark  |1|N|C
+1372086|2030000005089|Miromiro Drive|Kaikoura|05/01/2007 12:48:00|05/01/2007 12:48:00|DP 374056|O|bclark  |1|N|C
+1372087|2030000004475|Puke I Ahua Lane|Ngaruawahia|03/10/2006 15:34:32|08/01/2007 11:39:08|Council advise new road|O|gfinlay |2|D|H
+1372088|2030000005092|Sophies Way|Papamoa Beach|09/01/2007 14:05:00|09/01/2007 14:05:00|Council Advice - New Private Street Name|O|gfinlay |1|N|C
+1372089|2030000005094|Duncans Way|Otaki Beach|09/01/2007 14:16:21|09/01/2007 14:16:21|Advice from TLA|O|ncudby  |1|N|C
+1372091|2030000005099|Saddle Road|Woodville|09/01/2007 15:38:28|09/01/2007 15:38:28||O|jbedford|1|N|C
+1372092|2030000005102|Overend Court|Pukekohe|10/01/2007 11:25:24|10/01/2007 11:25:24|new road 08/01/2007|O|mschumac|1|N|C
+1372093|2030000005104|Nikau Lane|Maungaturoto|10/01/2007 11:35:34|10/01/2007 11:35:34|new road 08/12/2006|O|mschumac|1|N|C
+1372094|2030000005106|Matai Drive|Maungaturoto|10/01/2007 11:39:27|10/01/2007 11:39:27|new road 08/12/2006|O|mschumac|1|N|C
+1372095|2030000005108|Motu Road|Motu|10/01/2007 11:48:15|10/01/2007 11:48:15|New street created due to duplicate number ranges|O|jbedford|1|N|C
+1372096|2030000005001|Sidney Crescent|Kaiteriteri|14/12/2006 11:05:35|10/01/2007 15:54:22|See ELF-W15-05/728/1 fo 92|O|mpenter|2|E|C
+1372097|2030000005003|Bay View Road|Kaiteriteri|14/12/2006 11:09:17|10/01/2007 15:55:44||O|mpenter|2|E|H
+1372098|2030000005003|Bay View Road|Kaiteriteri|14/12/2006 11:09:17|10/01/2007 15:56:29|ELF-W15-05/728/1 fo 92|O|mpenter|3|E|C
+1372099|2030000005113|Tangimoana Road|Tangimoana|11/01/2007 09:04:48|11/01/2007 09:04:48||O|gscott  |1|N|C
+1372100|1030000028929|Fenton Street|Glenholme|08/07/1992 00:00:00|11/01/2007 09:52:33||O|gscott|3|E|C
+1372101|2030000005115|Fenton Street|Rotorua|11/01/2007 09:54:36|11/01/2007 09:54:36||O|gscott  |1|N|C
+1372102|2030000005117|Mountain View Terrace End|Otaki Beach|11/01/2007 13:46:26|11/01/2007 13:46:26|Advice from TLA|O|ncudby  |1|N|C
+1372103|1030000000159|Manawahe Road|Matata-Manawahe|13/02/1990 00:00:00|11/01/2007 14:22:54||O|jbedford|3|E|C
+1372104|2030000005121|SH  1|Waianakarua|12/01/2007 14:31:35|12/01/2007 14:31:35||O|jbedford|1|N|H
+1372105|2030000005123|SH  1|Hillgrove|12/01/2007 14:42:08|12/01/2007 14:42:08||O|jbedford|1|N|H
+1372106|2030000005123|SH  1|Hampden-Palmerston|12/01/2007 14:42:08|12/01/2007 14:51:01||O|jbedford|2|E|C
+1372107|2030000005121|SH  1|Herbert-Hampden|12/01/2007 14:31:35|12/01/2007 14:58:00||O|jbedford|2|E|C
+1372108|2030000005126|Tapapa West Road|Tapapa|15/01/2007 10:51:01|15/01/2007 10:51:01|New Road Name for portion of Road formerly part of SH 5 and SH 28. SH is now realigned|O|gfinlay |1|N|C
+1372109|2030000003415|Old Barn Road|Opaheke|11/04/2006 09:17:41|15/01/2007 11:01:56|Hochstetter Rd renamed Old Barn Rd 10/07/2006|O|mschumac|3|E|C
+1372110|1030000203597|SH  1|Kawakawa-Hikurangi|28/11/2000 00:00:00|15/01/2007 13:42:43||O|jbedford|4|E|C
+1372111|2030000005129|SH  1|Ohaeawai-Moerewa|15/01/2007 13:55:35|15/01/2007 13:55:35||O|jbedford|1|N|C
+1372112|2030000005131|SH  1|Moerewa-Kawakawa|15/01/2007 14:17:35|15/01/2007 14:17:35||O|jbedford|1|N|C
+1372113|2030000005133|SH  1|Hikurangi-Whangarei|15/01/2007 14:24:11|15/01/2007 14:24:11||O|jbedford|1|N|C
+1372114|2030000005135|Waterford Lane|Albany|16/01/2007 07:46:21|16/01/2007 07:46:21|new private road|O|mschumac|1|N|C
+1372115|2030000005137|Chester Lane|Albany|16/01/2007 07:53:00|16/01/2007 07:53:00|new private road|O|mschumac|1|N|C
+1372116|2030000005139|Brompton Drive|Albany|16/01/2007 07:55:23|16/01/2007 07:55:23|new private road|O|mschumac|1|N|C
+1372117|2030000005141|Belgrave Lane|Albany|16/01/2007 07:57:29|16/01/2007 07:57:29|new private road|O|mschumac|1|N|C
+1372118|2030000005143|Caddean Lane|Albany|16/01/2007 07:59:37|16/01/2007 07:59:37|new private road|O|mschumac|1|N|C
+1372119|2030000005145|Kings Lane|Albany|16/01/2007 08:02:43|16/01/2007 08:02:43|new private road|O|mschumac|1|N|C
+1372120|2030000005147|Regency Lane|Albany|16/01/2007 08:04:37|16/01/2007 08:04:37|new private road|O|mschumac|1|N|C
+1372121|2030000005149|Draycott Lane|Albany|16/01/2007 08:06:43|16/01/2007 08:06:43|new private road|O|mschumac|1|N|C
+1372122|2030000005151|The Rise|Albany|16/01/2007 08:08:39|16/01/2007 08:08:39|new private road|O|mschumac|1|N|C
+1372123|2030000005153|Onslow Lane|Albany|16/01/2007 08:13:05|16/01/2007 08:13:05|new private road|O|mschumac|1|N|C
+1372124|2030000005155|Cromwell Lane|Albany|16/01/2007 08:14:53|16/01/2007 08:14:53|new private road|O|mschumac|1|N|C
+1372125|2030000005157|Chesham Lane|Albany|16/01/2007 08:16:59|16/01/2007 08:16:59|new private road|O|mschumac|1|N|C
+1372126|2030000005159|Sloane Lane|Albany|16/01/2007 08:25:36|16/01/2007 08:25:36|new private road|O|mschumac|1|N|C
+1372127|2030000005161|Lennox Lane|Albany|16/01/2007 08:28:10|16/01/2007 08:28:10|new private road|O|mschumac|1|N|C
+1372128|2030000005163|Teed Lane|Albany|16/01/2007 08:29:44|16/01/2007 08:29:44|new private road|O|mschumac|1|N|C
+1372129|2030000005165|Baulcomb Lane|Albany|16/01/2007 08:31:30|16/01/2007 08:31:30|new private road|O|mschumac|1|N|H
+1372130|2030000005165|Baulcomb Lane|Albany|16/01/2007 08:31:30|16/01/2007 08:39:33|new private road|O|mschumac|2|D|H
+1372132|2030000005171|Benjack Place|The Gardens|16/01/2007 12:02:29|16/01/2007 12:02:29|add new road TA advice|O|tdaurewa|1|N|C
+1372134|2030000005175|Battlen Place|The Gardens|16/01/2007 12:05:26|16/01/2007 12:05:26|add new road TA advice|O|tdaurewa|1|N|C
+1372136|2030000005179|Beggs Way|Dannemora|16/01/2007 12:12:06|16/01/2007 12:12:06|add new road TA advice|O|tdaurewa|1|N|C
+1372139|2030000005185|The Palms|Rototuna|16/01/2007 12:42:46|16/01/2007 12:42:46|New road advised by Council|O|sinnis  |1|N|C
+1372141|2030000005189|Hampshire Court|Flagstaff|16/01/2007 13:32:41|16/01/2007 13:32:41|New name advised by Council|O|sinnis  |1|N|C
+1372142|1030000206482|SH  2|Awakeri|29/01/2001 00:00:00|16/01/2007 14:43:00|Converted from earlier ASP|O|jbedford|3|D|H
+1372144|2030000005193|Carr-end Lane|Flagstaff|17/01/2007 08:50:48|17/01/2007 08:50:48|New road name received from Council|O|sinnis  |1|N|C
+1372146|2030000005197|Egton Lane|Flagstaff|17/01/2007 08:55:02|17/01/2007 08:55:02|New road name received from Council|O|sinnis  |1|N|C
+1372148|2030000005201|Abbey Lane|Flagstaff|17/01/2007 09:03:33|17/01/2007 09:03:33|New road name received from Council|O|sinnis  |1|N|C
+1372149|2030000005204|Ketemaringi Way|Manakau|17/01/2007 13:59:31|17/01/2007 13:59:31|Advice from TLA|O|ncudby  |1|N|C
+1372150|2030000005206|Henham Lane|Waikawa Beach|17/01/2007 14:32:44|17/01/2007 14:32:44|Advice from TLA|O|ncudby  |1|N|C
+1372151|2030000005208|Community Lane|Avondale|17/01/2007 14:57:24|17/01/2007 14:57:24|ta advise|O|tdaurewa|1|N|C
+1372153|2030000005212|Middleton Place|Franz Josef|17/01/2007 15:55:16|17/01/2007 15:55:16|ELS/05/00/20 fo 45|O|mpenter |1|N|C
+1372154|2030000005214|Harbourside Drive|Karaka|18/01/2007 07:40:03|18/01/2007 07:40:03|new road 12/01/2007|O|mschumac|1|N|C
+1372155|2030000005216|Acqua Place|Karaka|18/01/2007 07:43:29|18/01/2007 07:43:29|new road 12/01/2007|O|mschumac|1|N|C
+1372156|2030000005218|Lees Cove|Karaka|18/01/2007 07:47:06|18/01/2007 07:47:06|new road 12/01/2007|O|mschumac|1|N|C
+1372157|2030000005220|Milano Boulevard|Karaka|18/01/2007 07:48:53|18/01/2007 07:48:53|new road 12/01/2007|O|mschumac|1|N|C
+1372158|2030000005222|Giarni Place|Karaka|18/01/2007 07:50:37|18/01/2007 07:50:37|new road 12/01/2007|O|mschumac|1|N|C
+1372159|2030000005224|Capriana Drive|Karaka|18/01/2007 07:52:39|18/01/2007 07:52:39|new road 12/01/2007|O|mschumac|1|N|C
+1372160|2030000005226|Bianca Court|Karaka|18/01/2007 07:54:11|18/01/2007 07:54:11|new road 12/01/2007|O|mschumac|1|N|C
+1372161|2030000005228|Castellina Drive|Karaka|18/01/2007 07:55:55|18/01/2007 07:55:55|new road 12/01/2007|O|mschumac|1|N|C
+1372162|2030000005230|Troy's Link|Karaka|18/01/2007 07:57:19|18/01/2007 07:57:19|new road 12/01/2007|O|mschumac|1|N|C
+1372163|2030000005232|Tongeren Square|Karaka|18/01/2007 07:59:02|18/01/2007 07:59:02|new road 12/01/2007|O|mschumac|1|N|C
+1372164|2030000005234|Canini Grove|Karaka|18/01/2007 08:00:36|18/01/2007 08:00:36|new road 12/01/2007|O|mschumac|1|N|C
+1372165|2030000005236|Lombardia Way|Karaka|18/01/2007 08:02:34|18/01/2007 08:02:34|new road 12/01/2007|O|mschumac|1|N|C
+1372166|2030000005238|Rossini Court|Karaka|18/01/2007 08:04:15|18/01/2007 08:04:15|new road 12/01/2007|O|mschumac|1|N|C
+1372167|2030000005240|Rivoli Place|Karaka|18/01/2007 08:05:35|18/01/2007 08:05:35|new road 12/01/2007|O|mschumac|1|N|C
+1372168|2030000005242|Toscana Drive|Karaka|18/01/2007 08:07:18|18/01/2007 08:07:18|new road 12/01/2007|O|mschumac|1|N|C
+1372169|2030000005244|Corsica Way|Karaka|18/01/2007 08:08:35|18/01/2007 08:08:35|new road 12/01/2007|O|mschumac|1|N|C
+1372170|2030000005246|Asola Place|Karaka|18/01/2007 08:09:45|18/01/2007 08:09:45|new road 12/01/2007|O|mschumac|1|N|C
+1372171|2030000005248|Portofino Point|Karaka|18/01/2007 08:10:54|18/01/2007 08:10:54|new road 12/01/2007|O|mschumac|1|N|C
+1372172|2030000005250|Pescara Point|Karaka|18/01/2007 08:12:13|18/01/2007 08:12:13|new road 12/01/2007|O|mschumac|1|N|C
+1372174|2030000005254|Glyll Close|Flagstaff|18/01/2007 09:02:07|18/01/2007 09:02:07|New road advised by Council|O|sinnis  |1|N|C
+1372176|2030000005258|Chalgrove Road|North Huntingdon|18/01/2007 12:04:52|18/01/2007 12:04:52|Road name advised by Council|O|sinnis  |1|N|C
+1372178|2030000005262|Barwick Place|North Huntingdon|18/01/2007 12:14:10|18/01/2007 12:14:10|Road name advised by Council|O|sinnis  |1|N|C
+1372180|2030000005266|Hartford Terrace|North Huntingdon|18/01/2007 12:27:00|18/01/2007 12:27:00|Road name advised by Council|O|sinnis  |1|N|C
+1372182|2030000005270|Ashwick Terrace|North Huntingdon|18/01/2007 12:35:08|18/01/2007 12:35:08|Council advised us of new road name.|O|sinnis  |1|N|C
+1372184|2030000005274|Te Ironui Place|North Huntingdon|18/01/2007 12:40:37|18/01/2007 12:40:37|Road name advised by Council|O|sinnis  |1|N|C
+1372186|2030000005278|Eastridge Terrace|North Huntingdon|18/01/2007 12:42:42|18/01/2007 12:42:42|Council advise us of new road name|O|sinnis  |1|N|C
+1372188|2030000005282|Stanton Place|North Huntingdon|18/01/2007 12:44:23|18/01/2007 12:44:23|Advised by Council of new road name|O|sinnis  |1|N|C
+1372189|2030000005284|Dalley Lane|Oxford|18/01/2007 14:00:59|18/01/2007 14:00:59|ELF-L15-06-05/630/1 fo 54|O|mpenter |1|N|C
+1372191|2030000005288|McNaughton Place|Meeanee|18/01/2007 14:07:20|18/01/2007 14:07:20|Advice from TLA|O|ncudby  |1|N|C
+1372192|1030000003401|Old Bridge Road South|Irwell|27/02/1990 00:00:00|19/01/2007 08:20:44|ELF-L15-06-05/616/1|O|mpenter|3|E|C
+1372193|2030000005290|Old Bridge Road North|Irwell|19/01/2007 08:23:42|19/01/2007 08:23:42|ELF-L15-06-05/616/1 fo 52|O|mpenter |1|N|C
+1372194|2030000005293|Romar Lane|Heathcote Valley|19/01/2007 11:56:52|19/01/2007 11:56:52|ELS/05/00/06 fo 145|O|mpenter |1|N|C
+1372195|2030000005295|Cork Lane|Fernside|19/01/2007 13:56:27|19/01/2007 13:56:27|ELF-L15-06-05/630/1 fo 56|O|mpenter |1|N|C
+1372197|1030000026731|Von Road|Mount Nicholas|23/06/1982 00:00:00|19/01/2007 17:01:50|locality amended|O|jthomas|3|E|C
+1372199|1030000026753|Mount Nicholas-Beach Bay Road|Walter Peak|23/06/1982 00:00:00|19/01/2007 17:07:29|changed locality|O|jthomas|3|E|C
+1372201|1030000209929|SH 26|Paeroa-Kopu|23/08/2001 00:00:00|23/01/2007 10:12:25||O|jbedford|3|E|H
+1372203|2030000005299|SH 26|Te Aroha-Paeroa|23/01/2007 11:06:14|23/01/2007 11:06:14||O|jbedford|1|N|H
+1372204|2030000005302|SH 26|Morrinsville- Te Aroha|23/01/2007 13:03:09|23/01/2007 13:03:09||O|jbedford|1|N|H
+1372205|2030000005304|SH 26|Hamilton-Morrinsville|23/01/2007 13:57:25|23/01/2007 13:57:25||O|jbedford|1|N|H
+1372207|2030000005309|Elderwood Lane|Edgeware|23/01/2007 14:25:06|23/01/2007 14:25:06|ELS/05/00/06 fo 148|O|mpenter |1|N|C
+1372208|2030000005311|Harper Mews|Feilding|23/01/2007 14:25:25|23/01/2007 14:25:25|Query from SNZ confirmed by TLA|O|ncudby  |1|N|C
+1372209|2030000005314|Sandy Lane|Otamatea|24/01/2007 08:23:46|24/01/2007 08:23:46|Advice from TLA|O|ncudby  |1|N|C
+1372210|1030000203077|SH 60|Collingwood|31/08/2000 00:00:00|25/01/2007 08:51:24|Converted from earlier ASP|O|jbedford|3|D|H
+1372211|1030000203098|SH 63|St Arnaud|31/08/2000 00:00:00|25/01/2007 09:20:42|Converted from earlier ASP|O|jbedford|3|D|H
+1372212|1030000200081|SH 96|Ohai|01/06/2000 00:00:00|25/01/2007 10:38:31|Converted from earlier ASP|O|jbedford|3|D|H
+1372213|1030000047323|Te Para Para Road|Rangiwahia|01/01/1970 00:00:00|26/01/2007 09:41:43|194 query confirmed|O|ncudby|3|E|C
+1372214|2030000005324|Snowberry Lane|Ohakune|29/01/2007 09:07:39|29/01/2007 09:07:39|Advice from TLA|O|ncudby  |1|N|C
+1372215|1030000004449|Turakina Valley Road|Turakina-Rangiwaea|08/03/1990 00:00:00|29/01/2007 14:01:26||O|jbedford|3|E|C
+1372216|2030000005340|Turakina Valley Road|Tangiwai|29/01/2007 14:03:07|29/01/2007 14:03:07||O|jbedford|1|N|C
+1372217|2030000005362|Aviemore Dam Road|Lake Aviemore|30/01/2007 12:02:04|30/01/2007 12:02:04||O|gscott  |1|N|C
+1372218|2030000005381|Benmore Dam Road|Otematata|30/01/2007 13:55:37|30/01/2007 13:55:37||O|gscott  |1|N|C
+1372219|2030000005385|Okarito Avenue|Levin|30/01/2007 14:03:21|30/01/2007 14:03:21|Advice from TLA|O|ncudby  |1|N|C
+1372220|2030000005387|Woodlands Road|Waimate|30/01/2007 15:05:09|30/01/2007 15:05:09||O|gscott  |1|N|C
+1372221|1030000053277|Radnor Street|Waimate|01/01/1970 00:00:00|31/01/2007 08:29:44|Converted from earlier ASP|O|gscott  |3|D|H
+1372222|1030000043071|Harris Road|Morven|01/01/1970 00:00:00|31/01/2007 08:30:59|Converted from earlier ASP|O|gscott  |3|D|H
+1372223|1030000043002|Dog Kennel Hill Road|Ikawai|26/03/1982 00:00:00|31/01/2007 08:31:58|Locality name altered to agree with NZ Localities database|O|gscott  |4|D|H
+1372224|1030000043007|Dons Road|Ikawai|01/01/1970 00:00:00|31/01/2007 08:32:20|Locality name altered to agree with NZ Localities database|O|gscott  |4|D|H
+1372225|1030000053314|Squires Road|Maungati|01/01/1970 00:00:00|31/01/2007 08:32:54|Locality name altered to agree with NZ Localities database|O|gscott  |4|D|H
+1372226|1030000053413|Clarkesfield Back Road|Elephant Hill|01/01/1970 00:00:00|31/01/2007 08:46:53|Locality name altered to agree with NZ Localities database|O|gscott  |4|D|H
+1372227|2030000005393|Hunter Drive|Awatoto|31/01/2007 09:29:22|31/01/2007 09:29:22|Advice from TLA|O|ncudby  |1|N|C
+1372228|2030000005395|Thorntons Road|Ikawai|31/01/2007 10:01:58|31/01/2007 10:01:58||O|gscott  |1|N|C
+1372229|1030000053290|Robert Street|Morven|14/12/1982 00:00:00|31/01/2007 13:16:17|Converted from earlier ASP|O|gscott  |3|D|H
+1372230|2030000005397|Sunset Place|Paroa|31/01/2007 13:18:02|31/01/2007 13:18:02|ELF-L15-06-05/583/1 fo 22|O|ygrant  |1|N|C
+1372233|2030000005403|The Tors|Heathcote Valley|31/01/2007 13:34:05|31/01/2007 13:34:05|ELS/05/00/06-05 fo 147|O|ygrant  |1|N|C
+1372234|1030000043229|Powells Road|Waihaorunga|10/04/1987 00:00:00|31/01/2007 13:44:25|Locality name altered to agree with NZ Localities database|O|gscott  |4|D|H
+1372239|2030000005413|East Stream Lane|Northwood|31/01/2007 13:54:53|31/01/2007 13:54:53|ELS/05/00/06-05 fo 146|O|ygrant  |1|N|C
+1372240|1030000042969|Railway Terrace South|Waimate|26/01/1989 00:00:00|31/01/2007 13:54:55|Converted from earlier ASP|O|gscott  |3|D|H
+1372243|2030000005419|Kaikainui Lane|Northwood|31/01/2007 13:57:59|31/01/2007 13:57:59|ELS/05/00/06-05 fo 146|O|ygrant  |1|N|C
+1372244|2030000005421|Toutouwai Terrace|Levin|31/01/2007 13:59:07|31/01/2007 13:59:07|Advice from TLA|O|ncudby  |1|N|C
+1372245|2030000005423|Ruru Place|Levin|31/01/2007 14:41:24|31/01/2007 14:41:24|Advice from TLA|O|ncudby  |1|N|C
+1372246|1030000058906|The Cliffs|Britannia Heights|19/06/1991 00:00:00|31/01/2007 14:50:43|Locality name altered to agree with NZ Localities database|O|jbedford|4|D|H
+1372248|2030000005427|The Cliffs|Britannia Heights|31/01/2007 14:52:01|31/01/2007 14:52:01||O|jbedford|1|N|C
+1372249|2030000005462|Piwakawaka Place|Levin|01/02/2007 14:54:33|01/02/2007 14:54:33|Advice from TLA|O|ncudby  |1|N|C
+1372251|2030000005470|Fishermans Bend|Kirkliston|02/02/2007 11:43:37|02/02/2007 11:43:37|From Waimate DC centreline data|O|jbedford|1|N|C
+1372252|1030000043053|Grays Road|Waimate|14/10/1981 00:00:00|02/02/2007 13:41:43|Locality name altered to agree with NZ Localities database|O|jbedford|4|D|H
+1372253|2030000005472|Fuller Close|Levin|02/02/2007 13:54:51|02/02/2007 13:54:51|Advice from TLA|O|ncudby  |1|N|C
+1372254|2030000005474|Colin Drive|Komata|02/02/2007 16:07:19|02/02/2007 16:07:19|New Street name advised by council|O|gfinlay |1|N|C
+1372255|1030000039358|Karnback Road|Harihari|01/01/1970 00:00:00|07/02/2007 10:27:41|Locality name altered to agree with NZ Localities database|O|bclark  |4|D|H
+1372256|1030000212969|Gloucester Place|Rototuna North|17/10/2003 00:00:00|07/02/2007 12:23:00|Locality name altered to agree with NZ Localities database|O|sinnis  |4|D|H
+1372258|2030000005478|Sarah Place|Rototuna North|07/02/2007 12:28:37|07/02/2007 12:28:37|New road advised by Council|O|sinnis  |1|N|H
+1372260|2030000005478|Sarah Court|Rototuna North|07/02/2007 12:28:37|07/02/2007 12:29:38|Notication that it should be Court not Place|O|sinnis|2|E|C
+1372262|2030000005482|Savannah Place|Rototuna North|07/02/2007 12:36:39|07/02/2007 12:36:39|New road advised by Council|O|sinnis  |1|N|C
+1372263|2030000005484|Kelvin Way|Judea|07/02/2007 14:49:58|07/02/2007 14:49:58|New road advised by Council|O|sinnis  |1|N|C
+1372264|2030000005486|Dayna Avenue|Hairini|08/02/2007 14:18:52|08/02/2007 14:18:52|New road advised by Council|O|sinnis  |1|N|C
+1372265|1030000042998|Dickens Street|St Andrews|20/02/1989 00:00:00|08/02/2007 14:53:39|Converted from earlier ASP|O|jbedford|3|D|H
+1372266|2030000005488|Windsor Crescent|Albany|09/02/2007 09:00:36|09/02/2007 09:00:36|new private road in retirement village|O|mschumac|1|N|C
+1372267|2030000005490|Mayfair Drive|Albany|09/02/2007 09:02:28|09/02/2007 09:02:28|new private road in retirement village|O|mschumac|1|N|C
+1372268|2030000005492|Tudor Place|Albany|09/02/2007 09:04:34|09/02/2007 09:04:34|new private road in retirement village|O|mschumac|1|N|C
+1372269|2030000005494|Ascot Avenue|Albany|09/02/2007 09:06:26|09/02/2007 09:06:26|new private road in retirement village|O|mschumac|1|N|C
+1372270|2030000005496|Brampton Court|Albany|09/02/2007 09:10:09|09/02/2007 09:10:09|new private road|O|mschumac|1|N|C
+1372271|2030000005498|Oxford Close|Albany|09/02/2007 09:11:23|09/02/2007 09:11:23|new private road|O|mschumac|1|N|C
+1372272|2030000005500|Chelsea Lane|Albany|09/02/2007 09:12:44|09/02/2007 09:12:44|new private road|O|mschumac|1|N|C
+1372273|2030000005502|Cheltenham Drive|Albany|09/02/2007 09:14:06|09/02/2007 09:14:06|new private road|O|mschumac|1|N|C
+1372275|2030000005506|Balmoral Avenue|Albany|09/02/2007 09:17:41|09/02/2007 09:17:41|new private road|O|mschumac|1|N|C
+1372276|2030000005508|Hampstead Lane|Prebbleton|09/02/2007 11:16:39|09/02/2007 11:16:39|ELF-L15-06-05/616/1 fo 56|O|ygrant  |1|N|C
+1372277|1030000048208|Parkville Road|Eketahuna|01/01/1970 00:00:00|09/02/2007 11:49:08|Advice from TLA  Resolution passed|O|ncudby|3|E|C
+1372279|2030000005512|Regency Lane|Albany|09/02/2007 12:56:09|09/02/2007 12:56:09|new private road in Mayfair Village|O|mschumac|1|N|H
+1372281|2030000005516|Michael Richard Place|Dannemora|12/02/2007 08:32:48|12/02/2007 08:32:48|new road 05/12/2006|O|mschumac|1|N|C
+1372283|2030000005520|Fairburn Place|Dannemora|12/02/2007 08:34:27|12/02/2007 08:34:27|new road 05/12/2006|O|mschumac|1|N|C
+1372284|2030000005522|Ruby Lane|Mangawhai|12/02/2007 08:36:01|12/02/2007 08:36:01|new road 30/01/2007|O|mschumac|1|N|C
+1372285|2030000005524|Herons Lane|Mangawhai|12/02/2007 08:37:39|12/02/2007 08:37:39|new road 30/01/2007|O|mschumac|1|N|C
+1372286|2030000005526|Longmore Lane|Redvale|12/02/2007 11:35:22|12/02/2007 11:35:22|new road|O|mschumac|1|N|C
+1372288|2030000005512|Regency Lane|Mayfair Village|09/02/2007 12:56:09|12/02/2007 12:21:46|changed location descriptor to avoid clash with road of same name and location.|O|mschumac|2|E|C
+1372289|1030000037838|Waters Avenue|Blenheim|01/01/1970 00:00:00|13/02/2007 08:27:32||O|mpenter|4|E|H
+1372290|1030000038077|Birchwood Avenue|Blenheim|01/01/1970 00:00:00|13/02/2007 08:30:12|Remedy call 523350 Owner not happy with Omaka as a locality name when this road is on the outskirts of Blenheim|O|mpenter|4|E|H
+1372291|1030000037838|Waters Avenue|Blenheim|01/01/1970 00:00:00|13/02/2007 08:31:11|Remedy call 523350. Owner not happy with the locality name Omaka when this road is on the outskirts of Blenheim|O|mpenter|5|E|H
+1372293|1030000037838|Waters Avenue|Blenheim Central|01/01/1970 00:00:00|13/02/2007 09:31:39|Locality name changed|O|jbedford|6|E|H
+1372295|1030000038077|Birchwood Avenue|Blenheim Central|01/01/1970 00:00:00|13/02/2007 09:32:18|Locality name changed|O|jbedford|5|E|H
+1372296|1030000040833|Coaltrack Road|Greendale|16/07/1985 00:00:00|13/02/2007 15:06:14|Converted from earlier ASP|O|mpenter |3|D|H
+1372297|2030000005528|Summertime Lane|Whangamarino|13/02/2007 16:05:23|13/02/2007 16:05:23|Council advise change of name for part of the former Hall Rd|O|gfinlay |1|N|C
+1372298|2030000005530|Estate Grove|Inglewood|14/02/2007 10:50:10|14/02/2007 10:50:10|New road advised by Council|O|sinnis  |1|N|C
+1372299|2030000005532|Aleisha Place|Hairini|14/02/2007 10:53:36|14/02/2007 10:53:36|New road advised by Council|O|sinnis  |1|N|C
+1372300|2030000005534|Laura Avenue|Hairini|14/02/2007 10:55:48|14/02/2007 10:55:48|New Road advised by Council|O|sinnis  |1|N|C
+1372301|2030000005536|Lincoln Garden Close|Henderson|15/02/2007 11:48:24|15/02/2007 11:48:24|new road 15/02/2007|O|mschumac|1|N|C
+1372302|1030000193536|Floyd's Lane|Albany|24/09/1997 00:00:00|16/02/2007 10:58:32|added grammar to the road name|O|mschumac|4|E|C
+1372303|1030000193530|Samuel's Lane|Albany|24/09/1997 00:00:00|16/02/2007 10:59:37|grammar added to the name|O|mschumac|4|E|C
+1372304|1030000193528|Suckling's Lane|Albany|24/09/1997 00:00:00|16/02/2007 11:00:41|grammar added to road name|O|mschumac|4|E|C
+1372305|2030000005299|SH 26|Te Aroha-Paeroa|23/01/2007 11:06:14|16/02/2007 11:53:44||O|jbedford|2|D|H
+1372306|1030000209932|SH 26|Paeroa|23/08/2001 00:00:00|16/02/2007 11:53:53|Converted from earlier ASP|O|jbedford|3|D|H
+1372307|1030000209929|SH 26|Paeroa-Kopu|23/08/2001 00:00:00|16/02/2007 11:54:01||O|jbedford|4|D|H
+1372308|1030000209931|SH 26|Te Aroha|23/08/2001 00:00:00|16/02/2007 11:54:05|Converted from earlier ASP|O|jbedford|3|D|H
+1372309|2030000005302|SH 26|Morrinsville- Te Aroha|23/01/2007 13:03:09|16/02/2007 11:54:10||O|jbedford|2|D|H
+1372310|1030000209930|SH 26|Morrinsville|23/08/2001 00:00:00|16/02/2007 11:54:15|Converted from earlier ASP|O|jbedford|3|D|H
+1372311|2030000005304|SH 26|Hamilton-Morrinsville|23/01/2007 13:57:25|16/02/2007 11:54:21||O|jbedford|2|D|H
+1372312|1030000209928|SH 26|Hamilton-Kopu|23/08/2001 00:00:00|16/02/2007 11:55:28|Locality changed|O|jbedford|3|E|C
+1372313|1030000037838|Waters Avenue|Burleigh|01/01/1970 00:00:00|16/02/2007 14:10:23|Locality name changed|O|jbedford|7|E|C
+1372314|1030000038077|Birchwood Avenue|Burleigh|01/01/1970 00:00:00|16/02/2007 14:11:20|Locality name changed|O|jbedford|6|E|C
+1372317|1030000024988|Woodside Road|Woodside|01/01/1970 00:00:00|19/02/2007 09:34:02||O|jbedford|4|E|C
+1372319|1030000035065|Woodside Road|West Taieri|03/08/1989 00:00:00|19/02/2007 09:34:18||O|jbedford|4|E|C
+1372320|2030000005542|Annandale Drive|Pyes Pa|19/02/2007 09:48:36|19/02/2007 09:48:36|New roadname received from Council.|O|sinnis  |1|N|C
+1372321|2030000005544|Galloway Crescent|Pyes Pa|19/02/2007 09:58:01|19/02/2007 09:58:01|New Road received from Councuil|O|sinnis  |1|N|C
+1372322|2030000005546|Kirtle Close|Pyes Pa|19/02/2007 10:02:58|19/02/2007 10:02:58|New road name received from Council|O|sinnis  |1|N|C
+1372323|2030000005548|Dumfries Place|Pyes Pa|19/02/2007 10:28:31|19/02/2007 10:28:31|New road name from Council.|O|sinnis  |1|N|C
+1372324|2030000005550|Accadia Lane|Tauranga|19/02/2007 10:42:43|19/02/2007 10:42:43|New road name received from Counci|O|sinnis  |1|N|C
+1372325|2030000005552|Merlot Drive|Pyes Pa|19/02/2007 11:22:36|19/02/2007 11:22:36|New road name received from Council.|O|sinnis  |1|N|C
+1372326|2030000005554|Sauvignon Place|Pyes Pa|19/02/2007 11:25:39|19/02/2007 11:25:39|New road received from Council|O|sinnis  |1|N|C
+1372327|2030000005556|Bertrowe Drive|Hairini|19/02/2007 12:10:21|19/02/2007 12:10:21|New Road name from Council|O|sinnis  |1|N|C
+1372328|2030000005558|Damien Place|Hairini|19/02/2007 12:12:13|19/02/2007 12:12:13|New road advised by Council|O|sinnis  |1|N|C
+1372329|2030000005560|Louise Drive|Hairini|19/02/2007 12:14:06|19/02/2007 12:14:06|Council advised new road name.|O|sinnis  |1|N|C
+1372330|2030000005562|Mervyn Place|Hairini|19/02/2007 12:15:19|19/02/2007 12:15:19|New road advised by Council|O|sinnis  |1|N|C
+1372331|2030000005564|Caldera Close|Pyes Pa|21/02/2007 08:37:46|21/02/2007 08:37:46|Advised by Council|O|sinnis  |1|N|C
+1372332|2030000005566|Tarn Close|Pyes Pa|21/02/2007 08:39:48|21/02/2007 08:39:48|Advised by Council|O|sinnis  |1|N|C
+1372333|2030000005568|Gyle Place|Pyes Pa|21/02/2007 08:41:42|21/02/2007 08:41:42|Advised by Council|O|sinnis  |1|N|C
+1372334|2030000005570|Pumice Glade|Pyes Pa|21/02/2007 08:58:40|21/02/2007 08:58:40|Advised by Council|O|sinnis  |1|N|C
+1372335|2030000005572|Lanyard Street|Pyes Pa|21/02/2007 09:14:30|21/02/2007 09:14:30|Advised by Council|O|sinnis  |1|N|C
+1372336|2030000005574|Askew Lane|Pyes Pa|21/02/2007 09:15:41|21/02/2007 09:15:41|Advised by Council|O|sinnis  |1|N|C
+1372337|2030000005576|Bulkhead Lane|Pyes Pa|21/02/2007 09:16:51|21/02/2007 09:16:51|Advised by Council|O|sinnis  |1|N|C
+1372338|2030000005578|Capstan Close|Pyes Pa|21/02/2007 09:28:22|21/02/2007 09:28:22|Advised by Council|O|sinnis  |1|N|C
+1372339|2030000005580|Scoria Close|Pyes Pa|21/02/2007 09:29:25|21/02/2007 09:29:25|Advised by Council|O|sinnis  |1|N|C
+1372340|2030000005582|Lakeview Quay|Pyes Pa|21/02/2007 09:30:54|21/02/2007 09:30:54|Advised by Council|O|sinnis  |1|N|C
+1372341|1030000053948|Dick Tayler Drive|North Beach|17/03/1989 00:00:00|21/02/2007 09:51:36|Verbal confirmation of spelling change from Bob Pritchard 21 Feb 2007|O|mpenter|4|E|C
+1372342|2030000005584|Sandspit View Way|Ngunguru|22/02/2007 11:47:05|22/02/2007 11:47:05|From Whangarei DC address supply|O|JBedford|1|N|C
+1372343|2030000005586|Oakwood Rise|Ngararatunua|22/02/2007 13:09:00|22/02/2007 13:09:00|From Whangarei DC address data|O|JBedford|1|N|C
+1372344|2030000005588|Mere Tiaho Lane|Tutukaka|22/02/2007 13:38:22|22/02/2007 13:38:22|From Whangarei DC address data|O|JBedford|1|N|C
+1372345|2030000005590|The Grove|Riverside|22/02/2007 13:55:50|22/02/2007 13:55:50|From Whangarei DC address data|O|JBedford|1|N|C
+1372346|2030000005592|Melody Lane|Horahora|22/02/2007 14:23:46|22/02/2007 14:23:46|From Whangarei DC address data|O|JBedford|1|N|C
+1372347|1030000190724|Dale End|Grey Lynn|12/03/1996 00:00:00|23/02/2007 09:14:36|Locality name altered to agree with NZ Localities database|O|jbedford|4|D|H
+1372348|2030000005594|Ferngully Road|Helensville|23/02/2007 11:09:27|23/02/2007 11:09:27|add new road|O|tdaurewa|1|N|C
+1372349|2030000005596|Wiltshire Crescent|Watlington|26/02/2007 17:56:41|26/02/2007 17:56:41|ELS/05/00/07 fo 186|O|ygrant  |1|N|C
+1372350|2030000005598|Allingham Lane|Rolleston|27/02/2007 09:59:11|27/02/2007 09:59:11|ELF-L15-06-05/616/1 fo 62|O|ygrant  |1|N|C
+1372351|2030000005600|Chester Lane|Poukawa|27/02/2007 14:47:16|27/02/2007 14:47:16|Advice from TLA|O|ncudby  |1|N|C
+1372352|2030000005602|Squire Drive|Awatoto|27/02/2007 15:02:20|27/02/2007 15:02:20|Advice from TLA|O|ncudby  |1|N|C
+1372354|2030000005620|Grand Oaks Drive|Awapuni|01/03/2007 11:46:03|01/03/2007 11:46:03|Advice from TLA|O|ncudby  |1|N|C
+1372355|2030000005622|Akaroa Road|Poraiti|01/03/2007 13:49:43|01/03/2007 13:49:43|Advice from TLA|O|ncudby  |1|N|C
+1372356|2030000005624|Somes Place|Poraiti|01/03/2007 14:39:36|01/03/2007 14:39:36|Advice from TLA|O|ncudby  |1|N|C
+1372357|2030000005626|Dogwood Way|Milson|02/03/2007 09:20:40|02/03/2007 09:20:40|Advice from TLA|O|ncudby  |1|N|C
+1372358|2030000005628|Foxglove Grove|Milson|02/03/2007 10:55:16|02/03/2007 10:55:16|Advice from TLA|O|ncudby  |1|N|C
+1372359|2030000005630|Hydrangea Lane|Milson|02/03/2007 11:22:54|02/03/2007 11:22:54|Advice from TLA|O|ncudby  |1|N|C
+1372360|2030000005632|Top Road|Pukekohe|05/03/2007 08:31:28|05/03/2007 08:31:28|new road|O|kphilpot|1|N|C
+1372361|2030000005634|Basin Place|Pukekohe|05/03/2007 08:34:42|05/03/2007 08:34:42|new road|O|kphilpot|1|N|C
+1372366|2030000005644|Woodley Place|Glenorchy|05/03/2007 10:40:48|05/03/2007 10:40:48||O|swoodwar|1|N|C
+1372367|2030000005646|Derby Way|Pyes Pa|05/03/2007 12:05:06|05/03/2007 12:05:06|Advice of new private road name within Althorp Lifestyle Village|O|gfinlay |1|N|C
+1372368|2030000005648|Epping Way|Pyes Pa|05/03/2007 12:06:42|05/03/2007 12:06:42|Advice of new private road name within Althorp Lifestyle Village|O|gfinlay |1|N|C
+1372369|2030000005650|Farnham Way|Pyes Pa|05/03/2007 12:08:44|05/03/2007 12:08:44|Advice of new private road name within Althorp Lifestyle Village|O|gfinlay |1|N|C
+1372370|2030000005652|Kingsdale Park Drive|Aokautere|05/03/2007 15:19:50|05/03/2007 15:19:50|Advice from TLA|O|ncudby  |1|N|C
+1372371|2030000005654|Jordan Street|Mangawhai Heads|06/03/2007 07:44:59|06/03/2007 07:44:59|new road|O|mschumac|1|N|C
+1372372|2030000005656|Phoenix Place|Dargaville|06/03/2007 07:46:59|06/03/2007 07:46:59|new road|O|mschumac|1|N|C
+1372373|2030000005658|Bodan Lane|Mangawhai Heads|06/03/2007 07:48:44|06/03/2007 07:48:44|new road|O|mschumac|1|N|C
+1372374|2030000005660|Leon Leicester Avenue|Mt Wellington|06/03/2007 07:51:57|06/03/2007 07:51:57|new road|O|mschumac|1|N|C
+1372375|2030000005662|Buller Road|Westport|07/03/2007 08:27:26|07/03/2007 08:27:26|ELF-L15-06-05/571/1 fo 59|U|mpenter |1|N|C
+1372376|2030000005664|Amphion Way|Glenorchy|07/03/2007 11:25:45|07/03/2007 11:25:45|ELS/02/01/02 fo 251|O|wbyers  |1|N|C
+1372377|2030000005666|Xenicus Rise|Glenorchy|07/03/2007 11:30:34|07/03/2007 11:30:34|ELS/02/01/02 fo 251|O|wbyers  |1|N|C
+1372378|2030000005668|Nereus Way|Glenorchy|07/03/2007 11:32:46|07/03/2007 11:32:46|ELS/02/01/02 fo 251|O|wbyers  |1|N|C
+1372379|2030000005670|Hoggard Place|Katikati|07/03/2007 13:49:59|07/03/2007 13:49:59|New road advised by Council|O|sinnis  |1|N|C
+1372380|2030000005672|Middlebrook Road|Katikati|07/03/2007 13:52:16|07/03/2007 13:52:16|New road advised by Council|O|sinnis  |1|N|C
+1372381|2030000005674|Brljevich Road|Mangatawhiri|08/03/2007 10:18:36|08/03/2007 10:18:36||O|kphilpot|1|N|C
+1372382|2030000005676|Byron Brown Place|Otaki Beach|09/03/2007 09:13:00|09/03/2007 09:13:00|Advice from TLA|O|ncudby  |1|N|C
+1372384|1030000007168|Campbell Road|Tawharanui Peninsula|04/08/1986 00:00:00|09/03/2007 09:28:16|name amended from Campbells to Campbell|O|mschumac|4|E|C
+1372385|1030000007795|Station Road|Kaukapakapa|09/12/1982 00:00:00|12/03/2007 10:11:55|Converted from earlier ASP|O|jbedford|3|D|H
+1372386|2030000005678|Olivine Terrace|The Brook|12/03/2007 18:13:50|12/03/2007 18:13:50|ELS/05/00/16 fo 97|O|wbyers  |1|N|C
+1372387|2030000005680|Hibiscus Crescent|Albany|13/03/2007 08:52:04|13/03/2007 08:52:04|private road|O|mschumac|1|N|C
+1372391|2030000005688|Iris Watch|Albany|13/03/2007 08:54:21|13/03/2007 08:54:21|private road|O|mschumac|1|N|C
+1372392|2030000005690|Gardenia Grove|Albany|13/03/2007 08:55:46|13/03/2007 08:55:46|private road|O|mschumac|1|N|C
+1372393|2030000005692|Fushia Lane|Albany|13/03/2007 08:57:06|13/03/2007 08:57:06|private road|O|mschumac|1|N|C
+1372395|2030000005696|Jasmine Knoll|Albany|13/03/2007 08:58:28|13/03/2007 08:58:28|private road|O|mschumac|1|N|C
+1372396|2030000005698|Kentia Way|Albany|13/03/2007 08:59:49|13/03/2007 08:59:49|private road|O|mschumac|1|N|C
+1372397|2030000005700|Elm Haven|Albany|13/03/2007 09:01:03|13/03/2007 09:01:03|private road|O|mschumac|1|N|C
+1372398|2030000005702|Dahlia Drive|Albany|13/03/2007 09:02:16|13/03/2007 09:02:16|private road|O|mschumac|1|N|C
+1372399|2030000005704|Lavender Close|Albany|13/03/2007 09:03:35|13/03/2007 09:03:35|private road|O|mschumac|1|N|C
+1372400|2030000005706|Cherry Hill|Albany|13/03/2007 09:04:40|13/03/2007 09:04:40|private road|O|mschumac|1|N|C
+1372401|2030000005708|Magnolia Terrace|Albany|13/03/2007 09:05:53|13/03/2007 09:05:53|private road|O|mschumac|1|N|C
+1372402|2030000005710|Beech Way|Albany|13/03/2007 09:07:05|13/03/2007 09:07:05|private road|O|mschumac|1|N|C
+1372403|2030000005712|Ash Avenue|Albany|13/03/2007 09:08:15|13/03/2007 09:08:15|private road|O|mschumac|1|N|C
+1372404|2030000005714|Ngaio Lane|Albany|13/03/2007 09:09:37|13/03/2007 09:09:37|private road|O|mschumac|1|N|C
+1372405|2030000005716|Olive Grove|Albany|13/03/2007 09:10:50|13/03/2007 09:10:50|private road|O|mschumac|1|N|C
+1372406|2030000005718|Poppy Vale|Albany|13/03/2007 09:12:03|13/03/2007 09:12:03|private road|O|mschumac|1|N|C
+1372408|2030000005722|Fairview Drive|Albany|13/03/2007 09:16:42|13/03/2007 09:16:42|private road|O|mschumac|1|N|C
+1372409|2030000005724|Sunflower Rest|Albany|13/03/2007 09:17:59|13/03/2007 09:17:59|private road|O|mschumac|1|N|C
+1372410|2030000005726|Remarkable Place|Wakatu|13/03/2007 09:52:51|13/03/2007 09:52:51|ELS/05/00/06 fo 99|O|wbyers  |1|N|C
+1372416|2030000005738|Quail Drive|Albany|13/03/2007 10:09:29|13/03/2007 10:09:29|private road in fairview lifestyle village|O|mschumac|1|N|C
+1372419|2030000005744|Half Time Close|Omakau|13/03/2007 10:16:34|13/03/2007 10:16:34|central otago fol 178|O|swoodwar|1|N|C
+1372421|2030000005748|Tepuia Heights|Havelock-Picton|13/03/2007 10:29:31|13/03/2007 10:29:31|marlborough fol 56|O|swoodwar|1|N|C
+1372422|1030000007731|Reay Road|Kaipara Flats|07/12/1982 00:00:00|13/03/2007 12:09:35|Converted from earlier ASP|O|jbedford|3|D|H
+1372423|1030000195118|Woodlands Close|Queenstown|18/05/1998 00:00:00|15/03/2007 09:35:03|ELS/02/01/02 fo 261|O|mpenter|3|E|C
+1372424|2030000005750|Liverpool Way|Wanaka|15/03/2007 09:42:55|15/03/2007 09:42:55|ELS/02/01/02 fo 254 vol 5|O|wbyers  |1|N|C
+1372425|2030000004977|Liverpool Drive|Wanaka|13/12/2006 12:29:52|15/03/2007 09:44:08|ELS/02/01/02f242|O|wbyers  |2|D|H
+1372426|2030000005752|Reeds Road|Darfield|15/03/2007 09:57:42|15/03/2007 09:57:42|ELF-Selwyn fo  64|O|wbyers  |1|N|C
+1372427|2030000005754|Dundee Close|Darfield|15/03/2007 10:02:58|15/03/2007 10:02:58|ELF-Selwyn fo 64|O|wbyers  |1|N|C
+1372428|1030000210990|Lock Crescent|Hillsborough|02/05/2002 00:00:00|15/03/2007 10:05:18|ELF-Chch fo 18|O|wbyers|4|E|C
+1372429|1030000006840|Waterfall Road|Leigh|02/11/1988 00:00:00|15/03/2007 11:18:28|Converted from earlier ASP|O|jbedford|3|D|H
+1372431|2030000005758|Aglaia Place|Kennedys Bush|15/03/2007 13:06:58|15/03/2007 13:06:58|ELF-L15-06-05/576/1 fo 19|O|mpenter |1|N|C
+1372432|2030000005760|Kitchener Close|Pukekohe|19/03/2007 09:10:02|19/03/2007 09:10:02|new private road|O|mschumac|1|N|C
+1372433|2030000005762|Ben Ohau Road|Twizel|19/03/2007 11:55:02|19/03/2007 11:55:02|ELS/05/00/08 fo 220|O|ygrant  |1|N|C
+1372434|2030000005764|Dobson View Road|Fairlie|19/03/2007 12:04:00|19/03/2007 12:04:00|ELS/05/00/08 fo 219|O|ygrant  |1|N|C
+1372435|2030000005766|O'Dea Place|Russley|19/03/2007 13:10:26|19/03/2007 13:10:26|DP 383606|O|mpenter |1|N|C
+1372436|2030000005768|Kohura Way|Maungatapere|19/03/2007 14:05:23|19/03/2007 14:05:23|new private access|O|mschumac|1|N|C
+1372438|2030000005772|McGregor Road|Earnscleugh|19/03/2007 17:32:56|19/03/2007 17:32:56|ELS/02/01/01 fo 179|O|ygrant  |1|N|C
+1372439|1030000005154|Thelma Road North|Mangawhai Heads|11/06/1982 00:00:00|20/03/2007 13:00:34|road renamed 13 march 2007|O|mschumac|3|E|C
+1372440|2030000005774|Thelma Road South|Mangawhai Heads|20/03/2007 13:04:47|20/03/2007 13:04:47|road renamed 13 March 2007|O|mschumac|1|N|C
+1372441|2030000005776|Graham Drive|Fitzherbert|21/03/2007 08:40:29|21/03/2007 08:40:29|Advice from Summerset Retirement Village|U|ncudby  |1|N|C
+1372442|1030000007365|Jackson Road|Wayby Valley|16/08/1983 00:00:00|21/03/2007 13:36:06|Locality name altered to agree with NZ Localities database|O|jbedford|4|D|H
+1372443|1030000007609|McKenzie Road|Whangaripo|16/08/1983 00:00:00|21/03/2007 13:38:15|Converted from earlier ASP|O|jbedford|3|D|H
+1372444|1030000007559|No  2 Road|Wayby Valley|16/08/1983 00:00:00|21/03/2007 13:45:07|Converted from earlier ASP|O|jbedford|4|D|H
+1372445|1030000007033|Gill Road|Wayby Valley|16/08/1983 00:00:00|21/03/2007 13:45:20|Converted from earlier ASP|O|jbedford|3|D|H
+1372446|2030000005782|Vanita Drive|Whitianga|23/03/2007 10:32:36|23/03/2007 10:32:36|New road advised by Council|O|sinnis  |1|N|C
+1372447|2030000005784|Mermaid Place|Whitianga|23/03/2007 10:40:07|23/03/2007 10:40:07|New road name advised by Council|O|sinnis  |1|N|C
+1372448|2030000005786|Kawhina Lane|Kuaotunu|23/03/2007 11:02:53|23/03/2007 11:02:53|New road name received from Council|O|sinnis  |1|N|C
+1372449|1030000029130|Lancewood Place|Owhata|05/02/1986 00:00:00|23/03/2007 11:24:48|Council advised change in street name from Lancewood Crescent to Lancewood Place|O|sinnis|4|E|C

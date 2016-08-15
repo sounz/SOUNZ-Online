@@ -1,0 +1,14 @@
+  <span id="noDatesButton">
+	<%#decide which button to show%>
+	<%if @event.event_start.blank?%>
+	<%=render :partial => 'enable_dates_button'%>
+	<%else%>
+	<%=render :partial => 'disable_dates_button'%>
+	<%end%>
+</span>
+
+<div id="dateWidgetFields">
+  <%=render :partial => 'dates_widget', :locals => {:event => @event}%>
+</div>
+
+

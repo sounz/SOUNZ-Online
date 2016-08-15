@@ -1,0 +1,2 @@
+page.replace_html 'expressionFinish', :partial => 'date_finish_field', :locals => {:expression => @expression}
+page.visual_effect :highlight, 'expressionFinish'

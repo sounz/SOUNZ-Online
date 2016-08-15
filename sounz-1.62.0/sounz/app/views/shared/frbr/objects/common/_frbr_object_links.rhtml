@@ -1,0 +1,63 @@
+<%#Pass in
+* frbr_methods - a an of method names as strings
+* url_to_generate - the name of the url to generate, e.g. work_frbr_related
+* if the frbr method begins with 'composite_' then its a composite FRBR rel - the page title
+* is not pulled from the db, but is the rest of the method name
+ -%>
+<%
+#Do a presweep to avoid having an empty div called section
+amounts = {}
+total = 0
+
+for frbr_method in frbr_methods
+    number_of_items = object.send('number_of_'+frbr_method, @login)
+	amounts[frbr_method] = number_of_items
+	total = total + number_of_items
+end
+
+
+if total > 0 #Only show the div if we have some action
+	if object.class != Role
+		url_to_generate = "#{object.class.to_s.tableize.singularize}_frbr_related_url"
+	else
+		url_to_generate = "contributor_frbr_related_url"
+	end
+-%>
+
+<ul class="frbrLinksCountList">
+<%
+for frbr_method in frbr_methods
+number_of_items = amounts[frbr_method]
+if number_of_items > 0
+	if frbr_method.starts_with?('composite')
+		page_title = frbr_method[10..frbr_method.length].split('_').map{|w| w.camelize}.join(' ')
+		        page_title = FrbrHelper.get_page_title_for_method(frbr_method.gsub("composite_", "")) if frbr_method == "composite_related_resources"
+                page_title = FrbrHelper.get_page_title_for_method(frbr_method.gsub("composite_", "")) if frbr_method == "composite_distinctions"
+	else
+		page_title = FrbrHelper.get_page_title_for_method(frbr_method)
+	end	
+	
+%>
+<li>
+<%if object.class != Role%>
+<%=link_to "#{page_title} (#{number_of_items})",
+send(url_to_generate, :id => object, :mode => frbr_method)
+%>
+<%else%>
+<% if page_title == 'Performances' %>
+<% page_title = "Works performed" %>
+<% end %>
+<%=link_to "#{page_title} (#{number_of_items})",
+send(url_to_generate, :id => object.contributor, :mode => "frbr_"+frbr_method)
+%>
+<%end%>
+</li>
+<%
+end
+end
+%>
+</ul>
+
+<%
+end
+%>

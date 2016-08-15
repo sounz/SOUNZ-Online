@@ -1,0 +1,9 @@
+<%
+classy = contributor.class.to_s
+if classy == 'Organisation'%>
+<%=render :partial => 'shared/organisation_with_tooltip', :locals => {:organisation => contributor}%>
+<%elsif classy == 'Person'%>
+<%=render :partial => 'shared/person_with_tooltip', :locals => {:person => contributor}%>
+<%else%>
+** UNABLE TO RENDER CONTRIBUTOR OF CLASS <%=classy%> **
+<%end%>

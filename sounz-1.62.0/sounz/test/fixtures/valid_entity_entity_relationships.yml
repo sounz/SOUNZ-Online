@@ -1,0 +1,1673 @@
+--- 
+valid_entity_entity_relationships_171: 
+  page_title: Presented Events
+  entity_type_to_id: "6"
+  id: "378"
+  user_maintainable: t
+  relationship_type_id: "35"
+  entity_type_from_id: "7"
+  ruby_method_name: presented_events
+valid_entity_entity_relationships_143: 
+  page_title: Concepts Identifies With
+  entity_type_to_id: "5"
+  id: "350"
+  user_maintainable: t
+  relationship_type_id: "57"
+  entity_type_from_id: "11"
+  ruby_method_name: concepts_identifies_with
+valid_entity_entity_relationships_115: 
+  page_title: Published Resources
+  entity_type_to_id: "10"
+  id: "322"
+  user_maintainable: t
+  relationship_type_id: "69"
+  entity_type_from_id: "11"
+  ruby_method_name: published_resources
+valid_entity_entity_relationships_088: 
+  page_title: Exhibitors
+  entity_type_to_id: "11"
+  id: "295"
+  user_maintainable: t
+  relationship_type_id: "40"
+  entity_type_from_id: "3"
+  ruby_method_name: exhibitors
+valid_entity_entity_relationships_001: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "208"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "2"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_172: 
+  page_title: Venues Presented At
+  entity_type_to_id: "7"
+  id: "379"
+  user_maintainable: t
+  relationship_type_id: "36"
+  entity_type_from_id: "6"
+  ruby_method_name: venues_presented_at
+valid_entity_entity_relationships_144: 
+  page_title: Roles Who Identify
+  entity_type_to_id: "11"
+  id: "351"
+  user_maintainable: t
+  relationship_type_id: "58"
+  entity_type_from_id: "5"
+  ruby_method_name: roles_who_identify
+valid_entity_entity_relationships_116: 
+  page_title: Publishers
+  entity_type_to_id: "11"
+  id: "323"
+  user_maintainable: t
+  relationship_type_id: "70"
+  entity_type_from_id: "10"
+  ruby_method_name: publishers
+valid_entity_entity_relationships_030: 
+  page_title: Themed Resources
+  entity_type_to_id: "10"
+  id: "237"
+  user_maintainable: t
+  relationship_type_id: "21"
+  entity_type_from_id: "5"
+  ruby_method_name: themed_resources
+valid_entity_entity_relationships_089: 
+  page_title: Presentations
+  entity_type_to_id: "3"
+  id: "296"
+  user_maintainable: t
+  relationship_type_id: "35"
+  entity_type_from_id: "11"
+  ruby_method_name: presentations
+valid_entity_entity_relationships_002: 
+  page_title: Works Awarded
+  entity_type_to_id: "2"
+  id: "209"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: works_awarded
+valid_entity_entity_relationships_200: 
+  page_title: Roles Dedicated
+  entity_type_to_id: "11"
+  id: "407"
+  user_maintainable: t
+  relationship_type_id: "113"
+  entity_type_from_id: "10"
+  ruby_method_name: roles_dedicated
+valid_entity_entity_relationships_173: 
+  page_title: Held Events
+  entity_type_to_id: "6"
+  id: "380"
+  user_maintainable: f
+  relationship_type_id: "103"
+  entity_type_from_id: "7"
+  ruby_method_name: held_events
+valid_entity_entity_relationships_145: 
+  page_title: Influential Concepts
+  entity_type_to_id: "5"
+  id: "352"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "11"
+  ruby_method_name: influential_concepts
+valid_entity_entity_relationships_117: 
+  page_title: Licensed Resources
+  entity_type_to_id: "10"
+  id: "324"
+  user_maintainable: t
+  relationship_type_id: "71"
+  entity_type_from_id: "11"
+  ruby_method_name: licensed_resources
+valid_entity_entity_relationships_031: 
+  page_title: Concept Genres
+  entity_type_to_id: "5"
+  id: "238"
+  user_maintainable: t
+  relationship_type_id: "10"
+  entity_type_from_id: "10"
+  ruby_method_name: concept_genres
+valid_entity_entity_relationships_003: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "210"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "3"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_201: 
+  page_title: Resources Dedicated
+  entity_type_to_id: "10"
+  id: "408"
+  user_maintainable: t
+  relationship_type_id: "114"
+  entity_type_from_id: "11"
+  ruby_method_name: resources_dedicated
+valid_entity_entity_relationships_174: 
+  page_title: Venues Held At
+  entity_type_to_id: "7"
+  id: "381"
+  user_maintainable: f
+  relationship_type_id: "104"
+  entity_type_from_id: "6"
+  ruby_method_name: venues_held_at
+valid_entity_entity_relationships_146: 
+  page_title: Roles Influenced
+  entity_type_to_id: "11"
+  id: "353"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: roles_influenced
+valid_entity_entity_relationships_118: 
+  page_title: Licensers
+  entity_type_to_id: "11"
+  id: "325"
+  user_maintainable: t
+  relationship_type_id: "72"
+  entity_type_from_id: "10"
+  ruby_method_name: licensers
+valid_entity_entity_relationships_032: 
+  page_title: Genred Resources
+  entity_type_to_id: "10"
+  id: "239"
+  user_maintainable: t
+  relationship_type_id: "9"
+  entity_type_from_id: "5"
+  ruby_method_name: genred_resources
+valid_entity_entity_relationships_004: 
+  page_title: Expressions Awarded
+  entity_type_to_id: "3"
+  id: "211"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: expressions_awarded
+valid_entity_entity_relationships_060: 
+  page_title: Expressions Described
+  entity_type_to_id: "3"
+  id: "267"
+  user_maintainable: t
+  relationship_type_id: "7"
+  entity_type_from_id: "10"
+  ruby_method_name: expressions_described
+valid_entity_entity_relationships_202: 
+  page_title: Included Events
+  entity_type_to_id: "6"
+  id: "409"
+  user_maintainable: t
+  relationship_type_id: "117"
+  entity_type_from_id: "6"
+  ruby_method_name: included_events
+valid_entity_entity_relationships_175: 
+  page_title: Original Manifestation For Recording
+  entity_type_to_id: "4"
+  id: "382"
+  user_maintainable: t
+  relationship_type_id: "105"
+  entity_type_from_id: "4"
+  ruby_method_name: original_manifestation_for_recording
+valid_entity_entity_relationships_147: 
+  page_title: Writes According To
+  entity_type_to_id: "5"
+  id: "354"
+  user_maintainable: t
+  relationship_type_id: "59"
+  entity_type_from_id: "11"
+  ruby_method_name: writes_according_to
+valid_entity_entity_relationships_119: 
+  page_title: Released Resources
+  entity_type_to_id: "10"
+  id: "326"
+  user_maintainable: t
+  relationship_type_id: "73"
+  entity_type_from_id: "11"
+  ruby_method_name: released_resources
+valid_entity_entity_relationships_033: 
+  page_title: Concept Influences
+  entity_type_to_id: "5"
+  id: "240"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "6"
+  ruby_method_name: concept_influences
+valid_entity_entity_relationships_005: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "212"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "4"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_061: 
+  page_title: Descriptive Resources
+  entity_type_to_id: "10"
+  id: "268"
+  user_maintainable: t
+  relationship_type_id: "8"
+  entity_type_from_id: "4"
+  ruby_method_name: descriptive_resources
+valid_entity_entity_relationships_203: 
+  page_title: Is Included In These Events
+  entity_type_to_id: "6"
+  id: "410"
+  user_maintainable: t
+  relationship_type_id: "118"
+  entity_type_from_id: "6"
+  ruby_method_name: is_included_in_these_events
+valid_entity_entity_relationships_176: 
+  page_title: Recordings As Manifestations
+  entity_type_to_id: "4"
+  id: "383"
+  user_maintainable: t
+  relationship_type_id: "106"
+  entity_type_from_id: "4"
+  ruby_method_name: recordings_as_manifestations
+valid_entity_entity_relationships_148: 
+  page_title: Writings Affected By
+  entity_type_to_id: "11"
+  id: "355"
+  user_maintainable: t
+  relationship_type_id: "60"
+  entity_type_from_id: "5"
+  ruby_method_name: writings_affected_by
+valid_entity_entity_relationships_034: 
+  page_title: Influenced Events
+  entity_type_to_id: "6"
+  id: "241"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: influenced_events
+valid_entity_entity_relationships_006: 
+  page_title: Manifestations Awarded
+  entity_type_to_id: "4"
+  id: "213"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: manifestations_awarded
+valid_entity_entity_relationships_090: 
+  page_title: Presenters
+  entity_type_to_id: "11"
+  id: "297"
+  user_maintainable: t
+  relationship_type_id: "36"
+  entity_type_from_id: "3"
+  ruby_method_name: presenters
+valid_entity_entity_relationships_062: 
+  page_title: Manifestations Described
+  entity_type_to_id: "4"
+  id: "269"
+  user_maintainable: t
+  relationship_type_id: "7"
+  entity_type_from_id: "10"
+  ruby_method_name: manifestations_described
+valid_entity_entity_relationships_204: 
+  page_title: Venues Has Commonalities With
+  entity_type_to_id: "7"
+  id: "411"
+  user_maintainable: t
+  relationship_type_id: "116"
+  entity_type_from_id: "7"
+  ruby_method_name: venues_has_commonalities_with
+valid_entity_entity_relationships_177: 
+  page_title: Original Manifestation For Publication
+  entity_type_to_id: "4"
+  id: "384"
+  user_maintainable: t
+  relationship_type_id: "107"
+  entity_type_from_id: "4"
+  ruby_method_name: original_manifestation_for_publication
+valid_entity_entity_relationships_149: 
+  page_title: Performs According To
+  entity_type_to_id: "5"
+  id: "356"
+  user_maintainable: t
+  relationship_type_id: "93"
+  entity_type_from_id: "11"
+  ruby_method_name: performs_according_to
+valid_entity_entity_relationships_035: 
+  page_title: Concept Themes
+  entity_type_to_id: "5"
+  id: "242"
+  user_maintainable: t
+  relationship_type_id: "22"
+  entity_type_from_id: "6"
+  ruby_method_name: concept_themes
+valid_entity_entity_relationships_007: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "214"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "10"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_091: 
+  page_title: Improvised Expressions
+  entity_type_to_id: "3"
+  id: "298"
+  user_maintainable: t
+  relationship_type_id: "25"
+  entity_type_from_id: "11"
+  ruby_method_name: improvised_expressions
+valid_entity_entity_relationships_063: 
+  page_title: Documentative Resources
+  entity_type_to_id: "10"
+  id: "270"
+  user_maintainable: t
+  relationship_type_id: "91"
+  entity_type_from_id: "4"
+  ruby_method_name: documentative_resources
+valid_entity_entity_relationships_205: 
+  page_title: Venues Things In Common With
+  entity_type_to_id: "7"
+  id: "412"
+  user_maintainable: t
+  relationship_type_id: "115"
+  entity_type_from_id: "7"
+  ruby_method_name: venues_things_in_common_with
+valid_entity_entity_relationships_178: 
+  page_title: Publications As Manifestations
+  entity_type_to_id: "4"
+  id: "385"
+  user_maintainable: t
+  relationship_type_id: "108"
+  entity_type_from_id: "4"
+  ruby_method_name: publications_as_manifestations
+valid_entity_entity_relationships_036: 
+  page_title: Themed Events
+  entity_type_to_id: "6"
+  id: "243"
+  user_maintainable: t
+  relationship_type_id: "21"
+  entity_type_from_id: "5"
+  ruby_method_name: themed_events
+valid_entity_entity_relationships_008: 
+  page_title: Resources Awarded
+  entity_type_to_id: "10"
+  id: "215"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: resources_awarded
+valid_entity_entity_relationships_092: 
+  page_title: Improvisors
+  entity_type_to_id: "11"
+  id: "299"
+  user_maintainable: t
+  relationship_type_id: "26"
+  entity_type_from_id: "3"
+  ruby_method_name: improvisors
+valid_entity_entity_relationships_064: 
+  page_title: Manifestations Described
+  entity_type_to_id: "4"
+  id: "271"
+  user_maintainable: t
+  relationship_type_id: "92"
+  entity_type_from_id: "10"
+  ruby_method_name: manifestations_described
+valid_entity_entity_relationships_206: 
+  page_title: Is Arrangment Of
+  entity_type_to_id: "2"
+  id: "413"
+  user_maintainable: t
+  relationship_type_id: "121"
+  entity_type_from_id: "2"
+  ruby_method_name: is_arrangment_of
+valid_entity_entity_relationships_179: 
+  page_title: Related Manifestations
+  entity_type_to_id: "4"
+  id: "386"
+  user_maintainable: t
+  relationship_type_id: "109"
+  entity_type_from_id: "4"
+  ruby_method_name: related_manifestations
+valid_entity_entity_relationships_120: 
+  page_title: Releasers
+  entity_type_to_id: "11"
+  id: "327"
+  user_maintainable: t
+  relationship_type_id: "74"
+  entity_type_from_id: "10"
+  ruby_method_name: releasers
+valid_entity_entity_relationships_009: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "216"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "6"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_093: 
+  page_title: Broadcasted Expressions
+  entity_type_to_id: "3"
+  id: "300"
+  user_maintainable: t
+  relationship_type_id: "41"
+  entity_type_from_id: "11"
+  ruby_method_name: broadcasted_expressions
+valid_entity_entity_relationships_065: 
+  page_title: Event Commissions
+  entity_type_to_id: "6"
+  id: "272"
+  user_maintainable: t
+  relationship_type_id: "87"
+  entity_type_from_id: "2"
+  ruby_method_name: event_commissions
+valid_entity_entity_relationships_037: 
+  page_title: Concept Genres
+  entity_type_to_id: "5"
+  id: "244"
+  user_maintainable: t
+  relationship_type_id: "10"
+  entity_type_from_id: "6"
+  ruby_method_name: concept_genres
+valid_entity_entity_relationships_207: 
+  page_title: Is Arranged As
+  entity_type_to_id: "2"
+  id: "414"
+  user_maintainable: t
+  relationship_type_id: "122"
+  entity_type_from_id: "2"
+  ruby_method_name: is_arranged_as
+valid_entity_entity_relationships_121: 
+  page_title: Sold Resources
+  entity_type_to_id: "10"
+  id: "328"
+  user_maintainable: t
+  relationship_type_id: "67"
+  entity_type_from_id: "11"
+  ruby_method_name: sold_resources
+valid_entity_entity_relationships_094: 
+  page_title: Broadcasters
+  entity_type_to_id: "11"
+  id: "301"
+  user_maintainable: t
+  relationship_type_id: "42"
+  entity_type_from_id: "3"
+  ruby_method_name: broadcasters
+valid_entity_entity_relationships_066: 
+  page_title: Commissioned Works
+  entity_type_to_id: "2"
+  id: "273"
+  user_maintainable: t
+  relationship_type_id: "88"
+  entity_type_from_id: "6"
+  ruby_method_name: commissioned_works
+valid_entity_entity_relationships_038: 
+  page_title: Genred Events
+  entity_type_to_id: "6"
+  id: "245"
+  user_maintainable: t
+  relationship_type_id: "9"
+  entity_type_from_id: "5"
+  ruby_method_name: genred_events
+valid_entity_entity_relationships_208: 
+  page_title: Is Orchestration Of
+  entity_type_to_id: "2"
+  id: "415"
+  user_maintainable: t
+  relationship_type_id: "119"
+  entity_type_from_id: "2"
+  ruby_method_name: is_orchestration_of
+valid_entity_entity_relationships_150: 
+  page_title: Performance Affected By
+  entity_type_to_id: "11"
+  id: "357"
+  user_maintainable: t
+  relationship_type_id: "94"
+  entity_type_from_id: "5"
+  ruby_method_name: performance_affected_by
+valid_entity_entity_relationships_122: 
+  page_title: Sellers
+  entity_type_to_id: "11"
+  id: "329"
+  user_maintainable: t
+  relationship_type_id: "68"
+  entity_type_from_id: "10"
+  ruby_method_name: sellers
+valid_entity_entity_relationships_095: 
+  page_title: Notations
+  entity_type_to_id: "3"
+  id: "302"
+  user_maintainable: t
+  relationship_type_id: "43"
+  entity_type_from_id: "11"
+  ruby_method_name: notations
+valid_entity_entity_relationships_067: 
+  page_title: Conceptions
+  entity_type_to_id: "1"
+  id: "274"
+  user_maintainable: t
+  relationship_type_id: "11"
+  entity_type_from_id: "11"
+  ruby_method_name: conceptions
+valid_entity_entity_relationships_039: 
+  page_title: Parent Superworks
+  entity_type_to_id: "1"
+  id: "246"
+  user_maintainable: f
+  relationship_type_id: "1001"
+  entity_type_from_id: "2"
+  ruby_method_name: parent_superworks
+valid_entity_entity_relationships_209: 
+  page_title: Is Orchestrated As
+  entity_type_to_id: "2"
+  id: "416"
+  user_maintainable: t
+  relationship_type_id: "120"
+  entity_type_from_id: "2"
+  ruby_method_name: is_orchestrated_as
+valid_entity_entity_relationships_151: 
+  page_title: Embodied Manifestations
+  entity_type_to_id: "4"
+  id: "358"
+  user_maintainable: f
+  relationship_type_id: "34"
+  entity_type_from_id: "3"
+  ruby_method_name: embodied_manifestations
+valid_entity_entity_relationships_123: 
+  page_title: Presented Events
+  entity_type_to_id: "6"
+  id: "330"
+  user_maintainable: t
+  relationship_type_id: "35"
+  entity_type_from_id: "11"
+  ruby_method_name: presented_events
+valid_entity_entity_relationships_096: 
+  page_title: Notators
+  entity_type_to_id: "11"
+  id: "303"
+  user_maintainable: t
+  relationship_type_id: "44"
+  entity_type_from_id: "3"
+  ruby_method_name: notators
+valid_entity_entity_relationships_068: 
+  page_title: Conceived Superworks
+  entity_type_to_id: "11"
+  id: "275"
+  user_maintainable: t
+  relationship_type_id: "12"
+  entity_type_from_id: "1"
+  ruby_method_name: conceived_superworks
+valid_entity_entity_relationships_180: 
+  page_title: Related Resources
+  entity_type_to_id: "10"
+  id: "387"
+  user_maintainable: t
+  relationship_type_id: "109"
+  entity_type_from_id: "10"
+  ruby_method_name: related_resources
+valid_entity_entity_relationships_152: 
+  page_title: Expressions Embodied
+  entity_type_to_id: "3"
+  id: "359"
+  user_maintainable: f
+  relationship_type_id: "33"
+  entity_type_from_id: "4"
+  ruby_method_name: expressions_embodied
+valid_entity_entity_relationships_124: 
+  page_title: Presenters
+  entity_type_to_id: "11"
+  id: "331"
+  user_maintainable: t
+  relationship_type_id: "36"
+  entity_type_from_id: "6"
+  ruby_method_name: presenters
+valid_entity_entity_relationships_097: 
+  page_title: Compilations
+  entity_type_to_id: "3"
+  id: "304"
+  user_maintainable: t
+  relationship_type_id: "45"
+  entity_type_from_id: "11"
+  ruby_method_name: compilations
+valid_entity_entity_relationships_010: 
+  page_title: Events Awarded
+  entity_type_to_id: "6"
+  id: "217"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: events_awarded
+valid_entity_entity_relationships_069: 
+  page_title: Compositions
+  entity_type_to_id: "2"
+  id: "276"
+  user_maintainable: t
+  relationship_type_id: "23"
+  entity_type_from_id: "11"
+  ruby_method_name: compositions
+valid_entity_entity_relationships_181: 
+  page_title: Related Events
+  entity_type_to_id: "6"
+  id: "388"
+  user_maintainable: t
+  relationship_type_id: "109"
+  entity_type_from_id: "6"
+  ruby_method_name: related_events
+valid_entity_entity_relationships_153: 
+  page_title: Presented Distinctions
+  entity_type_to_id: "9"
+  id: "360"
+  user_maintainable: t
+  relationship_type_id: "35"
+  entity_type_from_id: "11"
+  ruby_method_name: presented_distinctions
+valid_entity_entity_relationships_125: 
+  page_title: Performed Events
+  entity_type_to_id: "6"
+  id: "332"
+  user_maintainable: t
+  relationship_type_id: "37"
+  entity_type_from_id: "11"
+  ruby_method_name: performed_events
+valid_entity_entity_relationships_098: 
+  page_title: Compilers
+  entity_type_to_id: "11"
+  id: "305"
+  user_maintainable: t
+  relationship_type_id: "46"
+  entity_type_from_id: "3"
+  ruby_method_name: compilers
+valid_entity_entity_relationships_011: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "218"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "7"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_182: 
+  page_title: Related Resources
+  entity_type_to_id: "7"
+  id: "389"
+  user_maintainable: t
+  relationship_type_id: "109"
+  entity_type_from_id: "7"
+  ruby_method_name: related_resources
+valid_entity_entity_relationships_154: 
+  page_title: Presenters
+  entity_type_to_id: "11"
+  id: "361"
+  user_maintainable: t
+  relationship_type_id: "36"
+  entity_type_from_id: "9"
+  ruby_method_name: presenters
+valid_entity_entity_relationships_126: 
+  page_title: Performers
+  entity_type_to_id: "11"
+  id: "333"
+  user_maintainable: t
+  relationship_type_id: "38"
+  entity_type_from_id: "6"
+  ruby_method_name: performers
+valid_entity_entity_relationships_099: 
+  page_title: Recordings
+  entity_type_to_id: "4"
+  id: "306"
+  user_maintainable: t
+  relationship_type_id: "65"
+  entity_type_from_id: "11"
+  ruby_method_name: recordings
+valid_entity_entity_relationships_012: 
+  page_title: Venues Awarded
+  entity_type_to_id: "7"
+  id: "219"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: venues_awarded
+valid_entity_entity_relationships_040: 
+  page_title: Work Children
+  entity_type_to_id: "2"
+  id: "247"
+  user_maintainable: f
+  relationship_type_id: "1000"
+  entity_type_from_id: "1"
+  ruby_method_name: work_children
+valid_entity_entity_relationships_183: 
+  page_title: Related Concepts
+  entity_type_to_id: "5"
+  id: "390"
+  user_maintainable: t
+  relationship_type_id: "109"
+  entity_type_from_id: "5"
+  ruby_method_name: related_concepts
+valid_entity_entity_relationships_155: 
+  page_title: Funded Or Sponsored Distinctions
+  entity_type_to_id: "9"
+  id: "362"
+  user_maintainable: t
+  relationship_type_id: "80"
+  entity_type_from_id: "11"
+  ruby_method_name: funded_or_sponsored_distinctions
+valid_entity_entity_relationships_127: 
+  page_title: Funded Events
+  entity_type_to_id: "6"
+  id: "334"
+  user_maintainable: t
+  relationship_type_id: "63"
+  entity_type_from_id: "11"
+  ruby_method_name: funded_events
+valid_entity_entity_relationships_013: 
+  page_title: Distinctions
+  entity_type_to_id: "9"
+  id: "220"
+  user_maintainable: t
+  relationship_type_id: "20"
+  entity_type_from_id: "11"
+  ruby_method_name: distinctions
+valid_entity_entity_relationships_041: 
+  page_title: Superwork Evidences
+  entity_type_to_id: "1"
+  id: "248"
+  user_maintainable: t
+  relationship_type_id: "5"
+  entity_type_from_id: "2"
+  ruby_method_name: superwork_evidences
+valid_entity_entity_relationships_184: 
+  page_title: Roles Working With
+  entity_type_to_id: "11"
+  id: "391"
+  user_maintainable: t
+  relationship_type_id: "61"
+  entity_type_from_id: "11"
+  ruby_method_name: roles_working_with
+valid_entity_entity_relationships_156: 
+  page_title: Distinctions Funded Or Awarded
+  entity_type_to_id: "11"
+  id: "363"
+  user_maintainable: t
+  relationship_type_id: "78"
+  entity_type_from_id: "9"
+  ruby_method_name: distinctions_funded_or_awarded
+valid_entity_entity_relationships_128: 
+  page_title: Funders
+  entity_type_to_id: "11"
+  id: "335"
+  user_maintainable: t
+  relationship_type_id: "64"
+  entity_type_from_id: "6"
+  ruby_method_name: funders
+valid_entity_entity_relationships_014: 
+  page_title: Roles Awarded
+  entity_type_to_id: "11"
+  id: "221"
+  user_maintainable: t
+  relationship_type_id: "19"
+  entity_type_from_id: "9"
+  ruby_method_name: roles_awarded
+valid_entity_entity_relationships_070: 
+  page_title: Composers
+  entity_type_to_id: "11"
+  id: "277"
+  user_maintainable: t
+  relationship_type_id: "24"
+  entity_type_from_id: "2"
+  ruby_method_name: composers
+valid_entity_entity_relationships_042: 
+  page_title: Works Evidenced
+  entity_type_to_id: "2"
+  id: "249"
+  user_maintainable: t
+  relationship_type_id: "6"
+  entity_type_from_id: "1"
+  ruby_method_name: works_evidenced
+valid_entity_entity_relationships_185: 
+  page_title: Roles Worked With By
+  entity_type_to_id: "11"
+  id: "392"
+  user_maintainable: t
+  relationship_type_id: "62"
+  entity_type_from_id: "11"
+  ruby_method_name: roles_worked_with_by
+valid_entity_entity_relationships_157: 
+  page_title: Presented Distinctions
+  entity_type_to_id: "9"
+  id: "364"
+  user_maintainable: t
+  relationship_type_id: "99"
+  entity_type_from_id: "11"
+  ruby_method_name: presented_distinctions
+valid_entity_entity_relationships_129: 
+  page_title: Broadcasted Events
+  entity_type_to_id: "6"
+  id: "336"
+  user_maintainable: t
+  relationship_type_id: "41"
+  entity_type_from_id: "11"
+  ruby_method_name: broadcasted_events
+valid_entity_entity_relationships_015: 
+  page_title: Concept Influences
+  entity_type_to_id: "5"
+  id: "222"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "2"
+  ruby_method_name: concept_influences
+valid_entity_entity_relationships_071: 
+  page_title: Improvised Works
+  entity_type_to_id: "2"
+  id: "278"
+  user_maintainable: t
+  relationship_type_id: "25"
+  entity_type_from_id: "11"
+  ruby_method_name: improvised_works
+valid_entity_entity_relationships_043: 
+  page_title: Superworks From Whom Source Material Is Drawn
+  entity_type_to_id: "1"
+  id: "250"
+  user_maintainable: t
+  relationship_type_id: "3"
+  entity_type_from_id: "2"
+  ruby_method_name: superworks_from_whom_source_material_is_drawn
+valid_entity_entity_relationships_186: 
+  page_title: Roles Commissioned
+  entity_type_to_id: "11"
+  id: "393"
+  user_maintainable: t
+  relationship_type_id: "54"
+  entity_type_from_id: "11"
+  ruby_method_name: roles_commissioned
+valid_entity_entity_relationships_158: 
+  page_title: Presenters
+  entity_type_to_id: "11"
+  id: "365"
+  user_maintainable: t
+  relationship_type_id: "100"
+  entity_type_from_id: "9"
+  ruby_method_name: presenters
+valid_entity_entity_relationships_072: 
+  page_title: Improvisors
+  entity_type_to_id: "11"
+  id: "279"
+  user_maintainable: t
+  relationship_type_id: "26"
+  entity_type_from_id: "2"
+  ruby_method_name: improvisors
+valid_entity_entity_relationships_044: 
+  page_title: Works To Whom Source Material Is Provided
+  entity_type_to_id: "2"
+  id: "251"
+  user_maintainable: t
+  relationship_type_id: "4"
+  entity_type_from_id: "1"
+  ruby_method_name: works_to_whom_source_material_is_provided
+valid_entity_entity_relationships_016: 
+  page_title: Influenced Works
+  entity_type_to_id: "2"
+  id: "223"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: influenced_works
+valid_entity_entity_relationships_187: 
+  page_title: Roles Funded
+  entity_type_to_id: "11"
+  id: "394"
+  user_maintainable: t
+  relationship_type_id: "63"
+  entity_type_from_id: "11"
+  ruby_method_name: roles_funded
+valid_entity_entity_relationships_159: 
+  page_title: Concept Genres
+  entity_type_to_id: "5"
+  id: "366"
+  user_maintainable: t
+  relationship_type_id: "10"
+  entity_type_from_id: "9"
+  ruby_method_name: concept_genres
+valid_entity_entity_relationships_073: 
+  page_title: Writings
+  entity_type_to_id: "2"
+  id: "280"
+  user_maintainable: t
+  relationship_type_id: "77"
+  entity_type_from_id: "11"
+  ruby_method_name: writings
+valid_entity_entity_relationships_045: 
+  page_title: Superwork Influences
+  entity_type_to_id: "1"
+  id: "252"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "2"
+  ruby_method_name: superwork_influences
+valid_entity_entity_relationships_100: 
+  page_title: Recorders
+  entity_type_to_id: "11"
+  id: "307"
+  user_maintainable: t
+  relationship_type_id: "66"
+  entity_type_from_id: "4"
+  ruby_method_name: recorders
+valid_entity_entity_relationships_017: 
+  page_title: Concept Themes
+  entity_type_to_id: "5"
+  id: "224"
+  user_maintainable: t
+  relationship_type_id: "22"
+  entity_type_from_id: "2"
+  ruby_method_name: concept_themes
+valid_entity_entity_relationships_188: 
+  page_title: Superworks From Whom Source Material Is Drawn
+  entity_type_to_id: "1"
+  id: "395"
+  user_maintainable: t
+  relationship_type_id: "3"
+  entity_type_from_id: "1"
+  ruby_method_name: superworks_from_whom_source_material_is_drawn
+valid_entity_entity_relationships_074: 
+  page_title: Writers
+  entity_type_to_id: "11"
+  id: "281"
+  user_maintainable: t
+  relationship_type_id: "78"
+  entity_type_from_id: "2"
+  ruby_method_name: writers
+valid_entity_entity_relationships_046: 
+  page_title: Influences These Works
+  entity_type_to_id: "2"
+  id: "253"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "1"
+  ruby_method_name: influences_these_works
+valid_entity_entity_relationships_101: 
+  page_title: Published Manifestations
+  entity_type_to_id: "4"
+  id: "308"
+  user_maintainable: t
+  relationship_type_id: "69"
+  entity_type_from_id: "11"
+  ruby_method_name: published_manifestations
+valid_entity_entity_relationships_018: 
+  page_title: Themed Works
+  entity_type_to_id: "2"
+  id: "225"
+  user_maintainable: t
+  relationship_type_id: "21"
+  entity_type_from_id: "5"
+  ruby_method_name: themed_works
+valid_entity_entity_relationships_189: 
+  page_title: Superworks To Whom Source Material Is Provided
+  entity_type_to_id: "1"
+  id: "396"
+  user_maintainable: t
+  relationship_type_id: "4"
+  entity_type_from_id: "1"
+  ruby_method_name: superworks_to_whom_source_material_is_provided
+valid_entity_entity_relationships_130: 
+  page_title: Broadcasters
+  entity_type_to_id: "11"
+  id: "337"
+  user_maintainable: t
+  relationship_type_id: "42"
+  entity_type_from_id: "6"
+  ruby_method_name: broadcasters
+valid_entity_entity_relationships_075: 
+  page_title: Arrangements
+  entity_type_to_id: "2"
+  id: "282"
+  user_maintainable: t
+  relationship_type_id: "29"
+  entity_type_from_id: "11"
+  ruby_method_name: arrangements
+valid_entity_entity_relationships_047: 
+  page_title: Works From Whom Source Material Is Drawn
+  entity_type_to_id: "2"
+  id: "254"
+  user_maintainable: t
+  relationship_type_id: "3"
+  entity_type_from_id: "2"
+  ruby_method_name: works_from_whom_source_material_is_drawn
+valid_entity_entity_relationships_102: 
+  page_title: Publishers
+  entity_type_to_id: "11"
+  id: "309"
+  user_maintainable: t
+  relationship_type_id: "70"
+  entity_type_from_id: "4"
+  ruby_method_name: publishers
+valid_entity_entity_relationships_019: 
+  page_title: Concept Genres
+  entity_type_to_id: "5"
+  id: "226"
+  user_maintainable: t
+  relationship_type_id: "10"
+  entity_type_from_id: "2"
+  ruby_method_name: concept_genres
+valid_entity_entity_relationships_131: 
+  page_title: Recorded Events
+  entity_type_to_id: "6"
+  id: "338"
+  user_maintainable: t
+  relationship_type_id: "65"
+  entity_type_from_id: "11"
+  ruby_method_name: recorded_events
+valid_entity_entity_relationships_076: 
+  page_title: Arrangers
+  entity_type_to_id: "11"
+  id: "283"
+  user_maintainable: t
+  relationship_type_id: "30"
+  entity_type_from_id: "2"
+  ruby_method_name: arrangers
+valid_entity_entity_relationships_048: 
+  page_title: Works To Whom Source Material Is Provided
+  entity_type_to_id: "2"
+  id: "255"
+  user_maintainable: t
+  relationship_type_id: "4"
+  entity_type_from_id: "2"
+  ruby_method_name: works_to_whom_source_material_is_provided
+valid_entity_entity_relationships_103: 
+  page_title: Licensed Manifestations
+  entity_type_to_id: "4"
+  id: "310"
+  user_maintainable: t
+  relationship_type_id: "71"
+  entity_type_from_id: "11"
+  ruby_method_name: licensed_manifestations
+valid_entity_entity_relationships_160: 
+  page_title: Genred Distinctions
+  entity_type_to_id: "9"
+  id: "367"
+  user_maintainable: t
+  relationship_type_id: "9"
+  entity_type_from_id: "5"
+  ruby_method_name: genred_distinctions
+valid_entity_entity_relationships_132: 
+  page_title: Recorders
+  entity_type_to_id: "11"
+  id: "339"
+  user_maintainable: t
+  relationship_type_id: "66"
+  entity_type_from_id: "6"
+  ruby_method_name: recorders
+valid_entity_entity_relationships_077: 
+  page_title: Creations
+  entity_type_to_id: "2"
+  id: "284"
+  user_maintainable: t
+  relationship_type_id: "31"
+  entity_type_from_id: "11"
+  ruby_method_name: creations
+valid_entity_entity_relationships_049: 
+  page_title: Work Influences
+  entity_type_to_id: "2"
+  id: "256"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "2"
+  ruby_method_name: work_influences
+valid_entity_entity_relationships_104: 
+  page_title: Licensers
+  entity_type_to_id: "11"
+  id: "311"
+  user_maintainable: t
+  relationship_type_id: "72"
+  entity_type_from_id: "4"
+  ruby_method_name: licensers
+valid_entity_entity_relationships_161: 
+  page_title: Presented Expressions
+  entity_type_to_id: "3"
+  id: "368"
+  user_maintainable: t
+  relationship_type_id: "111"
+  entity_type_from_id: "6"
+  ruby_method_name: presented_expressions
+valid_entity_entity_relationships_133: 
+  page_title: Sold Events
+  entity_type_to_id: "6"
+  id: "340"
+  user_maintainable: t
+  relationship_type_id: "67"
+  entity_type_from_id: "11"
+  ruby_method_name: sold_events
+valid_entity_entity_relationships_078: 
+  page_title: Creaters
+  entity_type_to_id: "11"
+  id: "285"
+  user_maintainable: t
+  relationship_type_id: "32"
+  entity_type_from_id: "2"
+  ruby_method_name: creaters
+valid_entity_entity_relationships_105: 
+  page_title: Released Manifestations
+  entity_type_to_id: "4"
+  id: "312"
+  user_maintainable: t
+  relationship_type_id: "73"
+  entity_type_from_id: "11"
+  ruby_method_name: released_manifestations
+valid_entity_entity_relationships_190: 
+  page_title: Influential Concepts
+  entity_type_to_id: "5"
+  id: "397"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "1"
+  ruby_method_name: influential_concepts
+valid_entity_entity_relationships_162: 
+  page_title: Events Expressed At
+  entity_type_to_id: "6"
+  id: "369"
+  user_maintainable: t
+  relationship_type_id: "112"
+  entity_type_from_id: "3"
+  ruby_method_name: events_expressed_at
+valid_entity_entity_relationships_134: 
+  page_title: Sellers
+  entity_type_to_id: "11"
+  id: "341"
+  user_maintainable: t
+  relationship_type_id: "68"
+  entity_type_from_id: "6"
+  ruby_method_name: sellers
+valid_entity_entity_relationships_106: 
+  page_title: Releasers
+  entity_type_to_id: "11"
+  id: "313"
+  user_maintainable: t
+  relationship_type_id: "74"
+  entity_type_from_id: "4"
+  ruby_method_name: releasers
+valid_entity_entity_relationships_020: 
+  page_title: Genred Works
+  entity_type_to_id: "2"
+  id: "227"
+  user_maintainable: t
+  relationship_type_id: "9"
+  entity_type_from_id: "5"
+  ruby_method_name: genred_works
+valid_entity_entity_relationships_079: 
+  page_title: Commissioned Works
+  entity_type_to_id: "2"
+  id: "286"
+  user_maintainable: t
+  relationship_type_id: "54"
+  entity_type_from_id: "11"
+  ruby_method_name: commissioned_works
+valid_entity_entity_relationships_191: 
+  page_title: Influenced Superworks
+  entity_type_to_id: "1"
+  id: "398"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: influenced_superworks
+valid_entity_entity_relationships_163: 
+  page_title: Happening Expressions
+  entity_type_to_id: "3"
+  id: "370"
+  user_maintainable: f
+  relationship_type_id: "90"
+  entity_type_from_id: "6"
+  ruby_method_name: happening_expressions
+valid_entity_entity_relationships_135: 
+  page_title: Managed Events
+  entity_type_to_id: "6"
+  id: "342"
+  user_maintainable: t
+  relationship_type_id: "52"
+  entity_type_from_id: "11"
+  ruby_method_name: managed_events
+valid_entity_entity_relationships_107: 
+  page_title: Sold Manifestations
+  entity_type_to_id: "4"
+  id: "314"
+  user_maintainable: t
+  relationship_type_id: "67"
+  entity_type_from_id: "11"
+  ruby_method_name: sold_manifestations
+valid_entity_entity_relationships_021: 
+  page_title: Concept Influences
+  entity_type_to_id: "5"
+  id: "228"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "4"
+  ruby_method_name: concept_influences
+valid_entity_entity_relationships_192: 
+  page_title: Inspirational Concepts
+  entity_type_to_id: "5"
+  id: "399"
+  user_maintainable: t
+  relationship_type_id: "95"
+  entity_type_from_id: "1"
+  ruby_method_name: inspirational_concepts
+valid_entity_entity_relationships_164: 
+  page_title: Events Happening At
+  entity_type_to_id: "6"
+  id: "371"
+  user_maintainable: f
+  relationship_type_id: "89"
+  entity_type_from_id: "3"
+  ruby_method_name: events_happening_at
+valid_entity_entity_relationships_136: 
+  page_title: Managers
+  entity_type_to_id: "11"
+  id: "343"
+  user_maintainable: t
+  relationship_type_id: "51"
+  entity_type_from_id: "6"
+  ruby_method_name: managers
+valid_entity_entity_relationships_108: 
+  page_title: Sellers
+  entity_type_to_id: "11"
+  id: "315"
+  user_maintainable: t
+  relationship_type_id: "68"
+  entity_type_from_id: "4"
+  ruby_method_name: sellers
+valid_entity_entity_relationships_050: 
+  page_title: Influences These Works
+  entity_type_to_id: "2"
+  id: "257"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "2"
+  ruby_method_name: influences_these_works
+valid_entity_entity_relationships_022: 
+  page_title: Influenced Manifestations
+  entity_type_to_id: "4"
+  id: "229"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: influenced_manifestations
+valid_entity_entity_relationships_193: 
+  page_title: Inspired Superworks
+  entity_type_to_id: "1"
+  id: "400"
+  user_maintainable: t
+  relationship_type_id: "96"
+  entity_type_from_id: "5"
+  ruby_method_name: inspired_superworks
+valid_entity_entity_relationships_165: 
+  page_title: Commissioned Expressions
+  entity_type_to_id: "3"
+  id: "372"
+  user_maintainable: t
+  relationship_type_id: "88"
+  entity_type_from_id: "6"
+  ruby_method_name: commissioned_expressions
+valid_entity_entity_relationships_137: 
+  page_title: Managed Venues
+  entity_type_to_id: "7"
+  id: "344"
+  user_maintainable: t
+  relationship_type_id: "52"
+  entity_type_from_id: "11"
+  ruby_method_name: managed_venues
+valid_entity_entity_relationships_109: 
+  page_title: Descriptive Resource
+  entity_type_to_id: "10"
+  id: "316"
+  user_maintainable: t
+  relationship_type_id: "8"
+  entity_type_from_id: "11"
+  ruby_method_name: descriptive_resource
+valid_entity_entity_relationships_051: 
+  page_title: Realisations
+  entity_type_to_id: "3"
+  id: "258"
+  user_maintainable: f
+  relationship_type_id: "14"
+  entity_type_from_id: "2"
+  ruby_method_name: realisations
+valid_entity_entity_relationships_023: 
+  page_title: Concept Themes
+  entity_type_to_id: "5"
+  id: "230"
+  user_maintainable: t
+  relationship_type_id: "22"
+  entity_type_from_id: "4"
+  ruby_method_name: concept_themes
+valid_entity_entity_relationships_194: 
+  page_title: Superwork Influences
+  entity_type_to_id: "1"
+  id: "401"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "1"
+  ruby_method_name: superwork_influences
+valid_entity_entity_relationships_166: 
+  page_title: Events Commissioned At
+  entity_type_to_id: "6"
+  id: "373"
+  user_maintainable: t
+  relationship_type_id: "87"
+  entity_type_from_id: "3"
+  ruby_method_name: events_commissioned_at
+valid_entity_entity_relationships_138: 
+  page_title: Managers
+  entity_type_to_id: "11"
+  id: "345"
+  user_maintainable: t
+  relationship_type_id: "51"
+  entity_type_from_id: "7"
+  ruby_method_name: managers
+valid_entity_entity_relationships_052: 
+  page_title: Works Realised Through
+  entity_type_to_id: "2"
+  id: "259"
+  user_maintainable: f
+  relationship_type_id: "13"
+  entity_type_from_id: "3"
+  ruby_method_name: works_realised_through
+valid_entity_entity_relationships_024: 
+  page_title: Themed Manifestations
+  entity_type_to_id: "4"
+  id: "231"
+  user_maintainable: t
+  relationship_type_id: "21"
+  entity_type_from_id: "5"
+  ruby_method_name: themed_manifestations
+valid_entity_entity_relationships_080: 
+  page_title: Commissioners
+  entity_type_to_id: "11"
+  id: "287"
+  user_maintainable: t
+  relationship_type_id: "53"
+  entity_type_from_id: "2"
+  ruby_method_name: commissioners
+valid_entity_entity_relationships_195: 
+  page_title: Superworks Influenced
+  entity_type_to_id: "1"
+  id: "402"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "1"
+  ruby_method_name: superworks_influenced
+valid_entity_entity_relationships_167: 
+  page_title: Manifestations Launched
+  entity_type_to_id: "4"
+  id: "374"
+  user_maintainable: t
+  relationship_type_id: "101"
+  entity_type_from_id: "6"
+  ruby_method_name: manifestations_launched
+valid_entity_entity_relationships_139: 
+  page_title: Owned Venues
+  entity_type_to_id: "7"
+  id: "346"
+  user_maintainable: t
+  relationship_type_id: "85"
+  entity_type_from_id: "11"
+  ruby_method_name: owned_venues
+valid_entity_entity_relationships_053: 
+  page_title: Parent Work
+  entity_type_to_id: "2"
+  id: "260"
+  user_maintainable: t
+  relationship_type_id: "15"
+  entity_type_from_id: "3"
+  ruby_method_name: parent_work
+valid_entity_entity_relationships_025: 
+  page_title: Concept Genres
+  entity_type_to_id: "5"
+  id: "232"
+  user_maintainable: t
+  relationship_type_id: "10"
+  entity_type_from_id: "4"
+  ruby_method_name: concept_genres
+valid_entity_entity_relationships_081: 
+  page_title: Selected Works
+  entity_type_to_id: "2"
+  id: "288"
+  user_maintainable: t
+  relationship_type_id: "17"
+  entity_type_from_id: "11"
+  ruby_method_name: selected_works
+valid_entity_entity_relationships_196: 
+  page_title: Roles Dedicated
+  entity_type_to_id: "11"
+  id: "403"
+  user_maintainable: t
+  relationship_type_id: "113"
+  entity_type_from_id: "2"
+  ruby_method_name: roles_dedicated
+valid_entity_entity_relationships_168: 
+  page_title: Events Launched At
+  entity_type_to_id: "6"
+  id: "375"
+  user_maintainable: t
+  relationship_type_id: "102"
+  entity_type_from_id: "4"
+  ruby_method_name: events_launched_at
+valid_entity_entity_relationships_054: 
+  page_title: Expression Parts
+  entity_type_to_id: "3"
+  id: "261"
+  user_maintainable: t
+  relationship_type_id: "16"
+  entity_type_from_id: "2"
+  ruby_method_name: expression_parts
+valid_entity_entity_relationships_026: 
+  page_title: Genred Manifestations
+  entity_type_to_id: "4"
+  id: "233"
+  user_maintainable: t
+  relationship_type_id: "9"
+  entity_type_from_id: "5"
+  ruby_method_name: genred_manifestations
+valid_entity_entity_relationships_082: 
+  page_title: Selectors
+  entity_type_to_id: "11"
+  id: "289"
+  user_maintainable: t
+  relationship_type_id: "18"
+  entity_type_from_id: "2"
+  ruby_method_name: selectors
+valid_entity_entity_relationships_197: 
+  page_title: Works Dedicated
+  entity_type_to_id: "2"
+  id: "404"
+  user_maintainable: t
+  relationship_type_id: "114"
+  entity_type_from_id: "11"
+  ruby_method_name: works_dedicated
+valid_entity_entity_relationships_169: 
+  page_title: Resources Launched
+  entity_type_to_id: "10"
+  id: "376"
+  user_maintainable: t
+  relationship_type_id: "101"
+  entity_type_from_id: "6"
+  ruby_method_name: resources_launched
+valid_entity_entity_relationships_055: 
+  page_title: Descriptive Resources
+  entity_type_to_id: "10"
+  id: "262"
+  user_maintainable: t
+  relationship_type_id: "8"
+  entity_type_from_id: "2"
+  ruby_method_name: descriptive_resources
+valid_entity_entity_relationships_110: 
+  page_title: Roles Described
+  entity_type_to_id: "11"
+  id: "317"
+  user_maintainable: t
+  relationship_type_id: "7"
+  entity_type_from_id: "10"
+  ruby_method_name: roles_described
+valid_entity_entity_relationships_027: 
+  page_title: Concept Influences
+  entity_type_to_id: "5"
+  id: "234"
+  user_maintainable: t
+  relationship_type_id: "1"
+  entity_type_from_id: "10"
+  ruby_method_name: concept_influences
+valid_entity_entity_relationships_083: 
+  page_title: Funded Works
+  entity_type_to_id: "2"
+  id: "290"
+  user_maintainable: t
+  relationship_type_id: "63"
+  entity_type_from_id: "11"
+  ruby_method_name: funded_works
+valid_entity_entity_relationships_198: 
+  page_title: Roles Dedicated
+  entity_type_to_id: "11"
+  id: "405"
+  user_maintainable: t
+  relationship_type_id: "113"
+  entity_type_from_id: "4"
+  ruby_method_name: roles_dedicated
+valid_entity_entity_relationships_056: 
+  page_title: Works Described
+  entity_type_to_id: "2"
+  id: "263"
+  user_maintainable: t
+  relationship_type_id: "7"
+  entity_type_from_id: "10"
+  ruby_method_name: works_described
+valid_entity_entity_relationships_111: 
+  page_title: Written Resources
+  entity_type_to_id: "10"
+  id: "318"
+  user_maintainable: t
+  relationship_type_id: "77"
+  entity_type_from_id: "11"
+  ruby_method_name: written_resources
+valid_entity_entity_relationships_028: 
+  page_title: Influenced Resources
+  entity_type_to_id: "10"
+  id: "235"
+  user_maintainable: t
+  relationship_type_id: "2"
+  entity_type_from_id: "5"
+  ruby_method_name: influenced_resources
+valid_entity_entity_relationships_084: 
+  page_title: Funder
+  entity_type_to_id: "11"
+  id: "291"
+  user_maintainable: t
+  relationship_type_id: "64"
+  entity_type_from_id: "2"
+  ruby_method_name: funder
+valid_entity_entity_relationships_199: 
+  page_title: Manifestations Dedicated
+  entity_type_to_id: "4"
+  id: "406"
+  user_maintainable: t
+  relationship_type_id: "114"
+  entity_type_from_id: "11"
+  ruby_method_name: manifestations_dedicated
+valid_entity_entity_relationships_140: 
+  page_title: Owners
+  entity_type_to_id: "11"
+  id: "347"
+  user_maintainable: t
+  relationship_type_id: "86"
+  entity_type_from_id: "7"
+  ruby_method_name: owners
+valid_entity_entity_relationships_057: 
+  page_title: Descriptive Resources
+  entity_type_to_id: "10"
+  id: "264"
+  user_maintainable: t
+  relationship_type_id: "8"
+  entity_type_from_id: "1"
+  ruby_method_name: descriptive_resources
+valid_entity_entity_relationships_112: 
+  page_title: Writers
+  entity_type_to_id: "11"
+  id: "319"
+  user_maintainable: t
+  relationship_type_id: "78"
+  entity_type_from_id: "10"
+  ruby_method_name: writers
+valid_entity_entity_relationships_029: 
+  page_title: Concept Themes
+  entity_type_to_id: "5"
+  id: "236"
+  user_maintainable: t
+  relationship_type_id: "22"
+  entity_type_from_id: "10"
+  ruby_method_name: concept_themes
+valid_entity_entity_relationships_085: 
+  page_title: Performances
+  entity_type_to_id: "3"
+  id: "292"
+  user_maintainable: t
+  relationship_type_id: "37"
+  entity_type_from_id: "11"
+  ruby_method_name: performances
+valid_entity_entity_relationships_141: 
+  page_title: Performed Venues
+  entity_type_to_id: "7"
+  id: "348"
+  user_maintainable: t
+  relationship_type_id: "49"
+  entity_type_from_id: "11"
+  ruby_method_name: performed_venues
+valid_entity_entity_relationships_113: 
+  page_title: Recorded Resources
+  entity_type_to_id: "10"
+  id: "320"
+  user_maintainable: t
+  relationship_type_id: "65"
+  entity_type_from_id: "11"
+  ruby_method_name: recorded_resources
+valid_entity_entity_relationships_086: 
+  page_title: Performers
+  entity_type_to_id: "11"
+  id: "293"
+  user_maintainable: t
+  relationship_type_id: "38"
+  entity_type_from_id: "3"
+  ruby_method_name: performers
+valid_entity_entity_relationships_058: 
+  page_title: Superworks Described
+  entity_type_to_id: "1"
+  id: "265"
+  user_maintainable: t
+  relationship_type_id: "7"
+  entity_type_from_id: "10"
+  ruby_method_name: superworks_described
+valid_entity_entity_relationships_170: 
+  page_title: Events Launched At
+  entity_type_to_id: "6"
+  id: "377"
+  user_maintainable: t
+  relationship_type_id: "102"
+  entity_type_from_id: "10"
+  ruby_method_name: events_launched_at
+valid_entity_entity_relationships_142: 
+  page_title: Performers
+  entity_type_to_id: "11"
+  id: "349"
+  user_maintainable: t
+  relationship_type_id: "50"
+  entity_type_from_id: "7"
+  ruby_method_name: performers
+valid_entity_entity_relationships_114: 
+  page_title: Recorders
+  entity_type_to_id: "11"
+  id: "321"
+  user_maintainable: t
+  relationship_type_id: "66"
+  entity_type_from_id: "10"
+  ruby_method_name: recorders
+valid_entity_entity_relationships_087: 
+  page_title: Exhibitions
+  entity_type_to_id: "3"
+  id: "294"
+  user_maintainable: t
+  relationship_type_id: "39"
+  entity_type_from_id: "11"
+  ruby_method_name: exhibitions
+valid_entity_entity_relationships_059: 
+  page_title: Descriptive Resources
+  entity_type_to_id: "10"
+  id: "266"
+  user_maintainable: t
+  relationship_type_id: "8"
+  entity_type_from_id: "3"
+  ruby_method_name: descriptive_resources

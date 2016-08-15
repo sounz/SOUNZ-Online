@@ -1,0 +1,4 @@
+<div align="right">
+<%= select('entity_contactinfo', 'contactinfo_type', PersonContactinfo.get_contactinfo_types_array, :prompt => "-- Select a contact info type --") %>
+</div>
+<h1><%= page_title = 'New Contact Details for ' + @person.full_name %></h1>

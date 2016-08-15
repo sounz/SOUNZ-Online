@@ -1,0 +1,133 @@
+<!-- Admin navigation -->
+<%if !@login.blank? && (PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CRM') || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP'))%>
+
+<div id="editingPanel">
+  <ul>
+     <%if !@login.blank? and PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CRM')%>
+     <li>CRM
+       <ul>
+        <li><a href="/search_contacts">CRM Searches</a></li>
+        <li><a href="/search_contacts/advanced">Contacts Advanced Search</a></li>
+        <li><a href="/search_communications">Communications Search</a></li>
+        <li><a href="/search_borrowed_items">Borrow Items Search</a></li>
+
+        <li><a href="/saved_contact_lists">Saved Contact Lists</a></li>
+        <%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_PROJECT')%>
+        <li><a href="/projects">Projects</a></li>
+     </ul>
+    </li>
+    <% end %>
+    
+    <%if !@login.blank? && PrivilegesHelper.has_permission?(@login, 'CAN_VIEW_TAP')%>
+    <li>TAP
+    <ul>
+      <li><%=link_to "Music Search", :controller => :finder, :action => :shows%></li>
+      <li><%=link_to "People Search", :controller => :finder, :action => :shows, :id => 'people'%></li>
+      <li><%=link_to "Events Search", :controller => :finder, :action => :shows, :id => 'events'%></li>
+      <li><%=link_to "Media Search", :controller => :finder, :action => :shows, :id => 'sounzmedia'%></li>
+      <li><a href="/advanced_finder/manifestation_resource">Advanced Manifestation / Resource Search</a></li>
+      <li><a href="/advanced_finder/expression">Advanced Expression Search</a></li>
+      <li><a href="/advanced_finder/work">Advanced Work Search</a></li>
+      <li><a href="/advanced_finder/event">Advanced Event Search</a></li>
+      <li><%=link_to "Superworks", :controller=> :superworks, :action => :list%></li>
+      <li><%=link_to "Works", :controller=> :works, :action => :list%></li>
+      <li><%=link_to "Expressions", :controller=> :expressions, :action => :list%></li>
+      <li><%=link_to "Manifestations", :controller=> :manifestations, :action => :list%></li>
+      <li><%=link_to "Resources", :controller=> :resources, :action => :list%></li>
+      <li><%=link_to "Media on Demand", :controller=> :sounzmedia, :action => :list%></li>	      		  
+      <li><%=link_to "Distinctions", :controller=> :distinctions, :action => :list%></li>
+      <li><%=link_to "Distinction Instances", :controller=> :distinction_instances, :action => :list%></li>
+      <li><%=link_to "Concepts", :controller=> :concepts, :action => :list%></li>
+      <li><%=link_to "Events", :controller=> :events, :action => :list%></li>
+      <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT') %>
+      <li><%=link_to "Content Pages", :controller=> :cm_contents, :action => :list%></li>
+      <% end %> 
+    </ul>
+    </li>
+    <% end %>
+      
+    
+    <%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_PRIVILEGE') || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN')%> 
+    <li>Privileges/Logins
+        <ul>
+          <%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_PRIVILEGE')%>
+            <li><%=link_to "Privileges", :controller=> :privileges, :action => :list%></li>
+          <%end%>
+          
+          <%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN')%>
+            <li><%=link_to "Logins", :controller=> :logins, :action => :search%></li>
+          <%end%>
+        </ul>
+       </li>
+    <% end %>
+      
+      <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_SALES_HISTORY') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BORROWED_ITEM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')
+       %>
+      <li>OS Commerce
+      <ul>
+        <li><%=link_to "Sales History", :controller => :cart, :action => :show_orders unless !PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_SALES_HISTORY')%></li>
+        <li><%=link_to "Borrowed Items", :controller => :borrowed_items, :action => :list unless !PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BORROWED_ITEM')%></li>
+            <li><%=link_to "Moneyworks data check", :controller=> :moneyworks_data_checker, :action => :index if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%></li>
+      </ul>
+      </li>
+      <% end %>
+      
+      <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTACT_UPDATE_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTRIBUTOR_PROFILE_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_COMPOSER_BIO_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_EVENT_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_WORK_UPDATE_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_FEEDBACK_PROV_FORM') ||
+            PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_PRODUCT_PROV_FORM') ||
+                  PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BID_PROV_FORM')
+      %>
+      <li>Pending Submissions
+      <ul>
+      <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTACT_UPDATE_PROV_FORM')
+         n_pending_contact_updates = ProvContactUpdates.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+            <li><%=link_to "Contact Updates (#{n_pending_contact_updates})", prov_contact_updates_url%>	</li>
+            <% end %>
+            
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTRIBUTOR_PROFILE_PROV_FORM')
+               n_pending_contributor_profile_updates = ProvContributorProfiles.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+            <li><%=link_to "Contributor Profiles (#{n_pending_contributor_profile_updates})", prov_contributor_profiles_url%></li>
+            <% end %>
+            
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_COMPOSER_BIO_PROV_FORM')
+               n_pending_composer_bios = ProvComposerBios.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+            <li><%=link_to "Composer Bios (#{n_pending_composer_bios})", prov_composer_bios_url%></li>
+            <% end %>
+            
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_EVENT_PROV_FORM')
+               n_pending_events = ProvEvents.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+            <li><%=link_to "Events (#{n_pending_events})", prov_events_url%></li>
+            <% end %>
+            
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_WORK_UPDATE_PROV_FORM')
+               n_pending_work_updates = ProvWorkUpdates.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+            <li><%=link_to "Work Updates (#{n_pending_work_updates})", prov_work_updates_url%></li>
+            <% end %>
+            
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_PRODUCT_PROV_FORM')
+               n_pending_products = ProvProducts.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+      <li><%=link_to "Products (#{n_pending_products})", prov_products_url%></li>
+      <% end %>
+      
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_FEEDBACK_PROV_FORM')
+               n_pending_feedbacks = ProvFeedbacks.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+      <li><%=link_to "Feedbacks (#{n_pending_feedbacks})", prov_feedbacks_url%></li>
+      <% end %>
+
+            <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BID_PROV_FORM')
+               n_pending_bids = ProvBid.count(:all, :conditions => ["status_id = ?", Status::PENDING.status_id]) %>
+         <li><%=link_to "Bids (#{n_pending_bids})", prov_bids_url%></li>
+      <% end %>
+            </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%end%>
+<%end%>

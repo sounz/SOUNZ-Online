@@ -1,0 +1,64 @@
+<% title 'Projects' %>
+<fieldset>
+<legend>Projects</legend>
+
+<% form_tag '/projects', :method => 'GET' do %>
+<table width="100%">
+  <tr>
+    <td>
+      Status: 
+      <select name="status" onchange="this.form.submit()">
+      <%= options_for_select([
+           ["All projects", ''],
+           ["New", '0'],
+           ["In-progress", '1'],
+           ["Finished", '2']
+         ], @status)
+      %>
+      </select>
+    </td>
+    <td class="right">Sorted by: 
+      <select name="sortby" onchange="this.form.submit()">
+        <%= options_for_select([
+          ['Project Name', 'name'],
+          ['Start Date', 'start'],
+          ['Finish Date', 'end']
+          ], @sortby) %>
+      </select>
+    </td>
+  </tr>
+</table>
+<% end %>
+<br>
+<table width="100%">
+  <tr>
+    <th>Project</th>
+    <th>Start Date</th>
+    <th>Finish Date</th>
+    <th>Status</th>
+  </tr>
+  
+<%
+i = 0
+for project in @projects %>
+  <tr class="<%= i = i + 1; 'r' + (i % 2).to_s %>">
+    <td><%= link_to project.project_title,
+                :controller => :projects,
+                :action => :edit,
+                :id => project.project_id %></td>
+    <td><%=h project.start_date.strftime("%d/%m/%Y") %></td>
+    <td><% if project.actual_finish_date %>
+    <%=h project.actual_finish_date.strftime("%d/%m/%Y") %>
+    <% else %>
+    <span style="color:#009;font-weight:bold;">When Finished</span>
+    <%end%></td>
+    <td><%=h project.status_name %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @projects %>
+
+<%= link_to 'New project', :action => 'new' %>
+</fieldset>

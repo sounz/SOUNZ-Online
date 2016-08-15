@@ -1,0 +1,10 @@
+<% if @resource.is_a_sounzmedia? %>
+<%=main_tabs(selected = :sounzmedia)%>
+<% else %>
+<%=main_tabs(selected = :works)%>
+<% end %>
+<%=start_of_content(@resource, "Resource")%>
+
+<%=render :partial => '/shared/frbr/objects/full/resource', :locals => {:object => @resource}%>
+<%=end_of_content(@contributor)%>
+

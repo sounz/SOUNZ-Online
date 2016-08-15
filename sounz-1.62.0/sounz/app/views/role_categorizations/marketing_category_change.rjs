@@ -1,0 +1,7 @@
+page.replace_html 'subcategory', :partial => 'role_subcategory_dropdown'
+page.visual_effect :highlight, 'subcategory'
+#page.replace_html 'new_category_link', :partial => 'new_categorization_popup_link', 
+#:locals => {:contextual_text => 'for '+@marketing_category.abbreviation, :contextual_category_id => @marketing_category.marketing_category_id} 
+
+
+

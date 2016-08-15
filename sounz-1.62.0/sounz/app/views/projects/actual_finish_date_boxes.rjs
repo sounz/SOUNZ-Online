@@ -1,0 +1,7 @@
+if @finished
+  page.replace_html 'actual_finish_date_boxes', :partial => 'actual_finish_date_boxes'
+  page.visual_effect :highlight, 'actual_finish_date_boxes'
+  @finished = false
+else
+  page.replace_html 'actual_finish_date_boxes', ''
+end

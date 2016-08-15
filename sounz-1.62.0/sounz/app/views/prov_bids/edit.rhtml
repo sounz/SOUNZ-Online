@@ -1,0 +1,19 @@
+<h1>SOUNZtender Bidding Form</h1>
+
+<p>
+Please complete the details below so that your bid can be registered.
+Any subsequent bids can be made by submitting another form, or by phone, email or post.
+</p>
+
+<%= error_messages_for :prov_bid %>
+
+<% form_for(:prov_bid, :url => prov_bid_path(@prov_bid), :html => { :method => :put }) do |f| %>
+
+  <%=render :partial => "form", :locals => {:f => f}%>
+  <p>Status:<br/><%= select("prov_bid", "status_id", @statuses.to_dropdown) %></p>
+
+  <p><%= submit_tag "Update" %></p>
+
+<% end %>
+
+<%= link_to 'Back to bid submissions', prov_bids_path %>

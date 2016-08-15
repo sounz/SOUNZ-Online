@@ -1,0 +1,8 @@
+<ul class="inlineList">
+<%for role in contributors
+if PrivilegesHelper.has_link_permission?(@login, role.contributor)
+%>
+<li><%=link_to role.contributor_names, contributor_as_general_intro_url(role)%></li>
+<%end%>	
+<% end %>
+</ul>

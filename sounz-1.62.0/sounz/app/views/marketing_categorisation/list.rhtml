@@ -1,0 +1,26 @@
+<h1>Listing marketing categorisations</h1>
+
+<table width="100%" border="0" cellpadding="1" cellspacing="1">
+  <tr>
+    <th>Category</th>
+    <th>Subcategory</th>
+  </tr>
+  
+<% for marketing_category in @marketing_categories.sort %>
+<% marketing_subcategories = marketing_category.marketing_subcategories %>
+<% for marketing_subcategory in marketing_subcategories %>
+  <tr>
+    <td width="45%"><%= link_to marketing_category.send(:abbreviation), {:action => 'show', :id => marketing_subcategory } %></td>
+    <td width="45%"><%= link_to marketing_subcategory.send(:abbreviation), {:action => 'show', :id => marketing_subcategory } %></td>
+    <td><%= link_to 'Edit', {:action => 'edit_subcategory', :id => marketing_subcategory } %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => marketing_subcategory }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @marketing_categories %>
+
+<%= link_to 'New Categorisation', :action => 'new_subcategory' %>
+

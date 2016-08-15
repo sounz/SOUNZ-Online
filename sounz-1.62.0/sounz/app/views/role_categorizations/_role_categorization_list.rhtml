@@ -1,0 +1,44 @@
+<%
+if !@role.organisation.blank? && !@role.person.blank?
+organisation_primary_role = Role.get_organisation_primary_role(@role.organisation.organisation_id)
+role_categorizations = organisation_primary_role.role_categorizations
+else
+role_categorizations = @role.role_categorizations
+end
+
+if role_categorizations && !role_categorizations.empty?
+
+role_categorizations = role_categorizations.sort_by {|rc| rc.marketing_subcategory.marketing_category.abbreviation}
+for rc in role_categorizations
+subcategory = rc.marketing_subcategory
+role_categorization_id = generate_id(rc)
+%>
+<span id="<%= role_categorization_id %>">
+
+<% 
+if @role.organisation.blank? || 
+(!@role.organisation.blank? && @role == Role.get_organisation_primary_role(@role.organisation.organisation_id)) ||
+@role.person.blank?
+%>
+ <%= link_to_remote( "Delete", :complete => "new Effect.Fade('"+role_categorization_id+"')", 
+                               :url => { :controller => 'role_categorizations', 
+                                         :action => 'destroy_categorization_for_role',
+                                         :id => rc.role_categorization_id  }, 
+                                         :before => "Element.show('spinner')",
+                                         :complete => "Element.hide('spinner')",
+                                         :confirm => 'Are you sure?' ) %>
+<% end %>
+
+<strong><%=subcategory.to_category_subcategory_s%></strong></span><br>
+<%end%>
+
+<%= render :partial => 'shared/spinner' %>
+
+<% else %>
+  <% if params[:action] == 'show' %>
+    <p>There is no marketing categorisation associated with this person</p>
+  <% end %>
+<% end %>
+
+
+

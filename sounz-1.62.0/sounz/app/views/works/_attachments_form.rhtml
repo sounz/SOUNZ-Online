@@ -1,0 +1,21 @@
+OBSOLTE
+
+<h1 class="formOnPage">Attachments</h1>
+<%= render :partial => 'shared/attachments/edit_list', :locals => {:media_items => @media_items, :object => object}%>
+<a name="attachments"/>
+<!--<form action="/works/new_attachment" enctype="multipart/form-data" method="post">-->
+	
+<div id="attachmentForm">
+<% form_for(:media_item, :url => {:controller => :works, :action => :create_attachment}, :html => { :multipart => true, :target => 'upload_frame', :name => 'uploadForm', :mode => mode }) do |form| %>
+<div id="uploadWidget">
+<%= render :partial => 'shared/attachments/upload_widget'%>
+</div>
+
+  <input id="object_id" name="object[id]" type="hidden" value="<%=object.id%>" />
+<p>
+  <input name="commit" type="submit" value="Create" />
+</p>
+<%end%>
+</div>
+
+<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px;" src="about:blank">IFRAME</iframe>

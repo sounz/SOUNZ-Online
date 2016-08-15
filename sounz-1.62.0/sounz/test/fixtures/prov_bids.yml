@@ -1,0 +1,51 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  status_id: 1
+  name: MyString
+  email: MyString
+  phone_home: MyString
+  phone_work: MyString
+  phone_mobile: MyString
+  phone_fax: MyString
+  postal_address: MyText
+  postcode: MyString
+  is_group_bid: false
+  group_name: MyString
+  bidder_name: MyString
+  bid: MyString
+  bid_amount: 
+  terms_agreed: false
+  pay_method: MyString
+  bid_notes: MyText
+  send_donor_info: false
+  send_bequest_info: false
+  send_sounz_email_updates: false
+  send_sounz_news_post: false
+  send_sounz_news_email: false
+  submitted_by: 1
+two:
+  id: 2
+  status_id: 1
+  name: MyString
+  email: MyString
+  phone_home: MyString
+  phone_work: MyString
+  phone_mobile: MyString
+  phone_fax: MyString
+  postal_address: MyText
+  postcode: MyString
+  is_group_bid: false
+  group_name: MyString
+  bidder_name: MyString
+  bid: MyString
+  bid_amount: 
+  terms_agreed: false
+  pay_method: MyString
+  bid_notes: MyText
+  send_donor_info: false
+  send_bequest_info: false
+  send_sounz_email_updates: false
+  send_sounz_news_post: false
+  send_sounz_news_email: false
+  submitted_by: 1

@@ -1,0 +1,12 @@
+<div class="instruction">To add an object click 'Add'
+Source instance id is <%=@source_id%>	
+</div>
+<ul>
+<%for frbr_object in @events%>
+<%frbr_object_id = generate_id(frbr_object)%>
+<li id="found_<%=frbr_object_id%>">
+<span class="actionButton"><%= link_to_remote "Add", :url => {:controller => :events, :action => :add_sub_event, :id => frbr_object_id, :source_id => @source_id}%></span>
+	<%=frbr_object.id%>:<%=frbr_object.frbr_ui_desc%>	
+</li>
+<%end%>
+</ul>

@@ -1,0 +1,10 @@
+if @saved
+  page.replace_html 'new_sample_form', :partial => 'add_sample_form_button', :locals => {:manifestation => @manifestation}
+  page.replace_html 'sampleAttachments', :partial => 'samples_edit_list', :locals => {:manifestation => @manifestation}
+  page.visual_effect :highlight, @dom_id
+else
+  page.replace_html 'new_sample_form', :partial => 'new_sample', 
+  :locals  =>{:manifestation => @manifestation, :statuses => @statuses}
+  page.visual_effect :shake, 'new_sample_form'
+end
+

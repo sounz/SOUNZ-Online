@@ -1,0 +1,110 @@
+<% content_for :page_title do %>
+Experience
+<%end%>
+
+<%content_for :facets do%>
+
+         <% link_to_facet_base_url('works').each_pair do |k,v|
+          if k != :action and k != :query and !v.blank? %>
+        <div><input type="hidden" name="<%=h k%>" value="<%=h v%>"></div>
+        <% end
+        end %>
+
+   <div id="facetResults" class="block">
+      <% if !@results[:docs].blank? %>
+        <h2 class="title">Narrow your results</h2>
+      <% else %>
+        <h2 class="title">Browse the catalogue</h2>
+      <% end %>
+      <%=render :partial => 'facet_sounzmedia_results' %>
+   </div><!--/facetResults-->
+  <%end%>
+
+  <% pagination = render :partial => 'page_links', :locals => {:paginator => @paginator} %>
+  <%=render :partial => '/shared/tabs/finder_tabs', :locals => {:selected_tab => :sounzmedia}%>
+
+  <h1>Media on Demand</h1>
+
+
+  <div class="search-results-form">
+
+  <p class="instructions">To find more video/audio files type a word or phrase into the box below or browse using the search filters on the left</p>
+
+    <%
+      query_url = ''
+      %>
+      <form action="/finder/show/sounzmedia<%= '?' + query_url if query_url != '' %>" method="get">
+
+        <div class="search-form">
+          <fieldset>
+            <input type="text" name="query" id="query" size="30" class="text" value="<%=h @query %>" >
+          </fieldset>
+            <input type="submit" value="Search" alt="Search" class="public_button" id="submit">
+            <%= link_to "Reset", {:controller => :finder, :action => :reset_sounzmedia_search}, {:class => 'search-reset'} %>
+        </div>
+
+      </form>
+
+
+
+     <% if !@results[:docs].blank?%>
+      
+          <form name="sort" action="/finder/show/sounzmedia<%= '?' + query_url if query_url != '' %>" method="get">
+      
+            <% link_to_facet_base_url('works').each_pair do |k,v|
+              if k != :sort_by and k != :action and k != :id and !v.blank? %>
+                <div><input type="hidden" name="<%=h k%>" value="<%=h v%>"></div>
+              <% end %>
+            <% end %>
+
+  <!-- Result Details -->
+          <div class="search-result-details">
+            <ul>
+              <li class="result-count">
+                  <%if ! (@query.blank?)%><%= @results[:docs].length > 0 ? pluralize(@results[:total], 'work') + ' for \'' + @query +'\'' : 'There were no results matching your request' %><%end%>
+              </li>
+              <li class="result-sort">
+
+Sort by:</span>&nbsp;<%= select_tag "sort_by", options_for_select([
+                                                                                 ['Relevance', ''], 
+                                                                                 ['Title', 'title'], 
+                                                                                 ['Composer/Author', 'author']
+                                                                                 ], selected = @search_details.sort_by
+                                                                                 )
+                                                           %>
+
+              </li>
+              <% if  @results[:docs].length > 0 && !@query.blank? %>
+                <li class="pagination"><%= pagination %></li>
+              <% end %>
+            </ul>
+            <input type="submit" value="Sort" alt="Sort" class="sort">
+          </div>
+
+
+
+          </form>
+
+      <% end %>
+    </div>
+
+    <% if !@results[:docs].nil? %>
+      <div id="liveResults">
+      	<%= render :partial => 'sounzmedia_result', :collection => @results[:docs] %>
+	    </div>
+    <% end %>
+
+    <div class="search-result-details-bottom">
+      <ul>
+        <li class="result-count">
+          <%if ! (@query.blank?)%>
+              <%= @results[:docs].length > 0 ? pluralize(@results[:total], 'work') + ' for \'' + @query +'\'' : 'There were no results matching your request' %>
+         <% elsif  @results[:docs].length > 0 %>
+             <%= @results[:docs].length > 0 ? pluralize(@results[:total], 'work') : 'There were no results matching your request' %>
+          <%end%>
+        </li>
+        <% if  @results[:docs].length > 0 %>
+          <li class="pagination"><%= pagination %></li>
+        <% end %>
+      </ul>
+    </div>

@@ -1,0 +1,19 @@
+mode1:
+  mode_id: 1
+  mode_desc: "performance"
+
+mode2:
+  mode_id: 2
+  mode_desc: "music notation"
+
+mode3:
+  mode_id: 3
+  mode_desc: "compiled computer code"
+
+mode4:
+  mode_id: 4
+  mode_desc: "installation"
+
+mode5:
+  mode_id: 5
+  mode_desc: "alpha numeric notation"

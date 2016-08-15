@@ -1,0 +1,20 @@
+<h1>SOUNZtender Bidding Form</h1>
+
+<p>
+Please complete the details below so that your bid can be registered.
+Any subsequent bids can be made by submitting another form, or by phone, email or post.
+</p>
+
+<%= error_messages_for :prov_bid %>
+
+<% form_for(:prov_bid, :url => prov_bids_path) do |f| %>
+
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+
+<% end %>

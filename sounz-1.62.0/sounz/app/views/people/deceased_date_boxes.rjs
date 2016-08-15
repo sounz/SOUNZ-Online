@@ -1,0 +1,6 @@
+page.replace_html 'deceased_date_boxes', :partial => 'deceased_date_boxes'
+if @deceased
+  page.visual_effect :highlight, 'person_date_of_death_3i'
+  page.visual_effect :highlight, 'person_date_of_death_2i'
+  page.visual_effect :highlight, 'person_date_of_death_1i'
+end

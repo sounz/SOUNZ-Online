@@ -1,0 +1,69 @@
+<%= error_messages_for 'distinction_instance' %>
+
+
+<!--[form:distinction_instance]-->
+
+
+<fieldset>
+<legend accesskey="d">Distinction</legend>
+Assigned Distinction:<span id="assignedDistinction" name="assignedDistinction"><%=render :partial => 'distinction', :locals=> {:object=> @assignedDistinction}%></span>
+
+<div class="instruction">Search for an alternative distinction by typing in the search box below.  Matching distinctions will appear, from which a new distinction can be selected</div>
+Distinction Search:<input id="searchTextDistinction" name="searchTextDistinction" type="text" size="30" />
+<%=observe_field_delayed(:searchTextDistinction, :frequency => 0.25, :update => :distinctionList,:url => {:action => :findDistinctions, :controller => :distinction_instances}, :with => "'query='+value")%>
+<div id="distinctionList" name="distinctionList"></div>
+
+</legend>
+</fieldset>
+
+<fieldset>
+<legend accesskey="e">Event</legend>
+<%= link_to_remote( '<span class="actionButton">REMOVE EVENT</span>',:update => :assignedEvent,:url =>{ :action => :removeEvent})%> Assigned Event:<span id="assignedEvent" name="assignedEvent"><%=render :partial => 'event', :locals=> {:object=> @assignedEvent}%></span>
+<div class="instruction">Search for an alternative event by typing in the search box below.  Matching events will appear, from which a new event can be selected</div>
+Event Search:<input id="searchTextEvent" name="searchTextEvent" type="text" size="30" />
+<%=observe_field(:searchTextEvent, :frequency => 0.25, :update => :eventList,:url => {:action => :findEvents, :controller => :distinction_instances}, :with => "'query='+value")%>
+<div id="eventList" name="eventList"></div>
+
+</legend>
+</fieldset>
+
+<p><label for="distinction_instance_prize_placing">Instance info</label><br>
+<%= text_area 'distinction_instance', 'instance_info', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="distinction_instance_award_date">Award year</label><br>
+<%= select_year(@distinction_instance.award_year, :prefix => "distinction_instance", :field_name => "award_year", :start_year => Time.now.year, :end_year =>1900 ) %><p/>
+
+<% 
+selected = @distinction_instance.status_id 
+selected = Status::PENDING.status_id if selected.blank?
+%>
+<p/>Status:<br><%= select("distinction_instance", "status_id", @statuses.to_dropdown, :selected => selected.to_i) %></p>
+
+<table>
+<% if params[:action] != 'new' && params[:action] != 'create' %>
+<% if !@distinction_instance.created_at.blank? %>
+
+<tr>
+<th><label for="distinction_instance_created_at">Created at</label></th>
+<td><%= dby_date(@distinction_instance.created_at)  %></td>
+</tr>
+<% end %>
+
+<% if !@distinction_instance.updated_at.blank? %>
+<tr>
+<th><label for="distinction_instance_updated_at">Updated at</label></th>
+<td><%= dby_date(@distinction_instance.updated_at) %></td>
+</tr>
+<% end %>
+
+<% if !@distinction_instance.updated_by.blank? %>
+<tr>
+<th><label for="distinction_instance_updated_by">Updated by</label></th>
+<td><%=h get_user(@distinction_instance.updated_by).username %></td>
+</tr>
+<% end %>
+<% end %>
+</table>
+<br/>
+<!--[eoform:distinction_instance]-->
+

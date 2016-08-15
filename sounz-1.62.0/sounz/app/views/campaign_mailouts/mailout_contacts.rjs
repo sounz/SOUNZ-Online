@@ -1,0 +1,2 @@
+page.replace_html 'mailout_contacts', :partial => 'mailout_contacts'#, :locals => { :campaign_mailout => @campaign_mailout, :contacts => @campaign_mailout_contacts }
+page.replace_html 'pagination',       :partial => "shared/page_links_remote", :locals => { :paginator => @campaign_mailout_contacts_pages, :params => {:url => {:action => :mailout_contacts, :id => @campaign_mailout} } }

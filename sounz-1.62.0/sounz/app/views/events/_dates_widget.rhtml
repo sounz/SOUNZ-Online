@@ -1,0 +1,24 @@
+<%
+	disabled_state = event.event_start.blank?
+%>
+<%if !disabled_state%>
+ <span class="actionButton"><%=link_to_remote 'Set Times to Midnight',  :url=> {:id=>@event.id,:action => 'disable_date_minutes'}, :method => :get%> </span>
+<p><label for="event_event_start">event start</label><br>
+<%= date_field_with_time(event.event_start, 'event', 'event_start') %></p>
+<div id="eventFinish">
+<%=render :partial => 'date_finish_field', :locals => {:event => event}%>
+</div>
+<!-- set the end date to start date + work duration by default -->
+<%=observe_field(:event_event_start_date, :frequency => 0.25,:url => {:action => :set_end_time_from_start_time}, :with => "'start_date='+value"+
+"+ '&start_hms='+escape($('event_event_start_time').value)"
+)
+%>
+
+<%=observe_field(:event_event_start_time, :frequency => 0.25,:url => {:action => :set_end_time_from_start_time}, :with => "'start_hms='+value"+
+"+ '&start_date='+escape($('event_event_start_date').value)"
+)
+%>
+
+<%= hidden_field "event", "supress_times", :value => event.supress_times 
+%>
+<%end%>

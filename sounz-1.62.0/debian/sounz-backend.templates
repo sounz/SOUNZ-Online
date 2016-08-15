@@ -1,0 +1,61 @@
+Template: sounz/db_name
+Type: string
+Default: sounz
+Description: Database name:
+ The name of the Postgresql database on this server that the SOUNZ
+ packages will all be connecting to. This will set up various config
+ files and assign the 'production' database to the name you give.
+ .
+ For the rails application it will also set up database names for
+ test and development environments as the name you give, suffixed
+ with '_test' and '_dev' respectively.
+
+Template: sounz/db_port
+Type: string
+Default: 5432
+Description: Database port:
+ The port that the Postgreql database is listening on. Normally
+ this will be 5432, the default port for Postgres.
+
+Template: sounz/db_user
+Type: string
+Default: sounz
+Description: Database connection user:
+ The name of the Postgresql user which will connect to the
+ database. If this user does not exist, then it will be created for
+ you automatically (note this is a Postgres user, not a Unix user).
+
+Template: sounz/db_passwd
+Type: string
+Description: Database connection password:
+ A password to use for the database connection (as the user
+ you specified earlier). Often this is just left blank, which is to
+ say 'no password required'.
+
+Template: sounz/enable_backend_cronjobs
+Type: boolean
+Default: false
+_Description: Enable the backend cron jobs?
+ These comprise the CRM mailouts cron job, and the featured artists
+ randomiser. If you want these to run as of right now, then set it
+ up here.
+ .
+ You can leave these disabled (the default states) if you like. Then
+ to enable them later, just edit /etc/cron.d/sounz-backend and
+ remove the #NORUN# prefixes as appropriate.
+
+Template: sounz/sounz_db_cron
+Type: select
+Choices: Daily, Four-hourly, Hourly, Testing
+Description: Schedule to run the SOUNZ database replicator:
+ Specify the frequency to snapshot or update the database here. The
+ Daily option will be done at 2.20am each day, the Frequently
+ option is every hour. Testing is every 5 mins.
+ .
+ If this is a Production machine, then this is how often the master
+ database is dumped as a snapshot. If it is a Standby server, then
+ it is the frequency that a snapshot is copied and installed locally.
+ .
+ These are just starters. Obviously you can go and refine this by
+ tweaking the settings in /etc/cron.d/sounz-backend after the
+ installation is complete.

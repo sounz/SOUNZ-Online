@@ -1,0 +1,8 @@
+*.pid
+*.log
+*.bak
+*.dump
+*.lock
+*.LCK
+snapshot.md5
+*.svn/

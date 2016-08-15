@@ -1,0 +1,31 @@
+<%
+le_type = result.objectType
+le_data = result.objectData
+quicklink_search = false if quicklink_search.blank?
+%>
+<%
+if !["work", "resource", "manifestation"].include?(le_type) %>
+
+<%=render :partial => 'shared/frbr/objects/search_result/'+result.objectType, :locals => { :object => result.objectData}
+%>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+  action = 'addToSelected'
+else
+  action = 'addToSelectedSession'
+end
+%>
+<div class='options'>
+<p class='list rem'>
+<%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => result.objectType, :object_id => result.objectData.frbr_id})%>
+</p>
+</div>
+
+<%
+#The designer layout does not use tables
+else%>
+	<%=render :partial => 'shared/frbr/objects/search_result/'+result.objectType, :locals => { :object => result.objectData, :quicklink_search => quicklink_search}%>
+<%end%>
+
+
+

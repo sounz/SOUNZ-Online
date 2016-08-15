@@ -1,0 +1,10 @@
+page.replace_html 'selected_results', :partial => 'selected_contacts'
+
+if !@selected_contacts_pages.blank?
+page.replace_html 'pagination', :partial => "shared/page_links_remote", :locals => { :paginator => @selected_contacts_pages, :params => { :url => { :action => :selected_results } } }
+else
+page.replace_html 'pagination', ''
+end
+
+#page.replace_html 'spinner', ''
+#page.replace_html 'contact_search_results', :partial => 'saved_contacts_search_table',  :locals => {:contacts => session[:contacts_from_search]}

@@ -1,0 +1,58 @@
+<!--[form:item]--> 
+<%= error_messages_for 'item' %>
+
+<%= hidden_field 'item', 'item_category',    :value => item.item_category %>
+<%= hidden_field 'item', 'manifestation_id', :value => item.manifestation_id %>
+<%= hidden_field 'item', 'resource_id',      :value => item.resource_id %>
+
+<table>
+<tr>
+<th><label for="item_physical_description">Physical description</label></th>
+<td><%= text_area 'item', 'physical_description', :cols => standard_edit_cols, :rows => 2  %></td>
+</tr>
+<tr>
+<th><label for="item_item_location">Item location</label></th>
+<td><%= text_area 'item', 'item_location', :cols => standard_edit_cols, :rows => 2  %></td>
+</tr>
+<tr>
+<th><label for="item_item_type_id">Item type</label></th>
+<td>
+<%= collection_select(:item, :item_type_id, 
+ItemType.find(:all, :order => 'display_order'),
+:item_type_id, 
+:item_type_desc,
+{ :prompt => "-- Select an item type --", :selected => item.item_type_id })
+%>
+</td>
+</tr>
+<input type='hidden' name='item[status_id]' value='1'/>
+<tr>
+<th><label for="item_internal_note">Internal note</label></th>
+<td><%= text_area 'item', 'internal_note', :cols => standard_edit_cols, :rows => 2  %></td>
+</tr>
+
+<%if ! item.out_on_loan_or_hire%>
+<tr>
+<th><label for="hire_item">Item loan</label></th>
+<td><%=link_to 'Loan this item out',:controller => :loan_item, :action => :show, :id => item.id%></td>
+</tr>
+<tr>
+<th><label for="hire_item">Item hire</label></th>
+<td><%=link_to 'Hire this item out',:controller => :hire_item, :action => :show, :id => item.id%></td>
+
+</tr>
+<%end%>
+
+
+<% if params[:action] == 'new' || 
+      params[:action] == 'create' || 
+      params[:action] == 'show_add_item_form' ||
+      params[:action] == 'create_item' 
+%>
+
+<% else %>
+  <% end %>
+</table>
+<p/>
+<!--[eoform:item]-->
+

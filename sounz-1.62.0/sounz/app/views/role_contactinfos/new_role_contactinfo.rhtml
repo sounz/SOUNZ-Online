@@ -1,0 +1,41 @@
+<!-- NOT USED ANYMORE -->
+<% if params[:entity] != 'organisation' %>
+<h1><%=@person.full_name%></h1>
+<div id="formformat"><%= render :partial => 'select_role_dropdown' %></div>
+<% else %>
+<h1><%= @organisation.organisation_name%></h1>
+<% end %>
+
+<% form_tag :action => 'create' do %>
+
+<% if params[:entity] != 'organisation' %>
+<div id="formformat">
+<div id="role_form"><%= render :partial => '/roles/form' %></div>
+</div>
+<% end %>
+
+<div id="formformat">
+<div id="contactinfo_type_dropdown"><%= render :partial => 'contactinfo_type_dropdown' %></div>
+</div>
+
+<div id="formformat">
+<h1><div id="section_title"><%= @section_title %></div></h1>
+
+<div id="contactinfo_form">
+<%= render :partial => '/contactinfos/form' %>
+</div>
+</div>
+<div class="buttonsformat">
+  <%= submit_tag 'Save' %> <%= cancel_and_go_back_button %>
+</div>
+<% end %>
+
+<div id="formformat">
+<%= go_back_link %>
+</div>
+
+<% if params[:entity] == 'organisation'  %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :role_contactinfos, :button => ''} %>
+<% else %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :role_contactinfos, :button => ''} %>
+<% end %>

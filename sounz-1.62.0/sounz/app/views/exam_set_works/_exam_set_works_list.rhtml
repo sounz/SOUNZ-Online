@@ -1,0 +1,19 @@
+<% manifestation.exam_set_works.each do |ew| %>
+<% exam_set_work_id = generate_id(ew) %>
+<li id="<%=exam_set_work_id %>">
+<span class="actionButton">
+<%= link_to_remote "Remove", :confirm => 'Are you sure you wish to remove ' + ew.examboard.examboard_name + ' grade?',
+                             :update => 'new_exam_set_work', 
+                             :url => {:controller => 'exam_set_works', 
+                                      :action => :delete_exam_set_work, 
+                                      :id => ew},
+                             :complete => "new Effect.Fold('"+exam_set_work_id+"')"
+%></span>
+<span class="actionButton">
+<%= link_to_remote "Update", :url => {:controller => 'exam_set_works', 
+                                      :action => :edit_exam_set_work, 
+                                      :exam_set_work_id => ew}
+%>
+</span>
+<%= ew.examboard.examboard_name %>: <%= ew.grade_notes%></li>
+<% end %>

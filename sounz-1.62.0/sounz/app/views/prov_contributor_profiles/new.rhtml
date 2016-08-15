@@ -1,0 +1,20 @@
+<%=main_tabs(selected = :works)%>
+<h1>Update your SOUNZ Profile</h1>
+
+<p>Please fill out in the form below.  Only complete those parts that apply to you.  This information will appear on the SOUNZ website (except where indicated to the contrary).  Information will be checked by SOUNZ before appearing on the site.</p>
+
+<%= error_messages_for :prov_contributor_profiles %>
+
+<% form_for(:prov_contributor_profiles, :url => prov_contributor_profiles_path) do |f| %>
+
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+
+<% end %>
+
+<p>
+Thank you for supporting SOUNZ and New Zealand music.  It is greatly appreciated.	
+</p>

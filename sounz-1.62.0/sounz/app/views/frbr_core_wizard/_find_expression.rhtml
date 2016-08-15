@@ -1,0 +1,23 @@
+Manifestation Title: <%=@manifestation.manifestation_title%><p/>
+
+<b>Current Expressions List:</b><p/><ul>
+<%for container in @expressionContainer%>
+	<%expression=container["expression"]%>
+	<%if expression != nil%>
+		<li><%=expression.general_note%></li>
+	<%end%>
+<%end%>
+</ul>
+<p/>
+Find expressions.
+
+You can find/create a number of expressions that the manifestation you collected previously encompasses.
+<p/>
+Enter your search term here:<input type="text">
+<p/>
+
+If your chosen expression appears on the list, click on it to add it to the list.
+<p/>
+if you would like to create a new expression, click here to <a href="/frbr_core_wizard/show?step=create_expression">Create an Expression</a>
+
+If you are finished adding expressions, click here to <a href="/frbr_core_wizard/show?step=assign_works">Assign Works</a>

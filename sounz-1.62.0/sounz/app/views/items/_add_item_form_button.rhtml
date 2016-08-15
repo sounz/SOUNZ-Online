@@ -1,0 +1,2 @@
+<br>
+<span class="actionButton"><%=link_to_remote "Add Item", :url => {:controller => :items, :action => :show_add_item_form, :id => generate_id(entity)}, :update => "new_item_form", :success => "Effect.Highlight('new_item_form')" %></span>

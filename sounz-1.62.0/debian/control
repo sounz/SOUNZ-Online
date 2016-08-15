@@ -1,0 +1,63 @@
+Source: sounz
+Section: web
+Priority: optional
+Maintainer: Paul Waite <paul@catalyst.net.nz>
+Uploaders: Pete Black <pete@catalyst.net.nz>, Gordon Anderson <gordon@catalyst.net.nz>, Liuba Kazakov <liuba@catalyst.net.nz>
+Build-Depends-Indep: debconf | debconf-2.0, dupload, subversion-tools, wget, xsltproc
+Build-Depends: debhelper, po-debconf, debra
+Standards-Version: 3.7.2
+
+Package: sounz
+Architecture: all
+Depends: debconf | debconf-2.0, debianutils (>=1.6), ${misc:Depends}, ruby, irb, php5, php5-cli, bash (>=2.0), adduser (>=3.58), rsync, openssh-client, openssh-server, apollo (>=1.5.0), php5-curl, php5-suhosin
+Description: The SOUNZ Common Package
+ The SOUNZ system is an application dedicated to storing information
+ about New Zealand music, and allowing it to be discovered through
+ a public web interface.
+ .
+ This is a common package that all the other sounz- packages depend
+ on. This package sets up the sounz user account on the server, and
+ also has all the common package dependencies.
+
+Package: sounz-frontend
+Architecture: all
+Depends: sounz (>= ${binary:Version}), apache2, php5, php5-pgsql
+Description: The SOUNZ Frontend
+ The SOUNZ system is an application dedicated to storing information
+ about New Zealand music, and allowing it to be discovered through
+ a public web interface.
+ .
+ This package sets up the Apache virtualhost, and the static content
+ directories.
+
+Package: sounz-backend
+Architecture: all
+Depends: sounz (>= ${binary:Version}), sounz-frontend (>= ${binary:Version}), postgresql-common, postgresql-client, postgresql (>= 8.4), ssh (>= 1:4.3), sounz-reports (>= 0.28), libpq-dev
+Description: The SOUNZ Backend
+ The SOUNZ system is an application dedicated to storing information
+ about New Zealand music, and allowing it to be discovered through
+ a public web interface.
+ .
+ This package sets up the database server. It also contains utility
+ scripts which are used for a variety of purposes, such as operations
+ on the database, mailout processing etc. These scripts are generally
+ executable from the command line, do their processing using the
+ database, and may comprise perl, php, or shell scripts (note: not
+ rugby/rails scripts). This package also contains any cronjob setups,
+ and all scripts associated with those.
+
+Package: sounz-app
+Architecture: all
+Depends: sounz (>= ${binary:Version}), sounz-frontend (>= ${binary:Version}), sounz-backend (>= ${binary:Version}), rubygems, ruby1.8, libdrb-ruby, liberb-ruby, libzlib-ruby, libyaml-ruby, libpq5, libpgsql-ruby, librmagick-ruby, libfreetype6, libwmf-bin, ghostscript, make, gcc
+Suggests: sounz-doc
+Description: The SOUNZ Music Ruby on Rails Application
+ The SOUNZ system is an application dedicated to storing information
+ about New Zealand music, and allowing it to be discovered through
+ a public web interface.
+ .
+ This package contains the ruby-on-rails SOUNZ application. The package
+ acquires all required gems, including the mongrel server(s) and
+ contains the rails codebase for the SOUNZ application. The application
+ is served up via the localhost-based mongrel server(s) which are
+ accessed from the sounz-frontend package using Apache, communicating
+ via the port(s) that the mongrel server(s) is/are listening on.

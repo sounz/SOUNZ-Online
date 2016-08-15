@@ -1,0 +1,30 @@
+<%= error_messages_for 'marketing_category' %>
+<%= error_messages_for 'marketing_subcategory' %>
+<%if @mc_found != nil and @mc_found==false%>
+<p id="flash">Please select a marketing category.<br>
+</p>
+<%end%>
+
+<!--
+<p>MC FOUND IS NIL? <%=@mc_found == nil%></p>
+FIXME: Check error message
+-->
+<% if params[:action] != 'edit_subcategory'%>
+<div align="right">
+<%= render :partial => "select_form" %>
+</div>
+<br>
+<% end %>
+
+<div id="category">
+<%if @marketing_category != nil%>
+<%= render :partial => "category_part" %>
+<%end%>
+</div>
+<br>
+
+<div id="subcategory">
+<%if @marketing_category!=nil and !@marketing_category.marketing_category_id.blank? %>
+<%= render :partial => "subcategory_part" %>
+<%end%>
+</div>

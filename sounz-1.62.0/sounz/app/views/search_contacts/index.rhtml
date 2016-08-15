@@ -1,0 +1,67 @@
+<% content_for :page_title do %>
+Search Contacts
+<%end%>
+
+<% title 'Search Contacts' %>
+
+
+<!-- FIXME: this template has quite a few similarities with the advanced search one, could be partially merged -->
+<h2>Search Contacts</h2>
+ 
+<%= form_remote_tag :url => {:action => :find_contacts},
+  :update => 'search_results',
+  :id => "search_contacts_form", 
+  :before => "Element.show('spinner')",
+  :complete => "Element.hide('spinner')"
+%>
+
+<table>
+  <tr>
+    <th>Person name</th>
+    <td><%= text_field :search, :person, :size => standard_edit_cols, :class => 'text' %></td>
+  </tr>
+  <tr>
+    <th>Organisation name or abbreviation </th>
+    <td><%= text_field :search, :organisation, :size => standard_edit_cols, :class => 'text' %></td>
+  </tr>
+  <tr>
+    <th>Status </th>
+    <td><%= select("search", "status_id", Status.find(:all, :conditions => ['status_desc not ilike (?)', '%published%']).to_dropdown, :include_blank => "-- All Statuses --") %></td>
+  </tr>
+  <tr>
+	<th>Search:</th>
+	<th>
+	People &nbsp;&nbsp;<%= radio_button(:search, :entity_to_search, "person") %>&nbsp;&nbsp;&nbsp;&nbsp;
+	Organisations &nbsp;&nbsp;<%= radio_button(:search, :entity_to_search, "organisation")%>&nbsp;&nbsp;&nbsp;&nbsp;
+	Both &nbsp;&nbsp;<%= radio_button(:search, :entity_to_search, "both", {:selected => "both"})%>
+	</th>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_contacts, :action => :index}, {:class => 'public_button'} %></td>
+     <td align="right"> <input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+</form>
+    
+<div id="search_results">
+</div>
+
+<%= render :partial => 'shared/spinner' %>
+
+<div id="selected_results">
+  <%= render :partial => 'selected_contacts'
+  %>
+</div>
+
+<div id="pagination">
+<%= render :partial => "shared/page_links_remote", :locals => { :paginator => @selected_contacts_pages, :params => { :url => { :action => :selected_results } } } unless @selected_contacts_pages.blank? %>
+</div>
+
+<div id="adding_contacts_links">
+<%= render :partial => 'adding_contacts_links'%>
+</div>
+
+<%=render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :basic_search}%>
+
+

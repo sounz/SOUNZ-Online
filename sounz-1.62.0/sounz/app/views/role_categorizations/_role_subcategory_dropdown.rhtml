@@ -1,0 +1,25 @@
+<%= error_messages_for 'role_categorization' %>
+
+<%if @has_subcategories%>
+<%= form_remote_tag :url => {:action => :add_categorization, :role_id => @role.role_id },
+    :success => visual_effect(:highlight, "selected_results"),
+    :before => "Element.show('spinner')",
+    :complete => "Element.hide('spinner')",
+    :html => { :id => 'person' }
+%>
+
+
+
+<%= collection_select(:marketing_subcategory, :id, 
+                          @marketing_subcategories, :id, :abbreviation
+                          #:prompt => "-- Select a subcategory --"
+                     ) %>
+
+<%= submit_tag "Add Categorisation" %>
+</form>
+
+<%= render :partial => 'shared/spinner' %>
+
+<%else%>
+<p><i>The category <%-@marketing_category.description%> has no subcategories</i></p>
+<%end%>

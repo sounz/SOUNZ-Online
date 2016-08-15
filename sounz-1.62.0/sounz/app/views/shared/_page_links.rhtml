@@ -1,0 +1,9 @@
+<div class="pageLinks">
+   <%= link_to(h('< Previous'), {:page => paginator.current.previous}) if paginator.current.previous%>
+   <% pagination_links = pagination_links(paginator, :window_size => 4, :link_to_current_page => false) 
+      pagination_links = pagination_links.gsub('...', '<span>...</span>') unless pagination_links.blank?
+   %>
+   <%=pagination_links %>
+
+   <%= link_to(h('Next >'), {:page => paginator.current.next}) if paginator.current.next %>
+ </div>

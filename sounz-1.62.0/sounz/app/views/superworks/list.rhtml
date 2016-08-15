@@ -1,0 +1,30 @@
+<h1>Listing superworks</h1>
+
+<table>
+  <tr>
+ <th>Superwork Title</th>
+  </tr>
+  
+<% for superwork in @superworks %>
+  <tr>
+  	<td><%=superwork.superwork_title%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => superwork %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => superwork %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => superwork }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+  
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @superworks %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to 'New Superwork', :action => 'new' %>
+</div>
+<% end %>
+

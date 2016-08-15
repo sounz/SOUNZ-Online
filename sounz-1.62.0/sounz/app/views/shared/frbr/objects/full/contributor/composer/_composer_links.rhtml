@@ -1,0 +1,6 @@
+<div class="links">
+  <%= render :partial => 'shared/frbr/objects/common/frbr_object_links', :locals => {
+	  :frbr_methods=> Role::FRBR_LINKS_METHODS,
+	  :object => object.role
+  }%>
+</div>

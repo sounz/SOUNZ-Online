@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+#require File.dirname(__FILE__) + '/../../config/boot'
+#require 'commands/process/spawner'
+
+puts "**** GBA - 20070402 - commented out - enable for mongrel or fastcgi"

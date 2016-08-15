@@ -1,0 +1,153 @@
+<%= error_messages_for 'communication' %>
+
+<% 
+disabled = false
+disabled_status = false
+
+if !@communication.role.blank? && @communication.role.status_id == Status::WITHDRAWN.status_id
+disabled = true
+disabled_status = true
+end
+if @communication.status == 'c'
+disabled = true
+end
+
+# WR#51829 - the roles with 'Withdrawn' and 'Masked' statuses should not be available
+# for assigning a new communication
+statuses_ids = Status.active_statuses.collect{|as| as.status_id}
+%>
+
+<!--[form:communication]-->
+<table>
+<span id="role_entities"
+<tr>
+<th>Person</th>
+<td id="person_for_role">
+<% if @from.match('person') %>
+<strong><%= @person.full_name %></strong>
+<% elsif @communication.role.blank? %>No role
+<% elsif @communication.role.person.blank? %>No person associated with this role
+<% else %>
+<strong>
+<%= @communication.role.person.full_name%>
+</strong>
+<%end%>
+</td>
+</tr>
+<tr>
+<th>Organisation</th>
+<td id="organisation_for_role">
+<% if @from.match('organisation') %>
+<strong><%= @organisation.organisation_name %></strong>
+<% elsif @communication.role.blank? %>No role
+<% elsif @communication.role.organisation.blank? %>No organisation associated with this role
+<% else %>
+<strong>
+<%= @communication.role.organisation.organisation_name%>
+</strong>
+<%end%>
+</td>
+</tr>
+</span>
+<tr>
+<th>Role</th>
+<td> 
+<% 
+if @from.match('person')
+  roles = Role.find(:all, :conditions => ['person_id = ? AND status_id IN (?)', @person.person_id, statuses_ids])
+elsif @from.match('organisation')
+  roles = Role.find(:all, :conditions => ['organisation_id = ? AND status_id IN (?)', @organisation.organisation_id, statuses_ids])
+else
+  roles = nil
+end
+%>
+<%= collection_select(:communication, :role_id, roles, :role_id, :role_name, {:include_blank => '-- Select a role --'}, {:disabled => disabled}) %>
+
+<%=observe_field("communication_role_id", :url => {:action => :communication_role_selected, :from => @from},
+                                          :with => "'role_id='+value")
+%>
+</td>
+</tr>
+<% if !@communication.role.blank? && !Status.active_statuses.collect{|as| as.status_id}.include?(@communication.role.status_id)%>
+<tr>
+<th>Non-active role assigned to</th>
+<td><%= @communication.role.role_name %></td>
+</tr>
+<% end %>
+<tr>
+<th><label for="communication_internally_initiated">Sounz initiated?</label></th>
+<td><%= check_box "communication", "internally_initiated", {:disabled => disabled} %>
+</td>
+</tr>
+<tr>
+<th><label for="communication_subject">Communication subject</label></th>
+<td><%= text_field 'communication', 'communication_subject', :size => standard_edit_cols, :disabled => disabled %></td>
+</tr>
+<tr>
+<th><label for="communication_note">Communication note</label></th>
+<td><%= text_area 'communication', 'communication_note', :rows => standard_edit_rows, :cols => standard_edit_cols, :disabled => disabled%></td>
+</tr>
+<tr>
+<th><label for="communication_type">Communication type</label></th>
+<td><%= select ('communication', 'communication_type_id', CommunicationType.to_dropdown(:text => 'communication_type_desc'), 
+                                                          {:prompt => "-- Select a communication type --"}, {:disabled => disabled}) %></td>
+</tr>
+<tr>
+<th><label for="communication_method">Communication method</label></th>
+<td><%= select ('communication', 'communication_method_id', CommunicationMethod.to_dropdown(:text => 'communication_method_desc'), 
+                                                          {:prompt => "-- Select a communication method --"}, {:disabled => disabled}) %></td>
+</tr>
+<tr>
+<th><label for="communication_priority">Communication response time</label></th>
+<td><%= select 'communication', 'priority', DropDown.communication_priorities.to_dropdown, {}, {:disabled => disabled} %></td>
+</tr>
+<tr>
+<th>Started</th>
+<td>
+<% if disabled == true%>
+<%= dby_date(@communication.created_at)%>
+<% else %>
+<%= date_field_with_time(@communication.created_at, 'communication', 'created_at') %>
+<% end %>
+</td>
+</tr>
+<tr>
+<th>Closed</th>
+<td id="closed_date_field">
+<%= render :partial => "communication_closed_date_field", :locals => { :communication => @communication, :status => @status_text, :disabled => disabled } %>
+</td>
+</tr>
+<tr>
+<th><label for="communication_status">Status</label></th>
+<td><%= select 'communication', 'status', Communication.statuses, {}, {:disabled => disabled_status} %></td>
+
+<%=observe_field("communication_status", :update => 'closed_date_field',
+:url => {:action => :communication_status_selected, :comm_id => @communication.communication_id},
+:with => "'status_code='+value")
+%>
+</tr>
+
+<% if params[:action] != 'new' && params[:action] != 'create' %>
+<% if @communication.created_at != nil %>
+<tr>
+<th><label for="person_created_at">Created at</label></th>
+<td><%= dby_date(@communication.created_at) %></td>
+</tr>
+<% end %>
+<% if @communication.updated_at != nil %>
+<tr>
+<th><label for="person_updated_at">Updated at</label></th>
+<td><%= dby_date(@communication.updated_at)  %></td>
+</tr>
+<% end %>
+<tr>
+<th><label for="person_updated_by">Updated by</label></th>
+<td><%=h get_user(@communication.updated_by).username %></td>
+</tr>
+<% end %>
+
+</table>
+
+<!--[eoform:communication]-->
+
+

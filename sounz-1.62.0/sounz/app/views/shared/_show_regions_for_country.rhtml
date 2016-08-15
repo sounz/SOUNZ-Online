@@ -1,0 +1,5 @@
+<%if regions.size == 0%>No regions are stored for <%=country.country_name%>
+<%else%>
+<%= select('search', "region_id", @regions.to_dropdown(:region_name), :prompt => "All Regions") %>
+<%end%>
+

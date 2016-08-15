@@ -1,0 +1,19 @@
+<%if object != nil%>
+<input type="hidden" id="event_contactinfo_id" name="event[contactinfo_id]" value="<%=object.contactinfo_id%>">
+<%if object.roles != nil%>
+<% for role in object.roles %>
+  <% if role.person != nil%>
+   <b><%= role.person.full_name %></b><br>
+  <% end %>
+  <% if role.organisation != nil%>
+   <b><%= role.organisation.organisation_name %></b><br>
+  <% end %>
+<% end %>
+<% end %>
+<%=object.street%><br>
+<%=object.po_box%><br>
+<%=object.locality%><br>
+<%=object.postcode%><br>
+<%else%>
+<b>No contactinfo assigned!</b>
+<%end%>

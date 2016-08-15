@@ -1,0 +1,2 @@
+module MailoutContactsHelper
+end

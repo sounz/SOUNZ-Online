@@ -1,0 +1,49 @@
+<h1>Find Communications</h1> 
+
+<form id="locate_coi_form">
+<label for="search_locate_coi">Locate Communication of Interest (NOT IMPLEMENTED)</label><%= check_box "search", "locate_coi" %>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<%= form_remote_tag :url => {:action => :search },
+    :success => visual_effect(:highlight, "selected_results"),
+    :update => 'selected_results',
+     :before => "Element.show('spinner')",
+ :complete => "Element.hide('spinner')",
+    :html => { :id => 'communication' }
+%>
+
+
+<table>
+    <tr><td></td><td></td></tr>
+	<tr><td><label for="search_person">Name of Person</label></td><td><%= text_field :search, :person%></td></tr>
+	<tr><td><label for="search_organisation">Name of Organisation</label></td><td><%= text_field :search, :organisation %></td></tr>
+	<tr><td><label for="search_freetext">Search for text</label></td><td><%= text_field :search, :freetext %></td></tr>
+	 	<tr><td><label for="search_communicationion_type_id">Restrict to specific communcation types</label></td><td>
+	 	<%= collection_select_multiple("search", "communication_type_id" , @communication_types, "id", "communication_type_desc", 4) %></td></tr>
+	  <tr><td>Modified since</td><td><%= date_field( :search, :modified_since, :size => 15) %>
+
+	  </td></tr>
+	  
+	  <tr><td></td><td><%= submit_tag "Find" %></td></tr>
+</table>
+</form>
+
+
+    
+  <div id="search_results">Results will appear here</div>
+  <%=render :partial => 'shared/spinner'%>
+  
+  <h1>Selected Results</h1>
+<div id="selected_results">Selected result will appear here</div>
+
+    

@@ -1,0 +1,8 @@
+<% content_for :tabbed_menu do %>
+<ul id='sub_navigation_small' class='people'>
+  <%=render_tab('Contacts',          :basic_search,    selected_tab, {:controller => :search_contacts,       :action => :index})%>
+  <%=render_tab('Contacts Advanced', :advanced_search, selected_tab, {:controller => :search_contacts,       :action => :advanced})%>
+  <%=render_tab('Communications',    :communication_search,    selected_tab, {:controller => :search_communications, :action => :index})%>
+  <%=render_tab('Borrowed Items',    :borrowed_items_search,    selected_tab, {:controller => :search_borrowed_items, :action => :index})%>
+</ul>
+<%end%>

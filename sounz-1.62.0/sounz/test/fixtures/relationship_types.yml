@@ -1,0 +1,550 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+rel1:
+  relationship_type_id: 1
+  relationship_type_desc: "Is influenced by"
+  inverse: 2
+rel2:
+  relationship_type_id: 2
+  relationship_type_desc: "Is an influence on"
+  inverse: 1
+rel3:
+  relationship_type_id: 3
+  relationship_type_desc: "Draws source material from"
+  inverse: 4
+rel4:
+  relationship_type_id: 4
+  relationship_type_desc: "Provides source material for"
+  inverse: 3
+rel5:
+  relationship_type_id: 5
+  relationship_type_desc: "Is evidence of"
+  inverse: 6
+rel6:
+  relationship_type_id: 6
+  relationship_type_desc: "Is evidenced as"
+  inverse: 5
+rel7:
+  relationship_type_id: 7
+  relationship_type_desc: "Describes"
+  inverse: 8
+rel8:
+  relationship_type_id: 8
+  relationship_type_desc: "Is described by"
+  inverse: 7
+rel9:
+  relationship_type_id: 9
+  relationship_type_desc: "Describes the genre of"
+  inverse: 10
+rel10:
+  relationship_type_id: 10
+  relationship_type_desc: "Has as its genre"
+  inverse: 9
+rel11:
+  relationship_type_id: 11
+  relationship_type_desc: "Conceives"
+  inverse: 12
+rel12:
+  relationship_type_id: 12
+  relationship_type_desc: "Is conceived by"
+  inverse: 11
+rel13:
+  relationship_type_id: 13
+  relationship_type_desc: "Is realisation of"
+  inverse: 14
+rel14:
+  relationship_type_id: 14
+  relationship_type_desc: "Is realised through"
+  inverse: 13
+rel15:
+  relationship_type_id: 15
+  relationship_type_desc: "Is part of"
+  inverse: 16
+rel16:
+  relationship_type_id: 16
+  relationship_type_desc: "Contains"
+  inverse: 15
+rel17:
+  relationship_type_id: 17
+  relationship_type_desc: "Selects"
+  inverse: 18
+rel18:
+  relationship_type_id: 18
+  relationship_type_desc: "Is selected by"
+  inverse: 17
+rel19:
+  relationship_type_id: 19
+  relationship_type_desc: "Is awarded to"
+  inverse: 20
+rel20:
+  relationship_type_id: 20
+  relationship_type_desc: "Receives"
+  inverse: 19
+rel21:
+  relationship_type_id: 21
+  relationship_type_desc: "Is a theme of"
+  inverse: 22
+rel22:
+  relationship_type_id: 22
+  relationship_type_desc: "Has as its theme"
+  inverse: 21
+rel23:
+  relationship_type_id: 23
+  relationship_type_desc: "Composes"
+  inverse: 24
+rel24:
+  relationship_type_id: 24
+  relationship_type_desc: "Is composed by"
+  inverse: 23
+rel25:
+  relationship_type_id: 25
+  relationship_type_desc: "Improvises"
+  inverse: 26
+rel26:
+  relationship_type_id: 26
+  relationship_type_desc: "Is improvised by"
+  inverse: 25
+
+
+rel29:
+  relationship_type_id: 29
+  relationship_type_desc: "Arranges"
+  inverse: 30
+rel30:
+  relationship_type_id: 30
+  relationship_type_desc: "Is arranged by"
+  inverse: 29
+rel31:
+  relationship_type_id: 31
+  relationship_type_desc: "Creates"
+  inverse: 32
+rel32:
+  relationship_type_id: 32
+  relationship_type_desc: "Is created by"
+  inverse: 31
+rel33:
+  relationship_type_id: 33
+  relationship_type_desc: "Is the embodiment of"
+  inverse: 34
+rel34:
+  relationship_type_id: 34
+  relationship_type_desc: "Is embodied in"
+  inverse: 33
+rel35:
+  relationship_type_id: 35
+  relationship_type_desc: "Presents"
+  inverse: 36
+rel36:
+  relationship_type_id: 36
+  relationship_type_desc: "Is presented by"
+  inverse: 35
+rel37:
+  relationship_type_id: 37
+  relationship_type_desc: "Performs"
+  inverse: 38
+rel38:
+  relationship_type_id: 38
+  relationship_type_desc: "Is performed by"
+  inverse: 37
+rel39:
+  relationship_type_id: 39
+  relationship_type_desc: "Exhibits"
+  inverse: 40
+rel40:
+  relationship_type_id: 40
+  relationship_type_desc: "Is exhibited by"
+  inverse: 39
+rel41:
+  relationship_type_id: 41
+  relationship_type_desc: "Broadcasts"
+  inverse: 42
+rel42:
+  relationship_type_id: 42
+  relationship_type_desc: "Is broadcasted by"
+  inverse: 41
+rel43:
+  relationship_type_id: 43
+  relationship_type_desc: "Notates"
+  inverse: 44
+rel44:
+  relationship_type_id: 44
+  relationship_type_desc: "Is notated by"
+  inverse: 43
+rel45:
+  relationship_type_id: 45
+  relationship_type_desc: "Compiles"
+  inverse: 46
+rel46:
+  relationship_type_id: 46
+  relationship_type_desc: "Is compiled by"
+  inverse: 45
+rel47:
+  relationship_type_id: 47
+  relationship_type_desc: "Retails"
+  inverse: 48
+rel48:
+  relationship_type_id: 48
+  relationship_type_desc: "Is sold at"  
+  inverse: 47
+
+
+rel49:
+  relationship_type_id: 49
+  relationship_type_desc: "Performs at"
+  inverse: 50
+
+rel50:
+    relationship_type_id: 50
+    relationship_type_desc: "Hosts performers"
+    inverse: 49
+  
+rel51:
+    relationship_type_id: 51
+    relationship_type_desc: "Is managed by"
+    inverse: 52
+
+rel52:
+    relationship_type_id: 52
+    relationship_type_desc: "Manages"
+    inverse: 51
+
+rel53:
+    relationship_type_id: 53
+    relationship_type_desc: "Is commissioned by"
+    inverse: 54
+
+rel54:
+    relationship_type_id: 54
+    relationship_type_desc: "Commissions"
+    inverse: 53
+          
+
+rel57:
+    relationship_type_id: 57
+    relationship_type_desc: "Identifies with"
+    inverse: 58
+
+rel58:
+    relationship_type_id: 58
+    relationship_type_desc: "Has identifying"
+    inverse: 57
+
+#This is for contributor and concept
+rel59:
+    relationship_type_id: 59
+    relationship_type_desc: "Writes according to"
+    inverse: 60
+
+rel60:
+    relationship_type_id: 60
+    relationship_type_desc: "Influences writing of"
+    inverse: 59
+
+#FIXME - does this have an inverse???
+rel61:
+    relationship_type_id: 61
+    relationship_type_desc: "Works with"
+    inverse: 62
+
+rel62:
+    relationship_type_id: 62
+    relationship_type_desc: "Is worked with by"
+    inverse: 61
+    
+rel63:
+    relationship_type_id: 63
+    relationship_type_desc: "Funds"
+    inverse: 64
+
+rel64:
+    relationship_type_id: 64
+    relationship_type_desc: "Is funded by"
+    inverse: 63
+
+rel65:
+    relationship_type_id: 65
+    relationship_type_desc: "Records"
+    inverse: 66
+
+rel66:
+    relationship_type_id: 66
+    relationship_type_desc: "Is recorded by"
+    inverse: 65
+
+rel67:
+    relationship_type_id: 67
+    relationship_type_desc: "Sells"
+    inverse: 68
+
+rel68:
+    relationship_type_id: 68
+    relationship_type_desc: "Is sold by"
+    inverse: 67
+        
+rel69:
+    relationship_type_id: 69
+    relationship_type_desc: "Publishes"
+    inverse: 70
+
+rel70:
+    relationship_type_id: 70 
+    relationship_type_desc: "Is published by"
+    inverse: 69 
+
+rel71:
+    relationship_type_id: 71
+    relationship_type_desc: "Licenses"
+    inverse: 72
+
+rel72:
+    relationship_type_id: 72
+    relationship_type_desc: "Is licensed by"
+    inverse: 71
+    
+rel73:
+    relationship_type_id: 73
+    relationship_type_desc: "Releases"
+    inverse: 74
+
+rel74:
+    relationship_type_id: 74
+    relationship_type_desc: "Is released by"
+    inverse: 73
+
+#Contributor and item
+rel75:
+    relationship_type_id: 75
+    relationship_type_desc: "Provides"
+    inverse: 76
+
+rel76:
+    relationship_type_id: 76
+    relationship_type_desc: "Is provided by"
+    inverse: 75
+    
+rel77:
+    relationship_type_id: 77
+    relationship_type_desc: "Writes"
+    inverse: 78
+
+rel78:
+    relationship_type_id: 78
+    relationship_type_desc: "Is written by"
+    inverse: 77
+        
+rel79:
+    relationship_type_id: 80
+    relationship_type_desc: "Funds or sponsors"
+    inverse: 78
+
+rel80:
+    relationship_type_id: 79
+    relationship_type_desc: "Is funded or sponsored by"
+    inverse: 77
+
+
+
+
+    
+rel85:
+    relationship_type_id: 85
+    relationship_type_desc: "Owns"
+    inverse: 86
+
+rel86:
+    relationship_type_id: 86
+    relationship_type_desc: "Is owned by"
+    inverse: 85
+    
+    
+rel87:
+    relationship_type_id: 87
+    relationship_type_desc: "Is commissioned for"
+    inverse: 88
+
+rel88:
+    relationship_type_id: 88
+    relationship_type_desc: "Has commissioned"
+    inverse: 87
+
+rel89:
+    relationship_type_id: 89
+    relationship_type_desc: "Happens at"
+    inverse: 90
+
+rel90:
+    relationship_type_id: 90
+    relationship_type_desc: "Has happening"
+    inverse: 89
+    
+rel91:
+    relationship_type_id: 91
+    relationship_type_desc: "Is documented by"
+    inverse: 92
+
+rel92:
+    relationship_type_id: 92
+    relationship_type_desc: "Documents"
+    inverse: 91
+    
+#This is for contributor and concept
+rel93:
+    relationship_type_id: 93
+    relationship_type_desc: "Performs according to"
+    inverse: 94
+
+rel94:
+    relationship_type_id: 94
+    relationship_type_desc: "Influences performing of"
+    inverse: 93
+    
+rel95:
+    relationship_type_id: 95
+    relationship_type_desc: "Is inspired by"
+    inverse: 96
+
+rel96:
+    relationship_type_id: 96
+    relationship_type_desc: "Inspires"
+    inverse: 95
+    
+
+
+rel99:
+    relationship_type_id: 99 
+    relationship_type_desc: "Administers"
+    inverse: 100
+
+rel100:
+    relationship_type_id: 100
+    relationship_type_desc: "Is administered by"
+    inverse: 99
+    
+rel101:
+    relationship_type_id: 101
+    relationship_type_desc: "Launches"
+    inverse: 102
+
+rel102:
+    relationship_type_id: 102
+    relationship_type_desc: "Is launched by"
+    inverse: 101
+
+rel103:
+    relationship_type_id: 103
+    relationship_type_desc: "Holds"
+    inverse: 104
+
+rel104:
+    relationship_type_id: 104
+    relationship_type_desc: "Is held at"
+    inverse: 103
+            
+rel105:
+    relationship_type_id: 105
+    relationship_type_desc: "Is the recording of"
+    inverse: 106
+
+rel106:
+    relationship_type_id: 106
+    relationship_type_desc: "Has recordings"
+    inverse: 105
+                
+
+rel107:
+    relationship_type_id: 107
+    relationship_type_desc: "Is the publication of"
+    inverse: 108
+
+rel108:
+    relationship_type_id: 108
+    relationship_type_desc: "Has publications"
+    inverse: 107
+    
+#These follow the relate to self pattern
+rel109:
+    relationship_type_id: 109
+    relationship_type_desc: "Is related to"
+    inverse: 109
+
+
+    
+    
+rel111:
+    relationship_type_id: 111
+    relationship_type_desc: "Has presented"
+    inverse: 112
+
+rel112:
+    relationship_type_id: 112
+    relationship_type_desc: "Presented at"
+    inverse: 111
+
+rel113:
+    relationship_type_id: 113
+    relationship_type_desc: "Is dedicated to"
+    inverse: 114
+
+rel114:
+    relationship_type_id: 114
+    relationship_type_desc: "Is the dedicatee of"
+    inverse: 113
+
+#These are for venues - e.g. the Adam Concert Room has things in common with Vic Uni
+rel115:
+    relationship_type_id: 115
+    relationship_type_desc: "Has commonalities with"
+    inverse: 116
+
+
+rel116:
+    relationship_type_id: 116
+    relationship_type_desc: "Things in common with"
+    inverse: 115
+
+#These are for events, to allow the idea of a tour event to contain several concert events
+
+rel117:
+    relationship_type_id: 117
+    relationship_type_desc: "Includes"
+    inverse: 118
+
+rel118:
+    relationship_type_id: 118
+    relationship_type_desc: "Is included in"
+    inverse: 117
+
+rel119:
+    relationship_type_id: 119
+    relationship_type_desc: "Is orchestration of"
+    inverse: 120
+
+rel120:
+    relationship_type_id: 120
+    relationship_type_desc: "Is orchestrated as"
+    inverse: 119
+    
+rel121:
+    relationship_type_id: 121
+    relationship_type_desc: "Is arrangement of"
+    inverse: 122
+
+rel122:
+    relationship_type_id: 122
+    relationship_type_desc: "Is arranged as"
+    inverse: 121
+
+
+
+    
+#From scilla email, June 5, 0839
+
+
+    
+rel1000:
+  relationship_type_id: 1000
+  relationship_type_desc: "Is parent of"  
+  inverse: 1001
+rel1001:
+  relationship_type_id: 1001
+  relationship_type_desc: "Is child of"  
+  inverse: 1000

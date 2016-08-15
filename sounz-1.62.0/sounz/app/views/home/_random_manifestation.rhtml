@@ -1,0 +1,17 @@
+<%
+
+attachment = AttachmentHelper.find_front_page_image(@random_manifestation)
+image_path="error.jpg"
+if !attachment.blank?
+	image_path = get_random_spotlight_image(attachment.media_item)
+end
+
+-%>
+
+
+<div class='featured_item one' style='background-image: url("<%=image_path%>");'>
+    <h2><a href='/finder/shows/works/'>Music</a></h2>
+    <img src='/images/overlay-one.png' alt='' >
+    <p style='top: 114px;'>Featured: <%= link_to h(@random_manifestation.manifestation_title), :action => 'show', :id => @random_manifestation, :controller => 'manifestations' %></p>
+</div>
+

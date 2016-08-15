@@ -1,0 +1,27 @@
+<h1>Content Pages</h1>
+
+<table>
+  <tr>
+	<th>Page title</th>
+	<th>Page URL</th>
+	<th colspan="3"></th>
+  </tr>
+  
+<% for cm_content in @cm_contents %>
+  <tr>
+	<td><%=cm_content.cm_content_title%></td>
+	<td><%= link_to cm_content.cm_page_url, :action => 'show_by_name', :name => cm_content.cm_content_name %></td>
+	<td>&nbsp;&nbsp;</td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => cm_content %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => cm_content }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= will_paginate @cm_contents %>
+<br>
+<div class="editLinks">
+<%= link_to 'New Content Page', :action => 'new' %>
+</div>

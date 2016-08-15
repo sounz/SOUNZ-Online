@@ -1,0 +1,8 @@
+page << "document.getElementById('event_event_start_time').value = '00:00';"
+
+#If the event finish is not nil, reset the finish time field
+if !@event.event_finish.blank?
+page << "document.getElementById('event_event_finish_time').value = '00:00';"
+end
+
+page << "document.getElementById('event_supress_times').value = 'true';"

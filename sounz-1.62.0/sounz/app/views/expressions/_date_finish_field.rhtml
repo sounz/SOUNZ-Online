@@ -1,0 +1,10 @@
+<p><label for="expression_expression_finish">Expression finish</label><br>
+<%if !expression.expression_finish.blank?%>
+<%= date_field_with_time(expression.expression_finish, 'expression', 'expression_finish') %>
+ <%=link_to_remote '<span class="actionButton">Set No Finish Time</span>',  
+ :url=> {:id=>@expression.id,:action => 'set_no_finish_time'}, :method => :get %>
+<%else%>
+<%=link_to_remote '<span class="actionButton">Set Has Finish Time</span>',  
+ :url=> {:id=>@expression.id,:action => 'set_has_finish_time'}, :method => :get %>
+<%end%>
+</p>

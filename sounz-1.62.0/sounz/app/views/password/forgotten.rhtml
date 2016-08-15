@@ -1,0 +1,18 @@
+<h1>Forgotten Password</h1>
+
+<p>Please enter your username here. You will receive an email with a link that will enable you to change your password.</p>
+
+
+
+<% form_for(:forgotten, :url => 'request_change') do |f| %>
+  <p>
+    <b>Username</b>
+    <%= f.text_field :username %>
+  </p>
+<br/>
+<%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %>
+
+  <p>
+    <%= submit_tag "Request Password Change" %>
+  </p>
+<% end %>

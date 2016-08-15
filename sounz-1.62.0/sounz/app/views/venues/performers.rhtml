@@ -1,0 +1,6 @@
+<h1>Performers at <%=@venue.venue_name%></h1>
+<%= render :partial => 'shared/frbr/objects/full/list_of_items', :locals => {:related_items_method => 'held_events' ,:list_title=> "Events at ****",
+	 :related_item_description_method => 'frbr_listing_description',
+	 :related_item_title_method => 'event_title', :object => @venue, :items => @items, :paginator => @paginator, :page => @page}%>
+	
+<%=render :partial => 'shared/frbr/objects/full/venues/venue_links', :locals => {:object => @venue} %>

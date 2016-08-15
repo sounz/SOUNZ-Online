@@ -1,0 +1,13 @@
+<h1>Editing contributor <%=@contributor.role.contributor_names%></h1>
+
+<% form_tag :action => 'update', :id => @contributor do %>
+  <%= render :partial => 'form' %>
+<div align="right"><%= submit_tag 'Edit' %></div>
+<% end %>
+
+<%=render :partial => 'association/association', :locals => {:object => @contributor}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @contributor}%>
+</div>
+<%= link_to 'Show', :action => 'show', :id => @contributor %> |
+<%= link_to 'Back', :action => 'list' %>

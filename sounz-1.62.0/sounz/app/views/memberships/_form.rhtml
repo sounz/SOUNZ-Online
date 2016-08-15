@@ -1,0 +1,85 @@
+<%= error_messages_for 'membership' %>
+
+<fieldset>
+<legend><%= @membership.member_type.member_type_desc unless @membership.member_type.blank? %> Membership for <%= @membership.login.username unless @membership.login.blank?%></legend>
+
+<!--[form:membership]-->
+<%= hidden_field 'membership', 'login_id', :value => @membership.login.id %>
+<table>
+
+<tr>
+<th><label for="membership_member_type_id">Member Type</label></th>
+<td>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<%= collection_select(:membership, :member_type_id, 
+                          MemberType.find(:all, :order => 'member_type_desc'), :id, 
+                          :member_type_desc, {:prompt => "-- Select a member type --"},
+                          {:style => "width: 350px"}) %>
+<% else %>
+<%= @membership.member_type.member_type_desc unless @membership.member_type.blank?%>
+<% end%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_sounz_service_id">SOUNZ memberships</label></th>
+<td>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<%= collection_select(:membership, :sounz_service_id, 
+                      SounzService.find(:all, :order => 'sounz_service_name'), :id, 
+                      :sounz_service_name, {:prompt => "-- Select a SOUNZ membership --"},
+                      {:style => "width: 350px"}) %>
+<% else %>
+<%= @membership.sounz_service.sounz_service_name unless @membership.sounz_service.blank?%>
+<% end%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_expiry_date">Expiry date</label></th>
+<td>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<%= date_field_with_time_allowing_blank(@membership.expiry_date, 'membership', 'expiry_date') %>
+<% else %>
+<%= dby_date(@membership.expiry_date)%>
+<% end%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_pending_payment">Pending payment</label></th>
+<td><select id="membership_pending_payment" name="membership[pending_payment]"><option value="false">False</option><option value="true" selected>True</option></select></td>
+</tr>
+
+<tr>
+<th><label for="membership_purchased_date">Purchased date</label></th>
+<td>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<%= date_field_with_time_allowing_blank(@membership.purchased_date, 'membership', 'purchased_date')  %>
+<% else %>
+<%= dby_date(@membership.purchased_date)%>
+<% end%>
+</td>
+</tr>
+
+<!--<tr>
+<th><label for="membership_renewed_date">Renewed date</label></th>
+<td><%=# date_field_with_time_allowing_blank(@membership.renewed_date, 'membership', 'renewed_date')  
+%></td>
+</tr>-->
+
+<tr>
+<th><label for="membership_loan_count">Loan count</label></th>
+<td>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<%= text_field 'membership', 'loan_count', :size => 6 %>
+<% else %>
+<%= @membership.loan_count%>
+<% end%>
+</td>
+</tr>
+
+</table>
+<!--[eoform:membership]-->
+
+</fieldset>

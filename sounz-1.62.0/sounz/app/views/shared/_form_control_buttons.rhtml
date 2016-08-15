@@ -1,0 +1,23 @@
+<%
+#FIXME: The delete button needs to be fixed to not be one of those link_to
+#create_button nightmares.
+
+delete = true if delete.nil?
+delete_title ||= 'Delete'
+delete_hover ||= 'Delete this item'
+delete_confirm ||= 'Are you sure?'
+submit_title ||= 'Save'
+%>
+<table class="form-control-buttons">
+  <tr>
+    <% if delete %>
+    <td class="delete-button">
+      <%= link_to create_button(delete_title, delete_hover), delete_url, :confirm => delete_confirm, :method => :post %>
+    </td>
+    <% end %>
+    <td>
+      <%= cancel_and_go_back_button %>
+      <%= submit_tag submit_title %>
+    </td>
+  </tr>
+</table>

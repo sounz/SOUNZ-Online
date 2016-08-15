@@ -1,0 +1,101 @@
+<fieldset>
+<legend>Project Details</legend> 
+<%= error_messages_for 'project' %>
+
+<!--[form:project]-->
+<table width="100%">
+<tr>
+<th><label for="project_project_title">Project title</label></th>
+<td>
+<%= text_field 'project', 'project_title',:size => standard_edit_cols  %>
+</td>
+</tr>
+<tr>
+<th><label for="project_project_description">Project description</label></th>
+<td>
+<%= text_area 'project', 'project_description' , :cols => standard_edit_cols, :rows => standard_edit_rows %>
+</td>
+</tr>
+<tr>
+<th><label for="project_internal_note">Internal note</label></th>
+<td>
+<%= text_area 'project', 'internal_note' , :cols => standard_edit_cols, :rows => standard_edit_rows  %>
+</td>
+</tr>
+<tr>
+<th><label for="project_general_note">General note</label></th>
+<td>
+<%= text_area 'project', 'general_note' , :cols => standard_edit_cols, :rows => standard_edit_rows  %>
+</td>
+</tr>
+<tr>
+<th><label for="project_project_status">Project status</label></th>
+<td>
+<%= select_tag 'project[project_status]', 
+                options_for_select( [['New', 0], ['In-progress', 1], ['Finished', 2]], 
+                selected=@project.project_status ),
+                { :multiple => false } %>
+
+<%= observe_field("project[project_status]", :url => {:action => :actual_finish_date_boxes}, :with => "'id='+value") %>
+</td>
+</tr>
+<tr>
+<th><label for="project_start_date">Start date</label></th>
+<td>
+<%= date_field('project_start_date', 'start_date', :value => @start_date, :size => 15) %>&nbsp;
+<%= text_field 'project_start_date', 'start_time', :value => @start_time, :size => 5 %>
+</td>
+</tr>
+<tr>
+<th><label for="project_proposed_finish_date">Proposed finish date</label></th>
+<td>
+<%= date_field('project_proposed_finish_date', 'proposed_finish_date', :value => @proposed_finish_date, :size => 15) %>&nbsp;
+<%= text_field 'project_proposed_finish_date', 'proposed_finish_time', :value => @proposed_finish_time, :size => 5 %>
+</td>
+</tr>
+
+<tr id="actual_finish_date_boxes">
+
+<% if @project.project_status == 2 %>
+
+<th><label for="project_actual_finish_date">Actual finish date</label></th>
+<td>
+<%= date_field('project_actual_finish_date', 'actual_finish_date', :value => @actual_finish_date, :size => 15) %>&nbsp;
+<%= text_field 'project_actual_finish_date', 'actual_finish_time', :value => @actual_finish_time, :size => 5 %>
+</td>
+<% end %>
+</tr>
+
+<% if params[:action] != 'copy'%>
+
+<% if @project.created_at != nil %>
+<tr>
+<th><label for="project_created_at">Created at</label></th>
+<td>
+<%= dby_date(@project.created_at)  %>
+</td>
+</tr>
+<% end %>
+
+<% if @project.updated_at != nil %>
+<tr>
+<th><label for="project_updated_at">Updated at</label></th>
+<td>
+<%= dby_date(@project.updated_at) %>
+</td>
+</tr>
+<% end %>
+
+<% if @project.updated_by %>
+<tr>
+<th><label for="project_updated_by">Updated by</label></th>
+<td>
+<%=h get_user(@project.updated_by).username %>
+</td>
+<% end %>
+
+<% end %>
+</table>
+
+<!--[eoform:project]-->
+</fieldset>

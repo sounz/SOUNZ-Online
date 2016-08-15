@@ -1,0 +1,18 @@
+#
+# Solr configuration file. Solr generally runs on port 8983. Leave the servlet
+# path alone.
+#
+development:
+  host: 127.0.0.1
+  port: 8983
+  servlet_path: solr/default
+  
+test:
+  host: 127.0.0.1
+  port: 8983
+  servlet_path: solr/default
+
+production:
+  host: 127.0.0.1
+  port: 8983
+  servlet_path: solr/default

@@ -1,0 +1,11 @@
+if !@empty_subcat
+page.replace_html 'role_categorization_form', :partial => 'role_categorization_form'
+page.replace_html 'role_categorization_list', :partial => 'role_categorization_list'
+
+if !@new_cat_id.blank?
+page.visual_effect :highlight, @new_cat_id
+end
+
+else
+ page << "alert('Please select a subcategory')"
+end

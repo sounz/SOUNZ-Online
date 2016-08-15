@@ -1,0 +1,11 @@
+<% if ZENCART_ENABLED && object.available_for_loan %>
+  <% if PrivilegesHelper.has_permission?(get_user,'CAN_ACCESS_LIBRARY') %>
+    <% if object.loan_items_count > 0 %>
+      <%= link_to_remote "Borrow", {:update => "shopping_cart", :url => {:controller => :cart, :action => :add_product_to_cart, :type => 'manifestation', :method => 'loan', :id => (object.id)}, :loading => "alert('"+escape_javascript(object.frbr_ui_desc)+" added to cart')"}, :class => 'public_button submit' %>
+    <% else %>
+      <%= link_to ("Reserve for loan", { :controller => :cart, :action => :reserve_product, :type => 'manifestation', :method => 'loan', :id => (object.id)}, {:class => 'public_button submit'}) %>
+    <% end %>
+  <% else %>
+    <div class="submit-disabled" title='Items can only be borrowed by SOUNZ Library members. If you are already a SOUNZ Library member, please log in. If you would like to become a SOUNZ Library member, visit our "Library" page!'>Borrow</div>
+  <% end %>
+<% end %>

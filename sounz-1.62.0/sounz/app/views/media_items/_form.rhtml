@@ -1,0 +1,37 @@
+<%= error_messages_for 'media_item' %>
+
+<!--[form:media_item]-->
+<p><label for="media_item_media_item_path">Media item path</label><br>
+<%= text_area 'media_item', 'media_item_path'  %></p>
+
+<p><label for="media_item_media_item_desc">Media item desc</label><br>
+<%= text_area 'media_item', 'media_item_desc'  %></p>
+
+<p><label for="media_item_caption">Caption</label><br>
+<%= text_area 'media_item', 'caption'  %></p>
+
+<p><label for="media_item_width">Width</label><br>
+<%= text_field 'media_item', 'width'  %></p>
+
+<p><label for="media_item_height">Height</label><br>
+<%= text_field 'media_item', 'height'  %></p>
+
+<p><label for="media_item_copyright">Copyright</label><br>
+<%= text_area 'media_item', 'copyright'  %></p>
+
+<p><label for="media_item_internal_note">Internal note</label><br>
+<%= text_area 'media_item', 'internal_note'  %></p>
+
+<p><label for="media_item_available_for_use">Available for use</label><br>
+<select id="media_item_available_for_use" name="media_item[available_for_use]"><option value="false">False</option><option value="true" selected>True</option></select></p>
+
+<p><label for="media_item_created_at">Created at</label><br>
+<%= datetime_select 'media_item', 'created_at'  %></p>
+
+<p><label for="media_item_updated_at">Updated at</label><br>
+<%= datetime_select 'media_item', 'updated_at'  %></p>
+
+<p><label for="media_item_updated_by">Updated by</label><br>
+<%= text_field 'media_item', 'updated_by'  %></p>
+<!--[eoform:media_item]-->
+

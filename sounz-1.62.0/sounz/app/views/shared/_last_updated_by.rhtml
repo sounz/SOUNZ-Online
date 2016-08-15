@@ -1,0 +1,13 @@
+<div class="updatedByNote">
+Last Updated:<%
+if object.class == Role
+	login = object.contributor.login_updated_by
+else
+	login = object.login_updated_by
+end
+if !login.blank?
+%>
+<%=login.username%>, 
+<%end%>
+<%=dby_date(object.updated_at)%>
+</div>

@@ -1,0 +1,19 @@
+<div style="background: #DEE;">
+<span class="actionButton">	
+<%=link_to_remote "Cancel Update", 
+:url => {:controller => :manifestations, :action => :cancel_update_sample_form, :id => manifestation, :sample_id => sample} %>
+</span>
+
+
+<% remote_form_for(:manifestation, :url => {:action => 'update_sample', :id => manifestation, :sample_id => @sample}) do |form| %>
+<div id="sampleFormContents">
+  <%= render :partial => 'sample_form', :locals =>{:manifestation => manifestation, :statuses => @statuses} %>
+</div>
+  <%= submit_tag "Update" %>
+<% end %>
+
+<br>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @sample}%>
+
+</div>

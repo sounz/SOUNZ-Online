@@ -1,0 +1,13 @@
+# Log rotations for sounz
+
+# General SOUNZ logfile
+_SOUNZ_LOGS_/sounz-general.log {
+        weekly
+        missingok
+        rotate 12
+        compress
+        delaycompress
+        notifempty
+        copytruncate
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}

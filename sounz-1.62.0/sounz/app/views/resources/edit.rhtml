@@ -1,0 +1,35 @@
+<%=main_tabs(selected = :works)%>
+
+<h2>Editing resource</h2>
+<a href="#items">Items</a>|
+<a href="#attachments">Attachments</a>|
+<a href="#relationships">Relationships</a>
+<% form_tag :action => 'update', :id => @resource do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<fieldset id="items">
+	<legend>Items for Resource: <%=@resource.resource_code%> (<%=@resource.resource_id%>) </legend>
+	<ul id="items_list">
+     <%= render :partial => 'items/item_edit_list', :locals => { :entity => @resource } %>
+    </ul>
+    <div id="new_item_form">
+     <%=render :partial => 'items/add_item_form_button', :locals => { :entity => @resource }%>
+    </div>
+</fieldset>
+
+<div id="attachments">
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @resource}%>
+</div>
+<%=render :partial => 'access_right/show', :locals => {:object => @resource}%>
+
+<%=render :partial => 'association/association', :locals => {:object => @resource}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @resource}%>
+</div>
+
+<div class="editLinks">
+<%= link_to 'Show', :action => 'show', :id => @resource %>
+</div>
+

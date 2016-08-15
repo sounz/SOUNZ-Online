@@ -1,0 +1,57 @@
+<h1>Log in</h1>
+
+<div class="login-form">
+    <h2>Existing Members</h2>
+
+    <fieldset id="existing_members_login">
+
+		<% form_tag :controller => :authentication, :action => 'login' do %> 
+		  <ul>
+		    <li>
+          <label>Email</label>
+		      <%= text_field_tag  'username', '', { :size => standard_edit_cols}%>
+		    </li>
+
+		    <li>		  
+		      <label>Password</label>
+		      <%= password_field_tag  'password', '', { :size => standard_edit_cols} %>
+		    <li>
+		    <li class="form-actions">
+		        <%= submit_tag("Login", { :class => 'public_button submit' }) %><br/>
+		        <a href="/password/forgotten">Forgotten your password?</a>
+		    </li>
+		  </ul> 
+		  
+    	<% end %>
+	</fieldset>
+
+  <h2>New Members</h2>
+  <fieldset id='new_members_login'>
+		<% form_tag :controller => :people, :action => 'create_web_user', :from => params[:action] do %>
+		  <%= render :partial => 'web_user_form' %><br/>
+		  <%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %>
+		  <input type="submit" value="Submit" class="public_button submit">
+		<% end %>
+	</fieldset>
+</div>
+
+<script type="text/javascript">
+    function setLoginBoxesLabels() {
+       if (document.getElementById('username').value === '') { 
+	      document.getElementById('username').style.background = 'transparent url(/images/email_text.png) no-repeat 5% center';
+	    }
+	    if (document.getElementById('password').value === '') { 
+	      document.getElementById('password').style.background = 'transparent url(/images/password_text.png) no-repeat 5% center';
+	    }
+	    return true;
+    }
+    function resetClassName(element_name, class_name) {
+      document.getElementById(element_name).className = class_name;
+      return true;    
+    }
+	window.onload = function() { 
+      //setLoginBoxesLabels();
+      resetClassName('new_members_login', 'not-selected');
+      return true;
+	};
+</script>

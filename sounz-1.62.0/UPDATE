@@ -1,0 +1,242 @@
+Updating/Upgrading the SOUNZ Project Code and/or Database
+P Waite Oct 2007
+
+1. BRIEF
+========
+Here's a brief explanation of the process, for the more impatient among you.
+
+SOUNZ is composed of one Debian Source Package, which is used to generate
+five Debian binary packages. The source package is the whole tree, as
+committed to the Subversion repository. To check it out:
+  svn co svn+ssh://svn.catalyst.net.nz/var/svn/sounz/trunk sounz
+
+i) Make your changes to the code by editing the appropriate source files
+and scripts in this source tree.
+
+ii) Make sure you have everyone elses committed changes by doing an
+svn update of the whole tree.
+
+iii) For database schema changes, produce a nice SQL patch, and put it into
+./db/patches (see README in that directory for naming scheme and further
+details). This patch will be deployed with 'sounz-backend' and automatically
+applied to the database for you when you install the package.
+
+iv) Examine debian/changelog, to find the package version at the very top.
+Check the production server and find out what the currently installed
+version is. That will tell you whether you need to create a new version
+entry at the top of that file, or simply add your bits as new '*' sub-
+sections to the existing top entry. After you add your bits append your
+name in square brackets so everyone knows who it was made the changes.
+
+v) Commit all added/deleted/changed files to subversion, including the
+./debian/changelog you just edited.
+
+vi) Build the four binary packages by executing 'make' in the top directory
+of the source tree. The packages are built in: ../debian-builds/sounz/ and
+are:
+  sounz_P.Q.R_all.deb
+  sounz-frontend_P.Q.R_all.deb
+  sounz-backend_P.Q.R_all.deb
+  sounz-app_P.Q.R_all.deb
+
+Where P.Q.R is the new version you created in the 'debian/changelog' file.
+
+vii) Deploy all these new binary packages to the production server(s). This
+can be done simply by copying the .deb file(s) and then, (root privs reqd)
+   sudo dpkg -i <debfile>
+NOTE: They must all be deployed as a set. The 'sounz' package must be
+installed first, after which the others can be installed, usually in this
+order: sounz-frontend, sounz-backend, sounz-app.
+
+
+2. EMERGENCY PATCHES
+=====================
+If there is a need to install a fix which can't wait for normal building
+and deployment (ie. required *immediately*), then do as follows.
+
+i) change code modules on your local workstation, and create any ad-hoc
+SQL database patch required to fix the problem.
+
+ii) copy changed files directly onto the production server, and apply
+the ad-hoc database patch if there is one. That should solve the
+immediate problem.
+
+iii) then go and update the debian/changelog, commit code changes for
+your emergency patch, so they aren't lost.
+
+iv) the next roll-out of the packages will then simply overwrite the files
+you patched in emergency, retaining your changes. There should be no need
+for a database patch for you emergency changes, since you did it 'on the
+fly' already.
+
+
+3. THE PACKAGES
+===============
+Here are some details of each SOUNZ binary package. The reason that we have
+split the application into 5 separate packages is to allow flexibility in
+deployment. This way we could have one or more 'sounz-frontend' packages
+on separate webservers, a server running 'sounz-app' which will run the
+Rails/Mongrel servers, and a separate 'sounz-backend' which hosts the
+database.
+
+
+3.1 Non-SOUNZ required packages
+There are a couple of other packages which are required, one of which, the
+'apollo' package, isn't controlled by Debian dependencies because it can
+reside on a remote server.
+
+3.1.1 apollo
+The 'apollo' package is simply a Debianised version of Solr, the Lucene-
+based search engine. You can buld the latest Apollo by:
+  svn co svn+ssh://svn.catalyst.net.nz/var/svn/apollo/trunk apollo
+  cd apollo
+  make
+
+This will download version 1.2 of the Solr distribution and wrap it up into
+a Debian package in ../debian-builds/apollo/apollo_P.Q.R_all.deb
+
+Install apollo onto the server that you have for running the Solr search
+engine, and remember the host/port settings you chose so that you can tell
+the SOUNZ packages when asked.
+
+3.1.2 sounz-reports
+You must install the 'sounz-reports' package onto the same server that you
+install 'sounz-backend'. Since this is a dependency for the sounz-backend
+package, you can't forget it.
+
+The package is pre-built, and is 'sounz-reports_0.28_all.deb'. It can be
+found in the root directory of the SOUNZ source package. Install this
+manually before installing sounz-backend.
+
+This package creates a Linux user account 'sounzreports' complete with the
+ssh public keys in /home/sounzreports/.ssh/authorized_keys which SOUNZ
+can use to access the database with their iReport software.
+
+
+3.2 SOUNZ Packages
+The five SOUNZ packages are described below. Also given are the Debconf
+questions which are asked when you first install these packages, so you can
+get an idea of what you need to know before installing. NOTE: if you are
+installing all packages on the same server, debconf will ask you fewer
+questions than shown in all the lists below. This is because debconf will
+only ask a given question once, and quite a few are duplicated across our
+five packages.
+
+Once the packages are installed, further upgrades don't ask these questions,
+since they are of a once-only nature. If you want to change one of these
+values on the running server though, you can easily do so - the answers to
+most of these are stored in /etc/sounz/sounz.conf.
+
+Some answers are not stored there, since they pertain to other systems, an
+example being some of the details for configuring Apache. To change those
+you would need to edit the Apache config.
+
+Note that all SOUNZ packages have the same version, since they are all built
+at the same time from the same source package. The currently installed
+version can be found in /etc/sounz/sounz.version. This file is always updated
+automatically when you upgrade.
+
+3.2.1. sounz
+This is a common package that all the other sounz- packages depend
+on. This package sets up the sounz user account on the server, and
+also has all the common package dependencies.
+debconf:
+  SOUNZ Administrator email(s)
+  SMTP server hostname (mailserver for outgoing email)
+  The email domain (From address domain, eg: sounz.org.nz)
+  SMTP server login username
+  SMTP server login password
+  SMTP server TLS (checkbox)
+  SMTP server port (25 or 465)
+  SOUNZ status (production_alone, production, or standby)
+
+3.2.2 sounz-app
+This package contains the ruby-on-rails SOUNZ application. The package
+acquires all required gems, including the mongrel server(s) and
+contains the rails codebase for the SOUNZ application. The application
+is served up via the localhost-based mongrel server(s) which are
+accessed from the sounz-frontend package using Apache, communicating
+via the port(s) that the mongrel server(s) is/are listening on.
+debconf:
+  Database name
+  Database host
+  Database port
+  Database connection user
+  Database connection password
+  mongrel ports list (space-delimited list)
+  Rails environment (development, test or production)
+  Host that Solr is running on
+  Port that Solr listens on
+  Apache servername (eg. sounz.org.nz)
+  IP/hostname of Primary server (for replication)
+  IP/hostname of Secondary server (for replication)
+  Port for rsync (for replication)
+  Enable cronjobs (checkbox)
+  Cronjob frequency (for replication)
+
+3.2.3 sounz-frontend
+This package sets up the Apache virtualhost, and the static content
+directories.
+debconf:
+  ServerName (domain for SOUNZ website, eg: sounz.org.nz)
+  ServerAliases (space-delimited list of aliases to the above)
+  Documentroot (static and uploaded data lives here)
+  Mongrel server host (the host where sounz-app is installed)
+  Mongrel server ports (same list of mongrel ports as for sounz-app above)
+  Apache documentroot
+  mongrel host (hostname of sounz-app)
+  mongrel ports list (space-delimited list)
+  Database name
+  Database host
+  Database port
+  Database connection user
+  Database connection password
+
+3.2.4 sounz-backend
+This package sets up the database server. It also contains utility
+scripts which are used for a variety of purposes, such as operations
+on the database, mailout processing etc. These scripts are generally
+executable from the command line, do their processing using the
+database, and may comprise perl, php, or shell scripts (note: not
+rugby/rails scripts). This package also contains any cronjob setups,
+and all scripts associated with those.
+debconf:
+  Database name
+  Database port
+  Database user
+  Database password
+  Enable cronjobs (checkbox)
+  Cronjob frequency (for replication)
+
+3.2.5 sounz-doc
+This package provides the SOUNZ documentation, which comprises all
+of the various documents used to define what was to be built
+over the duration of the project. Useful, maybe, for anyone who
+wants to see the raw information which was used for this project.
+debconf:
+  None.
+
+
+3.3 Removing or Purging Packages
+If you need to, you can remove a SOUNZ package easily enough with this kind
+of command, executed as root:
+  apt-get remove sounz-app
+  
+This will remove the package, but leave behind any configuration settings
+and, most importantly, data. If you then re-install the package, no debconf
+questions will be asked, and the package will slot right back in.
+
+Purging is another story. It removes all configs AND varying data.
+  apt-get remove --purge sounz-app
+
+However, the sounz-backend package WILL NOT drop the SOUNZ database. This
+is for the obvious reason that databases are pretty valuable things, and
+the sounz-backend package is deemed not to own the database. When you
+install sounz-backend for the first time it will look to see if a database
+of the name you give exists. If it does, then it does nothing, but if it
+doesn't then sounz-backend will create an empty one for you.
+
+On purge sounz-backend will simply do nothing with the database, leaving
+you to do what you want with it.
+
+# END

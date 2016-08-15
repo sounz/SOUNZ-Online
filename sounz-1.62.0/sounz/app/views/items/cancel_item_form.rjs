@@ -1,0 +1,6 @@
+if !@item.blank?
+page.replace_html @dom_id ,:partial => 'items/edit_item', :locals => {:entity => @entity, :item => @item}
+page.visual_effect :highlight, @dom_id
+else
+page.replace_html 'new_item_form', :partial => 'items/add_item_form_button', :locals => { :entity => @entity }
+end

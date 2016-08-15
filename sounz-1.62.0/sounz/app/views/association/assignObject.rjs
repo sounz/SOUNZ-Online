@@ -1,0 +1,7 @@
+page.replace_html 'assignedObject', :partial => "shared/frbr/objects/brief/"+@type, :locals => {:object => @assignedObject.objectData}
+
+page.replace_html 'objectList', ''
+page.replace_html 'addRelationshipButton',:partial => 'add_relationship_button'
+page.visual_effect :highlight, 'assignedObject'
+
+

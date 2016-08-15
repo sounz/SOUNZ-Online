@@ -1,0 +1,12 @@
+page.replace_html 'contactsInList', :partial => 'existing_contacts_editable'
+page.replace_html 'possible_count', @search_contacts.length
+
+# special effects
+if @contacts != nil
+for contact in @contacts
+hi_contact = 'possible_'+contact
+page.visual_effect :fade, hi_contact
+#hi_contact = 'actual_'+contact
+#page.visual_effect :highlight, hi_contact
+end
+end

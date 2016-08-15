@@ -1,0 +1,11 @@
+<% title 'Item Details' %>
+
+<h2>Editing Item</h2>
+
+<% form_tag :action => 'update', :id => @item do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @item %> |
+<%= link_to 'Back', :action => 'list' %>

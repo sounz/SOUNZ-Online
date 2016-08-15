@@ -1,0 +1,76 @@
+DATABASE PATCHES
+================
+
+1. Naming
+==========
+Files in this directory must adhere to a strict naming format if they are
+to be automatically picked up by the postinst patch-applier when you install
+the new debian package. The format is:
+
+    upgrade_P.Q.R_to_X.Y.Z.sql
+
+where:
+    P.Q.R is the version of the currently installed package 
+    X.Y.Z is the new package version this patch will upgrade the schema to
+
+The patch applier will apply mutiple patches to span more than one version
+in the sequence, if required, though usually this won't occur in the normal
+course of applying upgrades.
+
+In general, you will not be supplying a database patch for each version
+upgrade of the SOUNZ packages. That's just fine. You just create a
+database patch for those upgrades which do need one, and the patcher will
+use it on that upgrade.
+
+Eg. if the last patch file was for upgrading SOUNZ from 2.3.0 --> 2.3.1,
+but there was no patch for 2.3.1 --> 2.3.2, or 2.3.2 --> 2.3.3, and then
+for the next upgrade of 2.3.3 --> 2.3.4, there IS a patch file, you would just
+name your patch file as: 'upgrade_2.3.3_to_2.3.4.sql' and the patcher
+will do the right thing.
+
+In other words, just include patch files for the upgrades which need 'em!
+
+
+2. Patch SQL
+=============
+Please adhere to the standards set by the 'sounz-online-schema-postgres.sql'
+SOUNZ database definition script (in directory above this one).
+
+If you add foreign key fields, make sure you define the FK constraints as
+per the above file, with deferred triggers, and informative constraint
+names.
+
+Make sure you include any data statements you need to go with your patch.
+For example, if you are adding a new field which has a NOT NULL constraint,
+be sure to add the field, then do a data update of all existing records
+to set it's value to a default, then apply the NOT NULL constraint.
+
+Be sure to bracket your upgrade SQL statements with a BEGIN; ... COMMIT;
+so that erroneous patches will be rolled back.
+
+Make sure you test your upgrade patch on a latest database dump of the
+SOUNZ database before applying the upgrade.
+
+If things went wrong during the debian package upgrade, and the patches
+didn't get applied, you should consult the log (see below), find out why
+and fix the SQL. Then just apply the patch again. It will be found in
+the SOUNZ_HOME/db/patches directory.
+
+
+3. Upgrade log
+===============
+The database patcher will append output to a logfile every time it is
+run which might contain useful information if things didn't go as planned.
+The path to this logfile is also printed out for you each time, but
+is usually found in /var/log/sounz/upgrade-db.log
+
+
+4. Database dump
+=================
+The database patcher will dump the SOUNZ database prior to doing an
+upgrade patch. The path to this dump is printed out at the time, but is
+usually to be found as a timstamped .dump file in the directory
+/data/sounz/app/backup/
+
+NB: These dumps do not have to be cleared away as there is a housekeeping
+cronjob which takes care of that.

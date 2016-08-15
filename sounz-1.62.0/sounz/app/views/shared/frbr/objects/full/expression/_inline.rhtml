@@ -1,0 +1,51 @@
+
+<%
+if !realisations.blank?%>
+	<h2><%=expression_types_title%></h2>
+	<table>
+	<%for expression in realisations%>
+		<tr>
+			<td><%=premiere_icon(expression)%></td>
+		
+			<td width="100px">
+			<%if !expression.expression_start.blank?
+			    date = TimeHelper.dmy_date(expression.expression_start)
+			    # WR#51612 - expression date links to associated through 'happens at' relationship event
+			    # only if there is one such event
+			    if !expression.events_happening_at.blank? && expression.events_happening_at.length == 1 
+			      event_id = expression.events_happening_at.map{|e| e.event_id}.to_s
+			    %>
+			    <%= link_to date, :controller => :events, :action => :show, :id => event_id %>
+			    <% else %>    
+			    <%= date%>
+			  <% end%>
+			<%end%>
+			</td>
+			<td>
+			<%= strip_paragraph_formatting(convert_to_html(expression.general_note)) unless expression.general_note.blank? %><br>
+		    <%= strip_paragraph_formatting(convert_to_html(expression.partial_expression_note)) unless expression.partial_expression_note.blank?
+		    %>	   
+			</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><%# venue = expression.venue
+		          #if !venue.blank?
+		        %>
+		    <%=#ContributorsHelper.get_link_depending_on_role_type(venue, @login)
+		    %>
+		    <%
+		    #end
+		    %>
+            <%performers = expression.all_performers
+             if !performers.blank?
+             %>
+		    <%= render :partial => 'shared/frbr/objects/full/contributor/performer_list', :locals => {:contributors => performers}%>
+      <%end%>
+     </td>
+ 	</tr>
+
+	<%end%>
+</table>
+<%end%>

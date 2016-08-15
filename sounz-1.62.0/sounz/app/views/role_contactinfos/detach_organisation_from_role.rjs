@@ -1,0 +1,3 @@
+page.replace_html "role_form", :partial => "roles/form"
+page.replace_html "role_categorization_form", :partial => '/role_categorizations/role_categorization_form'
+page.replace_html "contactinfo", :partial => "display_contactinfo"

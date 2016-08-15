@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% for i in 1..10 %>
+<% for j in 1..10 %>
+team<%=i * 10 + j - 10%>:
+  project_id: <%=i%>
+  person_id: <%=(i - 1) * 10 + j+3000%>
+  manager: <%= (j == 1) and true or false%>
+<% end %>
+<% end %>

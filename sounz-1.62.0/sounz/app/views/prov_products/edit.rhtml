@@ -1,0 +1,16 @@
+<h1>Editing Product</h1>
+
+<%= error_messages_for :prov_products %>
+
+<% form_for(:prov_products, :url => prov_product_path(@prov_products), :html => { :method => :put }) do |f| %>
+<%=render :partial => "form", :locals => {:f => f}%>
+
+  <p><b>Status:</b><br>
+  <%= select("prov_products", "status_id", @statuses.to_dropdown) %></p>
+  
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to list', prov_products_path %>

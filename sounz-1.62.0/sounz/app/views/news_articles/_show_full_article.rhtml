@@ -1,0 +1,19 @@
+<% if !news_article.blank?%>
+<div class="newsArticles">
+<h1><%= news_article.headline %></h1>
+
+<% article_name = news_article.headline %>
+<%= dby_date(news_article.article_timestamp)%><br><br>
+
+<div id="cm_content">
+<%= news_article.content %>
+</div>
+
+<br>
+<br>
+
+
+
+<% end %>
+</div>
+

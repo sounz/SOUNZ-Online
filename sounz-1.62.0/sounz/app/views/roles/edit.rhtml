@@ -1,0 +1,13 @@
+<% title 'Edit Role for ' + @role.person.full_name %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :roles} %>
+
+<% form_tag :action => 'update', :id => @role do %>
+<%= error_messages_for 'role' %>
+
+<fieldset>
+  <legend><%=h @role.person.full_name %> - <%=h @role.role_name %><%=h ' for ' + @role.organisation.organisation_name if @role.organisation %></legend>
+  <%= render :partial => 'form' %>
+</fieldset>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>

@@ -1,0 +1,6 @@
+if @partial_status == "true"
+  page.replace_html 'partial_text_note_area', :partial => 'partial_text_area'
+  page.visual_effect :highlight, 'partial_text_note_area'
+else
+  page.replace_html 'partial_text_note_area', ''
+end

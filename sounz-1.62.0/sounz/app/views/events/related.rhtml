@@ -1,0 +1,7 @@
+<%=main_tabs(selected = :events)%>
+<%=start_of_content(@event, "Event")%>
+<hr>
+<%=@sub_partial_path%>
+<hr>
+<%=render :partial => @sub_partial_path, :locals => {:object => @event}%>
+<%=end_of_content(@event)%>

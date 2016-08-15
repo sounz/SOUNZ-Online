@@ -1,0 +1,10 @@
+#Only execute if the end date exists
+if @execute_update
+  page.replace_html :eventFinish,  :partial => 'date_finish_field', :locals => {:event => @dummy_event}
+  
+  page.visual_effect :highlight, 'eventFinish'
+end
+
+if !@event.supress_times
+page << "document.getElementById('event_supress_times').value = 'false';"
+end

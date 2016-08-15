@@ -1,0 +1,14 @@
+<%= error_messages_for 'saved_search' %>
+
+<!--[form:saved_search]-->
+<p><label for="saved_search_search_name">Search name</label><br>
+<%= text_area 'saved_search', 'search_name'  %></p>
+
+<p><label for="saved_search_search_type">Search type</label><br>
+<%= text_area 'saved_search', 'search_type'  %></p>
+
+<p><label for="saved_search_search_type">Serialised Data</label><br>
+<%=saved_search.search_data%></p>
+
+<!--[eoform:saved_search]-->
+

@@ -1,0 +1,4 @@
+page.replace_html 'mailout_method', :partial => 'mailout_method'
+if !@campaign_mailout.mailout_contacts.blank?
+page.replace_html 'mailout_contacts', :partial => 'mailout_contacts', :locals => {:campaign_mailout => @campaign_mailout}
+end

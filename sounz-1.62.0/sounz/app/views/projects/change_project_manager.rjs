@@ -1,0 +1,5 @@
+page.replace_html 'project_members',  :partial => 'project_members'
+page.visual_effect :highlight, 'project_team_member_person_id'
+
+
+

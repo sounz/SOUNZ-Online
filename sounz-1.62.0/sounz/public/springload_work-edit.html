@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Sounz :: Work Edit</title>
+    <meta http-equiv='content-language' content='en' />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="/stylesheets/springload_style_admin.css" media="screen" rel="Stylesheet" type="text/css" />
+    
+    <script src="/javascripts/prototype.js?1180577384" type="text/javascript"></script>
+    <script src="/javascripts/effects.js?1180577384" type="text/javascript"></script>
+    <script src="/javascripts/dragdrop.js?1180577384" type="text/javascript"></script>
+    <script src="/javascripts/controls.js?1180577385" type="text/javascript"></script>
+    <script src="/javascripts/application.js?1180577384" type="text/javascript"></script>
+    <script src="/javascripts/utilities.js?1180577384" type="text/javascript"></script>
+    <script src="/javascripts/submodal.js?1180577384" type="text/javascript"></script>
+    <link href="/stylesheets/calendar.css?1180577385" media="screen" rel="Stylesheet" type="text/css" />
+    <link href="/stylesheets/submodal.css?1180577385" media="screen" rel="Stylesheet" type="text/css" />
+    <script src="/javascripts/calendar.js?1180577384" type="text/javascript"></script>
+<script>
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload(); s
+      func();
+    }
+  }
+}
+
+
+setPopUpLoadingPage("/modal/loading/New Superwork");
+</script>
+
+
+</head>
+<body>
+<a name='top' id='top'></a>
+<div id='container'>
+    <a href='/' title='Return to homepage'><img src='/images/admin_banner.png' alt='Sounz' width='659' height='72' /></a>
+    <div id='content'>
+        <div id='user_login'>
+            <h1>SOUNZ</h1>
+            <p>User: Pete | <a href='/logout'>Log Out</a></p>
+        </div><!-- /user_login -->
+
+            <ul id='admin_nav'>
+                <li><a style='padding-left: 0' href='/'>Home</a></li>
+                <li><a class='active' href=''>Projects and Campaigns</a></li>
+                <li><a href=''>Contacts</a></li>
+                <li style='border: none'><a href=''>Find FRBR Objects</a></li>
+            </ul><!-- /admin_nav -->
+
+
+        <h2>Editing work &#8220;&#256;hu t&#257; Wai&#8221;</h2>
+        
+        <form action='' method='' class='admin'>
+            <fieldset title='Editing work'>
+                <label for='work_title'>Work Title<input class='text' type='text' name='work_title' /></label>
+                <label for='work_description'>Work Description<textarea class='text' name='work_description'></textarea></label>
+                <label for='instrumentation'>Instrumentation<textarea class='text' name='instrumentation'></textarea></label>
+            </fieldset>
+            
+        <h2>Superworks</h2>
+        
+        <form action='' method='' class='admin'>
+            <fieldset title='Superworks'>
+                <p><strong>Assigned Superwork: <a href=''>&#256;hu t&#257; Wai</a></strong></p>
+                <p class='dottop' style='width: 376px; padding: 3px 0 0;'>Search for an alternative Superwork by typing in the search box below. <a href=''>More&#187;</a></p>
+                <label for='superwork_search'>
+                    Superword Search<input class='text' type='text' name='superwork_search' />
+                </label>
+<p class='dotbottom' style='float: left; padding: 0 0 5px 0; margin: 3px 10px 0 0;'><strong>Add a new superwork</strong></p><div class='button'><a href='' title='New'>New</a></div>
+
+
+            </fieldset>
+
+        <h2>Categories</h2>
+        <p class='dotbottom' style='padding: 0 0 12px;'>Works must be assigned a primary category (for physical cataloguing purposes) <a href=''>More&#187;</a></p>
+            <fieldset title='Select category'>
+                <div class='categories'>
+                    <h3>Category</h3>
+                    <label for='select_category'>Select Category
+                        <select name='select_category'>
+                            <option>Brass</option>
+                        </select>
+                        <select name='select_subcategory'>
+                            <option>Brass Band or Military</option>
+                        </select>
+                    </label>
+                    <div class='button'><a href='' title='Assign to this category'>Assign to this category</a></div>
+                </div><!-- /categories -->
+                <div class='categories' style='margin-left: 22px;'>
+                    <h3>Additonal Categories</h3>
+                    <label for='select_category'>Select Additional Category
+                        <select name='select_addtional_category'>
+                            <option>Amplified Instruments</option>
+                        </select>
+                    </label>
+                    <div class='button'><a href='' title='Add this category'>Add this category</a></div>
+                </div><!-- /categories -->
+                <br style='clear: both' />
+                <p>This item is currently assigned to the following categories and additonal categories:</p>
+                
+                <div class='categories'>
+                    <h4>Currently assigned categories</h4>
+                    <ul>
+                        <li><a href=''>Remove</a>Unspecified voice with other instrument</li>
+                    </ul>
+                </div><!-- /categories -->
+                <div class='categories' style='margin-left: 22px;'>
+                    <h4>Currently assigned additional categories</h4>
+                    <ul>
+                        <li><a href=''>Remove</a>Taonga Puoru</li>
+                    </ul>
+                </div><!-- /categories -->
+            </fieldset>
+            
+            <h2>Duration</h2>
+            <fieldset title='Duration'>
+                <label for='no_duration'>
+                    No duration
+                    <select name='no_duration' style='width: 100px'>
+                        <option>False</option>
+                    </select>
+                </label>
+                <label for='no_duration'>
+                    Intended duration (seconds)
+                    <input type='text' class='text' style='width: 100px' />
+                </label>
+                <label for='duration_varies'>
+                    Duration varies
+                    <select name='duration_varies' style='width: 100px'>
+                        <option>False</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <h2>Difficulty</h2>
+            <fieldset title='Difficulty'>
+                <label for='work_title'>Difficulty<input class='text' type='text' name='difficulty' /></label>
+                <label for='work_description'>Difficulty note<textarea class='text' name='difficulty_note'></textarea></label>
+            </fieldset>
+            
+            <br style='clear: both' />
+            
+        </form>
+        <p style='float: right; font-weight: bold'><a href=''>List</a> | <a href=''>Edit</a></p>
+    </div><!-- /#content -->
+
+
+    <div id='footer'>
+
+    </div><!-- /footer -->
+</div><!-- /#container  -->
+</body>
+</html>

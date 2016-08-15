@@ -1,0 +1,278 @@
+#! /bin/bash
+# postinst script for sounz
+#
+# see: dh_installdeb(1)
+
+#set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+if [ -e /usr/share/debconf/confmodule ]
+then
+  . /usr/share/debconf/confmodule
+  db_version 2.0
+fi
+
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=sounz
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+
+# Main processing..
+case "$1" in
+  configure)
+    # continue below
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    exit 0
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SET DEFAULTED CONFIG VARS
+
+PACKAGE_CONFDIR=/etc/${PACKAGE}
+PACKAGE_CONF=${PACKAGE_CONFDIR}/${PACKAGE}.conf
+
+# SOUNZ User/Owner
+SOUNZ_USER=sounz
+
+# HOME APPLICATION AREA
+# We have a special partition on the SOUNZ servers: /app
+# (Note: relocated from previous /usr/share/sounz)
+SOUNZ_HOME=/app/sounz
+
+# DATA AREA
+# We have a special partition on the SOUNZ servers: /data
+SOUNZ_DATA=/data/sounz/app
+
+# LOGGING AREA
+SOUNZ_LOGS=/var/log/sounz
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# FUNCTIONS
+
+# Grab SOUNZ common functions..
+if [ -f ${SOUNZ_HOME}/install/install-funcs.sh ] ; then
+  . ${SOUNZ_HOME}/install/install-funcs.sh
+else
+  echo "Error: failed to load SOUNZ common functions"
+  exit 2
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# USERS AND GROUPS
+
+# Make sure we have SOUNZ admin user & groups defined. The mkuser
+# should also create the group - so the mkgroup is just a fallback.
+# $1  - the Unix username
+# $2  - user type 'normal' or 'system'
+# $3  - the group to be a member of, or 'default'
+# $4  - the preferred UID, or 'any'
+# $5  - the home directory path, or 'nohome', or 'default'
+# $6  - path to the login shell, or 'noshell', or 'default'
+# $7* - full user name
+mkuser $SOUNZ_USER normal default 6011 default default "SOUNZ Administrator"
+mkgroup $SOUNZ_USER
+
+# Administrator emails(s)
+db_get ${PACKAGE}/admin_email
+if [ "$RET" != "" ] ; then
+  ADMIN_EMAIL=$RET
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# PACKAGE HOME
+# Assert that it is present. The default home is /var/share/sounz, but
+# if a /app exists, then it will be /app/sounz. We check if the move
+# has been done, and if not, we do it here.
+# NB: If the system is already that way, then this will have no effect.
+# This is known as 'idempotency'.
+
+mkthisdir $SOUNZ_HOME
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# PACKAGE DATA
+#
+# On SOUNZ production servers, we have allocated a dedicated LVM
+# logical volume for data, mounted as /data. Here we check if there is
+# a directory '/data' present, and if so we symlink the specified
+# path to a physical data area under /data. Otherwise we just proceed
+# as normal, and use the specified directory.
+# 
+mkthisdir $SOUNZ_DATA
+chown -R ${SOUNZ_USER}:${SOUNZ_USER} ${SOUNZ_DATA}
+chmod -R ug+rw ${SOUNZ_DATA}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# EMAIL SETTINGS
+# Notes: We only acquire the debconf database value and use it if our
+# config file value is still as yet undefined.
+
+if [ "$EMAIL_SMTP_SERVER" = "_EMAIL_SMTP_SERVER_" ] ; then
+  db_get ${PACKAGE}/email_smtp_server
+  if [ "$RET" != "" ]
+  then
+    EMAIL_SMTP_SERVER=$RET
+  fi
+fi
+
+if [ "$EMAIL_DOMAIN" = "_EMAIL_DOMAIN_" ] ; then
+  db_get ${PACKAGE}/email_domain
+  if [ "$RET" != "" ]
+  then
+    EMAIL_DOMAIN=$RET
+  fi
+fi
+
+if [ "$EMAIL_USER" = "_EMAIL_USER_" ] ; then
+  db_get ${PACKAGE}/email_user
+  if [ "$RET" != "" ]
+  then
+    EMAIL_USER=$RET
+    EMAIL_AUTH="login"
+  fi
+fi
+
+if [ "$EMAIL_PASSWORD" = "_EMAIL_PASSWORD_" ] ; then
+  db_get ${PACKAGE}/email_password
+  if [ "$RET" != "" ]
+  then
+    EMAIL_PASSWORD=$RET
+  fi
+fi
+
+if [ "$EMAIL_TLS" = "_EMAIL_TLS_" ] ; then
+  db_get ${PACKAGE}/email_tls
+  if [ "$RET" != "" ]
+  then
+    EMAIL_TLS=$RET
+  fi
+fi
+
+if [ "$EMAIL_PORT" = "_EMAIL_PORT_" ] ; then
+  db_get ${PACKAGE}/email_port
+  if [ "$RET" != "" ]
+  then
+    EMAIL_PORT=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# REPLICATION/STANDBY SETTINGS
+# Get initial status. This is so that the main packages have this
+# setting ready for them ahead of time.
+
+db_get ${PACKAGE}/status
+if [ "$RET" != "" ]
+then
+  STATUS=$RET
+fi
+
+# Create status file if not there already
+STATUSFILE=${PACKAGE_CONFDIR}/sounz.status
+if [ ! -f $STATUSFILE ] ; then
+  echo $STATUS >$STATUSFILE
+  chown ${SOUNZ_USER}:${SOUNZ_USER} $STATUSFILE
+  chmod ug+w $STATUSFILE
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SSH
+
+# Sort out SSH access. This is required to support database replication
+# which is handled in detail by the sounz-backend package.
+UHOME=/home/${SOUNZ_USER}
+if [ -d $UHOME ] ; then
+  mkthisdir ${UHOME}/.ssh
+  if [ -f ${SOUNZ_HOME}/ssh-keys/id_rsa.production ] ; then
+		  case $STATUS in
+		    production|production_alone)
+		      cp ${SOUNZ_HOME}/ssh-keys/id_rsa.production ${UHOME}/.ssh/id_rsa
+		      cp ${SOUNZ_HOME}/ssh-keys/id_rsa.production.pub ${UHOME}/.ssh/id_rsa.pub
+		      cp ${SOUNZ_HOME}/ssh-keys/authorized_keys.production ${UHOME}/.ssh/authorized_keys
+		      ;;
+		    standby)
+		      cp ${SOUNZ_HOME}/ssh-keys/id_rsa.standby ${UHOME}/.ssh/id_rsa
+		      cp ${SOUNZ_HOME}/ssh-keys/id_rsa.standby.pub ${UHOME}/.ssh/id_rsa.pub
+		      cp ${SOUNZ_HOME}/ssh-keys/authorized_keys.standby ${UHOME}/.ssh/authorized_keys
+		      ;;
+		  esac
+	  
+		  # Set perms
+		  chown -R ${SOUNZ_USER}:${SOUNZ_USER} ${UHOME}/.ssh
+		  chmod 0700 ${UHOME}/.ssh
+		  chmod u+s ${UHOME}/.ssh
+		  chmod 0600 ${UHOME}/.ssh/*
+		  
+		  # Remove these for security reasons
+		  rm -f ${SOUNZ_HOME}/ssh-keys/*
+	fi
+else
+  tell "Error: sounz user does not have a home directory at $UHOME"
+  exit 10
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# LOGS
+# Assert that it exists, and create general logfile
+
+mkthisdir ${SOUNZ_LOGS}
+mklogfile sounz-general.log
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CONF FILE
+# This substitutes the relevant paths into this config file, but
+# only if we haven't already done it..
+
+if [ -d $PACKAGE_CONFDIR ]
+then
+  if grep -q -i -e "_SOUNZ_USER_" $PACKAGE_CONF
+  then
+    # Plug in the relevant values to the SOUNZ config..
+    sub_vars $PACKAGE_CONFDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+    sub_vars $PACKAGE_CONFDIR "_ADMIN_EMAIL_" "$ADMIN_EMAIL"
+    sub_vars $PACKAGE_CONFDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+    sub_vars $PACKAGE_CONFDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+    sub_vars $PACKAGE_CONFDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_SMTP_SERVER_" "$EMAIL_SMTP_SERVER"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_DOMAIN_" "$EMAIL_DOMAIN"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_AUTH_" "$EMAIL_AUTH"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_USER_" "$EMAIL_USER"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_PASSWORD_" "$EMAIL_PASSWORD"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_TLS_" "$EMAIL_TLS"
+    sub_vars $PACKAGE_CONFDIR "_EMAIL_PORT_" "$EMAIL_PORT"
+  fi
+  # Always assert proper ownership & perms..
+  chown -R ${SOUNZ_USER}:${SOUNZ_USER} $PACKAGE_CONFDIR
+  chmod -R 0644 $PACKAGE_CONFDIR
+  find $PACKAGE_CONFDIR -type d -exec chmod 0775 {} \;
+else
+  tell "SOUNZ configuration in $PACKAGE_CONFDIR not found."
+  exit 34
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,17 @@
+<div class="pageLinks">
+    <% params[:url][:page] = paginator.current.previous %>
+    <%= link_to_remote(h('< Previous'), params) if paginator.current.previous%>
+    <%= pagination_link_remotes(paginator, {:window_size => 2, :params => params}) %>
+    <% params[:url][:page] = paginator.current.next %>
+    <%= link_to_remote(h('Next >'), params) if paginator.current.next %>
+    
+    <span class="pageLinksJump">&nbsp; Jump to page: <form action="/search_contacts/find_role_contactinfos" method="post" onsubmit="Element.show('spinner'); new Ajax.Updater('search_results', '/search_contacts/find_role_contactinfos', {asynchronous:true, evalScripts:true, onComplete:function(request){Element.hide('spinner')}, parameters:Form.serialize(this)}); return false;">
+    <input type="text" name="page" maxlength="4" class="pageLinksJumpField"></input>
+    <% params[:url].each_pair do |k,v|
+   		if k != :action and k != :page and !v.blank? %>
+        	<input type="hidden" name="<%=h k%>" value="<%=h v%>">
+		<% end
+   	end %>   
+	</form>
+	</span>
+ </div>

@@ -1,0 +1,46 @@
+<!-- frbr/objects/search_result/manifestation.html -->
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+
+
+<div class='search_item'>
+	
+ <h3><%= icons_for(object, @login)%><%=link_to object.manifestation_title, :id => object, :action => 'show', :controller => 'manifestations'%></b><%=show_tap_edit_link_for(object, 'CAN_EDIT_TAP')%></h3>
+
+   <div class="search_item_details">
+
+   <div class="search_item_image"><%=AttachmentHelper.render_search_image(object, :thumb)%></div>
+
+
+      <div class="search_item_details_inner">
+     <p>
+       <%=get_summary_for_text(convert_to_html(object.general_note), SUMMARY_LENGTH)%>
+     </p>
+
+    <% if !quicklink_search.blank? && quicklink_search %>
+      <%=render :partial => 'shared/frbr/objects/search_result/manifestation_availability', :locals => {:object => object}%>
+    <% end %>
+
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+                         action = 'addToSelected'
+                       else
+                         action = 'addToSelectedSession'
+                       end
+    %>
+  </div>
+</div>
+
+
+  <div class='options'>
+    <p class='list rem'>
+      <%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => 'manifestation', :object_id => object.frbr_id})%>
+    </p>
+  </div><!-- /.options -->
+
+
+
+
+
+
+</div><!-- /.search_item -->

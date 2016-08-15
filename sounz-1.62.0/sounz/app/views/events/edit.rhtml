@@ -1,0 +1,33 @@
+<h1>Editing event</h1>
+
+
+<%if PrivilegesHelper.has_permission?(get_user.id,'CAN_EDIT_TAP')%>
+<%=link_to_remote(image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => :addToSelected, :type => 'event', :object_id => @event.frbr_id})%>
+<%end%>
+
+<div align="right">
+<%= link_to "Copy this Event", { :action => 'copy', :id => @event.id }, {:title => "Create a copy of this event"}
+%>
+</div>
+
+<% form_tag :action => 'update', :id => @event do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%= render :partial => 'events/event_venue', :locals => {:object => @event}%>
+
+<%=render :partial => 'events/related_events_form', :locals => {:object => @event}%>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @event}%>
+
+
+<div class="formSection">
+<%=render :partial => 'association/association', :locals => {:object => @event}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @event}%>
+</div>
+
+</div>
+<%= link_to 'Show', :action => 'show', :id => @event %> |
+<%= link_to 'Back', :action => 'list' %>

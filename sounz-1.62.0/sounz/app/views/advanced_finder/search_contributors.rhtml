@@ -1,0 +1,35 @@
+<%=main_tabs(selected = :people)%>
+<h2>Contributor Advanced Search Results</h2>
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @result_frbr_objects.length > 3 %>
+<a href="#saveForm">Save Current Search</a>
+<br><br>
+<% end %>
+
+<% if @result_frbr_objects.length < 1 %>
+<p><b>There were no results matching your request</b></p>
+<% else %>
+<p>
+Number of results: <span id="numberOfResults" class="searchHeading"><%=session[:contributor_advanced_search_results].length%></span>
+</p>
+<% end %>
+
+<%= will_paginate @results %>
+
+<div id="liveResults" name="liveResults"><table>
+  <%for object in @result_frbr_objects%>
+	<%=render :partial => 'finder/result', :locals => {:result => object}%>
+<%end%>
+</table>
+</div>
+
+<%= will_paginate @results %>
+
+<div class="advancedLink"><a href="contributor">Refine Search</a></div>
+<br>
+<%if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH')%>
+<span id="saveForm">
+<%= render :partial => 'saved_searches/saved_search_form', :locals => { :search_type => 'advanced_contributor' }
+%>
+</span>
+<% end %>

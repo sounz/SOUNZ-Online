@@ -1,0 +1,10 @@
+<!-- NOT USED ANYMORE -->
+<% if !@person.blank? %>
+<div align="right">
+<label>Role Type</label>
+<%= select(:role, :role_id, 
+           Role.find(:all, :conditions => ['person_id = ?', @person.person_id]).collect {|r| [ r.role_type.role_type_desc, r.role_id ] }, 
+           { :selected => @role_contactinfo.role_id, :prompt => '-- Select a role --' }) %>
+</div>
+<%=observe_field("role_role_id", :url => { :action => :role_change },:with => "'id='+value")%>
+<% end %>

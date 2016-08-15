@@ -1,0 +1,5 @@
+page.replace_html 'durationForm', 'No duration specified'
+page.replace_html 'durationButton', action_button(link_to_remote( "Set Duration",:url =>
+  { :action => :set_duration, :controller => :duration_as_interval, :optional => @optional, :prefix => @prefix, :object_name => @object_name, :field_name => @field_name}))
+page.visual_effect :highlight, 'durationForm'
+page.visual_effect :highlight, 'durationButton'

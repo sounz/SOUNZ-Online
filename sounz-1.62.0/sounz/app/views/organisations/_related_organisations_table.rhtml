@@ -1,0 +1,16 @@
+<% if @organisation.related_organisations.length > 0 %>
+<table width="100%" id="related_organisations_table">
+  <tr>
+    <th>Organisation</th><th colspan="2">Relationship</th>
+  </tr>
+  <% @organisation.related_organisations.each do |ro| %>
+  <tr id="<%=h generate_id(ro) %>">
+    <td><%= link_to ro.related_organisation.organisation_name, :action => 'edit', :id => ro.org_organisation_id %></td>
+    <td><%=h ro.relationship %></td>
+    <td style="text-align: right;"><%= link_to_remote "Detach", :url => {:action => 'delete_relationship', :id => ro.related_organisation_id } %></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p id="related_organisations_table">This organisation has no other related organisations.</p>
+<% end %>

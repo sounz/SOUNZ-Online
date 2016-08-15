@@ -1,0 +1,156 @@
+<%= error_messages_for 'manifestation' %>
+
+
+
+<fieldset>
+  <legend accesskey="d">Main Details</legend>
+  <p><label for="manifestation_manifestation_title">Manifestation title</label><br>
+  <%= text_field 'manifestation', 'manifestation_title', :size => standard_edit_cols  %></p>
+  
+  <p><label for="manifestation_manifestation_title_alt">Manifestation title alt</label><br>
+  <%= text_field 'manifestation', 'manifestation_title_alt', :size => standard_edit_cols  %></p>
+
+<p><label for="manifestation_series_title">Series title</label><br>
+<%= text_field 'manifestation', 'series_title', :size => standard_edit_cols  %></p>
+
+<p><label for="manifestation_manifestation_code">Manifestation Code: </label><strong>
+<%= @manifestation.manifestation_code %></strong></p>
+
+<% if !@manifestation.manifestation_type.blank? && @manifestation.is_a_score?
+%>
+<p><label>Work main category:</label><strong> <%= @manifestation.related_works.map{|rw| rw.main_category.work_subcategory_desc}.join(', ')%></strong></p>
+<% end %>
+
+<p><label for="manifestation_manifestation_type_id">Manifestation Type</label>
+<br>
+<%=select("manifestation", "manifestation_type_id", @manifestation_types.to_dropdown(:manifestation_type_desc),
+options = {:prompt => '-- Please select a manifestation type --'},
+html_options = {:onchange => "new Ajax.Request('/manifestations/tweak_format_dropdown', {asynchronous:true, evalScripts:true, parameters:'type='+value})"})%>
+<p/>
+
+
+<div id="formatDropdown">
+  <%=render :partial => 'format_dropdown'%>
+</div>
+
+
+<!--[form:manifestation]-->
+
+
+<p><label for="manifestation_publication_year">Publication year</label><br>
+<%= text_field 'manifestation', 'publication_year', :size => 4  %></p>
+</fieldset>
+
+<fieldset>
+  <legend accesskey="c">Cataloguing References</legend>
+  
+<p><label for="manifestation_isbn">ISBN</label><br>
+<%= text_field 'manifestation', 'isbn', :size => standard_edit_cols  %></p>
+
+<p><label for="manifestation_ismn">ISMN</label><br>
+<%= text_field 'manifestation', 'ismn', :size => standard_edit_cols  %></p>
+
+<p><label for="manifestation_isrc">ISRC</label><br>
+<%= text_field 'manifestation', 'isrc' , :size => standard_edit_cols %></p>
+
+
+</fieldset>
+
+<fieldset>
+  <legend accesskey="o">Other Info</legend>
+<p><label for="manifestation_imprint">Imprint</label><br>
+<%= text_field 'manifestation', 'imprint', :size => standard_edit_cols  %></p>
+
+<p><label for="manifestation_copyright">Copyright</label><br>
+<%= text_field 'manifestation', 'copyright' , :size => standard_edit_cols %></p>
+
+<p><label for="manifestation_collation">Collation</label><br>
+<%= text_field 'manifestation', 'collation' , :size => standard_edit_cols %></p>
+
+<p><label for="manifestation_parts_location_external">Parts location (external)</label><br>
+<%= text_field 'manifestation', 'parts_location_external' , :size => standard_edit_cols %></p>
+
+</fieldset>
+
+
+<fieldset>
+  <legend accesskey="n">Notes</legend>
+
+
+<p><label for="manifestation_general_note">General note</label><br>
+<%= text_area 'manifestation', 'general_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="manifestation_dedication_note">Dedication note</label><br>
+<%= text_area 'manifestation', 'dedication_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="manifestation_publisher_note">Publisher note</label><br>
+<%= text_area 'manifestation', 'publisher_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="manifestation_internal_note">Internal note</label><br>
+<%= text_area 'manifestation', 'internal_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+</fieldset>
+
+<fieldset>
+  <legend>Availability</legend>
+<p><label for="manifestation_item_cost">Cost</label><br>
+<%= text_field 'manifestation', 'item_cost', :size => 10 %>
+</p>
+
+<table>
+<tr><td>Available for Loan</td><td><%=check_box 'manifestation', 'available_for_loan'%></td></tr>
+<tr><td>Available for Hire</td><td><%=check_box 'manifestation', 'available_for_hire'%></td></tr>
+<tr><td>Available for Sale</td><td><%=check_box 'manifestation', 'available_for_sale'%></td></tr>
+<tr><td colspan=2>The following attributes are only relevant to Sale items</td></tr>
+<tr><td>Cloneable</td><td><%=check_box 'manifestation', 'clonable'%></td></tr>
+<tr><td>Downloadable</td><td><%=check_box 'manifestation', 'downloadable'%></td></tr>
+<%if !@manifestation.manifestation_type.blank? && @manifestation.manifestation_type.manifestation_type_desc=='Not-applicable'%>
+<tr><td><label for="manifestation_download_file_name">Name of file for downloadable items (128k version)</label></td><td>
+<%= text_field 'manifestation', 'download_file_name', :size => 20 %></td></tr>
+<tr><td><label for="manifestation_download_file_name_2">Name of file for downloadable items (192k version)</label></td><td>
+<%= text_field 'manifestation', 'download_file_name_2', :size => 20 %></td></tr>
+<%else%>
+<tr><td><label for="manifestation_download_file_name">Name of file for downloadable item</label></td><td>
+<%= text_field 'manifestation', 'download_file_name', :size => 20 %></td></tr>
+<%end%>
+
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Media on Demand</legend>
+<table>
+  <tr><td>
+  <label for="manifestation_sounzmedia">Media</label>
+  </td><td>
+  <%= text_area 'manifestation', 'sounzmedia' %>
+  </td></tr><tr><td></td><td>
+  Enter the filename or URL for this Media on Demand or copy paste the embedded script code.
+  </td></tr>
+</table>
+</fieldset>
+
+<fieldset>
+  <legend>Moneyworks</legend>
+  <p><label for="manifestation_freight_code">Freight Code</label><br>
+  <%= text_field 'manifestation', 'freight_code', :size => 10 %>
+  </p>
+  
+  <div class="instruction">It is not sure if this is required</div>
+<p><label for="manifestation_mw_code">Moneyworks Code</label><br>
+<%= text_field 'manifestation', 'mw_code', :size => 10 %>
+</p>
+</fieldset>
+
+<fieldset>
+  <legend>Status</legend>
+<%=@manifestation.status.status_desc%>
+<p/>Status:<br><%= select("manifestation", "status_id", @statuses.to_dropdown) %>
+</select></p>
+</fieldset>
+
+
+<%if @has_related_expression%>
+  <%=hidden_field 'expression', 'related_expression_id', :value => @related_expression.expression_id%>
+<%end%>
+<%=hidden_field 'back', 'link', :value => @backlink%>

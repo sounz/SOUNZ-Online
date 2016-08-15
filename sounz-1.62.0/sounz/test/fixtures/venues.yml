@@ -1,0 +1,164 @@
+
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+venue1:
+  venue_id: 1
+  venue_name: "Happy"
+  venue_description: "Happy is a music oriented venue located on the corner of Vivian and Tory Streets, below Latina Tapas Bar.  It was established in 2003, replacing The Space in Newtown.  Happy features a nice sounding room with capacity for 140 people, allowing enough space to fit reasonable crowds whilst not destroying the intimacy found in smaller clubs.  It hosts a wide variety of music, ranging from rock bands to jazz to experimental audio events to unamplified acoustic performances, as well as theatre-style shows and multimedia performances.  Happy is run as a space to voice the creative community of Wellington and the rest of the world. New Zealand artists to have featured at Happy include Jonny Marks, Philip Dadson, 175 East, Amalgam, SJD, Anika Moa, Mahinarangi Tocker, Roadworks/Red Mole, Birchville Cat Motel, Leila Adu, Simon O’Rorke, The Elephant Men, New Zealand Dominion Concert Band, David Long and Ricki Gooch.  Happy also hosts the annual festival of improvised music, Bomb The Space."
+  contactinfo_id: 2
+  general_note:
+  internal_note: "Simon Bowden and Jeff Henderson are good contacts for Happy"
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue2:
+  venue_id: 2
+  venue_name: "Te Koki the New Zealand School of Music Concert Hall"
+  venue_description: "The New Zealand School of Music Concert Hall is located on the campus of Massey University Wellington, 63 Wallace street, block one. It was established when Massey University and Victoria University of Wellington combined the strengths of their Conservatorium of Music and School of Music to form the New Zealand School of Music offering students opportunities for comprehensive study unique in this country. This partnership combines more than 60 years' experience in the fields of performance, composition and historical research.  The Concert Hall is an acoustically treated versatile performance stage suitable for performances of music and drama. The Concert Hall can accommodate up to 200 seats with a separate public and stage entrance. High quality facilities include a lighting booth and rig, a concert Steinway and baby Yamaha grand pianos, sound baffles, audiovisual/PA equipment and a recording studio. Practice rooms and tea/coffee facilities are also available.  New Zealand and Overseas artists to have featured at The New Zealand School of Music Concert Hall include: Michael Brecker, Joe Labarbara, Carl Allen, Gastavo Romero, The New Zealand Piano Quartet, c.l.bob, Rodger Fox, Kevin Clark, Charmaine Ford, Mike Nock, Bruce Forman."
+  contactinfo_id: 3
+  general_note:
+  internal_note: "Other NZSM venues include Hunter Council Chamber, Adam Concert Room and Massey University Theatrette"
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue3:
+  venue_id: 3
+  venue_name: "Hunter Council Chamber"
+  venue_description: "Formerly housing the University Library then the Law Library, the Hunter Council Chamber with its fine stained glass windows is an icon of Victoria University, and its acoustic for music is superb. The Turnovsky Piano, a full-sized concert grand Steinway acquired through the generosity of the Turnovsky Trust in 1999, is permanently housed in the Hunter Council Chamber.  A companion Steinway, kindly loaned to the School of Music by New Zealand Symphony Orchestra, was acquired for the Hunter Council Chamber in 2003."
+  contactinfo_id: 4
+  general_note:
+  internal_note: "Other NZSM venues include Te Koki NZ School of Music Concert Hall, Adam Concert Room and Massey University Theatrette"
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue4:
+  venue_id: 4
+  venue_name: "St Andrew’s on The Terrace (Presbyterian Church)"
+  venue_description: "St Andrew's is considered to have the best acoustics of any performance space of its type in Wellington. Free lunchtime concerts: These go back to the 1960s when school choirs performed.  With the gift of the fine Steinway, the concerts have gone from strength to strength. The opportunity to perform at the church is invaluable, especially to young musicians.  Wellington professional musicians, and occasional visiting musicians, also enjoy performing at St Andrew’s.  These concerts have traditionally paid no fee to musicians, and are free to their audiences, although donations are warmly welcomed.  They are also, in effect, free to the performers as St Andrew’s on The Terrace provides a venue, pays for publicity and “supplies” an audience.  These concerts are advertised in Capital Times a week ahead; broadcast on Radio New Zealand Concert’s Live Diary at around 8.10 am on the day of the concert; included in the Wellingtonian; and listed on St Andrew’s website and Wellington City Council’s Feeling Great recreation and events site www.feelinggreat.co.nz/music. Venue for hire: St Andrew’s is a popular venue for ticket entry concerts, recitals and performances. Mostly classical music, but occasional gospel/choral/jazz concerts are held.  (Contemporary music possibilities in future are being explored.) Regular concerts (quarterly or annual) are presented by Bach Choir, Michael Mohaghan Young Musicians Foundation, New Zealand Opera Society, Pelorus Trust Wellington Brass Band, Sonata Celebration competitions (Institute of Registered Music Teachers), Wagner Society, Wellington Chamber Orchestra, Wellington Suzuki Branch, Wellington Youth Sinfonietta, and many more. 2006 and 2007 concerts, recitals and fundraisers include the Tony Backhouse Choir (Café of the Gate of Salvation), Boutique Opera, Suor Angelica, Wellington Community Choir and Wellington Male Voice Choir, 175 East, Cantoris and Stroma.  In February 2007, St Andrew’s was the venue for the Asia Pacific Festival’s International Lunchtime Concert Series and other concerts.  St Andrew’s is also used for recordings by Radio New Zealand and in December 2006, was the venue for National Radio’s recording of The Little Bushmen."
+  contactinfo_id: 5
+  general_note: "Seating capacity: 350 people(new seating and heating from May 2007) Instruments: The Steinway C grand piano (gifted by Jack Illott in 1988), has recently been completely refurbished.  As well as the pipe organ used frequently for concerts and worship services, St Andrew’s also has a fine Baroque organ. "
+  internal_note: "Postal address: Office Manager, PO Box 5203, Wellington 6145"
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue5:
+  venue_id: 5
+  venue_name: "Wigmore Hall"
+  venue_description: "Built in 1901 by the Bechstein piano company, Wigmore Hall is justifiably regarded as one of the world's great recital halls, attracting the leading classical musicians of our time, and often setting the standard for international chamber music and song. Wigmore Hall's artistic programming is complemented by a highly innovative and diverse Community & Education programme. New Zealand artists who have performed there include Richard Mapp, New Zealand String Quartet, Jonathan Lemalu, Kiri Te Kanawa, Stephen de Pledge and many others."
+  contactinfo_id: 6
+  general_note:
+  internal_note: ""
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue6:
+  venue_id: 6
+  venue_name: "Hopetoun Alpha"
+  venue_description: "Built in 1875, as the home of the Beresford Street Congregational Independents, Hopetoun Alpha's elegant Greek Doric architecture was the design of the then well known architect, Philip Herepath. Facilities include: Concert Steinway Grand Piano, Staging - additional staging up to 4.8 Sqm ( 7 pieces of 2.4m x 1.2m ), Lighting - Preset stage lighting with up to 12 spotlights. 70 carparks available at venue after 6pm Mon-Fri and all weekend.   Amongst the New Zealand music events held at Hopetoun Alpha are 175 East Concerts and the (09)03 Contemporary Music Festival."
+  contactinfo_id: 7
+  general_note:
+  internal_note: ""
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue7:
+  venue_id: 7
+  venue_name: "The Great Hall at The Arts Centre"
+  venue_description: "Opened in 1882 and designed by architect B W Mountfort in High Collegiate Gothic style, the Great Hall is one of New Zealand’s most significant heritage buildings.  It was used by Canterbury College (now the University of Canterbury) as a library, lecture hall, exam room and for more formal occasions such as graduation ceremonies.  Architectural features include kauri paneling and Oamaru Stone, a working fireplace and a magnificent stained glass window on the Hall’s north wall.    The Great Hall is now The Arts Centre’s most impressive performance and function space, and the perfect venue for concerts, lectures, special events, product launches, receptions, cocktail and dinner functions.  Features include stage lighting, a sound system, raked seating, wheelchair access and a vestibule. "
+  contactinfo_id: 8
+  general_note:
+  internal_note: "Postal Address: PO Box 845, Christchurch 8140, New Zealand."
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue8:
+  venue_id: 8
+  venue_name: "Wellington Town Hall"
+  venue_description: "In 1900 a competition was held for the design of the Town Hall to be built on the reclamation reserve at the foot of Cuba Street. The design of Joshua Charlesworth, under the nom de plume 'Commonwealth', was selected as the winning entry for its strongly drawn and well organised design in the classical Renaissance manner.  The foundation stone was laid by the Duke of Cornwall and York (later King George V) on 18 June 1901. Construction began in May 1902.  On Wednesday 7 December 1904 Mayor Aitken opened the Town Hall with a gold and greenstone key. A programme of events to celebrate the occasion was spread over four days. It involved the chorus and orchestra of the Wellington Musical union, various soloists, a choir of seven hundred children and a juvenile orchestra of 30 players.  The Wellington Town Hall has had strong ties with Wellington residents and their local body of power. As well as holding many events as part of the Wellington Convention Centre the Town Hall is still the office of the Mayor and city councillors, effectively becoming the centre from which the city is run. The hall's acoustics are internationally renowned, and it has housed thousands of concerts and events over the years, attracting significant visitors and entertainers.   The NZSO, Wellington Vector Orchestra, Chamber Music NZ and other groups regularly present concerts there. "
+  contactinfo_id: 9
+  general_note:
+  internal_note: "Home of the Wellington Vector Orchestra"
+  status_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1000:
+  venue_id: 1000
+  status_id: 1
+  venue_name: "Adam Concert Room, NZ School of Music Kelburn"
+  contactinfo_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1004:
+  venue_id: 1004
+  status_id: 1
+  venue_name: "Founders Theatre, Hamilton"
+  contactinfo_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1005:
+  venue_id: 1005
+  status_id: 1
+  venue_name: "Auckland Town Hall"
+  venue_description: "Auckland Town Hall was opened in 1911 and, after a $33 million restoration in 1997, it has been maintained in the elegance of its original Edwardian Baroque design. With its gracious surrounds, the Auckland Town Hall provides a spectacular setting for any event. With a 16-metre ceiling height, full theatre lighting and sound rigging and a majestic architectural design, Auckland Town Hall provides a sense of occasion for any event.\nIt is renowned for its excellent acoustics and the impressive Concert Chamber is a sought-after concert hall with the finest acoustics in the Southern Hemisphere. In recognition of its important civic role the building is open to the public every weekday between 9.00am and 5.00pm."
+  contactinfo_id: 11
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1008:
+  venue_id: 1008
+  status_id: 1
+  venue_name: "Dunedin Town Hall"
+  contactinfo_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1009:
+  venue_id: 1009
+  status_id: 1
+  venue_name: "Christchurch Town Hall"
+  contactinfo_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1010:
+  venue_id: 1010
+  status_id: 1
+  venue_name: "Michael Fowler Centre, Wellington"
+  contactinfo_id: 1
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+venue_1012:
+  venue_id: 1012
+  status_id: 1
+  venue_name: "Soundings Theatre, Te Papa, Wellington"
+  venue_description: "With seating for 328 people, the acoustically designed Soundings Theatre is a multi-function auditorium, suitable for orchestras, live dance and performance, seminars, debates, corporate launches, conventions, and television shows. It has a richness of feel and sound usually found only in concert chambers.\n\nThe high proscenium arch and deep sprung stage allow for a wide range of promotions, events, and live performances. In the auditorium, maximum flexibility is provided through a range of facilities, including ISDN links for video conferencing, a recording studio, video and data projection, an orchestra pit, stage extensions, and a cargo lift. Soundings Theatre is fully equipped with lighting, sound systems, rigging, and three-phase power outlets."
+  contactinfo_id: 10
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>

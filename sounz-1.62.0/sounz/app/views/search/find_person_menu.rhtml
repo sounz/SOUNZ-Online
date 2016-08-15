@@ -1,0 +1,22 @@
+<h1>Find Person</h1> 
+<form id="people_and_address">
+<table>
+	<tr><td>Name</td><td><%= text_field :person, :name, :limit => 20 %></td></tr>
+	<tr><td>Address</td><td><%= text_field :search, :person_address, :limit => 20 %></td></tr>
+</table>
+
+
+</form>
+    
+  <%=  observe_form "people_and_address",
+ :frequency => 0.5, 
+:update =>"search_results",
+:url => {:action => "search_for_person"}
+  %>  
+  
+  
+  <h2>Search Results</h2>
+  <div id="search_results">Results will appear here</div>
+  
+
+    

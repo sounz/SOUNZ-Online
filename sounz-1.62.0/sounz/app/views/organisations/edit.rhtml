@@ -1,0 +1,60 @@
+<% title 'Organisation Details for ' + @organisation.organisation_name %>
+<%=render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :edit} %>
+
+<%= error_messages_for 'organisation' %>
+<% form_tag :action => 'update', :id => @organisation do %>
+  <%= render :partial => 'organisation_details_form' %>
+  
+  <fieldset>
+  <legend> Organisation Roles</legend>
+    
+   <table>   
+    <% @organisation.organisation_roles_sorted(active_only=true).each do |r| %>
+     <tr>
+      <th>
+        <%= r.role_name%>
+      </th>
+      <td>
+        <%
+          if !r.person.blank?
+          person_name = r.person.full_name
+		  person_name = r.contributor_names if r.is_a_contributor? && !r.contributor_names.blank?
+		  
+		%>
+         - <strong><%= link_to person_name, :controller => 'people', :action => 'edit', :id => r.person %></strong>
+
+        <% elsif !r.organisation.blank? %>
+         - <%=r.organisation.organisation_name%>
+        <% end %>  
+
+	</td>
+      <td>
+        <% 
+           if r.role_id != Role.get_organisation_primary_role(@organisation.organisation_id).role_id 
+             link_name = "Role & Contact Info"
+           else 
+             link_name = "General Contact Info"
+           end 
+        %>
+        &nbsp;<%= link_to link_name, :controller => 'role_contactinfos', :action => 'edit', :id => r, :from => 'organisation' %> 
+        
+      </td>
+      <td>
+        <% if r.is_a_contributor?%>
+        &nbsp;<%= link_to "Contributor Info", :controller => 'roles', :action => 'contributor_details', :id => r %>
+        <%end%>
+      </td>
+     </tr>
+    
+    <% end %>
+   </table><br> 
+</fieldset>
+
+  <%= render :partial => 'other_info_form' %>
+
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false
+  #:delete_url => {:action => 'delete', :id => @organisation}, :delete_confirm => 'Are you sure you wish to delete this organisation?' 
+                                                                    } %>
+<% end %>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @organisation}%>

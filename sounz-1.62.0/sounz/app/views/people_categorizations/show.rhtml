@@ -1,0 +1,8 @@
+<% for column in PeopleCategorization.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @people_categorization.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @people_categorization %> |
+<%= link_to 'Back', :action => 'list' %>

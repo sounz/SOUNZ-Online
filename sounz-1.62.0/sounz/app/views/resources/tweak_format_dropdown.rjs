@@ -1,0 +1,2 @@
+page.replace_html :formatDropdown, :partial => "format_dropdown"
+page.visual_effect :highlight, :formatDropdown

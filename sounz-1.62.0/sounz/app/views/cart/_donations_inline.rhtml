@@ -1,0 +1,17 @@
+<% if ZENCART_ENABLED == true %>
+<%if @donations != nil%>
+<%for donation in @donations.sort{|a,b| a[1]<=>b[1]}%>
+<h4>Make a $<%=donation[0]%> donation:
+<%=link_to_remote( image_tag('/images/button-buy.gif'),{:update => "shopping_cart",
+                                              :url =>{ :controller => :cart, 
+                                                       :action => :add_product_to_cart, 
+                                                       :type=>'donation', 
+                                                       :method => 'sale', 
+                                                       :id => donation[1]}, 
+                           :loading => "alert('$"+donation[0]+" donation added to cart')"}, :class => 'public_button')%>
+</h4>
+<%
+end
+end
+end 
+%>

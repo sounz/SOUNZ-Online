@@ -1,0 +1,50 @@
+
+<ul>
+<% 
+for news_article in news_articles 
+link_name = news_article.headline 
+
+li_class = ''
+#li_class = 'class="current"' if selected_article == news_article
+%>
+
+<li <%= li_class%>>
+	<a name="<%='news_article_'+news_article.news_article_id.to_s%>" style="width: 0px; height: 0px;"></a>
+
+<div class="news-image">
+  <% if !news_article.news_article_attachments.blank? %>
+    <%=image_tag(news_article.news_article_attachments[0].media_item.public_filename(:thumb))
+  %>
+  <% else %>
+  &nbsp;
+  <% end %>
+</div>
+
+<div class="news-content">
+  <div class="section">
+    <h2>
+    <% with = "'year_created='"%>
+    <% with = "'year_created='+escape($('date_year_created').value)" if category.match('archived')%>
+    <%= link_to news_article.headline, :controller => 'news_articles', 
+                                              :action => 'show', 
+                                              :id => news_article.news_article_id,
+                                              :category => category 
+    %>
+    </h2>
+
+    <h3 class="news-date"><%= eBY_date(news_article.article_timestamp)%></h3>
+    <div class="news-body">
+      <%= strip_tags news_article.precis unless news_article.precis.blank? %>
+      <%= summary_of(strip_tags(news_article.content), 250) if news_article.precis.blank? && !news_article.content.blank?%>
+    </div>
+
+  </div>
+</div>
+
+</li>
+<% end %>
+</ul>
+
+<!--
+<%= link_to "RSS: Update me – latest news", {:controller => :rss_feeds, :action => :latest_news} %>
+-->

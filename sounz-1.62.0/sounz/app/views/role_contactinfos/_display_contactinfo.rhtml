@@ -1,0 +1,33 @@
+<% if !@contactinfo_type.blank?%>
+<!-- ROLE_CONTACTINFOS AND CONTACTINFOS DETAILS -->
+<fieldset>
+  <legend><%=h @contactinfo_type.capitalize %> Contact Info Details</legend>
+
+<% if !@default_contactinfo.blank? %>
+<% if !@role_contactinfo.role.organisation.blank?%>
+As this role has an associated organisation, every field of this contact info details default to
+appropriate organisation contact info field unless the check box next to the field is unchecked  
+<% else %>
+Every field of this contact info details default to appropriate contact info field of the 'Person'
+role unless the check box next to the field is unchecked
+<% end %>
+<% end %>
+
+<% form_tag :action => 'update_role_contactinfo', :id => @role_contactinfo.role_contactinfo_id do %>
+   
+  <%= hidden_field_tag 'role_contactinfo[contactinfo_type]', @role_contactinfo.contactinfo_type 
+  %>
+  
+  <%= render :partial => 'contactinfos/form', :locals => { :role_contactinfo => @role_contactinfo,
+                                                           :contactinfo => @contactinfo,
+                                                           :default_contactinfo => @default_contactinfo } %>
+
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>
+</fieldset>
+
+<!-- Saved Contact Lists of that contact info -->
+<%= render :partial => 'saved_contact_lists_list', :locals => { :role_contactinfo => @role_contactinfo } %>
+
+<% end %>

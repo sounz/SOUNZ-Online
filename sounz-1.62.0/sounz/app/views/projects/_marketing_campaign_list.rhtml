@@ -1,0 +1,28 @@
+<fieldset>
+<legend>Project Marketing Campaigns</legend>
+<table>
+<% for marketing_campaign in @project.marketing_campaigns %>
+
+<tr id="<%= marketing_campaign.marketing_campaign_id.to_s %>">
+<td>&nbsp;
+<% if !marketing_campaign.any_mailouts_sent? %>
+<%= link_to_remote "Delete", :url => { #:controller => 'marketing_campaigns', 
+                               :action => 'delete_campaign', :id => marketing_campaign.marketing_campaign_id }, 
+                               :confirm => 'Are you sure?', :complete => "new Effect.Fade('"+marketing_campaign.marketing_campaign_id.to_s+"')" %>
+<% end %>
+</td>
+<td>&nbsp;</td>
+<td>
+<strong>
+  <%= link_to marketing_campaign.campaign_name, { :controller => 'marketing_campaigns', :action => 'edit', :id => marketing_campaign } %>
+</strong>
+</span>
+</td>
+</tr>
+<% end %>
+</table>
+<br>
+<% if params[:action] != 'copy' %>
+   <%= link_to "New Marketing Campaign",  { :controller => 'marketing_campaigns', :action => 'new', :project => @project.project_id } %>
+<% end %>
+</fieldset>

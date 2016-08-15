@@ -1,0 +1,41 @@
+<h1>Contact Update Form Submissions</h1>
+
+<% if !params[:mode].blank? && params[:mode].match('show_all') %>
+<a href="/prov_contact_updates">Show current only</a>
+<% else %>
+<a href="/prov_contact_updates?mode=show_all">Show all</a>
+<% end %>
+
+<table>
+  <tr>
+    <th>Who</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Submitted</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Updated</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Status</th>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  
+<% for prov_contact_update in @prov_contact_updates %>
+  <tr>
+    <td><%=h Login.get_name(prov_contact_update.submitted_by) %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_contact_update.created_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_contact_update.updated_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%=h prov_contact_update.status.status_desc  %></td>
+    <td>&nbsp;&nbsp;</td> 
+    <td align="right" width="18%"><%= link_to 'Edit', edit_prov_contact_update_path(prov_contact_update) %>
+    &nbsp;&nbsp;
+    <%= link_to 'Delete', prov_contact_update_path(prov_contact_update), :confirm => 'Are you sure you want to delete this contact update form?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact Update form', new_prov_contact_update_path %>

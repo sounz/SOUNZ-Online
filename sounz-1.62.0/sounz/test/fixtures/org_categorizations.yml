@@ -1,0 +1,5 @@
+<% for i in 1..83 %>
+organisation_subcategory_<%= i %>:
+  organisation_id: <%= i %>
+  marketing_subcategory_id: <%= i % 7 + 1 %>
+<% end %>

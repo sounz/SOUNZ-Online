@@ -1,0 +1,11 @@
+FRBR:<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<%if object.people != nil%>
+<%for myPerson in object.people%>
+<b>(<A href="/contributors/show/<%=object.contributor_id%>"><%=myPerson.last_name%>,<%=myPerson.first_names%></a>)</b><br>
+<%end%>
+<%end%>
+<%if object.organisations != nil%>
+<%for myOrg in object.organisations%>
+<b><%=myOrg.organisation_name%></b><br>
+<%end%>
+<%end%>

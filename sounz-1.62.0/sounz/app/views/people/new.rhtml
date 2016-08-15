@@ -1,0 +1,14 @@
+<% title 'Create a New Person' %>
+<h1>Create a New Person</h1>
+
+<%= error_messages_for 'person' %>
+<%= error_messages_for 'role' %>
+<%= error_messages_for 'contactinfo' %>
+<%= error_messages_for 'role_contactinfo' %>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'person_details_form' %>
+  <%= render :partial => 'new_role_form' %>
+  <%= render :partial => 'other_info_form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>

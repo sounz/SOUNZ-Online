@@ -1,0 +1,9 @@
+<% if @country == nil %>
+All countries and regions will be searched for
+<% else %>
+  <% if @regions.size == 0 %>
+  No regions are stored for <%=h @country.country_name %>
+  <% else %>
+  <%= select('search_details', 'region_id', @regions.to_dropdown(:region_name), :prompt => 'All Regions') %>
+  <%end%>
+<%end%>

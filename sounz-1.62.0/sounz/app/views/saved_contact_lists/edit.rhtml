@@ -1,0 +1,38 @@
+<div align="right">
+<%= link_to "Copy this Saved List", { :action => 'copy', :id => @saved_contact_list.id }, {:title => "Create a copy of this saved contact list"}
+%>
+</div>
+
+<% title "Edit Saved Contact List - " + @saved_contact_list.list_name%>
+<fieldset>
+<legend>Saved Contact List Details</legend>
+
+<% form_tag :action => 'update', :id => @saved_contact_list.id  do 
+%>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => true, :delete_url => { :action => 'destroy', :id => @saved_contact_list }} %>
+<% end %>
+</fieldset>
+
+<div id="possibleNewContacts">
+<%=#render :partial => 'shared/possible_contacts_editable', :locals => { :search_contacts => @search_contacts, 
+#                                                                        :id => @saved_contact_list.id, 
+#                                                                        :existing_contacts => @existing_contacts }
+%>
+</div>
+
+<div id="contactsInList">
+<fieldset>
+<legend>Saved List Contacts</legend>
+<div id="existing_contacts">
+<%=render :partial => "existing_contacts_editable"%>
+</div>
+<div id="pagination">
+<%= render :partial => "shared/page_links_remote", :locals => { :paginator => @saved_list_contacts_pages, :params => {:url => { :action => :list_contacts, :id => @saved_contact_list.saved_contact_list_id} }  } unless @saved_list_contacts_pages.blank? %>
+</div>
+<%= link_to "Add New Contacts", 
+            { :controller => 'saved_contact_lists', :action => 'contactsSearch', :id => @saved_contact_list.id } 
+%>
+</fieldset>
+
+</div>

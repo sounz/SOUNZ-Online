@@ -1,0 +1,11 @@
+if @valid
+#  page.visual_effect :highlight, 'accessRightForm'
+  page.replace_html :accessRightForm, ''
+  page.replace_html :accessRightButton, :partial => 'new_form_button', :locals => {:parent_model_id => @parent_model_id}
+  page.insert_html :bottom, :accessRightsList, :partial => 'single_access_right', 
+          :locals => {:model_access_right => @model_access_right}
+  page.visual_effect :highlight, @dom_id
+else
+  page.visual_effect :shake, 'accessRightForm'
+  page.replace_html :accessRightErrors,  error_messages_for(:model_access_right)
+end

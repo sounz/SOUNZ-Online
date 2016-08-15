@@ -1,0 +1,37 @@
+<%= error_messages_for 'borrowed_item' %>
+  <%myItem=Item.find(@borrowed_item.item_id)%>
+  <%if myItem.manifestation_id != nil%>
+  <%myManifestation=Manifestation.find(myItem.manifestation_id)%>
+  <%=render :partial => '/shared/frbr/objects/brief/manifestation', :locals=>{:object => myManifestation}%>
+  <%elsif myItem.resource_id != nil%>
+  <%myResource=Resource.find(myItem.resource_id)%>
+  <%=render :partial => '/shared/frbr/objects/brief/resource', :locals => {:object => myResource}%>
+  <%else%>
+  <b>Malformed Item! No Manifestation or Resource ID present!</b>
+  <%end%>
+  <hr/>
+<!--[form:borrowed_item]-->
+<p><label for="borrowed_item_date_borrowed">Date borrowed</label><br/>
+<%= date_select 'borrowed_item', 'date_borrowed'  %></p>
+
+<p><label for="borrowed_item_date_due">Date due</label><br/>
+<%= date_select 'borrowed_item', 'date_due'  %></p>
+
+<!--<p><label for="borrowed_item_hired_out">Hired out</label><br/>-->
+<%=# select("borrowed_item", "hired_out", [['False',false],['True',true]] , :selected => @borrowed_item.hired_out) 
+%>
+<!--</p>-->
+
+<p><label for="borrowed_item_hire_cost">Hired cost</label><br/>
+<%=text_field 'borrowed_item','hire_cost'%>
+
+<!--<p><label for="borrowed_item_active">Active</label><br/>-->
+<%=# select("borrowed_item", "active", [['False',false],['True',true]] , :selected => @borrowed_item.active) 
+%><!--</p>
+<p><b>(Note: setting this to false will remove it from the list.)</b></p>-->
+
+<p><label for="borrowed_item_borrowing_note">Borrowing note</label><br/>
+<%= text_area 'borrowed_item', 'borrowing_note'  %></p>
+<%=hidden_field 'back', 'link', :value => @backlink%>
+<!--[eoform:borrowed_item]-->
+

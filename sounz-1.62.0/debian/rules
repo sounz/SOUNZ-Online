@@ -1,0 +1,134 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+package=sounz
+dt=debian/$(package)
+instroot=app/$(package)
+dataroot=data/$(package)/app
+
+# sounz-app
+package-app=sounz-app
+dt-app=debian/$(package-app)
+
+# sounz-frontend
+package-frontend=sounz-frontend
+dt-frontend=debian/$(package-frontend)
+
+# sounz-backend
+package-backend=sounz-backend
+dt-backend=debian/$(package-backend)
+
+clean:
+	dh_testdir
+	dh_testroot
+	debconf-updatepo
+	dh_clean 
+
+configure-stamp:
+	dh_testdir
+	# Add here commands to configure the package.
+	touch configure-stamp
+
+configure: configure-stamp
+
+build-stamp: configure
+	dh_testdir
+	# Add here commands to compile the package.
+	touch build-stamp
+
+build: build-stamp
+	dh_testdir
+	dh_clean -k
+	dh_installdirs
+
+install-sounz: build
+	install -d $(dt)/DEBIAN \
+		$(dt)/$(instroot) \
+		$(dt)/$(dataroot)
+	cp README $(dt)/$(instroot)
+	cp -a etc $(dt)
+	cp -a install $(dt)/$(instroot)
+	cp -a scripts $(dt)/$(instroot)
+	cp -a ssh-keys $(dt)/$(instroot)
+	rm -f $(dt)/etc/sounz/database.yml
+	rm -f $(dt)/etc/sounz/solr.yml
+	rm -rf $(dt)/etc/sounz/rsync
+
+install-sounz-app: build
+	install -d $(dt-app)/DEBIAN \
+		$(dt-app)/$(instroot) \
+		$(dt-app)/etc \
+		$(dt-app)/etc/sounz
+	cp -a sounz $(dt-app)/$(instroot)
+	cp -a bin $(dt-app)/$(instroot)
+	cp -a etc/sounz/rsync $(dt-app)/etc/sounz
+	cp etc/sounz/database.yml $(dt-app)/etc/sounz
+	cp etc/sounz/solr.yml $(dt-app)/etc/sounz
+	# these are all packaged in sounz-frontend
+	rm -rf $(dt-app)/$(instroot)/sounz/public/icons
+	rm -rf $(dt-app)/$(instroot)/sounz/public/images
+	rm -rf $(dt-app)/$(instroot)/sounz/public/includes
+	rm -rf $(dt-app)/$(instroot)/sounz/public/javascripts
+	rm -rf $(dt-app)/$(instroot)/sounz/public/stylesheets
+	rm -rf $(dt-app)/$(instroot)/sounz/public/swf
+
+install-sounz-frontend: build
+	install -d $(dt-frontend)/DEBIAN \
+		$(dt-frontend)/$(instroot) \
+		$(dt-frontend)/$(instroot)/sounz \
+		$(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/icons $(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/images $(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/includes $(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/javascripts $(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/stylesheets $(dt-frontend)/$(instroot)/sounz/public
+	cp -a sounz/public/swf $(dt-frontend)/$(instroot)/sounz/public
+	cp -a zencart $(dt-frontend)/$(instroot)
+
+install-sounz-backend: build
+	install -d $(dt-backend)/DEBIAN \
+		$(dt-backend)/$(instroot)
+	cp -a db $(dt-backend)/$(instroot)
+
+# Build architecture-independent files here.
+binary-indep: build install-sounz install-sounz-app install-sounz-frontend install-sounz-backend
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs ChangeLog
+	dh_installdocs
+#	dh_installexamples
+#	dh_install
+#	dh_installmenu
+	dh_installdebconf	
+	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+	dh_installinit --no-start --update-rcd-params="defaults 99 10"
+	dh_installcron
+#	dh_installinfo
+#	dh_installman debian/sounz.7
+	dh_link
+#	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_python
+#	dh_makeshlibs
+	dh_installdeb
+#	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch:
+# Nothing to do here.
+
+binary: binary-indep binary-arch
+.PHONY: build install-sounz install-sounz-app install-sounz-frontend install-sounz-backend clean binary-indep binary-arch binary configure

@@ -1,0 +1,109 @@
+<% content_for :page_title do %>
+Search Events
+<%end%>
+<%=render :partial => '/shared/tabs/finder_tabs', :locals => {:selected_tab => :events}%>
+<%if @error_message.blank?%>
+
+
+<h1>Search Events</h1>
+
+<!--
+<span class="searchLinks">
+<%if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+<div align="right"><%=link_to image_tag('/images/button-advancedsearch.gif', :alt => 'Advanced Search'), {:controller=>:advanced_finder,:action=>:event}, {:class => 'public_button'}%></div>
+<br>
+<% end %>
+</span>
+-->
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @results[:docs].length > 3 %>
+  <a href="#saveForm">Save Current Search</a>
+<% end %>
+
+
+      <div class="search-results-form">
+   		  <p class="instructions">Search for events or opportunities by typing a word or phrase in the box below or by selecting one or more categories from the list on the side.</p>
+
+        <form action="/finder/show/events">
+
+          <div class="search-form">
+            <fieldset>
+              <input type="text" name="query" id="query" size="30" class="text" value="<%=h @query %>" >
+            </fieldset>
+
+              <input type="submit" value="Search" alt="Search" id="submit" class="public_button">
+             <%= link_to 'Reset', {:controller => :finder, :action => :reset_event_search}, {:class => 'search-reset'} %>
+          </div>
+
+          <div class="search-type">
+            <h2>Events happening:</h2>
+            <ul>
+              <li><%= radio_button 'search_details', 'quicklink', 'today' %>Today</li>
+              <li><%= radio_button 'search_details', 'quicklink', 'week'%>Over the next week</li>
+              <li><%= radio_button 'search_details', 'quicklink', 'month'%>Over the next four weeks</li>
+            </ul>
+          </div>
+
+        </form>
+      </div>
+
+
+<!-- Result Details -->
+        <div class="search-result-details">
+          <ul>
+            <li class="result-count">
+                <%if ! (@query.blank? && !@quicklink_search)%>
+                  <%= @results[:docs].length > 0 ? pluralize(@results[:total], 'result') + ' for \'' + @query +'\'' : 'There were no results matching your request' %>
+                <%end%>
+            </li>
+            <li class="pagination">
+              <% if !@results[:docs].blank?%>
+                <%= render :partial => 'page_links', :locals => {:paginator => @paginator} %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+
+
+      <div id="liveResults" name="liveResults">
+        <%= render :partial => 'result', :collection => @results[:docs], :locals => {:quicklink_search => @quicklink_search} %>
+      </div>
+
+
+	    <% if !@results[:docs].blank?%>
+        <div class="search-result-details-bottom">
+          <ul>
+            <li class="pagination"><%= render :partial => 'page_links', :locals => {:paginator => @paginator} %></li>
+          </ul>
+        </div>
+      <% end %>
+
+
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && (!@query.blank? || @results[:docs].length > 0)%>
+<div id="saveForm"><%=render :partial => 'saved_searches/saved_search_form', :locals => {:search_type  => 'faceted_event_search'} %></div>
+<% end %>
+	
+
+<%content_for :facets do%>
+
+<div id='facetResults' class="block">  
+    <% if !@results[:docs].blank? %>
+        <h2 class="title">Narrow your results</h2>
+    <% else %>
+        <h2 class="title">Browse the events</h2>
+    <% end %>   
+<%=render :partial => 'facet_event_results' %>
+</div><!--/facetResults-->
+<%end%>
+
+<%else%>
+<%=@error_message%>
+<%end%>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') && !@query.blank?%>
+<div class="editLinks">
+<%= link_to "Create New Event", :controller => "events", :action => "new" %>
+</div>
+<%end%>

@@ -1,0 +1,15 @@
+<%if !@marketing_category.id.blank?%>
+<hr>
+<br>
+<h2>Parent Category: <%= @marketing_category.abbreviation %></h2>
+<table>
+<tr>
+<th><label for="marketing_category_abbreviation">Abbreviation</label></th>
+<td><span id="cat_abbrev"><%= @marketing_category.abbreviation %></span></td>
+</tr>
+<tr>
+<th><label for="marketing_category_description">Description</label></th>
+<td><span id="cat_desc"><%= @marketing_category.description  %></span></td>
+</tr>
+</table>
+<%end%>

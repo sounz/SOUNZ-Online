@@ -1,0 +1,2 @@
+page.replace_html 'selected_results', :partial => 'selected_contacts', :locals => {:contacts => @contacts, :already_selected => @already_selected}
+#page.replace_html 'contact_search_results', :partial => 'saved_contacts_search_table',  :locals => {:contacts => session[:contacts_from_search]}

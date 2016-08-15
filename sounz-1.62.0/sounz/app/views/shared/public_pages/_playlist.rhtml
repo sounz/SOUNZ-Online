@@ -1,0 +1,7 @@
+<h2>Media on Demand</h2>
+<%= player({:file => "/sounzmedia/" + work.work_id.to_s + ".xml", 
+			:playlistsize => 150, :playlist => 'bottom', 
+			:backcolor => "0x111111", :frontcolor => "0xdddddd", 
+			:lightcolor => "0x99cc00"}, 
+		   {:height => 500, :overstretch => false}
+)%> 

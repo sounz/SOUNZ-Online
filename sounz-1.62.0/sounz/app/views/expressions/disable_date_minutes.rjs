@@ -1,0 +1,10 @@
+page << "document.getElementById('expression_expression_start_time').value = '00:00';"
+
+#If the expression finish is not nil, reset the finish time field
+if !@expression.expression_finish.blank?
+page << "document.getElementById('expression_expression_finish_time').value = '00:00';"
+end
+#page << "document.getElementById('expression_expression_start_time').disabled = true;"
+#page << "document.getElementById('expression_expression_finish_time').disabled = true;"
+#page.visual_effect :highlight, 'expression_expression_start_time'
+#page.visual_effect :highlight, 'expression_expression_finish_time'

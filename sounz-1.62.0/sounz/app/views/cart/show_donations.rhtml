@@ -1,0 +1,3 @@
+<%for donation in @donations.keys%>
+<p>Make a $<%=donation%> donation: <%=link_to_remote( image_tag('/images/button-buy.gif'),:update => "shopping_cart",:url =>{ :controller => :cart,:action => :add_product_to_cart, :type=>'donation', :method => 'sale', :id => @donations[donation]})%></a></p>
+<%end%>

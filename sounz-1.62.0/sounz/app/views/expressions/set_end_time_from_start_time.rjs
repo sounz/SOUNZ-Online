@@ -1,0 +1,5 @@
+#Only execute if the end date exists
+if @execute_update
+  page.replace_html :expressionFinish,  :partial => 'date_finish_field', :locals => {:expression => @dummy_expression}
+  page.visual_effect :highlight, 'expressionFinish'
+end

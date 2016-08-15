@@ -1,0 +1,29 @@
+<h1>Editing privilege</h1>
+
+<% for member_type in @member_types%>
+<%=link_to 'Remove this member type', :controller => :privileges, :action => :removeMemberType, :id => @privilege,:member_type_id=> member_type.id%> <%=h member_type.member_type_desc%><br>
+<%end%>
+
+<% form_tag :action => 'addMemberType', :id => @privilege do %>
+<%= collection_select(:member_type, :member_type_id, 
+                          MemberType.find(:all, :order => 'member_type_desc'), :id, 
+                          :member_type_desc, {:prompt => "-- Select a member type --"},
+                          {:style => "width: 350px"}) %>
+
+<%= submit_tag 'Add this member type' %>                  
+
+<%end%>
+
+
+<% form_tag :action => 'update', :id => @privilege do %>
+
+
+  <%= render :partial => 'form' %>
+
+
+
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @privilege %> |
+<%= link_to 'Back', :action => 'list' %>

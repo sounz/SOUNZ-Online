@@ -1,0 +1,28 @@
+<h1>Listing manifestations</h1>
+
+<table>
+  <tr>
+<th>Title</th>
+  </tr>
+  
+<% for manifestation in @manifestations %>
+  <tr>
+    <td><%=h manifestation.manifestation_title %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => manifestation %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => manifestation %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => manifestation }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @manifestations %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to 'New manifestation', :action => 'new' %>
+</div>
+<% end %>

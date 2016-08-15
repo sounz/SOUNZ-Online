@@ -1,0 +1,59 @@
+<div class='section'>
+
+<h3 class='music'><%=object.work_title%>
+<%=object.duration_human_readable%>
+(<%=object.year_of_creation%> <%if !object.year_of_revision.blank?%>Revised:<%=object.year_of_revision%>  <%end%>)
+</h3>
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+  action = 'addToSelected'
+else
+  action = 'addToSelectedSession'
+end
+%>
+
+<%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => result.objectType, :object_id => result.objectData.frbr_id})%>
+<br>
+
+<table class="informationTable" width="100%">
+<tr><td>Description:</td><td><%=object.work_description%></td></tr>
+<tr><td>Instrumentation:</td><td><%=object.instrumentation%></td></tr>
+<tr><td></td><td></td></tr>
+</table>
+
+<br>
+
+
+Difficulty:<%=object.difficulty%><%if !object.difficulty_note.blank?%>&nbsp;<%=object.difficulty_note%><br><%end%>
+
+<%if !object.dedication_note.blank?%>Dedication:<%=object.dedication_note%><br><%end%>
+
+<hr>
+TODO: Awards and distinctions
+<hr>
+
+
+
+<hr>
+TODO: Performance history
+<hr>
+
+
+<%if !object.commissioned_note.blank?%>Commissioned:<%=object.commissioned_note%><br><%end%>
+<%if !object.contents_note.blank?%>Content:<%=object.contents_note%><br><%end%>
+
+
+
+<%!if object.iswc_code.blank?%>
+<%=object.iswc_code%>
+<%end%>
+
+<%=render :partial => 'shared/frbr/relationships/view', :locals => { :object => object}%>
+
+
+FIXME:Test
+<hr>
+<%for c in object.arrangers%>
+<%=c.role.contributor_names%><br>
+<%end%>
+<hr>
+

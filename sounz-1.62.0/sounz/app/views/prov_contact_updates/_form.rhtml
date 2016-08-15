@@ -1,0 +1,129 @@
+<p>
+    <b>Name:</b><%= f.text_field :name, :size => standard_edit_cols %>
+</p>
+<p>
+    <b>Email:</b><%= f.text_field :email, :size => standard_edit_cols  %>
+</p>
+
+<div id="contact_info"></div>
+<h2>Contact Information</h2>
+<p>
+Are you a new  <%= f.check_box :new_contact, :class => 'checkbox'%> or existing <%= f.check_box :existing_contact, :class => 'checkbox'%> contact?
+</p>
+
+<p><b>Preferred Nomen</b>	
+<table>
+<tr>
+	<td>None</td>
+	<td>Mr</td>
+	<td>Ms</td>
+	<td>Mrs</td>
+	<td>Mme</td>
+	<td>Dr</td>
+	<td>Prof</td>
+	<td>Lady</td>
+	<td>Sir</td>
+	<td>Dame</td>
+	<td>Miss</td>
+</tr>	
+
+<tr>
+
+	<td><%= f.check_box :nomen_none, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_mr, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_ms, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_mrs, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_mme, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_dr, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_prof, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_lady, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_sir, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_dame, :class => 'checkbox' %></td>
+	<td><%= f.check_box :nomen_miss, :class => 'checkbox'%></td>
+</tr>
+</table>
+<br/>
+</p>
+
+
+  <p>
+    <b>Job title</b><br>
+    <%= f.text_field :job_title, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Organisation</b><br>
+    <%= f.text_field :organisation, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Postal address</b><br>
+    <%= f.text_area :postal_address, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+  <p>
+    <b>Postcode</b><br>
+    <%= f.text_field :postcode, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Physical address (if different from above)</b><br>
+    <%= f.text_area :physical_address, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+  <p>
+    <b>Phone (Home)</b><br>
+    <%= f.text_field :phone_home, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Phone (Work)</b><br>
+    <%= f.text_field :phone_work, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Phone (Fax)</b><br>
+    <%= f.text_field :phone_fax, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Phone (Mobile)</b><br>
+    <%= f.text_field :phone_mobile, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Website</b><br>
+    <%= f.text_field :website, :size => standard_edit_cols  %>
+  </p>
+
+  <p>
+    <b>Preferred Communication Method</b>
+
+<table>
+<tr>
+<td>Email</td>
+<td>Phone</td>
+<td>Fax</td>
+<td>Post</td>
+</tr>	
+<tr>
+<td><%= f.check_box :pref_comm_method_email, :class => 'checkbox' %></td>
+<td><%= f.check_box :pref_comm_method_phone, :class => 'checkbox' %></td>
+<td><%= f.check_box :pref_comm_method_fax, :class => 'checkbox' %></td>
+<td><%= f.check_box :pref_comm_method_post, :class => 'checkbox' %></td>
+</tr>
+</table>
+
+
+
+  <p>
+    <b>Is there anything else you'd like to tell us?</b><br>
+    <%= f.text_area :other_info, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+<h2>Communications with SOUNZ</h2>
+<p>
+Please send me your monthly email newsletter <%= f.check_box :send_sounz_updates, :class => 'checkbox' %>
+</p>	
+
+<p>If you have any queries then please email <a href="mailto:info@sounz.org.nz">info@sounz.org.nz</a></p>

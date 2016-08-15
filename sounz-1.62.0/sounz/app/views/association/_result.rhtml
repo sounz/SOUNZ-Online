@@ -1,0 +1,12 @@
+<%
+#This syntax is sooooo YUK!
+js_for_fields = "'association_entity_b_type='+escape($('association_entity_b_type').value)"+
+"+ '&association_entity_a_type='+escape($('association_entity_a_type').value)"+
+"+ '&association_entity_b_id='+escape("+result.objectData.frbr_id.to_s+")"+
+"+ '&association_entity_a_id='+escape($('association_entity_a_id').value)"+
+"+ '&association_type_id='+escape($('association_type_id').value)"
+
+%>
+<span class="actionButton"><%= link_to_remote( "SELECT",:url =>{ :controller => :association, :action => :create_ajax, :type => result.objectType, :object_id => result.objectData.frbr_id}, :with => js_for_fields)%></span>&nbsp;
+<%=render :partial => 'shared/frbr/objects/brief/'+result.objectType, :locals => { :object => result.objectData}%>
+<hr>

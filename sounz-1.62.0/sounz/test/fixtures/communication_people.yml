@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%for i in 1..100%>
+cp_<%=i%>:
+  person_id: <%=1+(i/4)+3000%> #Thse need to be kept in sync with the person in the role, so use same maths
+  communication_id: <%=i%>
+  communication_person_id: <%=i%>
+<%end%>

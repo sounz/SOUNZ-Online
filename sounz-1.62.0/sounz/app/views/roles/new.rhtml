@@ -1,0 +1,37 @@
+
+<%if @from.match('person')%>
+<% title 'Create a New Role for ' + @person.full_name %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :roles} %>
+<%else%>
+<% title 'Create a New Role for ' + @organisation.organisation_name %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :roles} %>
+<%end%>
+
+<%if @from.match('person')%>
+<% form_tag :action => 'create', :id => @person do %>
+
+<fieldset>
+  <legend>Create a New Role for <%=h @person.full_name %></legend>
+  <%= render :partial => 'form' %>
+</fieldset>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>
+
+<%else%>
+<% form_tag :action => 'create', :id => @organisation do %>
+
+<fieldset>
+  <legend>Create a New Role for <%=h @organisation.organisation_name %></legend>
+  <%= render :partial => 'form' %>
+</fieldset>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>
+
+
+
+<%end%>
+<%= error_messages_for 'role' %>
+
+

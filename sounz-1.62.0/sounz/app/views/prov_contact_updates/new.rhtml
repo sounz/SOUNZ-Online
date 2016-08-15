@@ -1,0 +1,13 @@
+<h1>Update Contact Information:</h1>
+
+<%= error_messages_for :prov_contact_updates %>
+
+<% form_for(:prov_contact_updates, :url => prov_contact_updates_path) do |f| %>
+  
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+
+<% end %>

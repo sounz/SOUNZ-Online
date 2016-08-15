@@ -1,0 +1,69 @@
+<% form_tag :action => 'person_roles', :id => @person do%>
+
+<br>
+<% roles = @person.roles
+if !roles.blank?
+%>
+<!-- Roles list[begins] -->
+<% for role in roles %>
+
+<% delete_link = link_to_remote( "Delete", :url => { :controller => 'roles', :action => 'destroy_role_for_person', :id => role.id  }, :confirm => 'Are you sure?' )%>
+
+<p><div id="<%=generate_id(role)%>"><%= delete_link %>
+
+<%
+role_contactinfos = role.role_contactinfos
+contactinfo = nil
+email = ' - '
+
+if !role_contactinfos.blank?
+
+for role_ci in role_contactinfos
+if role_ci.preferred == true
+contactinfo = role_ci.contactinfo
+else
+if role_ci.preferred == false && contactinfo.blank?
+contactinfo = role_ci.contactinfo
+end
+end
+end 
+%>
+<a class="searchResultToolTip" href="/role_contactinfos/edit/<%= role_ci.role_contactinfo_id%>">
+<span>
+<%
+if contactinfo.email_1 != nil 
+email = contactinfo.email_1
+end %>
+Contact Info Type: <%= role_ci.contactinfo_type.capitalize %><br>
+Email: <%= email %><br>
+Address: 
+<% if contactinfo.blank? %>
+[no address]
+<%else %>
+<%=contactinfo.street%> -
+<% if !contactinfo.po_box.blank? %>
+<%= contactinfo.po_box %> -
+<% end %>
+<%=contactinfo.locality%> 
+
+<% if !contactinfo.region.blank? %>
+- <%=contactinfo.region.region_name%> -
+<% end %>
+<%=contactinfo.get_a_phone_number-%>
+<% end %><br>
+</span>
+
+<% else %>
+<a href="/role_contactinfos/new_role_contactinfo?role_id=<%=role.role_id%>">
+<% end %>
+
+<strong><%=role.to_string%></strong></a>
+<% if !role.organisation.blank? %>
+ - <%=link_to role.organisation.organisation_name, :controller => 'organisations', :action => 'edit', :id => role.organisation %>
+<% end %>
+</div></p>
+<% end %>
+<% end %>
+<% end %>
+<!-- Roles list[ends] -->
+<br>

@@ -1,0 +1,3 @@
+<%= link_to_remote( '<span class="actionButton">SELECT AS EVENT</span>',:url =>{ :action => :assignEvent, :type => event_result.objectType, :object_id => event_result.objectData.frbr_id})%>&nbsp;
+<%=render :partial => 'shared/frbr/objects/brief/'+event_result.objectType, :locals => { :object => event_result.objectData}%>
+<hr>

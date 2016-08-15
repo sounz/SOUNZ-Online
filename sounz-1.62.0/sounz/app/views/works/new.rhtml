@@ -1,0 +1,15 @@
+<h1>New work</h1>
+<%= render :partial => 'composer_form'%>
+<%if @composers.length > 0%>
+<div id="mainWorkForm">
+<%else%>
+<div id="mainWorkForm" style="display:none;">
+<%end%>
+<div id="testing">
+	<% form_tag :action => 'create' do %>
+	  <%= render :partial => 'form' %>
+	  <%= submit_tag "Create" %>
+	<% end %>
+
+</div>
+

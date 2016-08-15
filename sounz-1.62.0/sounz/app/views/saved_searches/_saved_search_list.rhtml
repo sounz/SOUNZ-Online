@@ -1,0 +1,22 @@
+<%if get_user() == nil%>
+Login to access saved searches
+<%else%>
+<%logger.info "USER: #{get_user()}"%> 
+<%searches = SavedSearch.find(:all, :conditions => ['saved_by_login_id=?' ,get_user().id])
+if !searches.blank?%>
+    <ul>
+	<%for object in searches%>
+    	<%#ensure we dont display unwanted searches%>
+    	<%if object.search_type=~/work|contributor|man_res|event|crm|faceted|expression/%>
+    	<li><%= link_to_remote( image_tag("/images/icon_minus.png", :alt => 'Remove from selected results'),:update => "savedSearches",:url =>{ :controller => :saved_searches, :action => :delete_search_ajax, :id => object.id})%>&nbsp;<%= link_to h(object.search_name), :controller => 'saved_searches', :action => 'do_search', :id=>object.id%></li>
+    	<% else %>
+    	<%#do nothing%>
+    	<%end%>
+	<%end%>
+    </ul>
+<%else%>
+<div class="indent">
+You have no saved searches.
+</div>
+<%end%>
+<%end%>

@@ -1,0 +1,21 @@
+<%if services != nil%>
+<%for service in services%>
+<p><h4><%=service.sounz_service_name%></h4> (<%=number_to_currency(service.sounz_service_price)%>)
+
+<% if ZENCART_ENABLED == true %>
+: 
+<%=link_to_remote( image_tag('/images/button-buy.gif'), {:update => "shopping_cart",
+                                                   :url =>{ :controller => :cart, 
+                                                            :action => :add_product_to_cart, 
+                                                            :type=>'service', 
+                                                            :method => 'sale', 
+                                                            :id => service.sounz_service_id
+                                                           }, 
+               :loading => "alert('"+escape_javascript(service.sounz_service_name)+" added to cart')"}, :class => 'public_button')
+   %>
+
+<% end %>
+
+<br/><b>Details: </b><%=service.sounz_service_description%></p>
+<%end%>
+<%end%>

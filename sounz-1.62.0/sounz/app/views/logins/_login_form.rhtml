@@ -1,0 +1,32 @@
+<%= error_messages_for 'login' %>
+
+              
+<!--[form:login]-->
+<p><label for="login_username">Member Type</label><br/>
+<%= collection_select(:member_type, :member_type_id, 
+                          MemberType.find(:all, :conditions => ['member_type_desc NOT ILIKE ? AND member_type_desc NOT ILIKE ?', '%library member%', '%online member%'],
+                          :order => 'member_type_desc'), :id, 
+                          :member_type_desc, {:prompt => "-- Select a member type --"},
+                          {:style => "width: 350px"}) %></p>
+          
+<p><label for="login_username">Username</label><br>
+<%= text_field 'ent_login', 'username'  %></p>
+
+<p><label for="login_password">Password</label><br>
+<%= password_field 'ent_login', 'password'  %></p>
+
+<p><label for="login_password_forever">Password forever</label><br>
+<select id="ent_login_password_forever" name="login[password_forever]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="login_password_valid_until">Password valid until</label><br>
+
+<%= date_field_with_time_allowing_blank(date=nil, 'ent_login', 'password_valid_until') %></p>
+
+<p><label for="login_locked">Locked</label><br>
+<select id="ent_login_locked" name="login[locked]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="login_enabled">Enabled</label><br>
+<select id="ent_login_enabled" name="login[enabled]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+
+<!--[eoform:login]-->

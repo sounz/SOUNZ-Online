@@ -1,0 +1,21 @@
+
+<% 
+disabled = nil 
+disabled = 'disabled' unless @campaign_mailout.mailout_type == 'e' 
+%>
+<th><label>Mailout Method</label></th>
+<td>
+
+<table>
+<tr>
+<td><%= radio_button_tag('post', 'campaign_mailout[blind_send]', @campaign_mailout.blind_send, { :disabled => disabled }) %>
+<label for="campaign_mailout_blind_send">Blind send</label>
+</td>
+<td>
+<%= radio_button_tag('post', 'campaign_mailout[mail_merge]', @campaign_mailout.mail_merge) %>
+<label for="campaign_mailout_mail_merge">Mail merge</label>
+</td>
+</tr>
+</table>
+
+</td>

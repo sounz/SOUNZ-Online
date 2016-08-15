@@ -1,0 +1,79 @@
+<% content_for :page_title do %>
+<div id='long'>Search Borrowed Items</div>
+<%end%>
+
+<% title 'Search Borrowed Items' %>
+
+<h2>Search Borrowed Items</h2> 
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_borrowed_items, :action => :index, :from => 'reset_search'}, {:class => 'public_button'} %>
+
+<%= form_remote_tag :url => {:action => :find_borrowed_items},
+  :update => 'search_results',
+  :id => "borrowed_items_search_form", 
+  :before => "Element.show('spinner')",
+  :complete => "Element.hide('spinner')"
+%>
+<table>
+  <tr>
+    <th><label for="search_item_title">Item title</th>
+    <td><%= text_field :search, :item_title, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :item_title_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_borrower_login">Borrower login</label></th>
+    <td colspan="2"><%= text_field :search, :borrower_login, :size => standard_edit_cols, :class => 'text' %></td>
+  </tr>
+  <tr>
+    <th><label for="search_borrower_name">Borrower name</label></th>
+    <td colspan="2"><%= text_field :search, :borrower_name, :size => standard_edit_cols, :class => 'text' %></td>
+  </tr>
+  <tr>
+    <th><label for="search_borrowing_note">Borrowing note</label></th>
+    <td><%= text_field :search, :borrowing_note, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :borrowing_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_date_borrowed">Date borrowed</label></th>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :date_borrowed_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :date_borrowed_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_date_due">Date due</label></th>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :date_due_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :date_due_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_status">Status</label></th>
+    <td colspan="2"><%= select 'search', 'status', BorrowedItem.statuses, :include_blank => "-- Select a status --" %></td>
+  </tr>
+  
+  <tr><td colspan="3">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_borrowed_items, :action => :index, :from => 'reset_search'}, {:class => 'public_button'} %></td>
+     <td colspan="2" align="right"> <input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+  
+</table>
+
+</form>
+  
+<div id="search_results"></div>
+<%= render :partial => 'shared/spinner' %>
+
+<%= render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :borrowed_items_search} %>
+
+</form>
+
+

@@ -1,0 +1,2 @@
+page.replace_html 'composerList', :partial => 'composers_found'
+page.visual_effect :highlight, 'composerList'

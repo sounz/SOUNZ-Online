@@ -1,0 +1,26 @@
+<%
+project_team_emails = get_test_email_recipients(campaign_mailout)
+current_user_emails = Login.find(get_user.login_id).get_user_emails 
+test_emails = current_user_emails.merge(project_team_emails)
+%>
+<% if !test_emails.blank?%>
+<fieldset>
+<legend>Test Email</legend>
+<div id="feedback_message" align="center" style="font-weight: bold;"></div>
+<table>
+<tr>
+<th>Test email</th>
+<td><%= select 'test_email', 'email_address', test_emails.sort, :include_blank => '-- Select an email to send a test to --' %>
+<td>
+<span class="actionButton"><%= link_to_remote "Send Test Email", :url => {:controller => 'campaign_mailouts', 
+                                                                 :action => 'send_test_email', 
+                                                                 :id => campaign_mailout },
+                                          :with => "'email_address='+escape($('test_email_email_address').value)",
+                                          :update => :feedback_message
+%>
+</span>
+</td>
+</tr>
+</table>
+</fieldset>
+<% end %>

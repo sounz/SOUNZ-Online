@@ -1,0 +1,25 @@
+<% content_for :page_title do %>
+SOUNZ News
+<%end%>
+<h1>News</h1>
+	
+<table>
+  <tr>
+  <th>Event Title</th>
+  <th>General note</th>
+  <th>Event Start</th>
+  <th>Event Finish</th>
+  </tr>
+  
+<% for event in @events %>
+  <tr>
+  <td><%= link_to event.event_title, :action => 'show', :id => event %></td>
+  <td><%=event.general_note%></td>
+  <td><%=event.event_start%></td>
+  <td><%=event.event_finish%></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @events  %>

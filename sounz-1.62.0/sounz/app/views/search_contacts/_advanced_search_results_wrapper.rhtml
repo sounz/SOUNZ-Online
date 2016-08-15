@@ -1,0 +1,101 @@
+<!-- hr only for developers' sanity, can be removed when final styling is applied :) -->
+<hr style="margin: 1em 0; border: 1px solid #ccc;"/>
+<%= render :partial => 'saved_searches/saved_search_form', :locals => { :search_type => 'advanced_crm_contacts' }%>
+
+<!-- hr only for developers' sanity, can be removed when final styling is applied :) -->
+<hr style="margin: 1em 0; border: 1px solid #ccc;"/>
+<h2>Search Results</h2>
+<% if flash[:search_error] != nil %>
+  <%= flash[:search_error] %>
+<% else %>
+  <% if @data[:results][:total] > 0 %>
+    Your search returned <%= pluralize(@data[:results][:total], 'result') %>
+  
+
+    <%=
+    search_parts = {}
+    params[:search].each_pair do |k,v|
+      search_parts['search[' + k.to_s + ']'] = v.to_s
+    end
+    search_url = search_parts
+
+    render :partial => 'page_links_remote',
+      :locals => {
+        :paginator => @data[:paginator],
+        :params => {
+          :url => search_url,
+          #{
+          #  :controller => 'search_contacts',
+          #  :action => 'find_contacts',
+          #  # Here, need to add all search parameters..
+          #  'search[person]' => @data[:person_query],
+          #  'search[organisation]' => @data[:organisation_query],
+          #},
+          :update => 'search_results'
+        }
+      } %>
+    <%= form_remote_tag :url => {:action => :add_contacts_to_selection, :from => 'advanced' },
+                        :html => { :id => 'saved_contacts_search' } %>
+    <table width="100%">
+      <tr>
+        <td colspan="2" align="right" width="90%">
+           <%= selectAllNone('search_results')%>
+        </td>
+        <td valign="top" width="10%">
+         <%= submit_tag "Select" %>
+        </td>
+      </tr>
+      
+      <% for contact in @data[:results][:docs] %>
+      <tr  id="<%= 'found_' + generate_id(contact) %>">
+        <td>
+          
+          <%= render :partial => 'shared/selected_contacts_editable', :locals => { :contact => contact, :existing_contacts => @already_selected }
+          %>
+          
+        </td>
+      </tr>
+      <% end %>
+      <!--
+      <tr>
+        <td colspan="2" align="right" width="90%">
+          <%= selectAllNone('search_results')%>
+        </td>
+        <td valign="top" width="10%">
+         <%= submit_tag "Select" %>
+        </td>
+      </tr>-->
+    </table><br>
+	</form>
+  <% else %>
+  No results found
+  <% end %>
+    <%=
+    search_parts = {}
+    params[:search].each_pair do |k,v|
+      search_parts['search[' + k.to_s + ']'] = v.to_s
+    end
+    search_url = search_parts
+
+    render :partial => 'page_links_remote',
+      :locals => {
+        :paginator => @data[:paginator],
+        :params => {
+          :url => search_url,
+          #{
+          #  :controller => 'search_contacts',
+          #  :action => 'find_contacts',
+          #  # Here, need to add all search parameters..
+          #  'search[person]' => @data[:person_query],
+          #  'search[organisation]' => @data[:organisation_query],
+          #},
+          :update => 'search_results'
+        }
+      } %>
+  
+  <strong><%= link_to "Create New Person", { :controller => 'people', :action => 'new' } %></strong>&nbsp;&nbsp;
+  
+  <strong><%= link_to "Create New Organisation", { :controller => 'organisations', :action => 'new' } %></strong>
+  
+  
+<% end %>

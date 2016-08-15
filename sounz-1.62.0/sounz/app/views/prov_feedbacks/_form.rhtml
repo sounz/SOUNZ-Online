@@ -1,0 +1,103 @@
+<table>
+  <tr>
+    <th colspan="2">How often do you visit the SOUNZ website?</th>
+  </tr>
+  <tr>
+    <td>Daily</td><td align="right"><%= f.check_box :visit_daily, :class => 'checkbox' %></td>
+  </tr>
+  <tr>
+    <td>Weekly</td><td align="right"><%= f.check_box :visit_weekly, :class => 'checkbox' %></td>
+  </tr>
+  <tr>
+    <td>Monthly</td><td align="right"><%= f.check_box :visit_monthly, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>As needed</td><td align="right"><%= f.check_box :visit_as_needed, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr><td colspan="2">&nbsp;</td></tr>
+  
+  <tr>
+    <th colspan="2">In what capacity do you use SOUNZ services</th>   
+  </tr>
+  
+  <tr>
+    <td colspan="2"><span class="instruction">(Choose as many as appropriate)</span></td>
+  </tr>
+  
+  <tr>
+    <td>Educator</td><td align="right"><%= f.check_box :use_educator, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Student</td><td align="right"><%= f.check_box :use_student, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Performer</td><td align="right"><%= f.check_box :use_performer, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Composer</td><td align="right"><%= f.check_box :use_composer, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Conductor</td><td align="right"><%= f.check_box :use_conductor, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Arts Manager</td><td align="right"><%= f.check_box :use_arts_mgr, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Customer</td><td align="right"><%= f.check_box :use_customer, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Member</td><td align="right"><%= f.check_box :use_member, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Retailer</td><td align="right"><%= f.check_box :use_retailer, :class => 'checkbox' %></td>
+  </tr>
+
+  <tr>
+    <td>Other</td><td align="right"><%= f.check_box :use_other, :class => 'checkbox' %></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td colspan="2"><b>Were you able to find what you were looking for?</b>&nbsp;&nbsp; <%= f.check_box :find_what %> <span class="instruction">(please tick if 'yes')</span></td>
+  </tr>
+
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <th colspan="2">How can we improve:</th>
+  </tr>
+  <tr>
+    <td colspan="2">our website<br>
+    <%= f.text_area :how_improve_website, :rows => 4, :cols => 70 %></td>
+  </tr>
+  <tr>
+    <td colspan="2">our services<br>
+    <%= f.text_area :how_improve_services, :rows => 4, :cols => 70 %></td>
+  </tr>
+  <tr>
+    <td colspan="2">our resources<br>
+    <%= f.text_area :how_improve_resources, :rows => 4, :cols => 70 %>
+    </td>   
+  </tr>
+</table>
+<br>
+<br>
+
+
+  <p>
+    <b>Any other comments?</b><br>
+    <%= f.text_area :comments, :rows => 4, :cols => 70 %>
+  </p>
+
+  <p>
+    If you would like us to respond to your feedback, please include a name, contact address or phone number here<br>
+    <%= f.text_area :respond_contact, :rows => 4, :cols => 70  %>
+  </p>

@@ -1,0 +1,32 @@
+
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+list1:
+  saved_contact_list_id: 1
+  list_name: Sounz News
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+list2:
+  saved_contact_list_id: 2
+  list_name: Sounz Events
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+list3:
+  saved_contact_list_id: 3
+  list_name: Sounz New Music
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+list4:
+  saved_contact_list_id: 4
+  list_name: Sounz Classical
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>

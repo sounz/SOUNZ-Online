@@ -1,0 +1,11 @@
+<%= form_tag :action => :search_news %>
+  <div class="search-form">
+    <%= hidden_field :search, :category, :value => @category %>
+    <fieldset>
+      <%= text_field :search, :search_term, :size => standard_edit_cols, :class => 'text', :id => 'query', :value => @search_term %>
+    </fieldset>
+    <input type="submit" value="Search" alt="Search" id="submit" class="public_button">
+    <!--<%= image_submit_tag('button-search.gif', { :class => "public_button" }) %>-->
+  </div>
+</form>
+<p class="instructions">Search our archive of news stories by typing a word or phrase in the box above or browse by year (below).</p>

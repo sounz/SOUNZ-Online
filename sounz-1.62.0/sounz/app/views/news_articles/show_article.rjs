@@ -1,0 +1,4 @@
+page.replace_html 'articles_list', :partial => 'articles_list', :locals => { :news_articles    => @news_articles,
+                                                                             :selected_article => @news_article,
+                                                                             :category         => @category }
+page.replace_html 'full_display', :partial => 'show_full_article', :locals => {:news_article  => @news_article }

@@ -1,0 +1,17 @@
+<div id="header_search">
+  <% form_tag({:controller => :finder, :action => :show, :id => nil}, {:method => :get}) do %>
+  <fieldset>
+    <input type="text" class="text" id="search" name="query" />
+    <select id="id" name="id">
+      <option value="works">MUSIC</option>
+      <option value="sounzmedia">MEDIA ON DEMAND</option>
+      <option value="people">PEOPLE</option>
+      <option value="events">EVENTS</option>
+    </select>
+  </fieldset>
+  <input type="submit" id="submit" name="op" value="Search" class="search-submit"/>
+  <% end %>
+  <div class="advanced-search">
+    <a href="/finder/show/works">Browse the Catalogue</a> or use the <a href="/advanced_finder/sonline_music">Advanced Search</a> for more options
+  </div>
+</div>

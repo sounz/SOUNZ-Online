@@ -1,0 +1,10 @@
+<b>Assigned Category</b><p/>
+<hr>
+<%
+if @main_category != nil%>
+<%=hidden_field "work", "work_subcategory_id", :value => @main_category.work_subcategory_id %>
+<%link_to_remote("-",:update => 'subcategories',:url=>{:action => 'removeSubcategory', :subcategory_id=>@main_category.id})%> <%=@main_category.work_subcategory_desc%><br>
+<%else%>
+No category assigned
+<%end%>
+<hr>

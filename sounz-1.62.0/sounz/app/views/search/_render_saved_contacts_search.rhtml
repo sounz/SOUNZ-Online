@@ -1,0 +1,26 @@
+<h1>Search Results</h1>
+<%if flash[:search_error] != nil%>
+<%=flash[:search_error]%>
+<%else%>
+<%=render :partial => "search_person_query", 
+:locals => {:person_query => @person_query, :thing_verb => "working for", :thing_query => @org_query} %>
+<%end%>
+
+<%= form_remote_tag :url => {:action => :add_contacts_to_selection },
+                    :html => { :id => 'saved_contacts_search' }
+%>
+
+<table width="100%">
+  <tr>
+   <td valign="top">
+
+<div id="contributor_search_results">
+<%=render :partial => 'saved_contacts_search_table', :locals => {:contacts => contacts}%>
+</div>
+  </td>
+ </tr>
+</table>
+</form>
+
+
+

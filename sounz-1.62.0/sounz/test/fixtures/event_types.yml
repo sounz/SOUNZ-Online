@@ -1,0 +1,59 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+event_type_1:
+  event_type_id: 1
+  event_type_desc: Concert
+event_type_2:
+  event_type_id: 2
+  event_type_desc: Seminar
+event_type_3:
+  event_type_id: 3
+  event_type_desc: Conference
+event_type_4:
+  event_type_id: 4
+  event_type_desc: Film
+event_type_5:
+  event_type_id: 5
+  event_type_desc: Festival
+event_type_6:
+  event_type_id: 6
+  event_type_desc: Exhibition/Installation
+event_type_7:
+  event_type_id: 7
+  event_type_desc: Workshop/Reading
+event_type_8:
+  event_type_id: 8
+  event_type_desc: Dance Performance
+event_type_9:
+  event_type_id: 9
+  event_type_desc: Theatre Performance
+event_type_10:
+  event_type_id: 10
+  event_type_desc: Broadcast
+event_type_11:
+  event_type_id: 11
+  event_type_desc: Tour
+event_type_12:
+  event_type_id: 12
+  event_type_desc: Launch
+event_type_13:
+  event_type_id: 13
+  event_type_desc: Opportunity
+event_type_14:
+  event_type_id: 14
+  event_type_desc: Pre-concert Talk
+event_type_15:
+  event_type_id: 15
+  event_type_desc: Open Rehearsal
+event_type_16:
+  event_type_id: 16
+  event_type_desc: Season
+event_type_17:
+  event_type_id: 17    
+  event_type_desc: Opera/Musical
+event_type_18:
+  event_type_id: 18    
+  event_type_desc: Ceremonial
+
+
+  
+

@@ -1,0 +1,7 @@
+<p/>Format:<br>
+<%if !@manifestation.manifestation_type.blank?%>
+ <%= select("manifestation", "format_id", @formats.to_dropdown('format_desc'),
+:prompt => "-- Please select a format --") %>
+<%else%>
+<i>Please select a manifestation type - the available formats will appear here</i>
+<%end%>

@@ -1,0 +1,2 @@
+<li id="ar_<%=generate_id(model_access_right)%>"><span class="actionButton"><%= link_to_remote "Remove", :confirm => 'Are you sure you wish to delete this access right?', :url => {:controller => :access_right, :action => :remove, :id => generate_id(model_access_right)}%></span>
+<%=AccessRightHelper.model_access_right_to_string(model_access_right)%></li>

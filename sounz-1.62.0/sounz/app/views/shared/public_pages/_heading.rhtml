@@ -1,0 +1,121 @@
+<%
+#This expects the following to be passed through
+#attachments => a list of attachment objects, grab the main ones
+#			:main_internal_heading => object.known_as_public,
+#			:subheading => nil,
+#			:link => nil,
+#			:text => nil
+
+#do some maths to figure out where to put the background fern image
+
+logger.debug "ATTACHMENTS ARE NIL?  #{attachments == nil}"
+
+
+main_attachments = AttachmentHelper.attachments_of_type(attachments, AttachmentType::MAIN_IMAGE)
+
+#Only use first logo if available
+logos = AttachmentHelper.attachments_of_type(attachments, AttachmentType::LOGO)
+logo = nil
+logo = logos[0] if !logos.blank?
+
+
+
+media_item = main_attachments[0].media_item if main_attachments.length > 0
+photo_caption = nil
+has_media_item = (!media_item.blank?) && !(media_item.width == nil)
+bg_offset = -139
+text_offset = 0
+
+image_width = 0
+image_height = 0
+if has_media_item
+	image_width = media_item.width
+	image_height = media_item.height
+	width_135 = (image_width * 135) / image_height
+	bg_offset = width_135-117 #discovered by experimenting
+	text_offset = width_135
+#	text << "w,h=#{image_width}, #{image_height} w135 = #{width_135}"
+	content_width = 470-width_135
+	
+	#How much space for the internal section
+	internal_text_width = content_width
+	internal_text_width = content_width - 100 if !logo.blank? 
+	photo_caption = media_item.caption
+end
+-%>
+
+<!-- Add to Selected -->
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+  action = 'addToSelected'
+else
+  action = 'addToSelectedSession'
+end
+%>
+<div class="add-wishlist">
+<%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist', :update => "selectedResults", :url =>{ :controller => :finder,:action => action, :type => object.class.to_s.tableize.singularize, :object_id => object.frbr_id})%>
+</div>
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<!-- Composer Details Area -->
+
+<div class="specific-details">
+
+	<%if has_media_item%>
+	  <img src="<%=media_item.public_filename(:normal)%>" alt="Main picture for" class="composer-photo" style="height: auto; width:90px"/>
+    <ul>
+      <li><h2><%=main_internal_heading%></h2></li>
+      <% if object.respond_to?("role") %>
+			  <li><%=object.year_to_string %></li>
+			<% end %>
+			<li><%status = object.composer_status_as_public_site_string if object.respond_to?("role")
+if !status.blank?%><%=status%><%end%></li>
+      <%if !links.blank? 
+				for link in links %>
+				<li><a rel='external' onclick="window.open('<%= format_link(link)%>'); return false" href='<%=format_link(link)%>' title='<%=link%>'>
+                <%=link%></a></li>
+                <% end %>
+            <% end %>
+        <%if !subheading.blank? %>
+        <li><%= subheading %><li>
+        <% end %>
+    </ul>
+    
+  <% else %>
+    <h2><%=main_internal_heading%></h2>
+    <ul class="detail-list">
+      <% if object.respond_to?("role") %>
+			  <li><%=object.year_to_string %></li>
+			<% end %>
+			<li><%status = object.composer_status_as_public_site_string if object.respond_to?("role")
+if !status.blank?%><%=status%><%end%></li>
+      <%if !links.blank? 
+				for link in links %>
+				<li><a rel='external' onclick="window.open('<%= format_link(link)%>'); return false" href='<%=format_link(link)%>' title='<%=link%>'>
+                <%=link%></a></li>
+                <% end %>
+            <% end %>
+
+        <%if !subheading.blank? %>
+        <li><%= subheading %><li>
+        <% end %>
+    </ul>
+	<%end%>
+
+
+<!-- Contributor Logo -->
+  <% if !logo.blank? %>
+	  <div class="contributorLogoHeading">
+      <%=AttachmentHelper.render_image(logo, :logo, "Test", :thumb)%>
+    </div>
+  <% end %>
+            
+   
+            
+</div>
+
+<!--<%if !photo_caption.blank?%><p class='photo'><%=photo_caption%></p><%end%>-->
+
+<%if !text.blank?%>
+  <div class="specific-text"><%= text %></div>
+<%end%>

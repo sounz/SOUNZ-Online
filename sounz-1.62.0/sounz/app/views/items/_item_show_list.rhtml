@@ -1,0 +1,14 @@
+<h2>Library Items</h2>
+<table>
+<% manifestation.items.each do |item| %>
+<tr>
+  <td><%= item.physical_description %></td>
+  <td><%if item.out_on_loan_or_hire%>
+        <span style="color:red">Borrowed</span>
+      <%else%>
+        <span style="color:green">Available</span>
+      <%end%>
+  </td>
+</tr>
+<% end %>
+</table>

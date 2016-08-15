@@ -1,0 +1,7 @@
+<img src="/icons/concept.jpg" alt="Concept Icon"/>
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<h4 class="frbrSearchResult"><a href="/concepts/show/<%=object.concept_id%>"><%=object.concept_name%></a></h4>
+	
+<b>Type:</b>&nbsp;<%=object.concept_type.concept_type_desc%>
+<%=convert_to_html(object.concept_description)%>

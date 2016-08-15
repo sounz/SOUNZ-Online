@@ -1,0 +1,2 @@
+page.replace_html @dom_id, :partial => 'items/update_item_form', :locals => { :item => @item, :entity => @entity }
+page.visual_effect :highlight, @dom_id

@@ -1,0 +1,10 @@
+<h1>Content Page Error</h1>
+<div class="error">
+Unable to find page of name <%=@name%>	
+</div>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT' )%>
+<div class="editLinks">
+<%= link_to 'Create content page "'+@name+'"', :action => 'new_with_name', :id => @name %>
+</div>
+<%end%>

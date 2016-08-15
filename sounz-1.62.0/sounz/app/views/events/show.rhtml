@@ -1,0 +1,11 @@
+<%=main_tabs(selected = :events)%>
+
+<%if @event.is_opportunity?%>
+<%=start_of_content(@event, "Opportunity")%>
+<%=render :partial => '/shared/frbr/objects/full/event/opportunity', :locals => {:object => @event}%>
+<%else%>
+<%=start_of_content(@event, "Event")%>
+<%=render :partial => '/shared/frbr/objects/full/event', :locals => {:object => @event}%>
+<%end%>
+<%=end_of_content(@contributor)%>
+

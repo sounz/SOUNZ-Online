@@ -1,0 +1,224 @@
+
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+event_1:
+  #venue_id: 1000
+  event_id: 1
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2000
+  event_start: 2007-05-25 13:10
+  event_finish: 2007-05-25 14:00
+  event_title: "Lunchtime Concert of New Zealand Piano Music"
+  general_note: "Ex-pat pianist Stephen De Pledge has commissioned a series of Landscape Preludes from New Zealand composers. In this concert he plays several of these and other works, including the world premiere of Michael Norris' Machine Noise and the second performance of Cresswell's Mezzotinto following its premiere the night before."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_2:
+  #venue_id: 3
+  event_id: 2
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2001
+  event_start: 2007-05-24 18:00
+  event_finish: 2007-05-24 19:30
+  event_title: "Meet the Composer "
+  general_note: "Current NZSM Composer-in-Residence Lyell Cresswell has been a full-time composer based in Edinburgh since 1985. He will introduce Ylur, which will receive its NZ premiere by the NZSO on 25 May. The score of Ylur (Waiteata Music Press) will be launched A reception will follow. "
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_3:
+  #venue_id: 3
+  event_id: 3
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2002
+  event_start: 2007-05-24 18:00
+  event_finish: 2007-05-24 19:30
+  event_title: ""
+  general_note: "A recital of Lyell's piano music will be given by pianist Stephen de Pledge including the World premiere of Mezzotinto. A reception will follow. "
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_4:
+  #venue_id: 8
+  event_id: 4
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2003
+  event_start: 2007-05-25 18:30
+  event_finish: 2007-05-25 20:30
+  event_title: "Made in New Zealand"
+  general_note: "The New Zealand Symphony Orchestra's now annual celebration of music by New Zealand composers. This year's programme includes the premiere of Eve De Castro's setting of Bill Manhire's words These Arms To Hold You, commissioned by the Royal New Zealand Plunket Society to mark their centenary. Conducted by Hamish McKeich with Nathan Haines (saxophone), Ron Samsom (drum kit) and the Lyrica Choir (Kelburn Normal School)."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_5:
+  #venue_id: 1004
+  event_id: 5
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2004
+  event_start: 2007-06-14 20:00
+  event_finish: 2007-06-14
+  event_title: "New Zealand Symphony Orchestra, Conductor: Arvo Volmer"
+  general_note: "One of the New Zealand Symphony Orchestra's subscription tours for 2007. This work was especially commissioned by the Royal NZ Plunket Society to mark their centenary. Eve De Castro Robinson has set words words penned especially for the occasion by Bill Manhire. It premiered in the Made in NZ concert in Wellington on 25 May."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_6:
+  #venue_id: 1005
+  event_id: 6
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2005
+  event_start: 2007-06-16 20:00
+  event_finish: 2007-06-16
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_7:
+  #venue_id: 1005
+  event_id: 7
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2006
+  event_start: 2007-06-16 19:15
+  event_finish: 2007-06-16
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_8:
+  #venue_id: 1005
+  event_id: 8
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2007
+  event_start: 2007-06-16 10:30
+  event_finish: 2007-06-16 10:30
+  event_title: ""
+  general_note: "A NZSO Education Programme community event. Bookings are essential for these open rehearsals."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_9:
+  #venue_id: 1008
+  event_id: 9
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2008
+  event_start: 2007-06-20 18:30
+  event_finish: 2007-06-20
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_10:
+  #venue_id: 1009
+  event_id: 10
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2009
+  event_start: 2007-06-21 18:30
+  event_finish: 2007-06-21
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_11:
+  #venue_id: 1010
+  event_id: 11
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2010
+  event_start: 2007-06-23 20:00
+  event_finish: 2007-06-23
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_12:
+  #venue_id: 1010
+  event_id: 12
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2011
+  event_start: 2007-06-23 19:15
+  event_finish: 2007-06-23
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_13:
+  #venue_id: 1012
+  event_id: 13
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2012
+  event_start: 2007-06-21 20:00
+  event_finish: 2007-06-21 22:00
+  event_title: "Encomapss: Tuhonohono"
+  general_note: "Tuhonohono comprises Richard Nunns: taonga puoru, Ramonda Te Maiharoa-Taleni: voice, Ingrid Culliford: flute, Ashley Brown: cello, Ben Hoadley: bassoon, and Emma Sayers: piano. Tuhonohono specialises in the music of Gillian Whitehead. This concert celebrates Matariki and is a collaboration between Te Papa Tongarewa and Chamber Music New Zealand as part of the latter's Encompass Series."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_14:
+  event_id: 14
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2013
+  event_start: 
+  event_finish: 
+  event_title: "Philip Neill Memorial Prize"
+  general_note: "The competition is open to all past and present students of the universities of New Zealand. Instrumentation: an ensemble of up to five instruments taken from pianoforte, flute, oboe or soprano saxophone, clarinet and bassoon.\nDuration: between six and twelve minutes.\n\n"
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_15:
+  event_id: 15
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2014
+  event_start: 
+  event_finish: 
+  event_title: "SOUNZ Contemporary Award"
+  general_note: "The SOUNZ Contemporary Award is a project of both APRA, Australasian Performing Rights Association, and SOUNZ. Entry forms are published with the mid-year issue of APRAP New Zealand, the APRA publication or:\n\nComposers who are members of APRA are invited to enter up to two works which they have written in the previous year. The Centre for NZ Music convenes a jury of four to judge the entries purely on creative and artistic criteria including compositional excellence and innovation.\nThe works can be for solo, chamber, ensemble, choral, orchestral, electro-acoustic or any combination of these."
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+
+event_16:
+  event_id: 16
+  status_id: 1
+  event_type_id: 1
+  contactinfo_id: 2015
+  event_start: 
+  event_finish: 
+  event_title: ""
+  general_note: ""
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>

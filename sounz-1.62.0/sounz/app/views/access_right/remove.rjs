@@ -1,0 +1,8 @@
+if @valid
+  page.visual_effect :highlight, @dom_id
+  page.visual_effect :fade, @dom_id
+  page.visual_effect :fold, @dom_id
+else
+  page << "alert('Failed to delete "+@dom_id+" for some reason')"
+  page.visual_effect :shake, @dom_id
+end

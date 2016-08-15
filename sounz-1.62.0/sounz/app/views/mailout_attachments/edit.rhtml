@@ -1,0 +1,9 @@
+<h1>Editing mailout_attachment</h1>
+
+<% form_tag :action => 'update', :id => @mailout_attachment do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @mailout_attachment %> |
+<%= link_to 'Back', :action => 'list' %>

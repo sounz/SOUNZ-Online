@@ -1,0 +1,13 @@
+<%= link_to_remote( '<span class="actionButton">ASSIGN AS VENUE</span>', :url =>{ 
+                                                                                 :action => :assignVenue, 
+                                                                                 :object_id => result.objectData.frbr_id,
+                                                                                 :before => "Element.show('spinner')",
+                                                                                 :complete => "Element.hide('spinner')", 
+                                                                                 :event => @event.id
+                                                                                 }
+)%>&nbsp;
+<%= render :partial => 'shared/spinner' %>
+
+<%=render :partial => 'shared/frbr/objects/brief/'+result.objectType, :locals => { :object => result.objectData}%>
+<hr>
+

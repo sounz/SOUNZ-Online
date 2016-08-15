@@ -1,0 +1,2 @@
+page.replace_html 'eventFinish', :partial => 'date_finish_field', :locals => {:event => @event}
+page.visual_effect :highlight, 'eventFinish'

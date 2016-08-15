@@ -1,0 +1,8 @@
+if @saved
+  page.replace_html 'exam_set_works_list', :partial => 'exam_set_works/exam_set_works_list', :locals => {:manifestation => @manifestation}
+  page.visual_effect :highlight, @dom_id
+  page.replace_html 'new_exam_set_work', :partial => 'exam_set_works/new_exam_set_work', :locals  =>{:manifestation => @manifestation, :exam_set_work => nil }
+else
+  page.replace_html 'new_exam_set_work', :partial => 'exam_set_works/new_exam_set_work', :locals  =>{:manifestation => @manifestation, :exam_set_work => @exam_set_work }
+  page.visual_effect :shake, 'new_exam_set_work'
+end

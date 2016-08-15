@@ -1,0 +1,25 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<h3 class="music"><%=object.venue_name%></h3>
+
+<h2>Description:</h2>
+<p><%=convert_to_html(object.venue_description)%></p>
+<%= render :partial => 'shared/attachments/show_list', :locals => {:media_items => object.media_items}%>
+
+<%if object.general_note%>
+<p><%=convert_to_html(object.general_note)%></p>
+<%end%>
+
+<h2>Contact info:</h2><p><%=render :partial => '/contactinfos/show_inline', :locals => {:contactinfo => object.contactinfo}%></p>
+<br clear="all">
+
+<h2>Events</h2>
+<%= render :partial => 'shared/frbr/objects/full/list_of_items', :locals => {:related_items_method => 'held_events' ,:list_title=> "Events at ****",
+	 :related_item_description_method => 'frbr_listing_description',
+	 :related_item_title_method => 'event_title', :object => @venue, :items => @items, :paginator => @paginator, :page => @page}%>
+	
+	
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<%= link_to "Edit", :controller => "venues", :action => "edit", :id => object %> | 
+<%end%>
+	
+

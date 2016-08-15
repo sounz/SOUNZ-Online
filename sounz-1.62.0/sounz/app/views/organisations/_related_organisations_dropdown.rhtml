@@ -1,0 +1,3 @@
+      <%= select 'related', 'org_organisation_id',
+      @organisation.unrelated_organisations.collect{|o| [ o.organisation_list_name(true), o.organisation_id ]},
+      {:prompt => "-- Select a new related organisation --"}, {:style => "width: 350px", :id => 'related_organisations_dropdown'} %>

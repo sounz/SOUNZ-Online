@@ -1,0 +1,4 @@
+page.replace_html  'project_members', :partial => 'project_members'
+page.replace_html 'project_members_preview', ''
+page << "$('project_members_search').value = '';"
+page << "$('project_members_search').focus();"

@@ -1,0 +1,49 @@
+<%if !samples.blank?%>
+
+<h3>Samples</h3>
+<table>
+<%for sample in samples
+if sample.manifestation.is_a_score?
+for sample_attachment in sample.sample_attachments%>
+<tr><td><%=public_sample_icon(sample_attachment)%><%= icons_for(sample.manifestation, @login)%></td><td>
+<%= render :partial => 'shared/frbr/objects/common/work_samples_link', :locals => {
+	:sample_attachment => sample_attachment, :media_item => sample_attachment.media_item, :title => 'Score'}%><td><%=sample.sample_description%></td><td><%=sample.copyright%></td>
+</td>
+</tr>
+
+
+<%end
+end
+end
+%>
+
+<%for sample in samples
+if sample.manifestation.is_a_recording?
+for sample_attachment in sample.sample_attachments%>
+<tr><td><%=public_sample_icon(sample_attachment)%><%= icons_for(sample.manifestation, @login)%></td><td>
+<%= render :partial => 'shared/frbr/objects/common/work_samples_link', :locals => {
+	:sample_attachment => sample_attachment, :media_item => sample_attachment.media_item, :title => 'Recording'}%><td><%=sample.sample_description%></td><td><%=sample.copyright%></td>
+</td>
+
+
+<%
+#Show music on a separate line
+if sample_attachment.media_item.is_mp3?%>
+</tr><tr><td colspan="4">
+<%=music_player(sample_attachment.media_item)%>
+</td>	
+<%end%>
+</tr>
+<%end
+end
+end
+%>
+
+</table>
+
+<%
+end
+%>
+	
+
+

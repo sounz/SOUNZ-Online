@@ -1,0 +1,607 @@
+body {
+  margin: 0 auto;
+  color: black;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 700px;
+  border: 1px solid #aaa;
+}
+a img {
+  border: none;
+}
+
+/* Header styles */
+#header {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Verdana, Arial, sans-serif;
+  background-color: #236CBA;
+  color: white;
+  text-align: center;
+  width: 100%;
+  border: 4px solid white;
+}
+#header-img {
+  width: 25%;
+  text-align: left;
+}
+#header-img img {
+  border: none;
+}
+#title {
+  width: 50%;
+  font: bold 24px Verdana, Arial, sans-serif;
+}
+
+/* Top menu styles */
+#menu{
+  list-style-type: none;
+  border-top: 5px solid #369;
+  margin: 0;
+  padding: .5em 0 0 .5em;
+}
+#menu li {
+  display: inline;
+  padding: .4em;
+  font-weight: bold;
+}
+
+
+.tabbed_menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 1em 0 0.4em 0em;
+  border-bottom: 5px solid #CCC;
+}
+
+.tabbed_menu li {
+  display: inline;
+  padding: .4em;
+  margin: 0px;
+  font-weight: bold;
+    border: 2px solid #CCC;
+}
+
+li.selectedTab {
+    color: white;
+    background-color:#369;
+}
+
+/* General content styles */
+#content {
+  width: 100%;
+  padding: .5em;
+  background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+h1 {
+  font-size: 110%;
+  text-transform: uppercase;
+  border-top: 5px solid #efefef;
+  background-color: #236cba;
+  color: white;
+  padding: 1px 3px;
+  margin-bottom: .25em;
+}
+
+hr {
+ height: 1px;
+ color: #000000;
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+#content table {
+  border: 1px solid #ccc;
+  height: 0 auto;
+}
+
+#no_borders table{
+  width: 100%;
+  background-color: white;
+  border: 0;
+  height: 0 auto;
+}
+
+.padded-left {
+  margin: 0px;
+  padding-left: 10px;
+}
+th {
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #428BD9;
+}
+
+/** Flash Notice Area **/
+#flash {
+    color:red;
+    pading: 0.5em;
+}
+
+/** This is only displayed when a user is logged in **/
+#sessionDetails {
+text-align:right;
+padding: 3px 0px;
+font-weight:bold;
+background-color: white;
+
+}
+
+form {
+  margin: 0 auto;
+  background-color: white;  
+  /*border: 1px solid #ccc;*/
+  /*padding: .5em;*/
+}
+form table {
+  width: 100%;
+  background-color: white;
+}
+form p {
+  margin: 0 0 .5em;
+  background-color: white;
+}
+#_form {
+  width: 100%;
+  height: 0 auto;
+  clear: both;
+}
+#contributor_search_form {
+    padding-bottom: 2em;
+}
+
+label {
+  font-weight: bold;
+  font-size: 11px;
+}
+#labelformat, .labelFormat {
+  clear: both;
+  float: left;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 15%;
+  background-color: white;
+}
+#formelemformat, .formelemformat{
+  padding-top: 9px;
+  padding-bottom: 7px;
+  width: 85%;
+  background-color: white;
+}
+/*#formformat, .formformat {
+  float: left;
+  height: 0 auto;
+  width: 88%;
+  display: inline;
+  background-color: white;
+}
+  */
+#buttonsformat, .buttonsformat {
+  padding-bottom: 1em;
+  float: right;
+}
+.buttonsformat input {
+  margin: 0 .25em;
+}
+.tabbar-new-button {
+  float: right;
+  padding: .5em .5em 0 0;
+}
+
+/* Form buttons */
+.formButtonContainer {
+    display:inline;
+    text-align:right;
+    float:right;
+    
+    z-index:100000000;
+   
+}
+
+.formButtonContainer input {
+ font-weight:bold;
+ color:white;
+ background:black;
+  text-transform: uppercase; 
+  font-size: 0.9em;
+
+}
+
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #004997;
+}
+a:visited {
+  color: #004997;
+}
+a:hover {
+  color: #004997;
+}
+a:active {
+  color: #004997;
+}
+
+/* Generic styles */
+.w {
+  width: 100%;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.noborder {
+  border: none !important;
+}
+.r1 {
+  background: #EDF2F8;
+}
+
+/* Error messages */
+.errorExplanation {
+  border: 1px solid #f33;
+  background-color: #fee;
+  padding: .25em .5em;
+  margin-bottom: .25em;
+}
+.errorExplanation h2 {
+  color: #933;
+  padding-bottom: .2em;
+}
+.errorExplanation ul {
+  padding: 0 0 0 2em;
+}
+.fieldWithErrors input, .fieldWithErrors textarea {
+  border-color: #f33;
+}
+
+
+/* Login form */
+#loginForm {
+    text-align:center;
+}
+
+#loginForm td {
+    padding:0px;
+    margin:0px;
+}
+
+.textLeft {
+    text-align:left;
+}
+
+.textRight {
+    text-align:right;
+}
+
+
+
+
+
+/* Main menu */
+#mainMenu {
+font-size: 16px; 
+padding-bottom: 40px;
+ text-align: center;
+}
+
+#mainMenu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+
+
+/* 
+Search results for a finder page
+*/
+a.searchResultToolTip {
+position: relative;
+}
+
+a.searchResultToolTip span {
+display: none;
+}
+
+a.searchResultToolTip:hover span {
+   display: block;
+   position: absolute;
+   top: .3em;
+   left: 250px;
+   width: 380px;
+   border-style: solid; 
+   padding: 5px; ; 
+   position: absolute;
+   background-color: white;
+   z-index:100;
+}
+
+a ul {
+  margin: 0px;
+  padding-left: 20px;
+}
+/*
+Action lists for edit forms
+*/
+.actionList ul, .inlineList ul{
+	display: inline;
+	list-style-type: none;
+
+}
+
+
+
+
+
+/*
+used whilst listing communications
+*/
+.communicationsList {
+    list-style-type: none;
+    padding: 0px 0px 20px 0px;
+    margin: 0px;
+}
+
+
+/* For displaying contact info */
+.contactPhysicalAddressBox {
+	border: solid black 1px;
+	background-color: #DDD;
+	margin: 10px 20px;
+	padding:8px;
+	background-image: url("/icons/stamp.jpg");
+	background-repeat: no-repeat ;
+	background-position: top right; 
+	font: Arial, Sans-serif;
+	font-weight: bold;
+	font-size: 120%;
+	
+}
+
+.contactWebsitesBox {
+	border: solid black 1px;
+	background-color: #DDD;
+	margin:10px 20px;
+	padding:8px;
+	font: Arial, Sans-serif;
+	font-weight: bold;
+	font-size: 120%;
+	
+}
+
+.contactPhoneNumbersBox {
+	border: solid black 1px;
+	background-color: #DDD;
+	margin: 10px 20px;
+	padding:8px;
+	background-repeat: no-repeat ;
+	background-position: top right; 
+	font: Arial, Sans-serif;
+	font-weight: bold;
+	font-size: 120%;
+	
+}
+
+
+.pullQuote {
+	font-family: "Times New Roman", Serif;
+	font-size: 18pt;
+	font-weight: bold;
+
+}
+
+.imageWithCaption {
+	float:right;
+	margin:10px 0px 10px 10px;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+.inlineManifestationThumbnail, .inlineThumbnail {
+	float:right;
+}
+
+/* For debugging FRBR rhtml */
+
+h4.frbrSearchResult, h4.frbrSearchResult a {
+ color: #0099ff;
+ font-weight: bold;
+ font-family: Arial, sans-serif;
+ font-size: 1.1em; 
+	
+}
+
+
+
+h4.frbrSearchResult {
+	display: inline;
+}
+
+.frbrSearchResult  {
+	
+}
+
+a.frbrSearchResultLink {
+	color: #0099ff;
+}
+
+.frbrSearchRelatedItems {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	padding-top: 8px 0px;
+}
+
+.relationshipsBrief, .workCategories {
+	border: solid blue 1px;
+	background: #FFFFAA;
+	padding: 10px;
+	margin: 10px 0px;
+}
+
+.relationshipsSearchResult {
+	border: solid blue 1px;
+	background: #FFFFAA;
+	padding: 10px;
+	margin: 10px 0px;
+}
+
+.searchHeading {
+	color: #797979;
+	font-size: 2em;
+	font-family: Arial, sans-serif;
+}
+
+/* These manage the 2 columns for the search results */
+.frbrSearchResultInformation {
+padding: 10px 0px;
+}
+
+.frbrSearchResultImage {
+	width: 100px;
+	text-align: center;
+	padding: 10px 0px;
+}
+
+
+/* Page linking for search results */
+.pageLinks {
+    margin: 10px ;
+}
+.pageLinks a {
+    color: #0099ff;
+    padding:1px 4px;
+    margin:0px;
+}
+
+
+div.spacer {
+	padding-top: 3em;
+	width: 100%;
+	display:block;	
+}
+
+.composerMenu {
+	list-style-type: none;
+}
+
+.composerMenu li {
+	display :inline;
+	padding-right: 10px;
+}
+
+.question {
+	/*
+	font-size: 2em;
+	color: red;
+	background: yellow;
+	border-top: solid white 1px;
+	border-bottom: solid white 1px;
+	*/
+	display: none;
+}
+
+.instruction {
+	font-style: italic;
+	color: #666;
+	padding: .8em 0em .4em 0em;
+}
+
+.actionButton {
+	font-weight: bold;
+	border: solid white 1px;
+	background: black;
+	padding: 3px;
+	font-size:.8em;
+	margin-right: 4px;
+	color:white; /* Needed for popup links */
+
+}
+
+.addRelationshipButton {
+	align: right;	
+}
+
+
+.actionButton a {
+		color: white;
+}
+
+
+/* The last updated by field at the bottom of a page */
+div.lastUpdatedBy {
+	display: block;
+	text-align: right;
+	font-style: italic;
+	padding-top: 1em;
+}
+
+
+.timeoutMessage {
+	color: red;
+	background: yellow;
+	font-weight: bold;
+}
+
+
+ul.listOfContributors {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.listOfContributors li {
+	display: inline;
+	padding-right: 1em;
+}
+
+ul.inlineList {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+.inlineList li, .indentedList .inlineList li {
+	display: inline;
+	padding-right: 1em;
+}
+
+ul.indentedList {
+	margin: 0px;
+	padding: 0px 0px 0px 2em;
+	display:block;
+}
+
+.indentedList li {
+	list-style-type: none;
+	display: block;
+}
+
+.comment {
+	font-style: italic;
+	color: #666;
+	padding: 0;
+	font-size: 9px;
+}
+
+
+.frbrRendering a {
+color: red;	
+font-weight: bold;
+}

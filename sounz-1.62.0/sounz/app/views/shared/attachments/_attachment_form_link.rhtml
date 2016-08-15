@@ -1,0 +1,44 @@
+<%
+is_sample = (object.class == Sample)
+mode = :normal if mode.blank? #if mode is tiny_mce, then we need to hide the delete / update buttons
+%>
+<%if !is_sample%>
+<div class="attachmentsWidget">
+<%else%>
+<div>
+<%end%>
+<%
+#Note the parent object needs to be saved for this to work
+%>
+<fieldset>
+  <legend><a name="attachments"></a>
+  <% if mode == :tiny_mce || mode == :cm_content
+     model_s = object.class.to_s.underscore
+     model_a = model_s.split('_')
+     section_name = ''
+     model_a.each do |m|
+       section_name += m.to_s.capitalize + ' '
+     end
+  %>
+  <%= section_name %> Images <% if mode == :cm_content%> and PDF<%end%>
+  
+  <% else %>
+  <%if is_sample%>Sample <%end%>Attachments
+  <% end %>
+  </legend>
+  
+  <%= render :partial => 'shared/attachments/edit_list', :locals => {:media_items => object.media_items, :object => object, :mode => mode}
+  %>
+  
+  <% if object.class.to_s.match('NewsArticle') && mode == :normal && !object.media_items.blank? %>
+    <%# do nothing
+    %>
+  <% else 
+  %>
+  <div id="new_attachment_form_<%=generate_id(object)%>">
+  <%=render :partial => 'shared/attachments/new_attachment_form_button', :locals => {:object => object, :mode => mode}%>
+  </div>
+  <% end 
+  %>
+</fieldset>
+</div>

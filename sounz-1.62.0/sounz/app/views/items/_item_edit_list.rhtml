@@ -1,0 +1,5 @@
+
+<p><strong>Items total: <span id="items_total"><%= entity.items.length %></span></strong></p>
+<% entity.items.each do |i| %>
+<%= render :partial => 'items/edit_item', :locals => { :entity => entity, :item => i }%>
+<% end %>

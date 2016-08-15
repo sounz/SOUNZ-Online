@@ -1,0 +1,10 @@
+<fieldset id="exam_info">
+	<legend>Exam Info</legend>
+<ul id="exam_set_works_list">
+<%=render :partial => 'exam_set_works/exam_set_works_list', :locals => { :manifestation => manifestation}%>
+</ul>
+
+<div id="new_exam_set_work">
+ <%=render :partial => 'exam_set_works/new_exam_set_work', :locals => { :manifestation => manifestation}%>
+</div>
+</fieldset>

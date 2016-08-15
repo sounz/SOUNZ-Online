@@ -1,0 +1,27 @@
+<div class="section">
+<h1>Editing membership</h1>
+</div>
+<br/>
+
+<% form_tag :action => 'update', :id => @membership do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%=# link_to 'Show', :action => 'show', :id => @membership 
+%> <!--|-->
+
+<% controller = nil
+id = nil 
+if !@membership.login.person.blank?
+controller = 'people'
+id = @membership.login.person.person_id
+elsif !@membership.login.organisation.blank?
+controller = 'organisations'
+id = @membership.login.organisation.organisation_id
+end
+%>
+<div class="editLinks">
+<%= link_to "Privileges", :controller => controller, :action => :privileges_list, :id => id %>|
+<%= link_to "Login", :controller => :logins, :action => :edit, :id => @membership.login%>
+</div>

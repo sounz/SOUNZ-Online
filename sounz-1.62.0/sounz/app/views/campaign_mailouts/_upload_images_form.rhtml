@@ -1,0 +1,14 @@
+<div class="attachmentsWidget">
+
+<fieldset>
+  <legend><a name="attachments"></a>Mailout Images</legend>
+  <% if !object.media_items.blank? %>
+  <p>If not used in 'Main content' field, the uploaded images are automatically deleted, when you click on 'Save' button of 'Mailout Details' section</p> 
+  <% end %>
+  <%= render :partial => 'mailout_images_list', :locals => {:media_items => object.media_items, :object => object}
+  %>
+  <div id="new_attachment_form_<%=generate_id(object)%>">
+  <%=render :partial => 'shared/attachments/new_attachment_form_button', :locals => {:object => object, :mode => mode}%>
+  </div>
+</fieldset>
+</div>

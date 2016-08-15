@@ -1,0 +1,36 @@
+<fieldset>
+<legend>Order Details</legend>
+<table>
+
+<% for column in Order.content_columns %>
+<tr>
+  <th><%= column.human_name %></th>
+  <td>
+   <% if column.human_name.ends_with?('status')%>
+    <%=h FailedOrdersHelper.order_statuses.flatten.fetch(@order.send(column.name)) %>
+   <% else %>
+     <%=h @order.send(column.name) %>
+   <% end %>
+  </td>
+</tr>
+<% end %>
+
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Order Products</legend>
+<table>
+
+<% @order_products.each do |p| 
+product_price = p['final_price']
+product_price = 0.0 if p['product_is_free'] == '1'
+%>
+<tr>
+<td><%= p['products_quantity']%>X <%= p['products_name']%> (<%= p['products_model']%>):</td>
+<td>$<%= product_price%></td>
+</tr>
+<% end %>
+
+</table>
+</fieldset>

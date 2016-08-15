@@ -1,0 +1,99 @@
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+
+<div class="search_item">
+
+  <%
+  related_manifestations = object.related_manifestations
+  scores = ManifestationsHelper.scores_only(related_manifestations)
+  recordings = ManifestationsHelper.recordings_only(related_manifestations)
+  n_resources = object.number_of_descriptive_resources
+  score_samples = object.all_score_samples
+  recording_samples = object.all_recording_samples
+
+  n_samples = score_samples.length + recording_samples.length
+  %>
+
+
+  <%
+  links_string = []
+  object.composers.map{|c| links_string <<  [
+	  icons_for(c, @login) +
+  ContributorsHelper.get_link_depending_on_role_type(c, @login)+
+  "&nbsp;&nbsp;"+show_tap_edit_link_for(c, 'CAN_EDIT_CONTRIBUTOR_PROFILE')] }
+  %>
+
+
+  <h2>
+    <%=links_string.join('&nbsp;')%>
+  </h2>
+  <h3>
+    <%= icons_for(object, @login)%>
+    <a href="/works/show/<%=object.work_id%>"><%=object.work_title%></a>
+    <%=show_tap_edit_link_for(object)%>
+  </h3> 
+
+  <p><%if object.has_duration?%>Duration:&nbsp;<%=object.duration_human_readable%><%end%><%if ! object.year_description.blank?%>&nbsp;Year:&nbsp;<%=object.year_description%><%end%><br>
+<%=object.work_description%></p>
+
+<%if n_samples > 0%>
+
+	<div class="samples">
+	  <%
+	  for score_sample in score_samples%>
+	    <%for attachment in score_sample.sample_attachments
+	      score_icon = public_sample_icon(attachment)
+	      %>
+	      <div class="score-sample attachment"><%=link_to "Score Sample", sample_url(attachment)%></div>
+	    <%end%>
+	  <%end%>
+	
+	<%for recording_sample in recording_samples%>
+	<%for attachment in recording_sample.sample_attachments
+	media_item = attachment.media_item
+	audio_icon = public_sample_icon(attachment)
+	if media_item.is_flv?%>
+	  <div class="video-sample attachment"><a class="videoPopup" onclick="window.open('<%=flash_sample_video_player_url(attachment)%>', 'sounz_video','width=400,height=400')">Video Sample</a></div>
+	<%
+	else
+		%>
+		<div class="audio-sample attachment"><a class="videoPopup" onclick="window.open('<%=flash_sample_music_player_url(attachment)%>', 'sounz_video','width=400,height=200')">Audio Sample</a></div>
+		<%end%>	
+	<%end%>
+	<%end%>
+	</div><%#sample%>
+
+<%end%>
+
+<%=AttachmentHelper.render_search_image(object, :thumb)%>
+
+<% 
+manifestations = ManifestationsHelper.sounzmedia_only(object.related_manifestations)
+resources = ResourcesHelper.sounzmedia_only(object.related_resources)
+%>
+
+
+<div class='search_items_indent'>
+<% for m in manifestations %>
+<%= render :partial => 'shared/frbr/objects/search_result/sounzmedia_manifestation', :locals => { :object => m}%>
+<% end %>
+
+<% for m in resources %>
+<%= render :partial => 'shared/frbr/objects/search_result/sounzmedia_resource', :locals => { :object => m }%>
+<% end %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+     action = 'addToSelected'
+   else
+     action = 'addToSelectedSession'
+   end
+%>
+<div class='options'>
+	<p class='list rem'>
+	  <%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => 'work', :object_id => object.frbr_id})%>
+	</p>
+</div>
+
+</div>
+</div>

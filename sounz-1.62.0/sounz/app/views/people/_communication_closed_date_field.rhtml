@@ -1,0 +1,13 @@
+<%
+if status.blank?
+%>
+No status has been defined
+<%else
+val = Communication.statuses[status.downcase.to_sym] 
+if val == 'c'%>
+<%= date_field_with_time(closed_at, 'communication', 'closed_at') %>
+<%else%>
+The communication is still open
+<%end
+end
+%>

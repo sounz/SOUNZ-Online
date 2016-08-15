@@ -1,0 +1,9 @@
+<% title 'Create a New Organisation' %>
+<h1>Create a New Organisation</h1>
+
+<%= error_messages_for 'organisation' %>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>

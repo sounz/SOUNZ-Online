@@ -1,0 +1,18 @@
+<fieldset>
+<legend accesskey="v">Venue</legend>
+
+<div id="assignedVenue"><%=render :partial => '/events/venue', :locals=> {:object=> @assignedVenue, :event => @event}%></div>
+
+<div class="instruction">Search for an alternative venue by typing in the search box below.  Matching venues will appear, from which a new venue can be selected</div>
+Venue Search:<input id="searchVenue" name="searchVenue" type="text" size="30" />
+<%=observe_field_delayed(:searchVenue, :frequency => 2, 
+                                      :update => :venueList,
+                                      :before => "Element.show('spinner')",
+                                      :complete => "Element.hide('spinner')",
+                                      :url => {:action => :findVenues, :controller => :events, :object => object}, 
+                                      :with => "'query='+value")%>
+<%= render :partial => 'shared/spinner' %>
+<div id="venueList" name="venueList">
+
+</div>
+</fieldset>

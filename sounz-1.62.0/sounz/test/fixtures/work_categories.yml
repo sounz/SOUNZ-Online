@@ -1,0 +1,89 @@
+--- 
+work_category_1: 
+  display_order: 1
+  work_category_abbrev: 11
+  work_category_desc: Orchestra
+  work_category_id: 1
+work_category_2: 
+  display_order: 2
+  work_category_abbrev: 12
+  work_category_desc: Keyboard
+  work_category_id: 2
+work_category_3: 
+  display_order: 3
+  work_category_abbrev: 13
+  work_category_desc: Strings (Bowed)
+  work_category_id: 3
+work_category_4: 
+  display_order: 4
+  work_category_abbrev: 14
+  work_category_desc: Strings (Plectral)
+  work_category_id: 4
+work_category_5: 
+  display_order: 5
+  work_category_abbrev: 15
+  work_category_desc: Woodwind
+  work_category_id: 5
+work_category_6: 
+  display_order: 6
+  work_category_abbrev: 16
+  work_category_desc: Brass
+  work_category_id: 6
+work_category_7: 
+  display_order: 7
+  work_category_abbrev: 17
+  work_category_desc: Percussion
+  work_category_id: 7
+work_category_8: 
+  display_order: 9
+  work_category_abbrev: 18
+  work_category_desc: Mixed Chamber Groups
+  work_category_id: 8
+work_category_9: 
+  display_order: 10
+  work_category_abbrev: 19
+  work_category_desc: Sonic Art
+  work_category_id: 9
+work_category_10: 
+  display_order: 11
+  work_category_abbrev: 20
+  work_category_desc: Vocal Solo
+  work_category_id: 10
+work_category_11: 
+  display_order: 12
+  work_category_abbrev: 21
+  work_category_desc: Vocal Ensemble (2-8 voices)
+  work_category_id: 11
+work_category_12: 
+  display_order: 13
+  work_category_abbrev: 22
+  work_category_desc: Choral Music
+  work_category_id: 12
+work_category_13: 
+  display_order: 14
+  work_category_abbrev: 23
+  work_category_desc: Vocal Music for the Stage
+  work_category_id: 13
+work_category_14:
+  display_order: 8
+  work_category_abbrev: 24
+  work_category_desc: Taonga Puoro (Maori Instruments)
+  work_category_id: 14
+work_category_15: 
+  display_order: 15
+  work_category_abbrev: 00
+  work_category_desc: Additional
+  additional: TRUE
+  work_category_id: 15
+work_category_16: 
+  display_order: 16
+  work_category_abbrev: 25
+  work_category_desc: UNKNOWN1(25)
+  additional: FALSE
+  work_category_id: 16
+work_category_17: 
+  display_order: 17
+  work_category_abbrev: 27
+  work_category_desc: UNKNOWN2(27)
+  additional: FALSE
+  work_category_id: 17

@@ -1,0 +1,87 @@
+<fieldset>
+  <h3>Please enter your name in the fields below</h3>
+  <ul>
+    <li>
+      <label for="nomen">Salutation</label>
+      <%= select('person', "nomen_id", Nomen.to_dropdown(:text => 'nomen', :include_blank => "-- Select a nomen --")) %>
+    </li>
+    <li>
+      <label for="first_names">First Name</label>
+      <%= text_field_tag  'person[first_names]', @person.first_names, { :size => standard_edit_cols}%>
+    </li>
+    <li>
+      <label for="last_name">Last Name</label>
+      <%= text_field_tag  'person[last_name]', @person.last_name, { :size => standard_edit_cols}%>
+    </li>
+    <li>
+      <label for="contactinfo_country">Country</label>
+      <% country_disabled = false %>
+      <%= collection_select(:contactinfo, :country_id, 
+        Country.find(:all, :order => 'country_name'),
+        :country_id,
+        :country_name,
+        { :prompt => "-- Select a country --" })
+      %>
+      <%
+      country_field =  "contactinfo_country_id"
+      parameters = "'country='+escape($('"+country_field+"').value)"
+      %>
+      <%=  observe_field  "contactinfo_country_id", :update => "regionSelector",
+                                                     :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                                     :with => parameters
+      %>
+
+    <div id="regionSelector">
+      <% if @contactinfo.region_id != nil %>
+      <%= collection_select(:contactinfo, :region_id, 
+      Region.find(:all, :conditions => ['country_id =?', @contactinfo.country_id], :order => 'region_order'),
+        :region_id,
+        :region_name,
+        { :prompt => "-- Select a region --"})
+      %>
+      <% else %>
+      <% @country = @contactinfo.country %>
+      <% if @country != nil %>
+      <%= render :partial => '/contactinfos/show_regions_for_country', :locals => {:country => @country}%>
+      <% end %>
+      <% end %>
+      </div>
+    </li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <h3>Your username on this site will be your email address.</h3>
+
+  <ul>
+    <li>
+      <label for="contactinfo_email_1">Email</label>
+      <%= text_field_tag  'contactinfo[email_1]', @contactinfo.email_1, { :size => standard_edit_cols}%>
+    </li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <h3>Type your chosen password in the boxes below.</h3>
+
+  <ul>
+    <li>
+      <label for="user_login_password">Password</label>
+      <%= password_field_tag  'user_login[password]', @user_login.password, { :size => 15}%>
+    </li>
+    <li>
+      <label for="user_login_password">Password (confirm)</label>
+      <%=password_field_tag  'user_login_extra[password]','', { :size => 15}%>
+    </li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <p>Please review the <a href="/cm_contents/show/12" traget="_new">Terms and Conditions</a> for use of the SOUNZ website (including our privacy policy) before signing up.</p>
+
+  <ul>
+    <li>
+      <input type='checkbox' selected=false name='user_login_extra[agree]' value='true'/> <b>I agree to the Terms And Conditions</b>
+    </li>
+</ul>
+</fieldset>

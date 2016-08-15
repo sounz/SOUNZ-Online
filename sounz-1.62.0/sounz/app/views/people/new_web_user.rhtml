@@ -1,0 +1,33 @@
+<% title 'Create a New Account' %>
+<h1>Sign up with SOUNZ</h1>
+
+<% unless @from == 'login_from_checkout' || params[:from] == 'login_from_checkout' %>
+  <p>
+    <strong>You need to login to SOUNZ Online to access the following services</strong>
+    <ul>
+      <li>Purchasing and borrowing using e-commerce</li>
+      <li>Using online forms</li>
+    </ul>
+  </p>
+<% end %>
+
+<%= error_messages_for 'user_login' %>
+<%= error_messages_for 'person' %>
+<%= error_messages_for 'role' %>
+<%= error_messages_for 'contactinfo' %>
+<%= error_messages_for 'role_contactinfo' %>
+	
+<%for message in @extra_messages%>
+  <b><font color="#f00"><%=message%></font></b><br/>
+<%end%>
+
+
+<% form_tag :action => 'create_web_user', :from => @from do %>
+  <%= render :partial => 'web_user_form' %>
+
+  <%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+<% end %>

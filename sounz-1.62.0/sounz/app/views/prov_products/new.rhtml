@@ -1,0 +1,12 @@
+<h1>New Product</h1>
+
+<%= error_messages_for :prov_products %>
+<% form_for(:prov_products, :url => prov_products_path) do |f| %>
+  <%=render :partial => "form", :locals => {:f => f}%>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+
+<% end %>
+

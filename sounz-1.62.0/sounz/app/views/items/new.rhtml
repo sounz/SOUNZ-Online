@@ -1,0 +1,10 @@
+<% title 'Create New Item' %>
+
+<h2>Create New Item</h2>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

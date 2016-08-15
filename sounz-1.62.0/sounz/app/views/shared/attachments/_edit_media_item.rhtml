@@ -1,0 +1,54 @@
+<%
+generated_id = generate_id(media_item)
+@is_after_cancel = false if @is_after_cancel == nil
+%>
+<li id="<%=generated_id%>">
+<table><tr>
+
+<% if mode != :tiny_mce %>
+<% if mode == :cm_content && media_item.image? %>
+<% #do nothing
+%>
+<% else %>
+<td>
+<span class="actionButton"><%= link_to_remote "Delete", :confirm => 'Are you sure you wish to delete '+media_item.name+'?', :url => {:controller => :attachment, :action => :delete_attachment, :id => generate_id(object), :media_item_id => media_item}%></span>
+</td>
+<% end %>
+<% if mode != :cm_content%>
+<td>
+<span class="actionButton"><%= link_to_remote "Update", :update => generated_id, :url => {:controller => :attachment, :action => :show_update_attachment_form, :id => generate_id(object), :media_item_id => media_item, :mode => mode}%></span>
+</td>
+<% end %>
+<%end%>
+<%
+if !media_item.image? && mode == :cm_content
+url = "http://" + Setting.get_value(Setting::WEBSITE_URL) + media_item.public_filename
+%>
+<td>
+<%=link_to media_item.filename, media_item.public_filename%><br>
+URL: <%= url %> 
+<%
+elsif !media_item.image?
+%>
+<td width="100px;">
+<%=link_to media_item.filename, media_item.public_filename%>
+<%
+else
+%>
+<td width="100px;">
+<%=image_tag(media_item.public_filename(:thumb))%>
+<%
+end
+%>
+<%if mode != :tiny_mce && mode != :cm_content
+attachments = media_item.send("#{object.class.to_s.tableize.singularize}_attachments")
+%>
+</td>
+<td>
+<b><%=attachments.map{|a|a.attachment_type.attachment_type_desc}.uniq.join(',')%></b><br>
+<%=media_item.mime_type_and_size%><br>
+Updated by <%=Login.find(media_item.updated_by).username%>
+<%end%>
+</td>
+</tr></table>
+</li>

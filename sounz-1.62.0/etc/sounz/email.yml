@@ -1,0 +1,33 @@
+#
+# The settings for ActionMailer, as provided by the plugin 'yaml_mail_config'
+# which allows us to use this configuration file. The values for server and
+# domain are set by Debian postinst, however you can cusomtize all values
+# here after the initial install has been done.
+#
+development:
+  server: _EMAIL_SMTP_SERVER_
+  port: _EMAIL_PORT_
+  domain: _EMAIL_DOMAIN_
+  authentication: _EMAIL_AUTH_
+  username: _EMAIL_USER_
+  password: _EMAIL_PASSWORD_
+  tls: _EMAIL_TLS_
+  
+test:
+  server: _EMAIL_SMTP_SERVER_
+  port: _EMAIL_PORT_
+  domain: _EMAIL_DOMAIN_
+  authentication: _EMAIL_AUTH_
+  username: _EMAIL_USER_
+  password: _EMAIL_PASSWORD_
+  tls: _EMAIL_TLS_
+
+production:
+  server: _EMAIL_SMTP_SERVER_
+  port: _EMAIL_PORT_
+  domain: _EMAIL_DOMAIN_
+  authentication: _EMAIL_AUTH_
+  username: _EMAIL_USER_
+  password: _EMAIL_PASSWORD_
+  tls: _EMAIL_TLS_
+  

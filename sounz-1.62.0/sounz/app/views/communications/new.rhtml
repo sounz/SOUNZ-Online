@@ -1,0 +1,24 @@
+<% 
+if @from.match('person')
+   page_title = 'Create a New Communication for ' + @person.full_name
+   entity = @person 
+%>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :communications} %>
+<%
+else
+  page_title = 'Create a New Communication for ' + @organisation.organisation_name 
+  entity = @organisation 
+%>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :communications} %>
+<%end%>
+
+<% title page_title %>
+<% form_tag :action => 'create', :id => entity, :from => @from do %>
+
+<fieldset>
+  <legend><%= page_title %></legend>
+  <%= render :partial => 'form' %>
+</fieldset>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>

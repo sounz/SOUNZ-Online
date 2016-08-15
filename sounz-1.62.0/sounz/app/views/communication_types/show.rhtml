@@ -1,0 +1,8 @@
+<% for column in CommunicationType.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @communication_type.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @communication_type %> |
+<%= link_to 'Back', :action => 'list' %>

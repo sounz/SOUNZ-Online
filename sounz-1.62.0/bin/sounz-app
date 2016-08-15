@@ -1,0 +1,39 @@
+#!/bin/bash
+# Start a Mongrel server for sounz-app.
+#
+
+set -e
+
+NAME="sounz-app"
+
+PACKAGE=sounz
+CONFDIR=/etc/${PACKAGE}
+CONF=${CONFDIR}/${PACKAGE}.conf
+test -r $CONF || exit 0
+. $CONF
+
+# Script filename..
+THIS=`basename $0`
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# STARTUP
+
+# Define files, assert log dir
+LOGFILE=${SOUNZ_LOGS}/sounz-general.log
+
+# Start up all mongrel servers from application home directory
+cd ${SOUNZ_HOME}/sounz
+if [ "$MONGREL_PORTS" != "_MONGREL_PORTS_" ] ; then
+  for PORT in $MONGREL_PORTS ; do
+    ./script/server -p $PORT -e $ENVIRONMENT >/dev/null 2>&1 &
+		PID=$!
+    PIDFILE=${SOUNZ_LOGS}/${NAME}-${PORT}.pid
+		echo $PID >$PIDFILE
+		STAMP=`date +"%Y/%m/%d %H:%M:%S"`
+		STARTMSG="${STAMP} ${NAME} mongrel server [$PID] startup on port $PORT in $ENVIRONMENT mode"
+		echo $STARTMSG >>$LOGFILE
+		sleep 1
+  done
+fi
+
+exit 0

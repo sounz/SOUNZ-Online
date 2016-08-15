@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+<%if flash[:search_error] != nil%>
+<%=flash[:search_error]%>
+<%else%>
+<p>Your search for "<%=@person_query%>" located at "<%=@address_query%>"</p>
+<%end%>
+
+<%for person in @people%>
+<%= render :partial => "shared/person_with_tooltip", :locals => {:person => person, :already_selected => @already_selected} %>
+<%end%>
+
+

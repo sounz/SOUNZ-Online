@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "sounz.org.nz Latest News"
+   xml.link        url_for(:only_path => false, :controller => :news_articles)
+   xml.description "SOUNZ Latest News"
+
+   @news_articles.each do |article|
+     xml.item do
+       xml.title       article.headline
+       xml.link        url_for(:only_path => false, :controller => :news_articles, :action => :show, :id => article.id)
+       xml.description article.precis
+       xml.guid        url_for(:only_path => false, :controller => :news_articles, :action => :show, :id => article.id)
+     end
+   end
+
+ end
+end

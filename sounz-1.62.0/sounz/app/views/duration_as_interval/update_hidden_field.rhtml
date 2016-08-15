@@ -1,0 +1,6 @@
+<%if @valid%>
+	<%=hidden_field @object_name, @field_name, :size => 12,  :value => @interval_duration.to_postgres_string%>
+<%else%>
+<span class="errorMessage">This duration is invalid</error>
+		<%=hidden_field @object_name, @field_name, :size => 12,  :value => @erroneous_values%>
+<%end%>

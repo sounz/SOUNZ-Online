@@ -1,0 +1,10 @@
+<% for column in MarketingCategory.content_columns %>
+<p><b>Category <%= column.human_name %></b>: <%=h @marketing_category.send(column.name) %></p>
+<% end %>
+
+<% for column in MarketingSubcategory.content_columns %>
+<p><b>Subcategory <%= column.human_name %></b>: <%=h @marketing_subcategory.send(column.name) %></p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @marketing_subcategory %> |
+<%= link_to 'Back', :action => 'list' %>

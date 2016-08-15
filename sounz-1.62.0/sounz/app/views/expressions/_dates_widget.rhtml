@@ -1,0 +1,28 @@
+<%
+	disabled_state = expression.expression_start.blank?
+%>
+<%if !disabled_state%>
+ <%=link_to_remote '<span class="actionButton">Time doesn\'t apply</span>',  :url=> {:id=>@expression.id,:action => 'disable_date_minutes'}, :method => :get%> 
+<p><label for="expression_expression_start">Expression start</label><br>
+<%= date_field_with_time(expression.expression_start, 'expression', 'expression_start') %></p>
+<div id="expressionFinish">
+<%=render :partial => 'date_finish_field', :locals => {:expression => expression}%>
+</div>
+<!-- set the end date to start date + work duration by default -->
+<%=observe_field(:expression_expression_start_date, :frequency => 0.25,:url => {:action => :set_end_time_from_start_time}, :with => "'start_date='+value"+
+"+ '&start_hms='+escape($('expression_expression_start_time').value)"
+)
+%>
+
+<%=observe_field(:expression_expression_start_time, :frequency => 0.25,:url => {:action => :set_end_time_from_start_time}, :with => "'start_hms='+value"+
+"+ '&start_date='+escape($('expression_expression_start_date').value)"
+)
+%>
+
+<p><label for="expression_premiere">Premiere</label><br>
+
+<%=select('expression', 'premiere', @expression.premieres_as_list)%>
+</p>
+<%else%>
+	<p>This expression does not have any dates associated with it</p>
+<%end%>

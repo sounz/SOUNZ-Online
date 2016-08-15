@@ -1,0 +1,2 @@
+page.visual_effect :highlight, @role_element_id
+page.visual_effect :fold, @role_element_id

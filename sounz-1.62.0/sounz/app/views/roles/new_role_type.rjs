@@ -1,0 +1,10 @@
+if @other
+  page.replace_html 'new_role_type', :partial => 'new_role_type_textbox', :locals => {:disabled_flag => false}
+  page.visual_effect :highlight, 'new_role_type'
+  @other = false
+else
+  page.replace_html 'new_role_type', ''
+end
+
+page.visual_effect :highlight, 'role_title_text_field'
+page.replace_html 'role_title_text_field', :partial => 'ajax_role_title'

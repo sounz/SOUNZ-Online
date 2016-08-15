@@ -1,0 +1,8 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<%if object.contributor != nil%>
+<%= icons_for(object, @login)%>&nbsp;<%=ContributorsHelper.get_link_depending_on_role_type(object, @login)%>
+<b>&nbsp;&nbsp;<%=show_tap_edit_link_for(object, 'CAN_EDIT_CONTRIBUTOR_PROFILE')%></b><br>
+<%else%>
+<img src="/icons/frbr_contributor_16x16.png" alt="Work Icon" height="16" width="16"/>&nbsp;<%=h object.contributor_description%>
+<b>&nbsp;&nbsp;<%=show_tap_edit_link_for(object, 'CAN_EDIT_CRM')%></b><br>
+<%end%>

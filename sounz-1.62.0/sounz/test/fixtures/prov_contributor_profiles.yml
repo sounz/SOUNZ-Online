@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  name: MyString
+  email: MyString
+  date_of_est_birth: MyString
+  new_profile: false
+  updated_profile: false
+  profile: MyText
+  author_or_source: MyString
+  attaching_photo: false
+  photo_credit: MyString
+  attaching_logo: false
+  website: MyString
+  awards: MyText
+  other_contact: MyText
+two:
+  id: 2
+  name: MyString
+  email: MyString
+  date_of_est_birth: MyString
+  new_profile: false
+  updated_profile: false
+  profile: MyText
+  author_or_source: MyString
+  attaching_photo: false
+  photo_credit: MyString
+  attaching_logo: false
+  website: MyString
+  awards: MyText
+  other_contact: MyText

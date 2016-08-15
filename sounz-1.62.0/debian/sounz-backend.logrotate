@@ -1,0 +1,10 @@
+# Log rotations for sounz-backend
+
+# Database upgrade logfile
+_SOUNZ_LOGS_/upgrade-db.log {
+        size=50k
+        missingok
+        rotate 3
+        compress
+        create 664 _SOUNZ_USER_ _SOUNZ_USER_
+}

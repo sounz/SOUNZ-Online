@@ -1,0 +1,39 @@
+<%containerHash=@expressionContainer[@currentExpressionId]%>
+
+Manifestation Title: <%=@manifestation.manifestation_title%><p/>
+
+For each expression collected in the previous step, you must now assign a work to each.<p/>
+
+Assignments made so far<p/>
+
+<%for container in @expressionContainer%>
+<%expression=container["expression"]%>
+<%work=container["work"]%>
+<%superwork=container["superwork"]%>
+Expression: <%=expression.general_note%><br>
+Assigned Work: <%=work.work_title%><br>
+Assigned Superwork: <%=superwork.superwork_title%><br>
+
+<%end%>
+
+
+<%expression=containerHash["expression"]%>
+The current Expression we are working with is:</p>
+<%=expression.general_note%><p/>
+
+Find Work:
+<p/>
+Enter your search term here:<input type="text">
+<p/>
+
+If your chosen work appears on the list, click on it to advance to the 'Find superwork' screen.
+<p/>
+otherwise, click here to <a href="/frbr_core_wizard/show?step=create_work">Create a Work</a>
+
+<p/>
+#if our workbuffer is not empty<br>
+If you wish to assign the same work as the last expression, click here.</p>
+
+#if all our expression containers have works<br>
+You have now assigned a work to each expression  - <a href="/frbr_core_wizard/show?step=assign_superworks">click here</a> to begin assigning superworks.</p>
+

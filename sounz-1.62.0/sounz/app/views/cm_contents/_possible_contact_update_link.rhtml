@@ -1,0 +1,2 @@
+<%if ["memberships", "community"].include?(@name) && PrivilegesHelper.has_permission?(@login, 'IS_AUTHENTICATED')%><span style="float:right;"><a href="/prov_contact_updates/new">Update your Contact Details</a></span><%end%>
+

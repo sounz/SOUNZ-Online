@@ -1,0 +1,111 @@
+<div class="newsArticles">
+<% content_for :page_title do %>News<%end%>
+<% if !@category.blank?%>
+
+<% login = Login.find(session[:login]) unless session[:login].blank? %>
+
+<h1><%= @title %></h1>
+
+<ul class="news-types">
+<% 
+for category in NewsArticle.article_categories
+category.each_pair do |key, value| 
+
+li_class = ''
+#li_class = 'class="current"' if key == @category
+
+%>
+
+<li <%= li_class%>>
+<% 
+# WR#53854
+if key == 'magazine'
+%>
+<a href="/content/SOUNZnews"><%= value %></a>
+
+<% else%>
+<%= link_to value, :controller => 'news_articles', :category => key %>
+<% end %>
+</li> 
+<% end %>
+<% end %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+<% 
+for p_category in NewsArticle.pending_article_categories
+p_category.each_pair do |p_key, p_value| 
+
+li_class = ''
+li_class = 'class="current"' if p_key == @category
+%>
+
+<li <%=li_class%>>
+<%= link_to p_value, :controller => 'news_articles', :action => :pending_articles, :category => p_key %>
+</li>
+
+<% end %>
+<% end %>
+<% end %>
+
+</ul>
+
+
+<% if @category.match('magazine')%>
+<table width="100%">
+<% @news_articles.each do |article| 
+for media_item in article.media_items
+%>
+<tr>
+<td>
+<li>
+<%=link_to article.headline + ', ' + dby_date(article.article_timestamp), media_item.public_filename %>
+<%=media_item.mime_type_and_size%>
+</li>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<% if !login.blank? && PrivilegesHelper.has_permission?(login, 'CAN_EDIT_CONTENT')%>
+<%= link_to "Edit", { :controller => 'news_articles', :action => 'edit', :id => article.news_article_id }%>
+<% end %>
+</td>
+</tr>
+<% end %>
+<% end %>
+</table>
+<% else %>
+
+<% if @category.match('archived') %>
+
+<%= render :partial => 'search_form' %>
+
+<div id="rhs">
+<% form_tag '/news_articles' do %>
+<input type="hidden" name="category" value="<%= @category%>">
+Year created
+<%= select_year(@year,   :start_year => Time.now.year, :end_year => 2000, :field_name => 'year_created')%>
+<input class="public_button submit" type="submit" alt="Select" value="Select">
+<% end %>
+</div>
+<% end %>
+
+<div id="articles_list">
+<%= render :partial => 'articles_list', :locals => { :news_articles => @news_articles, 
+                                                     :selected_article => @news_article,
+                                                     :category => @category
+ 													} %>
+</div>
+<% end %>
+
+<!--
+<%= go_back_link%>
+-->
+
+<% if !login.blank? && PrivilegesHelper.has_permission?(login, 'CAN_EDIT_CONTENT')%>
+<div class="editLinks">
+<%= link_to 'Create New Article', :action => 'new' unless @category.match('archived') %>
+</div>
+<% end %>
+
+
+<% end %>
+</div>

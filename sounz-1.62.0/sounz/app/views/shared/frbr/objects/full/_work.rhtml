@@ -1,0 +1,251 @@
+<%link = link_to(object.work_title, :action => 'show', :id => object, :controller => 'works')%>
+<%=render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => link,
+			:subheading => nil,
+			:text => object.year_description,
+			:links => nil,
+			:object => object #for the select this button
+}
+%>
+<div class="work-details">
+<ul>
+  <li><%=h object.work_description%></li>
+  <li><strong>By:</strong>
+  <%= render :partial => '/shared/frbr/objects/full/contributor/contributor_list', :locals => {:contributors => object.composers}%></li>
+</ul>
+
+    <% 
+    unique_relationships = object.relationships.uniq.sort_by{|r|r.relationship_type.relationship_type_desc}
+    %>
+    <%for rel in unique_relationships%>
+      <%if rel.relationship_type.relationship_type_id == 30%>
+        <%reltype=RelationshipType.find(rel.relationship_type_id)%>
+        <%my_entity=EntityType.entityIdToType(rel.ent_entity_type_id)%>
+        <%if EntityType.entityIdToType(rel.ent_entity_type_id) == object.frbr_type then my_entity=EntityType.entityIdToType(rel.entity_type_id) end%>
+        <%related_objects=eval('rel.'+my_entity+'s')%>
+        <%for related_object in related_objects%>
+		    <%=show_dt_dd_row("Arranged by", ContributorsHelper.get_link_depending_on_role_type(related_object, @login))%>
+	    <%end%>
+      <%end%>
+    <%end%>
+
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_TAP')%>
+
+  <%if ! @work.has_additional_frbr_relationships%>
+  <%=render :partial => 'check_association'%>
+  <%end%>
+<%end%>
+<dl>
+<%=show_dt_dd_row("Duration", object.duration_human_readable)%>
+<%=show_dt_dd_row("Instrumentation", object.instrumentation)%>
+<%=show_dt_dd_row("Contents", object.contents_note)%>
+</dl>
+
+</div>
+
+<% if !object.all_manifestation_samples.blank?%>
+<div class="samples">
+  <%=render :partial => 'shared/frbr/objects/common/list_samples', :locals => {:samples => object.all_manifestation_samples}%>
+</div>
+<% end %>
+
+<%
+if PrivilegesHelper.has_permission?(@login, 'CAN_VIEW_TAP')
+n_scores = object.number_of_scores
+n_recordings = object.number_of_recordings
+n_sounzmedia = object.number_of_sounzmedia
+else
+n_scores = object.number_of_scores(Status::PUBLISHED)
+n_recordings = object.number_of_recordings(Status::PUBLISHED)
+n_sounzmedia = object.number_of_sounzmedia(Status::PUBLISHED)
+end
+n_resources = PrivilegesHelper.permitted_objects(@login, @resources).length
+
+if (n_scores+n_recordings+n_resources+n_sounzmedia) > 0
+%>
+
+<div class="availability">
+	<h2><%=link_to 'Availability', :controller => 'works', :action => 'availability', :id => object%></h2>
+
+	<ul>
+		<li>
+		<%
+		link_scores = nil
+		link_recordings = nil
+		link_sounzmedia = nil
+		link_resources = nil
+		if PrivilegesHelper.has_link_permission?(@login, object)
+		if n_scores > 0
+		link_scores = link_to "#{WorksHelper.plural_string("score", n_scores)}", :action => 'availability', :controller => 'works', :id => object, :anchor => 'scores'%>
+		<%end%>
+		
+		<%if n_sounzmedia > 0%>
+		<%link_sounzmedia = link_to "#{n_sounzmedia} Media on Demand", :action => 'availability', :controller => 'works', :id => object, :anchor => 'sounzmedia'%>
+		<%end%>
+		
+		<%if n_recordings > 0%>
+		<%link_recordings = link_to "#{WorksHelper.plural_string("recordings", n_recordings)}", :action => 'availability', :controller => 'works', :id => object, :anchor => 'recordings'%>
+		<%end%>
+		
+		<%if n_resources > 0%>
+		<%link_resources = link_to "#{WorksHelper.plural_string("resources", n_resources)}", :action => 'availability', :controller => 'works', :id => object, :anchor => 'resources'%>
+		<%end%>
+		
+		This work has <%=WorksHelper.join_text_with_and([link_scores, link_sounzmedia, link_recordings, link_resources])%>
+		<% end %>
+		</li>
+	</ul>
+</div>
+<%end%>
+
+<% if @sounzmedia.size > 0 %>
+<div class='playlist'>
+<%= render :partial => 'shared/public_pages/playlist', :locals => {:work => @work}%>
+</div>
+<% end %>
+
+<% if @sounzmedia_embedded.size > 0 %>
+<div class='embedded'>
+  <%= render :partial => 'shared/public_pages/embedded', :locals => {:media => @sounzmedia_embedded}%>
+</div>
+<% end %>
+
+<div class='section'>
+
+<% if !object.programme_note.blank? %>
+<h2>Programme Note</h2>
+<%=show_note( object.programme_note)%>
+<% end %>
+
+<dl>
+<%=show_dt_dd_row("Text Note", object.text_note)%>
+<%= render :partial => 'shared/frbr/objects/common/dt_list_of_contributors',
+ :locals => {:name => "Commissioned", :contributors => object.commissioners, :value=> object.commissioned_note}%>
+
+<%=show_dt_dd_row("Difficulty", object.difficulty_as_string) unless object.difficulty_as_string.match('Unknown')%>
+<%=show_dt_dd_row("Difficulty Note", object.difficulty_note)%>
+<%=render :partial => 'shared/frbr/objects/common/dt_list_of_concepts',
+ :locals => {:object => object, :concepts => object.all_associated_concepts, :name => "Influences:"}%>
+
+		
+		<%= render :partial => 'shared/frbr/objects/common/dt_list_of_contributors',
+		 :locals => {:name => "Dedication", :contributors => object.roles_dedicated, :value=> object.dedication_note}%>
+
+		<%= render :partial => 'shared/frbr/objects/common/dt_list_of_contributors',
+		 :locals => {:name => "Funders", :contributors => object.funder, :value=> ""}%>
+		
+		<%=show_dt_dd_row("ISWC Code", object.iswc_code)%>
+	</dl>
+</div>
+
+<% if object.related_works.length > 0%>
+<div class="section">
+<%= render :partial => 'shared/frbr/objects/common/list_works_with_composers',
+ :locals => {:object => object, :works => object.related_works, :title => "Related Works"}%>
+</div>
+<% end %>
+
+<%
+	past_realisations = PrivilegesHelper.permitted_objects(@login, object.past_performance_realisations)
+	future_realisations = PrivilegesHelper.permitted_objects(@login, object.future_performance_realisations)
+if (past_realisations.length + future_realisations.length ) > 0	
+	%>
+<div class="section">
+	<dl>
+	<%realisations = past_realisations%>
+
+	<%= render :partial => 'shared/frbr/objects/full/expression/inline', :locals =>{:expression_types_title=> 'Performance History', :realisations => realisations}%>
+<%if past_realisations.length > 0 && future_realisations.length > 0 %><br><%end%>
+	<%realisations = PrivilegesHelper.permitted_objects(@login, object.future_performance_realisations)%>
+
+	<%= render :partial => 'shared/frbr/objects/full/expression/inline', :locals =>{:expression_types_title=> 'Events', :realisations => future_realisations}%>
+	</dl>
+</div>
+<%end%>
+
+<% distinctions = PrivilegesHelper.permitted_objects(@login, object.distinctions) %>
+<%= render :partial => 'shared/frbr/objects/common/awards', :locals => {:distinctions => distinctions}%>
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+<div class="section">
+
+<%#Show additional 'edit-only' fields%>
+<h2>Admin Only</h2>
+<dl>
+
+<dt>Assigned Categories:</dt>
+<dd>
+<table><tr><td>Main Category:</td><td><%=object.main_category.work_subcategory_desc%></td></tr>
+<tr><td>Additional Categories:</td><td>
+<%for category in object.work_subcategories%>
+<%if category.additional%>
+(<%=category.legacy_4d_identity_code%>) <%=category.work_subcategory_desc%>
+<%end%>
+<%end%>
+</td></tr></table>
+</dd>
+
+<%if !object.work_access_rights.blank?%>
+<dt>Access rights</dt>
+<dd><%= object.work_access_rights.map {|mar| mar.access_right_source.capitalize + ": " + mar.access_right.access_right_name}.join('; ')%></dd>
+<% end %>
+
+<%if object.superwork != nil
+if PrivilegesHelper.has_link_permission?(@login, object)
+%>
+<dt>Superwork:</dt>
+<dd><%=link_to object.superwork.frbr_ui_desc, :action => :show, :controller => :superworks, :id => object.superwork %>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<!-- superwork edit link starts -->
+&nbsp;&nbsp;&nbsp;
+<span style="border-bottom: 1px solid #6CC1ED;">
+<%= link_to "Edit &raquo;", { :controller => :superworks, :action => :edit, :id => object.superwork} %>
+</span>
+<!-- superwork edit link ends -->
+<% end %>
+
+</dd>
+<%end%>
+<% end %>
+
+<%if !object.internal_note.blank?%>
+<dt>Internal Note:</dt>
+<dd><%=object.internal_note%></dd>
+<%end%>
+</dd>
+
+<dt>Created at:</dt>
+<dd><%=object.created_at%></dd>
+
+<dt>Updated at:</dt>
+<dd><%=object.updated_at%></dd>
+
+<dt>Updated by:</dt>
+<dd><%=Login.find(object.updated_by).username%></dd>
+
+<dt>Status:</dt>
+<dd><%=object.status.status_desc%></dd>
+
+</dl>
+
+</div><!--/section-->
+<%end%>
+
+<%=show_relationships_if_permission(object)%>
+
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to "Edit or Add Relationship", :controller => "works", :action => "edit", :id => object %> | 
+<%= link_to "Add New Expression to this Work", :controller => "expressions", :action => "new_from_work", :work_id => object %>
+</div>
+<%end%>
+
+
+
+
+

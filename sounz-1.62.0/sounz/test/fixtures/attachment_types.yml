@@ -1,0 +1,24 @@
+attachment_type_1:
+  attachment_type_id: 1
+  attachment_type_desc: "Contributor photo"
+  display_order: 0
+attachment_type_2:
+  attachment_type_id: 2
+  attachment_type_desc: "Contributor thumbnail"
+  display_order: 1
+attachment_type_3:
+  attachment_type_id: 3
+  attachment_type_desc: "Manifestation image"
+  display_order: 1
+attachment_type_4:
+  attachment_type_id: 4
+  attachment_type_desc: "Manifestation thumbnail"
+  display_order: 1
+attachment_type_5:
+  attachment_type_id: 5
+  attachment_type_desc: "Sample"
+  display_order: 1
+attachment_type_6:
+  attachment_type_id: 6
+  attachment_type_desc: "Campaign mailout"
+  display_order: 6

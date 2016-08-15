@@ -1,0 +1,180 @@
+mailout_template_1:
+  mailout_template_id: 1
+  mailout_type: "e"
+  template_name: "SOUNZ Newsletter"
+  template_content: "<body bgcolor=\"#CAE2D4\" style=\"margin: 0; padding: 0;\">
+                     <!-- css goes here in case the <head> tags get stripped -->
+                     <!-- gmail will strip these styles -->
+
+                     <style type='text/css'>
+                     <!--
+
+                     #container a {
+                       color: #0077B5;
+                       text-decoration: none;
+                       border-bottom: 1px solid #99CEEA;
+                     }
+
+                     #container a:hover {
+                       color: #333;
+                       border-bottom: 1px solid #999;
+                     }
+
+                     -->
+                     </style>
+
+                     <table id=\"container\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><!-- #container -->
+                     <tr valign=\"top\">
+                     <td align=\"center\">
+                     
+                     <table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#ffffff\">
+                     <tr valign=\"top\">
+                     <td align=\"center\">
+                     
+                     <table id=\"header\" width=\"624\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><!-- #header -->
+                     <tr valign=\"top\">
+                     <td align=\"center\">
+                     <img src=\"../../images/newsletter/sounz-header-1.jpg\" width=\"624\" height=\"70\" border=\"0\" alt=\"Sounz\">
+                     <a href=\"http://www.sounz.org.nz/\" target=\"_blank\" style=\"border: none;\"><img src=\"../../images/newsletter/sounz-header-2.gif\" width=\"624\" height=\"130\" border=\"0\" alt=\"Sounz\"></a>
+                     </td>
+                     </tr>
+                     </table><!-- /#header -->
+                    
+                    </td>
+                    </tr>
+                    </table>
+
+                    <table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#ffffff\">
+                    <tr valign=\"top\">
+                    <td align=\"center\">
+                    
+                    <table id=\"content\" width=\"564\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><!-- #content -->
+                    <tr valign=\"top\">
+                                <td align=\"left\" width=\"434\">
+                                    <span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #333333; line-height: 17px;\">
+                                        In this issue we have:
+                                    </span>
+
+                                    <ul style=\"font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0; list-style: none; font-size: 11px; line-height: 19px;\">
+                                        <li><img src=\"../../images/newsletter/arrow.gif\" alt=\"\"><a style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\" href=\"#section_1\">SOUNZ Contemporary Award finalists announced</a></li>
+                                        <li><img src=\"../../images/newsletter/arrow.gif\" alt=\"\"><a style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\" href=\"#section_2\">NZSO-SOUNZ Readings 13th - 14th Septemeber</a></li>
+                                        <li><img src=\"../../images/newsletter/arrow.gif\" alt=\"\"><a style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\" href=\"#section_3\">NZ Songs on CD</a></li>
+                                        <li><img src=\"../../images/newsletter/arrow.gif\" alt=\"\"><a style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\" href=\"#section_4\">Add your event</a></li>
+                                    </ul>
+                                </td>
+                                <td align=\"left\" width=\"130\">
+                                    <p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\"><strong>Newsletter No.3 </strong><br>
+                                    November 2007</p>
+
+                                    <p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\"><a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">view online</a></p>
+                                </td>
+                            </tr>
+
+                            <tr valign=\"top\">
+                                <td align=\"left\" colspan=\"2\" width=\"564\">
+                                    <img src=\"../../images/newsletter/dots.gif\" width=\"564\" height=\"45\" alt=\"\">
+
+                                    <a href=\"#\" style=\"border: none;\"><img src=\"../../images/newsletter/thumb.jpg\" width=\"122\" height=\"64\" alt=\"\" align=\"right\" style=\"margin: 0 0 20px 10px; padding: 1px; border: 1px solid #C1C1C1;\"></a>
+
+                                    <h2 id=\"section_1\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #0077B5; margin: 0 0 10px; padding: 0;\">SOUNZ Contemporary Award finalists announced</h2>
+
+                                    <span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciummy nibh.<br>
+                                        <a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">Read More</a>
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr valign=\"top\">
+                                <td align=\"left\" colspan=\"2\" width=\"564\">
+                                    <img src=\"../../images/newsletter/dots.gif\" width=\"564\" height=\"45\" alt=\"\">
+
+                                    <a href=\"#\" style=\"border: none;\"><img src=\"../../images/newsletter/thumb.jpg\" width=\"122\" height=\"64\" alt=\"\" align=\"right\" style=\"margin: 0 0 20px 10px; padding: 1px; border: 1px solid #C1C1C1;\"></a>
+
+                                    <h2 id=\"section_2\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #0077B5; margin: 0 0 10px; padding: 0;\">SOUNZ Contemporary Award finalists announced</h2>
+
+                                    <span style=\"font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciummy nibh.<br>
+                                        <a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">Read More</a>
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr valign=\"top\">
+                                <td align=\"left\" colspan=\"2\" width=\"564\">
+                                    <img src=\"../../images/newsletter/dots.gif\" width=\"564\" height=\"45\" alt=\"\">
+
+                                    <a href=\"#\" style=\"border: none;\"><img src=\"../../images/newsletter/thumb.jpg\" width=\"122\" height=\"64\" alt=\"\" align=\"right\" style=\"margin: 0 0 20px 10px; padding: 1px; border: 1px solid #C1C1C1;\"></a>
+
+                                    <h2 id=\"section_3\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #0077B5; margin: 0 0 10px; padding: 0;\">New on the SOUNZ website</h2>
+
+                                    <span style=\"font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciummy nibh.<br>
+                                        <a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">Read More</a>
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr valign=\"top\">
+                                <td align=\"left\" colspan=\"2\" width=\"564\">
+                                    <img src=\"../../images/newsletter/dots.gif\" width=\"564\" height=\"45\" alt=\"\">
+
+                                    <h2 id=\"section_4\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #0077B5; margin: 0 0 10px; padding: 0;\">Add your event</h2>
+
+                                    <span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 17px;\">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciummy nibh.<br>
+                                        <a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">Read More</a>
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr valign=\"top\">
+                                <td align=\"left\" colspan=\"2\" width=\"564\"><img src=\"../../images/newsletter/ferns.gif\" width=\"564\" height=\"84\" alt=\"\"></td>
+                            </tr>
+                    </table><!-- /#content -->
+                    
+                    </td>
+                    </tr>
+                    </table>
+
+
+                    <table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" bgcolor=\"#CAE2D4\">
+                    <tr valign=\"top\">
+                    <td align=\"center\">
+                    <img src=\"../../images/newsletter/sounz-footer.gif\" width=\"100%\" height=\"21\" alt=\"\">
+                    
+                    <table id=\"footer\" width=\"564\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"padding-bottom: 20px;\"><!-- footer -->
+                    <tr valign=\"top\">
+                    <td width=\"380\" align=\"left\">
+                    <p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #333333; line-height: 16px;\">SOUNZ, the Centre for New Zealand Music<br>
+                    Phone: +64 4 801 8602<br>
+                    <a href=\"mailto:info@sounz.org.nz\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">info@sounz.org.nz</a><br>
+                    visit SOUNZ</p>
+                    </td>
+                    <td width=\"184\" align=\"left\">
+                    <!--<p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #333333; line-height: 16px;\"><a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">send to a friend</a>--><br>
+                    <strong><a href=\"#\" style=\"color: #0077B5; text-decoration: none; border-bottom: 1px solid #99CEEA;\">unsubscribe</a></strong> from this newsletter</p>
+                    </td>
+                    </tr>
+                    <tr valign=\"top\">
+                    <td align=\"left\" colspan=\"2\" style=\"padding-top: 20px;\">
+                    <h2 style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #444; padding: 0; margin: 0;\">Created in New Zealand, heard around the world!</h2>
+                    <img src=\"../../images/newsletter/line.gif\" width=\"564\" height=\"15\" alt=\"\">
+                    <p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #444444; line-height: 16px;\">SOUNZ receives major funding from Creative NZ, APRA and through PPNZ Ltd.</p>
+                    </td>
+                    </tr>
+                    </table><!-- /#footer -->
+                    
+                    </td>
+                    </tr>
+                    </table>
+                    
+                    </td>
+                    </tr>
+                    </table><!-- /#container -->
+                    </body>"
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+  updated_by: 2

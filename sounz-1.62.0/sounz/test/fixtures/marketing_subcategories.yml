@@ -1,0 +1,906 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+msc1:
+  marketing_subcategory_id: 1
+  marketing_category_id: 1
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc2:
+  marketing_subcategory_id: 2
+  marketing_category_id: 1
+  description: Music
+  abbreviation: Music
+  display_order: 2
+
+msc3:
+  marketing_subcategory_id: 3
+  marketing_category_id: 1
+  description: Government
+  abbreviation: Government
+  display_order: 3
+
+msc4:
+  marketing_subcategory_id: 4
+  marketing_category_id: 1
+  description: Local Government
+  abbreviation: Local Government
+  display_order: 4
+
+msc5:
+  marketing_subcategory_id: 5
+  marketing_category_id: 2
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc6:
+  marketing_subcategory_id: 6
+  marketing_category_id: 2
+  description: Theatre
+  abbreviation: Theatre
+  display_order: 2
+
+msc7:
+  marketing_subcategory_id: 7
+  marketing_category_id: 2
+  description: Dance
+  abbreviation: Dance
+  display_order: 3
+
+msc8:
+  marketing_subcategory_id: 8
+  marketing_category_id: 2
+  description: Visual Arts (including museums)
+  abbreviation: Visual Arts (including museums)
+  display_order: 4
+
+msc9:
+  marketing_subcategory_id: 9
+  marketing_category_id: 2
+  description: Film
+  abbreviation: Film
+  display_order: 5
+
+msc10:
+  marketing_subcategory_id: 10
+  marketing_category_id: 3
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc11:
+  marketing_subcategory_id: 11
+  marketing_category_id: 3
+  description: High School
+  abbreviation: High School
+  display_order: 2
+
+msc12:
+  marketing_subcategory_id: 12
+  marketing_category_id: 3
+  description: Primary/ Intermediate
+  abbreviation: Primary/ Intermediate
+  display_order: 3
+
+msc13:
+  marketing_subcategory_id: 13
+  marketing_category_id: 3
+  description: Pre-school
+  abbreviation: Pre-school
+  display_order: 4
+
+msc14:
+  marketing_subcategory_id: 14
+  marketing_category_id: 3
+  description: University/ Polytechnic/ Conservatorium
+  abbreviation: University/ Polytechnic/ Conservatorium
+  display_order: 5
+
+msc15:
+  marketing_subcategory_id: 15
+  marketing_category_id: 3
+  description: Continuing Education
+  abbreviation: Continuing Education
+  display_order: 6
+
+msc16:
+  marketing_subcategory_id: 16
+  marketing_category_id: 3
+  description: Music Courses (short, seasonal)
+  abbreviation: Music Courses (short, seasonal)
+  display_order: 7
+
+msc17:
+  marketing_subcategory_id: 17
+  marketing_category_id: 3
+  description: Academies
+  abbreviation: Academies
+  display_order: 8
+
+msc18:
+  marketing_subcategory_id: 18
+  marketing_category_id: 3
+  description: Teaching institutions (non-musical)
+  abbreviation: Teaching institutions (non-musical)
+  display_order: 9
+
+msc19:
+  marketing_subcategory_id: 19
+  marketing_category_id: 3
+  description: Kura Kaupapa
+  abbreviation: Kura Kaupapa
+  display_order: 10
+
+msc20:
+  marketing_subcategory_id: 20
+  marketing_category_id: 4
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc21:
+  marketing_subcategory_id: 21
+  marketing_category_id: 4
+  description: Professional  and government music education  Organisations
+  abbreviation: Professional  and government music education  Organisations
+  display_order: 2
+
+msc22:
+  marketing_subcategory_id: 22
+  marketing_category_id: 4
+  description: Examination Boards
+  abbreviation: Examination Boards
+  display_order: 3
+
+msc23:
+  marketing_subcategory_id: 23
+  marketing_category_id: 4
+  description: Performing Organisations
+  abbreviation: Performing Organisations
+  display_order: 4
+
+msc24:
+  marketing_subcategory_id: 24
+  marketing_category_id: 4
+  description: Private/ corporate
+  abbreviation: Private/ corporate
+  display_order: 5
+
+msc25:
+  marketing_subcategory_id: 25
+  marketing_category_id: 5
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc26:
+  marketing_subcategory_id: 26
+  marketing_category_id: 5
+  description: Organisers
+  abbreviation: Organisers
+  display_order: 2
+
+msc27:
+  marketing_subcategory_id: 27
+  marketing_category_id: 6
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc28:
+  marketing_subcategory_id: 28
+  marketing_category_id: 6
+  description: Touring
+  abbreviation: Touring
+  display_order: 2
+
+msc29:
+  marketing_subcategory_id: 29
+  marketing_category_id: 6
+  description: Series
+  abbreviation: Series
+  display_order: 3
+
+msc30:
+  marketing_subcategory_id: 30
+  marketing_category_id: 6
+  description: Promoters/agents
+  abbreviation: Promoters/agents
+  display_order: 4
+
+msc31:
+  marketing_subcategory_id: 31
+  marketing_category_id: 7
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc32:
+  marketing_subcategory_id: 32
+  marketing_category_id: 7
+  description: Music Festivals
+  abbreviation: Music Festivals
+  display_order: 2
+
+msc33:
+  marketing_subcategory_id: 33
+  marketing_category_id: 8
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc34:
+  marketing_subcategory_id: 34
+  marketing_category_id: 8
+  description: Music
+  abbreviation: Music
+  display_order: 2
+
+msc35:
+  marketing_subcategory_id: 35
+  marketing_category_id: 8
+  description: Theatre/dance
+  abbreviation: Theatre/dance
+  display_order: 3
+
+msc36:
+  marketing_subcategory_id: 36
+  marketing_category_id: 8
+  description: Gallery/ museum
+  abbreviation: Gallery/ museum
+  display_order: 4
+
+msc37:
+  marketing_subcategory_id: 37
+  marketing_category_id: 8
+  description: Place of worship
+  abbreviation: Place of worship
+  display_order: 5
+
+msc38:
+  marketing_subcategory_id: 38
+  marketing_category_id: 8
+  description: Meeting/conference
+  abbreviation: Meeting/conference
+  display_order: 6
+
+msc39:
+  marketing_subcategory_id: 39
+  marketing_category_id: 9
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc40:
+  marketing_subcategory_id: 40
+  marketing_category_id: 9
+  description: Newspapers
+  abbreviation: Newspapers
+  display_order: 2
+
+msc41:
+  marketing_subcategory_id: 41
+  marketing_category_id: 9
+  description: Magazines/ Periodicals
+  abbreviation: Magazines/ Periodicals
+  display_order: 3
+
+msc42:
+  marketing_subcategory_id: 42
+  marketing_category_id: 9
+  description: Radio
+  abbreviation: Radio
+  display_order: 4
+
+msc43:
+  marketing_subcategory_id: 43
+  marketing_category_id: 9
+  description: TV
+  abbreviation: TV
+  display_order: 5
+
+msc44:
+  marketing_subcategory_id: 44
+  marketing_category_id: 9
+  description: Internet
+  abbreviation: Internet
+  display_order: 6
+
+msc45:
+  marketing_subcategory_id: 45
+  marketing_category_id: 10
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc46:
+  marketing_subcategory_id: 46
+  marketing_category_id: 10
+  description: Composers/ writers
+  abbreviation: Composers/ writers
+  display_order: 2
+
+msc47:
+  marketing_subcategory_id: 47
+  marketing_category_id: 10
+  description: Recording
+  abbreviation: Recording
+  display_order: 3
+
+msc48:
+  marketing_subcategory_id: 48
+  marketing_category_id: 10
+  description: Broadcasting
+  abbreviation: Broadcasting
+  display_order: 4
+
+msc49:
+  marketing_subcategory_id: 49
+  marketing_category_id: 10
+  description: Contemporary popular
+  abbreviation: Contemporary popular
+  display_order: 5
+
+msc50:
+  marketing_subcategory_id: 50
+  marketing_category_id: 11
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc51:
+  marketing_subcategory_id: 51
+  marketing_category_id: 11
+  description: Instrumental/ orchestral
+  abbreviation: Instrumental/ orchestral
+  display_order: 2
+
+msc52:
+  marketing_subcategory_id: 52
+  marketing_category_id: 11
+  description: Vocal/ choral/ opera
+  abbreviation: Vocal/ choral/ opera
+  display_order: 3
+
+msc53:
+  marketing_subcategory_id: 53
+  marketing_category_id: 11
+  description: Brass/ Piping
+  abbreviation: Brass/ Piping
+  display_order: 4
+
+msc54:
+  marketing_subcategory_id: 54
+  marketing_category_id: 11
+  description: Contemporary popular
+  abbreviation: Contemporary popular
+  display_order: 5
+
+msc55:
+  marketing_subcategory_id: 55
+  marketing_category_id: 12
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc56:
+  marketing_subcategory_id: 56
+  marketing_category_id: 12
+  description: Vocal/opera/ musical theatre
+  abbreviation: Vocal/opera/ musical theatre
+  display_order: 2
+
+msc57:
+  marketing_subcategory_id: 57
+  marketing_category_id: 12
+  description: Chamber Ensembles
+  abbreviation: Chamber Ensembles
+  display_order: 3
+
+msc58:
+  marketing_subcategory_id: 58
+  marketing_category_id: 12
+  description: Chamber Ensembles - contemporary
+  abbreviation: Chamber Ensembles - contemporary
+  display_order: 4
+
+msc59:
+  marketing_subcategory_id: 59
+  marketing_category_id: 12
+  description: Orchestra
+  abbreviation: Orchestra
+  display_order: 5
+
+msc60:
+  marketing_subcategory_id: 60
+  marketing_category_id: 12
+  description: Sonic Art / experimental/ improv
+  abbreviation: Sonic Art / experimental/ improv
+  display_order: 6
+
+msc61:
+  marketing_subcategory_id: 61
+  marketing_category_id: 12
+  description: Jazz Ensembles
+  abbreviation: Jazz Ensembles
+  display_order: 7
+ 
+msc62:
+  marketing_subcategory_id: 62
+  marketing_category_id: 12
+  description: Piping and Pipe Bands
+  abbreviation: Piping and Pipe Bands
+  display_order: 8
+ 
+msc63:
+  marketing_subcategory_id: 63
+  marketing_category_id: 12
+  description: Brass Bands
+  abbreviation: Brass Bands
+  display_order: 9
+ 
+msc64:
+  marketing_subcategory_id: 64
+  marketing_category_id: 12
+  description: Concert Bands
+  abbreviation: Concert Bands
+  display_order: 10
+
+msc65:
+  marketing_subcategory_id: 65
+  marketing_category_id: 12
+  description: Accordion Orchestra
+  abbreviation: Accordion Orchestra
+  display_order: 11
+
+msc66:
+  marketing_subcategory_id: 66
+  marketing_category_id: 12
+  description: Choirs
+  abbreviation: Choirs
+  display_order: 12
+
+msc67:
+  marketing_subcategory_id: 67
+  marketing_category_id: 12
+  description: Contemporary Popular
+  abbreviation: Contemporary Popular
+  display_order: 13
+
+msc68:
+  marketing_subcategory_id: 68
+  marketing_category_id: 12
+  description: Gamelan
+  abbreviation: Gamelan
+  display_order: 14
+
+msc69:
+  marketing_subcategory_id: 69
+  marketing_category_id: 13
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc70:
+  marketing_subcategory_id: 70
+  marketing_category_id: 13
+  description: Opera
+  abbreviation: Opera
+  display_order: 2
+
+msc71:
+  marketing_subcategory_id: 71
+  marketing_category_id: 13
+  description: Jazz/ contemporary
+  abbreviation: Jazz/ contemporary
+  display_order: 3
+
+msc72:
+  marketing_subcategory_id: 72
+  marketing_category_id: 13
+  description: Maori
+  abbreviation: Maori
+  display_order: 4
+
+msc73:
+  marketing_subcategory_id: 73
+  marketing_category_id: 14
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc74:
+  marketing_subcategory_id: 74
+  marketing_category_id: 14
+  description: Keyboard
+  abbreviation: Keyboard
+  display_order: 2
+ 
+msc75:
+  marketing_subcategory_id: 75
+  marketing_category_id: 14
+  description: Strings
+  abbreviation: Strings
+  display_order: 3
+
+msc76:
+  marketing_subcategory_id: 76
+  marketing_category_id: 14
+  description: Plectral Stings
+  abbreviation: Plectral Stings
+  display_order: 4
+
+msc77:
+  marketing_subcategory_id: 77
+  marketing_category_id: 14
+  description: Wind
+  abbreviation: Wind
+  display_order: 5
+
+msc78:
+  marketing_subcategory_id: 78
+  marketing_category_id: 14
+  description: Brass
+  abbreviation: Brass
+  display_order: 6
+
+msc79:
+  marketing_subcategory_id: 79
+  marketing_category_id: 14
+  description: Percussion
+  abbreviation: Percussion
+  display_order: 7
+
+msc80:
+  marketing_subcategory_id: 80
+  marketing_category_id: 14
+  description: Taonga Puoro
+  abbreviation: Taonga Puoro
+  display_order: 8
+
+msc81:
+  marketing_subcategory_id: 81
+  marketing_category_id: 15
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc82:
+  marketing_subcategory_id: 82
+  marketing_category_id: 15
+  description: Sonic art
+  abbreviation: Sonic art
+  display_order: 2
+
+msc83:
+  marketing_subcategory_id: 83
+  marketing_category_id: 15
+  description: Improv
+  abbreviation: Improv
+  display_order: 3
+
+msc84:
+  marketing_subcategory_id: 84
+  marketing_category_id: 15
+  description: Experimental
+  abbreviation: Experimental
+  display_order: 4
+
+msc85:
+  marketing_subcategory_id: 85
+  marketing_category_id: 16
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc86:
+  marketing_subcategory_id: 86
+  marketing_category_id: 16
+  description: Music
+  abbreviation: Music
+  display_order: 2
+
+msc87:
+  marketing_subcategory_id: 87
+  marketing_category_id: 17
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc88:
+  marketing_subcategory_id: 88
+  marketing_category_id: 17
+  description: Music Performance
+  abbreviation: Music Performance
+  display_order: 2
+
+msc89:
+  marketing_subcategory_id: 89
+  marketing_category_id: 17
+  description: Recorded sound
+  abbreviation: Recorded sound
+  display_order: 3
+
+msc90:
+  marketing_subcategory_id: 90
+  marketing_category_id: 18
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc91:
+  marketing_subcategory_id: 91
+  marketing_category_id: 18
+  description: Maori
+  abbreviation: Maori
+  display_order: 2
+
+msc92:
+  marketing_subcategory_id: 92
+  marketing_category_id: 18
+  description: Pacific
+  abbreviation: Pacific
+  display_order: 3
+
+msc93:
+  marketing_subcategory_id: 93
+  marketing_category_id: 18
+  description: European
+  abbreviation: European
+  display_order: 4
+
+msc94:
+  marketing_subcategory_id: 94
+  marketing_category_id: 18
+  description: Asian
+  abbreviation: Asian
+  display_order: 5
+
+msc95:
+  marketing_subcategory_id: 95
+  marketing_category_id: 18
+  description: Latin American
+  abbreviation: Latin American
+  display_order: 6
+
+msc96:
+  marketing_subcategory_id: 96
+  marketing_category_id: 19
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc97:
+  marketing_subcategory_id: 97
+  marketing_category_id: 19
+  description: Government
+  abbreviation: Government
+  display_order: 2
+
+msc98:
+  marketing_subcategory_id: 98
+  marketing_category_id: 19
+  description: Foundations/ Trusts
+  abbreviation: Foundations/ Trusts
+  display_order: 3
+
+msc99:
+  marketing_subcategory_id: 99
+  marketing_category_id: 19
+  description: Corporate
+  abbreviation: Corporate
+  display_order: 4
+
+msc100:
+  marketing_subcategory_id: 100
+  marketing_category_id: 19
+  description: Gaming
+  abbreviation: Gaming
+  display_order: 5
+
+msc101:
+  marketing_subcategory_id: 101
+  marketing_category_id: 19
+  description: Private
+  abbreviation: Private
+  display_order: 6
+
+msc102:
+  marketing_subcategory_id: 102
+  marketing_category_id: 20
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc103:
+  marketing_subcategory_id: 103
+  marketing_category_id: 20
+  description: Recording studios
+  abbreviation: Recording studios
+  display_order: 2
+
+msc104:
+  marketing_subcategory_id: 104
+  marketing_category_id: 20
+  description: Engineering/ editing / dubbing facilities
+  abbreviation: Engineering/ editing / dubbing facilities
+  display_order: 3
+
+msc105:
+  marketing_subcategory_id: 105
+  marketing_category_id: 20
+  description: Electroacoustic studios
+  abbreviation: Electroacoustic studios
+  display_order: 4
+
+msc106:
+  marketing_subcategory_id: 106
+  marketing_category_id: 21
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc107:
+  marketing_subcategory_id: 107
+  marketing_category_id: 21
+  description: Sheet Music
+  abbreviation: Sheet Music
+  display_order: 2
+
+msc108:
+  marketing_subcategory_id: 108
+  marketing_category_id: 21
+  description: Directories/ books
+  abbreviation: Directories/ books
+  display_order: 3
+
+msc109:
+  marketing_subcategory_id: 109
+  marketing_category_id: 21
+  description: Internet
+  abbreviation: Internet
+  display_order: 4
+
+msc110:
+  marketing_subcategory_id: 110
+  marketing_category_id: 21
+  description: Recordings
+  abbreviation: Recordings
+  display_order: 5
+
+msc111:
+  marketing_subcategory_id: 111
+  marketing_category_id: 22
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc112:
+  marketing_subcategory_id: 112
+  marketing_category_id: 22
+  description: Copying/ setting/ pdfs
+  abbreviation: Copying/ setting/ pdfs
+  display_order: 2
+
+msc113:
+  marketing_subcategory_id: 113
+  marketing_category_id: 22
+  description: Instrument making and repair
+  abbreviation: Instrument making and repair
+  display_order: 3
+
+msc114:
+  marketing_subcategory_id: 114
+  marketing_category_id: 22
+  description: Finance/ insurance/ legal
+  abbreviation: Finance/ insurance/ legal
+  display_order: 4
+
+msc115:
+  marketing_subcategory_id: 115
+  marketing_category_id: 22
+  description: Music Therapy
+  abbreviation: Music Therapy
+  display_order: 5
+
+msc116:
+  marketing_subcategory_id: 116
+  marketing_category_id: 22
+  description: Research
+  abbreviation: Research
+  display_order: 6
+
+msc117:
+  marketing_subcategory_id: 117
+  marketing_category_id: 23
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc118:
+  marketing_subcategory_id: 118
+  marketing_category_id: 23
+  description: Recordings
+  abbreviation: Recordings
+  display_order: 2
+
+msc119:
+  marketing_subcategory_id: 119
+  marketing_category_id: 23
+  description: Sheet Music
+  abbreviation: Sheet Music
+  display_order: 3
+
+msc120:
+  marketing_subcategory_id: 120
+  marketing_category_id: 23
+  description: Instruments
+  abbreviation: Instruments
+  display_order: 4
+
+msc121:
+  marketing_subcategory_id: 121
+  marketing_category_id: 23
+  description: Books
+  abbreviation: Books
+  display_order: 5
+
+msc122:
+  marketing_subcategory_id: 122
+  marketing_category_id: 23
+  description: Equipment (technology/IT)
+  abbreviation: Equipment (technology/IT)
+  display_order: 6
+
+msc123:
+  marketing_subcategory_id: 123
+  marketing_category_id: 24
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+msc124:
+  marketing_subcategory_id: 124
+  marketing_category_id: 24
+  description: Recordings
+  abbreviation: Recordings
+  display_order: 2
+
+msc125:
+  marketing_subcategory_id: 125
+  marketing_category_id: 24
+  description: Sheet Music
+  abbreviation: Sheet Music
+  display_order: 3
+
+msc126:
+  marketing_subcategory_id: 126
+  marketing_category_id: 24
+  description: Instruments
+  abbreviation: Instruments
+  display_order: 4
+
+msc127:
+  marketing_subcategory_id: 127
+  marketing_category_id: 24
+  description: Books
+  abbreviation: Books
+  display_order: 5
+
+msc128:
+  marketing_subcategory_id: 128
+  marketing_category_id: 24
+  description: Equipment (technology/IT)
+  abbreviation: Equipment (technology/IT)
+  display_order: 6
+
+msc129:
+  marketing_subcategory_id: 129
+  marketing_category_id: 25
+  description: Unspecified
+  abbreviation: Unspecified
+  display_order: 1
+
+
+   

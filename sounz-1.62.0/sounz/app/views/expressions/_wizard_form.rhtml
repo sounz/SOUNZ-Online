@@ -1,0 +1,55 @@
+<%= error_messages_for 'expression' %>
+
+<p/>Status:<br><select id="expression_status_id" name="expression[status_id]">
+        <%= options_from_collection_for_select @statuses, "status_id", "status_desc" %>
+</select></p>
+
+<p/>Mode:<br><select id="expression_mode_id" name="expression[mode_id]">
+        <%= options_from_collection_for_select @modes, "mode_id", "mode_desc" %>
+</select></p>
+
+<!--[form:expression]-->
+<p><label for="expression_expression_start">Expression start</label><br>
+<%= datetime_select 'expression', 'expression_start'  %></p>
+
+<p><label for="expression_expression_finish">Expression finish</label><br>
+<%= datetime_select 'expression', 'expression_finish'  %></p>
+
+<p><label for="expression_partial_expression">Partial expression</label><br>
+<select id="expression_partial_expression" name="expression[partial_expression]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+
+
+<p><label for="expression_premiere">Premiere</label><br>
+<%= select_tag 'expression[premiere]',  
+  options_for_select( [
+    ['Not Applicable','NA'],
+    ['New Zealand Premiere','NZ'],
+    ['World Premiere','W']
+  ], selected=@premiere ),
+  { :multiple => false } 
+%>
+</p>
+
+<p><label for="expression_edition">Edition</label><br>
+<%= text_field 'expression', 'edition'  %></p>
+
+<p><label for="expression_use_restriction_note">Use restriction note</label><br>
+<%= text_area 'expression', 'use_restriction_note'  %></p>
+
+<p><label for="expression_general_note">General note</label><br>
+<%= text_area 'expression', 'general_note'  %></p>
+
+<p><label for="expression_internal_note">Internal note</label><br>
+<%= text_area 'expression', 'internal_note'  %></p>
+
+<p><label for="expression_created_at">Created at</label><br>
+<%= datetime_select 'expression', 'created_at'  %></p>
+
+<p><label for="expression_updated_at">Updated at</label><br>
+<%= datetime_select 'expression', 'updated_at'  %></p>
+
+<p><label for="expression_updated_by">Updated by</label><br>
+<%= text_field 'expression', 'updated_by'  %></p>
+<!--[eoform:expression]-->
+

@@ -1,0 +1,43 @@
+<%= error_messages_for 'exam_set_work' %>
+
+<!--[form:exam_set_work]-->
+<%= hidden_field 'exam_set_work', 'manifestation_id', :value => manifestation.manifestation_id%>
+<%
+if !manifestation.exam_set_works.blank? && exam_set_work_id.blank?
+
+exam_set_works = manifestation.exam_set_works.select{|ew| ew.exam_set_work_id != exam_set_work_id}
+existent_examboard_ids = manifestation.exam_set_works.collect{ |ew| ew.examboard_id }
+examboards_to_select_from =  Examboard.find(:all, :conditions => ['examboard_id NOT IN (?)', existent_examboard_ids])
+options = {:include_blank => "-- Select an examination board --"}
+
+elsif !manifestation.exam_set_works.blank? && !exam_set_work_id.blank?
+exam_set_works = manifestation.exam_set_works.select{|ew| ew.exam_set_work_id != exam_set_work_id}
+existent_examboard_ids = exam_set_works.collect{ |ew| ew.examboard_id }
+options = {:prompt => "-- Select an examination board --"}
+
+if !existent_examboard_ids.blank?
+examboards_to_select_from =  Examboard.find(:all, :conditions => ['examboard_id NOT IN (?)', existent_examboard_ids])
+else
+examboards_to_select_from =  Examboard.find(:all)
+end
+
+else
+examboards_to_select_from =  Examboard.find(:all)
+options = {:prompt => "-- Select an examination board --"}
+end
+%>
+<table>
+<tr>
+<td>
+<label for="exam_set_work_examboard_id">Examination board</label><br>
+<%= collection_select(:exam_set_work, :examboard_id, examboards_to_select_from, :examboard_id, :examboard_name, 
+options)
+%>
+</td>
+<td>
+<label for="exam_set_work_grade_notes">Grade notes</label><br>
+<%= text_field 'exam_set_work', 'grade_notes'  %>
+</td>
+</tr>
+</table>
+<!--[eoform:exam_set_work]-->

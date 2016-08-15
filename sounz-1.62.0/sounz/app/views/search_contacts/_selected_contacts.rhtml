@@ -1,0 +1,68 @@
+<% if !@selected_contacts.blank? %>
+<!-- hr only for developers' sanity, can be removed when final styling is applied :) -->
+<hr style="margin: 1em 0; border: 1px solid #ccc;">
+
+<h2>Selected Results</h2>
+
+<%= form_remote_tag :url => { :action => :remove_contacts_from_selection },
+                    :html => { :id => 'selected_contacts_form' },
+                    :before => "Element.show('spinner_remove_results')",
+                    :complete => "Element.hide('spinner_remove_results')"
+%>
+
+You currently have <%=@contacts.length %> contacts selected
+
+<%= hidden_field "role_contactinfos", "selected", :value => @selected_contacts.map{|c| c.role_contactinfo_id}.join(",")%>
+
+<table width="100%">
+      <tr>
+        <td colspan="2" align="right" width="90%">
+           <%= selectAllNone('selected_results')%>
+        </td>
+        <td valign="top" width="10%" rowspan="11">
+         <%= submit_tag "Remove\nSelected" %><br/><br/>
+         <span class="actionSubmit">
+           <%= link_to_remote "Remove All", :url => {:action => :remove_contacts_from_selection, :remove => 'all'},
+                                            :before => "Element.show('spinner_remove_results')",
+                                            :complete => "Element.hide('spinner_remove_results')"
+           %>
+         </span>
+        </td>
+      </tr>
+<br/>
+<%for contact in @selected_contacts%>
+<tr id="<%= 'selected_'+generate_id(contact) %>">
+<td>
+<% checked = nil%>
+<% checked = 'checked' if !session[:contacts_to_add].blank? && session[:contacts_to_add].include?(contact)%>
+<%= render :partial => "shared/selected_contacts_editable", :locals => { :contact => contact, :checked => checked, :existing_contacts => nil } %></td>
+</tr>
+<%end%>
+
+<% if @selected_contacts.length > 10 %>
+        <tr>
+        <td colspan="2" align="right" width="90%">
+           <%= selectAllNone('selected_results')%>
+        </td>
+        <td valign="top" width="10%">
+         <%= submit_tag "Remove" %>
+        </td>
+      </tr>
+<% end %>
+
+</table>
+
+<%= render :partial => 'shared/spinner_with_suffix', :locals => { :suffix => 'remove_results' } %>
+
+<span id="set_selected"></span>
+
+<%= observe_form 'selected_contacts_form',
+  :url => { :action => :set_selected_contacts },
+  :update => 'set_selected', 
+  :frequency => 0.5
+%>
+
+
+</form>
+<br>
+<% end %>

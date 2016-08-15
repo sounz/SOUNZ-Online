@@ -1,0 +1,104 @@
+<div class="logins">
+<h1>Editing login</h1>
+<%title "Editing login #{@user_login.username}"%>
+
+<fieldset>
+<legend>Login: <%=@user_login.username%></legend>
+<!--<b>Display a list of member_types assigned to this login</b><p/>-->
+
+<%# for member_type in @member_types
+%>
+<%#if member_type == MemberType::SUPERUSER and @user_login.is_superuser?
+%>
+<!--<span class="actionButton">-->
+<%=#link_to 'Remove this member type', :controller => :logins, :action => :removeMemberType, :id => @user_login,:member_type_id=> member_type.id
+%> <!--</span>--><%=#h member_type.member_type_desc
+%>
+<!--<br>-->
+<%#else
+%>
+<!--<span class="actionButton">--><%=#link_to 'Remove this member type', :controller => :logins, :action => :removeMemberType, :id => @user_login,:member_type_id=> member_type.id
+%> <!--</span>--><%=#h member_type.member_type_desc
+%><!--<br>-->
+<%#end
+%>
+<%#end
+%>
+
+<p><b>Memberships assigned to this login</b><br/>
+<%for membership in @user_login.memberships%>
+<%#if membership.expiry_date.blank?
+%>
+<%=#membership.member_type.member_type_desc
+%><!-- does not expire.<br/>-->
+<%#else
+%>
+<span class="actionButton"><%=link_to 'Remove', {:controller => :logins, :action => :removeMembership, :id => @user_login,:membership_id=> membership.id}, :confirm => 'Are you sure you want to remove ' + membership.member_type.member_type_desc + ' Membership?'%></span>
+<%if membership.pending_payment && !membership.sounz_service_id.blank?%>
+<span class="actionButton"><%=link_to 'Paid', :controller => :logins, :action => :membershipPaid, :id => @user_login,:membership_id=> membership.id%></span>
+<%end%>
+
+<%= link_to membership.member_type.member_type_desc, :controller => 'memberships', :action => :show, :id => membership.id %>
+
+<% if !membership.expiry_date.blank?%>
+ expires at: <%= dby_date(membership.expiry_date)%>
+<% else %>
+does not expire
+<% end%>
+
+<% if !membership.sounz_service_id.blank?%>
+<%if membership.pending_payment %>
+<font color='#f00'>UNPAID</font>
+<%else%>
+<font color='#0f0'>PAID</font>
+<%end%>
+<% end %>
+
+<br/>
+<%#end
+%>
+<%end%>
+</p>
+
+
+
+
+<%# form_tag :action => 'addMemberType', :id => @user_login do 
+%>
+<%=# collection_select(:member_type, :member_type_id, 
+   #                       @available_member_types, :id, 
+   #                       :member_type_desc, {:prompt => "-- Select a member type --"},
+   #                       {:style => "width: 350px"}) 
+%>
+
+<%=# submit_tag 'Add this member type' 
+%>                  
+
+<%#end
+%>
+
+<p><span class="actionButton"><%= link_to "Add New Membership", :controller => 'memberships', :action => :new, :login => @user_login %></span></p>
+
+<% form_tag :action => 'update', :id => @user_login do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+</fieldset>
+
+<div class="editLinks">
+<% controller = nil
+id = nil 
+if !@user_login.person_id.blank?
+controller = 'people'
+id = @user_login.person_id
+elsif !@user_login.organisation_id.blank?
+controller = 'organisations'
+id = @user_login.organisation_id
+end
+%>
+<%= link_to 'Show', :action => 'show', :id => @user_login %> |
+<%= link_to 'List', :action => 'list' %> |
+<%= link_to 'Privileges', :controller => controller, :action => :privileges_list, :id => id unless controller.blank?%>
+</div>
+</div>

@@ -1,0 +1,5 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+setting_1:
+  setting_id: 1
+  setting_name: "WebsiteURL"
+  setting_value: "sounz.catalyst.net.nz"

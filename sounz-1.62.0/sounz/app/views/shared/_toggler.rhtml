@@ -1,0 +1,12 @@
+<%
+prefix=title.tableize
+name = prefix+'_'+name%>
+<span id="<%=name%>">
+<span id="show_button_<%=name%>">
+<a onclick="Element.toggle('hide_button_<%=name%>'); Element.toggle('show_button_<%=name%>');"><img src="/icons/closed.png"><%=title%></a>
+</span>
+<span id="hide_button_<%=name%>" style="display:none;">
+<a onclick="Element.toggle('hide_button_<%=name%>'); Element.toggle('show_button_<%=name%>');"><img src="/icons/expanded.png"></a>
+<%=text%>
+</span>
+</span>

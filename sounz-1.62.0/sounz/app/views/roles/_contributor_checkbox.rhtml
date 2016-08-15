@@ -1,0 +1,9 @@
+<% if !@role.blank? && ((!@role.role_type.blank? && RoleType.contributor_role_types.include?(@role.role_type)) || @role.is_contributor) 
+  %>
+ <table>
+  <tr>
+  <th>Contributor&nbsp;&nbsp;</th>
+  <td><%= check_box "role", "is_contributor", :disabled =>  !@role.contributor_info_empty? %></td>
+  </tr>
+ </table>
+<% end %>

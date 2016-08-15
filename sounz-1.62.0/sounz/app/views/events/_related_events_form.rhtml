@@ -1,0 +1,32 @@
+<fieldset>
+	<legend>Sub Events</legend>
+<%
+object_as_model_string = generate_id(object)
+%>
+
+<div id="find_children_<%=object_as_model_string%>">
+	<input type="text" value="" id="find_sub_events_text_<%=object_as_model_string%>" size="20"/>
+	<div id="object_list_<%=object_as_model_string%>">
+	</div>
+</div>
+
+
+<%
+js_for_fields = "'search_text='+escape($('find_sub_events_text_"+object_as_model_string+"').value)"+
+"+ '&frbr_object_id="+object_as_model_string+"'"
+%>
+<%=observe_field('find_sub_events_text_'+ object_as_model_string, :frequency => 2, :update => 'object_list_'+object_as_model_string,
+:url => {:action => :find_sub_events,:controller => :events},:with => js_for_fields
+)%>
+
+
+
+
+
+
+<ul id="related_events_list_<%=object_as_model_string%>">
+<%for subevent in object.children%>
+	<%=render :partial => 'events/render_sub_event', :locals => {:frbr_child => subevent, :source_id => object_as_model_string}%>
+<%end%>
+</ul>
+</fieldset>

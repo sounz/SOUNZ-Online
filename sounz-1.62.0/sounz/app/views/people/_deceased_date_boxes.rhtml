@@ -1,0 +1,10 @@
+<% if @deceased %>
+    <th><label for="person_date_of_death_3i">Date of death</label></th>
+    <td><%= date_select 'person', 'date_of_death', { :start_year => 1890, 
+                                                     :end_year => Time.now.year,
+                                                     :include_blank => true,
+                                                     :order => [:day, :month, :year] } %>
+    </td>
+<% else %>
+    <th></th><td></td>
+<% end %>

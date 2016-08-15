@@ -1,0 +1,17 @@
+<!-- frbr/objects/search_result/manifestation_availability -->
+
+<ul class="availability-details">
+  <li><%if !object.is_a_recording?%><%=object.manifestation_type.manifestation_type_desc.camelize.gsub('::S', 's')%> | <%end%><%=object.format.format_desc.camelize.gsub('::S', 's')%></li>
+
+<%if !object.item_cost.blank? and object.item_cost > 0%>
+  <li class="price"><span><%=number_to_currency(object.item_cost)%></span></li>
+<%end%>
+  <li>
+        <%=render :partial => 'shared/frbr/objects/full/manifestation/buy_button', :locals => {:object => object}%>
+        <%=render :partial => 'shared/frbr/objects/full/manifestation/borrow_button', :locals => {:object => object}%>
+        <%=render :partial => 'shared/frbr/objects/full/manifestation/hire_button', :locals => {:object => object}%>
+  </li>
+</ul>
+
+
+

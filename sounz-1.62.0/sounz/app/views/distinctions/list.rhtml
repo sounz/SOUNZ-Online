@@ -1,0 +1,30 @@
+<h1>Listing distinctions</h1>
+
+<table>
+  <tr>
+
+    <th>Name</th>
+	<th>Awarded Since</th>
+  </tr>
+  
+<% for distinction in @distinctions %>
+  <tr>
+    <td><%=distinction.award_name%></td>
+	<td><%=distinction.awarded_since_year%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => distinction %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_DISTINCTION')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => distinction %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => distinction }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+    
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @distinctions %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_DISTINCTION')%>
+<%= link_to 'New distinction', :action => 'new' %>
+<% end %>

@@ -1,0 +1,95 @@
+<%
+date_string=""
+date_string << EventsHelper.get_start_time(object)
+date_string << "<br>" if !date_string.blank?
+date_string << EventsHelper.get_end_time(object)
+
+date_string.strip!
+%>
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => object.event_title,
+			:subheading => date_string,
+			:links => nil,
+			:text => nil,
+			:object => object #for the select this button
+}
+%>
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<%event = object%>
+<%if !event.general_note.blank?%>
+  <div class="section"><%=convert_to_html(event.general_note)%></div>
+<%end%>
+
+<% if object.all_performers.length > 0%>
+  <div class="section">
+    <%= render :partial => 'shared/frbr/objects/common/list_of_contributors', 
+  :locals => {:object => object, :contributors => object.all_performers, :title => "Featuring"}%>
+  </div>
+<% end %>
+
+<% if object.all_works.length > 0%>
+  <div class="section">
+    <%= render :partial => 'shared/frbr/objects/common/list_works_with_composers',
+   :locals => {:object => object, :works => object.all_works, :title => "New Zealand Music"}%>
+  </div>
+<% end %>
+
+<% if object.presenters.length > 0%>
+  <div class="section">
+    <%= render :partial => 'shared/frbr/objects/common/list_of_contributors', 
+  :locals => {:object => object, :contributors => object.presenters, :title => "Presented By"}%>
+  </div>
+<% end %>
+
+<div class="section">
+  <h2>Venue and Booking Details</h2>
+
+  <%
+  venues = PrivilegesHelper.permitted_objects(@login, object.venues_held_at)
+  if !venues.blank?
+  %>
+
+    <%for venue in venues%>
+      <%= render :partial => 'shared/public_pages/contributor_link', :locals => {:contributor_role => venue}%>
+    <%end%>
+    <br/>
+  <%end%>
+
+  <% 
+  contactinfo = object.contactinfo 
+  contactinfo.initialize_contactinfo_associated_with_another_contactinfo( contactinfo.default_contactinfo ) unless contactinfo.default_contactinfo.blank?
+  %>
+
+  <%= render :partial => 'shared/public_pages/contactinfo', 
+     :locals => { :contactinfo => contactinfo, :website_url => EventsHelper.get_website_url(object) } 
+  %>
+
+  <%= convert_to_html(object.tickets_note)%>
+</div>
+
+<%= render :partial => 'shared/frbr/objects/common/list_of_events', 
+:locals => {:object => object, :events => object.children, :title => "Events Happening at this Event"}%>
+
+<%if !event.parent.blank? && PrivilegesHelper.has_link_permission?(@login, event)%>
+<div class="section">
+<h2>Umbrella Event</h2>
+<%= link_to event.parent.event_title, :controller => :events, :action => :show, :id => event.parent %><br>
+</div>
+<%end%>
+
+
+<%=# render :partial => 'shared/frbr/objects/full/event/event_links', :locals => {:object => object}
+%>
+
+
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note,created_at,updated_at, updated_by, status"}%>
+<%=show_relationships_if_permission(@event)%>
+<%=show_edit_links_if_permission(@event, 'CAN_EDIT_EVENT')%>
+
+
+

@@ -1,0 +1,17 @@
+<%#Pass in a media item object%>
+<%if media_item.is_mp3?%>
+<span class="verticalPadder"><%=music_player(media_item)%></span>
+
+<%elsif media_item.is_flv?%>
+ <img src="<%=media_item.mime_type_icon_path%>" height="16" width="16"/>
+<a class="videoPopup" onclick="window.open('<%=flash_video_player_url(media_item)%>', 'sounz_video','width=400,height=400')"><%=media_item.rendered_name%></a>
+
+<%else%>
+<img src="<%=media_item.mime_type_icon_path%>" height="16" width="16"/>
+<%=link_to media_item.rendered_name, download_media_item_path(media_item)%>
+<%end%>
+
+<%if !media_item.size.blank?%>(<%=bytes_to_size(media_item.size)%>)<%end%>
+<%if !media_item.copyright.blank?%>&copy;<%=media_item.copyright%><%end%>
+
+

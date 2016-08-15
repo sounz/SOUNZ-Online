@@ -1,0 +1,39 @@
+<h1>Listing expressions</h1>
+
+<table>
+  <tr>
+  <th>Expression Title</th>
+
+  <th>Partial Expression</th>
+  <th>Premiere</th>
+  <th>Edition</th>
+  <th>Use restriction note</th>
+  <th>General Note</th>
+  </tr>
+  
+<% for expression in @expressions %>
+  <tr>
+  <td><%=expression.expression_title%></td>
+
+  <td><%=expression.partial_expression%></td>
+  <td><%=expression.premiere%></td>
+  <td><%=expression.edition%></td>
+  <td><%=expression.use_restriction_note%></td>
+  <td><%=expression.general_note%></td>
+  <td><%= link_to 'Show', :action => 'show', :id => expression %></td>
+  
+  <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+  <td><%= link_to 'Edit', :action => 'edit', :id => expression %></td>
+  <td><%= link_to 'Destroy', { :action => 'destroy', :id => expression }, :confirm => 'Are you sure?', :method => :post %></td>
+  <% end %>
+  
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @expressions %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<%= link_to 'New expression', :action => 'new' %>
+<% end %>

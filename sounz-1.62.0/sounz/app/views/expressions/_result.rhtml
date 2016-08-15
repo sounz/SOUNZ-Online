@@ -1,0 +1,3 @@
+<%= action_button(link_to_remote( "Select",:update => "assignedWork",:url =>{ :action => :assignWork, :type => result.objectType, :object_id => result.objectData.frbr_id}))%>&nbsp;
+<%=render :partial => 'shared/frbr/objects/brief/'+result.objectType, :locals => { :object => result.objectData}%>
+<hr>

@@ -1,0 +1,17 @@
+<h1>Editing Work Update</h1>
+
+<%= error_messages_for :prov_work_updates %>
+
+<% form_for(:prov_work_updates, :url => prov_work_update_path(@prov_work_updates), :html => { :method => :put }) do |f| %>
+  
+  <%=render :partial => "form", :locals => {:f => f}%>
+
+  <p><b>Status:</b><br>
+  <%= select("prov_work_updates", "status_id", @statuses.to_dropdown) %></p>
+  
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to list', prov_work_updates_path %>

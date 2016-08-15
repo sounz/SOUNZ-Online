@@ -1,0 +1,41 @@
+  <tr>
+   <%if borrowed_item.login.person != nil%>
+   <td><%=link_to borrowed_item.login.person.full_name, :action => 'privileges_list', :controller => 'people', :id => borrowed_item.login.person.id %></td>
+    <%else%>
+   <td><%=link_to 'No person assigned to '+borrowed_item.login.username, :action => 'edit', :controller => 'logins', :id => borrowed_item.login.id %></td>   
+    <%end%>
+    <td><%=h borrowed_item.date_borrowed %></td>
+    <td><%=h borrowed_item.date_renewed %></td>
+    <td><%=h borrowed_item.date_due %></td>
+    <td><%=h borrowed_item.hired_out.to_s.capitalize %></td>
+     <td rowspan="2"><%= link_to 'Edit', { :controller => 'borrowed_items', :action => 'edit', :id => borrowed_item, :from => params[:controller] } %></td>
+     <td>&nbsp;&nbsp;&nbsp;</td>
+     <td rowspan="2"><%= link_to 'Mark Returned', { :controller => 'borrowed_items', :action => 'destroy', :id => borrowed_item, :from => params[:controller] }, :confirm => 'Are you sure?', :method => :post unless !borrowed_item.active %></td>
+  </tr>
+  <tr><td colspan="4"><b>Borrowing Note:</b> <%=h borrowed_item.borrowing_note %></td>
+  <td colspan="3">
+  <%if borrowed_item.date_returned.blank? && borrowed_item.active && (Time.now() >= Time.parse(borrowed_item.date_due.to_s))%>
+    <b><font color="red">OVERDUE!</font><b>
+  <%end%>
+  <%if !borrowed_item.date_returned.blank?%>
+    <b><font color="green">RETURNED</font></b> (<%=h borrowed_item.date_returned %>)
+  <%end%>
+  
+  </td>
+  </tr>
+  
+  <%myItem=Item.find(borrowed_item.item_id)%>
+  <%if myItem.manifestation_id != nil%>
+  <tr><td colspan="6">Manifestation details:<br/>
+  <%myManifestation=Manifestation.find(myItem.manifestation_id)%>
+  <b><%= link_to myManifestation.manifestation_title, :controller => 'manifestations', :action => 'edit', :id => myManifestation%></b>&nbsp;<%= icons_for(myManifestation, @login)%><br>
+  <%elsif myItem.resource_id != nil%>
+  <tr><td colspan="6">Resource details:<br/>
+  <%myResource=Resource.find(myItem.resource_id)%>
+  <b><%=link_to myResource.resource_title, :controller => 'resources', :action => 'edit', :id => myResource%></b>&nbsp;<%= icons_for(myResource, @login)%><br>
+  <%else%>
+  <b>Malformed Item! No Manifestation or Resource ID present!</b>
+  <%end%>
+  
+  <%= "<font color='red'>ITEM NOT ASSIGNED</font>" if borrowed_item.reserved %></td></tr>
+  <tr><td colspan="6"><hr/></td></tr>

@@ -1,0 +1,7 @@
+# update htmls depending on where we are coming from
+if @from.match('person')
+page.replace_html 'organisation_for_role', @organisation_value
+end
+if @from.match('organisation')
+page.replace_html 'person_for_role', @person_value
+end

@@ -1,0 +1,30 @@
+<h1>Image Check</h1>
+<%for contributor_id in @contributor_ids
+contributor = Contributor.find(contributor_id)
+%>
+<hr>
+<h2><%=contributor.known_as_public%></h2>
+	<%@random_contributor = contributor%>
+	<%= render :partial => 'shared/attachments/show_list', :locals => {:media_items => contributor.media_items}%>
+	<%
+=begin
+	for ca in @random_contributor.contributor_attachments
+		if ca.attachment_type_id ==  AttachmentType::MAIN_IMAGE.attachment_type_id
+			begin
+				image_path = get_random_spotlight_image(ca.media_item)
+			rescue
+				image_path = "ERROR"
+			end
+		end
+	end
+=end
+	attachment = AttachmentHelper.find_front_page_image(contributor)
+	if !attachment.blank?
+		media_item = attachment.send('media_item')
+		image_path= get_random_spotlight_image(media_item)
+		-%>
+		<%=image_tag(image_path)%>
+	<%end%>
+		
+<%
+end%>

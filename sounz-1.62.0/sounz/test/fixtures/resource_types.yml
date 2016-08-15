@@ -1,0 +1,52 @@
+--- 
+resource_types_007: 
+  resource_type_desc: NZ recordings - other genres
+  resource_type_id: "13"
+resource_types_008: 
+  resource_type_desc: bibliography
+  resource_type_id: "5"
+resource_types_010: 
+  resource_type_desc: documentary
+  resource_type_id: "6"
+resource_types_009: 
+  resource_type_desc: NZ recordings - not by SOUNZ composers
+  resource_type_id: "14"
+resource_types_011: 
+  resource_type_desc: interview
+  resource_type_id: "7"
+resource_types_012: 
+  resource_type_desc: programme note
+  resource_type_id: "16"
+resource_types_001: 
+  resource_type_desc: review
+  resource_type_id: "9"
+resource_types_013: 
+  resource_type_desc: commentary or analysis
+  resource_type_id: "18"
+resource_types_002: 
+  resource_type_desc: biography
+  resource_type_id: "1"
+resource_types_014: 
+  resource_type_desc: lyrics / libretti
+  resource_type_id: "19"
+resource_types_003: 
+  resource_type_desc: industry manual - other
+  resource_type_id: "10"
+resource_types_015: 
+  resource_type_desc: industry manual - NZ
+  resource_type_id: "20"
+resource_types_004: 
+  resource_type_desc: history
+  resource_type_id: "2"
+resource_types_016: 
+  resource_type_desc: sheet music
+  resource_type_id: "22"
+resource_types_005: 
+  resource_type_desc: music theory
+  resource_type_id: "11"
+resource_types_006: 
+  resource_type_desc: education resource
+  resource_type_id: "4"
+resource_types_023: 
+  resource_type_desc: not applicable
+  resource_type_id: "23"

@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>Add a New Related Organisation</legend>
+<table>
+  <tr>
+    <th><label for="related_org_organisation_id">Related organisation</label></th>
+    <td><%= render :partial => 'related_organisations_dropdown' %></td>
+  </tr>
+  <tr>
+    <th><label for="related_relationship">Relationship to above organisation</label></th>
+    <td><%= text_area 'related', 'relationship', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+</table>
+
+</fieldset>
+
+<%= render :partial => 'shared/form_control_buttons', :locals => {:delete => false, :submit_title  => 'Add'} %>

@@ -1,0 +1,10 @@
+
+<table>
+<tr><td><label for="marketing_category_abbreviation">Category Abbreviation</label></td>
+<td><span id="cat_abbrev"><%= @marketing_category.abbreviation %></span></td></tr>
+<tr><td><label for="marketing_category_description">Category Description</label></td>
+<td><span id="cat_desc"><%= @marketing_category.description  %></span></td></tr>
+</table>
+
+
+<%= hidden_field 'marketing_category', 'marketing_category_id' %>

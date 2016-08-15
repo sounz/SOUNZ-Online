@@ -1,0 +1,17 @@
+
+
+<%if submission.to_s == 'new'
+	button_text = 'Save'
+else
+	button_text = 'Update'
+end%>
+
+<tr>
+	<td class="labelFormat"><label for="general_note">File</label></td>
+	<td class="formelemformat">
+
+		<input id="media_item_uploaded_data" name="media_item[uploaded_data]" size="30" type="file" />
+
+		<input name="commit" type="submit" value="<%=button_text%>" />
+	</td>
+</tr>

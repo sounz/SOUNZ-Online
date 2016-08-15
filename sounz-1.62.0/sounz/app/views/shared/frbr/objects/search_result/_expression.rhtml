@@ -1,0 +1,21 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<h4><%= icons_for(object, @login)%><%=link_to object.expression_title, :id => object, :action => 'show', :controller => 'expressions'%></b><%=show_tap_edit_link_for(object, 'CAN_EDIT_TAP')%></h4>
+
+<%=convert_to_html(object.general_note)%>
+
+<table width="100%">
+	<tr><td width="40%">Start</td><td><%=dby_date(object.expression_start)%></td></tr>
+	<%if object.expression_finish%>
+	<tr><td>Finish</td><td><%=dby_date(object.expression_finish)%></td></tr>
+	<%end%>
+	
+	<tr><td>Edition</td><td><%=generic_status_display(Expression.editions, object.edition)%></td></tr>
+	<% if !object.premiere.blank?%>
+	<tr><td>Premiere? </td><td><%=generic_status_display(Expression.premiere_statuses, object.premiere.strip)%></td></tr>
+	<%end%>
+	
+	
+	<%if object.use_restriction_note%><tr><td>Notes on Use Restriction</td><td><%=object.use_restriction_note%></td></tr><%end%>
+	<tr><td>Partial Expression?</td><td><%=object.partial_information%></td></tr>
+
+</table>

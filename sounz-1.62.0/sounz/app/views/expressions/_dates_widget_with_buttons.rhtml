@@ -1,0 +1,17 @@
+<%if @expression.mode.requires_date_and_premiere? %>  
+<span id="noDatesButton">
+	<%#decide which button to show%>
+	<%if @expression.expression_start.blank?%>
+	<%=render :partial => 'enable_dates_button'%>
+	<%else%>
+	<%=render :partial => 'disable_dates_button'%>
+	<%end%>
+</span>
+
+<div id="dateWidgetFields">
+  <%=render :partial => 'dates_widget', :locals => {:expression => @expression}%>
+</div>
+<%else%>
+  The mode <%=@expression.mode.mode_desc%> does not require date information
+<%end%>
+

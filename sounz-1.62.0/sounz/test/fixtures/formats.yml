@@ -1,0 +1,156 @@
+--- 
+formats_031: 
+  manifestation_format: f
+  format_desc: book or booklet - paperback
+  format_id: "31"
+  resource_format: t
+formats_020: 
+  manifestation_format: f
+  format_desc: CD Rom
+  format_id: "1"
+  resource_format: t
+formats_009: 
+  manifestation_format: t
+  format_desc: Mini DV
+  format_id: "6"
+  resource_format: f
+formats_021: 
+  manifestation_format: t
+  format_desc: hardcopy - facsimile
+  format_id: "20"
+  resource_format: f
+formats_010: 
+  manifestation_format: t
+  format_desc: pdf - facsimile
+  format_id: "25"
+  resource_format: f
+formats_022: 
+  manifestation_format: t
+  format_desc: CD
+  format_id: "2"
+  resource_format: t
+formats_011: 
+  manifestation_format: t
+  format_desc: digital movie
+  format_id: "14"
+  resource_format: f
+formats_023: 
+  manifestation_format: f
+  format_desc: text
+  format_id: "8"
+  resource_format: t
+formats_012: 
+  manifestation_format: f
+  format_desc: Resource - formats (not in Spec)
+  format_id: "7"
+  resource_format: f
+formats_001: 
+  manifestation_format: f
+  format_desc: journal
+  format_id: "21"
+  resource_format: t
+formats_024: 
+  manifestation_format: t
+  format_desc: video
+  format_id: "9"
+  resource_format: t
+formats_013: 
+  manifestation_format: f
+  format_desc: pdf
+  format_id: "26"
+  resource_format: t
+formats_002: 
+  manifestation_format: t
+  format_desc: DAT
+  format_id: "3"
+  resource_format: t
+formats_025: 
+  manifestation_format: t
+  format_desc: vinyl (LP or EP)
+  format_id: "10"
+  resource_format: f
+formats_014: 
+  manifestation_format: f
+  format_desc: podcast
+  format_id: "27"
+  resource_format: t
+formats_003: 
+  manifestation_format: f
+  format_desc: book - hardcover
+  format_id: "11"
+  resource_format: t
+formats_026: 
+  manifestation_format: t
+  format_desc: programme note
+  format_id: "15"
+  resource_format: f
+formats_015: 
+  manifestation_format: t
+  format_desc: digital sound file - bwf
+  format_id: "16"
+  resource_format: f
+formats_004: 
+  manifestation_format: t
+  format_desc: DVD
+  format_id: "4"
+  resource_format: t
+formats_027: 
+  manifestation_format: t
+  format_desc: kit
+  format_id: "22"
+  resource_format: t
+formats_016: 
+  manifestation_format: f
+  format_desc: website
+  format_id: "28"
+  resource_format: t
+formats_005: 
+  manifestation_format: f
+  format_desc: magazine
+  format_id: "23"
+  resource_format: t
+formats_028: 
+  manifestation_format: f
+  format_desc: commentary or analysis
+  format_id: "12"
+  resource_format: f
+formats_017: 
+  manifestation_format: t
+  format_desc: digital sound file - wav
+  format_id: "17"
+  resource_format: f
+formats_006: 
+  manifestation_format: f
+  format_desc: Manifestation - formats SR4540
+  format_id: "5"
+  resource_format: f
+formats_029: 
+  manifestation_format: f
+  format_desc: FORMATS
+  format_id: "29"
+  resource_format: f
+formats_018: 
+  manifestation_format: t
+  format_desc: digital sound file - MP3
+  format_id: "18"
+  resource_format: f
+formats_007: 
+  manifestation_format: t
+  format_desc: pdf - computer set
+  format_id: "24"
+  resource_format: f
+formats_030: 
+  manifestation_format: f
+  format_desc: digital sound file
+  format_id: "30"
+  resource_format: t
+formats_019: 
+  manifestation_format: t
+  format_desc: hardcopy - computer set
+  format_id: "19"
+  resource_format: f
+formats_008: 
+  manifestation_format: t
+  format_desc: cassette
+  format_id: "13"
+  resource_format: t

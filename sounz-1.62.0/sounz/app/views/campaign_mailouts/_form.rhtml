@@ -1,0 +1,187 @@
+<fieldset>
+<legend>Mailout Details</legend>
+
+<%= error_messages_for 'campaign_mailout' %>
+
+<!--[form:campaign_mailout]-->
+<%
+form_disabled = false 
+if !@campaign_mailout.mailout_status.blank? && !@campaign_mailout.mailout_status.match('n')
+form_disabled = true
+end
+%>
+<table>
+<tr>
+<th><label for="campaign_mailout_mailout_description">Mailout description</label></th>
+<td><%= text_area 'campaign_mailout', 'mailout_description', :cols => standard_edit_cols, :rows => 1, :disabled => form_disabled %>
+</td>
+</tr>
+<tr>
+<th><label for="campaign_mailout_marketing_campaign">Marketing campaign</label></th>
+<td><%= link_to @marketing_campaign.campaign_name, {:controller => 'marketing_campaigns', 
+                                                    :action => 'edit',
+                                                    :id => @marketing_campaign.marketing_campaign_id} %>
+<%= hidden_field_tag "campaign_mailout[marketing_campaign_id]", @marketing_campaign.marketing_campaign_id %>
+</td>
+</tr>
+<tr>
+<th><label for="campaign_mailout_project">Project</label></th>
+<td><%= link_to @marketing_campaign.project.project_title, {:controller => 'projects', 
+                                                            :action => 'edit', 
+                                                            :id => @marketing_campaign.project.project_id} %>
+</td>
+</tr>
+<tr>
+<th><label for="campaign_mailout_mailout_type">Mailout type</label></th>
+<td><%= select_tag 'campaign_mailout[mailout_type]', options_for_select( [['Email','e'], ['Postal','p']] , 
+                                                                    selected = @campaign_mailout.mailout_type),
+                                                                    { :multiple => false, :disabled => form_disabled }%>
+</td>
+</tr>
+<!--
+<%=#observe_field("campaign_mailout[mailout_type]", :url => { :controller => :campaign_mailouts,
+   #                                                          :action => :check_mailout_method, 
+   #                                                          :id => @campaign_mailout.campaign_mailout_id }, 
+   #                                                :with => "'mailout_type='+escape($('campaign_mailout[mailout_type]').value)")
+%>
+<script type="text/javascript">
+ Event.observe(window, 'load', function() {
+ <%=# remote_function :url => { :controller => :campaign_mailouts, 
+    #                           :action => :check_mailout_method, 
+    #                           :id => @campaign_mailout.campaign_mailout_id }, 
+    #                 :with => "'mailout_type='+escape($('campaign_mailout[mailout_type]').value)" 
+ %>
+ });
+</script>
+
+<tr id="mailout_method">
+<%
+# DEPRECATED 
+#disabled = nil 
+#disabled = 'disabled' if @campaign_mailout.mailout_type == 'p'
+%>
+<th><label>Mailout Method</label></th>
+<td>
+
+<table>
+<tr>
+<td><%=# radio_button_tag('post', 'campaign_mailout[blind_send]', @campaign_mailout.blind_send, { :disabled => disabled }) 
+%>
+<label for="campaign_mailout_blind_send">Blind send</label>
+</td>
+<td>
+<%=# radio_button_tag('post', 'campaign_mailout[mail_merge]', @campaign_mailout.mail_merge) 
+%>
+<label for="campaign_mailout_mail_merge">Mail merge</label>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>-->
+
+<tr>
+<th><label for="campaign_mailout_mailout_status">Mailout status</label></th>
+<td>
+<%= @campaign_mailout.mailout_status_display %>
+<% if !@campaign_mailout.failed_email_delivery_contacts.empty?%>
+<span class="errorExplanation">partially</span>
+<% end %>
+</td>
+</tr>
+
+<%
+if !@campaign_mailout.campaign_mailout_id.blank?
+condition = "main_content IS NOT NULL and campaign_mailout_id <> #{@campaign_mailout.campaign_mailout_id}"
+else
+condition = "main_content IS NOT NULL"
+end
+%>
+<tr>
+<th><label for="mailout_template">Copy from</label></th>
+<td>
+
+<%= collection_select('mailout_template', "mailout_template_id", 
+CampaignMailout.find(:all, :select => "campaign_mailout_id, mailout_description", 
+                           :conditions => condition,
+                           :order => 'mailout_description'
+                     ),
+:campaign_mailout_id, :mailout_description,
+{:include_blank => "-- Select a mailout to copy from --"}, {:disabled => form_disabled }) 
+%>
+
+<% if !form_disabled%>
+<span class="actionButton">
+<%= link_to_remote "Copy", :url => {:controller => :campaign_mailouts, 
+                                    :action => :copy_contents, 
+                                    :id => @campaign_mailout.campaign_mailout_id},
+                   #:update => "mailout_main_content",
+                   :with => "'mailout_template='+escape($('mailout_template_mailout_template_id').value)",
+                   :confirm => "This action will delete current content in 'Main content' and 'Secondary content' fields.\n Do you want to continue?",
+                   :complete => "tinyMCE.idCounter=0; tinyMCE.execCommand('mceAddControl', true, 'campaign_mailout_main_content');"
+%>
+</span>
+<% end %>
+<br>
+<span class="instruction">copies 'Main content' and 'Secondary content' from the selected mailout</span>
+</td>
+</tr>
+
+<tr><td>&nbsp;</td><td id="change_notification"></td></tr>
+
+<tr id="mailout_main_content">
+<th><label for="campaign_mailout_main_content">Main content</label></th>
+<td><%= text_area 'campaign_mailout', 'main_content', {:cols => standard_edit_cols, :disabled => form_disabled, :class => 'tiny_mce'}  %>
+</td>
+</tr>
+
+<tr>
+<th><label for="campaign_mailout_secondary_content">Secondary content</label></th>
+<td><%= text_area 'campaign_mailout', 'secondary_content', :cols => standard_edit_cols, 
+                                                           :rows => standard_edit_rows,
+                                                           :disabled => form_disabled  %>
+</td>
+</tr>
+<tr>
+<th><label for="campaign_mailout_general_note">General note</label></th>
+<td><%= text_area 'campaign_mailout', 'general_note', :cols => standard_edit_cols, 
+                                                      :rows => standard_edit_rows,
+                                                      :disabled => form_disabled  %>
+</td>
+</tr>
+
+<% if @campaign_mailout.sent_timestamp != nil %>
+<tr>
+<th><label for="campaign_mailout_sent_timestamp">Sent timestamp</label></th>
+<td><%= dby_date(@campaign_mailout.sent_timestamp)  %></td>
+</tr>
+<% end %>
+
+<% if params[:action] != 'new' && params[:action] != 'create' %>
+
+<% if @campaign_mailout.created_at != nil %>
+<tr>
+<th><label for="campaign_mailout_created_at">Created at</label></th>
+<td><%= dby_date(@campaign_mailout.created_at)  %></td>
+</tr>
+<% end %>
+
+<% if @campaign_mailout.updated_at != nil %>
+<tr>
+<th><label for="campaign_mailout_updated_at">Updated at</label></th>
+<td><%= dby_date(@campaign_mailout.updated_at)  %></td>
+</tr>
+<% end %>
+
+<tr>
+<th><label for="campaign_mailout_updated_by">Updated by</label></th>
+<td><%=h get_user(@campaign_mailout.updated_by).username %></td>
+</tr>
+<% end %>
+
+</table>
+
+<!--[eoform:campaign_mailout]-->
+
+</fieldset>
+

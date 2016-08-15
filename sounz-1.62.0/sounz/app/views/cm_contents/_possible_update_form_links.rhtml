@@ -1,0 +1,53 @@
+<%
+is_composer = false
+is_contributor = false
+
+if @name == 'community' && !@login.blank?
+
+contributor_role_type_groups = @login.associated_contributor_role_type_groups
+if contributor_role_type_groups.include?("composer")
+	is_composer = true
+	contributor_role_type_groups.delete "composer" #if we have any others then we know they are a contributor and composer
+end
+
+if contributor_role_type_groups.length > 0
+	is_contributor = true
+end
+%>
+
+<% if is_composer || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+
+  <h1>Contributor Forms</h1>
+  <ul>
+    <li><a href="/prov_contributor_profiles/new">Update or provide a contributor profile</a></li>
+  </ul>
+  <br/><br/>
+  <h1>Composer Forms</h1>
+  <ul>
+    <li><a href="/prov_events/new">Tell us about a New Zealand music event</a></li>
+    <li><a href="/prov_composer_bios/new">Update or provide a composer biography</a></li>
+    <li><a href="/prov_work_updates/new">Update or provide details of works</a></li>
+    <li><a href="/prov_products/new">Update or provide product details</a></li>
+  </ul>
+
+<% elsif is_contributor || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+  <h1>Contributor Forms</h1>
+  <ul>
+    <li><a href="/prov_events/new">Tell us about a New Zealand music event</a></li>
+    <li><a href="/prov_contributor_profiles/new">Update or provide a contributor profile</a></li>
+    <li><a href="/prov_products/new">Update or provide product details</a></li>
+  </ul>
+
+<% elsif  PrivilegesHelper.has_permission?(@login, 'IS_AUTHENTICATED') && @login.has_membership?("Contributor Member") %>
+
+  <h1>Contributor Forms</h1>
+  <ul>
+    <li><a href="/prov_contributor_profiles/new">Update or provide a new contributor profile</a></li>
+  </ul>
+
+<%end%>
+
+
+
+
+<%end%>

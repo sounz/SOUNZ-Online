@@ -1,0 +1,26 @@
+    <%= text_field_with_auto_complete :person, :first_names %>
+    <%=submit_tag 'Search'%>
+    
+    
+    <hr>
+    
+    
+<% form_tag ({:action => 'not_required'}, :id => 'country_region_form') do %>
+<%= text_field :project_members, :search %>
+<%= select('search', "country_id", Country.to_dropdown(:text => 'country_name')) %>
+
+
+
+<% end %>
+
+
+
+
+<div id="region_preview">Regions will appear here</div>
+
+<%= observe_field "search_country_id",
+    :frequency => 0.5,
+    :update => "region_preview",
+    :complete => "Element.show('region_preview')",
+    :url => { :action => "show_regions" } %>
+    

@@ -1,0 +1,270 @@
+<div id='facets'>
+<%
+# The format of these is as follows:
+#
+#  * :name       => The name of the facet block. Used for the main title
+#  * :data       => [optional] An array of hashes describing each link/count to
+#                   output, see below. Optional only in the case here we have
+#                   drilled all the way down as far as possible
+#  * :facet_name => [optional] The name of the parameter passed to the
+#                   controller in params[]. Optional only in the case where we
+#                   have drilled all the way down as far as possible
+#  * :subfacet   => [optional] The title of the subfacet we have drilled down
+#                   to, that is one level below the :name
+#  * :target     => [optiona] If drilling through both a facet and subfacet (e.g.
+#                   "year", "year_group", "year_subgroup", then this is the
+#                   title of the final block (in this case, year_subgroup,
+#                   so a specific year like '1964')
+#  * :params     => [optional] A list of parameters used to drill down this far.
+#                   Only optional when no drilling down has been done
+
+# Year group (1970-1979 etc.)
+available_for_facet = {
+  :name => 'Availability'
+}
+if @available_for.blank?
+	#Show for purchase, for hire, for loan
+	available_for_facet[:facet_name] = 'available_for'
+	available_for_facet[:data] = FacetViewHelper.convert_available_for_facet_to_view_array(@results)
+else
+	available_for_facet[:subfacet] = @available_for.camelize
+  	available_for_facet[:params] = [:available_for]
+end
+
+
+@year_subgroup = nil if !@year_subgroup
+year_group_facet = {
+  :name => 'Year of Creation'
+}
+
+if @year_group.blank? and @year_subgroup.blank?
+  # Defaults
+  year_group_facet[:facet_name] = 'year_group'
+  year_group_facet[:data] = FinderHelper.year_groups(@results)
+elsif @year_subgroup.blank?
+  year_group_facet[:facet_name] = 'year_subgroup'
+  year_group_facet[:subfacet] = FinderHelper.year_groups(@results).select {|group| group[:category] == @year_group }[0][:name]
+  year_group_facet[:data]     = FinderHelper.year_group_facet_data(@year_group, @results)
+  year_group_facet[:params] = [:year_group]
+else
+  year_group_facet[:subfacet] = FinderHelper.year_groups(@results).select {|group| group[:category] == @year_group }[0][:name]
+  year_group_facet[:target]   = FinderHelper.year_group_facet_data(@year_group, @results).select {|group| group[:category] == @year_subgroup }[0][:name]
+  year_group_facet[:params] = [:year_group, :year_subgroup]
+end
+
+
+# Duration facet (5-10 minutes etc.)
+duration_facet = {
+  :name => 'Duration'
+}
+
+if @duration.blank?
+  duration_facet[:facet_name] = 'duration'
+  duration_facet[:data] = FinderHelper.duration_groups(@results)
+else
+  duration_facet[:subfacet] = FinderHelper.duration_groups(@results).select {|group| group[:category] == @duration }[0][:name]
+  duration_facet[:params] = [:duration]
+end
+
+
+# Music Category (orchestra etc.)
+@category = 0 if !@category
+@subcategory = 0 if !@subcategory
+@special_subcategory = 0  if !@special_subcategory
+category_facet = {
+  :name => 'Music Category',
+}
+
+#No category or subcategory chosen
+if @category < 1 and @subcategory < 1
+  category_facet[:facet_name] = 'category'
+  category_facet[:data] = FinderHelper.category_groups(@results)
+  logger.debug category_facet[:data].to_yaml
+
+#Category chosen
+elsif @subcategory < 1 && @special_subcategory < 1
+  
+  # common params
+  category_facet[:subfacet]   = FinderHelper.category_groups(@results).select {|group| group[:category] == @category }[0][:name]
+  category_facet[:params]     = [:category]
+  
+  # special cases first
+  if @category == WorkCategory::TAONGA_PUORO.work_category_id
+  category_facet[:facet_name] = 'special_subcategory'
+  category_facet[:data]       = FinderHelper.special_subcategory_facets(@results, FacetHelper::TAONGA_PUORO_FACETS)
+  
+  elsif @category == WorkCategory::MUSIC_FOR_STAGE.work_category_id
+  category_facet[:facet_name] = 'special_subcategory'
+  category_facet[:data]       = FinderHelper.special_subcategory_facets(@results, FacetHelper::MUSIC_FOR_STAGE_FACETS)
+  
+  else
+  category_facet[:facet_name] = 'subcategory'
+  category_facet[:data]       = FinderHelper.category_facet_data(@category, @results)
+  end
+
+#Category and subcategory chosen
+else
+  category_facet[:subfacet] = FinderHelper.category_groups(@results).select {|group| group[:category] == @category }[0][:name]
+  if @category == WorkCategory::TAONGA_PUORO.work_category_id
+    category_facet[:target] = FacetHelper::INVERTED_TAONGA_PUORO_FACETS[@special_subcategory.to_i]
+    category_facet[:params] = [:category, :special_subcategory]
+  elsif @category == WorkCategory::MUSIC_FOR_STAGE.work_category_id
+    category_facet[:target] = FacetHelper::INVERTED_MUSIC_FOR_STAGE_FACETS[@special_subcategory.to_i]
+    category_facet[:params] = [:category, :special_subcategory]
+  else
+    category_facet[:target] = WorkSubcategory.find(@subcategory).work_subcategory_desc
+    category_facet[:params]   = [:category, :subcategory]
+  end
+  
+end
+
+
+# Suitable For facet (beginner etc.)
+suitable_facet = {
+  :name => 'Suitable For'
+}
+
+if @suitable_for < 1
+  suitable_facet[:facet_name] = 'suitable_for'
+  suitable_facet[:data]       = FinderHelper.suitable_for_data(@results)
+#	logger.debug "========"
+#	logger.debug suitable_facet[:data].to_yaml
+else
+  suitable_facet[:subfacet] = FinderHelper.suitable_for_data(@results).select {|group| group[:category] == @suitable_for.to_s }[0][:name]
+  suitable_facet[:params]   = [:suitable_for]
+end
+
+
+
+#Deal with the concepts facet
+facet_fields_results = @results[:facets]['facet_fields']
+
+#-- deal with the available as facet --
+available_as_facet = {:name => 'Format'}
+avail_facet_fields_results = facet_fields_results['available_as_top_level_facet_for_solr_t']
+
+#top level case
+if @available_as.blank?
+	available_as_facet[:facet_name] = 'available_as'
+	top_level_data = []
+	for facet_name in ['score', 'record', 'sampl', 'resourc', 'audio', 'video']
+		if !avail_facet_fields_results[facet_name].blank?
+			top_level_data << {:category => facet_name, :name => readable_facet_name_camelized(facet_name), 
+				 				:count => avail_facet_fields_results[facet_name]} 
+		end
+	end
+	available_as_facet[:data] = top_level_data
+
+#The available as facet has been chosen, so deal with case individually
+else
+	available_as_facet[:subfacet] =readable_facet_name_camelized(@available_as)
+	available_as_facet[:params] = [:available_as]
+	
+	#Deal with recordings
+	if @available_as == 'record'
+		#recordings are chosen, but no particular one
+		if @recording_format.blank?
+			available_as_facet[:facet_name] = 'recording_format'
+			available_as_facet[:data] = FinderHelper.recording_formats(@results)
+		#a recording format, e.g. CD, has been chosen
+		else
+			available_as_facet[:params]= [:available_as, :recording_format]
+			available_as_facet[:target]=Format.find(@recording_format).format_desc
+		end
+	
+	#Deal with samples
+	elsif @available_as == 'sampl'
+		if @sample_type.blank?
+			available_as_facet[:facet_name] = 'sample_type'
+			available_as_facet[:data] = FinderHelper.sample_types(@results)
+		else
+			available_as_facet[:params]= [:available_as, :sample_type]
+			available_as_facet[:target]=@sample_type.camelize
+		end
+		
+	#And finallys cores
+	elsif @available_as == 'score'
+		if @score_type.blank?
+			available_as_facet[:facet_name] = 'score_type'
+			available_as_facet[:data] = FinderHelper.score_types(@results)
+		else
+				available_as_facet[:params]= [:available_as, :score_type]
+				available_as_facet[:target]=ManifestationType.find(@score_type).manifestation_type_desc	
+		end
+	
+	# Resource types
+	elsif @available_as == 'resourc'
+		if @resource_type.blank?
+		  available_as_facet[:facet_name] = 'resource_type'
+		  available_as_facet[:data] = FinderHelper.resource_type_facets(@results)
+		else
+		  available_as_facet[:params]= [:available_as, :resource_type]
+		  available_as_facet[:target]= FacetHelper::INVERTED_RESOURCE_TYPE_FACETS[@resource_type.to_i]
+		end
+        
+	# Sounzmedia audio
+	elsif @available_as == 'audio'
+		if @audio_type.blank?
+		  available_as_facet[:facet_name] = 'audio_type'
+		  available_as_facet[:data] = FinderHelper.resource_type_facets(@results)
+		else
+		  available_as_facet[:params]= [:available_as, :audio_type]
+		  available_as_facet[:target]= FacetHelper::INVERTED_RESOURCE_TYPE_FACETS[@audio_type.to_i]
+		end
+	
+	# Sounzmedia video
+	elsif @available_as == 'video'
+		if @video_type.blank?
+		  available_as_facet[:facet_name] = 'video_type'
+		  available_as_facet[:data] = FinderHelper.resource_type_facets(@results)
+		else
+		  available_as_facet[:params]= [:available_as, :video_type]
+		  available_as_facet[:target]= FacetHelper::INVERTED_RESOURCE_TYPE_FACETS[@video_type.to_i]
+		end
+	end
+	
+	
+	
+end
+
+
+
+#-- deal with the popular facet --
+
+
+popular_facet = {:name => 'Other Pathways'}
+popular_facet_facets_fields = facet_fields_results['popular_facets_for_solr_t']
+
+logger.debug '============================='
+logger.debug popular_facet_facets_fields.to_yaml
+logger.debug '============================='
+
+
+#Root level case
+if @popular_category.blank?
+	popular_facet[:data] = FacetViewHelper.popular_facets(popular_facet_facets_fields)
+	popular_facet[:facet_name]="popular_category"
+	#top level case
+else
+	#only a popular category has been chosen
+	if @popular_subcategory.blank?
+		popular_facet[:subfacet] = FacetViewHelper.popular_category_name(@popular_category)
+		popular_facet[:params] = [:popular_category]
+		popular_facet[:facet_name]="popular_subcategory"
+		popular_facet[:data] = FacetViewHelper.popular_subfacets(@popular_category, facet_fields_results)
+	else
+		popular_facet[:subfacet] = FacetViewHelper.popular_category_name(@popular_category)
+		popular_facet[:params]= [:popular_category, :popular_subcategory]
+		popular_facet[:target]=FacetViewHelper.popular_subcategory_name(@popular_subcategory)
+	end
+end
+
+%>
+<%= render :partial => 'facet_block', :locals => { :facet => category_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => available_for_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => available_as_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => suitable_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => duration_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => year_group_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => popular_facet } %>
+</div>

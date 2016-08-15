@@ -1,0 +1,11 @@
+<% if !work_category_id.blank? 
+blank_option = "-- No subcategory selected --"
+subcategories = WorkSubcategory.find(:all, :order => :display_order, :conditions => ["work_category_id= ?", work_category_id]).to_dropdown(:work_subcategory_desc)
+else
+blank_option = "-- Select a type of music first --"
+subcategories = ''
+end
+%>
+
+<%= select('search_details', 'work_subcategory_id', subcategories,
+            	         {:include_blank => blank_option, :selected => work_subcategory_id}) %>

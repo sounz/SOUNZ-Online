@@ -1,0 +1,154 @@
+<% content_for :page_title do %>
+Search Music
+<%end%>
+
+<%content_for :facets do%>
+
+         <% link_to_facet_base_url('works').each_pair do |k,v|
+          if k != :action and k != :query and !v.blank? %>
+        <div><input type="hidden" name="<%=h k%>" value="<%=h v%>"></div>
+        <% end
+        end %>
+
+   
+
+ <div id='facetResults' class="block">
+    <% if !@results[:docs].blank? %>
+        <h2 class="title">Narrow your results</h2>
+    <% else %>
+        <h2 class="title">Browse the catalogue</h2>
+    <% end %>
+ <%=render :partial => 'facet_results' %>
+ </div><!--/facetResults-->
+<%end%>
+
+
+<% pagination = render :partial => 'page_links', :locals => {:paginator => @paginator} %>
+
+<!--    
+<%=render :partial => '/shared/tabs/finder_tabs', :locals => {:selected_tab => :works}%>
+
+
+     <span class="searchLinks">
+     <%if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+     <div align="right"><%=link_to image_tag('/images/button-advancedsearch.gif', :alt => 'Advanced Search'), {:controller=>:advanced_finder,:action=>:work}, {:class => 'public_button'}%></div>
+     <% end %>
+     
+
+     <%= link_to(image_tag('/images/button-advancedmusicsearch.gif', :alt => 'Advanced Music Search'), {:controller => :advanced_finder, :action => :sonline_music}, {:class => 'public_button'} )%><br>
+     	 
+     </span>
+-->
+
+      <h1>Search Music:</h1>
+      <% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @results[:docs].length > 3 %>
+      <a href="#saveForm">Save Current Search</a>
+      <% end %>
+      <%
+      query_url = ''
+      link_to_facet_base_url('works').each_pair{|k,v| query_url << "&#{k}=#{v}" if k != :query and k != :action and k != :id and !v.blank? }
+      query_url = query_url.last(-1)
+      %>
+
+      <div class="search-results-form">
+   		<p class="instructions">Search for music by typing a word or phrase in the box below or by selecting one or more categories from the list on the side.</p>
+
+        <form action="/finder/show/works<%= '?' + query_url if query_url != '' %>" method="get">
+          <div class="search-form">
+            <fieldset>
+              <input type="text" name="query" id="query" size="30" class="text" value="<%=h @query %>" >
+            </fieldset>
+
+              <input type="submit" value="Search" alt="Search" id="submit" class="public_button">
+             <%= link_to 'Reset', {:controller => :finder, :action => :reset_work_search}, {:class => 'search-reset'} %>
+          </div>
+
+          <div class="search-type">
+            <h2>Or search for products by selecting an option below, and typing a word or phrase in the box above</h2>
+            <ul>
+              <li><%= radio_button 'search_details', 'quicklink', 'score' %>Scores</li>
+              <li><%= radio_button 'search_details', 'quicklink', 'recording'%>CDs and DVDs</li>
+              <li><%= radio_button 'search_details', 'quicklink', 'download'%>Downloads</li>
+              <li><%= radio_button 'search_details', 'quicklink', 'education resource'%>Education Resources</li>
+            </ul>
+          </div>
+
+     		</form>
+
+      </div>
+
+<!--
+   		<div class='search_item'>
+   		<div class='options'>
+   		<%= link_to(image_tag('/icons/feed-icon.gif'), {:controller => :rss_feeds, :action => :new_products}, :class => 'public_button') %>&nbsp;
+   		<%= link_to "RSS: Update me – latest scores, CDs and more...", {:controller => :rss_feeds, :action => :new_products} %>
+   		</div>
+   		</div>
+-->
+   		      
+      <% if @results[:docs].blank? && !@query.blank? %>
+       <div class="search-result-details">
+          <ul>
+            <li class="result-count">
+              There were no results matching your request
+            </li>
+          </ul>
+        </div>
+      <% else %>
+                  
+      <% if !@query.blank?%>
+      <form name="sort" action="/finder/show/works<%= '?' + query_url if query_url != '' %>" method="get">
+      
+      <% link_to_facet_base_url('works').each_pair do |k,v|
+        if k != :sort_by and k != :action and k != :id and !v.blank? %>
+        <div><input type="hidden" name="<%=h k%>" value="<%=h v%>"></div>
+        <% end %>
+        <% end %>
+        
+<!-- Result Details -->
+        <div class="search-result-details">
+          <ul>
+            <li class="result-count">
+                <%if ! (@query.blank? && !@quicklink_search)%>
+                  <%= pluralize(@results[:total], 'result') + ' for \'' + @query +'\'' %>
+                <%end%>
+            </li>
+            <li class="result-sort">Sort by:<%= select_tag "sort_by", options_for_select([['Relevance', ''], ['Title', 'title'], ['Composer/Author', 'author']], selected = @search_details.sort_by) %></li>
+            <li class="pagination"><%= pagination %></li>
+          </ul>
+          <input type="submit" value="Sort" alt="Sort" class="sort">
+        </div>
+      </form>
+      <% end %>
+
+      <% end %>
+      
+
+      <div id="liveResults">
+       <%= render :partial => 'result', :collection => @results[:docs], :locals => {:quicklink_search => @quicklink_search} %>
+	  </div>
+
+	  
+	  <% if !@results[:docs].blank?%>
+        <div class="search-result-details-bottom">
+          <ul>
+            <li class="pagination"><%= pagination %></li>
+          </ul>
+        </div>
+      <% end %>
+
+	  
+	  <% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && (!@query.blank? || @results[:docs].length > 0)%>
+	  <div id="saveForm"><%=render :partial => 'saved_searches/saved_search_form', :locals => {:search_type  => 'faceted_work_search'} %></div>
+	  <% end %>
+
+
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') && !@query.blank?
+%>
+<div class="editLinks">
+<%= link_to "Create New Work", :controller => "works", :action => "new" %>
+</div>
+<%end%>
+
+

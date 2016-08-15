@@ -1,0 +1,22 @@
+<%
+images = object.media_items
+if (!images[0].nil?) then
+	image =  images[0].public_filename
+ else 
+	image = ''
+end
+%>
+<% if external_formats.include?(object.format_id) %>
+<%= player({:file => object.sounzmedia, :image => image, 
+		   :backcolor => "0x111111", :frontcolor => "0xdddddd", 
+		   :lightcolor => "0x99cc00"},
+		   {:id => "player_#{generate_id(object)}", :width => 245, :height => 245})
+%>
+<% else %>
+<%= player({:file => '/sounzmedia/' + object.sounzmedia, :image => image, 
+		   :backcolor => "0x111111", :frontcolor => "0xdddddd", 
+		   :lightcolor => "0x99cc00"},
+		   {:id => "player_#{generate_id(object)}", :width => 245, :height => 245})
+%> 
+<% end %>
+<%= link_to object.manifestation_title, :action => :show, :id => object, :controller => :manifestations%>

@@ -1,0 +1,558 @@
+#! /bin/bash
+# postinst script for sounz
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+if [ -e /usr/share/debconf/confmodule ]
+then
+  . /usr/share/debconf/confmodule
+  db_version 2.0
+fi
+
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=sounz
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+
+# Main processing..
+case "$1" in
+  configure)
+    # continue below
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    exit 0
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SET DEFAULTED CONFIG VARS
+
+# Basic configuration already exists - read it in now
+PACKAGE_CONFDIR=/etc/${PACKAGE}
+PACKAGE_CONF=${PACKAGE_CONFDIR}/${PACKAGE}.conf
+if [ -f $PACKAGE_CONF ] ; then
+ . $PACKAGE_CONF
+else
+  echo "Error: $PACKAGE configuration $PACKAGE_CONF not found."
+  exit 1
+fi 
+
+# Local Defaults..
+DB_NAME=sounz
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=sounz
+DB_PASSWD=
+MONGREL_PORTS=3001
+ENVIRONMENT=production
+SOLR_HOST=localhost
+SOLR_PORT=8983
+APACHE_SERVERNAME=sounz.org.nz
+IP_PRIMARY_SERVER=202.78.240.46
+IP_SECONDARY_SERVER=202.78.240.47
+SOUNZ_RSYNC_PORT=18993
+#
+# SOUNZ server status. This can take the following values:
+#   production              - Primary server, with standby
+#   standby                 - Standby server for Production
+#   production_alone        - Primary server running alone
+#   standby_as_production   - Standby server running as Production
+#   production_as_standby   - Production server running as Standby
+#
+# For initial installation purposes, only the first three options
+# are valid. The others are used as part of DR failover processes.
+#
+STATUS=production
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# FUNCTIONS
+
+# Grab SOUNZ common functions..
+if [ -f ${SOUNZ_HOME}/install/install-funcs.sh ] ; then
+  . ${SOUNZ_HOME}/install/install-funcs.sh
+else
+  echo "Error: failed to load SOUNZ common functions from ${SOUNZ_HOME}/install"
+  exit 2
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# GEMS
+# Install all gems of listed versions onto the system. The master list
+# of required gems is in SOUNZ_HOME/scripts/gems/my_gems.txt. Most of
+# these are in the format of:
+#     gemname (gemversion)
+#
+# Where gemversion is of the usual numeric version format eg: 1.3.4
+# However this version string can also be the literal 'latest', in
+# which case this installer will always first uninstall the gem and then
+# call for it to be installed again without version (ie. the latest).
+#
+# NOTE: looks like multiple versions of a gem _could_ be installed and
+# this gives rise to 'gem list' output of this form:
+#   rails (1.2.5, 1.2.3)
+#
+# The most recent version is always first. Presumably more than two
+# versions can be present, also. In this event the below will, for
+# some gems, keep re-installing the gem, since it only checks the
+# first version in the list. To fix this ensure there is only a single
+# version of each gem present on the machine.
+
+# Need this fixup link to ensure that the postgres gem compiles. Note
+# that this might need changing in future.
+
+#DISABLING THE GEMS INSTALLATION FOR NOW
+#set +e
+#PQLIB=libpq.so
+#PQVER=4
+#LIBDIR=/usr/lib
+#if [ ! -L ${LIBDIR}/${PQLIB} ] ; then
+#  if [ -e ${LIBDIR}/${PQLIB}.${PQVER} ] ; then
+#    ln -s ${LIBDIR}/${PQLIB}.${PQVER} ${LIBDIR}/${PQLIB}
+#  fi
+#fi
+
+#GEM=`which gem`
+#if [ -x $GEM ] ; then
+#  INST_GEMSLIST=`tempfile -p ${PACKAGE} -s gems`
+#  $GEM list >${INST_GEMSLIST}
+#  REQD_GEMSLIST=${SOUNZ_HOME}/scripts/gems/my_gems.txt
+#  if [ -f $REQD_GEMSLIST ] ; then
+#    INST_GEMS=`perl -n -e "m;^[\w]+ \([0-9., ]+\);i && print;" $INST_GEMSLIST |tr -d '(),'|tr ' ' '%'`
+#    REQD_GEMS=`perl -n -e "m;^[\w]+ \([0-9.]+|latest\);i && print;" $REQD_GEMSLIST |tr -d '()'|tr ' ' '%'`
+#    if [ "$REQD_GEMS" != "" ] ; then
+#      for rgeminfo in $REQD_GEMS ; do
+#        rgemnam=`echo $rgeminfo | cut -d'%' -f1`
+#        rgemver=`echo $rgeminfo | cut -d'%' -f2`
+#        installed=0
+#        for igeminfo in $INST_GEMS ; do
+#          igemnam=`echo $igeminfo | cut -d'%' -f1`
+#          igemver=`echo $igeminfo | cut -d'%' -f2`
+#          igem_multiple=`echo $igeminfo | cut -d'%' -f3`
+#          if [ "$igem_multiple" != "" ] ; then
+#          	tell "Warning: GEM $igemnam has multiple versions installed. Will"
+#          	tell "uninstall all versions of this gem!"
+#          	$GEM uninstall --all $igemnam </dev/tty || true
+#          elif [ "$rgemnam" = "$igemnam" ] ; then
+#            if [ "$rgemver" = "$igemver" ] ; then
+#              installed=1
+#            else
+#              tell "uninstalling gem $rgemnam to acquire specified version"
+#              $GEM uninstall $rgemnam || true
+#            fi
+#            break
+#          fi
+#        done
+#        if [ $installed -eq 1 ] ; then
+#          tell "gem $rgemnam ($rgemver) is installed."
+#        else
+#          tell "installing $rgemnam ($rgemver)"
+#          if [ "$rgemver" = "latest" ] ; then
+#            $GEM install $rgemnam --include-dependencies </dev/tty || true
+#          else
+#            # horrible hack to deal with braindead postgres gem
+#            OPTS=
+#            if [ "$rgemnam" = "postgres" ] ; then
+#              OPTS="-- --with-pgsql-include-dir=/usr/include/postgresql"
+#            fi
+#            $GEM install $rgemnam --include-dependencies --version $rgemver $OPTS </dev/tty || true
+#          fi
+#        fi
+#      done
+#    fi
+#  else
+#    tell "Error: no required gems file found at: $REQD_GEMSLIST"
+#    exit 3
+#  fi
+#  rm -f $INST_GEMSLIST
+#else
+#  tell "Error: executable 'gem' not found."
+#  exit 4
+#fi
+#set -e
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# DATABASE
+# Notes: We only acquire the debconf database value and use it if our
+# config file value is still as yet undefined.
+
+if [ "$DB_NAME" = "_DB_NAME_" ] ; then
+  db_get ${PACKAGE}/db_name
+  if [ "$RET" != "" ] ; then
+    DB_NAME=$RET
+  fi
+fi
+
+if [ "$DB_HOST" = "_DB_HOST_" ] ; then
+  db_get ${PACKAGE}/db_host
+  if [ "$RET" != "" ] ; then
+    DB_HOST=$RET
+  fi
+fi
+
+if [ "$DB_PORT" = "_DB_PORT_" ] ; then
+  db_get ${PACKAGE}/db_port
+  if [ "$RET" != "" ] ; then
+    DB_PORT=$RET
+  fi
+fi
+
+if [ "$DB_USER" = "_DB_USER_" ] ; then
+  db_get ${PACKAGE}/db_user
+  if [ "$RET" != "" ] ; then
+    DB_USER=$RET
+  fi
+fi
+
+if [ "$DB_PASSWD" = "_DB_PASSWD_" ] ; then
+  db_get ${PACKAGE}/db_passwd
+  if [ "$RET" != "" ] ; then
+    DB_PASSWD=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# MONGREL
+
+if [ "$MONGREL_PORTS" = "_MONGREL_PORTS_" ] ; then
+  db_get ${PACKAGE}/mongrel_ports
+  if [ "$RET" != "" ] ; then
+    MONGREL_PORTS=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# ENVIRONMENT
+
+if [ "$ENVIRONMENT" = "_ENVIRONMENT_" ] ; then
+  db_get ${PACKAGE}/environment
+  if [ "$RET" != "" ] ; then
+    ENVIRONMENT=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SOLR SERVER & PORT
+
+if [ "$SOLR_HOST" = "_SOLR_HOST_" ] ; then
+  db_get ${PACKAGE}/solr_host
+  if [ "$RET" != "" ] ; then
+    SOLR_HOST=$RET
+  fi
+fi
+
+if [ "$SOLR_PORT" = "_SOLR_PORT_" ] ; then
+  db_get ${PACKAGE}/solr_port
+  if [ "$RET" != "" ] ; then
+    SOLR_PORT=$RET
+  fi
+fi
+
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# APACHE SERVERNAME
+
+if [ "$APACHE_SERVERNAME" = "_APACHE_SERVERNAME_" ] ; then
+  db_get ${PACKAGE}/apache_servername
+  if [ "$RET" != "" ] ; then
+    APACHE_SERVERNAME=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# REPLICATION/STANDBY SETTINGS
+# Get initial primary & secondary server ips, and rsync port.
+
+# Get IP addresses
+
+if [ "$IP_PRIMARY_SERVER" = "_IP_PRIMARY_SERVER_" ] ; then
+  db_get ${PACKAGE}/ip_primary_server
+  if [ "$RET" != "" ]
+  then
+    IP_PRIMARY_SERVER=$RET
+  fi
+fi
+
+if [ "$IP_SECONDARY_SERVER" = "_IP_SECONDARY_SERVER_" ] ; then
+  db_get ${PACKAGE}/ip_secondary_server
+  if [ "$RET" != "" ]
+  then
+    IP_SECONDARY_SERVER=$RET
+  fi
+fi
+
+if [ "$SOUNZ_RSYNC_PORT" = "_SOUNZ_RSYNC_PORT_" ] ; then
+  db_get ${PACKAGE}/sounz_rsync_port
+  if [ "$RET" != "" ]
+  then
+    SOUNZ_RSYNC_PORT=$RET
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SYMLINKS FROM /etc/sounz TO sounz/config
+
+# Make sure we have the config file in the /etc//sounz config directory, and
+# that it is linked back to the right place in the application tree.
+SOUNZ_CONFIG=${SOUNZ_HOME}/sounz/config
+if [ ! -d $SOUNZ_CONFIG ] ; then
+  tell "Error: missing ${SOUNZ_HOME}/sounz/config directory"
+  exit 5
+fi
+
+CONFIGS="database.yml email.yml solr.yml environments/development.rb environments/test.rb environments/production.rb"
+for CONF in $CONFIGS ; do
+  if [ -f ${PACKAGE_CONFDIR}/${CONF} ] ; then
+    # Clear existing file or symlink back in application tree..
+    if [ -e ${SOUNZ_CONFIG}/${CONF} ] ; then
+      rm -f ${SOUNZ_CONFIG}/${CONF}
+    fi
+    # Make symlink
+    ln -s ${PACKAGE_CONFDIR}/${CONF} ${SOUNZ_CONFIG}/${CONF}
+  else
+    tell "Error: missing config file ${PACKAGE_CONFDIR}/${CONF}"
+    exit 6
+  fi
+done
+
+# Also Symlink for Acts-As-Solr Config..
+ACTS_AS_SOLR_CONFIG=${SOUNZ_HOME}/sounz/vendor/plugins/acts_as_solr/config
+if [ ! -d $ACTS_AS_SOLR_CONFIG ] ; then
+  tell "Error: missing ${SOUNZ_HOME}/sounz/vendor/plugins/acts_as_solr/config directory"
+  exit 7
+fi
+if [ -f ${PACKAGE_CONFDIR}/solr.yml ] ; then
+  # Clear existing file or symlink back in application tree..
+  if [ -e ${ACTS_AS_SOLR_CONFIG}/solr.yml ] ; then
+    rm -f ${ACTS_AS_SOLR_CONFIG}/solr.yml
+  fi
+  # Make symlink
+  ln -s ${PACKAGE_CONFDIR}/solr.yml ${ACTS_AS_SOLR_CONFIG}/solr.yml
+else
+  tell "Error: missing config file ${PACKAGE_CONFDIR}/solr.yml"
+  exit 8
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CONF FILE
+# This substitutes the relevant paths into this config file, but
+# only if we haven't already done it..
+
+if [ -d $PACKAGE_CONFDIR ]
+then
+  # Plug in the relevant values to the SOUNZ config..
+  sub_vars $PACKAGE_CONFDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+  sub_vars $PACKAGE_CONFDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+  sub_vars $PACKAGE_CONFDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+  sub_vars $PACKAGE_CONFDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+  sub_vars $PACKAGE_CONFDIR "_DB_NAME_" "$DB_NAME"
+  sub_vars $PACKAGE_CONFDIR "_DB_HOST_" "$DB_HOST"
+  sub_vars $PACKAGE_CONFDIR "_DB_PORT_" "$DB_PORT"
+  sub_vars $PACKAGE_CONFDIR "_DB_USER_" "$DB_USER"
+  sub_vars $PACKAGE_CONFDIR "_DB_PASSWD_" "$DB_PASSWD"
+  sub_vars $PACKAGE_CONFDIR "_MONGREL_PORTS_" "$MONGREL_PORTS"
+  sub_vars $PACKAGE_CONFDIR "_ENVIRONMENT_" "$ENVIRONMENT"
+  sub_vars $PACKAGE_CONFDIR "_SOLR_HOST_" "$SOLR_HOST"
+  sub_vars $PACKAGE_CONFDIR "_SOLR_PORT_" "$SOLR_PORT"
+  sub_vars $PACKAGE_CONFDIR "_EMAIL_SMTP_SERVER_" "$EMAIL_SMTP_SERVER"
+  sub_vars $PACKAGE_CONFDIR "_EMAIL_DOMAIN_" "$EMAIL_DOMAIN"
+  sub_vars $PACKAGE_CONFDIR "_APACHE_SERVERNAME_" "$APACHE_SERVERNAME"
+  sub_vars $PACKAGE_CONFDIR "_IP_PRIMARY_SERVER_" "$IP_PRIMARY_SERVER"
+  sub_vars $PACKAGE_CONFDIR "_IP_SECONDARY_SERVER_" "$IP_SECONDARY_SERVER"
+  sub_vars $PACKAGE_CONFDIR "_SOUNZ_RSYNC_PORT_" "$SOUNZ_RSYNC_PORT"
+
+  # Always assert proper ownership & perms..
+  chown -R ${SOUNZ_USER}:${SOUNZ_USER} $PACKAGE_CONFDIR
+  chmod -R 0644 $PACKAGE_CONFDIR
+  find $PACKAGE_CONFDIR -type d -exec chmod 0775 {} \;
+else
+  tell "SOUNZ configuration $PACKAGE_CONF not found."
+  exit 9
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# CRON FILE
+# This substitutes the relevant vars into this crontab file.
+# Currently the only cronjob there is the CRM mailouts handler.
+
+# Cronjob settings
+# Rationale: Order of data transfer for SOUNZ DR is:
+#  1. database snapshot
+#  2. rsync replication (data, home, database snapshot)
+#  3. update standby database
+db_get ${PACKAGE}/sounz_rsync_cron
+RSYNC_FREQ=$RET
+
+case $RSYNC_FREQ in
+  Daily)
+    # Rsync every day in the small hours
+    RSYNC_CRON="25 2"
+    ;;
+  Four-hourly)
+    # Rsync every 4 hours at 25 mins past the hour
+    RSYNC_CRON="25 */4"
+    ;;
+  Hourly)
+    # Rsync every hour at 25 mins past the hour
+    RSYNC_CRON="25 *"
+    ;;
+  Testing)
+    # Rsync every 5 mins
+    RSYNC_CRON="2,7,12,17,22,27,32,37,42,47,52,57 *"
+    ;;
+      
+  *)
+    # No replication
+    RSYNC_CRON=
+    ;;
+esac
+
+if [ "$RSYNC_CRON" != "" ] ; then
+  CRONDIR=/etc/cron.d
+  CRONTAB=${CRONDIR}/sounz-app
+  if [ -f $CRONTAB ]
+  then
+    if grep -q -i -e "_SOUNZ_HOME_" $CRONTAB
+    then
+      WRK=`tempfile -p cronjob`
+
+      sed -e "s;_SOUNZ_USER_;$SOUNZ_USER;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+      sed -e "s;_SOUNZ_HOME_;$SOUNZ_HOME;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+      sed -e "s;_SOUNZ_LOGS_;$SOUNZ_LOGS;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+      sed -e "s;_RSYNC_CRON_;$RSYNC_CRON;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+    
+      # But do they want them to run? ..
+      db_get sounz/enable_app_cronjobs
+      if [ "$RET" = "true" ] ; then
+        sed -e "s;#NORUN#;;g" $CRONTAB > $WRK && mv $WRK $CRONTAB
+      fi
+      rm -f $WRK
+    fi
+  fi
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SOUNZ application logging directory, and logs. Rails likes to have
+# its logging directory inside its own file hierarchy, so we just
+# symlink the real/physical logging area there.
+
+# Physical logging area
+mkthisdir ${SOUNZ_LOGS}/sounz-app
+
+# Logfiles for each environment we support
+touch ${SOUNZ_LOGS}/sounz-app/production.log
+touch ${SOUNZ_LOGS}/sounz-app/development.log
+touch ${SOUNZ_LOGS}/sounz-app/test.log
+
+# Assert symlink to physical logging dir above
+if [ -d ${SOUNZ_HOME}/sounz/log -o -L ${SOUNZ_HOME}/sounz/log ] ; then
+  rm -rf ${SOUNZ_HOME}/sounz/log
+fi
+ln -s ${SOUNZ_LOGS}/sounz-app ${SOUNZ_HOME}/sounz/log
+chown ${SOUNZ_USER}:${SOUNZ_USER} ${SOUNZ_HOME}/sounz/log
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SOUNZ application zencart download directory.
+# The physical dir is located in our data area - assert it so.
+
+# Physical Zencart downloads area
+mkthisdir ${SOUNZ_DATA}/download
+
+# Assert symlink to physical Zencart download dir above
+if [ -d ${SOUNZ_HOME}/zencart/download -o -L ${SOUNZ_HOME}/zencart/download ] ; then
+  rm -rf ${SOUNZ_HOME}/zencart/download
+fi
+ln -s ${SOUNZ_DATA}/download ${SOUNZ_HOME}/zencart/download
+# Set ownership so that files can be uploaded by 'sounzreports' user
+chown sounzreports:sounzreports ${SOUNZ_HOME}/zencart/download
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SOUNZ general uploads directories.
+# This area is for SOUNZ to upload sundry content (eg. PDFs) which
+# they need to link to with hrefs from the more static (CM) content
+# on the site. The physical directory is already created in sounz-frontend
+# postinst so all we are doing here is providing for upload access by the
+# sounzreports user (usually via secure ftp). There are two directories
+# involved:
+#
+# Physical directory          Symlink for upload access
+# /data/sounz/app/download    /home/sounzreports/download
+# /data/sounz/app/catalog     /home/sounzreports/catalog
+
+# Assert symlink to physical download dir
+RPTS_USER=sounzreports
+RPTS_HOME=/home/${RPTS_USER}
+UPLOADS_DIRS="catalog download"
+for UPLOADS_DIR in $UPLOADS_DIRS ; do
+  if [ -d ${RPTS_HOME} ] ; then
+    if [ -d ${RPTS_HOME}/${UPLOADS_DIR} -o -L ${RPTS_HOME}/${UPLOADS_DIR} ] ; then
+      rm -rf ${RPTS_HOME}/${UPLOADS_DIR}
+    fi
+    ln -s ${SOUNZ_DATA}/${UPLOADS_DIR} ${RPTS_HOME}/${UPLOADS_DIR}
+
+    # Set ownership so that files can be uploaded by 'sounzreports' user
+    chown ${RPTS_USER}:${RPTS_USER} ${RPTS_HOME}/${UPLOADS_DIR}
+    chown -R ${RPTS_USER}:${SOUNZ_USER} ${SOUNZ_DATA}/${UPLOADS_DIR}
+    find ${SOUNZ_DATA}/${UPLOADS_DIR} -type f -exec chmod 0664 {} \;
+  fi
+done
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# LOGROTATE SUBS
+# Substitute our paths etc. into any logrotate scripts we installed.
+ROTDIR=/etc/logrotate.d
+sub_vars $ROTDIR "_SOUNZ_USER_" "$SOUNZ_USER"
+sub_vars $ROTDIR "_ADMIN_EMAIL_" "$ADMIN_EMAIL"
+sub_vars $ROTDIR "_SOUNZ_HOME_" "$SOUNZ_HOME"
+sub_vars $ROTDIR "_SOUNZ_DATA_" "$SOUNZ_DATA"
+sub_vars $ROTDIR "_SOUNZ_LOGS_" "$SOUNZ_LOGS"
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# SET PERMS
+if [ -x ${SOUNZ_HOME}/install/setperms.sh ] ; then
+  ${SOUNZ_HOME}/install/setperms.sh
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# UPDATE FRONT PAGE ROTATION
+# Update the front page rotation items. This produces the randomly
+# ordered list of composers, events etc. required for the front page
+# displays.
+if [ -x ${SOUNZ_HOME}/scripts/cron/update_front_page_rotation.rb ] ; then
+  tell "generating new random front page rotation lists"
+  cd ${SOUNZ_HOME}/scripts/cron
+  su sounz -c "./update_front_page_rotation.rb" >/dev/null 2>&1 || true
+fi
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Remind them to start sounz-app (mongrel servers)
+tell "NOTICE: don't forget to start the mongrel servers with something like:"
+tell "  invoke-rc.d sounz-app start"
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+#DEBHELPER#
+
+exit 0

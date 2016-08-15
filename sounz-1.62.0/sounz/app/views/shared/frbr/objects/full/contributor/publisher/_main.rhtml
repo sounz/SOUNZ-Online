@@ -1,0 +1,27 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_heading => "Presenter",
+			:main_internal_heading => object.role.contributor_names,
+			:subheading => nil,
+			:links => object.get_contributor_website_url,
+			:text => nil,
+			:object => object
+}
+%>
+
+
+<div class="section">
+<h2>Profile</h2>
+
+<%=convert_to_html(object.profile)%>
+<%if !object.profile_source.blank? %>
+<span class="profileSource">Source: <%=object.profile_source%></span>
+<%end%>
+</div>
+
+
+<%= render :partial => 'shared/frbr/objects/full/contributor/publisher/publisher_links', :locals => {:object => object} %> 
+
+

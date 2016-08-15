@@ -1,0 +1,59 @@
+<%= error_messages_for 'event' %>
+<fieldset>
+<legend accesskey="i">Information</legend>
+<p><label for="event_event_title">Event title</label><br>
+<%= text_field 'event', 'event_title', :size => standard_edit_cols %></p>
+
+
+<p><label for="event_event_type_id">Event Type</label>
+<br>
+<%=select("event", "event_type_id", @event_types.to_dropdown(:event_type_desc),
+options = {:prompt => '-- Please select an event type --'},
+html_options = {:onchange => "new Ajax.Request('/events/event_type_chosen', {asynchronous:true, evalScripts:true, parameters:'type='+value})"})%>
+<p/>
+
+
+</fieldset>
+
+
+<div id="opportunityDetails">
+<%=render :partial => 'opportunity_details'%>
+</div>
+
+<%#non opportunity details%>
+<div id="eventDetails">
+<%=render :partial => 'event_specific_details'%>
+</div>
+
+
+
+<fieldset>
+<legend accesskey="c">Contact Details</legend>
+<div id="contactinfo_details">
+
+<%= render :partial => 'contactinfos/form', :locals => { :role_contactinfo => nil,
+                                                         :contactinfo => @event.contactinfo,
+                                                         :default_contactinfo => @event.contactinfo.default_contactinfo }
+%>
+</div>
+</fieldset>
+
+<fieldset>
+<legend accesskey="n">Notes</legend>
+
+
+<p><label for="event_general_note">General note</label><br>
+<%= text_area 'event', 'general_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="event_internal_note">Internal note</label><br>
+<%= text_area 'event', 'internal_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+</fieldset>
+
+
+
+
+
+<p/>Status:<br><%= select("event", "status_id", @statuses.to_dropdown) %></p>
+
+<!--[eoform:event]-->
+

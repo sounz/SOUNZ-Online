@@ -1,0 +1,2 @@
+page.replace_html @dom_id, :partial => 'update_sample', :locals => {:manifestation => @manifestation,:sample => @sample}
+page.visual_effect :highlight, @dom_id

@@ -1,0 +1,36 @@
+<% distinction.distinction_distinction_types.each do |dt| %>
+
+<% distinction_distinction_type_id = generate_id(dt) %>
+<p id=<%= distinction_distinction_type_id%>>
+<span class="actionButton">
+  <%= link_to_remote( "REMOVE", :update => "distinction_types",
+                                :complete => "new Effect.Fold('"+distinction_distinction_type_id+"')", 
+                                :confirm => 'Are you sure you want to delete this type?',
+                                :url =>{ :controller => 'distinctions', 
+                                :action => 'remove_distinction_type',
+                                :distinction_distinction_type_id => dt.id })%>
+</span>
+<%= dt.distinction_type.distinction_type_name %>
+
+<% end %>
+</p>
+
+
+<%
+if !distinction.distinction_distinction_types.blank?
+distinction_types_ids = distinction.distinction_distinction_types.collect{ |dt| dt.distinction_type_id }
+distinction_types_to_select = DistinctionType.find(:all, :conditions => ['distinction_type_id NOT IN (?)', distinction_types_ids], :order => 'distinction_type_id')
+else
+distinction_types_to_select = DistinctionType.find(:all, :order => 'distinction_type_id')
+end
+%>
+
+<%= collection_select('distinction_distinction_type', "distinction_type_id",  distinction_types_to_select, :distinction_type_id, :distinction_type_name, :include_blank => "-- Select a distinction type --") 
+%>
+<span class="actionButton">
+<%= link_to_remote( "ADD", :update => "distinction_types",
+                           :url =>{ :controller => 'distinctions', 
+                           :action => 'add_distinction_type',
+                           :distinction_id => distinction.id}, 
+                           :with => "'distinction_type_id='+escape($('distinction_distinction_type_distinction_type_id').value)")%>
+</span>

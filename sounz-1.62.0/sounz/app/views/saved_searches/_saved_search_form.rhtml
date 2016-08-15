@@ -1,0 +1,8 @@
+<%form_tag :controller => 'saved_searches', :action => 'save_search_from_form' do %>
+<div>
+<span class="formInfo">Save this search as: </span> <%=text_field 'save_search_form','search_name', :size => 20, :class => 'text'%>
+<%=hidden_field 'save_search_form','search_type', :value => search_type %>
+<input type="submit" value="Submit" alt="Save this Search" class="public_button">
+
+</div>
+<% end %>

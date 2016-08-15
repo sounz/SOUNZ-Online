@@ -1,0 +1,68 @@
+<div class="section">
+<h1>Membership</h1>
+</div>
+<br/>
+
+<fieldset>
+<legend><%= @membership.member_type.member_type_desc %> Membership for <%= @membership.login.username%></legend>
+
+<table>
+
+<tr>
+<th><label for="membership_member_type_id">Member Type</label></th>
+<td><%= @membership.member_type.member_type_desc unless @membership.member_type.blank?%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_sounz_service_id">SOUNZ memberships</label></th>
+<td><%= @membership.sounz_service.sounz_service_name unless @membership.sounz_service.blank?%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_expiry_date">Expiry date</label></th>
+<td><%= dby_date(@membership.expiry_date)%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_pending_payment">Pending payment</label></th>
+<td><%= @membership.pending_payment%></td>
+</tr>
+
+<tr>
+<th><label for="membership_purchased_date">Purchased date</label></th>
+<td><%= dby_date(@membership.purchased_date)%>
+</td>
+</tr>
+
+<tr>
+<th><label for="membership_loan_count">Loan count</label></th>
+<td><%= @membership.loan_count%>
+</td>
+</tr>
+
+</table>
+
+</fieldset>
+
+<% controller = nil
+id = nil 
+if !@membership.login.person.blank?
+controller = 'people'
+id = @membership.login.person.person_id
+elsif !@membership.login.organisation.blank?
+controller = 'organisations'
+id = @membership.login.organisation.organisation_id
+end
+%>
+<div class="editLinks">
+<%= link_to "Privileges", :controller => controller, :action => :privileges_list, :id => id unless controller.blank?%>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') %>
+|<%= link_to "Login", :controller => :logins, :action => :edit, :id => @membership.login%>
+<% end%>
+</div>
+
+

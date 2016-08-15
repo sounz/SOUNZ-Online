@@ -1,0 +1,23 @@
+<%if !@event.is_opportunity?%>
+<fieldset>
+<legend accesskey="d">Event Details</legend>
+
+<!--
+<p><label for="event_event_start">Event start</label><br>
+<%= date_field_with_time(@event.event_start, 'event', 'event_start')%>
+</p>
+
+<p><label for="event_event_finish">Event finish</label><br>
+<%= date_field_with_time(@event.event_finish, 'event', 'event_finish')%></p>
+-->
+
+<div id="datesWidget">
+<%= render :partial => 'dates_widget_with_buttons'%>
+</div>
+
+<p><label for="event_tickets_note">Booking note</label><br>
+<%= text_area 'event', 'tickets_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+
+</fieldset>
+<%end%>

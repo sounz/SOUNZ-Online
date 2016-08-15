@@ -1,0 +1,18 @@
+
+<p>Show a list of member_types who have this privilege</p>
+
+<% for member_type in @member_types%>
+<%=h member_type.member_type_desc%><br>
+<%end%>
+
+
+
+<% for column in Privilege.content_columns %>
+
+<p>
+  <b><%= column.human_name %>:</b> <%=h @privilege.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @privilege %> |
+<%= link_to 'List', :action => 'list' %>

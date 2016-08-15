@@ -1,0 +1,133 @@
+<%link = link_to_if PrivilegesHelper.has_link_permission?(@login, object), object.work_title, :action => 'show', :id => object, :controller => 'works'%>
+<%=render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => link,
+			:subheading => nil,
+			:text => object.year_description,
+			:links => nil,
+			:object => object #for the select this button
+}
+%>
+<div class="section">
+  <%=h object.work_description%><br>
+  By: <%= render :partial => '/shared/frbr/objects/full/contributor/contributor_list', :locals => {:contributors => object.composers}%>
+</div>
+
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_TAP')%>
+  <%if ! @work.has_additional_frbr_relationships%>
+	  <div class="section">
+		  <%=render :partial => 'check_association'%>
+		</div>
+	<%end%>
+<%end%>
+
+<%
+past = PrivilegesHelper.permitted_objects(@login, object.past_performance_realisations)
+future = PrivilegesHelper.permitted_objects(@login, object.future_performance_realisations)
+
+if (past.length + future.length) > 0
+realisations = past
+%>
+  <div class="section">
+    <%
+    realisations = future
+    %>
+    <%= render :partial => 'shared/frbr/objects/full/expression/inline', :locals =>{:expression_types_title=> 'Events:', :realisations => realisations}%>
+  </div>
+<%
+end
+
+related_manifestations = PrivilegesHelper.permitted_objects(@login, object.related_manifestations)
+related_resources = PrivilegesHelper.permitted_objects(@login, object.descriptive_resources)
+
+scores = ManifestationsHelper.scores_only(related_manifestations)
+recordings = ManifestationsHelper.recordings_only(related_manifestations)
+sounzmedia_manifestations = ManifestationsHelper.sounzmedia_only(related_manifestations)
+sounzmedia_resources = ResourcesHelper.sounzmedia_only(object.related_resources)
+%>
+
+<%if !related_manifestations.blank? || !related_resources.blank? %>
+
+<!--<div class="section">-->
+	<%if !scores.blank?%>
+	<div class='purchase'>
+	  <a name="scores"></a>
+	  <h2>Scores</h2>
+	  <%for manif in scores%>
+	    <div class='item'>
+	    <%= render :partial => 'shared/frbr/objects/full/manifestation/inline', :locals =>{:manifestation=> manif}%>
+	    </div><!--/item-->
+	  <%end%>
+	</div> <!--/purchase-->
+<%end%>
+<%end%>
+
+<%if !sounzmedia_manifestations.blank? || !sounzmedia_resources.blank?%>
+  <div class='purchase recordings'>
+    <a name="sounzmedia"></a>
+    <h2>Media on Demand</h2>
+    <%if !sounzmedia_manifestations.blank? %>
+      <%for manif in sounzmedia_manifestations%>
+        <div class='item'>
+        <%= render :partial => 'shared/frbr/objects/full/manifestation/inline', :locals =>{:manifestation=> manif}%>
+        </div><!--/item-->
+      <%end%>
+    <%end%>
+    <%if !sounzmedia_resources.blank?%>
+      <%for resource in sounzmedia_resources%>
+        <div class='item'>
+        <%= render :partial => 'shared/frbr/objects/full/resource/inline', :locals =>{:resource=> resource}%>
+        </div><!--/item-->
+      <%end%>
+    <%end%>
+  </div> 
+<%end%>
+
+
+<%if !recordings.blank?%>
+  <div class='purchase recordings'>
+    <a name="recordings"></a>
+    <h2>Recordings</h2>
+      <%for manif in recordings%>
+        <div class='item'>
+          <%= render :partial => 'shared/frbr/objects/full/manifestation/inline', :locals =>{:manifestation=> manif}%>
+        </div><!--/item-->
+      <%end%>
+  </div> <!--/purchase recordings-->
+<%end%>
+
+<% resources = PrivilegesHelper.permitted_objects(@login, @resources) %> 
+  <%if !resources.blank?%>
+    <div class="purchase">
+      <a name="resources"></a>
+      <h2>Resources</h2>
+      <%for resource in resources%>
+        <div class='item'>
+          <%= render :partial => 'shared/frbr/objects/full/resource/inline', :locals =>{:resource=> resource}%>
+        </div><!--/item-->
+        <%end%>
+
+    </div> <!-- section T2 -->
+  <%end%>
+
+
+<!--end Second section-->
+
+
+<%=show_relationships_if_permission(object)%>
+
+
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+  <div class="editLinks">
+    <%= link_to "Edit or Add Relationship", :controller => "works", :action => "edit", :id => object %> | 
+    <%= link_to "Add New Expression to this Work", :controller => "expressions", :action => "new_from_work", :work_id => object %>
+  </div>
+<%end%>
+
+
+
+
+

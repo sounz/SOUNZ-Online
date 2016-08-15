@@ -1,0 +1,7 @@
+<%= error_messages_for 'marketing_category' %>
+
+<div id="labelformat" style="height: 80px;"><label for="marketing_category_abbreviation">Category Abbreviation</label></div>
+<div id="formelemformat" style="height: 80px;"><%= text_field 'marketing_category', 'abbreviation'  %></div>
+
+<div id="labelformat" style="height: 80px;"><label for="marketing_category_description">Category Description</label></div>
+<div id="formelemformat" style="height: 80px;"><%= text_area 'marketing_category', 'description', :cols => standard_edit_cols, :rows => standard_edit_rows  %></div>

@@ -1,0 +1,26 @@
+<div class="section">
+<h1>Listing Returned Items</h1>
+</div>
+<br/>
+
+<%= link_to 'Currently Borrowed Items', :action => 'list'%>
+
+<br/><br/>
+
+<table>
+  <tr>
+    <th>Loaned to</th><th>Date borrowed</th><th>Date renewed</th><th>Date due</th><th>Hired out</th>
+  </tr>
+  
+<% for borrowed_item in @borrowed_items %>
+  <%= render :partial => 'borrowed_item', :locals => { :borrowed_item => borrowed_item } %>
+<% end %>
+
+</table>
+<br />
+
+<%= will_paginate @borrowed_items %>
+
+<br />
+
+<%# link_to 'New borrowed_item', :action => 'new' %>

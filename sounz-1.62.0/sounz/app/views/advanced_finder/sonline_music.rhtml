@@ -1,0 +1,186 @@
+<% content_for :page_title do %>
+Search Music
+<%end%>
+
+<!--
+<%=main_tabs(selected = :music)%>
+
+<span class="searchLinks">
+<%=link_to image_tag('/images/button-simplesearch.gif', :alt => 'Simple Search'), {:controller=>:finder,:action=>:show}, {:class => 'public_button'}%>
+</span>
+-->
+
+<h1>Music - Advanced Search</h1>
+
+<div class="advanced_search">
+  <% form_for(:search_details, :url => {:action => :search_works_resources}, :html => { :method => :post }) do |f| %>
+
+    <fieldset>
+      <ul>
+        <li>
+          <label>Title of work</label>
+          <%= f.text_field :title, :class => 'text', :size => standard_edit_cols %>
+        </li>
+        <li>
+          <label>Composed/written by</label>
+          <%= f.text_field :composed_written_by, :size => standard_edit_cols, :class => 'text' %>
+        </li>
+        <li>
+          <label>Contents</label>
+          <%= f.text_field :contents, :size => standard_edit_cols, :class => 'text' %>
+        </li>
+        <li>
+          <label>Year of composition</label>
+          <%= select("search_details", "year_comparison_param", DropDown.bool_type_search.to_dropdown) %>
+          <%= f.text_field :composition_revision_year, :size => 4, :class => 'text', :style => 'margin-bottom: 0;' %>
+          <span class="instruction">year</span>
+        </li>
+        <li>
+          <label>Duration</label>
+          <%= select("search_details", "duration_comparison_param", DropDown.bool_type_search.to_dropdown) %>
+          <%= f.text_field :duration, :size => 4, :class => 'text', :style => 'margin-bottom: 0;'%>
+          <span class="instruction">minutes</span>
+        </li>
+        <li>
+          <label>Type of music</label>
+          <%= select("search_details", "work_category_id",
+		 WorkCategory.find(:all, :order => :work_category_desc, :conditions => ["additional is not TRUE"],:order => 'display_order').to_dropdown(:work_category_desc),
+		:selected=>@search_details.work_category_id.to_i,
+		:include_blank => "-- No type selected --"
+		) %>
+        </li>
+        <li>
+          <label>More specifically</label>
+          <span id="work_subcategories">
+		  <%= render :partial => 'work_subcategories', :locals => { :work_category_id => @search_details.work_category_id, 
+		                                                            :work_subcategory_id => @search_details.work_subcategory_id.to_i } %>
+		</span>
+	<%=observe_field(:search_details_work_category_id, :update => :work_subcategories,
+	                                                   :url => {:action => :work_subcategories}, 
+	:with => "'category='+escape($('search_details_work_category_id').value) + '&subcategory='+escape($('search_details_work_subcategory_id').value)")%>
+        </li>
+        <li>
+          <label>Includes special feature</label>
+          <%=select("search_details", "work_additional_subcategory_id", 
+		                @additional_subcategories.to_dropdown(:work_subcategory_desc), 
+		                :selected=>@search_details.work_additional_subcategory_id.to_i,
+		                :include_blank => "-- No special feature selected--", :selected => @search_details.work_additional_subcategory_id.to_i )%>
+        </li>
+        <li>
+          <label>Difficulty level</label>
+          <%= select("search_details", "difficulty", DropDown.work_difficulties_for_search.to_dropdown, 
+	                 :include_blank => "-- No difficulty level selected--", :selected => @search_details.difficulty.to_i) %>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="instruments">
+      <h3>Includes the following solo or single instrument/s:</h3>
+      <p>(Tip: Selecting a 'Type of music' from the list above will refine the instrument search more effectively.)</p>
+
+      <ul>
+        <li><%= check_box "search_details", "includes_piano", :class => 'checkbox'%> Piano</li>
+        <li><%= check_box "search_details", "includes_organ", :class => 'checkbox'%> Organ</li>
+        <li><%= check_box "search_details", "includes_accordion", :class => 'checkbox'%> Accordion</li>
+        <li><%= check_box "search_details", "includes_organ", :class => 'checkbox'%> Organ</li>
+        <li><%= check_box "search_details", "includes_violin", :class => 'checkbox'%> Violin</li>
+        <li><%= check_box "search_details", "includes_viola", :class => 'checkbox'%> Viola</li>
+        <li><%= check_box "search_details", "includes_cello", :class => 'checkbox'%> Cello</li>
+        <li><%= check_box "search_details", "includes_double_bass", :class => 'checkbox'%> Double bass</li>
+        <li><%= check_box "search_details", "includes_harp", :class => 'checkbox'%> Harp</li>
+        <li><%= check_box "search_details", "includes_guitar", :class => 'checkbox'%> Guitar</li>
+        <li><%= check_box "search_details", "includes_mandolin", :class => 'checkbox'%> Mandolin</li>
+        <li><%= check_box "search_details", "includes_flute", :class => 'checkbox'%> Flute</li>
+        <li><%= check_box "search_details", "includes_oboe", :class => 'checkbox'%> Oboe</li>
+        <li><%= check_box "search_details", "includes_clarinet", :class => 'checkbox'%> Clarinet</li>
+        <li><%= check_box "search_details", "includes_bassoon", :class => 'checkbox'%> Bassoon</li>
+        <li><%= check_box "search_details", "includes_saxophone", :class => 'checkbox'%> Saxophone</li>
+        <li><%= check_box "search_details", "includes_recorder", :class => 'checkbox'%> Recorder</li>
+        <li><%= check_box "search_details", "includes_trumpet", :class => 'checkbox'%> Trumpet</li>
+        <li><%= check_box "search_details", "includes_horn", :class => 'checkbox'%> Horn</li>
+        <li><%= check_box "search_details", "includes_trombone", :class => 'checkbox'%> Trombone</li>
+        <li><%= check_box "search_details", "includes_tuba", :class => 'checkbox'%> Tuba</li>
+        <li><%= check_box "search_details", "includes_percussion", :class => 'checkbox'%> Percussion</li>
+        <li><%= check_box "search_details", "includes_marimba", :class => 'checkbox'%> Marimba</li>
+        <li><%= check_box "search_details", "includes_vibraphone", :class => 'checkbox'%> Vibraphone</li>
+        <li><%= check_box "search_details", "includes_drums", :class => 'checkbox'%> Drums</li>
+        <li><%= check_box "search_details", "includes_koauau", :class => 'checkbox'%> Koauau</li>
+        <li><%= check_box "search_details", "includes_bagpipes", :class => 'checkbox'%> Bagpipes</li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="voices">
+      <h3>Includes the following voices:</h3>
+      <ul>
+        <li><%= check_box "search_details", "comprises_soprano", :class => 'checkbox'%> Soprano</li>
+        <li><%= check_box "search_details", "comprises_mezzo", :class => 'checkbox'%> Mezzo</li>
+        <li><%= check_box "search_details", "comprises_contralto", :class => 'checkbox'%> Contralto</li>
+        <li><%= check_box "search_details", "comprises_alto", :class => 'checkbox'%> Alto</li>
+        <li><%= check_box "search_details", "comprises_tenor", :class => 'checkbox'%> Tenor</li>
+        <li><%= check_box "search_details", "comprises_baritone", :class => 'checkbox'%> Baritone</li>
+        <li><%= check_box "search_details", "comprises_bass", :class => 'checkbox'%> Bass</li>
+        <li><%= check_box "search_details", "comprises_countertenor", :class => 'checkbox'%> Countertenor</li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <ul>
+        <li>
+          <label>Includes a language</label>
+          <%= select("search_details", "language_id", @languages.to_dropdown(:language_name),
+			:include_blank => "-- No language selected--", :selected => @search_details.language_id.to_i) %>
+        </li>
+        <li>
+          <label>Has a</label>
+<%= select 'search_details', 'concept_type', DropDown.concepts.to_dropdown,
+	            :include_blank => "-- No concept type selected --" 
+	        %> 
+	  <%=observe_field(:search_details_concept_type, :update => :concept_main_categories,
+	                                                 :url => {:controller => :advanced_finder, 
+	                                                          :action => :concept_main_categories},
+	                                                 :complete => "new Effect.Highlight('search_details_concept_id')", 
+	 :with => "'type='+escape($('search_details_concept_type').value) + '&concept='+escape($('search_details_concept_id').value)")%>
+	  <strong>of</strong>
+	  <span id="concept_main_categories">
+	  <%= render :partial => 'concept_main_categories', :locals => { :concept_type => @search_details.concept_type, :concept_id => @search_details.concept_id.to_i } %>
+	  </span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="attachments">
+      <h3>Only show me works which are accompanied by:</h3>
+      <ul>
+        <li><%= check_box "search_details", "has_score", :class => 'checkbox'%> Scores</li>
+        <li><%= check_box "search_details", "has_recording", :class => 'checkbox'%> Recordings</li>
+        <li><%= check_box "search_details", "has_programme_note", :class => 'checkbox'%> Programme Note</li>
+        <li><%= check_box "search_details", "has_resource", :class => 'checkbox'%> Resource <%=select("search_details", "resource_type_id", Resource.all_resource_types.to_dropdown(:resource_type_desc),
+                               {:include_blank => '-- No resource type selected --', :selected => @search_details.resource_type_id.to_i})%>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="availability">
+      <h3>Only show me works which are available:</h3>
+      <ul>
+        <li><%= check_box "search_details", "available_for_sale", :class => 'checkbox' %> For sale</li>
+        <li><%= check_box "search_details", "available_for_hire", :class => 'checkbox'%> For borrowing</li>
+        <li><%= check_box "search_details", "available_for_download", :class => 'checkbox'%> For download</li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="form-actions">
+      <ul>
+        <!--<li class="reset"><%= link_to "Reset", {:controller => :advanced_finder, :action => :reset_sonline_music}, {:class => 'public_button'}%></li>-->
+        <li class="submit"><input type="submit" value="Search" alt="Search" class="public_button"></li>
+      </ul>
+    </fieldset>
+
+  </div>
+
+<% end %>
+
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('work_subcategories', 'work_subcategories', {asynchronous:true, evalScripts:true, parameters:'category='+escape($('search_details_work_category_id').value)+'&subcategory='+escape($('search_details_work_subcategory_id').value)} ) });</script>
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('concept_main_categories', 'concept_main_categories', {asynchronous:true, evalScripts:true, parameters:'type='+escape($('search_details_concept_type').value) + '&concept='+escape($('search_details_concept_id').value)} ) });</script>

@@ -1,0 +1,2 @@
+<%=link_to_remote '<span class="actionButton" >Set Expression has Dates</span>',  :url=> {:id=>@expression.id,:action => 'enable_dates'}, :method => :get%>
+<%=hidden_field "date", "enabled", :value => "no"%>

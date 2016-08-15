@@ -1,0 +1,18 @@
+<%= error_messages_for 'concept' %>
+
+<div class="instruction">Please note that the concept types were created programatically from a spreadsheet.  As such
+	the concept type should not be changed without prior thought</div>
+
+<p/>Concept Type:<br><%= select("concept", "concept_type_id", @concepttypes.to_dropdown(:concept_type_desc)) %></p>
+
+<!--[form:concept]-->
+<p><label for="concept_concept_name">Concept name</label><br>
+<%= text_field 'concept', 'concept_name', :size => standard_edit_cols  %></p>
+
+<p><label for="concept_concept_description">Concept description</label><br>
+<%= text_area 'concept', 'concept_description', :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+
+
+<!--[eoform:concept]-->
+

@@ -1,0 +1,3 @@
+<% if !@contacts.blank?%>
+<%=render :partial => 'render_contact_list', :locals => {:contacts => @contacts, :saved_contact_list => @saved_contact_list}%>
+<% end %>

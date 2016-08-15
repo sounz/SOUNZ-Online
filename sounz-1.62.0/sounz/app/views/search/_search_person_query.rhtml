@@ -1,0 +1,8 @@
+<!-- THIS TEMPLATE IS UNUSED -->
+<%if person_query != "" and thing_query == ""-%>
+Your search for "<%=h person_query%>" returned the following
+<%elsif person_query == "" and thing_query != ""-%>
+Your search for people <%=h thing_verb%> <%=h thing_query%> returned the following
+<% else -%>
+Your search for <%=h person_query%> <%=h thing_verb%> <%=h thing_query%> returned the following
+<%end -%>

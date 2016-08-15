@@ -1,0 +1,22 @@
+<h1>Editing prov_contributor_profiles</h1>
+<p>Please fill out in the form below.  Only complete those parts that apply to you.  This information will appear on the SOUNZ website (except where indicated to the contrary).  Information will be checked by SOUNZ before appearing on the site.</p>
+<%= error_messages_for :prov_contributor_profiles %>
+
+<% form_for(:prov_contributor_profiles, :url => prov_contributor_profile_path(@prov_contributor_profiles), :html => { :method => :put }) do |f| %>
+ 
+
+<%=render :partial => "form", :locals => {:f => f}%>
+
+
+
+
+<p/>Status:<br><%= select("prov_contributor_profiles", "status_id", @statuses.to_dropdown) %></p>
+
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', prov_contributor_profile_path(@prov_contributor_profiles) %> |
+<%= link_to 'Back', prov_contributor_profiles_path %>

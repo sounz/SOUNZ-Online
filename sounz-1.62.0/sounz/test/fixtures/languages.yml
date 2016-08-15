@@ -1,0 +1,193 @@
+--- 
+language_1:
+  language_id: 1
+  language_name: English
+  char_encoding: en_NZ
+  is_default: T
+  display_order: 1
+language_2:
+  language_id: 2
+  language_name: Latin
+  char_encoding:
+  is_default: F
+  display_order: 2
+language_3:
+  language_id: 3
+  language_name: Maori 
+  char_encoding: en_MI
+  is_default: F
+  display_order: 3
+language_4:
+  language_id: 4
+  language_name: Samoan
+  char_encoding:
+  is_default: F
+  display_order: 4  
+language_5:
+  language_id: 5
+  language_name: Pacific Island - other
+  char_encoding:
+  is_default: F
+  display_order: 5
+language_6:
+  language_id: 6
+  language_name: German
+  char_encoding:
+  is_default: F
+  display_order: 6
+language_7:
+  language_id: 7
+  language_name: Spanish
+  char_encoding:
+  is_default: F
+  display_order: 7
+language_8:
+  language_id: 8
+  language_name: Portuguese
+  char_encoding:
+  is_default: F
+  display_order: 8
+language_9:
+  language_id: 9
+  language_name: French
+  char_encoding:
+  is_default: F
+  display_order: 9
+language_10:
+  language_id: 10
+  language_name: Italian
+  char_encoding:
+  is_default: F
+  display_order: 10
+language_11:
+  language_id: 11
+  language_name: Dutch/Flemish
+  char_encoding:
+  is_default: F
+  display_order: 11
+language_12:
+  language_id: 12
+  language_name: Polish
+  char_encoding:
+  is_default: F
+  display_order: 12
+language_13:
+  language_id: 13
+  language_name: Greek
+  char_encoding:
+  is_default: F
+  display_order: 13
+language_14:
+  language_id: 14
+  language_name: Scandinavian languages
+  char_encoding:
+  is_default: F
+  display_order: 14
+language_15:
+  language_id: 15
+  language_name: Celtic languages
+  char_encoding:
+  is_default: F
+  display_order: 15
+language_16:
+  language_id: 16
+  language_name: Indonesian
+  char_encoding:
+  is_default: F
+  display_order: 16
+language_17:
+  language_id: 17
+  language_name: Japanese
+  char_encoding:
+  is_default: F
+  display_order: 17
+language_18:
+  language_id: 18
+  language_name: Chinese
+  char_encoding:
+  is_default: F
+  display_order: 18
+language_19:
+  language_id: 19
+  language_name: Indian languages
+  char_encoding:
+  is_default: F
+  display_order: 19
+language_20:
+  language_id: 20
+  language_name: Asian - other
+  char_encoding:
+  is_default: F
+  display_order: 20
+language_21:
+  language_id: 21
+  language_name: African languages
+  char_encoding:
+  is_default: F
+  display_order: 21
+language_22:
+  language_id: 22
+  language_name: Russian
+  char_encoding:
+  is_default: F
+  display_order: 22
+language_23:
+  language_id: 23
+  language_name: Balkan languages
+  char_encoding:
+  is_default: F
+  display_order: 23
+language_24:
+  language_id: 24
+  language_name: Baltic languages
+  char_encoding:
+  is_default: F
+  display_order: 24
+language_25:
+  language_id: 25
+  language_name: Eastern European - other
+  char_encoding:
+  is_default: F
+  display_order: 25
+language_26:
+  language_id: 26
+  language_name: Arabic
+  char_encoding:
+  is_default: F
+  display_order: 26
+language_27:
+  language_id: 27
+  language_name: Hebrew
+  char_encoding:
+  is_default: F
+  display_order: 27
+language_28:
+  language_id: 28
+  language_name: Middle Eastern languages
+  char_encoding:
+  is_default: F
+  display_order: 28
+language_29:
+  language_id: 29
+  language_name: Niuspi/Esperanto
+  char_encoding:
+  is_default: F
+  display_order: 29
+language_30:
+  language_id: 30
+  language_name: Old English
+  char_encoding:
+  is_default: F
+  display_order: 30
+language_31:
+  language_id: 31
+  language_name: Vocalise
+  char_encoding:
+  is_default: F
+  display_order: 31
+language_32:
+  language_id: 32
+  language_name: Nonsense
+  char_encoding:
+  is_default: F
+  display_order: 32

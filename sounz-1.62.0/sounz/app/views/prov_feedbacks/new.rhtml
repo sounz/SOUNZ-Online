@@ -1,0 +1,21 @@
+<% content_for :page_title do %>
+Feedback Form
+<%end%>
+
+<h1>Feedback Form</h1>
+
+<p>We welcome your feedback.</p>
+
+<%= error_messages_for :prov_feedbacks %>
+
+<% form_for(:prov_feedbacks, :url => prov_feedbacks_path) do |f| %>
+
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></td>
+</ul>
+
+<% end %>

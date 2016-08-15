@@ -1,0 +1,34 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_heading => "Composer",
+			:main_internal_heading => object.role.contributor_names,
+			:subheading => nil,
+			:links => object.get_contributor_website_url,
+			:text => show_note(object.pull_quote),
+			:photo_credit => object.photo_credit,
+			:object => object
+}
+%>
+
+<div class="biography">
+  <h3>Biography</h3>
+  <%=convert_to_html(object.profile)%>
+  <%if !object.profile_source.blank? %>
+  <span class="profileSource">Source: <%=object.profile_source%></span>
+  <%end%>
+</div>
+
+<%if @items.length > 0%>
+<div class="selected-works">
+  <h3>Selected Works</h3>
+  <%= render :partial => 'shared/frbr/objects/full/list_of_items', :locals => {:related_items_method => 'selected_works' ,:list_title=> "Selected Works", :related_item_title_method => 'work_title',
+  :related_item_description_method => 'frbr_listing_description',
+   :object => object.role, :items => @items, :paginator => @paginator, :page => @page}%>
+</div>
+  <%end%>
+
+<%= render :partial => 'shared/frbr/objects/full/contributor/composer/composer_links', :locals => {:object => object} %> 
+
+
+

@@ -1,0 +1,63 @@
+<%if @from.match('person')%>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :communications} %>
+<%else%>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :communications} %>
+<%end%>
+
+<% title @page_title %>
+
+<%
+if @communication_status.match('o')
+status = 'c'
+link_name = "Show Closed Communications"
+else
+status = 'o'
+link_name = "Show Open Communications"
+end
+%>
+
+<div align="right">
+<%= link_to link_name, :controller => :communications, 
+                                      :action => :entity_communication_list, 
+                                      :id => @entity, 
+                                      :from => @from,
+                                      :status => status
+%>
+</div>
+<br>
+
+<h2><%= @page_title %></h2>
+<strong>
+<%= link_to "Create New Communication",  
+                          { :controller => 'communications', :action => 'new', :id => @entity, :from => @from } 
+%>
+</strong>
+<br><br>
+
+<% @communications.each do |comm| %>
+<ul class="communicationsList">
+<li>
+<%=link_to comm.communication_subject, :controller => 'communications', 
+                                       :action => :edit, 
+                                       :id => @entity, 
+                                       :from => @from, 
+                                       :communication => comm 
+%>
+<br>
+Created at <%=dmyhm_date(comm.created_at)%>
+<% if !comm.closed_at.blank? %>&nbsp;
+Closed at <%= dmyhm_date(comm.closed_at)%>
+<% end %>
+<%=convert_to_html(summary_of(comm.communication_note, 200))%>
+</li>
+</ul>
+<%end%>
+
+<% if @communications.length > 5 %>
+<strong>
+<%= link_to "Create New Communication",  
+                          { :controller => 'communications', :action => 'new', :id => @entity, :from => @from } 
+%>
+</strong>
+<% end %>
+

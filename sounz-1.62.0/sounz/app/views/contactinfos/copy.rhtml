@@ -1,0 +1,8 @@
+<% form_tag :action => 'create' do %>
+<%= render :partial => 'copy_header_form' %>
+<div id="formformat"> <%= render :partial => 'form' %></div>
+<div id="buttonsformat">
+  <%= submit_tag "Save" %>
+  <%= cancel_and_go_back_button %>
+</div>
+<% end %>

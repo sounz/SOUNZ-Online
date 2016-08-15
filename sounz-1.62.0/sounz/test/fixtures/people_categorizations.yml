@@ -1,0 +1,6 @@
+<% for i in 1..2000 %>
+person_subcategory_<%= i %>:
+  person_id: <%= i %>
+  marketing_subcategory_id: <%= i % 7 + 1 %>
+  id: <%=i%>
+<% end %>

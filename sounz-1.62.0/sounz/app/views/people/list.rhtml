@@ -1,0 +1,32 @@
+<h1>Listing people</h1>
+<%= render :partial => "shared/which_page", :locals => { :paginator => @person_pages } %>
+<table>
+  <tr>
+  <th>Nomenation</th>
+  <th>Full Name</th>
+  <th>Known as</th>
+  <th>Born</th>
+  <th>Died</th>
+  </tr>
+  
+<% for person in @people %>
+  <tr>
+    
+    <td><%if !person.nomen.blank?%><%=h person.nomen.nomen %><%end%></td>
+  <td><%= link_to person.full_name, :action => 'edit', :id => person %></td>
+  <td><%=h person.known_as %></td>
+  <td><%=h dmy_date(person.date_of_birth) %></td>
+  <td><%=h dmy_date(person.date_of_death) %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => person }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render :partial => "shared/page_links", :locals => { :paginator => @person_pages } %>
+ 
+
+<br>  
+<%= link_to 'New person', :action => 'new' %>
+  
+
+  

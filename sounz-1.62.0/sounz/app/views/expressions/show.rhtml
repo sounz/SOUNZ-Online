@@ -1,0 +1,10 @@
+
+
+<%=main_tabs(selected = :events)%>
+
+
+<%=start_of_content(@expression, "Expression")%>
+<%=render :partial => '/shared/frbr/objects/full/expression', :locals => {:object => @expression}%>
+
+<%=end_of_content(@expression)%>
+

@@ -1,0 +1,9 @@
+<div class="section">
+<h1>New membership</h1>
+</div>
+<br/>
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Save" %>
+<% end %>
+

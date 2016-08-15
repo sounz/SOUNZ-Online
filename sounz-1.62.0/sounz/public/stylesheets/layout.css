@@ -1,0 +1,137 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Sans-Serif;
+	min-width: 934px;
+}
+
+a {
+	color: #5D7DBA;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#header {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: url("/images/header-bg.gif") top right repeat-x;
+	display: block;
+	height: 80px;
+	width: 100%;
+	border-bottom: solid black 1px;
+	border-top: solid black 1px;
+	color: #5D7DBA;
+	background-color: white;
+	z-index: 100;
+}
+
+#header h1 {
+    color: #444;
+}
+
+#outerWrapper {
+	margin: 0;
+	padding: 0;
+	background: url("/images/col1-bg.gif") top left repeat-y;
+	z-index: 90;
+}
+
+#innerWrapper {
+	margin: 0;
+	padding: 0;
+	background: url("/images/col3-bg.gif") top right repeat-y;
+}
+
+#backgroundWrapper {
+	padding: 0px;
+	margin: 0px;
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+}
+
+#column1 {
+	float: left;
+	width: 150px;
+	margin: 0;
+	padding: 0;
+	font-size: 80%;
+}
+
+#column3 {
+	float: right;
+	width: 150px;
+	margin: 0;
+	padding: 0;
+	font-size: 80%;
+}
+
+#mainContent {
+	margin: 0px 150px 0px 150px;
+	padding: 0px;
+	font-size: 80%;
+	padding-bottom: 10px;
+}
+
+.column-in {
+	margin: 0;
+	padding: 0em 1em;
+}
+
+.cleaner {
+	clear: both;
+	height: 1px;
+	font-size: 1px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
+#footer {
+	background: #9797af;;
+	height: 30px;
+	border-top: solid black 1px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	padding: 4px;
+	background: url("/images/footer-bg.gif") top right repeat-x;
+}
+
+/* When the body has an id of twoColumnLayout hide column 3 */
+#twoColumnLayout #column3 {
+	display: none;
+	width: 0px;
+}
+
+#twoColumnLayout #innerWrapper {
+	background: none;
+}
+
+#twoColumnLayout #mainContent {
+	margin-right: 0px;
+}
+
+/* When the body has an id of twoColumnLayout hide column 3 */
+#oneColumnLayout #column3,#oneColumnLayout #column1 {
+	display: none;
+	width: 0px;
+}
+
+#oneColumnLayout #innerWrapper {
+	background: none;
+}
+
+#oneColumnLayout #outerWrapper {
+	background: none;
+}
+
+#oneColumnLayout #mainContent {
+	margin-right: 0px;
+	margin-left: 0px;
+}

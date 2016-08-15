@@ -1,0 +1,2 @@
+page.replace_html :accessRightForm, ''
+page.replace_html :accessRightButton, :partial => 'new_form_button', :locals => {:parent_model_id => @model_id}

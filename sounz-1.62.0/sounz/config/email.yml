@@ -1,0 +1,22 @@
+development:
+  server: smtp.catalyst.net.nz
+  port: 25
+  domain: catalyst.net.nz
+  authentication:
+  username:
+  password:
+test:
+  server: smtp.catalyst.net.nz
+  port: 25
+  domain: catalyst.net.nz
+  authentication:
+  username:
+  password:
+production:
+  server: smtp.catalyst.net.nz
+  port: 25
+  domain: sounz.org.nz
+  authentication:
+  username:
+  password:
+  tls: false

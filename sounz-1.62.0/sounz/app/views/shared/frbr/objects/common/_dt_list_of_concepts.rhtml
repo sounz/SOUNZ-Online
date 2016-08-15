@@ -1,0 +1,7 @@
+<%
+#Pass in parameters name, concepts
+%>
+<%if !concepts.blank?%>
+<dt><%=name%></dt><dd><%=	render :partial => 'shared/frbr/objects/common/list_of_concepts',
+	 :locals => {:object => object, :concepts => concepts, :title => ""}%></dd>	
+<%end%>

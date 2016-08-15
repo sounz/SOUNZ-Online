@@ -1,0 +1,131 @@
+<h1>SOUNZtender Bidding Form</h1>
+
+<br/>
+
+<p>
+  <b>Name:</b>
+  <%=h @prov_bid.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @prov_bid.email %>
+</p>
+
+<p>
+  <b>Phone home:</b>
+  <%=h @prov_bid.phone_home %>
+</p>
+
+<p>
+  <b>Phone work:</b>
+  <%=h @prov_bid.phone_work %>
+</p>
+
+<p>
+  <b>Phone mobile:</b>
+  <%=h @prov_bid.phone_mobile %>
+</p>
+
+<p>
+  <b>Phone fax:</b>
+  <%=h @prov_bid.phone_fax %>
+</p>
+
+<p>
+  <b>Postal address:</b>
+  <%=h @prov_bid.postal_address %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @prov_bid.postcode %>
+</p>
+
+<p>
+  <b>Is group bid:</b>
+  <%=h @prov_bid.is_group_bid %>
+</p>
+
+<p>
+  <b>Group name:</b>
+  <%=h @prov_bid.group_name %>
+</p>
+
+<p>
+  <b>Bidder name:</b>
+  <%=h @prov_bid.bidder_name %>
+</p>
+
+<p>
+  <b>Bid:</b>
+  <%=h @prov_bid.bid %>
+</p>
+
+<p>
+  <b>Bid amount:</b>
+  <%=h @prov_bid.bid_amount %>
+</p>
+
+<p>
+  <b>Terms agreed:</b>
+  <%=h @prov_bid.terms_agreed %>
+</p>
+
+<p>
+  <b>Pay method:</b>
+  <%=h @prov_bid.pay_method %>
+</p>
+
+<p>
+  <b>Bid notes:</b>
+  <%=h @prov_bid.bid_notes %>
+</p>
+
+<p>
+  <b>Send donor info:</b>
+  <%=h @prov_bid.send_donor_info %>
+</p>
+
+<p>
+  <b>Send bequest info:</b>
+  <%=h @prov_bid.send_bequest_info %>
+</p>
+
+<p>
+  <b>Send sounz email updates:</b>
+  <%=h @prov_bid.send_sounz_email_updates %>
+</p>
+
+<p>
+  <b>Send sounz news post:</b>
+  <%=h @prov_bid.send_sounz_news_post %>
+</p>
+
+<p>
+  <b>Send sounz news email:</b>
+  <%=h @prov_bid.send_sounz_news_email %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= dby_date(@prov_bid.created_at) %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= dby_date(@prov_bid.updated_at) %>
+</p>
+
+<p>
+  <b>Submitted by:</b>
+  <%=h get_user(@prov_bid.submitted_by).username unless @prov_bid.submitted_by.blank? %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h Status.find(@prov_bid.status_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_prov_bid_path(@prov_bid) %> |
+<%= link_to 'Back to bid submissions', prov_bids_path %>

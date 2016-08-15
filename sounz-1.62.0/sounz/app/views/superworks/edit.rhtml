@@ -1,0 +1,13 @@
+<h1>Editing superwork</h1>
+<% form_tag :action => 'update', :id => @superwork do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<%=cancel_and_go_back_button%>
+<% end %>
+<%=render :partial => 'association/association', :locals => {:object => @superwork}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @superwork}%>
+</div>
+
+<%= link_to 'Show', :action => 'show', :id => @superwork %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,135 @@
+== CHANGE_LOG
+=== 05-10-2007: Version 0.8
+<b>NEW</b>: New video tutorial
+<b>NEW</b>: Faceted search has been implemented and its possible to 'drill-down' on the facets
+<b>NEW</b>: New rake tasks you can use to start/stop the solr server in test, development and production environments: (thanks Matt Clark)
+  rake solr:start|stop RAILS_ENV=test|development|production (defaults to development if none given)
+
+<b>NEW</b>: Changes to the plugin's test framework and it now supports Sqlite as well (thanks Matt Clark)
+<b>FIX</b>: Patch applied (thanks Micah) that allows one to have multiple solr instances in the same servlet
+<b>FIX</b>: Patch applied (thanks Micah) that allows indexing of STIs
+<b>FIX</b>: Patch applied (thanks Gordon) that allows the plugin to use a table's primary key different than 'id'
+<b>FIX</b>: Returning empty array instead of empty strings when no records are found
+<b>FIX</b>: Problem with unit tests failing due to order of the tests and speed of the commits
+
+=== 02-16-2007: Version 0.7
+<b>NEW</b>: You can now specify the field types when indexing and searching if 
+you'd like to preserve its original type:
+
+<b>Indexing</b>
+
+Each field passed can also be a hash with the value being a field type
+
+ class Electronic < ActiveRecord::Base
+   acts_as_solr :fields => [{:price => :range_float}, {:current_time => :date}]
+   def current_time
+     Time.now
+   end
+ end
+
+<b>Searching</b>
+ Electronic.find_by_solr "ipod AND price:[* TO 59.99]", 
+                         :field_types => [{:price => :range_float}]
+
+The field types accepted are:
+<em>:float</em>:: Index the field value as a float (ie.: 12.87)
+<em>:integer</em>:: Index the field value as an integer (ie.: 31)
+<em>:boolean</em>:: Index the field value as a boolean (ie.: true/false)
+<em>:date</em>:: Index the field value as a date (ie.: Wed Nov 15 23:13:03 PST 2006)
+<em>:string</em>:: Index the field value as a text string, not applying the same indexing filters as a regular text field
+<em>:range_integer</em>:: Index the field value for integer range queries (ie.:[5 TO 20])
+<em>:range_float</em>:: Index the field value for float range queries (ie.:[14.56 TO 19.99])
+
+<b>Setting the field type preserves its original type when indexed</b>
+
+<b>FIX</b>: Fixing sorting bug. Thanks for the catch Laurel
+
+<b>FIX</b>: Fixing small bug when installing the plugin
+
+<b>NEW</b>: Adding the :additional_fields option to the acts_as_solr method
+
+=== 02-05-2007: Version 0.6.5
+<b>NEW</b>:: Added multi-model search, which can be used to execute a search across multiple models:
+  Book.multi_solr_search "Napoleon OR Tom", :models => [Movie]
+
+====options:
+Accepts the same options as find_by_solr plus:
+models:: The additional models you'd like to include in the search
+results_format:: Specify the format of the results found
+                 :objects :: Will return an array with the results being objects (default). Example:
+                              Book.multi_solr_search "Napoleon OR Tom", :models => [Movie], :results_format => :objects
+                 :ids :: Will return an array with the ids of each entry found. Example:
+                          Book.multi_solr_search "Napoleon OR Tom", :models => [Movie], :results_format => :ids
+                          => [{"id" => "Movie:1"},{"id" => Book:1}]
+                         Where the value of each array is as Model:instance_id
+
+=== 02-03-2007: Version 0.6
+<b>NEW</b>:: Added basic faceted search functionality for indexing and searching:
+
+==== Indexing:
+
+ class Electronic < ActiveRecord::Base
+   acts_as_solr :facets => [:category, :manufacturer]  
+ end
+
+==== Searching:
+
+ Electronic.find_with_facet "memory", :facets => {:fields =>[:category]}
+
+=== 01-15-2007: Version 0.5
+<b>NEW</b>:: Added model association indexing, which means you can include any :has_one, :has_many, 
+:belongs_to and :has_and_belongs_to_many association to be indexed:
+
+ class Category < ActiveRecord::Base
+   has_many :books
+   acts_as_solr :include => [:books]
+ end
+
+ class Book < ActiveRecord::Base
+   belongs_to :category
+   acts_as_solr :include => [:category]
+ end
+
+=== 01-11-2007:
+<b>NEW</b>:: Added the acts_as_solr's plugin tests
+
+=== 11-07-2006: Version 0.4
+<b>NEW</b>:: Added :background option, which takes and integer value (in minutes) to wait before committing the changes to Solr. This depends on rail_cron being installed.  By setting up the background job we prevent the users from having to wait for Solr records to be created, and we keep from updating the index over and over for quickly successive changes. (Rob Kaufman)
+
+=== 11-02-2006: Version 0.3
+<b>NEW</b>:: Added a method (Model.count_by_solr) that returns the total number of documents found based on query passed
+<b>NEW</b>:: Added configuration for production and development environments
+
+=== 10-21-2006: Version 0.2
+<b>PLUGIN</b>
+<b>FIX</b>:: Fixed bug when mixing search-by-field and 'free' search: Model.find_by_solr 'solr AND name:Thiago'
+<b>FIX</b>:: Fixed bug with multi-terms search: Book.find_by_solr 'anteater john'
+<b>FIX</b>:: Fixed bug when including more than one search field: Model.find_by_solr 'name:Thiago AND engine:Solr'
+<b>FIX</b>:: Fixed bug when rebuilding the index, it wasn't saving the data
+<b>NEW</b>:: Added the ability to index custom methods from a model as search fields
+<b>NEW</b>:: Added a search method (Model.find_id_by_solr) that will return only the id of the results
+
+<b>SCHEMA.XML</b>
+<b>NEW</b>:: Added a new field: <field name="default" type="text" indexed="true" stored="true" /> 
+<b>NEW</b>:: Added a default search field: <defaultSearchField>default</defaultSearchField>
+<b>FIX</b>:: Changed the defaultOperator to AND instead of OR
+
+=== 09-29-2006: Version 0.1
+<b>PLUGIN</b>
+<b>NEW</b>:: Included the option of having a Solr config file inside the rails env.
+<b>NEW</b>:: Added the ability of indexing only certain fields, if you chose to.
+<b>NEW</b>:: Added configuration options
+<b>NEW</b>:: Changed the way the search was done:
+  	  Old: You were forced the specify the field you wanted to look for 
+      	('field:value') and you had to specify a default search field as 
+       	well, for when you didn't include the 'field' in the search term
+  	  New: The new search features include: 
+        - You don't have to specify a default search field; 
+        - You are not forced to include the field name in the search term, 
+          unless you choose to search for a specific field ('name:Thiago');
+        - You can pass the starting row and the number of rows per page,
+          which is usefull for pagination
+<b>NEW</b>:: Included a method to rebuild the index files
+
+<b>SCHEMA.XML</b>
+<b>NEW</b>:: Created an optimized version of the config file to better work with this plugin

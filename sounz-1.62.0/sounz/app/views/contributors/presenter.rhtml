@@ -1,0 +1,24 @@
+<% content_for :page_title do %>
+<%=@main_title%>
+<%end%>
+<div id='detail'>
+<div class='title'>
+<a href='/finder/shows/people' class='back'>back to People Search</a>
+</div><!--/title-->
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => @contributor.send("#{@contributor.class.to_s.tableize.singularize}_attachments"),
+			:main_heading => "Presenter",
+			:main_internal_heading => @contributor.role.contributor_names,
+			:subheading => nil,
+			:links => nil,
+			:text => nil
+}
+%>
+
+</div><!--/detail-->
+
+
+
+Venue details

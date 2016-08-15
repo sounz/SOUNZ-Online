@@ -1,0 +1,23 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => [],
+			:main_internal_heading => object.superwork_title,
+			:subheading => object.superwork_title,
+			:links => nil,
+			:text => h(object.superwork_title_alt),
+			:object => object #for the select this button
+}
+%>
+
+<% if object.works.length > 0%>
+<div class="section">
+<%= render :partial => 'shared/frbr/objects/common/list_works_with_composers',
+ :locals => {:object => object, :works => object.works, :title => "Works that Belong to this Superwork"}%>
+</div>
+<% end %>
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "source_material_note, created_at, updated_at, updated_by, status"}%>
+<%=show_relationships_if_permission(object)%>
+
+<%=show_edit_links_if_permission(object)%>

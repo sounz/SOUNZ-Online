@@ -1,0 +1,18 @@
+<h1>Editing venue</h1>
+
+<% form_tag :action => 'update', :id => @venue do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+<br>
+
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @venue}%>
+
+
+<%=render :partial => 'association/association', :locals => {:object => @venue}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @venue}%>
+</div>
+<%= link_to 'Show', :action => 'show', :id => @venue %> |
+<%= link_to 'Back', :action => 'list' %>

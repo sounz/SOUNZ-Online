@@ -1,0 +1,13 @@
+<h4><%=homepage_news.event_start%></h4>
+<%
+text=homepage_news.general_note
+if !text.blank?
+	if text.length > 200
+		end_string=' …'
+		words = text.split()
+		text=words[0..9].join(' ') + (words.length > 10 ? end_string : '')
+	end
+end
+%>
+
+<p><b><%=homepage_news.event_title%></b><br><%=text%><a href='/events/show/<%=homepage_news.id%>' class='more'>more &raquo;</a></p>

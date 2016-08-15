@@ -1,0 +1,129 @@
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :privileges} %>
+<fieldset>
+<legend>Logins assigned to <%=@person.full_name%></legend>
+<p>Note: Normally, there should be one login per person.</p>
+<%for user_login in @user_logins%>
+	<hr/>
+	<p/><br/>
+	
+	<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') %>
+	 <span class="actionButton"><%=link_to 'Remove this login', :controller => :people, :action => :removeLogin, :id => @person, :person_login_id=> user_login.id%></span><br/>
+	<% end%>
+	
+	<b>Username:</b> <%=h user_login.username%><br/>
+	<b>Valid until:</b> <%=user_login.password_valid_until%><br/>
+	<b>Password forever?</b> <%=user_login.password_forever%><br/>
+	<b>Membership(s):</b>  
+	<%for membership in user_login.memberships%>
+	
+	<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') %>
+       <%= link_to membership.member_type.member_type_desc, :controller => :memberships, :action => :show, :id => membership.id %>
+    <% else %>
+      <%= membership.member_type.member_type_desc %>
+    <% end %>
+
+	<%if  membership != user_login.memberships.last%>,<%end%>
+	<%end%>
+	
+	
+	<%if (user_login.hasBorrowedItems) && PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BORROWED_ITEM')%>
+		<fieldset>
+		<legend>Loan/Hire Details for <%=user_login.username%></legend>
+
+		<h2>On loan or hire from Resource Library</h2>
+		<%if user_login.borrowedResourceItems.blank?%>
+		<b>No Resource library items borrowed</b><p/>
+		<%else%>
+		<%for borrowed_item in user_login.borrowedResourceItems%>
+		<%=render :partial => 'borrowed_items/borrowed_item_inline', :locals => {:borrowed_item=>borrowed_item, :login => user_login, :from => 'people'}%>
+		<%end%>
+		<%end%>
+		<h2>On loan or hire from Music Library</h2>
+		<%if user_login.borrowedMusicItems.blank?%>
+		<b>No Music library items borrowed</b><p/>
+		<%else%>
+		<%for borrowed_item in user_login.borrowedMusicItems%>
+		<%=render :partial => 'borrowed_items/borrowed_item_inline', :locals => {:borrowed_item=>borrowed_item, :login => user_login, :from => 'people'}%>
+		<%end%>
+		<%end%>
+		
+		<h2>Send a reminder notice</h2>
+		<%= error_messages_for 'reminder' %>
+		<%form_tag  :action => :sendReminder, :controller => :logins, :id => user_login, :from => 'people' do%>
+		<a href="#" onclick="return select_all_for_email();">select all</a><br/>
+		<%for borrowed_item in user_login.borrowedMusicItems%>
+		  <%= check_box("email_items", borrowed_item.id) %> <%= borrowed_item.item.manifestation.manifestation_title %> - <b> Due: <%=borrowed_item.date_due%></b><br />
+		  	<%if !borrowed_item.borrowing_note.blank? %>
+              <%=borrowed_item.borrowing_note %><br/>
+			<%end%>
+		<%end%>
+		<%for borrowed_item in user_login.borrowedResourceItems%>
+			<%= check_box("email_items", borrowed_item.id) %> <%= borrowed_item.item.resource.resource_title %>  - <b> Due: <%=borrowed_item.date_due%></b><br />
+			<%if !borrowed_item.borrowing_note.blank? %>
+              <%=borrowed_item.borrowing_note %><br/>
+			<%end%>
+		<%end%><br/>
+		The reminder notice will list all checked items and their due return
+		dates.<br/>
+		Add an additional message to be set with this reminder notice<br/>
+		Send to: <b>
+		<% if user_login.username.to_s=~/\@/%>
+		<%= email = user_login.username %>
+		<% else %>
+		[No email]
+		<% end %>
+		</b><br/>
+		You can optionally override the email address to send this note to.<br/>
+		<b>Email</b><br/><%=text_field_tag 'override_email_address', '', :size => 20%><br/>
+		<% salutation = (@person.salutation.blank? ? user_login.get_salutation : @person.salutation) %>
+		<b>Salutation</b><br/><%=text_field_tag 'salutation', salutation, :size => 20%><br/>
+		<%=hidden_field_tag 'user_login',user_login.login_id%>
+		<%=hidden_field_tag 'email', email%>
+		<b>Additional Message</br><br/><%= text_area 'library_reminder', 'note', :cols => standard_edit_cols, :rows => 2  %><br/><br/>
+		<%= submit_tag 'Send a reminder notice to '+@person.full_name%>
+		<%end%>
+
+
+	</fieldset>
+  <%end%>
+
+<hr/>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') %>
+<span class="actionButton">
+<%=link_to 'Edit this login', :controller => :logins, :action => :edit, :id => user_login%>
+</span>
+<br>
+<% end %>
+
+<p/>
+
+<%end%>
+<p/>
+</fieldset>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') %>
+<fieldset>
+<legend>Assign New Login</legend>
+<% form_tag :action => 'assignLogin', :id => @person do %>
+<%= collection_select(:assign_login, :login_id, 
+                          Login.find(:all, :order => 'username'), :id, 
+                          :username, {:prompt => "-- Select a login --"},
+                          {:style => "width: 350px"}) %>
+
+<%= submit_tag 'Assign this login to '+@person.full_name %>
+<%end%>
+<p/>
+</fieldset>
+
+<%if @user_logins.length < 1%>
+<fieldset>
+<legend>Create new login for this user:</legend>
+
+<% form_tag :action => 'createLogin', :id => @person do %>
+<%=render :partial => 'logins/login_form'%>
+<%= submit_tag 'Create this new login' %>
+<%end%>
+</fieldset>
+<%end%>
+<% end %>

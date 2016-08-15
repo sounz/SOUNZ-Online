@@ -1,0 +1,8 @@
+if @saved
+  page.replace_html @dom_id, :partial => 'edit_sample', :locals => {:manifestation => @manifestation, :sample => @sample} 
+  page.visual_effect :highlight, @dom_id
+else
+  page.replace_html @dom_id, :partial => 'update_sample', 
+  :locals  =>{:manifestation => @manifestation, :statuses => @statuses, :sample => @sample}
+  page.visual_effect :shake, @dom_id
+end

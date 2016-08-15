@@ -1,0 +1,18 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<div class='search_item_wrap'>
+<%if !object.author_note.blank?%><h2 class="resourceAuthorNote"><%=object.author_note%></h2><%end%>
+<h4><%= icons_for(object, @login)%><%=link_to object.resource_title, :id => object, :action => 'show', :controller => 'resources'%> <%=show_tap_edit_link_for(object)%></h4>
+
+<table width="100%">
+  <tr>
+   <td>
+     <%=AttachmentHelper.render_search_image(object, :thumb)%>
+   </td>
+   <td>
+     <%=get_summary_for_text(object.general_note, SUMMARY_LENGTH)%>
+   </td>   
+  </tr>
+</table>
+   
+</div>

@@ -1,0 +1,31 @@
+<%
+if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+selections = getSelected(get_user().id)
+else
+selections = session[:selected]
+end
+logger.debug("SELECTION CLASS IN PARTIAL: #{selections.class}")
+if !selections.blank?
+%>
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+     remove_action = 'removeFromSelected'
+     clear_action  = 'clearSelected'
+   else
+     remove_action = 'removeFromSelectedSession'
+     clear_action  = 'clearSelectedSession'
+   end
+%>
+<ul>
+<%for object in selections.values%>
+    <%if object.objectData != nil%>
+    <li>
+
+      <%=link_to_remote( image_tag("/images/icon_minus.png", :alt => 'Remove from selected results', :title => 'Remove from selected results'), :html => {:class => "remove"}, :update => "selectedResults", :url =>{ :controller => :finder, :action => remove_action, :type => object.objectType, :object_id => object.objectData.frbr_id})%>
+
+
+    <%=render :partial => 'shared/frbr/objects/terse/'+object.objectType, :locals => { :object => object.objectData}%></li>
+	<%end%>
+<%end%>
+</ul>
+<p class="all"><%= link_to_remote( "Clear Wishlist",:update => "selectedResults",:url =>{:controller => :finder, :action => clear_action})%></p>
+<%end%>

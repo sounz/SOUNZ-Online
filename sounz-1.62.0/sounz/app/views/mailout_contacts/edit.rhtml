@@ -1,0 +1,16 @@
+<%
+name = @mailout_contact.name
+name = @mailout_contact.organisation_name if name.blank?
+title 'Mailout Contact Details for ' + name %>
+<h2>Editing mailout contact</h2>
+
+<% form_tag :action => 'update', :id => @mailout_contact do %>
+  <%= render :partial => 'form' %>
+  
+  <% if @mailout_contact.campaign_mailout.mailout_status.match('n') || @mailout_contact.delivery_failed %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+  <% end %>
+  
+<% end %>
+
+<%= link_to "Back to mailout", :controller => 'campaign_mailouts', :action => 'edit', :id => @mailout_contact.campaign_mailout_id %>

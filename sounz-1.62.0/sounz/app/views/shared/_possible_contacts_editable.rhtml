@@ -1,0 +1,43 @@
+<%if !search_contacts.blank?%>
+<%= form_remote_tag :url => { :action => 'add_selected_contacts_to_list', :id => id },
+                    :html => { :id => 'possible_contacts_editable' }
+%>
+<fieldset>
+<legend>Possible New Contacts</legend>
+
+<p>The following <strong><span id="possible_count"><%= search_contacts.length %></span> contacts</strong> have been selected during a search.  
+Select them and click on 'Add to list' to add them
+to the existing saved contact list</p>
+
+<table width="100%">
+<tr>
+<td align="right">
+  <%= selectAllNone('possible_contacts_editable')%>
+</td>
+<td width="12%" valign="top"><%= submit_tag "Add to list" %>
+</td>
+</tr>
+<% contacts = search_contacts.sort{|rc, orc| rc.role.role_contact_name <=> orc.role.role_contact_name } %>
+<% for contact in contacts
+contact_id = "possible_"+generate_id(contact)
+%>
+<tr id="<%=contact_id%>">
+<td><%=render :partial => "shared/selected_contacts_editable", :locals => {:contact => contact, :existing_contacts => existing_contacts }%></td>
+</tr>
+<%end%>
+
+<% if search_contacts.length > 10 %>
+<tr>
+<td align="right">
+  <%= selectAllNone('possible_contacts_editable')%>
+</td>
+<td width="12%" valign="top"><%= submit_tag "Add to list" %>
+</td>
+</tr>
+<% end %>
+
+</table>
+</form>
+<%end%>
+
+</fieldset>

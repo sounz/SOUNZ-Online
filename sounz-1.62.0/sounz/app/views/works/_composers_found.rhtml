@@ -1,0 +1,13 @@
+<%if @composers.blank?%>
+<h5>No composers found for query "<%=@query%>"</h5>
+<%else%>
+<h5>Composers found for query "<%=@query%>"</h5>
+<ul  class="workComposerList">
+<%for composer in @composers%>
+<li id="<%=generate_id(composer)%>">
+<%=action_button(link_to_remote("Add", :url =>{:action => :add_composer, :id => composer.id, :work_id => @work.id}))%>
+<%=composer.contributor.role.contributor_names%> (<%=composer.role_name%>)
+</li>
+<%end%>
+</ul>
+<%end%>

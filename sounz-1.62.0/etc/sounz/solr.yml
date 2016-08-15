@@ -1,0 +1,19 @@
+#
+# Solr configuration file. Solr generally runs on port 8983. Leave the servlet
+# path alone. The values for host and port are set by the initial Debian
+# postinst installer script, but may be customized by you afterward.
+#
+development:
+  host: _SOLR_HOST_
+  port: _SOLR_PORT_
+  servlet_path: solr/default
+  
+test:
+  host: _SOLR_HOST_
+  port: _SOLR_PORT_
+  servlet_path: solr/default
+
+production:
+  host: _SOLR_HOST_
+  port: _SOLR_PORT_
+  servlet_path: solr/default

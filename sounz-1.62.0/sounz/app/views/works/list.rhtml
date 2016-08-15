@@ -1,0 +1,42 @@
+<h1>Listing works</h1>
+
+<table>
+  <tr>
+    <th>Work Title</th>
+    <th>Work Description</th>
+    <th>Work Categories</th>
+    <th>Year of Creation</th>
+    <th>Year of Revision</th>
+  </tr>
+  
+<% for work in @works %>
+  <tr>
+  <td><%=h work.work_title%></td>
+  <td><%=h work.work_description%></td>
+  <td>
+  <%for subcat in work.work_subcategories%>
+  <%=subcat.work_subcategory_desc%>&nbsp;(<%=subcat.legacy_4d_identity_code%>)<br>
+  <%end%>
+  </td>
+  <td><%=h work.year_of_creation%></td>
+  <td><%=h work.year_of_revision%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => work %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => work %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => work }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= will_paginate @works %>
+<br>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to 'New Work', :action => 'new' %>
+</div>
+<% end %>

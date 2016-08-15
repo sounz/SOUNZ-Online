@@ -1,0 +1,171 @@
+  <h2>Your contact details</h2>
+
+  <p>
+    <b>Name</b><span class="mandatory">*</span><br />
+    <%= f.text_field :name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Email</b><span class="mandatory">*</span><br />
+    <%= f.text_field :email, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Phone (home)</b><br />
+    <%= f.text_field :phone_home, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Phone (work)</b><br />
+    <%= f.text_field :phone_work, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Phone (mobile)</b><br />
+    <%= f.text_field :phone_mobile, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Phone (fax)</b><br />
+    <%= f.text_field :phone_fax, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Postal address</b><span class="mandatory">*</span><br />
+    <%= f.text_area :postal_address, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+  <p>
+    <b>Postcode</b><span class="mandatory">*</span><br />
+    <%= f.text_field :postcode, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Are you bidding on behalf of a group or organisation?</b>
+    <%= f.check_box :is_group_bid %>
+  </p>
+
+  <p>
+    <b>If yes, what is the name of the group</b><br />
+    <%= f.text_field :group_name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>My bidding name</b><span class="mandatory">*</span><br />
+    <%= f.text_field :bidder_name, :size => standard_edit_cols %><br/>
+    <span class="instruction">
+      This is the name that will appear on the website with your bid.
+      If you prefer to remain anonymous then we suggest using a pseudonym –
+      for example Musiclover or Bigears!
+    </span>
+  </p>
+
+  <h2>Making a bid</h2>
+
+  <p>Please note that the opening bid for each composition is NZ$5,000.</p>
+
+  <p>
+    <b>I would like to bid for a work composed by</b><span class="mandatory">*</span>
+    <table>
+      <% ProvBid.bids.sort.each{ |key,value| %>
+        <tr><td><%= value%></td><td><%= f.radio_button :bid, key %></td></tr>
+      <%  } %>
+    </table><br/>
+    
+  </p>
+
+  <p class="instruction">
+   If you wish to place a bid for more than one of the five works,
+   then please submit those bids on separate forms.
+  </p>
+
+  <p>
+    <b>I would like to place a bid of NZ$</b><span class="mandatory">*</span><br />
+    <%= f.text_field :bid_amount, :size => standard_edit_cols %>
+  </p>
+
+  <p class="instruction">
+   Please note that your bid will not be registered until it has been confirmed
+   by our project coordinator.<br/>
+   You may also be contacted by a SOUNZ staff member with further information
+   about the bidding progress.
+  </p>
+
+  <h2>Other details</h2>
+  <p>
+    <b>
+      I have read the
+      <a rel='external' onclick="window.open('/content/SOUNZtender_Terms'); return false;" href='/content/SOUNZtender_Terms' title='SOUNZtender Terms and Conditions'>
+        Terms and Conditions
+      </a>
+      of the Tender process and agree to them
+    </b><span class="mandatory">*</span>
+    <%= f.check_box :terms_agreed %>
+  </p>
+
+  <p>
+    <b>If my bid is successful I will pay by</b><span class="mandatory">*</span>
+    
+    <table>
+
+    <% ProvBid.pay_methods.sort{|a,b|a[1] <=> b[1]}.each {|key, value| %>
+      <tr><td><%= value%></td><td><%= f.radio_button :pay_method, key %></td></tr>
+    <%  } %>
+    
+      <tr><td colspan="2">Other <%= f.text_field :pay_method_other%></td></tr>
+    </table><br/>
+  </p>
+
+  <p>
+    <b>Is there anything else we should know about your bid?</b><br />
+    <%= f.text_area :bid_notes, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+  <br/>
+  <h2>Supporting SOUNZ</h2>
+
+  <p>
+    SOUNZ, the Centre for New Zealand Music, offers services and undertakes
+    diverse projects within its mission to provide and promote the music of
+    New Zealand composers. You can also help us to support New Zealand music.
+  </p>
+
+  <p>
+    Please send me: Donor Information&nbsp;<%= f.check_box :send_donor_info %>
+    &nbsp;&nbsp;Bequest Information&nbsp;<%= f.check_box :send_bequest_info %>
+  </p>
+  
+  <p>
+    Make an
+    <a rel='external' onclick="window.open('/cart/memberships_page#donations'); return false;" href='/cart/memberships_page#donations' title='Online Donation'>
+      online donation
+    </a><br/>
+    (Please login first to make a donation.)
+  </p>
+
+  <p>
+    I would like to receive Email Updates (6-8 times a year)
+    <%= f.check_box :send_sounz_email_updates %>
+  </p>
+
+  <p>
+    I would like to receive SOUNZ News (2-3 times a year) by post&nbsp;
+    <%= f.check_box :send_sounz_news_post %>&nbsp;&nbsp;by email
+    <%= f.check_box :send_sounz_news_email %>
+  </p>
+
+  <p>
+    Information gathered from this form is subject to the
+    <a rel='external' onclick="window.open('/content/General_terms#Privacy'); return false;" href='/content/General_terms#Privacy' title='Privacy Policy of SOUNZ'>
+      Privacy Policy of SOUNZ
+    </a>
+  </p>
+
+  <p>
+    If you have any queries then please email
+    <a href="mailto:info@sounz.org.nz">info@sounz.org.nz</a>
+  </p>
+
+  <p class="centralized">
+    <b>Many thanks for taking part in SOUNZtender and good luck!</b>
+  </p>

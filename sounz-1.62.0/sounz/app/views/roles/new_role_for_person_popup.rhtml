@@ -1,0 +1,8 @@
+<h1>New Role for <%=@person.full_name%></h1>
+
+<% form_tag :action => 'create_role_for_person' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Save" %>
+    <%=cancel_and_close%>
+<% end %>
+

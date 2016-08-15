@@ -1,0 +1,44 @@
+<h1>Bidding Form Submissions</h1>
+
+<% if !params[:mode].blank? && params[:mode].match('show_all') %>
+<a href="/prov_bids">Show current only</a>
+<% else %>
+<a href="/prov_bids?mode=show_all">Show all</a>
+<% end %>
+
+<table>
+  <tr>
+    <th>Who</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Submitted</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Updated</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Status</th>
+    <td colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+
+<% for prov_bid in @prov_bids %>
+  <% name = prov_bid.email
+     name = Login.get_name(prov_bid.submitted_by) if !prov_bid.submitted_by.blank?
+  %>
+  <tr>
+    <td><%=h name %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_bid.created_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_bid.updated_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%=h prov_bid.status.status_desc  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td align="right" width="18%"><%= link_to 'Edit', edit_prov_bid_path(prov_bid) %>
+    &nbsp;&nbsp;
+    <%= link_to 'Delete', prov_bid_path(prov_bid), :confirm => 'Are you sure you want to delete this bidding form?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Bid', new_prov_bid_path %>

@@ -1,0 +1,38 @@
+<p>
+  <b>Manifestation:</b>
+  <%=h @sample.manifestation_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @sample.status_id %>
+</p>
+
+<p>
+  <b>Sample description:</b>
+  <%=h @sample.sample_description %>
+</p>
+
+<p>
+  <b>Sample copyright:</b>
+  <%=h @sample.sample_copyright %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @sample.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @sample.updated_at %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%=h @sample.updated_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

@@ -1,0 +1,19 @@
+<%
+if !@selected_contacts.blank?
+if session[:saved_contact_list_id] != nil || session[:campaign_mailout_id] != nil 
+%> 
+
+<p><strong>Add results to </strong>
+<% if session[:saved_contact_list_id] != nil %> 
+<%= link_to '"' + SavedContactList.find(session[:saved_contact_list_id]).list_name + '" Saved Contact List', 
+                        {:action => 'add_to_contact_list' } %>
+&nbsp;&nbsp;
+<% end %>
+
+<% if session[:campaign_mailout_id] != nil %>
+   <%= link_to '"' + CampaignMailout.find(session[:campaign_mailout_id]).mailout_description + '" Mailout List',
+                              { :action => 'add_to_mailout' }%>
+<% end %>
+</p>
+<% end %>
+<% end %>

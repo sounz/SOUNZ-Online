@@ -1,0 +1,12 @@
+<a name="expressionsList">&nbsp;</a>
+<h1>Related Expressions</h1>
+<%expressions = object.expressions
+if !expressions.blank?%>
+<ul id="expressionList">
+<%for expression in object.expressions%>
+<li><%=link_to expression.expression_title, :id => expression, :action => :show,  :controller => :expressions%></li>
+<%end%>
+</ul>
+<%else%>
+<p>This work currently has no expressions</p>
+<%end%>

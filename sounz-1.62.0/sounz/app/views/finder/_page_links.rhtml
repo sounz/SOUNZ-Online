@@ -1,0 +1,35 @@
+<% if @results[:total] > LISTING_PAGE_SIZE %>
+
+<div class="pagination-links">
+  <%= 
+  if paginator.current.previous
+    url = link_to_facet_base_url(@search_page)
+    url[:page] = paginator.current.previous
+    link_to(h('<'), url)
+  end
+  %>
+
+  <% pagination = pagination_links(paginator, :window_size => 2, :link_to_current_page => false,  :params => link_to_facet_base_url(@search_page))%>
+  <%= 
+  pagination.gsub('...', '<span>...</span>') unless pagination.blank?
+  %>
+
+  <%=
+  if paginator.current.next
+    url = link_to_facet_base_url(@search_page)
+    url[:page] = paginator.current.next
+    link_to(h('>'), url)
+  end
+  %>
+</div>
+
+<div class="pageLinksJump">
+  <form>Jump to page:<input type="text" name="page" maxlength="4" class="pageLinksJumpField"></input>
+    <% link_to_facet_base_url(@search_page).each_pair do |k,v|
+       if k != :action and !v.blank? %>
+            <input type="hidden" name="<%=h k%>" value="<%=h v%>">
+        <% end
+    end %>    
+  </form>
+</div>
+<% end %>

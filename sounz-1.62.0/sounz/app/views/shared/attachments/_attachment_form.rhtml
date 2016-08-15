@@ -1,0 +1,89 @@
+<%
+cancel_new_link_name     = "Cancel New Attachment"
+new_attachment_form_name = "Add New Attachment"
+if mode == 'tiny_mce' 
+cancel_new_link_name     = "Cancel Image upload"
+new_attachment_form_name = "Add New Image"
+end
+%>
+<div class="attachmentsEdit" id="attachmentsEdit">
+<span class="actionButton">
+<%if submission.to_s == 'new'%>	
+<%=link_to_remote cancel_new_link_name, 
+:url => {:mode => mode, :controller => :attachment, :action => :cancel_add_attachment_form, :id => generate_id(object)}, :update => "new_attachment_form_"+generate_id(object) %>
+<%else%>
+<%=link_to_remote "Cancel Update Attachment", 
+:url => {:controller => :attachment, :action => :cancel_update_attachment_form, :id => generate_id(object), :media_item_id => generate_id(media_item)}, :update => generate_id(media_item) %>
+<%end%>
+</span>
+<br>
+<br>
+
+<%if submission.to_s == 'new'
+	intended_action = :create_attachment
+	%>
+<h2><%= new_attachment_form_name %></h2>
+<%else
+	intended_action = :update_attachment
+%>
+<h2 class="formOnPage">Update Attachment</h2>
+<%end%>
+<div id="attachmentForm">
+	<%= error_messages_for 'media_item' %>
+	<%= flash[:attachment]%>
+	 
+<% form_for(:media_item, :url => {:controller => :attachment, :action => intended_action}, :html => { :multipart => true, :target => 'upload_frame', :name => 'uploadForm' }) do |form| %>
+<%= hidden_field :frbr, :object, :value => generate_id(object)%>
+<%= hidden_field :attachment_mode, :mode, :value => mode %>
+<%if submission.to_s != 'new'%>
+<%= hidden_field :media_item, :id, :value => generate_id(@media_item)%>
+<%end%>
+<table>
+	<tr>
+		<td class="labelFormat"><label for="caption">Caption</label></td>
+		<td class="formelemformat"><%=form.text_area :caption, :cols => standard_edit_cols,  :rows => standard_edit_rows%></td>
+	</tr>
+
+	<tr>
+		<td class="labelFormat"><label for="media_item_desc">Description</label></td>
+		<td class="formelemformat"><%=form.text_area :media_item_desc, :cols => standard_edit_cols,  :rows => standard_edit_rows%></td>
+	</tr>
+	
+
+	
+	<tr>
+		<td class="labelFormat"><label for="general_note">Internal Note</label></td>
+		<td class="formelemformat"><%=form.text_area :internal_note, :cols => standard_edit_cols,  :rows => standard_edit_rows%></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="labelFormat"><label for="copyright">Copyright</label></td>
+		<td class="formelemformat"><%=form.text_field :copyright, :size => standard_edit_cols%></td>
+	</tr>
+
+<%
+attachment_types = @attachment_types
+if mode.to_s != 'cm_content' && object.class == NewsArticle
+attachment_types = attachment_types = AttachmentType.find(:all, :conditions => ['attachment_type_desc =?', AttachmentType::PDF.attachment_type_desc])
+elsif mode.to_s == 'cm_content'
+attachment_types = AttachmentType.find(:all, :conditions => ['attachment_type_desc =? or attachment_type_desc =?', AttachmentType::TINY_MCE.attachment_type_desc, AttachmentType::PDF.attachment_type_desc])
+end
+%>
+
+<% if mode.to_s != 'tiny_mce' %>
+	<tr>
+		<td class="labelFormat"><label for="attachment_type_attachment_type_id">Attachment Type</label></td>
+		<td class="formelementformat"><%= select("attachment_type", "attachment_type_id", attachment_types.to_dropdown(:attachment_type_desc), :prompt => "-- Select an attachment type --")%>ATT TYPE is <%=@attachment_type.attachment_type_desc%></td>
+	</tr>
+<% end %>
+	<div id="uploadWidget">
+	<%= render :partial => 'shared/attachments/upload_widget', :locals => {:object => object, :submission => submission, :mode => mode}%>
+	</div>
+</table>
+
+<%end%>
+</div>
+
+<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px;" src="about:blank"></iframe>
+</div>

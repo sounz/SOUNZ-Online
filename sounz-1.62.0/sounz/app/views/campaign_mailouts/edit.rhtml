@@ -1,0 +1,78 @@
+<% title "Editing campaign mailout" %>
+
+<%= uses_tinymce %>
+
+<span id="top"></span><h2> Editing Campaign Mailout </h2>
+<a href="#mailoutContacts">Mailout Contacts</a>|
+<a href="#imagesUpload">Images Upload</a>
+
+<div align="right">
+<%=# link_to create_button("New Mailout","New Mailout"), { :action => 'new', :campaign => @campaign_mailout.marketing_campaign }
+%>
+<span class="actionButton"><%= link_to "Refresh", :action => 'edit', :id => @campaign_mailout%></span>
+</div>
+<% form_tag :action => 'update', :id => @campaign_mailout do %>
+  <%= render :partial => 'form' %>
+
+<% if @campaign_mailout.mailout_status.match('n')%>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+  
+  <% if !@campaign_mailout.mailout_contacts.blank? %>
+  <%= link_to create_button("Export Contacts","Export contacts for labels"), { :controller => 'campaign_mailouts',
+                                                                               :action => 'export_contacts', 
+                                                                               :id => @campaign_mailout }
+  %>
+  <% end %>
+
+<% elsif @campaign_mailout.mailout_status.match('r') %>
+<%= link_to create_button("Cancel Email", "Cancel mailing"), { :controller => 'campaign_mailouts',
+                                             :action => 'cancel_mailing', 
+                                             :id => @campaign_mailout }%>
+<% end %>
+
+<% if !@campaign_mailout.mailout_contacts.blank? && 
+      (@campaign_mailout.mailout_status.match('n') ||
+      (@campaign_mailout.mailout_status.match('s') && !@campaign_mailout.failed_email_delivery_contacts.blank?)) &&
+      @campaign_mailout.mailout_type == 'e'
+      
+%>
+  <%= link_to create_button("Send Email","Email this mailout"), { :controller => 'campaign_mailouts',
+                                                             :action => 'mailing_send_requested', 
+                                                             :id => @campaign_mailout }
+  %>
+  
+<% end %>
+
+<% end %>
+<br/>
+
+<%= render :partial => 'test_email_form', :locals => { :campaign_mailout => @campaign_mailout } %>
+
+<span id="possibleNewContacts">
+<!-- not implemented yet
+<%=render :partial => 'shared/possible_contacts_editable', 
+            :locals => { :search_contacts => @search_contacts, 
+                         :id => @campaign_mailout.campaign_mailout_id, 
+                         :existing_contacts => @existing_contacts } %> -->
+</span>
+
+<%= go_to_top_link%>
+
+<fieldset>
+<legend id="mailoutContacts">Mailout Contacts</legend>
+  <div id='mailout_contacts'>
+   <%= render :partial => 'mailout_contacts'#, :locals => { :campaign_mailout => @campaign_mailout, :contacts => @campaign_mailout_contacts } 
+   %>
+  </div>
+  <div id="pagination">
+   <%= render :partial => "shared/page_links_remote", :locals => { :paginator => @campaign_mailout_contacts_pages, :params => {:url => { :action => :mailout_contacts, :id => @campaign_mailout.campaign_mailout_id} } } unless @campaign_mailout_contacts_pages.blank?%>
+  </div>
+  <%= link_to "Add New Contacts", { :action => 'mailoutContactsSearch', :id => @campaign_mailout.campaign_mailout_id } if @campaign_mailout.mailout_status.match('n')%>
+</fieldset>
+
+<% if @campaign_mailout.mailout_status.match('n')%>
+<%= go_to_top_link%>
+<div id="imagesUpload">
+<%= render :partial => 'upload_images_form', :locals => {:object => @campaign_mailout, :mode => :tiny_mce} %>
+</div>
+<% end %>

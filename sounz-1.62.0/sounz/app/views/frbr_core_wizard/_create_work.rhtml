@@ -1,0 +1,9 @@
+Create a new work<p/>
+
+Manifestation Details: <%=@manifestation.manifestation_title%><p/>
+Expression Details: <%=@expression.general_note%><p/>
+
+Fill out the fields below to add a new work record.
+<%=form_tag :controller=> :frbr_core_wizard, :action=> :add_work%>
+<%=render :partial => "/works/wizard_form"%>
+<%=submit_tag%>

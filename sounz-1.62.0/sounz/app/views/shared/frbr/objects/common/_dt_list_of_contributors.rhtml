@@ -1,0 +1,13 @@
+<%if !(value.blank? && contributors.blank?)%>
+<dt><%=name%>:</dt><dd>
+<%=value%>
+<%if contributors.length > 0%>
+<ul>
+<%for role in contributors%>
+<li><strong><%=ContributorsHelper.get_link_depending_on_role_type(role, @login)%></strong></li>
+<%end%>
+</ul>
+<%end%>
+</dd>
+<%end%>
+

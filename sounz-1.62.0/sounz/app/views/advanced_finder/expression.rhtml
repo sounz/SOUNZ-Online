@@ -1,0 +1,137 @@
+<% content_for :page_title do %>
+Search Music
+<%end%>
+
+<%=main_tabs(selected = :works)%>
+
+<h2>Expression Advanced Search</h2>
+<% form_for(:search_details, :url => {:action => :search_expressions}, :html => { :method => :post }) do |f| %>
+
+<div align="left">
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_expressions}, {:class => 'public_button'} %>
+</div>
+
+<table class="searchForm">
+	<tr>
+		<th>Expression Title</th>
+		<td><%= f.text_field :title, :class => 'text', :size => standard_edit_cols %></td>
+		<td><%= f.check_box  :title_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<th>Mode</th>
+		<td><%= select("search_details", "mode_id", Mode.find(:all).to_dropdown, :include_blank => "-- Select mode --") %></td>
+		<td><%= f.check_box  :mode_id_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<th>Edition</th>
+		<td><%= select("search_details", "edition", Expression.editions, :selected => @search_details.edition.to_s.upcase, :include_blank => "-- Select edition --") %></td>
+		<td><%= f.check_box  :edition_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<th>Expression Start</th>
+		<td colspan="2">
+		  <table>
+		    <tr>
+		      <td>From <%= date_field( 'search_details', 'expression_start_from', :class => 'text', :size => 10) %></td>
+		      <td>To <%= date_field( 'search_details', 'expression_start_to', :class => 'text', :size => 10) %></td>
+            </tr>
+          </table>		      
+		</td>
+	</tr>
+	
+	<tr>
+		<th>Expression Finish</th>
+		<td colspan="2">
+		  <table>
+		    <tr>
+		      <td>From <%= date_field( 'search_details', 'expression_finish_from', :class => 'text', :size => 10) %></td>
+		      <td>To <%= date_field( 'search_details', 'expression_finish_to', :class => 'text', :size => 10) %></td>
+		    </tr>
+          </table>		      
+		</td>
+	</tr>
+	
+	<tr>
+		<th>Premiere</th>
+		<td><%=select('search_details', 'premiere', Expression.premieres_statuses, :include_blank => "-- Select premiere status --", :selected => @search_details.premiere.to_s.upcase)%></td>
+		<td><%= f.check_box  :premiere_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<th>Partial Expression</th>
+		<td><%= select("search_details", "partial_expression", DropDown.true_false_dont_care.to_dropdown, :include_blank => "-- Does not matter --") %>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th>Manifestation exists</th>
+		<td><%= select("search_details", "has_manifestation", DropDown.true_false_dont_care.to_dropdown, :include_blank => "-- Does not matter --") %>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th>Players count</th>
+		<td colspan="2">
+		  <table>
+		    <tr>
+		      <td><%= select("search_details", "players_count_param", DropDown.bool_type_search.to_dropdown) %></td>
+		      <td><%= f.text_field :players_count, :size => 4, :class => 'text', :style => 'margin-bottom: 0;' %></td>
+		    </tr>
+		  </table>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>Restriction</th>
+		<td><%= select("search_details", "restriction", DropDown.expression_availabilities.to_dropdown, :include_blank => "-- Does not matter --") %>
+		</td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<th>General Note</th>
+		<td><%= f.text_field :general_note, :class => 'text', :size => standard_edit_cols %></td>
+		<td><%= f.check_box  :general_note_not %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<th>Internal Note</th>
+		<td><%= f.text_field :internal_note, :class => 'text', :size => standard_edit_cols %></td>
+		<td><%= f.check_box  :internal_note_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+	   <th>Relationship</th>
+	   <td>
+	   <table>
+	     <tr>
+	      <td><%= select('search_details', 'relationship_type', 
+	                     RelationshipTypesHelper.show_relationship_types_for(:expression).to_dropdown(:relationship_type_desc),
+	                     :selected => @search_details.relationship_type.to_i, :include_blank => "-- No relationship type selected--")%>
+	      </td>
+	      <td><%= f.text_field :relationship_text, :size => standard_edit_cols, :class => 'text', :size => 12 %>
+	      </td>
+	    </tr>
+	   </table>
+	   </td>
+	   <td><%= f.check_box  :relationship_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<th>Status</th><td><%= select("search_details", "status_id", @statuses.to_dropdown, :selected => @search_details.status_id.to_i, :include_blank => "-- All Statuses --") %></td>
+		<td><%= f.check_box  :status_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+		
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_expressions}, {:class => 'public_button'} %></td>
+     <td align="right"> <input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+
+<% end %>

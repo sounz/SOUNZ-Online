@@ -1,0 +1,14 @@
+<h5>Composers for this Work</h5>
+<%if @composers.length == 0%>
+<p>There are no composers for this work</p>
+<div class="instruction">You must add a composer prior to editing the rest of this work</div>
+<%else%>
+<ul class="workComposerList">
+<%for composer in @composers%>
+<li id="sel_<%=generate_id(composer)%>">
+<%=action_button(link_to_remote("Remove", :url =>{:action => :delete_composer, :id => composer.id, :work_id => @work.id}))%>
+<%=composer.contributor.role.contributor_names%> (<%=composer.role_name%>)
+</li>
+<%end%>
+</ul>
+<%end%>

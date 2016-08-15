@@ -1,0 +1,32 @@
+<%#Pass in a media item object and a sample attachment
+:sample_attachment => sample_attachment, :manifestation => sample.manifestation}
+%>
+<%
+expression_title=''
+#if sample_attachment.sample.expression_id != nil
+#expression_title=Expression.find(sample_attachment.sample.expression_id).work.work_title
+#else
+#expression_title='Not available'
+#end
+
+media_item = sample_attachment.media_item
+if media_item.is_mp3?%>
+<span class="verticalPadder">
+<a class="videoPopup" onclick="window.open('<%=flash_music_player_url(media_item)%>', 'sounz_video','width=400,height=200')"><%=public_sample_icon(sample_attachment)%></a><%if !media_item.size.blank?%>(<%=bytes_to_size(media_item.size)%>)<%end%>
+<a class="videoPopup" onclick="window.open('<%=flash_music_player_url(media_item)%>', 'sounz_video','width=400,height=200')"><%=expression_title%></a>
+</span>
+
+<%elsif media_item.is_flv?%>
+<span class="verticalPadder"><a class="videoPopup" onclick="window.open('<%=flash_video_player_url(media_item)%>', 'sounz_video','width=400,height=400')"><%=public_sample_icon(sample_attachment)%></a><%if !media_item.size.blank?%>(<%=bytes_to_size(media_item.size)%>)<%end%>
+<a class="videoPopup" onclick="window.open('<%=flash_video_player_url(media_item)%>', 'sounz_video','width=400,height=400')"><%=expression_title%></a>
+</span>
+<%else%>
+<span class="verticalPadder">
+<%=link_to public_sample_icon(sample_attachment) + " Sample", sample_url(sample_attachment)%>
+<%if !media_item.size.blank?%>(<%=bytes_to_size(media_item.size)%>)<%end%>
+</span>
+<%end%>
+
+
+<%if !media_item.copyright.blank?%>&copy;<%=media_item.copyright%><%end%>
+<br/>

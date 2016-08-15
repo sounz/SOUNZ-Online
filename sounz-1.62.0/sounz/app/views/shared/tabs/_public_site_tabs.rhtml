@@ -1,0 +1,9 @@
+<% content_for :tabbed_menu do %>
+<h3 class='hide'>Sub Navigation</h3>
+<ul id='sub_navigation' class='people'>
+<%=render_tab('Music',  :works,      selected_tab, {:controller => :finder, :action => :shows, :id => :works})%>
+<%=render_tab('People', :people,     selected_tab, {:controller => :finder, :action => :shows, :id => :people})%>
+<%=render_tab('Experience',  :sounzmedia, selected_tab, {:controller => :finder, :action => :shows, :id => :sounzmedia})%>
+<%=render_tab('Events', :events,     selected_tab, {:controller => :finder, :action => :shows, :id => :events})%>
+</ul>
+<%end%>

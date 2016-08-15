@@ -1,0 +1,14 @@
+# NOT USED ANYMORE
+if @action != nil
+@action = nil
+page.redirect_to :action => @action, :id => @id, :entity => @entity
+else
+page.replace_html 'contactinfo_form', :partial => '/contactinfos/form'
+page.replace_html 'section_title', @section_title
+@disabled = "disabled"
+end
+#if @new_contactinfo == true
+#page.redirect_to :action => 'new_role_contactinfo', :role_id => @role_id, :contactinfo_type => @contactinfo_type
+#else
+#page.replace_html 'copy_button', link_to(create_button("Copy Contact Info", "Clone the contact info"), { :action => 'copy_contactinfo' })
+#end

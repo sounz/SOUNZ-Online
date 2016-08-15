@@ -1,0 +1,7 @@
+if @saved
+  page.replace_html @dom_id, :partial => 'items/edit_item', :locals => {:entity => @entity, :item => @item} 
+  page.visual_effect :highlight, @dom_id
+else
+  page.replace_html @dom_id, :partial => 'items/update_item_form', :locals  =>{:entity => @entity, :item => @item}
+  page.visual_effect :shake, @dom_id
+end

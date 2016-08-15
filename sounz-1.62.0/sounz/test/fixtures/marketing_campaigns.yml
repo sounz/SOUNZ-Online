@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+marketing_campaign1:
+  marketing_campaign_id: 1
+  campaign_manager: 80
+  project_id: 2
+  campaign_name: Annual Newsletter - April 2007
+  campaign_description:
+  campaign_status: i
+  finished_at:
+  created_at: 03 April 2007 11:35
+  updated_at: 03 April 2007 11:35
+  updated_by: 2
+  
+marketing_campaign2:
+  marketing_campaign_id: 2
+  campaign_manager: 81
+  project_id: 1
+  campaign_name: Christmas 2006
+  campaign_description:
+  campaign_status: f
+  finished_at: 31 March 2007 09:20
+  created_at: 03 April 2007 11:35
+  updated_at: 03 April 2007 11:35
+  updated_by: 2

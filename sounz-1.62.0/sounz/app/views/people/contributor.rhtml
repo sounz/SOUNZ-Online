@@ -1,0 +1,75 @@
+<h1>Contributor Details</h1>
+<%= error_messages_for 'contributor' %>
+<% form_tag :action => 'contributor_update', :id => @person do %>
+<table>
+  <tr>
+    <th><label for="contributor_composer_status">Composer Status</label></th>
+    <td><%= select_tag 'contributor_composer_status',  
+      options_for_select( [
+        ['-- Select composer tier','0'],
+        ['Composer Tier 1','1'],
+        ['Composer Tier 2','2'],
+      ], selected = @contributor.composer_status ),
+      { :multiple => false } 
+    %>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="contributor_apra_member">APRA Member</label></th>
+    <td><%= check_box "contributor", "apra_member" %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_canz_member">CANZ Member</label></th>
+    <td><%= check_box "contributor", "canz_member" %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_known_as">Known as</label></th>
+    <td><%= text_field 'contributor', 'known_as', :size => 20 %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_pull_quote">Pull Quote</label</th>
+    <td><%= text_area 'contributor', 'pull_quote', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_profile">Biography</label</th>
+    <td><%= text_area 'contributor', 'profile', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_profile_other">Biography other</label</th>
+    <td><%= text_area 'contributor', 'profile_other', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_profile_source">Biography source</label</th>
+    <td><%= text_area 'contributor', 'profile_source', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_profile_source">Biography source</label</th>
+    <td><%= text_area 'contributor', 'profile_source', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_permission_note">Permissions note</label</th>
+    <td><%= text_area 'contributor', 'permission_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="contributor_status_id">Status</label></th>
+    <td><%= collection_select('contributor', "status_id", 
+       Status.find(:all), 
+       :status_id, :status_desc ) %>
+    </td>
+  </tr>
+</table>
+
+<div id="buttonsformat">
+  <%= submit_tag 'Save' %>
+  <%= cancel_and_go_back_button %>
+</div>
+<% end %>
+<% if @editing %>
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @contributor}%>
+
+<%=render :partial => 'association/association', :locals => {:object => @contributor}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @contributor}%>
+</div>
+<% end %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :contributor} %>

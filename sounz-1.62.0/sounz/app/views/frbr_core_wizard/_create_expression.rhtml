@@ -1,0 +1,8 @@
+Create a new expression<p/>
+
+Manifestation Details: <%=@manifestation.manifestation_title%><p/>
+
+Fill out the fields below to add a new expression record.
+<%=form_tag :controller=> :frbr_core_wizard, :action=> :add_expression%>
+<%=render :partial => "/expressions/wizard_form"%>
+<%=submit_tag%>

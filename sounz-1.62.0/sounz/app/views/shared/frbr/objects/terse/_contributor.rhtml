@@ -1,0 +1,4 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<%= icons_for(object, @login)%>&nbsp;
+<%=ContributorsHelper.get_link_depending_on_role_type(object.role, @login)%>
+<b>&nbsp;&nbsp;<%=show_tap_edit_link_for(object, 'CAN_EDIT_CONTRIBUTOR_PROFILE')%></b><br>

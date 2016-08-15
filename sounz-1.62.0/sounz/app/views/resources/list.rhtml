@@ -1,0 +1,30 @@
+<%=main_tabs(selected = :works)%>
+
+<h1>Listing resources</h1>
+
+<table>
+  <tr>
+  <th>Title</th>
+  </tr>
+  
+<% for resource in @resources %>
+  <tr>
+  	<td><%=resource.resource_title%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => resource %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => resource %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => resource }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @resources %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to 'New resource', :action => 'new' %>
+</div>
+<% end %>

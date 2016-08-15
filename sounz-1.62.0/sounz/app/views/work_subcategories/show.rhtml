@@ -1,0 +1,8 @@
+<% for column in WorkSubcategory.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @work_subcategory.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @work_subcategory %> |
+<%= link_to 'Back', :action => 'list' %>

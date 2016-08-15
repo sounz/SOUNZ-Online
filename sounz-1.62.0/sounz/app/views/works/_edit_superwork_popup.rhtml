@@ -1,0 +1,6 @@
+<% form_tag :controller => :works, :action => 'updateSuperworkFromPopup' do %>
+<%= render :partial => '/superworks/form' %>
+<input type="hidden" name="superwork_id" value="<%=@superwork.id%>">
+<%=submit_tag "Update"%>
+
+<%end%>

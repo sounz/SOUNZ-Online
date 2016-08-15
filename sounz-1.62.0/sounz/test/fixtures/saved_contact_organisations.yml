@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+sco1:
+  saved_contact_organisation_id: 1
+  organisation_id: 1
+  saved_contact_list_id: 3
+
+sco2:
+  saved_contact_organisation_id: 2
+  organisation_id: 40
+  saved_contact_list_id: 3
+
+sco3:
+  saved_contact_organisation_id: 3
+  organisation_id: 20
+  saved_contact_list_id: 3
+
+sco4:
+  saved_contact_organisation_id: 4
+  organisation_id: 60
+  saved_contact_list_id: 3
+  

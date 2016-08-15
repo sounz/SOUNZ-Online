@@ -1,0 +1,23 @@
+<%=render :partial => 'possible_contact_update_link'%>
+
+<% if @cm_content.status == Status::PUBLISHED || PrivilegesHelper.has_permission?(@login,'CAN_EDIT_CONTENT')%>
+  <h1><%=@cm_content.cm_content_title.camelize%></h1>
+
+
+  <div id="cm_content">
+    <%=@cm_content.cm_content%>
+  </div>
+<% end %>
+
+<%=render :partial => 'possible_update_form_links'%>
+<%=render :partial => 'possible_version_details'%>
+
+<div class="division_line">&nbsp;</div><br/>
+<%= go_back_link%>
+
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_CONTENT')%>
+<div class="editLinks">
+<%= link_to 'Edit', :action => 'edit', :id => @cm_content %>
+</div>
+<%end%>

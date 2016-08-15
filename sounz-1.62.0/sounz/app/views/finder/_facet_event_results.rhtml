@@ -1,0 +1,248 @@
+<div id='facets'>
+
+<%
+logger.debug @results.to_yaml
+
+
+
+
+facet_fields_results = @results[:facets]['facet_fields']
+country_facet_results = facet_fields_results['country_id_for_solr_s']
+
+
+
+#---------------------
+#---- country facets -
+#---------------------
+country_facet = {
+	:name => 'Countries'
+}
+
+#deal with the case of no country having being chosen
+if @country_id.blank?
+	country_facet[:facet_name]= 'country'
+	country_keys = country_facet_results.class # only need to check  keys that exist in the data
+	country_keys = country_facet_results.keys
+	country_keys = FacetViewHelper.order_country_keys(country_keys)
+	%>
+	<%
+	
+	country_data = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::ALL_COUNTRY_FACET_DETAILS,
+		country_keys,
+		facet_fields_results
+	)
+	country_facet[:data] = country_data
+
+#a country has been chosen
+else
+	#unless the country is new zealand (where we show region facets) just show the country
+	if @country != Country::NEW_ZEALAND
+		country_facet[:subfacet]=@country.country_name
+		country_facet[:params]= [:country]
+		
+	#Show NZ regions
+	else
+		#this is the case where a region has not been selected
+		if @region_id.blank?
+			country_facet[:subfacet] = @country.country_name
+			country_facet[:params]= [:country]
+			
+			where_region_keys = [2,4,14,5,9,12,1,15,6,16,7,3,10,8,11,13,17,18,19].map{|k|k.to_s} #strings needed...
+			region_data = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::REGION_DETAILS,
+			 												where_region_keys, 
+															facet_fields_results)
+
+			country_facet[:data] = region_data
+			country_facet[:facet_name] = 'region'
+		
+		#this is the case where a country, and then a region has been chosen
+		else
+			country_facet[:params]= [:country, :region]
+			country_facet[:subfacet] = @country.country_name
+			country_facet[:target]=@region.region_name
+			
+		end
+
+		
+	end
+end
+
+
+#------------------------------------------
+#---- deal with the event types facet -----
+#------------------------------------------
+event_type_facet = {
+	:name => 'Event Types'
+}
+
+#This is the case where we have no event type chosen
+if @event_type_id.blank?
+	event_type_facet[:facet_name] = 'event_type'
+	event_type_facet[:data]= FacetViewHelper.event_types_to_view_array(facet_fields_results)
+
+#an event type has been chosen, so deal with it...
+else
+    
+    if @event_type != EventType::OPPORTUNITY 
+	  event_type_facet[:subfacet] = @event_type.event_type_desc
+	  event_type_facet[:params]   = [ :event_type]
+	else
+	  # WR#50291 - show related distinction types
+	  if @distinction_type_id.blank?
+	    event_type_facet[:subfacet]   = @event_type.event_type_desc
+		event_type_facet[:params]     = [:event_type]
+		event_type_facet[:data]       = FacetViewHelper.distinction_types_to_view_array(@results[:facets]['facet_fields'], 'related_distinction_types_for_solr_t')
+		event_type_facet[:facet_name] = 'distinction_type'
+	  else
+	    event_type_facet[:params]   = [:event_type, :distinction_type]
+		event_type_facet[:subfacet] = @event_type.event_type_desc
+	    if @distinction_type_id.match('other')
+	      event_type_facet[:target]   = 'Other'
+	    else
+	      event_type_facet[:target]   = DistinctionType.find(@distinction_type_id).distinction_type_name
+	    end
+	  end
+	end
+end
+
+#--------------------------------------------
+#---- last but not least, good old dates ----
+#--------------------------------------------
+date_facet = {
+	:name => 'Dates'
+}
+
+if @year_group.blank?
+	date_facet[:facet_name] = 'year_group'
+	date_keys = ['current','previous','next']
+	date_facet[:data] = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::YEAR_GROUP_DETAILS,
+	 												date_keys, 
+													facet_fields_results)
+
+#We are now dealing with the case of a year grouping having been chosen
+else
+	#For this year and next year we wish to show months...
+	if ['current','next'].include? @year_group
+		
+		#this is the case of a month not being chosen
+		if @month.blank?
+			date_facet[:subfacet] = @year_group.camelize+' Year'
+			date_facet[:params] = [:year_group]
+			month_data = FacetViewHelper.convert_month_facet_searches_to_view_array(
+																		@results
+																		)
+		    date_facet[:data] = month_data
+			date_facet[:facet_name]='month'
+		
+		#This is the case where a year group and a month is chosen
+		else
+			
+			if @day.blank?
+					
+					
+
+				day_view_array = FacetViewHelper.convert_day_facet_searches_to_view_array(@results, @month)
+				
+																
+				logger.debug facet_fields_results.to_yaml
+				
+				
+				date_facet[:params]= [:year_group, :month]
+				date_facet[:subfacet] = @year_group.camelize
+				date_facet[:target]=FacetHelper::MONTH_DETAILS[:facets][@month.to_s][:text]
+				date_facet[:data]=day_view_array
+				date_facet[:facet_name]='day'
+				
+				
+				
+			else 
+				
+				date_facet[:params]= [:year_group, :month, :day]
+				date_facet[:subfacet]=@year_group.camelize+' Year'
+				date_facet[:target]=FacetHelper::MONTH_DETAILS[:facets][@month.to_s][:text]
+				date_facet[:sub_target]=(@day.to_i % 100).ordinalize
+			end
+
+
+=begin
+				if @status.blank?
+					role_group_facet[:params]= [:role_group, :role_type]
+					role_group_facet[:subfacet]=@role_group_key.camelize
+					role_group_facet[:target]=@role_type.role_type_desc 
+
+
+					tiers = facet_fields_results['fully_represented_for_solr_s']
+					tier_array = [
+						{:category => 'fully_represented', :name => 'Fully Represented', :count => tiers["true"]},
+						{:category => 'not_fully_represented', :name => 'Not Fully Represented', :count => tiers["false"]},
+						]
+					role_group_facet[:data]=tier_array
+				 	role_group_facet[:facet_name]="status"
+
+				#a status has been selected
+				else
+					logger.debug "Should be showing status here"
+					role_group_facet[:params]= [:role_group, :role_type,:status]
+					role_group_facet[:subfacet]=@role_group_key.camelize
+					role_group_facet[:target]=@role_type.role_type_desc 
+					role_group_facet[:sub_target]=@status.camelize
+				end
+=end		
+		
+		end
+		
+	#Display the different facet for the sub year group
+	elsif @year_group == 'previous'
+		#This is the case where previous has been chosen
+		#show the sub year grouping, e.g. before 1995, 1195 to 2000 etc
+		if @previous_year_groups.blank?
+			sub_year_hash = FacetHelper.event_facet_previous_years(Time.now.year)
+			year_keys = sub_year_hash.keys.sort
+			date_facet[:params] = [:year_group]
+			date_facet[:subfacet] = "Previous Years"
+			x = FacetHelper.create_event_facet_previous_years_array
+			date_facet[:data] = FacetViewHelper.convert_query_hash_to_view_array(
+								x, #lucene
+								year_keys,
+								facet_fields_results
+								)
+			date_facet[:facet_name] = 'prev_years_group'
+			
+		#This is the case when a year subgroup is chosen inside the year group called previous
+		else
+			date_facet[:params]= [:year_group, :prev_years_group]
+			date_facet[:subfacet] = @year_group.camelize
+			date_facet[:target]=FacetViewHelper.human_readable_double_year(@previous_year_groups)
+		end
+
+
+	end
+	
+	
+	#for previous years we wish to show the year groupings
+end
+
+
+%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= render :partial => 'facet_block', :locals => { :facet => date_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => country_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => event_type_facet } %>
+
+</div>
+
+
+

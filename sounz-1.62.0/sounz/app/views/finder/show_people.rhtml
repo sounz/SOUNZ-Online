@@ -1,0 +1,91 @@
+<% content_for :page_title do %>
+Search People
+<%end%>
+<%=render :partial => '/shared/tabs/finder_tabs', :locals => {:selected_tab => :people}%>
+<%if @error_message.blank?%>
+ 
+<!--
+ <span class="searchLinks">
+    <% if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+    <div align="right"><%=link_to image_tag('/images/button-advancedsearch.gif', :alt => 'Advanced Search'), {:controller=>:advanced_finder,:action=>:contributor}, {:class => 'public_button'} %></div><br>
+    <% end %>
+ </span>
+-->
+ 
+<h1>Search People</h1>
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @results[:docs].length > 3 %>
+  <a href="#saveForm">Save Current Search</a>
+<% end %>
+
+<div class="search-results-form">
+
+  <p class="instructions">Search for people or organisations by typing a word or phrase in the box below or by selecting one or more categories from the list on the side</p>
+
+  <form action="/finder/show/people">
+
+    <div class="search-form">
+      <fieldset>
+        <input type="text" name="query" id="query" size="30" class="text" value="<%=h @query %>" >
+      </fieldset>
+      <input type="submit" value="Search" alt="Search" class="public_button" id="submit">
+      <%= link_to "Reset", {:controller => :finder, :action => :reset_people_search}, {:class => 'search-reset'} %>
+    </div>
+  </form>
+</div>
+
+
+  <!-- Result Details -->
+  <div class="search-result-details">
+    <ul>
+      <li class="result-count">
+        <%if ! @query.blank?%><%= @results[:docs].length > 0 ? pluralize(@results[:total], 'result') + ' for \'' + @query +'\'' : 'There were no results matching your request' %><%end%>
+      </li>
+      <% if !@results[:docs].blank?%>
+      <li class="pagination">
+        <%= render :partial => 'page_links', :locals => {:paginator => @paginator} %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+  <div id="liveResults" name="liveResults">
+    <%= render :partial => 'result', :collection => @results[:docs] %>
+  </div>
+
+  <div class="search-result-details-bottom">
+    <ul>
+      <% if !@results[:docs].blank?%>
+      <li class="pagination">
+        <%= render :partial => 'page_links', :locals => {:paginator => @paginator} %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <%if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && (!@query.blank? || @results[:docs].length > 0)%>
+  <div id="saveForm"><%=render :partial => 'saved_searches/saved_search_form', :locals => {:search_type  => 'faceted_people_search'} %></div>
+  <% end %>
+
+
+<%content_for :facets do%>
+
+<div id='facetResults' class="block">
+     <% if !@results[:docs].blank? %>
+        <h2 class="title">Narrow your results</h2>
+      <% else %>
+        <h2 class="title">Browse for people</h2>
+      <% end %>
+<%=render :partial => 'facet_people_results' %>
+</div><!--/facetResults-->
+<%end%>
+
+<%else%>
+<%=h @error_message%>
+<%end%>
+
+
+

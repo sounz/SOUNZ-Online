@@ -1,0 +1,10 @@
+<form id="use_saved_list_form">
+<table>
+	<tr><td><strong>Or use the saved list</strong></td><td><%= select("search", "list_id", SavedContactList.to_dropdown, :prompt => '-- Use a previously saved contact list --') %></td></tr>
+</table>
+</form>
+
+<%=  observe_form "use_saved_list_form",
+:update =>"search_results",
+:url => {:action => "use_saved_list"}
+%>

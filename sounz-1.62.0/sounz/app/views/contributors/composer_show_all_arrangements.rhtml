@@ -1,0 +1,13 @@
+<div id='detail'>
+<div class='title'>
+<a href='/finder/shows/people' class='back'>back to People Search</a>
+</div><!--/title-->
+<h1><%=@page_title%></h1>
+<%=link_to 'Back to Intro', contributor_as_composer_intro_url(:id => @contributor)%><p/>
+<%=render :partial => '/shared/frbr/objects/full/composer_show_all_arrangements', :locals => {:object => @contributor}%>
+<%=link_to 'Back to Intro', contributor_as_composer_intro_url(:id => @contributor)%><p/>
+</div><!--/detail-->
+
+<!--<%= link_to 'Edit', :action => 'edit', :id => @contributor %> |
+<%= link_to 'Back', :action => 'list' %>-->
+

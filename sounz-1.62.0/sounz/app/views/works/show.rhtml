@@ -1,0 +1,4 @@
+<%=main_tabs(selected = :works)%>
+<%=start_of_content(@work, "Work")%>
+<%=render :partial => '/shared/frbr/objects/full/work', :locals => {:object => @work}%>
+<%=end_of_content(@contributor)%>

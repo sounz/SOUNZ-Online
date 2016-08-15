@@ -1,0 +1,49 @@
+--- 
+manifestation_types_012: 
+  manifestation_type_desc: part - recorded
+  manifestation_type_id: "15"
+  manifestation_type_category: 
+manifestation_types_001: 
+  manifestation_type_desc: graphic score - parts
+  manifestation_type_id: "8"
+  manifestation_type_category: "1"
+manifestation_types_002: 
+  manifestation_type_desc: miniature score
+  manifestation_type_id: "9"
+  manifestation_type_category: "1"
+manifestation_types_003: 
+  manifestation_type_desc: full score
+  manifestation_type_id: "1"
+  manifestation_type_category: "1"
+manifestation_types_004: 
+  manifestation_type_desc: chord chart
+  manifestation_type_id: "10"
+  manifestation_type_category: "1"
+manifestation_types_005: 
+  manifestation_type_desc: part/s - written
+  manifestation_type_id: "2"
+  manifestation_type_category: "1"
+manifestation_types_006: 
+  manifestation_type_desc: reduced score
+  manifestation_type_id: "11"
+  manifestation_type_category: "1"
+manifestation_types_007: 
+  manifestation_type_desc: part - CD/DVD
+  manifestation_type_id: "3"
+  manifestation_type_category: "2"
+manifestation_types_008: 
+  manifestation_type_desc: piano reduction
+  manifestation_type_id: "5"
+  manifestation_type_category: "1"
+manifestation_types_009: 
+  manifestation_type_desc: vocal score
+  manifestation_type_id: "6"
+  manifestation_type_category: "1"
+manifestation_types_010: 
+  manifestation_type_desc: graphic score - full score
+  manifestation_type_id: "7"
+  manifestation_type_category: "1"
+manifestation_types_011: 
+  manifestation_type_desc: score and part/s
+  manifestation_type_id: "4"
+  manifestation_type_category: "1"

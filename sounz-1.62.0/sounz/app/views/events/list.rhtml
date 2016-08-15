@@ -1,0 +1,31 @@
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+  <th>Event Title</th>
+  <th>Event Start</th>
+
+  </tr>
+  
+<% for event in @events %>
+  <tr>
+  <td><%=event.event_title%></td>
+  <td><%=EventsHelper.get_start_time(event)%></td>
+  <td><%= link_to 'Show', :action => 'show', :id => event %></td>
+  
+  <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_EVENT')%>
+  <td><%= link_to 'Edit', :action => 'edit', :id => event %></td>
+  <td><%= link_to 'Destroy', { :action => 'destroy', :id => event }, :confirm => 'Are you sure?', :method => :post %></td>
+  <% end %>
+  
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @events  %>
+
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_EVENT')%>
+<%= link_to 'New event', :action => 'new' %>
+<% end %>

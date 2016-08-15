@@ -1,0 +1,12 @@
+<h1>Adding Recent Expressions to <%=@manifestation.manifestation_title%></h1>
+<div class="instruction">Please select expressions to add</div>
+
+<table border="1">
+<% form_for(:expressions, :url => {:action => "add_multiple_expressions"}, :html => { :method => :post}) do |f| %>
+<%=hidden_field :manifestation, :id, :value => @manifestation.manifestation_id%>
+<%=render :partial => 'frbr_mru/recent_frbr_objects'%>
+<% end %>
+</table>
+
+
+

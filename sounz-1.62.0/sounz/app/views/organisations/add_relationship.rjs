@@ -1,0 +1,3 @@
+page.replace 'related_organisations_table'   , :partial => 'related_organisations_table'
+page.replace 'related_organisations_dropdown', :partial => 'related_organisations_dropdown'
+page << '$("related_relationship").value = "";'

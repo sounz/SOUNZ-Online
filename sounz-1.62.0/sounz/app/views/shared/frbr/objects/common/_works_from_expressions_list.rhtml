@@ -1,0 +1,77 @@
+<%
+expressions = PrivilegesHelper.permitted_objects(@login, expressions)
+if expressions.length > 0 %>
+<div class="section">
+<h2>Music</h2>
+<table>
+<%
+for expression in expressions.sort_by{|exp| exp.work.work_title.downcase}
+	work = expression.work
+	if PrivilegesHelper.has_link_permission?(@login, work)
+%>
+<tr>
+<td>
+  <%=link_to work.work_title, :action => 'show', :controller => 'works', :id => work %>
+  <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') %>
+    <span class="actionButton"><%= link_to 'Edit', :controller => :works, :action => :edit, :id => work %></span>
+  <%end%>
+</td>
+<td><%
+first = true
+for contributor in work.composers
+if first == true
+	first = false
+else	
+%><br><%
+end	
+%><%=ContributorsHelper.get_link_depending_on_role_type(contributor, @login)%>
+<%end%></td>
+<td NOWRAP><%=expression.duration_human_readable%></td>
+</tr>
+<tr>
+  <td colspan="3"><%= h(work.work_description) %></td>
+</tr>
+<%
+if !expression.partial_expression_note.blank?
+%>
+<tr>
+<td colspan="3"><%= show_note(expression.partial_expression_note).gsub('<p>', '').gsub('</p>', '')%></td>	
+</tr>
+<%
+end
+%>
+
+<% samples = Sample.find(:all, :conditions => ['expression_id=null OR expression_id=?',expression.expression_id]).uniq 
+if object.class == Manifestation
+samples = Sample.find(:all, :conditions => ['expression_id=null OR expression_id=? AND manifestation_id =?', expression.expression_id, object.id]).uniq
+end
+%>
+
+<tr><td colspan="3">
+<%=render :partial => 'shared/frbr/objects/common/list_samples', :locals => {:samples => samples}%>
+</td></tr>
+
+<%
+if !expression.general_note.blank?
+%>
+<tr>
+<td colspan="3"><%= show_note(expression.general_note).gsub('<p>', '').gsub('</p>', '')%></td>	
+</tr>
+<%
+end
+%>
+
+<% if expression != expressions.sort_by{|exp| exp.work.work_title.downcase}.last%>
+<tr><td colspan="3" class="division_line">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<% end %>
+
+<% end %>
+<%
+end
+%>
+</table>
+</div>
+<%
+end
+%>

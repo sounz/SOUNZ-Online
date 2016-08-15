@@ -1,0 +1,56 @@
+<% if !@contacts.blank?%>
+There are currently <%= pluralize(@saved_contact_list.role_contactinfos.length, 'contact')%> in the list
+
+
+<%= form_remote_tag :url => {:action => :add_contacts_to_selection, :from => 'advanced' },
+                        :html => { :id => 'saved_contacts_search' } %>
+    <table width="100%">
+      <tr>
+        <td colspan="2" align="right" width="90%">&nbsp;</td>
+        <td valign="top" width="10%">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right" width="90%">
+           <%= selectAllNone('search_results')%>
+        </td>
+        <td valign="top" width="10%" rowspan="11">
+           <%= submit_tag "Select" %><br/><br/>
+           <span class="actionSubmit">
+           <%= link_to_remote "Select All", :url => {:action => :add_contacts_to_selection, :from => 'advanced', :saved_contact_list => @saved_contact_list.saved_contact_list_id}%>
+           </span>
+        </td>
+      </tr>
+      <%# contacts = @contacts.sort{|rc, orc| rc.role.role_contact_name <=> orc.role.role_contact_name } 
+      %>
+      <% for contact in @contacts %>
+      <tr  id="<%= 'found_' + generate_id(contact) %>">
+        <td>
+          
+          <%= render :partial => 'shared/selected_contacts_editable', :locals => { :contact => contact, :existing_contacts => @already_selected }
+          %>
+          
+        </td>
+      </tr>
+      <% end %>
+      
+    </table>
+    <br/>
+  <%=
+    
+    render :partial => 'shared/page_links_remote',
+      :locals => {
+        :paginator => @saved_list_contacts_pages,
+        :params => {
+          :url => 
+          {
+            :controller => 'search_contacts',
+            :action => 'use_saved_list',
+            :saved_contact_list_id => @saved_contact_list.saved_contact_list_id
+          },
+          :update => 'search_results'
+        }
+      } %>
+  <% else %>
+  No contacts in the list
+  <% end %>

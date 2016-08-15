@@ -1,0 +1,10 @@
+<%if @media_item.is_flv?%>
+<div class="flashVideoPopup">
+<h2><%=@sample.sample_description%></h2>
+	<%=flash_video_player(@media_item)%>
+<%if !@sample.copyright.blank?%><div style="text-align: right;">&copy;<%=@sample.sample_copyright%></div><%end%>
+<%if @media_item.media_item_desc%><div style="text-align: left;"><%=@media_item.media_item_desc%><div><%end%>
+</div>
+<%else%>
+The media you are trying to view is not renderable.
+<%end%>

@@ -1,0 +1,2 @@
+module ProvBidsHelper
+end

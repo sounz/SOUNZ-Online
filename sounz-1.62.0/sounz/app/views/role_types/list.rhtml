@@ -1,0 +1,25 @@
+<h1>Role Types</h1>
+
+<table>
+  <tr>
+  <% for column in RoleType.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for role_type in @role_types %>
+  <tr>
+  <% for column in RoleType.content_columns %>
+    <td><%=h role_type.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => role_type %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => role_type %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => role_type }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @role_types %>
+
+<%= link_to 'New role_type', :action => 'new' %>

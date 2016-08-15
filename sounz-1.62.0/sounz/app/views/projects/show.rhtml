@@ -1,0 +1,14 @@
+<% for column in Project.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @project.send(column.name) %>
+</p>
+<% end %>
+
+<ul>
+<% for person in @project.people %>
+    <li><%=h person.full_name %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', :action => 'edit', :id => @project %> |
+<%= link_to 'Back', :action => 'list' %>

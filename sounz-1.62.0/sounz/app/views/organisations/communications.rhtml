@@ -1,0 +1,24 @@
+<h1>Open Communications for <%=@organisation.organisation_name%></h1>
+<div class="formButtonContainer">
+<%= link_to create_button("Add Communication", "Enter new communication"), { :action => 'add_communication' }, :class => 'formButton' %>
+</div>
+ 
+</div>
+<%for comm in @open_communications
+#html_of_note = convert_to_html(comm.communication_note)
+#summary_of_note = convert_to_html(summary_of(comm.communication_note, 200))
+%>
+<ul class="communicationsList">
+<li>
+<%=link_to comm.communication_subject, :action => :edit_communication, :id => comm %><br>
+<%=dmyhm_date(comm.created_at)%>
+<%=convert_to_html(summary_of(comm.communication_note, 200))%>
+</li>
+</ul>
+<%end%>
+
+
+<%=
+button = link_to create_button("Add Communication", "Add a communication for this organisation"), { :action => 'add_communication' }
+render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :communications, :button => button  }
+%>

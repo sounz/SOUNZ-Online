@@ -1,0 +1,20 @@
+
+
+<%if @role.person != nil%>
+<% title 'Edit Contributor Details for ' + @role.person.full_name %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :roles, :button => nil} %>
+<%else%>
+<% title 'Edit Contributor Details for ' + @role.organisation.organisation_name %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :roles} %>
+<%end%>
+<%= error_messages_for 'contributor' %>
+<% form_tag :action => 'contributor_details_update', :id => @role do %>
+  <%= render :partial => 'contributors/form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+<% if @editing %>
+  <%= render :partial => 'contributors/edit_parts' %>
+<% end %>
+<div class="editLinks">
+<%=ContributorsHelper.get_link_depending_on_role_type(@role, @login)%>
+</div>

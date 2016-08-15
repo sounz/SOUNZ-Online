@@ -1,0 +1,30 @@
+<span id="top"><h1>Editing distinction</h1></span>
+<a href="#distinction_type_widget">Distinction Types</a> | <a href="#relationships">Relationships</a>
+<br/><br/>
+<% form_tag :action => 'update', :id => @distinction do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+<br/>
+<fieldset>
+	<legend id="distinction_type_widget">Distinction Types</legend>
+
+<div id="distinction_types">
+<%= render :partial => 'distinction_types_form', :locals => { :distinction => @distinction }%>
+</div>
+
+</fieldset>
+
+<%=go_to_top_link%>
+
+<%=render :partial => 'association/association', :locals => {:object => @distinction}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @distinction}%>
+</div>
+
+<%=go_to_top_link%>
+
+<div class="editLinks">
+<%= link_to 'Show', :action => 'show', :id => @distinction %> |
+<%= link_to 'List', :action => 'list' %>
+</div>

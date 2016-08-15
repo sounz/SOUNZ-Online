@@ -1,0 +1,4 @@
+page.replace_html 'durationForm', :partial => 'duration_as_interval/form', :locals => {:optional => @optional, :prefix => @prefix, :interval_duration => IntervalDuration.new, :object_name => @object_name, :field_name => @field_name}
+page.replace_html 'durationButton', action_button(link_to_remote( "Set No Duration/Not Applicable",:url =>{ :optional => @optional, :prefix => @prefix, :object_name => @object_name, :field_name => @field_name, :action => :cancel_duration, :controller => :duration_as_interval}))
+page.visual_effect :highlight, 'durationForm'
+page.visual_effect :highlight, 'durationButton'

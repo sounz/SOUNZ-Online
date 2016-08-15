@@ -1,0 +1,38 @@
+<% if is_logged_in?(session) %>
+<div id="members_login">
+
+<div id="sessionDetails">User:&nbsp;<%=@login.username%>&nbsp;|&nbsp;<%= link_to "Log&nbsp;Out", :controller => "authentication", :action => "logout" %></div>
+</div>
+<%
+else
+
+unless params[:action] == 'login_from_checkout'
+%>
+
+<form id="members_login" name="members_login" method="post" action="/authentication/login">
+
+  <div class="options">
+    <a class="button login" href="#">Login</a> <span>or <a href="/people/new_web_user">Sign Up</a></span>
+  </div>
+
+  <fieldset class="login_fields">
+    <label>
+      <span class='hide'>Username</span>
+	    <input type='text' class='text' id='username' name='username' maxlength='50' placeholder="Email address" />
+    </label>
+
+    <label>
+      <span class='hide'>Password</span>
+      <input type='password' class='text last' id='password' name='password' maxlength='50'  placeholder="Password" />
+    </label>
+    <input type="submit" value="Login" class="login-submit" />
+  </fieldset>
+
+</form>
+<%
+end
+end%>
+
+
+
+

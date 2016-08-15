@@ -1,0 +1,209 @@
+<%=main_tabs(selected = :music)%>
+
+<span class="searchLinks">
+<%= link_to image_tag('/images/button-simplesearch.gif', :alt => 'Simple Search'), {:controller=>:finder,:action=>:show}, {:class => 'public_button'} %>
+</span>
+
+<h2>Works Advanced Search</h2>
+
+<% form_for(:search_details, :url => {:action => :search_works}, :html => { :method => :post }) do |f| %>
+
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_work}, {:class => 'public_button'} %>
+
+<table class="searchForm">
+	<tr>
+	<th colspan="2">Work Details</th>	
+	</tr>
+	
+	<tr>
+		<td>Title</td>
+		<td><%= f.text_field :title, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Composed by</td>
+		<td><%= f.text_field :composed_by, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Year of Composition</td>
+		<td><%= f.text_field :composition_year, :size => 4, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Year of Revision</td>
+		<td><%= f.text_field :revision_year, :size => 4, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Description</td>
+		<td><%= f.text_field :description, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Instrumentation</td>
+		<td><%= f.text_field :instrumentation, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Contents</td>
+		<td><%= f.text_field :contents, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Text Note</td>
+		<td><%= f.text_field :text_note, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Internal Note</td>
+		<td><%= f.text_field :internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+		<td>Commissioned Note</td>
+		<td><%= f.text_field :commissioned_note, :size => standard_edit_cols, :class => 'text' %></td>
+	</tr>
+	
+	<tr>
+	<td>Language</td><td><%= select("search_details", "language_id", @languages.to_dropdown(:language_name),
+			:include_blank => "-- No language selected--", :selected => @search_details.language_id.to_i) %></td>
+	</tr>
+	
+	<tr>
+		<td>Programme Note Text</td>
+		<td><%= f.text_field :programme_note, :size => standard_edit_cols , :class => 'text'%></td>
+	</tr>
+
+	<tr>
+                <td>Created at</td>
+                <td>
+	          <table>
+	            <tr>
+	              <td><strong>From</strong> <%= date_field(:search_details, :created_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+	              <td><strong>To</strong> <%= date_field(:search_details, :created_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+	            </tr>
+	          </table>
+                </td>
+	</tr>
+
+	<tr>
+	<th colspan="2">Categories</th>	
+	</tr>
+	
+	<tr>
+		<td>Category</td>
+		<td><%= select("search_details", "work_category_id",
+		 @categories.to_dropdown(:work_category_desc),
+		:selected=>@search_details.work_category_id.to_i,
+		:include_blank => "-- No work category selected--"
+		) %></td>
+	</tr>
+	
+	<tr>
+		<td>Assigned Category</td>
+		<td>
+		<span id="work_subcategories">
+		  <%= render :partial => 'work_subcategories', :locals => { :work_category_id => @search_details.work_category_id, 
+		                                                            :work_subcategory_id => @search_details.work_subcategory_id.to_i } %>
+		</span>
+		</td>
+	</tr>
+	<%=observe_field(:search_details_work_category_id, :update => :work_subcategories,
+	                                                   :url => {:action => :work_subcategories}, 
+	:with => "'category='+escape($('search_details_work_category_id').value) + '&subcategory='+escape($('search_details_work_subcategory_id').value)")%>
+		
+	<tr>
+		<td>Additional Subcategory</td>
+		<td><%=select("search_details", "work_additional_subcategory_id", @additional_subcategories.to_dropdown(:work_subcategory_desc), :selected=>@search_details.work_additional_subcategory_id.to_i,:include_blank => "-- No work additional category selected--" )%></td>
+	</tr>
+	
+	<tr>
+	<th colspan="2">Relationships</th>	
+	</tr>
+	
+	<!--<tr>
+	<td>Concepts</td><td><%= select 'search_details', 'concept_name', DropDown.concepts.to_dropdown,
+	:include_blank => "-- No concept selected--" %></td><td>
+		<%= select("search_details", "concept_filter", ['contains','does not contain'], :include_blank => "-- No concept filter selected--") %></td>
+		<td><%= f.text_field :concept_text, :size => standard_edit_cols %></td>
+	</tr>-->
+	
+	<tr>
+	<td colspan=2>
+	<table><tr>
+	<td><%= select('search_details', 'relationship1_type', RelationshipTypesHelper.show_relationship_types_for(:work).to_dropdown(:relationship_type_desc),:selected => @search_details.relationship1_type.to_i,:include_blank => "-- No relationship type selected--")%></td><td>
+		<%= select("search_details", "relationship1_filter", ['contains','does not contain'], :selected => @search_details.relationship1_filter,:include_blank => "-- No relationship filter selected--" )%></td>
+		<td><%= f.text_field :relationship1_text, :size => standard_edit_cols, :class => 'text', :size => 10 %></td>
+	</tr></table></td>
+	</tr>
+	
+	<tr>
+	<td colspan=2>
+	<table><tr>
+	<td><%= select('search_details', 'relationship2_type',RelationshipTypesHelper.show_relationship_types_for(:work).to_dropdown(:relationship_type_desc),:selected => @search_details.relationship2_type.to_i,:include_blank => "-- No relationship type selected--")%></td><td>
+		<%= select("search_details", "relationship2_filter", ['contains','does not contain'], :selected => @search_details.relationship2_filter,:include_blank => "-- No relationship filter selected--") %></td>
+		<td><%= f.text_field :relationship2_text, :size => standard_edit_cols, :class => 'text', :size => 10 %></td>
+	</tr></table></td>
+	</tr>
+	
+	
+	<tr>
+	<th colspan="2">Contains?</th>	
+	</tr>
+	
+	<tr>
+		<td>Score</td>
+		<td><%=select("search_details", :has_score, ['yes','no'],
+		:include_blank => "-- No score filter --" )%></td>
+	</tr>
+	
+	<tr>
+		<td>Recording</td>
+		<td><%=select("search_details", :has_recording, ['yes','no'],
+		:include_blank => "-- No recording filter --" )%></td>
+	</tr>
+
+	<tr>
+		<td>Not Applicable</td>
+		<td><%=select("search_details", :has_not_applicable, ['yes','no'],
+		:include_blank => "-- No N/A filter --" )%></td>
+	</tr>
+	<tr><td colspan=2><p/></td>
+	
+	<tr>
+		<td>Sample Score</td>
+		<td><%=select("search_details", :has_sample_score, ['yes','no'],
+		:include_blank => "-- No sample score filter --" )%></td>
+	</tr>
+	
+	<tr>
+		<td>Sample Recording</td>
+		<td><%=select("search_details", :has_sample_recording, ['yes','no'],
+		:include_blank => "-- No sample recording filter --" )%></td>
+	</tr>
+	
+	<tr>
+		<td>Programme Note Exists?</td>
+		<td><%=select("search_details", :programme_note_exists, ['yes','no'],
+		:include_blank => "-- No programme note filter --" )%></td>
+	</tr>
+	
+	<tr>
+		<th colspan="2">Status</th>
+	</tr>
+	
+	<tr>
+		<td>Status</td><td><%= select("search_details", "status_id", @statuses.to_dropdown ,:selected=>@search_details.status_id.to_i,:include_blank => "-- No status selected--") %></td>
+	</tr>
+
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_work}, {:class => 'public_button'} %></td>
+     <td align="right"><input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+<% end %>
+
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('work_subcategories', 'work_subcategories', {asynchronous:true, evalScripts:true, parameters:'category='+escape($('search_details_work_category_id').value)+'&subcategory='+escape($('search_details_work_subcategory_id').value)} ) });</script>

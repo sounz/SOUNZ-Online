@@ -1,0 +1,24 @@
+<% title "Listing of Saved Contact Lists" %>
+
+<h2>Listing of Saved Contact Lists</h2>
+
+<table width="100%">
+  <tr>
+    <th>List Name</th>
+    <th align="right">Number of Contacts</th>
+  </tr>
+  
+<% for saved_contact_list in @saved_contact_lists %>
+  <tr>
+    <th><%= link_to saved_contact_list.list_name, { :action => 'edit', :id => saved_contact_list } %></th>
+    <td align="right"><%=h saved_contact_list.role_contactinfos.count %></td>
+    <td width="7%">&nbsp;</td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => saved_contact_list }, :confirm => 'Are you sure you want to delete this list?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @saved_contact_lists %>
+
+<%= link_to 'New Saved Contact List', :action => 'new' %>

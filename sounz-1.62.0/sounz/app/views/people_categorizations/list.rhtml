@@ -1,0 +1,27 @@
+<h1>Listing people_categorizations</h1>
+
+<table>
+  <tr>
+  <% for column in PeopleCategorization.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for people_categorization in @people_categorizations %>
+  <tr>
+  <% for column in PeopleCategorization.content_columns %>
+    <td><%=h people_categorization.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => people_categorization %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => people_categorization %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => people_categorization }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @people_categorization_pages.current.previous } if @people_categorization_pages.current.previous %>
+<%= link_to 'Next page', { :page => @people_categorization_pages.current.next } if @people_categorization_pages.current.next %> 
+
+<br>
+
+<%= link_to 'New people_categorization', :action => 'new' %>

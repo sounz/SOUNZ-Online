@@ -1,0 +1,22 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_heading => "Composer",
+			:main_internal_heading => object.role.contributor_names,
+			:subheading => nil,
+			:links => object.get_contributor_website_url,
+			:text => show_note(object.pull_quote),
+			:photo_credit => object.photo_credit,
+			:object => object
+}
+%>
+
+<h2><%=@frbr_title%></h2>
+<%=render :partial => 'shared/frbr/objects/full/list_of_items',
+ :locals => {:items => @related_frbr_objects, :paginator => @paginator, :page => @page,
+	:related_item_title_method => "frbr_list_title", :related_item_description_method => "frbr_list_description", 
+	:object => object
+	}%>
+
+<%= render :partial => 'shared/frbr/objects/full/contributor/venue/venue_links', :locals => {:object => object} %> 
+

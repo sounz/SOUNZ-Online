@@ -1,0 +1,22 @@
+<h1>Listing contributors</h1>
+
+<table>
+  <tr>
+  <th>Name(s)</th>
+  </tr>
+  
+<% for contributor in @contributors %>
+  <tr>
+    <td>
+      <%=contributor.role.contributor_names%>
+    </td>
+    <td><%= link_to 'Show', :action => 'show', :id => contributor %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => contributor %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => contributor }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @contributors %>
+
+<%= link_to 'New contributor', :action => 'new' %>

@@ -1,0 +1,4258 @@
+--- 
+- - concepts_001
+  - concept_id: "15"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - South Pacific
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_002
+  - concept_id: "36"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Love
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_003
+  - concept_id: "16"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - other
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_004
+  - concept_id: "37"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mythology
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_005
+  - concept_id: "58"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_006
+  - concept_id: "17"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: The Elements
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_007
+  - concept_id: "38"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Language and Literature
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_008
+  - concept_id: "60"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: 20th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_009
+  - concept_id: "59"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori Music
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_010
+  - concept_id: "18"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Region / Spirituality
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_011
+  - concept_id: "6"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_012
+  - concept_id: "10"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori Culture
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_013
+  - concept_id: "31"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Religion / Spirituality
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_014
+  - concept_id: "52"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_015
+  - concept_id: "67"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Tone Clock
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_016
+  - concept_id: "7"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel / Migration
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_017
+  - concept_id: "2"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mythology
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_018
+  - concept_id: "46"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori Music
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_019
+  - concept_id: "11"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - other
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_020
+  - concept_id: "25"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_021
+  - concept_id: "32"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Time
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_022
+  - concept_id: "68"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spectralism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_023
+  - concept_id: "53"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sonic Art
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_024
+  - concept_id: "26"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_025
+  - concept_id: "8"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maths and Science
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_026
+  - concept_id: "3"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Language and Literature
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_027
+  - concept_id: "12"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_028
+  - concept_id: "47"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: 20th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_029
+  - concept_id: "70"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and Water - NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_030
+  - concept_id: "69"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: New Complexity
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_031
+  - concept_id: "40"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_032
+  - concept_id: "39"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Performing / Visual Arts
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_033
+  - concept_id: "61"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: 19th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_034
+  - concept_id: "20"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Age
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_035
+  - concept_id: "19"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Time
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_036
+  - concept_id: "41"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_037
+  - concept_id: "62"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Pre-19th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_038
+  - concept_id: "21"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Humanity
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_039
+  - concept_id: "42"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel / Migration
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_040
+  - concept_id: "63"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Nationalism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_041
+  - concept_id: "33"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Age
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_042
+  - concept_id: "54"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Tone Clock
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_043
+  - concept_id: "9"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: No theme
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_044
+  - concept_id: "27"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_045
+  - concept_id: "13"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_046
+  - concept_id: "4"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Performing / Visual Arts
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_047
+  - concept_id: "34"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Humanity
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_048
+  - concept_id: "48"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: 19th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_049
+  - concept_id: "55"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spectralism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_050
+  - concept_id: "35"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Celebration
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_051
+  - concept_id: "56"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: New Complexity
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_052
+  - concept_id: "14"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_053
+  - concept_id: "57"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Jazz
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_054
+  - concept_id: "71"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birds
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_055
+  - concept_id: "28"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - South Pacific
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_056
+  - concept_id: "50"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Nationalism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_057
+  - concept_id: "22"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Celebration
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_058
+  - concept_id: "43"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maths and Science
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_059
+  - concept_id: "5"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_060
+  - concept_id: "64"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eclecticism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_061
+  - concept_id: "49"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Pre-19th Century Genres
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_062
+  - concept_id: "23"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori Culture
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_063
+  - concept_id: "72"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Urban NZ
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_064
+  - concept_id: "44"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Jazz
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_065
+  - concept_id: "30"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: The Elements
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_066
+  - concept_id: "65"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_067
+  - concept_id: "29"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - other
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_068
+  - concept_id: "24"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - other
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_069
+  - concept_id: "51"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eclecticism
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_070
+  - concept_id: "1"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Love
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_071
+  - concept_id: "45"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_072
+  - concept_id: "66"
+    updated_at: 2007-08-06 00:00:00
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sonic Art
+    parent_concept_id: 
+    created_at: 2007-08-06 00:00:00
+- - concepts_073
+  - concept_id: "474"
+    updated_at: 2007-08-13 10:14:22.216015
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Big band
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.16655
+- - concepts_074
+  - concept_id: "475"
+    updated_at: 2007-08-13 10:14:22.239524
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Free jazz
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.230842
+- - concepts_075
+  - concept_id: "476"
+    updated_at: 2007-08-13 10:14:22.261641
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Lounge music
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.252372
+- - concepts_076
+  - concept_id: "477"
+    updated_at: 2007-08-13 10:14:22.281798
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Blues
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.274313
+- - concepts_077
+  - concept_id: "478"
+    updated_at: 2007-08-13 10:14:22.298541
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Latin
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.292398
+- - concepts_078
+  - concept_id: "479"
+    updated_at: 2007-08-13 10:14:22.313556
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Bebop
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.307507
+- - concepts_079
+  - concept_id: "480"
+    updated_at: 2007-08-13 10:14:22.331549
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fusion
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.32252
+- - concepts_080
+  - concept_id: "481"
+    updated_at: 2007-08-13 10:14:22.35114
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: "57"
+    created_at: 2007-08-13 10:14:22.344481
+- - concepts_081
+  - concept_id: "482"
+    updated_at: 2007-08-13 10:14:22.370243
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Rock
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.363629
+- - concepts_082
+  - concept_id: "483"
+    updated_at: 2007-08-13 10:14:22.385926
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Hiphop
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.379663
+- - concepts_083
+  - concept_id: "484"
+    updated_at: 2007-08-13 10:14:22.403397
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Rap
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.397073
+- - concepts_084
+  - concept_id: "485"
+    updated_at: 2007-08-13 10:14:22.419737
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Electronica
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.413207
+- - concepts_085
+  - concept_id: "486"
+    updated_at: 2007-08-13 10:14:22.436143
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Funk
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.429642
+- - concepts_086
+  - concept_id: "487"
+    updated_at: 2007-08-13 10:14:22.452834
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular Te Reo
+    parent_concept_id: "58"
+    created_at: 2007-08-13 10:14:22.446263
+- - concepts_087
+  - concept_id: "488"
+    updated_at: 2007-08-13 10:14:22.472908
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Moteatea
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.466381
+- - concepts_088
+  - concept_id: "489"
+    updated_at: 2007-08-13 10:14:22.489218
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Waiata
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.482805
+- - concepts_089
+  - concept_id: "490"
+    updated_at: 2007-08-13 10:14:22.506909
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kapa haka
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.500464
+- - concepts_090
+  - concept_id: "491"
+    updated_at: 2007-08-13 10:14:22.529708
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Whare tapere
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.521235
+- - concepts_091
+  - concept_id: "492"
+    updated_at: 2007-08-13 10:14:22.553622
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Haka
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.542793
+- - concepts_092
+  - concept_id: "493"
+    updated_at: 2007-08-13 10:14:22.575207
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Karanga
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.566893
+- - concepts_093
+  - concept_id: "494"
+    updated_at: 2007-08-13 10:14:22.658847
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa (protest) music
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.651228
+- - concepts_094
+  - concept_id: "495"
+    updated_at: 2007-08-13 10:14:22.677039
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular cultural
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.670325
+- - concepts_095
+  - concept_id: "496"
+    updated_at: 2007-08-13 10:14:22.693158
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular Te Reo
+    parent_concept_id: "59"
+    created_at: 2007-08-13 10:14:22.686699
+- - concepts_096
+  - concept_id: "497"
+    updated_at: 2007-08-13 10:14:22.710831
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Modernism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.704541
+- - concepts_097
+  - concept_id: "498"
+    updated_at: 2007-08-13 10:14:22.726197
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Post-modernism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.720113
+- - concepts_098
+  - concept_id: "499"
+    updated_at: 2007-08-13 10:14:22.743787
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Avant-garde
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.735417
+- - concepts_099
+  - concept_id: "500"
+    updated_at: 2007-08-13 10:14:22.763136
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Darmstadt School
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.755516
+- - concepts_100
+  - concept_id: "501"
+    updated_at: 2007-08-13 10:14:22.77997
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Serialism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.773587
+- - concepts_101
+  - concept_id: "502"
+    updated_at: 2007-08-13 10:14:22.795319
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Aleatoric
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.7892
+- - concepts_102
+  - concept_id: "503"
+    updated_at: 2007-08-13 10:14:22.812259
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Minimalism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.804711
+- - concepts_103
+  - concept_id: "504"
+    updated_at: 2007-08-13 10:14:22.831793
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Expressionism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.824411
+- - concepts_104
+  - concept_id: "505"
+    updated_at: 2007-08-13 10:14:22.847355
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Neo-romanticism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.841103
+- - concepts_105
+  - concept_id: "506"
+    updated_at: 2007-08-13 10:14:22.862656
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Neo-classicism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.85632
+- - concepts_106
+  - concept_id: "507"
+    updated_at: 2007-08-13 10:14:22.880768
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Surrealism
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.874504
+- - concepts_107
+  - concept_id: "508"
+    updated_at: 2007-08-13 10:14:22.895929
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: "Musique concr\xC3\xA8te"
+    parent_concept_id: "60"
+    created_at: 2007-08-13 10:14:22.889973
+- - concepts_108
+  - concept_id: "509"
+    updated_at: 2007-08-13 10:14:22.913485
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Impressionism
+    parent_concept_id: "61"
+    created_at: 2007-08-13 10:14:22.907271
+- - concepts_109
+  - concept_id: "510"
+    updated_at: 2007-08-13 10:14:22.930127
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Romanticism
+    parent_concept_id: "61"
+    created_at: 2007-08-13 10:14:22.923377
+- - concepts_110
+  - concept_id: "511"
+    updated_at: 2007-08-13 10:14:22.948527
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Classical
+    parent_concept_id: "62"
+    created_at: 2007-08-13 10:14:22.941969
+- - concepts_111
+  - concept_id: "512"
+    updated_at: 2007-08-13 10:14:22.965889
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Baroque
+    parent_concept_id: "62"
+    created_at: 2007-08-13 10:14:22.958523
+- - concepts_112
+  - concept_id: "513"
+    updated_at: 2007-08-13 10:14:22.984235
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Renaissance
+    parent_concept_id: "62"
+    created_at: 2007-08-13 10:14:22.977772
+- - concepts_113
+  - concept_id: "514"
+    updated_at: 2007-08-13 10:14:23.007412
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mediaeval
+    parent_concept_id: "62"
+    created_at: 2007-08-13 10:14:22.998861
+- - concepts_114
+  - concept_id: "515"
+    updated_at: 2007-08-13 10:14:23.030755
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Nationalism
+    parent_concept_id: "63"
+    created_at: 2007-08-13 10:14:23.022929
+- - concepts_115
+  - concept_id: "516"
+    updated_at: 2007-08-13 10:14:23.062292
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Folk
+    parent_concept_id: "63"
+    created_at: 2007-08-13 10:14:23.053965
+- - concepts_116
+  - concept_id: "517"
+    updated_at: 2007-08-13 10:14:23.086124
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eclecticism
+    parent_concept_id: "64"
+    created_at: 2007-08-13 10:14:23.078557
+- - concepts_117
+  - concept_id: "518"
+    updated_at: 2007-08-13 10:14:23.10208
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Transcriptions
+    parent_concept_id: "64"
+    created_at: 2007-08-13 10:14:23.095799
+- - concepts_118
+  - concept_id: "519"
+    updated_at: 2007-08-13 10:14:23.119605
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: "65"
+    created_at: 2007-08-13 10:14:23.113198
+- - concepts_119
+  - concept_id: "520"
+    updated_at: 2007-08-13 10:14:23.137746
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Noise
+    parent_concept_id: "66"
+    created_at: 2007-08-13 10:14:23.131543
+- - concepts_120
+  - concept_id: "521"
+    updated_at: 2007-08-13 10:14:23.153196
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Intermedia
+    parent_concept_id: "66"
+    created_at: 2007-08-13 10:14:23.147163
+- - concepts_121
+  - concept_id: "522"
+    updated_at: 2007-08-13 10:14:23.168213
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sound design
+    parent_concept_id: "66"
+    created_at: 2007-08-13 10:14:23.162309
+- - concepts_122
+  - concept_id: "523"
+    updated_at: 2007-08-13 10:14:23.184369
+    concept_type_id: "1"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ars Electronica
+    parent_concept_id: "66"
+    created_at: 2007-08-13 10:14:23.177196
+- - concepts_123
+  - concept_id: "524"
+    updated_at: 2007-08-13 10:14:23.206099
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori - culture
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.19725
+- - concepts_124
+  - concept_id: "525"
+    updated_at: 2007-08-13 10:14:23.226141
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Purakau - legends
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.218573
+- - concepts_125
+  - concept_id: "526"
+    updated_at: 2007-08-13 10:14:23.242145
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Iwi - people
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.235866
+- - concepts_126
+  - concept_id: "527"
+    updated_at: 2007-08-13 10:14:23.258563
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa - protest
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.252067
+- - concepts_127
+  - concept_id: "528"
+    updated_at: 2007-08-13 10:14:23.274902
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Moteatea - song poetry
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.268593
+- - concepts_128
+  - concept_id: "529"
+    updated_at: 2007-08-13 10:14:23.293067
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Haka - dance
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.285407
+- - concepts_129
+  - concept_id: "530"
+    updated_at: 2007-08-13 10:14:23.309722
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Waiata - song
+    parent_concept_id: "23"
+    created_at: 2007-08-13 10:14:23.303084
+- - concepts_130
+  - concept_id: "531"
+    updated_at: 2007-08-13 10:14:23.328293
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - other
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.321892
+- - concepts_131
+  - concept_id: "532"
+    updated_at: 2007-08-13 10:14:23.344233
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.337854
+- - concepts_132
+  - concept_id: "533"
+    updated_at: 2007-08-13 10:14:23.360813
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Urban
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.353789
+- - concepts_133
+  - concept_id: "534"
+    updated_at: 2007-08-13 10:14:23.377219
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and Fauna - other
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.370913
+- - concepts_134
+  - concept_id: "535"
+    updated_at: 2007-08-13 10:14:23.493032
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - other
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.466128
+- - concepts_135
+  - concept_id: "536"
+    updated_at: 2007-08-13 10:14:23.514321
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.506317
+- - concepts_136
+  - concept_id: "537"
+    updated_at: 2007-08-13 10:14:23.534485
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Antarctica
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.526728
+- - concepts_137
+  - concept_id: "538"
+    updated_at: 2007-08-13 10:14:23.550232
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: "24"
+    created_at: 2007-08-13 10:14:23.544342
+- - concepts_138
+  - concept_id: "539"
+    updated_at: 2007-08-13 10:14:23.569768
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - NZ
+    parent_concept_id: "25"
+    created_at: 2007-08-13 10:14:23.561975
+- - concepts_139
+  - concept_id: "540"
+    updated_at: 2007-08-13 10:14:23.586598
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and fauna - NZ
+    parent_concept_id: "25"
+    created_at: 2007-08-13 10:14:23.580444
+- - concepts_140
+  - concept_id: "541"
+    updated_at: 2007-08-13 10:14:23.601971
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birds - NZ
+    parent_concept_id: "25"
+    created_at: 2007-08-13 10:14:23.59584
+- - concepts_141
+  - concept_id: "542"
+    updated_at: 2007-08-13 10:14:23.617226
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - NZ
+    parent_concept_id: "25"
+    created_at: 2007-08-13 10:14:23.611225
+- - concepts_142
+  - concept_id: "543"
+    updated_at: 2007-08-13 10:14:23.633048
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Urban - NZ
+    parent_concept_id: "25"
+    created_at: 2007-08-13 10:14:23.626962
+- - concepts_143
+  - concept_id: "544"
+    updated_at: 2007-08-13 10:14:23.650481
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and Fauna - other
+    parent_concept_id: "26"
+    created_at: 2007-08-13 10:14:23.644458
+- - concepts_144
+  - concept_id: "545"
+    updated_at: 2007-08-13 10:14:23.66858
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: "26"
+    created_at: 2007-08-13 10:14:23.659676
+- - concepts_145
+  - concept_id: "546"
+    updated_at: 2007-08-13 10:14:23.684932
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and fauna - NZ
+    parent_concept_id: "26"
+    created_at: 2007-08-13 10:14:23.678602
+- - concepts_146
+  - concept_id: "547"
+    updated_at: 2007-08-13 10:14:23.703935
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birds - NZ
+    parent_concept_id: "26"
+    created_at: 2007-08-13 10:14:23.694837
+- - concepts_147
+  - concept_id: "548"
+    updated_at: 2007-08-13 10:14:23.742461
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - NZ
+    parent_concept_id: "27"
+    created_at: 2007-08-13 10:14:23.727186
+- - concepts_148
+  - concept_id: "549"
+    updated_at: 2007-08-13 10:14:23.762386
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History - NZ
+    parent_concept_id: "27"
+    created_at: 2007-08-13 10:14:23.755219
+- - concepts_149
+  - concept_id: "550"
+    updated_at: 2007-08-13 10:14:23.7805
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: People - NZ
+    parent_concept_id: "27"
+    created_at: 2007-08-13 10:14:23.772917
+- - concepts_150
+  - concept_id: "551"
+    updated_at: 2007-08-13 10:14:23.802323
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Art and literature - NZ
+    parent_concept_id: "27"
+    created_at: 2007-08-13 10:14:23.794716
+- - concepts_151
+  - concept_id: "552"
+    updated_at: 2007-08-13 10:14:23.823415
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: South Pacific - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.816802
+- - concepts_152
+  - concept_id: "553"
+    updated_at: 2007-08-13 10:14:23.83924
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Samoa - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.832752
+- - concepts_153
+  - concept_id: "554"
+    updated_at: 2007-08-13 10:14:23.854703
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Cook Islands - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.848668
+- - concepts_154
+  - concept_id: "555"
+    updated_at: 2007-08-13 10:14:23.870441
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fiji - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.863946
+- - concepts_155
+  - concept_id: "556"
+    updated_at: 2007-08-13 10:14:23.905482
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Niue - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.885222
+- - concepts_156
+  - concept_id: "557"
+    updated_at: 2007-08-13 10:14:23.927453
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Tonga - history and culture
+    parent_concept_id: "28"
+    created_at: 2007-08-13 10:14:23.917962
+- - concepts_157
+  - concept_id: "558"
+    updated_at: 2007-08-13 10:14:23.953595
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: African
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:23.944291
+- - concepts_158
+  - concept_id: "559"
+    updated_at: 2007-08-13 10:14:23.977515
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Australian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:23.967616
+- - concepts_159
+  - concept_id: "560"
+    updated_at: 2007-08-13 10:14:24.001801
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Indonesian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:23.990972
+- - concepts_160
+  - concept_id: "561"
+    updated_at: 2007-08-13 10:14:24.019876
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Chinese
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.013604
+- - concepts_161
+  - concept_id: "562"
+    updated_at: 2007-08-13 10:14:24.035303
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Japanese
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.029329
+- - concepts_162
+  - concept_id: "563"
+    updated_at: 2007-08-13 10:14:24.050264
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Asian - other
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.044493
+- - concepts_163
+  - concept_id: "564"
+    updated_at: 2007-08-13 10:14:24.065542
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Indian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.059471
+- - concepts_164
+  - concept_id: "565"
+    updated_at: 2007-08-13 10:14:24.082241
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: French
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.075551
+- - concepts_165
+  - concept_id: "566"
+    updated_at: 2007-08-13 10:14:24.097843
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: British
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.091496
+- - concepts_166
+  - concept_id: "567"
+    updated_at: 2007-08-13 10:14:24.115475
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: German
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.109519
+- - concepts_167
+  - concept_id: "568"
+    updated_at: 2007-08-13 10:14:24.131271
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: French
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.125382
+- - concepts_168
+  - concept_id: "569"
+    updated_at: 2007-08-13 10:14:24.146664
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Italian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.14053
+- - concepts_169
+  - concept_id: "570"
+    updated_at: 2007-08-13 10:14:24.162054
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spanish
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.156038
+- - concepts_170
+  - concept_id: "571"
+    updated_at: 2007-08-13 10:14:24.176878
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Portuguese
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.170862
+- - concepts_171
+  - concept_id: "572"
+    updated_at: 2007-08-13 10:14:24.193761
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Greek
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.187632
+- - concepts_172
+  - concept_id: "573"
+    updated_at: 2007-08-13 10:14:24.210246
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Scandinavian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.203556
+- - concepts_173
+  - concept_id: "574"
+    updated_at: 2007-08-13 10:14:24.225833
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Russian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.219706
+- - concepts_174
+  - concept_id: "575"
+    updated_at: 2007-08-13 10:14:24.241306
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Baltic States
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.23497
+- - concepts_175
+  - concept_id: "576"
+    updated_at: 2007-08-13 10:14:24.333255
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Balkan States
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.325784
+- - concepts_176
+  - concept_id: "577"
+    updated_at: 2007-08-13 10:14:24.35208
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eastern European - other
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.343328
+- - concepts_177
+  - concept_id: "578"
+    updated_at: 2007-08-13 10:14:24.37353
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Middle East
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.365253
+- - concepts_178
+  - concept_id: "579"
+    updated_at: 2007-08-13 10:14:24.394866
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Canadian
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.386349
+- - concepts_179
+  - concept_id: "580"
+    updated_at: 2007-08-13 10:14:24.415209
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: American - USA
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.407062
+- - concepts_180
+  - concept_id: "581"
+    updated_at: 2007-08-13 10:14:24.438533
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Latin American
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.428811
+- - concepts_181
+  - concept_id: "582"
+    updated_at: 2007-08-13 10:14:24.455152
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Jewish
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.448937
+- - concepts_182
+  - concept_id: "583"
+    updated_at: 2007-08-13 10:14:24.470925
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ancient civilisations
+    parent_concept_id: "29"
+    created_at: 2007-08-13 10:14:24.4649
+- - concepts_183
+  - concept_id: "584"
+    updated_at: 2007-08-13 10:14:24.488368
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: The elements
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.482259
+- - concepts_184
+  - concept_id: "585"
+    updated_at: 2007-08-13 10:14:24.503658
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fire
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.497671
+- - concepts_185
+  - concept_id: "586"
+    updated_at: 2007-08-13 10:14:24.518864
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - other
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.512762
+- - concepts_186
+  - concept_id: "587"
+    updated_at: 2007-08-13 10:14:24.535104
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - NZ
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.528339
+- - concepts_187
+  - concept_id: "588"
+    updated_at: 2007-08-13 10:14:24.552546
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.546416
+- - concepts_188
+  - concept_id: "589"
+    updated_at: 2007-08-13 10:14:24.567995
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Air and Sky
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.562011
+- - concepts_189
+  - concept_id: "590"
+    updated_at: 2007-08-13 10:14:24.583542
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Weather
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.577311
+- - concepts_190
+  - concept_id: "591"
+    updated_at: 2007-08-13 10:14:24.599037
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Seasons
+    parent_concept_id: "30"
+    created_at: 2007-08-13 10:14:24.592898
+- - concepts_191
+  - concept_id: "592"
+    updated_at: 2007-08-13 10:14:24.615975
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.609823
+- - concepts_192
+  - concept_id: "593"
+    updated_at: 2007-08-13 10:14:24.632314
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Easter
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.625509
+- - concepts_193
+  - concept_id: "594"
+    updated_at: 2007-08-13 10:14:24.650293
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Bible
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.643174
+- - concepts_194
+  - concept_id: "595"
+    updated_at: 2007-08-13 10:14:24.665711
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Religious
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.659628
+- - concepts_195
+  - concept_id: "596"
+    updated_at: 2007-08-13 10:14:24.680759
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spiritual
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.674681
+- - concepts_196
+  - concept_id: "597"
+    updated_at: 2007-08-13 10:14:24.695196
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Christmas
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.689437
+- - concepts_197
+  - concept_id: "598"
+    updated_at: 2007-08-13 10:14:24.710759
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Heaven and hell
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.704585
+- - concepts_198
+  - concept_id: "599"
+    updated_at: 2007-08-13 10:14:24.728205
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birth
+    parent_concept_id: "31"
+    created_at: 2007-08-13 10:14:24.721954
+- - concepts_199
+  - concept_id: "600"
+    updated_at: 2007-08-13 10:14:24.778433
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Time
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.761601
+- - concepts_200
+  - concept_id: "601"
+    updated_at: 2007-08-13 10:14:24.793873
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Seasons
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.78795
+- - concepts_201
+  - concept_id: "602"
+    updated_at: 2007-08-13 10:14:24.862545
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.803266
+- - concepts_202
+  - concept_id: "603"
+    updated_at: 2007-08-13 10:14:24.903342
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.875769
+- - concepts_203
+  - concept_id: "604"
+    updated_at: 2007-08-13 10:14:24.919794
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Night
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.9132
+- - concepts_204
+  - concept_id: "605"
+    updated_at: 2007-08-13 10:14:24.936348
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Day
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.929976
+- - concepts_205
+  - concept_id: "606"
+    updated_at: 2007-08-13 10:14:24.952887
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.946422
+- - concepts_206
+  - concept_id: "607"
+    updated_at: 2007-08-13 10:14:24.976822
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.963763
+- - concepts_207
+  - concept_id: "608"
+    updated_at: 2007-08-13 10:14:24.993884
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sleep
+    parent_concept_id: "32"
+    created_at: 2007-08-13 10:14:24.986902
+- - concepts_208
+  - concept_id: "609"
+    updated_at: 2007-08-13 10:14:25.012915
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Age
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.005464
+- - concepts_209
+  - concept_id: "610"
+    updated_at: 2007-08-13 10:14:25.028521
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birth
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.022368
+- - concepts_210
+  - concept_id: "611"
+    updated_at: 2007-08-13 10:14:25.043724
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Children/youth
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.037508
+- - concepts_211
+  - concept_id: "612"
+    updated_at: 2007-08-13 10:14:25.05862
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Life
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.052727
+- - concepts_212
+  - concept_id: "613"
+    updated_at: 2007-08-13 10:14:25.074886
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Death
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.068797
+- - concepts_213
+  - concept_id: "614"
+    updated_at: 2007-08-13 10:14:25.090349
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sleep
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.084431
+- - concepts_214
+  - concept_id: "615"
+    updated_at: 2007-08-13 10:14:25.108421
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Old Age
+    parent_concept_id: "33"
+    created_at: 2007-08-13 10:14:25.100989
+- - concepts_215
+  - concept_id: "616"
+    updated_at: 2007-08-13 10:14:25.126341
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Humanity
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.119693
+- - concepts_216
+  - concept_id: "617"
+    updated_at: 2007-08-13 10:14:25.217686
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Women
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.135761
+- - concepts_217
+  - concept_id: "618"
+    updated_at: 2007-08-13 10:14:25.234469
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Men
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.228278
+- - concepts_218
+  - concept_id: "619"
+    updated_at: 2007-08-13 10:14:25.251198
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Relationships
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.24464
+- - concepts_219
+  - concept_id: "620"
+    updated_at: 2007-08-13 10:14:25.266919
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sexuality
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.260679
+- - concepts_220
+  - concept_id: "621"
+    updated_at: 2007-08-13 10:14:25.282443
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Change
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.276501
+- - concepts_221
+  - concept_id: "622"
+    updated_at: 2007-08-13 10:14:25.298171
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mental wellbeing
+    parent_concept_id: "34"
+    created_at: 2007-08-13 10:14:25.292039
+- - concepts_222
+  - concept_id: "623"
+    updated_at: 2007-08-13 10:14:25.3252
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Celebration
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.3144
+- - concepts_223
+  - concept_id: "624"
+    updated_at: 2007-08-13 10:14:25.341391
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.335331
+- - concepts_224
+  - concept_id: "625"
+    updated_at: 2007-08-13 10:14:25.357643
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.351026
+- - concepts_225
+  - concept_id: "626"
+    updated_at: 2007-08-13 10:14:25.373351
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.367177
+- - concepts_226
+  - concept_id: "627"
+    updated_at: 2007-08-13 10:14:25.388622
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Christmas
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.382805
+- - concepts_227
+  - concept_id: "628"
+    updated_at: 2007-08-13 10:14:25.405851
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ceremony
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.39969
+- - concepts_228
+  - concept_id: "629"
+    updated_at: 2007-08-13 10:14:25.421869
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Play / Games
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.415309
+- - concepts_229
+  - concept_id: "630"
+    updated_at: 2007-08-13 10:14:25.43883
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Commemoration
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.432822
+- - concepts_230
+  - concept_id: "631"
+    updated_at: 2007-08-13 10:14:25.453865
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Food
+    parent_concept_id: "35"
+    created_at: 2007-08-13 10:14:25.448001
+- - concepts_231
+  - concept_id: "632"
+    updated_at: 2007-08-13 10:14:25.471879
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Love
+    parent_concept_id: "36"
+    created_at: 2007-08-13 10:14:25.466086
+- - concepts_232
+  - concept_id: "633"
+    updated_at: 2007-08-13 10:14:25.489443
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: "36"
+    created_at: 2007-08-13 10:14:25.481063
+- - concepts_233
+  - concept_id: "634"
+    updated_at: 2007-08-13 10:14:25.509541
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Peace
+    parent_concept_id: "36"
+    created_at: 2007-08-13 10:14:25.501837
+- - concepts_234
+  - concept_id: "635"
+    updated_at: 2007-08-13 10:14:25.525416
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Good and Evil
+    parent_concept_id: "36"
+    created_at: 2007-08-13 10:14:25.51952
+- - concepts_235
+  - concept_id: "636"
+    updated_at: 2007-08-13 10:14:25.542758
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Beauty
+    parent_concept_id: "36"
+    created_at: 2007-08-13 10:14:25.536198
+- - concepts_236
+  - concept_id: "637"
+    updated_at: 2007-08-13 10:14:25.560363
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Purakau - legends
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.55425
+- - concepts_237
+  - concept_id: "638"
+    updated_at: 2007-08-13 10:14:25.576269
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Myth
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.570074
+- - concepts_238
+  - concept_id: "639"
+    updated_at: 2007-08-13 10:14:25.59156
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Good and Evil
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.5855
+- - concepts_239
+  - concept_id: "640"
+    updated_at: 2007-08-13 10:14:25.60702
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Heaven and hell
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.600706
+- - concepts_240
+  - concept_id: "641"
+    updated_at: 2007-08-13 10:14:25.622395
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Play / Games
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.616027
+- - concepts_241
+  - concept_id: "642"
+    updated_at: 2007-08-13 10:14:25.63946
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fairytale / folktale
+    parent_concept_id: "37"
+    created_at: 2007-08-13 10:14:25.632738
+- - concepts_242
+  - concept_id: "643"
+    updated_at: 2007-08-13 10:14:25.658943
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Language and Literature
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.652598
+- - concepts_243
+  - concept_id: "644"
+    updated_at: 2007-08-13 10:14:25.679385
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Shakespeare
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.672202
+- - concepts_244
+  - concept_id: "645"
+    updated_at: 2007-08-13 10:14:25.695302
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fairytale / folktale
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.689291
+- - concepts_245
+  - concept_id: "646"
+    updated_at: 2007-08-13 10:14:25.762135
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Art and literature - NZ
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.754466
+- - concepts_246
+  - concept_id: "647"
+    updated_at: 2007-08-13 10:14:25.778535
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Theatre
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.771372
+- - concepts_247
+  - concept_id: "648"
+    updated_at: 2007-08-13 10:14:25.797005
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Greek theatre
+    parent_concept_id: "38"
+    created_at: 2007-08-13 10:14:25.789635
+- - concepts_248
+  - concept_id: "649"
+    updated_at: 2007-08-13 10:14:25.818607
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Music
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.811763
+- - concepts_249
+  - concept_id: "650"
+    updated_at: 2007-08-13 10:14:25.833474
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Dance
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.827566
+- - concepts_250
+  - concept_id: "651"
+    updated_at: 2007-08-13 10:14:25.849714
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Theatre
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.84246
+- - concepts_251
+  - concept_id: "652"
+    updated_at: 2007-08-13 10:14:25.866605
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Shakespeare
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.86041
+- - concepts_252
+  - concept_id: "653"
+    updated_at: 2007-08-13 10:14:25.882681
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Greek theatre
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.876486
+- - concepts_253
+  - concept_id: "654"
+    updated_at: 2007-08-13 10:14:25.897837
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sculpture/ painting
+    parent_concept_id: "39"
+    created_at: 2007-08-13 10:14:25.891671
+- - concepts_254
+  - concept_id: "655"
+    updated_at: 2007-08-13 10:14:25.921432
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:25.91376
+- - concepts_255
+  - concept_id: "656"
+    updated_at: 2007-08-13 10:14:25.938372
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Peace
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:25.931801
+- - concepts_256
+  - concept_id: "657"
+    updated_at: 2007-08-13 10:14:25.955964
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: War
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:25.948136
+- - concepts_257
+  - concept_id: "658"
+    updated_at: 2007-08-13 10:14:25.973984
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:25.967436
+- - concepts_258
+  - concept_id: "659"
+    updated_at: 2007-08-13 10:14:26.088578
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Race Relations
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:26.060315
+- - concepts_259
+  - concept_id: "660"
+    updated_at: 2007-08-13 10:14:26.104764
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa - protest
+    parent_concept_id: "40"
+    created_at: 2007-08-13 10:14:26.098199
+- - concepts_260
+  - concept_id: "661"
+    updated_at: 2007-08-13 10:14:26.123257
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.116507
+- - concepts_261
+  - concept_id: "662"
+    updated_at: 2007-08-13 10:14:26.138981
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: War
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.132907
+- - concepts_262
+  - concept_id: "663"
+    updated_at: 2007-08-13 10:14:26.154676
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.148724
+- - concepts_263
+  - concept_id: "664"
+    updated_at: 2007-08-13 10:14:26.170024
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.163852
+- - concepts_264
+  - concept_id: "665"
+    updated_at: 2007-08-13 10:14:26.2024
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ancient civilisations
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.179391
+- - concepts_265
+  - concept_id: "666"
+    updated_at: 2007-08-13 10:14:26.222397
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History - NZ
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.215689
+- - concepts_266
+  - concept_id: "667"
+    updated_at: 2007-08-13 10:14:26.238267
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Commemoration
+    parent_concept_id: "41"
+    created_at: 2007-08-13 10:14:26.231511
+- - concepts_267
+  - concept_id: "668"
+    updated_at: 2007-08-13 10:14:26.255902
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "42"
+    created_at: 2007-08-13 10:14:26.249984
+- - concepts_268
+  - concept_id: "669"
+    updated_at: 2007-08-13 10:14:26.271252
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "42"
+    created_at: 2007-08-13 10:14:26.265277
+- - concepts_269
+  - concept_id: "670"
+    updated_at: 2007-08-13 10:14:26.286401
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Migration
+    parent_concept_id: "42"
+    created_at: 2007-08-13 10:14:26.280425
+- - concepts_270
+  - concept_id: "671"
+    updated_at: 2007-08-13 10:14:26.3053
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mathematics
+    parent_concept_id: "43"
+    created_at: 2007-08-13 10:14:26.297919
+- - concepts_271
+  - concept_id: "672"
+    updated_at: 2007-08-13 10:14:26.322261
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Science
+    parent_concept_id: "43"
+    created_at: 2007-08-13 10:14:26.316131
+- - concepts_272
+  - concept_id: "673"
+    updated_at: 2007-08-13 10:14:26.337525
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "43"
+    created_at: 2007-08-13 10:14:26.33145
+- - concepts_273
+  - concept_id: "674"
+    updated_at: 2007-08-13 10:14:26.353166
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "43"
+    created_at: 2007-08-13 10:14:26.347143
+- - concepts_274
+  - concept_id: "675"
+    updated_at: 2007-08-13 10:14:26.370733
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Big band
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.364582
+- - concepts_275
+  - concept_id: "676"
+    updated_at: 2007-08-13 10:14:26.392451
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Free jazz
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.384456
+- - concepts_276
+  - concept_id: "677"
+    updated_at: 2007-08-13 10:14:26.415193
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Lounge music
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.406533
+- - concepts_277
+  - concept_id: "678"
+    updated_at: 2007-08-13 10:14:26.430651
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Blues
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.424752
+- - concepts_278
+  - concept_id: "679"
+    updated_at: 2007-08-13 10:14:26.446066
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Latin
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.439922
+- - concepts_279
+  - concept_id: "680"
+    updated_at: 2007-08-13 10:14:26.461295
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Bebop
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.455055
+- - concepts_280
+  - concept_id: "681"
+    updated_at: 2007-08-13 10:14:26.476691
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fusion
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.470501
+- - concepts_281
+  - concept_id: "682"
+    updated_at: 2007-08-13 10:14:26.491832
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: "44"
+    created_at: 2007-08-13 10:14:26.48584
+- - concepts_282
+  - concept_id: "683"
+    updated_at: 2007-08-13 10:14:26.509842
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Rock
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.503121
+- - concepts_283
+  - concept_id: "684"
+    updated_at: 2007-08-13 10:14:26.526282
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Hiphop
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.519574
+- - concepts_284
+  - concept_id: "685"
+    updated_at: 2007-08-13 10:14:26.541917
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Rap
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.535728
+- - concepts_285
+  - concept_id: "686"
+    updated_at: 2007-08-13 10:14:26.55695
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Electronica
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.550819
+- - concepts_286
+  - concept_id: "687"
+    updated_at: 2007-08-13 10:14:26.578264
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Funk
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.570343
+- - concepts_287
+  - concept_id: "688"
+    updated_at: 2007-08-13 10:14:26.598283
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular Te Reo
+    parent_concept_id: "45"
+    created_at: 2007-08-13 10:14:26.590421
+- - concepts_288
+  - concept_id: "689"
+    updated_at: 2007-08-13 10:14:26.620006
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Moteatea
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.613766
+- - concepts_289
+  - concept_id: "690"
+    updated_at: 2007-08-13 10:14:26.636947
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Waiata
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.630611
+- - concepts_290
+  - concept_id: "691"
+    updated_at: 2007-08-13 10:14:26.652754
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kapa haka
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.646851
+- - concepts_291
+  - concept_id: "692"
+    updated_at: 2007-08-13 10:14:26.667965
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Whare tapere
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.6621
+- - concepts_292
+  - concept_id: "693"
+    updated_at: 2007-08-13 10:14:26.694855
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Haka
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.676989
+- - concepts_293
+  - concept_id: "694"
+    updated_at: 2007-08-13 10:14:26.716562
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Karanga
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.707371
+- - concepts_294
+  - concept_id: "695"
+    updated_at: 2007-08-13 10:14:26.732964
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa (protest) music
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.72693
+- - concepts_295
+  - concept_id: "696"
+    updated_at: 2007-08-13 10:14:26.749942
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular cultural
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.742965
+- - concepts_296
+  - concept_id: "697"
+    updated_at: 2007-08-13 10:14:26.765825
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Popular Te Reo
+    parent_concept_id: "46"
+    created_at: 2007-08-13 10:14:26.759173
+- - concepts_297
+  - concept_id: "698"
+    updated_at: 2007-08-13 10:14:26.783415
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Modernism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.777157
+- - concepts_298
+  - concept_id: "699"
+    updated_at: 2007-08-13 10:14:26.798468
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Post-modernism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.792276
+- - concepts_299
+  - concept_id: "700"
+    updated_at: 2007-08-13 10:14:26.891181
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Avant-garde
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.884197
+- - concepts_300
+  - concept_id: "701"
+    updated_at: 2007-08-13 10:14:26.907757
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Darmstadt School
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.901574
+- - concepts_301
+  - concept_id: "702"
+    updated_at: 2007-08-13 10:14:26.923928
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Serialism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.917328
+- - concepts_302
+  - concept_id: "703"
+    updated_at: 2007-08-13 10:14:26.941079
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Aleatoric
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.934186
+- - concepts_303
+  - concept_id: "704"
+    updated_at: 2007-08-13 10:14:26.958151
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Minimalism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.951239
+- - concepts_304
+  - concept_id: "705"
+    updated_at: 2007-08-13 10:14:26.974541
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Expressionism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.968004
+- - concepts_305
+  - concept_id: "706"
+    updated_at: 2007-08-13 10:14:26.992879
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Neo-romanticism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:26.985837
+- - concepts_306
+  - concept_id: "707"
+    updated_at: 2007-08-13 10:14:27.008475
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Neo-classicism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:27.002475
+- - concepts_307
+  - concept_id: "708"
+    updated_at: 2007-08-13 10:14:27.030361
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Surrealism
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:27.022213
+- - concepts_308
+  - concept_id: "709"
+    updated_at: 2007-08-13 10:14:27.050732
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: "Musique concr\xC3\xA8te"
+    parent_concept_id: "47"
+    created_at: 2007-08-13 10:14:27.042881
+- - concepts_309
+  - concept_id: "710"
+    updated_at: 2007-08-13 10:14:27.071936
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Impressionism
+    parent_concept_id: "48"
+    created_at: 2007-08-13 10:14:27.065055
+- - concepts_310
+  - concept_id: "711"
+    updated_at: 2007-08-13 10:14:27.089544
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Romanticism
+    parent_concept_id: "48"
+    created_at: 2007-08-13 10:14:27.081422
+- - concepts_311
+  - concept_id: "712"
+    updated_at: 2007-08-13 10:14:27.109092
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Classical
+    parent_concept_id: "49"
+    created_at: 2007-08-13 10:14:27.102866
+- - concepts_312
+  - concept_id: "713"
+    updated_at: 2007-08-13 10:14:27.124814
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Baroque
+    parent_concept_id: "49"
+    created_at: 2007-08-13 10:14:27.118243
+- - concepts_313
+  - concept_id: "714"
+    updated_at: 2007-08-13 10:14:27.140275
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Renaissance
+    parent_concept_id: "49"
+    created_at: 2007-08-13 10:14:27.134299
+- - concepts_314
+  - concept_id: "715"
+    updated_at: 2007-08-13 10:14:27.155411
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mediaeval
+    parent_concept_id: "49"
+    created_at: 2007-08-13 10:14:27.149498
+- - concepts_315
+  - concept_id: "716"
+    updated_at: 2007-08-13 10:14:27.172769
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Nationalism
+    parent_concept_id: "50"
+    created_at: 2007-08-13 10:14:27.166704
+- - concepts_316
+  - concept_id: "717"
+    updated_at: 2007-08-13 10:14:27.189097
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Folk
+    parent_concept_id: "50"
+    created_at: 2007-08-13 10:14:27.181875
+- - concepts_317
+  - concept_id: "718"
+    updated_at: 2007-08-13 10:14:27.207816
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eclecticism
+    parent_concept_id: "51"
+    created_at: 2007-08-13 10:14:27.201409
+- - concepts_318
+  - concept_id: "719"
+    updated_at: 2007-08-13 10:14:27.229695
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Transcriptions
+    parent_concept_id: "51"
+    created_at: 2007-08-13 10:14:27.221293
+- - concepts_319
+  - concept_id: "720"
+    updated_at: 2007-08-13 10:14:27.25086
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Improvisation
+    parent_concept_id: "52"
+    created_at: 2007-08-13 10:14:27.244755
+- - concepts_320
+  - concept_id: "721"
+    updated_at: 2007-08-13 10:14:27.268638
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Noise
+    parent_concept_id: "53"
+    created_at: 2007-08-13 10:14:27.262363
+- - concepts_321
+  - concept_id: "722"
+    updated_at: 2007-08-13 10:14:27.283819
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Intermedia
+    parent_concept_id: "53"
+    created_at: 2007-08-13 10:14:27.277864
+- - concepts_322
+  - concept_id: "723"
+    updated_at: 2007-08-13 10:14:27.300031
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sound design
+    parent_concept_id: "53"
+    created_at: 2007-08-13 10:14:27.293745
+- - concepts_323
+  - concept_id: "724"
+    updated_at: 2007-08-13 10:14:27.316459
+    concept_type_id: "2"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ars Electronica
+    parent_concept_id: "53"
+    created_at: 2007-08-13 10:14:27.309793
+- - concepts_324
+  - concept_id: "725"
+    updated_at: 2007-08-13 10:14:27.334618
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Maori - culture
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.328259
+- - concepts_325
+  - concept_id: "726"
+    updated_at: 2007-08-13 10:14:27.350171
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Purakau - legends
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.343964
+- - concepts_326
+  - concept_id: "727"
+    updated_at: 2007-08-13 10:14:27.365026
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Iwi - people
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.35906
+- - concepts_327
+  - concept_id: "728"
+    updated_at: 2007-08-13 10:14:27.380569
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa - protest
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.37452
+- - concepts_328
+  - concept_id: "729"
+    updated_at: 2007-08-13 10:14:27.397156
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Moteatea - song poetry
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.389778
+- - concepts_329
+  - concept_id: "730"
+    updated_at: 2007-08-13 10:14:27.412401
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Haka - dance
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.406433
+- - concepts_330
+  - concept_id: "731"
+    updated_at: 2007-08-13 10:14:27.429372
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Waiata - song
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.423321
+- - concepts_331
+  - concept_id: "732"
+    updated_at: 2007-08-13 10:14:27.444822
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation FIXME
+    parent_concept_id: "10"
+    created_at: 2007-08-13 10:14:27.438566
+- - concepts_332
+  - concept_id: "733"
+    updated_at: 2007-08-13 10:14:27.462646
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - other
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.456205
+- - concepts_333
+  - concept_id: "734"
+    updated_at: 2007-08-13 10:14:27.477491
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.471734
+- - concepts_334
+  - concept_id: "735"
+    updated_at: 2007-08-13 10:14:27.492497
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Urban
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.486484
+- - concepts_335
+  - concept_id: "736"
+    updated_at: 2007-08-13 10:14:27.509822
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and Fauna - other
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.50313
+- - concepts_336
+  - concept_id: "737"
+    updated_at: 2007-08-13 10:14:27.564503
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - other
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.556246
+- - concepts_337
+  - concept_id: "738"
+    updated_at: 2007-08-13 10:14:27.584064
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.577269
+- - concepts_338
+  - concept_id: "739"
+    updated_at: 2007-08-13 10:14:27.60023
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Antarctica
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.593215
+- - concepts_339
+  - concept_id: "740"
+    updated_at: 2007-08-13 10:14:27.615911
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: "11"
+    created_at: 2007-08-13 10:14:27.609926
+- - concepts_340
+  - concept_id: "741"
+    updated_at: 2007-08-13 10:14:27.710302
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Landscape - NZ
+    parent_concept_id: "12"
+    created_at: 2007-08-13 10:14:27.703146
+- - concepts_341
+  - concept_id: "742"
+    updated_at: 2007-08-13 10:14:27.726237
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and fauna - NZ
+    parent_concept_id: "12"
+    created_at: 2007-08-13 10:14:27.719979
+- - concepts_342
+  - concept_id: "743"
+    updated_at: 2007-08-13 10:14:27.742243
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birds - NZ
+    parent_concept_id: "12"
+    created_at: 2007-08-13 10:14:27.735889
+- - concepts_343
+  - concept_id: "744"
+    updated_at: 2007-08-13 10:14:27.757937
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - NZ
+    parent_concept_id: "12"
+    created_at: 2007-08-13 10:14:27.751629
+- - concepts_344
+  - concept_id: "745"
+    updated_at: 2007-08-13 10:14:27.773835
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Urban - NZ
+    parent_concept_id: "12"
+    created_at: 2007-08-13 10:14:27.767313
+- - concepts_345
+  - concept_id: "746"
+    updated_at: 2007-08-13 10:14:27.794922
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and Fauna - other
+    parent_concept_id: "13"
+    created_at: 2007-08-13 10:14:27.787543
+- - concepts_346
+  - concept_id: "747"
+    updated_at: 2007-08-13 10:14:27.821446
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Natural History
+    parent_concept_id: "13"
+    created_at: 2007-08-13 10:14:27.814316
+- - concepts_347
+  - concept_id: "748"
+    updated_at: 2007-08-13 10:14:27.837652
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Flora and fauna - NZ
+    parent_concept_id: "13"
+    created_at: 2007-08-13 10:14:27.831356
+- - concepts_348
+  - concept_id: "749"
+    updated_at: 2007-08-13 10:14:27.852925
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birds - NZ
+    parent_concept_id: "13"
+    created_at: 2007-08-13 10:14:27.846951
+- - concepts_349
+  - concept_id: "750"
+    updated_at: 2007-08-13 10:14:27.86991
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Culture - NZ
+    parent_concept_id: "14"
+    created_at: 2007-08-13 10:14:27.864013
+- - concepts_350
+  - concept_id: "751"
+    updated_at: 2007-08-13 10:14:27.885766
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History - NZ
+    parent_concept_id: "14"
+    created_at: 2007-08-13 10:14:27.879639
+- - concepts_351
+  - concept_id: "752"
+    updated_at: 2007-08-13 10:14:27.901019
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: People - NZ
+    parent_concept_id: "14"
+    created_at: 2007-08-13 10:14:27.895021
+- - concepts_352
+  - concept_id: "753"
+    updated_at: 2007-08-13 10:14:27.923905
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Art and literature - NZ
+    parent_concept_id: "14"
+    created_at: 2007-08-13 10:14:27.915692
+- - concepts_353
+  - concept_id: "754"
+    updated_at: 2007-08-13 10:14:27.943296
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: South Pacific - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:27.936653
+- - concepts_354
+  - concept_id: "755"
+    updated_at: 2007-08-13 10:14:27.960544
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Samoa - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:27.953589
+- - concepts_355
+  - concept_id: "756"
+    updated_at: 2007-08-13 10:14:27.977368
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Cook Islands - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:27.970504
+- - concepts_356
+  - concept_id: "757"
+    updated_at: 2007-08-13 10:14:27.99293
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fiji - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:27.986986
+- - concepts_357
+  - concept_id: "758"
+    updated_at: 2007-08-13 10:14:28.008059
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Niue - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:28.002054
+- - concepts_358
+  - concept_id: "759"
+    updated_at: 2007-08-13 10:14:28.025753
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Tonga - history and culture
+    parent_concept_id: "15"
+    created_at: 2007-08-13 10:14:28.018485
+- - concepts_359
+  - concept_id: "760"
+    updated_at: 2007-08-13 10:14:28.043487
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: African
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.037529
+- - concepts_360
+  - concept_id: "761"
+    updated_at: 2007-08-13 10:14:28.058455
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Australian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.052314
+- - concepts_361
+  - concept_id: "762"
+    updated_at: 2007-08-13 10:14:28.073779
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Indonesian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.067571
+- - concepts_362
+  - concept_id: "763"
+    updated_at: 2007-08-13 10:14:28.089753
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Chinese
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.082865
+- - concepts_363
+  - concept_id: "764"
+    updated_at: 2007-08-13 10:14:28.104995
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Japanese
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.098781
+- - concepts_364
+  - concept_id: "765"
+    updated_at: 2007-08-13 10:14:28.122049
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Asian - other
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.115682
+- - concepts_365
+  - concept_id: "766"
+    updated_at: 2007-08-13 10:14:28.139207
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Indian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.133006
+- - concepts_366
+  - concept_id: "767"
+    updated_at: 2007-08-13 10:14:28.168096
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: French
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.148794
+- - concepts_367
+  - concept_id: "768"
+    updated_at: 2007-08-13 10:14:28.233839
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: British
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.215895
+- - concepts_368
+  - concept_id: "769"
+    updated_at: 2007-08-13 10:14:28.254773
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: German
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.246672
+- - concepts_369
+  - concept_id: "770"
+    updated_at: 2007-08-13 10:14:28.275138
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: French
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.267163
+- - concepts_370
+  - concept_id: "771"
+    updated_at: 2007-08-13 10:14:28.295493
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Italian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.287577
+- - concepts_371
+  - concept_id: "772"
+    updated_at: 2007-08-13 10:14:28.314525
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spanish
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.307577
+- - concepts_372
+  - concept_id: "773"
+    updated_at: 2007-08-13 10:14:28.331112
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Portuguese
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.324852
+- - concepts_373
+  - concept_id: "774"
+    updated_at: 2007-08-13 10:14:28.349139
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Greek
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.342991
+- - concepts_374
+  - concept_id: "775"
+    updated_at: 2007-08-13 10:14:28.364388
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Scandinavian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.358471
+- - concepts_375
+  - concept_id: "776"
+    updated_at: 2007-08-13 10:14:28.485859
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Russian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.477729
+- - concepts_376
+  - concept_id: "777"
+    updated_at: 2007-08-13 10:14:28.504416
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Baltic States
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.498117
+- - concepts_377
+  - concept_id: "778"
+    updated_at: 2007-08-13 10:14:28.519768
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Balkan States
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.513576
+- - concepts_378
+  - concept_id: "779"
+    updated_at: 2007-08-13 10:14:28.534895
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Eastern European - other
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.528766
+- - concepts_379
+  - concept_id: "780"
+    updated_at: 2007-08-13 10:14:28.550559
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Middle East
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.544129
+- - concepts_380
+  - concept_id: "781"
+    updated_at: 2007-08-13 10:14:28.566549
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Canadian
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.560195
+- - concepts_381
+  - concept_id: "782"
+    updated_at: 2007-08-13 10:14:28.658547
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: American - USA
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.651148
+- - concepts_382
+  - concept_id: "783"
+    updated_at: 2007-08-13 10:14:28.6764
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Latin American
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.668846
+- - concepts_383
+  - concept_id: "784"
+    updated_at: 2007-08-13 10:14:28.692434
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Jewish
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.686313
+- - concepts_384
+  - concept_id: "785"
+    updated_at: 2007-08-13 10:14:28.713456
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ancient civilisations
+    parent_concept_id: "16"
+    created_at: 2007-08-13 10:14:28.705682
+- - concepts_385
+  - concept_id: "786"
+    updated_at: 2007-08-13 10:14:28.731152
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: The elements
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.72501
+- - concepts_386
+  - concept_id: "787"
+    updated_at: 2007-08-13 10:14:28.746236
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fire
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.740345
+- - concepts_387
+  - concept_id: "788"
+    updated_at: 2007-08-13 10:14:28.762517
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - other
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.755317
+- - concepts_388
+  - concept_id: "789"
+    updated_at: 2007-08-13 10:14:28.779311
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sea and water - NZ
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.772494
+- - concepts_389
+  - concept_id: "790"
+    updated_at: 2007-08-13 10:14:28.794927
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.788599
+- - concepts_390
+  - concept_id: "791"
+    updated_at: 2007-08-13 10:14:28.810499
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Air and Sky
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.804579
+- - concepts_391
+  - concept_id: "792"
+    updated_at: 2007-08-13 10:14:28.825929
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Weather
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.819861
+- - concepts_392
+  - concept_id: "793"
+    updated_at: 2007-08-13 10:14:28.841362
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Seasons
+    parent_concept_id: "17"
+    created_at: 2007-08-13 10:14:28.835331
+- - concepts_393
+  - concept_id: "794"
+    updated_at: 2007-08-13 10:14:28.859327
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Time
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.853315
+- - concepts_394
+  - concept_id: "795"
+    updated_at: 2007-08-13 10:14:28.878115
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Seasons
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.86943
+- - concepts_395
+  - concept_id: "796"
+    updated_at: 2007-08-13 10:14:28.894804
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.888123
+- - concepts_396
+  - concept_id: "797"
+    updated_at: 2007-08-13 10:14:28.910221
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.904203
+- - concepts_397
+  - concept_id: "798"
+    updated_at: 2007-08-13 10:14:28.927427
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Night
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.920721
+- - concepts_398
+  - concept_id: "799"
+    updated_at: 2007-08-13 10:14:28.943909
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Day
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.937342
+- - concepts_399
+  - concept_id: "800"
+    updated_at: 2007-08-13 10:14:28.960082
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.953475
+- - concepts_400
+  - concept_id: "801"
+    updated_at: 2007-08-13 10:14:28.977412
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.971146
+- - concepts_401
+  - concept_id: "802"
+    updated_at: 2007-08-13 10:14:28.994226
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sleep
+    parent_concept_id: "19"
+    created_at: 2007-08-13 10:14:28.98778
+- - concepts_402
+  - concept_id: "803"
+    updated_at: 2007-08-13 10:14:29.011616
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Age
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.005481
+- - concepts_403
+  - concept_id: "804"
+    updated_at: 2007-08-13 10:14:29.033258
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birth
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.025168
+- - concepts_404
+  - concept_id: "805"
+    updated_at: 2007-08-13 10:14:29.049964
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Children/youth
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.043901
+- - concepts_405
+  - concept_id: "806"
+    updated_at: 2007-08-13 10:14:29.06512
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Life
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.059013
+- - concepts_406
+  - concept_id: "807"
+    updated_at: 2007-08-13 10:14:29.081854
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Death
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.075643
+- - concepts_407
+  - concept_id: "808"
+    updated_at: 2007-08-13 10:14:29.097981
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sleep
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.09181
+- - concepts_408
+  - concept_id: "809"
+    updated_at: 2007-08-13 10:14:29.113336
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Old Age
+    parent_concept_id: "20"
+    created_at: 2007-08-13 10:14:29.1072
+- - concepts_409
+  - concept_id: "810"
+    updated_at: 2007-08-13 10:14:29.131209
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Humanity
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.1248
+- - concepts_410
+  - concept_id: "811"
+    updated_at: 2007-08-13 10:14:29.149405
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Women
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.14049
+- - concepts_411
+  - concept_id: "812"
+    updated_at: 2007-08-13 10:14:29.171534
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Men
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.162041
+- - concepts_412
+  - concept_id: "813"
+    updated_at: 2007-08-13 10:14:29.191251
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Relationships
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.184175
+- - concepts_413
+  - concept_id: "814"
+    updated_at: 2007-08-13 10:14:29.206579
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sexuality
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.200585
+- - concepts_414
+  - concept_id: "815"
+    updated_at: 2007-08-13 10:14:29.221894
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Change
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.215835
+- - concepts_415
+  - concept_id: "816"
+    updated_at: 2007-08-13 10:14:29.237217
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mental wellbeing
+    parent_concept_id: "21"
+    created_at: 2007-08-13 10:14:29.23105
+- - concepts_416
+  - concept_id: "817"
+    updated_at: 2007-08-13 10:14:29.309167
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Celebration
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.248313
+- - concepts_417
+  - concept_id: "818"
+    updated_at: 2007-08-13 10:14:29.330787
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.322999
+- - concepts_418
+  - concept_id: "819"
+    updated_at: 2007-08-13 10:14:29.351801
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.34396
+- - concepts_419
+  - concept_id: "820"
+    updated_at: 2007-08-13 10:14:29.371899
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.364017
+- - concepts_420
+  - concept_id: "821"
+    updated_at: 2007-08-13 10:14:29.394174
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Christmas
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.384958
+- - concepts_421
+  - concept_id: "822"
+    updated_at: 2007-08-13 10:14:29.413847
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ceremony
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.406278
+- - concepts_422
+  - concept_id: "823"
+    updated_at: 2007-08-13 10:14:29.506011
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Play / Games
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.42325
+- - concepts_423
+  - concept_id: "824"
+    updated_at: 2007-08-13 10:14:29.523338
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Commemoration
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.516835
+- - concepts_424
+  - concept_id: "825"
+    updated_at: 2007-08-13 10:14:29.538847
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Food
+    parent_concept_id: "22"
+    created_at: 2007-08-13 10:14:29.532874
+- - concepts_425
+  - concept_id: "826"
+    updated_at: 2007-08-13 10:14:29.557541
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Love
+    parent_concept_id: "1"
+    created_at: 2007-08-13 10:14:29.550976
+- - concepts_426
+  - concept_id: "827"
+    updated_at: 2007-08-13 10:14:29.574749
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: "1"
+    created_at: 2007-08-13 10:14:29.568021
+- - concepts_427
+  - concept_id: "828"
+    updated_at: 2007-08-13 10:14:29.590491
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Peace
+    parent_concept_id: "1"
+    created_at: 2007-08-13 10:14:29.584183
+- - concepts_428
+  - concept_id: "829"
+    updated_at: 2007-08-13 10:14:29.606363
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Good and Evil
+    parent_concept_id: "1"
+    created_at: 2007-08-13 10:14:29.599681
+- - concepts_429
+  - concept_id: "830"
+    updated_at: 2007-08-13 10:14:29.623397
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Beauty
+    parent_concept_id: "1"
+    created_at: 2007-08-13 10:14:29.617142
+- - concepts_430
+  - concept_id: "831"
+    updated_at: 2007-08-13 10:14:29.641357
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Purakau - legends
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.635268
+- - concepts_431
+  - concept_id: "832"
+    updated_at: 2007-08-13 10:14:29.656866
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Myth
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.65081
+- - concepts_432
+  - concept_id: "833"
+    updated_at: 2007-08-13 10:14:29.677323
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Good and Evil
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.670362
+- - concepts_433
+  - concept_id: "834"
+    updated_at: 2007-08-13 10:14:29.692904
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Heaven and hell
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.686799
+- - concepts_434
+  - concept_id: "835"
+    updated_at: 2007-08-13 10:14:29.708799
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Play / Games
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.702127
+- - concepts_435
+  - concept_id: "836"
+    updated_at: 2007-08-13 10:14:29.725843
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fairytale / folktale
+    parent_concept_id: "2"
+    created_at: 2007-08-13 10:14:29.719685
+- - concepts_436
+  - concept_id: "837"
+    updated_at: 2007-08-13 10:14:29.743316
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Language and Literature
+    parent_concept_id: "3"
+    created_at: 2007-08-13 10:14:29.736999
+- - concepts_437
+  - concept_id: "838"
+    updated_at: 2007-08-13 10:14:29.758784
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Shakespeare
+    parent_concept_id: "3"
+    created_at: 2007-08-13 10:14:29.752713
+- - concepts_438
+  - concept_id: "839"
+    updated_at: 2007-08-13 10:14:29.77743
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Fairytale / folktale
+    parent_concept_id: "3"
+    created_at: 2007-08-13 10:14:29.768102
+- - concepts_439
+  - concept_id: "840"
+    updated_at: 2007-08-13 10:14:29.796502
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Art and literature - NZ
+    parent_concept_id: "3"
+    created_at: 2007-08-13 10:14:29.788352
+- - concepts_440
+  - concept_id: "841"
+    updated_at: 2007-08-13 10:14:29.821419
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Music
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.813544
+- - concepts_441
+  - concept_id: "842"
+    updated_at: 2007-08-13 10:14:29.837286
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Dance
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.8311
+- - concepts_442
+  - concept_id: "843"
+    updated_at: 2007-08-13 10:14:29.854756
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Theatre
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.846367
+- - concepts_443
+  - concept_id: "844"
+    updated_at: 2007-08-13 10:14:29.875079
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Shakespeare
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.867126
+- - concepts_444
+  - concept_id: "845"
+    updated_at: 2007-08-13 10:14:29.895797
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Greek theatre
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.887617
+- - concepts_445
+  - concept_id: "846"
+    updated_at: 2007-08-13 10:14:29.915185
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Sculpture/ painting
+    parent_concept_id: "4"
+    created_at: 2007-08-13 10:14:29.907952
+- - concepts_446
+  - concept_id: "847"
+    updated_at: 2007-08-13 10:14:29.936539
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:29.92948
+- - concepts_447
+  - concept_id: "848"
+    updated_at: 2007-08-13 10:14:29.95317
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Peace
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:29.946693
+- - concepts_448
+  - concept_id: "849"
+    updated_at: 2007-08-13 10:14:29.969755
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: War
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:29.963349
+- - concepts_449
+  - concept_id: "850"
+    updated_at: 2007-08-13 10:14:29.985461
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:29.979322
+- - concepts_450
+  - concept_id: "851"
+    updated_at: 2007-08-13 10:14:30.000456
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Race Relations
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:29.994542
+- - concepts_451
+  - concept_id: "852"
+    updated_at: 2007-08-13 10:14:30.015179
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Kaupapa - protest
+    parent_concept_id: "5"
+    created_at: 2007-08-13 10:14:30.009336
+- - concepts_452
+  - concept_id: "853"
+    updated_at: 2007-08-13 10:14:30.035671
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Politics
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.027592
+- - concepts_453
+  - concept_id: "854"
+    updated_at: 2007-08-13 10:14:30.053029
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: War
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.046905
+- - concepts_454
+  - concept_id: "855"
+    updated_at: 2007-08-13 10:14:30.068193
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Historical Event
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.062272
+- - concepts_455
+  - concept_id: "856"
+    updated_at: 2007-08-13 10:14:30.083394
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Anniversary
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.077099
+- - concepts_456
+  - concept_id: "857"
+    updated_at: 2007-08-13 10:14:30.098811
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Ancient civilisations
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.092797
+- - concepts_457
+  - concept_id: "858"
+    updated_at: 2007-08-13 10:14:30.113527
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: History - NZ
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.107794
+- - concepts_458
+  - concept_id: "859"
+    updated_at: 2007-08-13 10:14:30.131285
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Commemoration
+    parent_concept_id: "6"
+    created_at: 2007-08-13 10:14:30.122659
+- - concepts_459
+  - concept_id: "860"
+    updated_at: 2007-08-13 10:14:30.150107
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Travel
+    parent_concept_id: "7"
+    created_at: 2007-08-13 10:14:30.143348
+- - concepts_460
+  - concept_id: "861"
+    updated_at: 2007-08-13 10:14:30.165707
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "7"
+    created_at: 2007-08-13 10:14:30.159677
+- - concepts_461
+  - concept_id: "862"
+    updated_at: 2007-08-13 10:14:30.191224
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Migration
+    parent_concept_id: "7"
+    created_at: 2007-08-13 10:14:30.174981
+- - concepts_462
+  - concept_id: "863"
+    updated_at: 2007-08-13 10:14:30.214446
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Mathematics
+    parent_concept_id: "8"
+    created_at: 2007-08-13 10:14:30.206627
+- - concepts_463
+  - concept_id: "864"
+    updated_at: 2007-08-13 10:14:30.310953
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Science
+    parent_concept_id: "8"
+    created_at: 2007-08-13 10:14:30.226696
+- - concepts_464
+  - concept_id: "865"
+    updated_at: 2007-08-13 10:14:30.336091
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Space
+    parent_concept_id: "8"
+    created_at: 2007-08-13 10:14:30.32608
+- - concepts_465
+  - concept_id: "866"
+    updated_at: 2007-08-13 10:14:30.353678
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Conservation
+    parent_concept_id: "8"
+    created_at: 2007-08-13 10:14:30.34767
+- - concepts_466
+  - concept_id: "867"
+    updated_at: 2007-08-13 10:14:30.365475
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Wedding
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.365475
+- - concepts_467
+  - concept_id: "868"
+    updated_at: 2007-08-13 10:14:30.374132
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Easter
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.374132
+- - concepts_468
+  - concept_id: "869"
+    updated_at: 2007-08-13 10:14:30.383676
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Bible
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.383676
+- - concepts_469
+  - concept_id: "870"
+    updated_at: 2007-08-13 10:14:30.392309
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Religious
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.392309
+- - concepts_470
+  - concept_id: "871"
+    updated_at: 2007-08-13 10:14:30.403948
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Spiritual
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.403948
+- - concepts_471
+  - concept_id: "872"
+    updated_at: 2007-08-13 10:14:30.421435
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Christmas
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.421435
+- - concepts_472
+  - concept_id: "873"
+    updated_at: 2007-08-13 10:14:30.433908
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Heaven and hell
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.433908
+- - concepts_473
+  - concept_id: "874"
+    updated_at: 2007-08-13 10:14:30.444333
+    concept_type_id: "3"
+    concept_description: 
+    updated_by: "1000"
+    concept_name: Birth
+    parent_concept_id: 
+    created_at: 2007-08-13 10:14:30.444333

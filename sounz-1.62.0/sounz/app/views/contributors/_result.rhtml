@@ -1,0 +1,11 @@
+<%if result.class.to_s == "Person"%>
+<i><%=result.first_names%> <%=result.last_name%></i><br>
+<% for contactinfo in result.contactinfos%>
+<b><%= link_to_remote( "+",:update => "assignedContactinfo",:url =>{ :action => :assignContactinfo, :object_id => contactinfo.contactinfo_id})%></b>&nbsp;<%=contactinfo.street%><br>
+<%end%>
+<%elsif result.class.to_s == "Organisation"%>
+<i><%=result.organisation_name%></i><br>
+<b><%= link_to_remote( "+",:update => "assignedContactinfo",:url =>{ :action => :assignContactinfo, :object_id => result.contactinfo.contactinfo_id})%></b>&nbsp;<%=result.contactinfo.street%><br>
+<%else%>
+Unrecognised object!
+<%end%>

@@ -1,0 +1,375 @@
+/*
+=general
+=page structure
+=main_navigation
+=sub_navigation
+=sub_sub_navigation
+=page content
+=misc
+=debug
+*/
+
+/*
+=general
+---------------------------------------------- */
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 70%;
+    color: #666;
+    line-height: 1.3em;
+    background-color: #fff;
+}
+
+table, tr, td, input, select, textarea, ul, ol {
+    font-size: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+a {
+    color: #0077B5;
+}
+
+a:hover  {
+    text-decoration: underline;
+    color: #00A8FF;
+}
+
+a img, img {
+    border: 0;
+}
+
+code, pre {
+    font-size: 1.5em;
+    color: #999;
+    display: block;
+    width: 500px;
+}
+
+h1, h2 {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    background: url(/images/admin_header_bg.png) no-repeat left bottom;
+    color: #1b985c;
+    font-size: 2em;
+    font-weight: normal;
+    padding: .5em 0;
+}
+
+h1 {
+    font-size: 2.3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+
+}
+
+h4 {
+}
+
+h5 {
+}
+
+
+ul, ol {
+    list-style: none;
+}
+
+
+/*
+=page structure
+---------------------------------------------- */
+
+#container {
+
+}
+
+#header {
+
+}
+
+#content {
+    margin: 0 25px;
+    padding: 0 0 30px;
+    width: 755px;
+}
+
+/*User login*/
+
+#user_login {
+    float: right;
+    text-align: right;
+    margin-top: -14px;
+    position: relative;
+}
+
+#user_login h1 {
+    font-size: 1.4em;
+    color: #777;
+    margin: 0;
+    background: none;
+}
+
+#user_login p {
+    margin: 0;
+}
+
+
+/*
+=admin_nav
+---------------------------------------------- */
+
+#admin_nav {
+    margin: 0;
+    padding: 20px 0 0;
+}
+
+#admin_nav li {
+    background: transparent url(/images/bg-dots-e7e7e7.gif) repeat-x 0% 100%;
+    padding: 0 0;
+    margin: 0;
+    display: inline;
+    border-right: 1px solid #0077B5;
+}
+
+#admin_nav a {
+    text-decoration: none;
+    padding: 0 10px 0 7px;
+    background: transparent url(/images/bg-arrow.gif) no-repeat 0% 50%;
+}
+
+#admin_nav a:hover{
+    text-decoration: underline;
+    color: #0077B5;
+}
+
+#admin_nav a.active {
+    text-decoration: none;
+    color: #333;
+}
+
+/*
+=Forms
+-----------------------------------------------------*/
+form.admin fieldset {
+    border: none;
+    margin: 0;
+    padding: 0 0 20px;
+    background: url(/images/admin_divider.gif) repeat-x left bottom;
+}
+
+
+form.admin fieldset:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+/* Hides from IE-mac \*/
+* html form.admin fieldset {height: 1%;}
+/* End hide from IE-mac */
+
+
+form.admin div.categories {
+    float: left;
+    width: 365px;
+}
+
+form.admin div.categories h3 {
+    font-size: 1.1em;
+    color: #333;
+    background: url(/images/grey_dots.gif) repeat-x left bottom;
+    padding-bottom: 4px;
+    margin: 14px 0 12px;
+}
+
+form.admin div.categories h4 {
+    font-size: 1em;
+    color: #666;
+    background: url(/images/grey_dots.gif) repeat-x left bottom;
+    padding-bottom: 4px;
+    margin: 0 0 12px;
+}
+
+form.admin .categories ul {
+    margin: 0;
+    padding: 0;
+}
+
+form.admin .categories li {
+    background: url(/images/grey_dots.gif) repeat-x left bottom;
+    padding: 0 0 3px;
+    margin: 0 0 2px;
+}
+
+form.admin .categories li a {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+form.admin label {
+    font-weight: bold;
+    margin: 0 0 16px;
+    display: block;
+    position: relative;
+}
+
+form.admin input.text, form.admin textarea {
+    display: block;
+    width: 376px;
+    border: 1px solid #c5c5c5;
+    margin: 7px 0 10px;
+    padding: 5px;
+    color: #777;
+}
+
+form.admin textarea {
+    height: 50px;
+}
+
+form.admin select {
+    width: 250px;
+    display: block;
+    margin: 7px 0 10px;
+    font-weight: normal;
+    color: #777;
+}
+
+/* Buttons */
+form.admin div.button {
+    background: url(/images/admin_button_left.png) no-repeat left top;
+    font-weight: bold;
+    height: 24px;
+    float: left;
+    margin: 0 0 6px;
+}
+
+.button a {
+    color: #fff;
+    background: url(/images/admin_button_right.png) no-repeat right top;
+    height: 21px;
+    padding: 3px 20px 0 18px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.button a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/*
+=lists
+-----------------------------------------------------*/
+dl {
+    padding: 0 0 4px;
+    margin: 0 0 14px;
+    background: url(/images/admin_divider.gif) repeat-x left bottom;
+    float: left;
+    width: 100%;
+}
+
+
+
+dt {
+    background: url(/images/grey_dots.gif) repeat-x left top;
+    float: left;
+    clear: left;
+    width: 200px;
+    margin: 0;
+    padding: 8px 10px 8px 0;
+    font-weight: bold;
+}
+
+dd {
+    background: url(/images/grey_dots.gif) repeat-x left top;
+    float: left;
+    width: 534px;
+    margin: 0;
+    padding: 8px 10px 8px 0;
+}
+
+dt.first, dd.first {
+    background: none
+}
+
+.related_items {
+    background: url(/images/admin_fade_bg.png) repeat-y left top;
+    padding: 12px 0 0;
+    margin: 0 0 12px;
+    clear: both;
+}
+
+.related_items h3 {
+    margin: 0 0 12px;
+    color: #444;
+}
+
+.related_items p {
+    margin: 0 0 .5em;
+}
+
+/* file icon */
+
+.file_icon {
+    padding: .25em 0 .25em 20px;
+    background: transparent url(/images/icons/default.gif) no-repeat 0% 50%;
+}
+
+.pdf {
+    background-image: url(/images/icons/pdf.gif);
+}
+
+.doc {
+    background-image: url(/images/icons/doc.gif);
+}
+
+.jpg {
+    background-image: url(/images/icons/jpg.gif);
+}
+
+.mp3 {
+    background-image: url(/images/icons/mp3.gif);
+}
+
+
+
+
+/*
+=misc
+---------------------------------------------- */
+.dottop {
+    background: url(/images/grey_dots.gif) repeat-x left top;
+}
+
+.dotbottom {
+    background: url(/images/grey_dots.gif) repeat-x left bottom;
+}
+
+.hide {
+    position: absolute;
+    left: -999em;
+}
+
+/* self clearing floats */
+/*
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+*/

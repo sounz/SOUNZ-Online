@@ -1,0 +1,45 @@
+<div class="section">
+<h1>Product Form Submissions</h1>
+
+
+<% if !params[:mode].blank? && params[:mode].match('show_all') %>
+<a href="/prov_products">Show current only</a>
+<% else %>
+<a href="/prov_products?mode=show_all">Show all</a>
+<% end %>
+<br/><br/>
+<table>
+  <tr>
+    <th>Who</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Submitted</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Updated</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Status</th>
+    <td colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  
+<% for prov_products in @prov_products %>
+  <% name = 'Anonymous'
+     name = Login.get_name(prov_products.submitted_by) if !prov_products.submitted_by.blank?
+  %>
+  <tr>
+    <td><%=h name %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_products.created_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%= dby_date(prov_products.updated_at)  %></td>
+    <td>&nbsp;&nbsp;</td>
+    <td><%=h prov_products.status.status_desc  %></td>
+    <td>&nbsp;&nbsp;</td> 
+    <td align="right" width="18%"><%= link_to 'Edit', edit_prov_product_path(prov_products) %>
+    &nbsp;&nbsp;
+    <%= link_to 'Delete', prov_product_path(prov_products), :confirm => 'Are you sure you want to delete this product form?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'New Product', new_prov_product_path %>

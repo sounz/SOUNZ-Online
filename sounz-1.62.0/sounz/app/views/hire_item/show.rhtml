@@ -1,0 +1,23 @@
+<h1>Hire out 
+<%if @item.manifestation != nil%>
+<%=@item.manifestation.frbr_ui_desc%>
+<%elsif @item.resource != nil%>
+<%=@item.resource.frbr_ui_desc%>
+<%else%>
+Could not find item type!
+<%end%></h1>
+
+<%if !@item.physical_description.blank?%>
+<h2>
+<%=@item.physical_description%>
+</h2>
+<%end%>
+<% form_for :item, @item, :url => { :action => 'hire_item', :id => @item } do |f| %>
+<table>
+<tr><td>Login to Lend to:</td><td><%=select_tag('user_login',options_from_collection_for_select(Login.find(:all, :order => 'username'),:id,:username) )%></td></tr>
+<tr><td>Date Hired:</td><td><%=select_date(Time.now,:prefix=>'date_hired')%></td></tr>
+<tr><td>Date Due:</td><td><%=select_date(Time.now,:prefix=>'date_due')%></td></tr>
+<tr><td>Hire cost:</td><td><%=text_field_tag 'hire_cost'%></td></tr>
+</table>
+<%=submit_tag 'Hire this item'%>
+<%end%>

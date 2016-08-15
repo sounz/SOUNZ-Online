@@ -1,0 +1,19 @@
+<h1>Listing media_items ****</h1>
+
+<ul id="media_items">
+<% @media_items.each do |media_item| %>
+<li id="media_item_<%= media_item.id %>">
+<% if media_item.image? %>
+<%= link_to(image_tag(media_item.public_filename(:thumb))) %><br>
+<% end %>
+<%= link_to(media_item.filename, media_item_path(media_item)) %> (<%= link_to "Delete", media_item_path(media_item), :method => :delete, :confirm => "are you sure?"%>)
+</li>
+<% end %>
+</ul>
+
+<br>
+
+<%= link_to 'New media_item', new_media_item_path %>
+
+
+

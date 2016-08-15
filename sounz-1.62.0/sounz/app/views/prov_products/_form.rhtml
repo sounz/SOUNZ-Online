@@ -1,0 +1,109 @@
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Email</b><br />
+    <%= f.text_field :email, :size => standard_edit_cols %>
+  </p>
+
+  <h2>Product Information</h2>
+  <p>
+    <b>Product name</b><br />
+    <%= f.text_field :product_name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Product type</b>
+  </p>
+  
+  <table width="70%">
+  <tr>
+  <td><%= f.check_box :type_cd %> CD</td>
+  <td><%= f.check_box :type_score_music %> Score/sheet music</td>
+  </tr>
+  <tr>
+  <td><%= f.check_box :type_dvd %> DVD</td>
+  <td><%= f.check_box :type_book %> Book</td>
+  </tr>
+  <tr>
+  <td><%= f.check_box :type_video %> Video</td>
+  <td><%= f.check_box :type_kit %> Kit</td>
+  </tr>
+  <tr>
+  <td colspan="2">Other <%= f.text_field :type_other%></td>
+  </tr>
+  </table>
+  <br/>
+  
+  <p>
+    <b>Product Description</b> (Please note that this information may be edited for use on our website.) <br />
+    <%= f.text_area :notes, :cols => standard_edit_cols, :rows => 6 %>
+  </p>
+
+  <p><b>Which New Zealand composer/s and work/s are involved?</b><br/>
+  <table border="1">
+  <tr>
+  <td>Composer/s</td><td>Work/s</td><td>Performers</td>
+  <tr>
+  <td><%= f.text_area :composers_involved, :cols => 18, :rows => 6 %></td>
+  <td><%= f.text_area :works_involved, :cols => 18, :rows => 6 %></td>
+  <td><%= f.text_area :performers_involved, :cols => 18, :rows => 6 %></td>
+  </tr>
+  </table>
+  </p>
+  <br/>
+  
+  <h2>Publication Information</h2>
+  <p>
+    <b>Publisher</b><br />
+    <%= f.text_field :publisher, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Publisher Contact</b><br />
+    <%= f.text_field :publisher_email, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Publisher email or phone</b><br />
+    <%= f.text_field :publisher_phone, :size => standard_edit_cols %>
+  </p>
+  <br/>
+
+  <p>
+    <b>Distributor</b><br />
+    <%= f.text_field :distributor, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Distributor Contact</b><br />
+    <%= f.text_field :distributor_email, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Distributor email or phone</b><br />
+    <%= f.text_field :distributor_phone, :size => standard_edit_cols %>
+  </p>
+  <br/>
+  
+  <table>
+  <tr>
+    <td><b>Recommended retail price</b>&nbsp;&nbsp; </td><td><%= f.text_field :retail_price, :size => 10 %></td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <td><b>Trade price or discount</b>&nbsp;&nbsp;</td><td><%= f.text_field :trade_price, :size => 10 %></td>
+  </tr>
+  </table>
+  <br/>
+  
+  <h2>Attachments</h2>
+  
+   <p>Email attachments, such as images or logos, can be sent to: 
+   <a href="mailto:info@sounz.org.nz">info@sounz.org.nz</a>.<br/>
+   Please include the publication title in the subject line.
+   </p>
+  
+   <p>Thank you for supporting SOUNZ and New Zealand music.</p>

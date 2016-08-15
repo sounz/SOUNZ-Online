@@ -1,0 +1,34 @@
+<h1>Listing logins</h1>
+
+<table>
+  <tr>
+<th>Username</th>
+<th>Person/Org</th>
+<th>Created</th>
+  </tr>
+  
+<% for login in @user_logins %>
+  <tr>
+	<td><%=login.username%></td>
+	<td><%=login.name%></td>
+	<td><%=dmy_date(login.created_at)%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => login %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => login %></td>
+    <% if !login.person.nil? %>
+    <td><%= link_to 'Roles', :controller => 'people', :action => 'roles', :id => login.person.id %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+  
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @user_logins %>
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN')%>
+<div class="editLinks">
+<%= link_to 'New login', :action => 'new' %>
+</div>
+<%end%>

@@ -1,0 +1,406 @@
+/*
+=general
+=page structure
+=main_navigation
+=misc
+*/
+
+/*
+=general
+---------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 101%;
+}
+
+html, body {
+    width: 100%;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 75%;
+    color: #666;
+    line-height: 145%; /* 17px */
+    background: transparent url(/images/bg-body.jpg) repeat-x 0% 0%;
+}
+
+table, tr, td, input, select, textarea, ul, ol {
+    font-size: 100%;
+    vertical-align: top;
+}
+
+a img, img {
+    border: 0;
+}
+
+code, pre {
+    font-size: 1.5em;
+    color: #999;
+    display: block;
+    width: 500px;
+}
+
+h1, h2 {
+    font-family: 'Arial Bold', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+}
+
+h2 {
+    font-size: 15px;
+    color: #06C;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    background: transparent url(/images/bg-arrow-big.gif) no-repeat 0% 50%;
+}
+
+h2 a {
+    border-bottom: 1px solid #9CC;
+}
+
+h3 {
+    font-size: .915em; /* 11px */
+    color: #393;
+    margin-bottom: 11px;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: .915em;
+    color: #06C;
+}
+
+h5 {
+}
+
+a {
+    color: #0077b5;
+    text-decoration: none;
+}
+
+a:focus, a:hover, a:active  {
+    color: #333;
+}
+
+ul, ol {
+    list-style: none;
+    font-size: .915em; /* 11px */
+}
+
+p {
+    font-size: .915em; /* 11px */
+    margin-bottom: 1em;
+}
+
+.nojs_login {
+	color: #FF0000;
+	font-size: 11px ;
+}
+
+/* form */
+
+form {
+    font-size: .915em; /* 11px */
+}
+
+fieldset {
+    border: none;
+}
+
+input, textarea, select {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #999;
+}
+
+input.text, textarea, select {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+}
+
+input.text {
+    width: 200px;
+}
+
+/*
+=page structure
+---------------------------------------------- */
+
+#container {
+    width: 730px;
+    margin-left: 35px;
+    text-align: left;
+}
+
+#header {
+    background: transparent url(/images/bg-header.jpg) no-repeat 0% 100%;
+    width: 100%;
+    height: 159px;
+    position: relative;
+    left: -35px;
+    padding-left: 35px;
+}
+
+#header img {
+    margin-top: 89px;
+}
+
+#content {
+    height: 580px;
+    min-height: 580px;
+    background: transparent url(/images/bg-content.jpg) no-repeat 0% 0%;
+    margin-bottom: 80px;
+}
+
+*>#content {
+    height: auto;
+}
+
+/* intro */
+
+#intro {
+    background: transparent url(/images/bg-intro.png) no-repeat 0% 100%;
+    padding: 10px 0 14px;
+    position: relative;
+    left: -13px;
+    padding-left: 13px;
+    width: 504px;
+}
+
+#intro p {
+    margin-bottom: 0;
+}
+
+#intro a {
+    border-bottom: 1px solid #9CC;
+}
+
+/* features */
+
+#features {
+    margin-top: 24px;
+    width: 425px;
+    float: left;
+}
+
+
+.featured_item {
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 128px 0;
+}
+
+.featured_item h2 {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    border-bottom: 1px solid #9CC;
+}
+
+.featured_item p  {
+    width: 246px;
+    position: absolute;
+    left: 131px;
+}
+
+.featured_item.one {
+    height: 151px;
+}
+
+.featured_item.two {
+    height: 152px;
+}
+
+.featured_item.three {
+    height: 152px;
+}
+
+/* column */
+
+#column {
+    margin-top: 44px;
+    width: 239px;
+    float: right;
+}
+
+#column h2.news_list {
+    position: relative;
+    left: -12px;
+}
+
+.line {
+    background: transparent url(/images/bg-dots-cccccc.gif) repeat-x 0% 0%;
+    height: 10px;
+    width: 100%;
+}
+/* news_list */
+
+#news_list {
+    background: #fff url(/images/bg-news-list.jpg) no-repeat 0% 100%;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+#news_list a {
+    border-bottom: 1px solid #9CC;
+}
+
+/* members_login */
+
+#members_login {
+    width: 100%;
+    padding: 20px 0;
+    background: transparent url(/images/bg-members-login.jpg) no-repeat 0% 100%;
+}
+
+#members_login input.text {
+    width: 100px; /* 116px */
+    float: left;
+    margin-bottom: 10px;
+}
+
+#members_login input.text.last {
+    float: right;
+}
+
+.options {
+    clear: both;
+    width: 100%;
+}
+
+.button {
+    display: block;
+    text-indent: -999em;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+}
+
+.button.login {
+    background-image: url(/images/button-login.gif);
+    width: 50px;
+    height: 24px;
+}
+
+#members_login a.button {
+    float: left;
+    margin-right: 5px;
+}
+
+#members_login span {
+    margin-top: 3px;
+    display: block;
+    float: left;
+}
+
+/* footer */
+
+#footer {
+    width: 100%;
+    position: relative;
+    line-height: 165%; /* 20px */
+    border-top: 1px solid #ccc;
+    padding: 24px 0 50px;
+    background: #fff;
+}
+
+#footer div {
+    width: 393px;
+}
+
+#footer img#creative_nz {
+    position: absolute;
+    top: 24px;
+    right: 130px;
+}
+
+#footer img#iamic {
+    position: absolute;
+    top: 24px;
+    right: 0px;
+}
+
+
+#footer img#dps {
+    position: absolute;
+    top: 90px;
+    right: 130px;
+}
+
+#footer img#dia {
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+#footer #funderNotes {
+	position: absolute;
+	top: 140px;
+	right: 0px;
+	width: 238px;
+}
+
+
+
+/*
+=main_navigation
+---------------------------------------------- */
+
+#main_navigation {
+    width: 100%;
+}
+
+#main_navigation li {
+    background: transparent url(/images/bg-dots-e7e7e7.gif) repeat-x 0% 100%;
+    padding-bottom: 1px;
+}
+
+#main_navigation li.last {
+    background-image: url(/images/bg-dots-cccccc.gif);
+}
+
+#main_navigation a {
+    display: block;
+    text-decoration: none;
+    background: transparent url(/images/bg-arrow.gif) no-repeat 1px 50%;
+    padding: 3px 15px;
+    width: 209px; /* 239px */
+}
+
+#main_navigation a:focus, #main_navigation a:hover, #main_navigation a:active, #main_navigation li.current a {
+    color: #333;
+    background-color: #f4fcf4;
+}
+
+/*
+=misc
+---------------------------------------------- */
+
+.hide {
+    position: absolute;
+    left: -999em;
+}
+
+/* self clearing floats */
+
+#content:after, #members_login:after, .options:after {
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.public_button {
+   text-decoration: none;
+   border: none !important;
+}

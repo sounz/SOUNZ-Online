@@ -1,0 +1,12 @@
+<h1>New login</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<% end %>
+
+
+<div class="editLinks">
+<%= link_to 'Back', :action => 'list' %>
+</div>
+

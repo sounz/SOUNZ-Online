@@ -1,0 +1,10 @@
+<%	child_model_id = generate_id(frbr_child)
+confirm_message = 'Are you sure you wish to detach '+frbr_child.frbr_ui_desc+'?'
+
+
+%>
+<li id="attached_<%=child_model_id%>">
+<span class="actionButton"><%= link_to_remote "Detach", :confirm => confirm_message, :url => {:controller => :events, :action => :detach_sub_event, :id => child_model_id, :source_id => source_id}%></span>
+		<%=frbr_child.frbr_ui_desc%>
+	
+</li>

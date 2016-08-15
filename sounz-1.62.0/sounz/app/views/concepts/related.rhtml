@@ -1,0 +1,5 @@
+<%=main_tabs(selected = :works)%>
+<%=start_of_content(@concept, "Concept")%>
+
+<%=render :partial => @sub_partial_path, :locals => {:object => @concept}%>
+<%=end_of_content(@contributor)%>

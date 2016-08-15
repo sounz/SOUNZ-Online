@@ -1,0 +1,31 @@
+<h1>SOUNZ Online Store Orders</h1>
+<table>
+<%for result in @results%>
+<tr>
+<td><h2><%= Date.parse(result['date_purchased'])%></h2></td>
+<td><b><%=result['order_total']%></b></td>
+<td><%=result['username']%></td>
+<td width=150>Order details (No:<%= result['orders_id'] %>):<br/>
+
+<%for order in @orders[result['orders_id']]%>
+<%=order['products_quantity']%> x <%=order['products_name']%> ($<%=order['products_price']%>)<br/>
+<%end%>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="4">
+<%form_tag :action=>'update_status' do%>
+<input type=hidden name="order_id" value="<%=result['orders_id']%>"/>
+<%= select_tag("status_id", options_for_select(@statuses,result['orders_status'].to_i))%> 
+<input type='checkbox' name="send_confirmation" checked/> send email <%=submit_tag 'Update status'%><%end%>
+</td>
+</tr>
+
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<%end%>
+
+</table>

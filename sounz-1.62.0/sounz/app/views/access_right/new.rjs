@@ -1,0 +1,6 @@
+#Show the form
+page.replace_html :accessRightForm, :partial => 'new_form'
+page.visual_effect :highlight, :accessRightForm
+
+#Now render the update button
+page.replace_html :accessRightButton, :partial => 'cancel_form_button', :locals => {:model_id => @model_id}

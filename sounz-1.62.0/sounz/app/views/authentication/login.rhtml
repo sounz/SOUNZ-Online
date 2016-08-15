@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<%if !is_logged_in?(session)%>
+<p>
+Either your username or password was incorrectly entered.  Please try again using the login box in the upper right hand corner of this page.
+</p>
+<p>
+Have you <a href="/password/forgotten">forgotten your password</a>?	
+</p>
+<%else%>
+<p>
+You have successfully logged in. 
+</p>
+<%end%>
+

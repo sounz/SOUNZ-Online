@@ -1,0 +1,51 @@
+<p>
+  <b>Filename:</b>
+  <%=h @media_item.filename %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @media_item.content_type %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @media_item.size %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h @media_item.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @media_item.height %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%=h @media_item.parent_id %>
+</p>
+
+<p>
+  <b>Thumbnail:</b>
+  <%=h @media_item.thumbnail %>
+</p>
+
+
+<%
+if !@media_item.image?
+%>
+<%=link_to @media_item.filename, download_media_item_path(@media_item)%>
+<%
+else
+%>
+<%=image_tag(@media_item.public_filename(:thumb))%>
+<%
+end
+%>
+
+
+<%= link_to 'Edit', edit_media_item_path(@media_item) %> |
+<%= link_to 'Back', media_items_path %>

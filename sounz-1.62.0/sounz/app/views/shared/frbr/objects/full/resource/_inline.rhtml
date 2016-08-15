@@ -1,0 +1,57 @@
+<div class="padding">
+
+
+<h4><%= link_to_if PrivilegesHelper.has_link_permission?(@login, resource), resource.resource_title, :controller => :resources, :action => :show, :id => resource%>&nbsp;<%if resource.publication_year%>Year: <%=resource.publication_year%><%end%>
+
+<%=show_tap_edit_link_for(resource)%>
+
+
+</h4>
+<%search_image_render = AttachmentHelper.render_search_image(resource, :thumb)
+if !search_image_render.blank?
+%>
+<%= link_to_if PrivilegesHelper.has_link_permission?(@login, resource), search_image_render, :controller => :resources, :action => :show, :id => resource%>
+<%end%>
+
+<% publishers = PrivilegesHelper.permitted_objects(@login, resource.publishers)
+if publishers.length > 0
+%>
+<b>Publisher:</b>
+<ul class="inlineList">
+<%for role in publishers%>
+<li><%=ContributorsHelper.get_link_depending_on_role_type(role, @login)%></li>
+<% end %>
+</ul>
+<%end%>
+
+<%= convert_to_html(description_teaser(resource.general_note, resource))%>
+<%=#show_note(resource.author_note)
+%>
+<%=#show_note(resource.collation)
+%>
+
+</div><!--/padding-->
+
+<table cellspacing='0'>
+<tr>
+<td colspan='3' class='spacer'></td>
+</tr>
+<tr><td colspan="3" align="left"></td></tr>
+<tr>
+<td style='width:150px;' class='sample'>
+<%=resource.resource_type.resource_type_desc.camelize.gsub('::S', 's')%><br/>
+<%=resource.format.format_desc.camelize.gsub('::S', 's')%>
+</td>
+<td style='width:89px;' class='price'><span><%if !resource.item_cost.blank? and resource.item_cost > 0%><%=number_to_currency(resource.item_cost)%><br><%end%></span></td>
+<td style='width:290px;' class='purchase'>
+<%=render :partial => 'shared/frbr/objects/full/resource/buy_button', :locals => {:object => resource}%>
+<%=render :partial => 'shared/frbr/objects/full/resource/borrow_button', :locals => {:object => resource}%>
+<%=render :partial => 'shared/frbr/objects/full/resource/hire_button', :locals => {:object => resource}%>
+</tr>
+
+<tr>
+<td colspan='3' class='spacer'></td>
+</tr>
+</table>
+
+<hr>

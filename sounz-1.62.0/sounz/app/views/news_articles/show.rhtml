@@ -1,0 +1,22 @@
+<% content_for :page_title do %>News<%end%>
+<%= render :partial => 'show_full_article', :locals => { :news_article => @news_article} %>
+
+<div class="division_line">&nbsp;</div><br/>
+<%= go_back_link%>
+
+	<% login = Login.find(session[:login]) unless session[:login].blank?
+	if !login.blank? && PrivilegesHelper.has_permission?(login, 'CAN_EDIT_CONTENT')%>
+	<div class="editLinks">
+	<%= link_to "Edit", { :controller => 'news_articles', 
+	                                                               :action => 'edit', 
+	                                                               :id => @news_article } 
+	%>&nbsp;|&nbsp;
+	<%= link_to 'Delete', { :action => 'destroy', :id => @news_article }, 
+	                        :confirm => 'Are you sure you want to delete \'\' article?', 
+	                        :method => :post
+	%>
+	&nbsp;|&nbsp;
+	</div>
+	<% end%>
+
+

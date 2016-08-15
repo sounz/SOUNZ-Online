@@ -1,0 +1,25 @@
+<h1><%=@person.full_name%></h1>
+<% form_tag :action => 'create' do %>
+<div id="formformat">
+<div id="role_form"><%= render :partial => '/roles/form' %></div></div>
+<div id="buttonsformat" valign="top">
+  <%= submit_tag 'Save' %><br>
+  <%= cancel_and_go_back_button %><br>
+</div>
+
+<div id="formformat"><%= render :partial => 'contactinfo_type_dropdown' %></div>
+
+<div id="formformat">
+<h1><div id="section_title"><%= @section_title %></div></h1>
+<div id="contactinfo_form">
+<%= render :partial => '/contactinfos/form' %>
+</div>
+</div>
+
+<% end %>
+
+<div id="formformat">
+<%= go_back_link %>
+</div>
+
+<%=render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :role_contactinfos}%>

@@ -1,0 +1,36 @@
+<% expression.expression_languages.each do |el| %>
+
+<% expression_language_id = generate_id(el) %>
+<p id=<%= expression_language_id%>>
+<span class="actionButton">
+  <%= link_to_remote( "REMOVE", :update => "expression_languages",
+                                :complete => "new Effect.Fold('"+expression_language_id+"')", 
+                                :confirm => 'Are you sure you want to delete the language?',
+                                :url =>{ :controller => 'expressions', 
+                                :action => 'remove_language',
+                                :expression_language_id => el.expression_language_id })%>
+</span>
+<%= el.language.language_name %>
+
+<% end %>
+</p>
+
+
+<%
+if !expression.expression_languages.blank?
+expression_languages_ids = expression.expression_languages.collect{ |el| el.language_id }
+languages_to_select = Language.find(:all, :conditions => ['language_id NOT IN (?)', expression_languages_ids], :order => 'display_order')
+else
+languages_to_select = Language.find(:all, :order => 'display_order')
+end
+%>
+
+<%= collection_select('expression_language', "language_id",  languages_to_select, :language_id, :language_name, :include_blank => "-- Select a language --") 
+%>
+<span class="actionButton">
+<%= link_to_remote( "ADD", :update => "expression_languages",
+                           :url =>{ :controller => 'expressions', 
+                           :action => 'add_language',
+                           :expression_id => expression.expression_id}, 
+                           :with => "'language_id='+escape($('expression_language_language_id').value)")%>
+</span>

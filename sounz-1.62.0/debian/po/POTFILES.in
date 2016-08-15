@@ -1,0 +1,4 @@
+[type: gettext/rfc822deb] sounz.templates
+[type: gettext/rfc822deb] sounz-frontend.templates
+[type: gettext/rfc822deb] sounz-backend.templates
+[type: gettext/rfc822deb] sounz-app.templates

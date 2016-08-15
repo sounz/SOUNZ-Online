@@ -1,0 +1,61 @@
+<%= form_remote_tag :url => { :action => :removeContactsFromList, :id => @saved_contact_list.id },    
+                    :html => { :id => 'existing_contacts_editable_form' },
+                    :before => "Element.show('spinner')",
+                    :complete => "Element.hide('spinner')"
+%>
+
+<% if !@saved_contact_list.role_contactinfos.blank? %>
+You currently have <strong><span id="existing_count"><%=@saved_contact_list.role_contactinfos.length %></span> contacts</strong> in the list.  
+To remove any contact from the list please select the contact and click on the 'Remove Selected' button.
+
+<% if !@saved_list_contacts.blank? %>
+<%= hidden_field "role_contactinfos", "current", :value => @saved_list_contacts.map{|c| c.role_contactinfo_id}.join(",") # role_contactinfos on the current page
+%>
+<table width="100%">
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+   <td colspan="2" align="right" width="90%">
+     <%= selectAllNone('existing_contacts_editable_form')%>
+   </td>
+   <td valign="top" width="10%" rowspan="<%=@saved_list_contacts_pages.items_per_page.to_i + 1%>">
+     <%= submit_tag "Remove\nSelected" %>
+     <!--<br/><br/>
+     <span class="actionSubmit">-->
+       <%=# link_to_remote "Remove All", :url => {:action => :removeContactsFromList, :id => @saved_contact_list.id, :remove => 'all'},
+          #                              :before => "Element.show('spinner')",
+          #                              :complete => "Element.hide('spinner')"
+       %>
+     <!--</span>-->
+    </td>
+</tr>
+<% end %>
+<% existing_contacts = nil%>
+
+<%for contact in @saved_list_contacts
+contact_id = "actual_"+generate_id(contact)
+%>
+<% checked = nil%>
+<% checked = 'checked' if !session[:list_contacts_to_remove].blank? && session[:list_contacts_to_remove].include?(contact)%>
+<tr id="<%=contact_id%>">
+<td><%=render :partial => "shared/selected_contacts_editable", :locals => { :contact => contact, :checked => checked, :existing_contacts => existing_contacts }%></td>
+</tr>
+<% end %>
+
+</table>
+<% end %>
+
+<%= render :partial => 'shared/spinner' %>
+
+<span id="set_selected"></span>
+
+<%= observe_form 'existing_contacts_editable_form',
+  :url => { :action => :set_selected_contacts },
+  :update => 'set_selected', 
+  :frequency => -1
+%>
+
+</form>
+<br>
+

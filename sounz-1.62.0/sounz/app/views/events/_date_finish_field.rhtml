@@ -1,0 +1,10 @@
+<p><label for="event_event_finish">event finish</label><br>
+<%if !event.event_finish.blank?%>
+<%= date_field_with_time(event.event_finish, 'event', 'event_finish') %>
+<span class="actionButton"> <%=link_to_remote 'Set No Finish Time',  
+ :url=> {:id=>@event.id,:action => 'set_no_finish_time'}, :method => :get %></span>
+<%else%>
+<span class="actionButton"><%=link_to_remote 'Set Has Finish Time',  
+ :url=> {:id=>@event.id,:action => 'set_has_finish_time'}, :method => :get %></span>
+<%end%>
+</p>

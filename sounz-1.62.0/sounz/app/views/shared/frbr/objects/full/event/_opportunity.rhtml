@@ -1,0 +1,80 @@
+<%
+date_string=""
+date_string << EventsHelper.get_start_time(object)
+date_string << "<br>" if !date_string.blank?
+date_string << EventsHelper.get_end_time(object)
+
+date_string.strip!
+%>
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => object.event_title,
+			:subheading => '<h4>Deadline: ' + EventsHelper.get_deadline(object) + '</h4>',
+			:links => nil,
+			:text => nil,
+			:object => object #for the select this button
+}
+%>
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+
+<%event = object%>
+<%if !event.general_note.blank?%>
+<div class="section"><%=show_note(event.general_note)%></div>
+<%end%>
+
+<% if !object.entry_fee_note.blank? ||
+      !object.prize_info_note.blank? ||
+      !object.entry_anonymous.blank? ||
+      !object.entry_age_limit
+%>
+<div class="section">
+<table>
+<%=show_value_for_table_row("Entry Fee", object.entry_fee_note, @login)%>
+<%=show_value_for_table_row("Prize Information", object.prize_info_note, @login)%>
+<%=show_value_for_table_row("Anonymous Entry", object.entry_anonymous, @login )%>
+<%=show_value_for_table_row("Age Limit", object.entry_age_limit, @login)%>
+</table>
+</div>
+<% end %>
+
+
+<% if !object.distinctions_offered.blank?%>
+<div class="section">
+<dt>Award Information:</dt><dd>
+<ul class="inlineList">
+<% for distinction in object.distinctions_offered %>
+<li><%= link_to distinction.award_name, {:controller => 'distinctions', :action => :show, :id => distinction.id} %></li>
+<% end%>
+</ul>
+</dd>
+</div>
+<% end %>
+
+<% if object.all_supporters.length > 0%>
+<div class="section">
+<%= render :partial => 'shared/frbr/objects/common/list_of_contributors', 
+:locals => {:object => object, :contributors => object.all_supporters, :title => "Supported By"}%>
+</div>
+<% end %>
+
+
+<%= render :partial => 'shared/frbr/objects/common/list_of_events', 
+:locals => {:object => object, :events => object.children, :title => "Events Happening at this Event"}%>
+
+<% if !object.contactinfo.blank?%>
+<div class="section">
+<h2>Contact Details</h2>
+<%= render :partial => 'shared/public_pages/contactinfo', 
+:locals => { :contactinfo => object.contactinfo, :website_url => EventsHelper.get_website_url(object) } %>
+</div>
+<%end%>
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note,created_at,updated_at, updated_by, status"}%>
+<%=show_relationships_if_permission(@event)%>
+<%=show_edit_links_if_permission(@event, 'CAN_EDIT_EVENT')%>
+
+

@@ -1,0 +1,66 @@
+= acts_as_solr Rails plugin
+This plugin adds full text search capabilities and many other nifty features from Apache's Solr[http://lucene.apache.org/solr/] to any Rails model.
+It was based on the first draft by Erik Hatcher.
+
+== Authors
+Erik Hatcher:: First draft
+Thiago Jackiw:: Current developer (tjackiw at gmail dot com)
+
+== Current Release
+The current stable release is v0.8 and was released on 05-10-2007. There are <b>crucial changes</b> to the schema.xml[link:files/schema_xml.html] file, so make sure you update yours.
+
+== Changes I made
+Please refer to the CHANGE_LOG[link:files/CHANGE_LOG.html]
+
+== Requirements
+* Java Runtime Environment(JRE) 1.5 aka 5.0 (http://www.java.com/en/download/index.jsp)
+* Apache's Solr (http://apache.oregonstate.edu/lucene/solr)
+
+== Installation
+On your Rails' root directory, just type
+
+  script/plugin install http://opensvn.csie.org/acts_as_solr/trunk
+
+Once the plugin has been installed, <b>make sure you copy the <em>schema.xml</em></b> from the acts_as_solr's
+root directory to DIR_WHERE_YOU_INSTALLED_SOLR/example/solr/conf
+
+== Updated Video Tutorial: Up and Running in less than 5 minutes
+This short video tutorial demonstrates how easy it is to integrate Solr and the acts_as_solr plugin to any Rails application. To watch the streamed version, click here[http://acts-as-solr.rubyforge.org/acts_as_solr_up_and_running_in_10_minutes.html], or to download the quicktime movie (5.5MB) to your computer, click here[http://acts-as-solr.rubyforge.org/files/acts_as_solr.mov.zip].
+
+== Basic Usage
+Just include the line below to any of your ActiveRecord models:
+
+  acts_as_solr
+
+Or if you want, you can specify only the fields that should be indexed:
+
+  acts_as_solr :fields => [:name, :author]
+
+Then to find instances of your model, just do:
+
+  Model.find_by_solr(query) or Model.find_id_by_solr(query)
+
+Or if you want to specify the starting row and the number of rows per page:
+
+  Model.find_by_solr(query, :start => 0, :rows => 10)
+
+Please see ActsAsSolr::ActsMethods for a complete info
+
+== Getting help
+You can always use our mailing list (http://groups.google.com/group/acts_as_solr) to post any questions you may have.
+
+== Contributing
+I welcome contributors so if you'd like to contribute to the development, please send me an email (tjackiw at gmail dot com). 
+
+== Timeline
+To see this plugin's timeline, please check out our Trac[https://opensvn.csie.org/traccgi/acts_as_solr/timeline]
+
+== Bugs/Patches
+Please report the bugs you find by opening tickets here[https://opensvn.csie.org/traccgi/acts_as_solr/newticket]
+
+== Special Thanks to:
+* RubyForge (www.rubyforge.org)
+* Mingle, LLC (www.mingle.com) for the support
+
+== Release Information
+Released under the MIT license.

@@ -1,0 +1,636 @@
+<!--[form:contactinfo]-->
+<%= error_messages_for 'contactinfo' %>
+
+<% if @role_contactinfo_exists == true && !role_contactinfo.preferred %>
+<% check = "disabled" %>
+<% end %>
+
+<% default_contactinfo = nil unless !default_contactinfo.blank? %>
+
+<% 
+if !default_contactinfo.blank?
+role_id = nil
+role_id = @role.role_id unless @role.blank?
+contactinfo_type = nil
+contactinfo_type = @role_contactinfo.contactinfo_type unless @role_contactinfo.blank?
+end 
+%>
+
+<%= hidden_field_tag 'organisation_id',  @organisation_id  unless @organisation_id.blank?%>
+
+<%= hidden_field_tag 'role_contactinfo[role_id]', @role.role_id unless @role.blank? %>
+
+<%= hidden_field_tag 'default_contactinfo[default_contactinfo_id]', 
+    default_contactinfo.default_contactinfo_id unless default_contactinfo.blank? %>
+
+<%= hidden_field_tag  'default_contactinfo[d_contactinfo_id]', default_contactinfo.d_contactinfo_id unless default_contactinfo.blank? %>
+
+<table width="100%">
+<tr>
+<th><label for="contactinfo_preferred_comm_method">Preferred Communication Method</label></th>
+<td>
+<table>
+<tr>
+<td>
+<%= collection_select(:contactinfo, :preferred_comm_method, 
+CommunicationMethod.find(:all, :order => 'communication_method_id'),
+:communication_method_id, 
+:communication_method_desc,
+{ :prompt => "-- Select a method --", :selected => contactinfo.preferred_comm_method })
+%>
+</td>
+<% if !role_contactinfo.blank?%>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<th align="right" width="50%"><label for="role_contactinfo_preferred">Preferred</label>
+
+<%= check_box_tag  'role_contactinfo[preferred]', 
+                  value   = 1, 
+                  role_contactinfo.preferred,
+                  { :disabled => check } unless role_contactinfo.blank? %>
+
+<% end %>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_building">Building</label></th>
+<td>
+<%
+building_disabled = false
+building_disabled = default_contactinfo.d_building unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[building]', contactinfo.building, 
+                                              { :size => standard_edit_cols, :disabled => building_disabled }  
+%>
+</td>
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_building]', 
+        value   = 't', 
+        default_contactinfo.d_building 
+%>
+<%= observe_field('default_contactinfo[d_building]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_building=' + ($('default_contactinfo[d_building]').checked ? '1' : '0')")
+%>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_street">Street</label></th>
+<td>
+<%
+street_disabled = false
+street_disabled = default_contactinfo.d_street unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[street]', contactinfo.street, 
+                                           { :size => standard_edit_cols, :disabled => street_disabled }  %>
+</td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_street]',
+         value  = 't', 
+         default_contactinfo.d_street %>
+<%= observe_field('default_contactinfo[d_street]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_street=' + ($('default_contactinfo[d_street]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_po_box">PO Box</label></th>
+<td>
+<%
+po_box_disabled = false
+po_box_disabled = default_contactinfo.d_po_box unless default_contactinfo.blank?
+%>
+<% 
+disable_po_box_field = false
+if !role_contactinfo.blank? && role_contactinfo.contactinfo_type.match('physical')
+disable_po_box_field = true
+po_box_disabled = disable_po_box_field
+end
+%>
+<%= text_field_tag  'contactinfo[po_box]', contactinfo.po_box, 
+                                            {:size => standard_edit_cols, :disabled => po_box_disabled } %>
+</td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_po_box]', 
+         value  = 't',
+         default_contactinfo.d_po_box, :disabled => disable_po_box_field %>
+<%= observe_field('default_contactinfo[d_po_box]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_po_box=' + ($('default_contactinfo[d_po_box]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_suburb">Suburb</label></th>
+<td>
+<%
+suburb_disabled = false
+suburb_disabled = default_contactinfo.d_suburb unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[suburb]', contactinfo.suburb, 
+                                            { :size => standard_edit_cols, :disabled => suburb_disabled }  %>
+</td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_suburb]', 
+         value  = 't',
+         default_contactinfo.d_suburb %>
+<%= observe_field('default_contactinfo[d_suburb]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_suburb=' + ($('default_contactinfo[d_suburb]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_locality">Locality</label></th>
+<td>
+<%
+locality_disabled = false
+locality_disabled = default_contactinfo.d_locality unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[locality]', contactinfo.locality, 
+                                             { :size => standard_edit_cols, :disabled => locality_disabled } %>
+</td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_locality]', 
+         value  = 't',
+         default_contactinfo.d_locality %>
+<%= observe_field('default_contactinfo[d_locality]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_locality=' + ($('default_contactinfo[d_locality]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_postcode">Post code</label></th>
+<td>
+<%
+postcode_disabled = false
+postcode_disabled = default_contactinfo.d_postcode unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[postcode]', contactinfo.postcode, 
+                                             { :size => 10, :disabled => postcode_disabled } %>
+</td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_postcode]', 
+         value  = 't',
+         default_contactinfo.d_postcode %>
+<%= observe_field('default_contactinfo[d_postcode]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_postcode=' + ($('default_contactinfo[d_postcode]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_region">Region</label></th>
+<td class='formelemformat'><div id="regionSelector">
+<%
+region_disabled = false
+region_disabled = default_contactinfo.d_region unless default_contactinfo.blank?
+
+%>
+
+<% if contactinfo.region_id != nil %>
+<%= collection_select(:contactinfo, :region_id, 
+Region.find(:all, :conditions => ['country_id =?', contactinfo.country_id], :order => 'region_order'),
+:region_id,
+:region_name,
+{ :include_blank => "-- Select a region --"}, {:disabled => region_disabled })
+%>
+<% else %>
+<% @country = contactinfo.country %>
+<% if @country != nil %>
+<%= render :partial => '/contactinfos/show_regions_for_country', :locals => {:country => @country, :disabled => region_disabled }%>
+<% end %>
+<% end %>
+</div></td>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_region]', 
+         value  = 't',
+         default_contactinfo.d_region %>
+<%= observe_field('default_contactinfo[d_region]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_region=' + ($('default_contactinfo[d_region]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_country">Country</label></th>
+<td>
+<%
+country_disabled = false
+country_disabled = default_contactinfo.d_country unless default_contactinfo.blank?
+%>
+<%= collection_select(:contactinfo, :country_id, 
+Country.find(:all, :order => 'country_name'),
+:country_id,
+:country_name,
+{ :include_blank => "-- Select a country --" }, {:disabled => country_disabled })
+%>
+</td>
+
+<%
+country_field =  "contactinfo_country_id"
+parameters = "'country='+escape($('"+country_field+"').value)"
+%>
+<%=  observe_field  "contactinfo_country_id", :update => "regionSelector",
+                                               :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                               :with => parameters
+%>
+
+<% if !default_contactinfo.blank? %>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_country]', 
+         value  = 't',
+         default_contactinfo.d_country %>
+<%= observe_field('default_contactinfo[d_country]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_country=' + ($('default_contactinfo[d_country]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_email_1">Email 1</label></th>
+<td>
+<%
+email1_disabled = false
+email1_disabled = default_contactinfo.d_email_1 unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[email_1]', contactinfo.email_1, 
+                                            { :size => standard_edit_cols, :disabled => email1_disabled } %>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_email_1]', 
+         value  = 't',
+         default_contactinfo.d_email_1 %>
+<%= observe_field('default_contactinfo[d_email_1]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              },
+                                                              :with => "'d_email_1=' + ($('default_contactinfo[d_email_1]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+<tr>
+<th><label for="contactinfo_email_2">Email 2</label></th>
+<td>
+<%
+email2_disabled = false
+email2_disabled = default_contactinfo.d_email_2 unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[email_2]', contactinfo.email_2, 
+                                            { :size => standard_edit_cols, :disabled => email2_disabled } %>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_email_2]', 
+         value  = 't',
+         default_contactinfo.d_email_2 unless default_contactinfo.blank? %>
+<%= observe_field('default_contactinfo[d_email_2]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_email_2=' + ($('default_contactinfo[d_email_2]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_email_3">Email 3</label></th>
+<td>
+<%
+email3_disabled = false
+email3_disabled = default_contactinfo.d_email_3 unless default_contactinfo.blank?
+%>
+<%= text_field_tag  'contactinfo[email_3]', contactinfo.email_3, 
+                                            { :size => standard_edit_cols, :disabled => email3_disabled }%>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_email_3]', 
+         value  = 't',
+         default_contactinfo.d_email_3 %>
+<%= observe_field('default_contactinfo[d_email_3]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_email_3=' + ($('default_contactinfo[d_email_3]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_website_urls">Website URL</label></th>
+<td>
+<%
+website_urls_disabled = false
+website_urls_disabled = default_contactinfo.d_website_urls unless default_contactinfo.blank?
+%>
+
+<% 
+disable_website_urls_field = false
+if !role_contactinfo.blank? && !role_contactinfo.contactinfo_type.match('postal')
+disable_website_urls_field = true
+website_urls_disabled = disable_website_urls_field
+end
+%>
+
+<%= text_area_tag  'contactinfo[website_urls]', contactinfo.website_urls, 
+                                                { :cols => 45,
+                                                 :rows => standard_edit_rows, :disabled => website_urls_disabled }
+%>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_website_urls]', 
+         value  = 't',
+         default_contactinfo.d_website_urls, :disabled =>  disable_website_urls_field %>
+<%= observe_field('default_contactinfo[d_website_urls]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_website_urls=' + ($('default_contactinfo[d_website_urls]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+<tr>
+<th><label for="contactinfo_phone">Phone 1</label></th>
+<%
+phone1_disabled = false
+phone1_disabled = default_contactinfo.d_phone unless default_contactinfo.blank?
+%>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field_tag  'contactinfo[phone_prefix]', contactinfo.phone_prefix, 
+                                             { :size => 10, 
+                                               :maxlength => 10, :disabled => phone1_disabled } %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%"> 
+<%= text_field_tag 'contactinfo[phone]', contactinfo.phone, 
+                                      { :size => 20, 
+                                        :maxlength => 20, :disabled => phone1_disabled }%>
+<br>
+<div class="comment">phone number</div>
+</td>
+<td valign="top">
+<%= text_field_tag  'contactinfo[phone_extension]', contactinfo.phone_extension, 
+                                                 { :size => 10, :disabled => phone1_disabled } %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_phone]', 
+         value  = 't',
+         default_contactinfo.d_phone %>
+<%= observe_field('default_contactinfo[d_phone]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_phone=' + ($('default_contactinfo[d_phone]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_phone_alt">Phone 2</label></th>
+<%
+phone2_disabled = false
+phone2_disabled = default_contactinfo.d_phone_alt unless default_contactinfo.blank?
+%>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field_tag  'contactinfo[phone_alt_prefix]', contactinfo.phone_alt_prefix, 
+                                                 { :size => 10, 
+                                                  :maxlength => 10, :disabled => phone2_disabled } %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%"> 
+<%= text_field_tag  'contactinfo[phone_alt]', contactinfo.phone_alt, 
+                                          { :size => 20, 
+                                           :maxlength => 20, :disabled => phone2_disabled } %>
+<br>
+<div class="comment">phone number</div>
+</td>
+<td>
+<%= text_field_tag  'contactinfo[phone_alt_extension]', contactinfo.phone_alt_extension, 
+                                                    { :size => 10, :disabled => phone2_disabled } %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_phone_alt]', 
+         value  = 't',
+         default_contactinfo.d_phone_alt %>
+<%= observe_field('default_contactinfo[d_phone_alt]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_phone_alt=' + ($('default_contactinfo[d_phone_alt]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_phone_fax">Fax</label></th>
+<%
+fax_disabled = false
+fax_disabled = default_contactinfo.d_phone_fax unless default_contactinfo.blank?
+%>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field_tag  'contactinfo[phone_fax_prefix]', contactinfo.phone_fax_prefix, 
+                                                 { :size => 10, 
+                                                  :maxlength => 10, :disabled => fax_disabled } %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%">
+<%= text_field_tag  'contactinfo[phone_fax]', contactinfo.phone_fax, 
+                                          { :size => 20, 
+                                           :maxlength => 20, :disabled => fax_disabled }%>
+<br>
+<div class="comment">fax number</div>
+</td>
+<td>
+<%= text_field_tag  'contactinfo[phone_fax_extension]', contactinfo.phone_fax_extension, 
+                                                    { :size => 10, :disabled => fax_disabled } %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_phone_fax]', 
+         value  = 't',
+         default_contactinfo.d_phone_fax %>
+<%= observe_field('default_contactinfo[d_phone_fax]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_phone_fax=' + ($('default_contactinfo[d_phone_fax]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+
+<tr>
+<th><label for="contactinfo_phone_mobile">Mobile</label></th>
+<%
+mobile_disabled = false
+mobile_disabled = default_contactinfo.d_phone_mobile unless default_contactinfo.blank?
+%>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field_tag  'contactinfo[phone_mobile_prefix]', contactinfo.phone_mobile_prefix, 
+                                                    { :size => 10, 
+                                                     :maxlength => 10, :disabled => mobile_disabled } %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%"> 
+<%= text_field_tag  'contactinfo[phone_mobile]', contactinfo.phone_mobile, 
+                                             { :size => 20, 
+                                              :maxlength => 20, :disabled => mobile_disabled } %>
+<br>
+<div class="comment">mobile number</div>
+</td>
+<td>
+<%= text_field_tag  'contactinfo[phone_mobile_extension]', contactinfo.phone_mobile_extension, 
+                                                       { :size => 10, :disabled => mobile_disabled } %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<% if !default_contactinfo.blank?%>
+<td style="padding-left: 10px;">
+<%= check_box_tag  'default_contactinfo[d_phone_mobile]', 
+         value  = 't',
+         default_contactinfo.d_phone_mobile unless default_contactinfo.blank? %>
+<%= observe_field('default_contactinfo[d_phone_mobile]', :url => {:action => :set_default_contactinfo_change, 
+                                                              :role_id => role_id, 
+                                                              :type => contactinfo_type,
+                                                              :contactinfo => contactinfo.contactinfo_id
+                                                              }, 
+                                                              :with => "'d_phone_mobile=' + ($('default_contactinfo[d_phone_mobile]').checked ? '1' : '0')") %>
+</td>
+<% end %>
+</tr>
+<tr>
+<th><label for="contactinfo_internal_note">Internal note</label></th>
+<td><%= text_area_tag  'contactinfo[internal_note]', contactinfo.internal_note, 
+                                                 { :cols => 45,
+                                                  :rows => standard_edit_rows }
+%>
+</td>
+</tr>
+
+<% if contactinfo.created_at != nil %>
+<tr>
+<th><label for="contactinfo_created_at">Created at</label></th>
+<td><%= dby_date(contactinfo.created_at)  %></td>
+</tr>
+<% end %>
+
+<% if contactinfo.updated_at != nil %>
+<tr>
+<th><label for="contactinfo_updated_at">Updated at</label></th>
+<td><%= dby_date(contactinfo.updated_at)  %></td>
+</tr>
+<% end %>
+<% if contactinfo.updated_by != nil %>
+<tr>
+<th><label for="contactinfo_updated_by">Updated by</label></th>
+<td><%=h get_user(contactinfo.updated_by).username  %></td>
+</tr>
+<% end %>
+
+</table>
+
+<!--[eoform:contactinfo]-->
+

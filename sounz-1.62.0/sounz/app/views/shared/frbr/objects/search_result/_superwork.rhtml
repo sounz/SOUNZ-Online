@@ -1,0 +1,19 @@
+<img src="/icons/superwork.jpg" alt="Super Work Icon"/>
+<h4 class="frbrSearchResult">Superwork - <a href="/superworks/show/<%=object.superwork_id%>"><%=object.superwork_title%></a>
+</h4>
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+	
+	
+
+	
+	
+	
+Alternative Title:<%=object.superwork_title_alt%><br>
+Status:<%=object.status.status_desc%><br>
+<h1>Works that belong to this Superwork</h1>
+
+<ul>
+<%for work in object.works%>
+<li><%=link_to work.work_title, :controller => :works, :action => :show, :id => work%></li>
+<%end%>
+</ul>

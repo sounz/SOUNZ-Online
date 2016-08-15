@@ -1,0 +1,23 @@
+<h1>Search Results</h1>
+<%if flash[:search_error] != nil%>
+<%=flash[:search_error]%>
+<%else%>
+Contributors from the list <%=saved_contact_list.list_name%> are shown below.
+<%end%>
+
+<%= form_remote_tag :url => {:action => :add_contacts_to_selection },
+    :success => visual_effect(:highlight, "selected_results"),
+    :html => { :id => 'contact_list' }
+%>
+
+<table width="100%">
+  <tr>
+   <td>
+     <div id="contacts_search_results">
+      <%=render :partial => 'saved_contacts_search_table', :locals => {:contacts => contacts}%>
+     </div>
+   </td>
+   <td></td>
+  </tr>
+</table>
+</form>

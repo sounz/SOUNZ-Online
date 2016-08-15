@@ -1,0 +1,24 @@
+<%if @from.match('person')%>
+<% title 'Edit Communication for ' + @person.full_name %>
+<% entity = @person %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :communications} %>
+<%else%>
+<% title 'Edit Communication for ' + @organisation.organisation_name %>
+<% entity = @organisation %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :communications} %>
+<%end%>
+
+<% form_tag :action => 'update', :id => entity, :communication_id => @communication.communication_id, :from => @from do %>
+
+<fieldset>
+  <legend>Communication details</legend>
+  <%= render :partial => 'form' %>
+</fieldset>
+<% if @communication.role.blank? || (!@communication.role.blank? && @communication.role.status_id != Status::WITHDRAWN.status_id) %>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+<% end %>
+
+<!--<fieldset>
+  <legend>Related Communications</legend>
+</fieldset>-->

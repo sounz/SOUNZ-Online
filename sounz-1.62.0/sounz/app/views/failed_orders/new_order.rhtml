@@ -1,0 +1,10 @@
+<h1>Failed order transaction</h1>
+<br/>
+<% form_tag :action => 'create_new_order' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Save" unless @selected_products.blank?%>
+  <%= link_to create_button('Cancel transaction', 'Cancel this transaction'), 
+                       { :action => 'cancel_transaction', :id => @dps_pxpay_id }, 
+                       :confirm => 'Are you sure you want to cancel this transaction?', 
+                       :method => :post if !@merchant_ref.blank?%>
+<% end %>

@@ -1,0 +1,31 @@
+<%=text_field prefix, "hours", :size =>4, :value => interval_duration.hours %>h&nbsp;
+<%=text_field prefix, "minutes", :size =>2, :value => interval_duration.minutes %>m&nbsp;
+<%=text_field prefix, "seconds", :size =>3, :value => interval_duration.seconds %>s&nbsp;
+<%=hidden_field prefix, "object_name", :value => object_name%>
+<%=hidden_field prefix, "field_name", :value => field_name%>
+<br>
+<%
+hours_field = prefix+"_hours"
+minutes_field = prefix+"_minutes"
+seconds_field = prefix+"_seconds"
+object_name_field = prefix+"_object_name"
+field_name_field = prefix+"_field_name"
+#fh = "'values='+escape(value)+ ' ' + $F('"+minutes_field+"')"
+js_for_fields = "'hours='+escape($('"+hours_field+"').value)"+
+"+ '&minutes='+escape($('"+minutes_field+"').value)"+
+"+ '&object_name='+escape($('"+object_name_field+"').value)"+
+"+ '&field_name='+escape($('"+field_name_field+"').value)"+
+"+ '&seconds='+escape($('"+seconds_field+"').value)"
+
+# "+ '&object_name='"+object_name+"'"#+
+#  "+ '&field_name='"+field_name+"'"
+
+%>
+
+<%#Observe the three fields, each of hours, mins and secs%>
+<%=observe_field prefix+'_hours', :frequency => 0.5, :update => prefix+'TimeEntered', :url => {:controller => :duration_as_interval, :action => :update_hidden_field }, 	 :with => js_for_fields%>
+<%=observe_field prefix+'_minutes', :frequency => 0.5, :update => prefix+'TimeEntered', :url => {:controller => :duration_as_interval, :action => :update_hidden_field }, 	 :with => js_for_fields%>
+<%=observe_field prefix+'_seconds', :frequency => 0.5, :update => prefix+'TimeEntered', :url => {:controller => :duration_as_interval, :action => :update_hidden_field }, 	 :with => js_for_fields%>
+<span id="<%=prefix%>TimeEntered">
+		<%=hidden_field object_name, field_name, :size => 12,  :value => interval_duration.to_postgres_string%>
+</span>

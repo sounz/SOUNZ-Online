@@ -1,0 +1,6 @@
+page.replace_html 'category',  :partial => 'category_part'
+page.replace_html 'subcategory', :partial => 'subcategory_part'
+page.visual_effect :highlight, 'category'
+
+
+

@@ -1,0 +1,39 @@
+
+  <p>
+    <b>Name</b><br><span class="instruction">This is your name or the name of the organization which 'contributes' to the music of NZ composers.</span><br/>
+    <%= f.text_field :name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Email Address (internal use only)</b><br>
+    <%= f.text_field :email, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Date of establishment/birth (optional)</b>
+    <%= f.text_field :date_of_est_birth, :size => 4%>
+  </p>
+
+  <p>
+    <b>Profile for Website</b><br><span class="instruction">Guideline: Profiles should be 200-350 words</span><br>
+    <b>New profile&nbsp;</b><%= f.check_box :new_profile %>&nbsp;&nbsp;
+	<b>Updated profile&nbsp;</b><%= f.check_box :updated_profile %>    
+<%= f.text_area :profile, :cols => standard_edit_cols, :rows => 3*standard_edit_rows %>
+  </p>
+
+  <p>
+  If you wish to have a photograph or logo displayed with your profile please email this to <a href="mailto:development@sounz.org.nz">development@sounz.org.nz</a>
+  </p>
+
+
+
+
+<h2>Awards</h2>
+<div class="instruction">Please note any awards which you have received as a result of your involvement with New Zealand music</div>
+    <%= f.text_area :awards, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+<br><br>
+<h2>Other Contact Information (Internal Use)</h2>
+<div class="instruction">Please note any other contact details that may assist us to stay in touch with you and promote your activities</div>
+  <p>
+    <%= f.text_area :other_contact, :cols => standard_edit_cols, :rows => standard_edit_rows%>
+  </p>

@@ -1,0 +1,2 @@
+page.redirect_to :action => @action, :id => @contactinfo, :contactinfo_type => @contactinfo_type
+

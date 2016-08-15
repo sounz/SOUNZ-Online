@@ -1,0 +1,11 @@
+<%
+
+	n_funded = object.number_of_funded_works
+
+%>
+<ul class="composerMenu">
+<li><%if n_funded > 0%><%=link_to "Funded Works ("+n_funded.to_s+")" , contributor_as_general_funder_url(:id => object)%><%end%></li>
+
+
+
+</ul>

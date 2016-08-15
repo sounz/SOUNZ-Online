@@ -1,0 +1,24 @@
+<h1>Listing communication_types</h1>
+
+<table>
+  <tr>
+  <% for column in CommunicationType.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for communication_type in @communication_types %>
+  <tr>
+  <% for column in CommunicationType.content_columns %>
+    <td><%=h communication_type.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => communication_type %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => communication_type %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => communication_type }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @communication_types %>
+
+<%= link_to 'New communication_type', :action => 'new' %>

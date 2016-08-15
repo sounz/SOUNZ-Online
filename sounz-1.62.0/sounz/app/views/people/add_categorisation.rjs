@@ -1,0 +1,7 @@
+if !@empty_subcat
+page.replace_html 'person_categorisation_list', :partial => 'person_categorisation_list'
+page.replace_html 'people_categorisation_form', :partial => 'people_categorisation_form'
+page.visual_effect :highlight, @new_cat_id
+else
+ page << "alert('Please select a subcategory')"
+end

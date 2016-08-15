@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+c1:
+  concept_type_id: 1
+  concept_type_desc: "Genre"
+  
+c2:
+  concept_type_id: 2
+  concept_type_desc: "Influence"
+  
+c3:
+  concept_type_id: 3
+  concept_type_desc: "Theme"
+  

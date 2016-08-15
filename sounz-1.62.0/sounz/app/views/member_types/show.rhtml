@@ -1,0 +1,8 @@
+<% for column in MemberType.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @member_type.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @member_type %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,16 @@
+# Hosts allowed access via SSH to the SOUNZ backend (database).
+# Please add appropriate entries for /etc/hosts.allow below
+# in-between the ### markers.
+#
+### SOUNZ REMOTE ACCESS
+# Note: everything from here to the END tag below is maintained
+# from the SOUNZ 'sounz-backend' package so any directly edited
+# changes made here will be lost at the next package upgrade.
+
+# SOUNZ remote access (old IP)
+sshd: 202.154.159.26 : allow
+
+# SOUNZ remote access (new IP)
+sshd: 203.167.138.69 : allow
+
+### SOUNZ END

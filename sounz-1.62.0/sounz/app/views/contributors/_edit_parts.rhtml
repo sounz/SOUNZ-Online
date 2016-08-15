@@ -1,0 +1,6 @@
+  <%= render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @contributor} %>
+  <%= render :partial => 'association/association', :locals => {:object => @role} %>
+
+  <div id="relationships">
+  <%= render :partial => 'shared/frbr/relationships/edit', :locals => {:object => @role} %>
+  </div>

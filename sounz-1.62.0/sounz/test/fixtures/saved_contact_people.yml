@@ -1,0 +1,24 @@
+
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+scp1:
+  saved_contact_people_id: 1
+  person_id: 3001
+  saved_contact_list_id: 1
+
+scp2:
+  saved_contact_people_id: 2
+  person_id: 3120
+  saved_contact_list_id: 1
+
+scp3:
+  saved_contact_people_id: 3
+  person_id: 3200
+  saved_contact_list_id: 1
+
+scp4:
+  saved_contact_people_id: 4
+  person_id: 3212
+  saved_contact_list_id: 1

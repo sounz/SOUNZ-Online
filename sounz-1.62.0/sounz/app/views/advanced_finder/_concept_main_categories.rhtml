@@ -1,0 +1,15 @@
+<% if !concept_type.blank? 
+blank_option = "-- No concept selected --"
+else
+blank_option = "-- Select a concept type first --"
+end
+
+if !concept_type.blank?
+concepts = Concept.get_main_categories(concept_type).to_dropdown(:concept_name)
+else
+concepts = ''
+end
+%>
+
+<%= select('search_details', 'concept_id', concepts,
+            	         {:include_blank => blank_option, :selected => concept_id}) %>

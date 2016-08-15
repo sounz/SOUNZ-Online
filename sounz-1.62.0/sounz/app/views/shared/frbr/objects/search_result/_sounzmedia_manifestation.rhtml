@@ -1,0 +1,18 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<div class='search_item_wrap'>
+	
+<h4><%= icons_for(object, @login)%><%=link_to object.manifestation_title, :id => object, :action => 'show', :controller => 'manifestations'%></b> <%=show_tap_edit_link_for(object, 'CAN_EDIT_TAP')%></h4>
+
+<table width="100%">
+  <tr>
+   <td>
+     <%=AttachmentHelper.render_search_image(object, :thumb)%>
+   </td>
+   <td>
+     <%=get_summary_for_text(convert_to_html(object.general_note), SUMMARY_LENGTH)%>
+   </td>
+  </tr>
+</table>
+
+</div>

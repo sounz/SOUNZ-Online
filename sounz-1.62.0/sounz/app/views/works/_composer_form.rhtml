@@ -1,0 +1,15 @@
+<div class="instruction">
+A work must have at least one composer.  Search for a composer by using the textbox below.
+</div>
+<%= text_field "composer", "query", :size => standard_edit_cols %>
+
+<%=observe_field_delayed(:composer_query, :frequency => 2, :url => {:action => :find_composers, :controller => :works, :work_id => @work.id},  :before => "Element.show('spinner_composer')", :complete => "Element.hide('spinner_composer')", :with => "'composer_query='+value")%>
+
+<%=render :partial => 'shared/spinner_with_suffix', :locals => {:suffix => 'composer'}%>
+<div id="composerList">
+<!-- search for composers will appear here -->
+</div>
+
+<div id="selectedComposerList">
+<%= render :partial => 'composers_selected'%>	
+</div>

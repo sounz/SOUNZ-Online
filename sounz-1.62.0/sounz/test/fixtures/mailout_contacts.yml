@@ -1,0 +1,13 @@
+#Add 10 people to the first campaign
+#<%time_now = Time.now.strftime("%Y-%m-%d")%>
+#<%for i in 1..10 %>
+#moc<%=i%>:
+#  mailout_contact_id: <%=i%>
+#  campaign_mailout_id: 1
+#  person_id: <%=i+3000%>
+#  delivery_failed: false
+#  updated_by: 1000
+#  created_at: <%=time_now%>
+#  updated_at: <%=time_now%>
+  
+#<%end%>  

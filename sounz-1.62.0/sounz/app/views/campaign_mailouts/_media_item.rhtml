@@ -1,0 +1,17 @@
+<%
+generated_id = generate_id(media_item)
+@is_after_cancel = false if @is_after_cancel == nil
+%>
+<li style="list-style-type:none;" id="<%=generated_id%>">
+<%
+if !media_item.image?
+%>
+<%=link_to media_item.filename, download_media_item_path(media_item)%>
+<%
+else
+%>
+<%=image_tag(media_item.public_filename(:thumb), :style => "border: 1px solid #c1c1c1;")%>
+<%
+end
+%>
+</li>

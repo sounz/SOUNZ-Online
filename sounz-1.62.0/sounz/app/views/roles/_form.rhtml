@@ -1,0 +1,75 @@
+<%
+disabled = true
+disabled = false if PrivilegesHelper.has_permission?(@login, 'CAN_PUBLISH_CRM')
+
+display = true if display.nil?
+
+if @from.match('organisation')
+role_types = RoleType.contributor_role_types
+else
+
+conditions = "lower(role_type_desc) != 'organisation'"
+
+# enforce uniqueness of the 'Person' role
+if (params[:action] == 'new' || params[:action] == 'create') && (!@person.blank? && @person.roles.map{|r| r.role_type.role_type_desc}.include?('Person'))
+conditions += " AND lower(role_type_desc) != 'person'"
+end
+
+role_types = RoleType.find(:all, :order => 'display_order', 
+                 :conditions => conditions)
+end
+%>
+
+<input type="hidden" name="from" id="role_from" value="<%=@from%>">
+<table id="role_container"<% if display == false %> style="display: none;"<% end %>>
+<% if !@role.organisation.blank? && @role.role_id != Role.get_organisation_primary_role(@role.organisation_id).role_id || @role.organisation.blank? %>  
+  <tr>
+    <th><label for="role_role_type_id">Role type</label></th>
+    <td><%= collection_select(:role, :role_type_id, role_types, :id, :role_type_desc, {:prompt => "-- Select a role type --"} ) %></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2">
+    <span id="contributor_checkbox">
+      <%= render :partial => 'roles/contributor_checkbox' %>
+    </span>
+    </td>
+  </tr>
+  
+  <% if params[:action] == 'new' || params[:action] == 'create' || (!@role.blank? && !@role.is_contributor) %>
+    <%= observe_field('role_role_type_id', :url => { :controller => :roles, :action => :contributor_role_type_check },
+                                           :update =>  'contributor_checkbox',
+                                           :with => "'role_type=' + value")
+    %>
+  <% end %>
+
+  <tr>
+    <th><label for="role_role_title">Role title</label></th>
+    <td><%= text_field 'role', 'role_title' %></td>
+  </tr>
+  <% if @from.match('person') %>
+  <tr>
+    <th><label for="role_organisation_id">Organisation</label></th>
+    <td><%= collection_select(:role, :organisation_id, 
+                          Organisation.find(:all, :order => 'organisation_name'), :id, 
+                          :organisation_name, {:prompt => "-- Select an organisation --"},
+                          {:style => "width: 350px"}) %>
+       
+       <% if !@role.blank? && !@role.organisation_id.blank?%> 
+        <%= link_to_remote "Detach", :url => {:action => 'detach_organisation_from_role', :role_id => @role.role_id, :from => @from},
+                           :before => "Element.show('spinner')",
+                           :complete => "Element.hide('spinner')", 
+                           :with => "'organisation=' + ($('role_organisation_id').value)", 
+                           :confirm => 'Are you sure that you want to delete an organisation from the role?'
+         %>
+       <% end %>
+       <%= render :partial => 'shared/spinner' %>
+    </td>
+  </tr>
+  <%end%>
+<% end %>
+  <tr>
+    <th><label for="role_status_id">Status</label></th>
+    <td><%= select 'role', 'status_id', Status.find(:all, :conditions => ['status_desc NOT ILIKE (?)', '%published%'], :order => :status_desc).to_dropdown, {}, {:disabled => disabled} %></td>
+  </tr>
+</table>

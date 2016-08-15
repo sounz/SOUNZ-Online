@@ -1,0 +1,77 @@
+<!-- ROLE DETAILS -->
+<% if @role != nil %>
+<% if @role.person != nil %>
+
+<% title 'Edit Role Details for ' + @role.person.full_name %>
+<% button = nil %>
+<%= render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :roles, :button => button} %>
+
+<% else %>
+<% title 'Edit Role Details for ' + @role.organisation.organisation_name %>
+<% button = nil %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :roles, :button => button} %>
+<% end %>
+
+<% 
+myOrgPrimary= Role.get_organisation_primary_role(@role.organisation_id)
+myOrgPrimaryRole=nil
+if myOrgPrimary != nil
+myOrgPrimaryRole=myOrgPrimary.role_id
+end
+%>
+
+<!-- Role Info -->
+<% form_tag :action => 'update_role', :id => @role do %>
+
+<%= error_messages_for 'role' %>
+
+<% if !@role.organisation.blank? && (@role.role_id == myOrgPrimaryRole && @role.person.blank?)%>
+<fieldset>
+<legend><%= @role.organisation.organisation_name + ' General Details' %></legend>
+<span id="role_form">
+  <%= render :partial => 'roles/form' %>
+  </span>
+</fieldset>
+
+<% else %>
+
+<fieldset>
+  <legend>
+  <%=h @role.person.full_name + ' - ' + 
+       @role.role_name + 
+       ' for ' + @role.organisation.organisation_name if @role.organisation unless @role.person.blank? 
+  %>
+       
+  <%=h @role.organisation.organisation_name + ' - ' + 
+       @role.role_name + ' role' unless @role.organisation.blank? || !@role.person.blank?
+  %>   
+  
+  <%=h @role.person.full_name + ' - ' + @role.role_name if @role.organisation.blank?  %>  
+  </legend>
+  <span id="role_form">
+  <%= render :partial => 'roles/form' %>
+  </span>
+</fieldset>
+<% end %>
+<%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+
+<% end %>
+<!-- Marketing Categorisation -->
+<fieldset>
+  <legend>Marketing Categorisation</legend>
+  <div id="role_categorization_form"><%= render :partial => '/role_categorizations/role_categorization_form' %></div>
+</fieldset>
+
+ <strong><%= link_to_remote "Postal",   :url => { :action => :display_contactinfo, :role_id => @role.role_id, :type => 'postal'} %></strong> |
+ <strong><%= link_to_remote "Physical", :url => { :action => :display_contactinfo, :role_id => @role.role_id, :type => 'physical'} %></strong> |
+ <strong><%= link_to_remote "Billing",  :url => { :action => :display_contactinfo, :role_id => @role.role_id, :type => 'billing'} %></strong>
+
+<span id="contactinfo">
+<%= render :partial => 'display_contactinfo'%>
+</span>
+
+</fieldset>
+
+<% else %>
+  <p class="errorExplanation"> An error has occured. There is no primary role for that organisation</p>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Editing Content Page</h1>
+<%= uses_tinymce %>
+
+<% form_tag :action => 'update', :id => @cm_content do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<div class="editLinks">
+<%= link_to 'Show', :action => 'show_by_name', :name => @cm_content.cm_content_name %> |
+<%= link_to 'Back', :action => 'list' %>
+</div>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @cm_content,
+	:mode => :cm_content}%>
+

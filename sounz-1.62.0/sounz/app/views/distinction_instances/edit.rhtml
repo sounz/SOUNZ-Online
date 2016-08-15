@@ -1,0 +1,18 @@
+<h1>Editing Distinction Instance</h1>
+<br/>
+<div align="right">
+<%= link_to "Copy this Distinction Instance", { :action => 'copy', :id => @distinction_instance.id }, {:title => "Create a copy of this distinction instance"}
+%>
+</div>
+
+<% form_tag :action => 'update', :id => @distinction_instance do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+<%=render :partial => 'association/association', :locals => {:object => @distinction_instance}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @distinction_instance}%>
+</div>
+
+<%= link_to 'Show', :action => 'show', :id => @distinction_instance %> |
+<%= link_to 'List', :action => 'list' %>

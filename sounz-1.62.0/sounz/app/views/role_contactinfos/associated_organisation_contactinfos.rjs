@@ -1,0 +1,5 @@
+# NOT USED ANYMORE
+page.replace_html 'contactinfo_type_dropdown', :partial => 'contactinfo_type_dropdown'
+page.replace_html 'contactinfo_form', :partial => '/contactinfos/form'
+
+page.replace_html 'section_title', @section_title

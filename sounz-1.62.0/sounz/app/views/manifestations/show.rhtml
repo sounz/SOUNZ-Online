@@ -1,0 +1,17 @@
+<% if @manifestation.is_a_sounzmedia? %>
+<%=main_tabs(selected = :sounzmedia)%>
+<% else %>
+<%=main_tabs(selected = :works)%>
+<% end %>
+<%=start_of_content(@manifestation, @manifestation.type_category_string)%>
+<%
+extension = ''
+extension = "/score" if @manifestation.is_a_score?
+extension = "/recording" if @manifestation.is_a_recording?
+%>
+<%=render :partial => "/shared/frbr/objects/full/manifestation", :locals => {:object => @manifestation}%>
+<%=end_of_content(@manifestation)%>
+
+
+
+

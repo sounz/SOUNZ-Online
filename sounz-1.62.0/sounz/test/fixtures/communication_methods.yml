@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  communication_method_id: 1
+  communication_method_desc: 'Phone'
+two:
+  communication_method_id: 2
+  communication_method_desc: 'Email'
+three:
+  communication_method_id: 3
+  communication_method_desc: 'Fax'
+
+communication_method4:
+  communication_method_id: 4
+  communication_method_desc: In person
+
+communication_method5:
+  communication_method_id: 5
+  communication_method_desc: Website
+
+communication_method6:
+  communication_method_id: 6
+  communication_method_desc: Mail

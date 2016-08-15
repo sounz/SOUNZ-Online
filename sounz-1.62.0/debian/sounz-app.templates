@@ -1,0 +1,144 @@
+Template: sounz/db_name
+Type: string
+Default: sounz
+Description: Database name:
+ The name of the Postgresql database that the SOUNZ packages
+ will all be connecting to. This will set up various config
+ files and assign the 'production' database to the name you give.
+ .
+ For the rails application it will also set up database names for
+ test and development environments as the name you give, suffixed
+ with '_test' and '_dev' respectively.
+
+Template: sounz/db_host
+Type: string
+Default: localhost
+Description: Database host machine:
+ The name of the server which hosts the database for SOUNZ.
+ If this is the same machine as the application, then just leave this
+ as the default 'localhost'.
+
+Template: sounz/db_port
+Type: string
+Default: 5432
+Description: Database port:
+ The port that the Postgreql database is listening on. Normally
+ this will be 5432, the default port for Postgres.
+
+Template: sounz/db_user
+Type: string
+Default: sounz
+Description: Database connection user:
+ The name of the Postgresql user which will connect to the
+ database. If this user does not exist, then it will be created for
+ you automatically (note this is a Postgres user, not a Unix user).
+
+Template: sounz/db_passwd
+Type: string
+Description: Database connection password:
+ A password to use for the database connection (as the user
+ you specified earlier). Often this is just left blank, which is to
+ say 'no password required'.
+
+Template: sounz/mongrel_ports
+Type: string
+Default: 3001
+Description: Mongrel server port(s):
+ A list of ports that you want mongrel servers to be started on. This
+ can be a single port, or a space-delimited list of ports. A mongrel
+ server will be started on this machine for each port given.
+ .
+ NOTE: You MUST specify at least one port here.
+
+Template: sounz/environment
+Type: string
+Default: production
+Description: Rails environment:
+ The runtime environment for the Rugby on Rails application. This can
+ be either 'development', 'test', or 'production'.
+
+Template: sounz/solr_host
+Type: string
+Default: localhost
+Description: Host that Solr is running on:
+ This is the hostname or IP address of the server that Solr is
+ runing on.
+
+Template: sounz/solr_port
+Type: string
+Default: 8983
+Description: Port that Solr listens on:
+ This is the port that the Solr server will be listening on.
+
+Template: sounz/apache_servername
+Type: string
+Default: sounz.org.nz
+Description: ServerName:
+ The ServerName for the SOUNZ frontend. This is essentially the
+ domain of the website which is the public access to the application.
+
+Template: sounz/ip_primary_server
+Type: string
+Description: Primary Server IP or Hostname:
+ The SOUNZ system has a simple dual-machine architecture and to keep
+ data replicated from production --> standby machine we need to know
+ the IP addresses of each for use by replication scripts.
+ .
+ This IP address (or hostname) is for the machine which is the
+ designated Production Server.
+
+Template: sounz/ip_secondary_server
+Type: string
+Description: Secondary Server IP Address:
+ The SOUNZ system has a simple dual-machine architecture and to keep
+ data replicated from production --> standby machine we need to know
+ the IP addresses of each for use by replication scripts.
+ .
+ This IP (or hostname) address is for the machine which is the
+ designated Standby Server.
+
+Template: sounz/sounz_rsync_port
+Type: string
+Default: 18993
+Description: SOUNZ rsync port:
+ You are strongly recommended to choose the default port number here
+ if installing a real LIVE server box.
+ .
+ The ability to change it is mainly for staging and/or development
+ setup, where the port might need to be different.
+ .
+ This port is the one that the rsyncd daemon which is dedicated to
+ SOUNZ data and home replication for the purposes of DR. Normally
+ it will be set to port 18993 which is catered for in the firewall
+ rules on the SOUNZ network.
+
+Template: sounz/enable_app_cronjobs
+Type: boolean
+Default: false
+_Description: Enable the application cron jobs?
+ These are just cron jobs which support replication of SOUNZ data
+ and code from the Production server to the Standby server.
+ .
+ You can leave these disabled (the default states) if you like. Then
+ to enable them later, just edit /etc/cron.d/sounz-app and
+ remove the #NORUN# prefixes as appropriate.
+
+Template: sounz/sounz_rsync_cron
+Type: select
+Choices: Daily, Four-hourly, Hourly, Testing
+Description: Schedule to run the SOUNZ rsync replicator:
+ Specify the frequency of the rsync replication here. The Daily option
+ will be done at 2.30am each day. Testing is every 5 mins.
+ .
+ These are just starters. Obviously you can go and refine this by
+ tweaking the settings in /etc/cron.d/sounz-app after installation.
+
+Template: sounz/sounz_app_note
+Type: note
+Description: SOUNZ Mongrel Server(s)
+ The SOUNZ Mongrel Servers run as daemons which will start automatically
+ on reboot, and listen on the ports you specified. However the servers
+ will be left in the stopped state after this install.
+ .
+ To start them manually:
+   invoke-rc.d sounz-app start

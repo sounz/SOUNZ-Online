@@ -1,0 +1,78 @@
+<table width="100%">
+<%
+all_logins = person.logins
+%>
+<tr>
+<th colspan="2">
+<%=show_status_icon(person.status)%> <%=link_to h(person.full_name), :controller => 'people', :action => 'edit', :id => person.person_id %>
+<%= link_to image_tag("button-comms.gif", :border=>0), :controller => 'communications', :action => 'new', :id => person.id, :from => 'person' %>
+<%if all_logins.length > 0%>&mdash;<%end%>
+<%=all_logins.map{|l|l.username}.join(',')%>
+</th>
+</tr>
+
+<% roles = Array.new
+if role_in_organisation != nil
+  roles.push(role_in_organisation)
+else
+  roles = person.person_roles_sorted
+end
+if !roles.blank? 
+%>
+
+<!-- Roles list[begins] -->
+<% 
+for role in roles
+
+role_contactinfos = role.role_contactinfos
+
+if !role_contactinfos.blank?
+
+for role_ci in role_contactinfos
+
+contactinfo = role_ci.contactinfo
+
+contactinfo.initialize_contactinfo_associated_with_another_contactinfo( contactinfo.default_contactinfo ) unless contactinfo.default_contactinfo.blank?
+
+if !contactinfo.is_empty? 
+%>
+<tr id="<%= 'found_'+generate_id(role_ci) %>">
+<td width="95%"> 
+<a href="/role_contactinfos/edit/<%= role.role_id%>?role_contactinfo=<%=role_ci.role_contactinfo_id%>">
+
+<ul>
+<li>
+<%= show_status_icon(role.status)%> <%=role_ci.contactinfo_type_icon %> <%= show_status_icon(role.contributor.status) unless role.contributor.blank?%> <%=role.role_name %> <strong><%= role.contributor_flag %></strong>-
+<%= role.organisation.organisation_list_name(true) + ' - ' unless role.organisation.blank?%>
+
+<%= contactinfo.get_a_phone_number + '; ' %>
+<%= contactinfo.get_an_email + '; ' %>
+<% locality = '[No locality]' %>
+<% locality = contactinfo.locality unless contactinfo.locality.blank? %>
+<%= locality %>
+&nbsp;
+<strong><%= role_ci.preferred_role_contactinfo_flag %></strong>
+</li></ul>
+</a>
+</td>
+
+<td width="5%" align="right">
+<% if !@already_selected.include?(role_ci) %>
+ <input type="checkbox" class="check" name="role_contactinfos[ids][]" value="<%= generate_id(role_ci) %>" id="<%= generate_id(role_ci) %>" />
+<% else %>
+ &nbsp;
+<% end %>
+</td>
+</tr>
+<% end %>
+
+<% end %>
+
+<% end %>
+
+</td>
+</tr>
+<% end %>
+<% end %>
+</table>
+

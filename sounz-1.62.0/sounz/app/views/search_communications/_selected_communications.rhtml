@@ -1,0 +1,37 @@
+<%
+selected_communications = session[:selected_communications]
+if !selected_communications.blank?
+%>
+<ul>
+<% selected_communications.each_pair do |communication, value| %>
+<li>
+<%= link_to_remote( image_tag("/images/icon_minus.gif", :alt => 'Remove from selected results', :title => 'Remove from selected results'), :update => "selectedCommunications",
+                            :url =>{ :controller => :search_communications, 
+                                     :action => :remove_from_selected_communications, 
+                                     :communication_to_remove => communication.communication_id})%>&nbsp;
+
+<%
+associated_contact_string = communication.associated_contact_string(value)
+entity = convert_id_to_model(associated_contact_string)
+from = associated_contact_string.split('_').shift
+if from.match('person')
+contact_name = entity.full_name
+else
+contact_name = entity.organisation_list_name(true)
+end
+%>
+
+<%=link_to strip_html(summary_of(communication.communication_subject, 25), ['a', 'i', 'b']) + ' (' + contact_name + ')', :controller => 'communications', 
+                                                :action => :edit, 
+                                                :id => entity, 
+                                                :from => from, 
+                                                :communication => communication 
+%>
+</li>
+
+<% end %>
+</ul>
+<p class='all'><%= link_to_remote( "Clear Selected",:update => "selectedCommunications",
+                                   :url =>{:controller => :search_communications, 
+                                           :action => :clear_selected_communications})%></p>
+<%end%>

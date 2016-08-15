@@ -1,0 +1,10 @@
+<!-- THIS TEMPLATE IS NO LONGER USED -->
+<%
+classy = contact.class.to_s
+if classy == 'Organisation'%>
+<%=render :partial => 'shared/organisation_with_tooltip', :locals => {:organisation => contact}%>
+<%elsif classy == 'Person'%>
+<%=render :partial => 'shared/person_with_tooltip', :locals => {:person => contact}%>
+<%else%>
+** UNABLE TO RENDER CONTRIBUTOR OF CLASS <%=classy%> **
+<%end%>

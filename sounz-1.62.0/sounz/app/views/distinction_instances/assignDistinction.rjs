@@ -1,0 +1,3 @@
+page.replace_html 'assignedDistinction', :partial => 'distinction', :locals => {:object => @assignedDistinction}
+page.replace_html 'distinctionList', ''
+page.visual_effect :highlight, 'assignedDistinction'

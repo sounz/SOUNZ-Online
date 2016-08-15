@@ -1,0 +1,11 @@
+<% title 'Edit Contributor Details for ' + @organisation.organisation_name %>
+<%= render :partial => '/shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :contributor} %>
+
+<%= error_messages_for 'contributor' %>
+<% form_tag :action => 'contributor_details_update', :id => @organisation do %>
+  <%= render :partial => 'contributors/form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+<% if @editing %>
+  <%= render :partial => 'contributors/edit_parts' %>
+<% end %>

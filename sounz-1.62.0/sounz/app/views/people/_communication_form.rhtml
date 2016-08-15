@@ -1,0 +1,28 @@
+<h1><%=form_title%></h1>
+
+<% form_tag :id => 'person_communication', :action => form_action, :id => @communication do %>
+
+  <div class="formButtonContainer">
+ 
+  </div>
+    <%= render :partial => 'communication' %>
+<table width=100%><tr><td width=100% align=right><%= cancel_to :action => 'communications_list'%> <%= submit_tag "Save" %></td></tr></table>
+
+<% end %>
+
+
+
+</div>
+
+<!-- observe fields -->
+<%=observe_field("role_role_id", :update => 'organisation_for_role',:url => {:action => :communication_role_selected},:with => "'id='+value")%>
+
+
+<%=observe_field("communication_status", :update => 'closed_date_field',
+:url => {:action => :communication_status_selected, :comm_id => @communication.communication_id},:with => "'status_code='+value")%>
+
+
+
+<%=render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :communications}%>
+ 
+  

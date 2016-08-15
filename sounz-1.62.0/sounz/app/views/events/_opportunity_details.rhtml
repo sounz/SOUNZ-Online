@@ -1,0 +1,23 @@
+<%if @event.is_opportunity?%>
+<fieldset>
+<legend accesskey="o">Opportunity Details</legend>	
+<p><label for="event_entry_fee_note">Entry fee note</label><br>
+<%= text_area 'event', 'entry_fee_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="event_prize_info_note">Prize info note</label><br>
+<%= text_area 'event', 'prize_info_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+
+<p><label for="event_entry_deadline">Entry deadline</label><br>
+<%= date_field_with_time(@event.entry_deadline, 'event', 'entry_deadline')%>
+</p>
+
+<p><label for="event_entry_anonymous">Entry anonymous</label>
+&nbsp;&nbsp;<%= check_box 'event', 'entry_anonymous' %>
+
+
+<p><label for="event_entry_age_limit">Entry age limit</label><br>
+<%= text_field 'event', 'entry_age_limit', :size => 3  %></p>
+
+</fieldset>
+<%end%>

@@ -1,0 +1,21 @@
+<fieldset>
+  <legend>Saved Lists <%=h @contactinfo_type.capitalize %> Contact Info is Assigned to </legend>
+
+<% 
+for saved_contact_list_id in role_contactinfo.saved_contact_lists
+  saved_contact_list = SavedContactList.find(saved_contact_list_id)
+  contact_list_id =  saved_contact_list.saved_contact_list_id.to_s
+%>
+<span id="<%= contact_list_id %>">
+  <%= link_to_remote("Delete", :complete => "new Effect.Fold('"+contact_list_id+"')", :confirm => 'Are you sure?',
+                     :url => { :action => 'delete_from_saved_contact_list', 
+                               :role_contactinfo_id => role_contactinfo.role_contactinfo_id, 
+                               :saved_contact_list_id => saved_contact_list.saved_contact_list_id } ) %>&nbsp;
+<strong>
+  <%= link_to saved_contact_list.list_name, :controller => 'saved_contact_lists', 
+                                            :action => 'edit',
+                                            :id => saved_contact_list.saved_contact_list_id  %>
+</strong>
+</span><br>
+<% end %>
+</fieldset>

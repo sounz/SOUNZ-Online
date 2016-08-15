@@ -1,0 +1,4 @@
+page.redirect_to :action => 'edit', :id => @event
+#page.replace_html 'assignedVenue', '<b> No venue assigned</b>'
+#page.replace_html 'relationships', :partial => '/shared/frbr/relationships/edit', :locals => {:object => @event}
+#page.replace_html 'event_details', :partial => 'form'

@@ -1,0 +1,35 @@
+<h1>Loan out 
+<%if @item.manifestation != nil%>
+<%=@item.manifestation.frbr_ui_desc%>
+<%elsif @item.resource != nil%>
+<%=@item.resource.frbr_ui_desc%>
+<%else%>
+Could not find item type!
+<%end%></h1>
+
+<%if !@item.physical_description.blank?%>
+<h2>
+<%=@item.physical_description%>
+</h2>
+<%end%>
+
+<% logins = Login.find(:all, :order => 'username') 
+logins_for_select = Hash.new
+logins.each do |l|
+library_member_flag = nil
+if l.has_membership?('Library Member')
+library_member_flag = ' (Library Member)'
+end
+logins_for_select.store(l.username + library_member_flag.to_s, l.login_id)
+end
+%>
+
+<% form_for :item, @item, :url => { :action => 'loan_item', :id => @item } do |f| %>
+  <table>
+  <tr><td>Login to Lend to:</td><td><%=select_tag('user_login', options_for_select(logins_for_select.sort) )%></td></tr>
+  <tr><td>Date Loaned:</td><td><%=select_date(Time.now,:prefix=>'date_borrowed')%></td></tr>
+  <tr><td>Date Due:</td><td><%=select_date(Time.now,:prefix=>'date_due')%></td></tr>
+  <tr><td>Borrowing note:</td><td><%= text_area 'borrowed_item', 'borrowing_note'  %></td></tr>
+  </table>
+  <%=submit_tag 'Loan this item'%>
+<% end %>

@@ -1,0 +1,122 @@
+<%= error_messages_for 'venue' %>
+<%= error_messages_for 'contactinfo' %>
+
+
+<!--[form:venue]-->
+
+<fieldset>
+	<legend accesskey="v">Venue Details</legend>
+<p><label for="venue_venue_name">Venue name</label><br>
+<%= text_field 'venue', 'venue_name', :size => standard_edit_cols  %></p>
+
+<p><label for="venue_venue_description">Venue description</label><br>
+<%= text_area 'venue', 'venue_description', :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+</legend>
+</fieldset>
+
+<fieldset>
+<legend accesskey="c">Contact Details</legend>
+<table><tr>
+<td class='labelformat'><label for="contactinfo_preferred_comm_method">Preferred Communication Method</label></td>
+<td class='formelemformat'><%= select('contactinfo', "preferred_comm_method", CommunicationMethod.to_dropdown(:text => 'communication_method_desc')) %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_street">Street</label></td>
+<td class='formelemformat'><%= text_area 'contactinfo', 'street', :cols => standard_edit_cols, :rows => 2  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_po_box">PO Box</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'po_box', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_suburb">Suburb</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'suburb', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_locality">Locality</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'locality', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_postcode">Post code</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'postcode', :size => 10  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_region">Region</label></td>
+<td class='formelemformat'><div id="regionSelector">
+<% if @contactinfo.region_id != nil %>
+<%= select('contactinfo', "region_id", Region.to_dropdown(:text => 'region_name'), :prompt => "-- Select a region --") %>
+<% else %>
+<% if @contactinfo.country != nil %>
+<%=  render :partial => '/contactinfos/show_regions_for_country', :locals => {:country => @contactinfo.country, :regions => @contactinfo.country.regions}%>
+<% end%>
+<% end %>
+</div></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_country">Country</label></td>
+<td class='formelemformat'><%= select('contactinfo', 'country_id', Country.to_dropdown(:text => 'country_name'), :prompt => "-- Select a country --") %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_email_1">Email 1</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'email_1', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_email_2">Email 2</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'email_2', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_email_3">Email 3</label></td>
+<td class='formelemformat'><%= text_field 'contactinfo', 'email_3', :size => standard_edit_cols  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_website_urls">Website URL</label></td>
+<td class='formelemformat'><%= text_area 'contactinfo', 'website_urls', :cols => standard_edit_cols,
+                                                                      :rows => standard_edit_rows  %></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_phone">Phone 1</label></td>
+<td class='formelemformat'>
+<table><tr><td>Prefix</td><td>Phone</td><td>Extension</td></tr>
+<tr><td><%= text_field 'contactinfo', 'phone_prefix', :size => 6  %></td><td><%= text_field 'contactinfo', 'phone', :size => 20  %></td><td><%= text_field 'contactinfo', 'phone_extension', :size => 6  %></td></tr></table></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_phone_alt">Phone 2</label></td>
+<td class='formelemformat'>
+<table><tr><td>Prefix</td><td>Phone</td><td>Extension</td></tr>
+<tr><td><%= text_field 'contactinfo', 'phone_alt_prefix', :size => 6  %></td><td><%= text_field 'contactinfo', 'phone_alt', :size => 20  %></td><td><%= text_field 'contactinfo', 'phone_alt_extension', :size => 6  %></td><td></tr></table></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_phone_fax">Fax</label></td>
+<td class='formelemformat'>
+<table><tr><td>Prefix</td><td>Phone</td><td>Extension</td></tr>
+<tr><td><%= text_field 'contactinfo', 'phone_fax_prefix', :size => 6  %></td><td><%= text_field 'contactinfo', 'phone_fax', :size => 20  %></td><td><%= text_field 'contactinfo', 'phone_fax_extension', :size => 6  %></td></tr></table></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_phone_mobile">Mobile</label></td>
+<td class='formelemformat'>
+<table><tr><td>Prefix</td><td>Phone</td><td>Extension</td></tr>
+<tr><td><%= text_field 'contactinfo', 'phone_mobile_prefix', :size => 6  %></td><td><%= text_field 'contactinfo', 'phone_mobile', :size => 20  %></td><td><%= text_field 'contactinfo', 'phone_mobile_extension', :size => 6  %></td></tr></table></td>
+</tr>
+<tr>
+<td class='labelformat'><label for="contactinfo_internal_note">Internal note</label></td>
+<td class='formelemformat'><%= text_area 'contactinfo', 'internal_note', :cols => standard_edit_cols,
+                                                                       :rows => standard_edit_rows  %></td>
+</tr></table>
+
+<%=  observe_field("contactinfo_country_id", :update =>"regionSelector",:url => {:controller => "contactinfos", :action => "countryChosen"}, :with => "'id='+value")
+%>
+</fieldset>
+
+<fieldset>
+<legend accesskey="n">Notes</legend>
+<p><label for="venue_general_note">General note</label>
+<%= text_area 'venue', 'general_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="venue_internal_note">Internal note</label>
+<%= text_area 'venue', 'internal_note',:cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p>Status:<br><%= select("venue", "status_id", @statuses.to_dropdown) %></p>
+</fieldset>
+
+<!--[eoform:venue]-->
+

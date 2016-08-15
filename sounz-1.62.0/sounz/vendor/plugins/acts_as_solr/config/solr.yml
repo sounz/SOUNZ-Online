@@ -1,0 +1,14 @@
+# Config file for the acts_as_solr plugin.
+#
+# If you change the host or port number here, make sure you update 
+# them in your Solr config file
+
+development:
+  host: localhost
+  port: 8982
+  servlet_path: solr
+  
+production:
+  host: localhost
+  port: 8983
+  servlet_path: solr

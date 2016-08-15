@@ -1,0 +1,5 @@
+<ul class="inlineList">
+<%for contributor_role in contributors%>
+<li><%= ContributorsHelper.get_link_depending_on_role_type(contributor_role, @login)%></li>
+<%end%>	
+</ul>

@@ -1,0 +1,25 @@
+
+<!--[form:sample]-->
+<%= error_messages_for 'sample' %>
+
+<%=hidden_field "manifestation", "id", :value => manifestation.manifestation_id %>
+<p><label for="sample_sample_description">Sample description</label><br>
+<%= text_area 'sample', 'sample_description', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="sample_sample_copyright">Sample copyright</label><br>
+<%= text_field 'sample', 'sample_copyright', :size => standard_edit_cols  %></p>
+
+<%if !@frbr_children.blank?%>
+<p>Expression:
+<%= collection_select('sample', :expression_id, 
+                          @frbr_children, :id, 
+                          :frbr_ui_desc, {:prompt => "-- Select an expression --"},
+                          {:style => "width: 350px"}) %>
+<%end%>
+
+<p>Status:
+<%= select("sample", "status_id", statuses.to_dropdown) %></p>
+
+
+<!--[eoform:sample]-->
+

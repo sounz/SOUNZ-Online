@@ -1,0 +1,29 @@
+<h1>Listing venues</h1>
+
+<table>
+  <tr>
+  <th>Venue Name</th>
+  <th>Venue Description</th>
+  <th>General Note</th>
+  <th>Internal Note</th>
+  </tr>
+  
+<% for venue in @venues %>
+  <tr>
+  <td><%=venue.venue_name%></td>
+  <td><%=venue.venue_description%></td>
+  <td><%=venue.general_note%></td>
+  <td><%=venue.internal_note%></td>
+  <td><%= link_to 'Show', :action => 'show', :id => venue %></td>
+  <td><%= link_to 'Edit', :action => 'edit', :id => venue %></td>
+  <td><%= link_to 'Destroy', { :action => 'destroy', :id => venue }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @venue_pages.current.previous } if @venue_pages.current.previous %>
+<%= link_to 'Next page', { :page => @venue_pages.current.next } if @venue_pages.current.next %> 
+
+<br>
+
+<%= link_to 'New venue', :action => 'new' %>

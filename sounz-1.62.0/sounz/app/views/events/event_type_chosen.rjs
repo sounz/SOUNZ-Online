@@ -1,0 +1,4 @@
+page.replace_html 'opportunityDetails', :partial => 'opportunity_details'
+page.replace_html 'eventDetails', :partial => 'event_specific_details'
+page.visual_effect :highlight, 'opportunityDetails'
+page.visual_effect :highlight, 'eventDetails'

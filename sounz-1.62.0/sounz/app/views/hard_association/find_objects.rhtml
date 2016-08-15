@@ -1,0 +1,18 @@
+<div class="instruction">To add an object click 'Add'
+Source instance id is <%=@instance_id%>	
+</div>
+<ul>
+<%for frbr_object in @matching_frbr_objects%>
+<%frbr_object_id = generate_id(frbr_object)%>
+<li id="found_<%=frbr_object_id%>">
+<span class="actionButton"><%= link_to_remote "Add", :url => {:controller => :hard_association, :action => :add_child, :id => frbr_object_id, :source_id => @instance_id},
+                              :before => "Element.show('spinner')",
+                              :complete => "Element.hide('spinner')"%></span>
+<%if frbr_object.class != Expression%>
+<%=frbr_object.id%>:<%=frbr_object.frbr_ui_desc%>	
+<%else%>
+<span title="<%=frbr_object.tooltip%>"><%=frbr_object.id%>:<%=frbr_object.frbr_ui_desc%></span>
+<%end%>	
+</li>
+<%end%>
+</ul>

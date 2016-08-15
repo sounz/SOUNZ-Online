@@ -1,0 +1,70 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+gordon:
+  login_id: 1
+  #organisation_id: 1
+  login_agent_class: P
+  username: gordon
+  password: 4a38531cde148b2703dad71114681e7cd8da79a95b7ffd795bf5c1bae9abf04e
+  salt: CEGdWVVc
+  password_forever: true
+  locked: false
+  enabled: true
+  login_fail_count: 0
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%> 
+liuba:
+  login_id: 2
+  #organisation_id: 1
+  login_agent_class: P
+  username: liuba
+  password: ed315977b4ed50d554fa0c7061a2677890a28a22a44a333aa3899e6a06d7dde2
+  salt: N+BBsE9d
+  password_forever: true
+  locked: false
+  enabled: true
+  login_fail_count: 0
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%> 
+pete:
+  login_id: 3
+  #organisation_id: 1
+  login_agent_class: P
+  username: pete
+  password: 2e3c6575429081f4d7b7ca018fe26cccc441fcbf65713fb09f278f1b8f94e896
+  salt: X9SfEH7U
+  password_forever: true
+  locked: false
+  enabled: true
+  login_fail_count: 0
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+nigel:
+  login_id: 4
+  #organisation_id: 1
+  login_agent_class: P
+  username: nigel
+  password: 84425331ad477aa6f19a6b883ef15e69d9819495a58b7a4e12d6f630212011e5
+  salt: 2Roo7mL5
+  password_forever: true
+  locked: false
+  enabled: true
+  login_fail_count: 0
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+batch:
+  login_id: 1000
+  login_agent_class: P
+  username: batch
+  password: 84425331ad477aa6f19a6b883ef15e69d9819495a58b7a4e12d6f630212011e5
+  salt: 2Roo7mL5
+  password_forever: true
+  locked: false
+  enabled: true
+  login_fail_count: 0
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+  
+ 

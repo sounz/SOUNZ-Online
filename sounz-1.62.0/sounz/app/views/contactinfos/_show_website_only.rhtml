@@ -1,0 +1,10 @@
+<%urls = contactinfo.get_list_of_websites
+if urls.length > 0
+	url = urls[0]
+%>	
+URL:<%=url%>
+<a rel='external' onclick="window.open('<%=url%>'); return false" href='<%=url%>'><%=url%></a>
+
+<%	
+end
+%>

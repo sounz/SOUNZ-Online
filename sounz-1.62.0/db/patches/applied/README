@@ -1,0 +1,5 @@
+This directory contains patch files which have been applied to
+the production database.
+
+As such it is an archive pf previous patches, so we can keep the
+top directory clearer.

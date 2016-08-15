@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+r1:
+    resource_type_id: 1
+    resource_type_id: 1
+    format_id: 1 
+    status_id: 1
+    resource_title: New Zealand Composer information
+    resource_title_alt: New Zealand Composer information
+    resource_code: 1001
+    publication_year: 2006
+    isbn: 984375893475
+    ismn: 89756899549
+    isrc: 598674589657
+    imprint: Imprint info
+    collation: Collation information
+    series_title: Panflets about NZ Composers
+    author_note: Author note
+    general_note: General note
+    internal_note: Internal note
+    content_note: Contents note
+    copyright: Test data
+    duration: "01:40:00"
+    created_at: 2006-01-12
+    updated_at: 2007-01-09
+    updated_by: 1
+    
+    

@@ -1,0 +1,108 @@
+REPORTS Using iReport
+=====================
+by Paul Waite on Thur 30/8/2007
+
+This area has a sub-directory:
+ exampless              - working iReport example SOUNZ reports
+ 
+
+iReport Installation
+====================
+How to get iReport going with a postgresql-based SOUNZ database.
+iReport is a java-based application, and as such we have got
+the source from SourceForge and compiled it. This has been
+found to be trouble-free, at least on the systems it has been
+done on (Ubuntu Feisty, Sun Java 1.6).
+
+1. make sure the system has a Java JDK of >1.4 vintage installed.
+I got my copy working using Sun's 1.6 jdk.
+
+2. build the source just by typing 'ant' at the command line. This
+worked for me, but obiously you may need to make sure that some
+pre-requisites are present (eg. ant itself). Basically it wasn't
+hard on Debian at least.
+
+3. install a Postgresql JDBC driver. On debian this was as easy as
+    apt-get install libpg-java
+
+4. edit the ./bin/startup.sh script and make sure that the DIRLIBS
+variable contains enough paths for your installation to allow
+iReports to find the JDBC jar you have installed. Have a look at
+the path I added (/usr/share/java/*.jar) which was good for
+Debian - YMMV.
+
+5. Start up iReport from the main directory using the initial
+startup script:
+  ./iReport.sh
+
+
+Secure Connection from SOUNZ
+============================
+SOUNZ will require to connect to the Postgresql database from their
+offices to do reports using iReport. This documents a way to set
+that up using SSH.
+
+1. set up postgresql auth access
+Edit the /etc/postgresql/8.1/main/pg_hba.conf file.
+In there, make sure we have something like this, for accessing the
+SOUNZ database from the SOUNZ offices:
+
+  # IPv4 local connections:
+  # TYPE  DATABASE  USER           CIDR-ADDRESS          METHOD
+  host    sounz     sounz_reports  202.104.5.25/32        md5
+
+The above allows the given incoming IP (replace with SOUNZ's own)
+and limits the database and user allowed also. Passwords are
+also sent encrypted using md5.
+
+2. set up postgresql connection settings
+Edit the /etc/postgresql/8.1/main/postgresql.conf file.
+In there make sure these settings are applied:
+
+  listen_addresses = '*'
+  password_encryption = on
+
+This makes sure that the database server is listening on all interfaces
+in the machine, and is using encrypted passwords.
+
+3. Set up Unix user account
+On the database server (eg. sounz.org.nz) set up the required 'sounzreports'
+user.  Note that this Linux username is not the same as the Postgresql user
+which is named 'sounz_reports' - it is a Linux account so we can do SSH.
+Make sure the SSH keys are generated for the user, and that the public key
+is installed on the client machine(s) at SOUNZ.
+
+NB: To make the creation of the account plus ssh keys easy, there a Debian
+package has been created to do it, and that package can be found in the root
+of the Subversion development tree. In fact the 'sounz-backend' package
+dependencies require it to be installed, so you can't avoid it. ;-)
+
+After setup, test that you can login via SSH to the server as 'sounzreports'
+ok, from the client machine.
+
+
+4. At SOUNZ
+First of all install SSH on all the client machines.
+Set up a port forwarding, such as the below. Obviously this has to
+be made somewhat user-friendly - maybe just an icon on the desktop
+which they click to run a script in a terminal might suffice.
+
+  ssh -L 4001:sounz.org.nz:5432 sounzreports@sounz.org.nz
+
+4. Set up the iReports connection
+Assuming you have the JDBC driver working, you just have to point the
+connection so that it gets forwarded by SSH, like so:
+
+  hostname: localhost
+  port: 4001
+  database: sounz
+  username: sounz_reports
+  password: <as provided>
+
+
+That should get you a secure connection for iReports over SSH to the
+live SOUNZ database 'sounz' running at sounz.org.nz:5432.
+
+
+
+# ENDS

@@ -1,0 +1,20 @@
+<% if !contactinfo.blank?%>
+
+<%if !contactinfo.building.blank?%><%=contactinfo.building%><br><%end%>
+<%if !contactinfo.street.blank?%><%=contactinfo.street%><br><%end%>
+<%if !contactinfo.po_box.blank?%><%=contactinfo.po_box%><br><%end%>
+<%if !contactinfo.suburb.blank?%><%=contactinfo.suburb%><%if contactinfo.locality.blank? %>&nbsp;<%=contactinfo.postcode%><%end%><br><%end%>
+<%if !contactinfo.locality.blank?%><%=contactinfo.locality%>&nbsp;<%=contactinfo.postcode%><br><%end%>
+
+<%if !contactinfo.country.blank?%>
+<%=contactinfo.country.country_name%><br>
+<% end %>
+
+<br>
+<% if !website_url.blank?%>
+<b>Website:</b> 
+<a rel='external' onclick="window.open('<%= format_link(website_url)%>'); return false" href='<%=format_link(website_url)%>' title='<%=website_url%>'>
+<%=website_url%></a>
+
+<% end %>
+<% end %>

@@ -1,0 +1,142 @@
+Changes: 
+ sounz (1.12.0) stable; urgency=low
+ .
+   * WR#51881 - WORK UPDATE FORM - break when pressing submit - breakage was
+     caused by the call to the incorrect model in show confirmation - fixed.
+     [liuba]
+   * WR#51853 - TAP - works - display of difficulty note - added Difficulty
+     Note section to Works show page. [liuba]
+   * Sorted person's roles in person's role list (Person Edit, Roles pages)
+     The sorting order is: person Person role followed by person roles by
+     role name in alphabetical ascending order. [liuba]
+   * WR#51725 - CRM - ordering of contacts on organistion page - organisation
+     roles are now displayed in special order - general organisation role,
+     followed by organisation roles without people in alphabetical ascending
+     order of role name and then, organisation roles that have people associated
+     with them in alphabetical ascending order of person's last name. [liuba]
+   * Fixed a bug in Manifestation/Resource Advanced search where a combination
+     of solr and sql searches for both entities (Manifestation/Resource) was
+     not filtering properly when searching by applicable to one entity only
+     fields (ex. manifestation format or resource format, etc). [liuba]
+   * WR#41964 - Relationship updated_by Field Hard Coded - get rid of
+     hard-coded login_id = 1 by passing editing user login parameter to
+     RelationshipHelper.add_frbr_relationship(). Note: for some scripts
+     that were previously used to create testing data, hard-coded login_id=1
+     is left. [liuba]
+   * Added controller_restrictions for hard_association_controller.rb methods
+     for 'CAN_EDIT_TAP' privilege.[liuba]
+   * Centralised privileges logic for CRM that checks whether an editing user
+     does have permission to publish CRM, if not, sets status of person or
+     organisation entities to 'Pending' and reindexes entity solr indexes and
+     entity role contactinfos in Role.crm_privileges_check(login, role). [liuba]
+   * WR#51527 - SUPERWORK - new ones created without composer - added composers names
+     to the superwork title created by default from the associated work name. [liuba]
+   * Changed the search-as-you-type composers search when creating a Work to
+     a delayed search - the search is started when a user stops typing in the search
+     textbox. [liuba]
+   * WR#42414 - Remove duplicate work relationships of type 'Is evidence of' -
+     added script delete_duplicated_relatiosnips.rb [liuba]
+   * WR#51298 - commented out 'Releasers' frbr relationship from Manifestation show
+     page as this is a duplicated info of Publisher field on the screen. [liuba]
+   * WR#51061 - DISTINCTION Instance - 'masked' by default - changed status default
+     to 'Pending'. [liuba]
+   * WR#51710 -Added the relationships: 'Is funded by' to Manifestation -> Role and
+     Resource -> Role; 'Describes' to Resource -> Resource. [liuba]
+   * Added 'CAN_EDIT_SALES_HISTORY' privilege, assigned
+     'CAN_EDIT_SALES_HISTORY' and 'CAN_EDIT_BORROWED_ITEM' to
+     Administrator and TAP Administrator users; added appropriate
+     controller_restrictions, etc. [liuba]
+   * WR#51720 - EXPRESSION - not showing the partial expression note -
+     added partial expression note to be shown on Expression show page
+     and in Performance History, Events sections of Work show page.
+     [liuba]
+   * Perms changes to /data/sounz/app/download to allow 'sounzreports' user to
+     upload content via MacFusion. [paul]
+   * SOLR reindexing no longer blocks searching
+   * WR51512 - added change password functionality
+   * WR51172 - changes to music facet names
+   * Changed flash notice (error from forms) to red, as grey was not obvious
+   * WR50289 - make site specific and additional category [gordon]
+   * WR51487 - fixed the ability to add logins to a person [gordon]
+   * WR42440 - added genre of Taonga Pouro to Maori Music concept [gordon]
+   * Facets now toggleable without Javascript. [gordon]
+   * WR50259 - Pouru / Pouro fix [gordon]
+   * WR51473 - Lowercase person search as searches in capital letters failed. [gordon]
+   * WR51473 - can now do CRM searches for "Firstname Lastname", e.g. "Gareth Farr" [gordon]
+   * WR#51440 - fixed dates typo. [liuba]
+   * WR#51194 - Image Alignment for Resources in Search Results - right-aligned
+     Resource image. [liuba]
+   * WR#51111 - MANIFESTATION display - 'not available' is confusing - replaced
+     'Not Available' with 'Sample', put size of the sample after 'Sample',
+     replaced sample icons by those used in search results for consistency.
+     [liuba]
+   * WR#42543 - made the organisation name to be displayed in italic in the
+     person's role contactinfo record of the search results to facilitate
+     its spotting in the list. [liuba]
+   * WR#51506 - Manifestation/Resource Advanced search - saved search not working -
+     fixed a bug in Works Advanced, Contributors Advanced, Events Advanced,
+     Manifestation/Resource Advanced searches when only 'new' searches were
+     processed and results for the repeated searches were taken from session, this
+     provoked different error situations reported in the WR, etc. [liuba]
+   * Added controller restriction for /advanced_finder/type_formats, for a privilege
+     CAN_VIEW_TAP. [liuba]
+   * WR#51533 - TINY MCE - bullet points don't show - default style for the site content
+     is not to show bullet points for unordered lists - added special style for the
+     content of CM pages to display bullets. [liuba]
+   * Added replacement processing for image url in main content field of campaign
+     mailout as extra precaution to make sure that even when old templates
+     (mailout contents) are used, the images link correctly to the current host -
+     this fixes the problem of previous release when images urls (if main content
+     is reused) display old 'production.sounz.org.nz'. [liuba]
+   * WR#50002 - enhancements to News Articles functionality: 'Home' page displays
+     max 2 feature articles; added a restriction, so that there are only 2 'feature'
+     articles (with 'Published' status only, 'Pending' articles can have unlimited
+     number of 'feature' articles) of 'Story' type at any time - when new 'feature'
+     article is added, the oldest 'feature' article is set to false; added check
+     that sets 'feature' parameter to false for archived article. [liuba]
+   * WR#50272 - CRM and TAP - statuses - removed 'Approved' status from Sample
+     statuses drop-down list. [liuba]
+   * WR#51552 - Sales History - updating status breaks. [liuba]
+   * WR#51597 - WORKS - Difficulty display on show page - hide 'Unknown' diffuculty
+     [liuba]
+   * WR#42479 - TAP - Advanced search testing - applied some stripping to work
+     title search parameter, similar to FinderHelper.strip(string) but leaving
+     quotes in - this fix a bug, when a search with a dot in the title returns
+     no results. [liuba]
+   * WR#51596 - Fixed Manifestation show page to display only samples relating
+     to a particular manifestation. [liuba]
+   * WR#51593 - LOGINS - edit should be save - renamed submit button to 'Save'
+     [liuba]
+   * WR#51608 - EVENTS - entering a new event - workflow - separated 'Venue'
+     widget from the event form, made it appear once an event has been created
+     and consistent with other relationship widgets. [liuba]
+   * WR#51609 - EXPRESSION - wiki text not showing on Performance history -
+     added the method to convert wiki text to html. [liuba]
+   * WR#51610 - WIKITEXT - Italic affecting search results. [liuba]
+   * WR#51613 - UMBRELLA EVENT - added date field to related events listing on
+     Event show, sorted related events by date. [liuba]
+   * WR#51204 - EVENT- general note and links. [liuba]
+   * WR#51592 - Page numbers - navigation for searches - the current page in
+     pagination is not displayed as a link anymore to make it clear for user
+     his/her current position in the list. [liuba]
+   * WR#51392 - CRM - search order of results - the following organisation
+     fields are searched now in CRM basic search as requested by SOUNZ:
+     organisation_name, organisation_abbrev, known_as and related organisations
+     organisation_name, organisation_abbrev. Also, added to person search
+     known_as field.
+     IMPORTANT: Person, Organisation models require solr indexes to be rebuild.
+     [liuba]
+   * WR#51640 - CRM - navigation from logins back to privileges - added
+     'Privileges' link to Login edit page. [liuba]
+   * WR#51687 - Resource show page break fix. [liuba]
+   * WR#51686 - Works Availability Resource section - Duplicated image fix and
+     uncommented the price info. [liuba]
+   * WR#51679 - MANIFESTATION/ RESOURCE - cost = 0.0 - hidden 0.00 price from
+     Manifestation/Resource show pages [liuba]
+   * WR#51689 - CONTRIBUTOR - display of role has "this is ... " sentence -
+     removed testing sentence.[liuba]
+   * WR#51701 - FACETS - music - typo in Other pathways - fixed type. [liuba]
+   * WR#51721 - Provider forms - listing page displays now forms with 'Pending'
+     and 'Approved' status (1 months old); also, 'Show all' option has been
+     added to display the listing of all forms; status field is added to the
+     listing of the forms. [liuba]

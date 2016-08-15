@@ -1,0 +1,62 @@
+001|Aoraki|Aoraki|24/04/2002 00:00:00
+002|Auckland Central|Auckland Central|24/04/2002 00:00:00
+003|Banks Peninsula|Banks Peninsula|24/04/2002 00:00:00
+004|Bay of Plenty|Bay of Plenty|24/04/2002 00:00:00
+005|Christchurch Central|Christchurch C.|24/04/2002 00:00:00
+006|Christchurch East|Christchurch E.|24/04/2002 00:00:00
+007|Clevedon|Clevedon|24/04/2002 00:00:00
+008|Clutha-Southland|Clutha-Southland|24/04/2002 00:00:00
+009|Coromandel|Coromandel|24/04/2002 00:00:00
+010|Dunedin North|Dunedin North|24/04/2002 00:00:00
+011|Dunedin South|Dunedin South|24/04/2002 00:00:00
+012|East Coast|East Coast|24/04/2002 00:00:00
+013|East Coast Bays|East Coast Bays|24/04/2002 00:00:00
+014|Epsom|Epsom|24/04/2002 00:00:00
+015|Hamilton East|Hamilton East|24/04/2002 00:00:00
+016|Hamilton West|Hamilton West|24/04/2002 00:00:00
+017|Helensville|Helensville|24/04/2002 00:00:00
+018|Hutt South|Hutt South|24/04/2002 00:00:00
+019|Ilam|Ilam|24/04/2002 00:00:00
+020|Invercargill|Invercargill|24/04/2002 00:00:00
+021|Kaikoura|Kaikoura|24/04/2002 00:00:00
+022|Mana|Mana|24/04/2002 00:00:00
+023|Mangere|Mangere|24/04/2002 00:00:00
+024|Manukau East|Manukau East|24/04/2002 00:00:00
+025|Manurewa|Manurewa|24/04/2002 00:00:00
+026|Maungakiekie|Maungakiekie|24/04/2002 00:00:00
+027|Mt Albert|Mt Albert|24/04/2002 00:00:00
+028|Mt Roskill|Mt Roskill|24/04/2002 00:00:00
+029|Napier|Napier|24/04/2002 00:00:00
+030|Nelson|Nelson|24/04/2002 00:00:00
+031|New Lynn|New Lynn|24/04/2002 00:00:00
+032|New Plymouth|New Plymouth|24/04/2002 00:00:00
+033|North Shore|North Shore|24/04/2002 00:00:00
+034|Northcote|Northcote|24/04/2002 00:00:00
+035|Northland|Northland|24/04/2002 00:00:00
+036|Ohariu-Belmont|Ohariu-Belmont|24/04/2002 00:00:00
+037|Otago|Otago|24/04/2002 00:00:00
+038|Otaki|Otaki|24/04/2002 00:00:00
+039|Pakuranga|Pakuranga|24/04/2002 00:00:00
+040|Palmerston North|Palmerston North|24/04/2002 00:00:00
+041|Piako|Piako|24/04/2002 00:00:00
+042|Port Waikato|Port Waikato|24/04/2002 00:00:00
+043|Rakaia|Rakaia|24/04/2002 00:00:00
+044|Rangitikei|Rangitikei|24/04/2002 00:00:00
+045|Rimutaka|Rimutaka|24/04/2002 00:00:00
+046|Rodney|Rodney|24/04/2002 00:00:00
+047|Rongotai|Rongotai|24/04/2002 00:00:00
+048|Rotorua|Rotorua|24/04/2002 00:00:00
+049|Tamaki|Tamaki|24/04/2002 00:00:00
+050|Taranaki-King Country|Taranaki-King C.|24/04/2002 00:00:00
+051|Taupo|Taupo|24/04/2002 00:00:00
+052|Tauranga|Tauranga|24/04/2002 00:00:00
+053|Te Atatu|Te Atatu|24/04/2002 00:00:00
+054|Tukituki|Tukituki|24/04/2002 00:00:00
+055|Waimakariri|Waimakariri|24/04/2002 00:00:00
+056|Wairarapa|Wairarapa|24/04/2002 00:00:00
+057|Waitakere|Waitakere|24/04/2002 00:00:00
+058|Wellington Central|Wellington C.|24/04/2002 00:00:00
+059|West Coast-Tasman|West Coast-Tas.|24/04/2002 00:00:00
+060|Whanganui|Whanganui|24/04/2002 00:00:00
+061|Whangarei|Whangarei|24/04/2002 00:00:00
+062|Wigram|Wigram|24/04/2002 00:00:00

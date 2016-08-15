@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Sounz :: Home</title>
+    <meta http-equiv='content-language' content='en' />
+    <meta http-equiv='content-type' content='text/html; charset=iso-8859-1' />
+    <link href='/stylesheets/style_home.css' media='screen' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='/includes/sleight.js'></script>
+</head>
+<body>
+<a name='top' id='top'></a>
+<div id='container'>
+    <div id='header'>
+        <a href='/' title='Return to the homepage'><img src='/images/logo-sounz.gif' alt='Sounz' /></a>
+        <p class='hide'><a href='#content'>skip to content</a></p>
+    </div><!-- /#header -->
+
+    <div id='content'>
+        <div id='intro'>
+            <p>Welcome to SOUNZ: <a href='/finder/showd/works'>search</a>, <%=link_to "buy", under_construction_url%> and <%=link_to "borrow", under_construction_url%> the music of New Zealand composers</p>
+        </div><!-- /#intro -->
+
+        <div id='features'>
+			<%=render :partial => "home/random_manifestation"%>
+			<%=render :partial => "home/random_contributor"%>
+			<%= render :partial => 'home/random_event'%>
+		</div>
+
+
+        </div><!-- /#features -->
+
+        <div id='column'>
+	
+	
+            <h2 class='news_list'><a href='/news_articles/?category=current'>News</a></h2>
+            <div class='line'></div><!-- /.line -->
+
+            <div id='news_list'>
+                <%@events = Event.find(:all, :order => "event_start desc", :conditions => "event_title != '' ",:limit => 2) %>
+                <%=render :partial => '/events/homepage_news', :collection => @events%>
+            </div><!-- /#news_list -->
+
+            <div id='members_login'>
+                <h3 class='title members_login'>Members Login</h3>
+                <form id='members_login_form' name='members_login_form' action=''>
+                    <fieldset>
+                        <label><span class='hide'>Email</span> <input type='text' class='text' id='member_email' name='member_email' value='Email' maxlength='50' onfocus="this.value=''" /></label>
+                        <label><span class='hide'>Password</span> <input type='text' class='text last' id='member_password' name='member_password' value='Password' maxlength='50' onfocus="this.value=''" /></label>
+                        <div class='options'>
+                            <a class='button login' href='#' onclick='if(document.getElementById("member_email").value != "Email" || document.getElementById("member_password").value != "Password"){document.members_login_form.submit()} else {alert("Please your Member Login details.")};return false;'>Login</a> <span>or <%=link_to ('Join', :controller => :people, :action => 'new_web_user')%></span>
+                        </div><!-- /.options -->
+                    </fieldset>
+                </form>
+            </div><!-- /#members_login -->
+
+            <h3>Main Navigation</h3>
+            <ul id='main_navigation'>
+                <li><a href='/'>Home</a></li>
+                <li><%=link_to "About", under_construction_url%></li>
+				<li><%=link_to "Contact", under_construction_url%></li>
+				<li><%=link_to "Education", under_construction_url%></li>
+				<li><%=link_to "Projects", under_construction_url%></li>
+				<li><%=link_to "Links", under_construction_url%></li>
+				<li><%=link_to "For Composers", under_construction_url%></li>
+				<li><%=link_to "For Presenters", under_construction_url%></li>
+				<li><%=link_to "About", under_construction_url%></li>
+            </ul>
+        </div><!-- /#column -->
+    </div><!-- /#content -->
+    <div id='footer'>
+        <div>
+            <p>SOUNZ is a music information centre which provides, fosters and promotes music by New Zealand composers through services and projects which encourage its creation, performance, publication, recording and broadcast.</p><br>
+            <p>SOUNZ, the Centre for New Zealand Music<br>
+            Phone: +64 4 801 8602<br>
+            <a href='mailto:info@sounz.org.nz'>info@sounz.org.nz</a><br>
+            <a href='#'>full contact details</a></p>
+        </div>
+
+        <a href='http://www.creativenz.govt.nz/' target='_blank' title='Creative NZ'><img id='creative_nz' src='/images/logo-creative-nz.gif' alt='Creative NZ' /></a>
+        <a href='http://www.iamic.net/' target='_blank' title='International Association of Music Information Centre'><img id='iamic' src='/images/logo-iamic.gif' alt='International Association of Music Information Centre' /></a>
+    </div><!-- /#footer -->
+</div><!-- /#container  -->
+</body>
+</html>

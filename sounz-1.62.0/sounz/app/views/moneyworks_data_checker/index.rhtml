@@ -1,0 +1,22 @@
+<div class="section">
+<h1>Moneyworks data checker</h1>
+</div>
+<br/>
+<%form_tag( { :action => 'run_check'}, {:multipart =>true} ) do -%> 
+
+<div id="cm_content">
+ <p>Note: 
+ The file should be in CSV format and contain the following corresponding to Moneyworks data fields in that order:
+ moneyworks code, title, freight code, price.
+ </p>
+</div>
+ 
+ <p>Moneyworks export file to upload <br/>
+
+ <%= file_field_tag "file", :size => standard_edit_cols %></p>
+ 
+ <p>Contains column headings? <%= check_box "upload_file", "column_headings"%></p>
+ 
+<p/><br/>
+<%= submit_tag "Run Check" %>
+<% end %>

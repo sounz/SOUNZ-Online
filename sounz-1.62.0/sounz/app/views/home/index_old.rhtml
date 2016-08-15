@@ -1,0 +1,48 @@
+<h2>CRM Menu</h2>
+
+<div id="mainMenu">
+<p></p>
+<ul>
+<!--<li><%=link_to "Find Contacts", :controller=> :search, :action => :find_contacts_menu%></li>-->
+<li><%=link_to "Find Contacts", :controller=> :search_contacts %></li>
+<!--<li><%=link_to "Organisations", :controller=> :organisations, :action => :list%></li>-->
+<li><%= link_to "Find Communications", :controller => :find_communications, :actions => :index%></li>
+<li><%=link_to "Saved Contact Lists", :controller=> :saved_contact_lists, :action => :list%></li>
+<li><%=link_to "Projects and Campaigns", :controller=> :projects, :action => :list%></li>
+<!--<li>Reports</li>-->
+<li><%=link_to "Miscellaneous", :action => :miscellaneous_menu %></li>
+<li><%=link_to "Maintenance", :action => :maintenance_menu %>
+</ul>
+</div>
+<hr/>
+<h2>Catalog Menu</h2>
+<div id="mainMenu">
+<p></p>
+<ul>
+<li><%=link_to "Find FRBR Objects",:controller=> :finder,:action => :show%></li>
+<li><br/></li>
+<li><%=link_to "Association", :controller=> :association, :action => :show%></li>
+<li><%=link_to "Relationship Types", :controller=> :relationship_types, :action => :list%></li>
+<li><%=link_to "Entity Types", :controller=> :entity_types, :action => :list%> (Do not edit)</li>
+<li><br/></li>
+<li><%=link_to "Superworks", :controller=> :superworks, :action => :list%></li>
+<li><%=link_to "Works", :controller=> :works, :action => :list%></li>
+<li><%=link_to "Expressions", :controller=> :expressions, :action => :list%></li>
+<li><%=link_to "Manifestations", :controller=> :manifestations, :action => :list%></li>
+<li><%=link_to "Contributors", :controller=> :contributors, :action => :list%></li>
+<li><%=link_to "Venues", :controller=> :venues, :action => :list%></li>
+<li><%=link_to "Events", :controller=> :events, :action => :list%></li>
+<li><%=link_to "Concepts", :controller=> :concepts, :action => :list%></li>
+<li><%=link_to "Samples", :controller=> :samples, :action => :list%></li>
+<li><%=link_to "Media Items", :controller=> :media_items, :action => :list%></li>
+
+<li><br/></li>
+<li><%=link_to "Modes", :controller=> :modes, :action => :list%></li>
+<li><%=link_to "Formats", :controller=> :formats, :action => :list%></li>
+<li><%=link_to "Work Categories", :controller=> :work_categories, :action => :list%></li>
+<li><%=link_to "Work Subcategories", :controller=> :work_subcategories, :action => :list%></li>
+<li><%=link_to "Concept Types", :controller=> :concept_types, :action => :list%></li>
+</ul>
+</div>
+<hr/>
+

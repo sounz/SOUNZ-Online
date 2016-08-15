@@ -1,0 +1,30 @@
+<h1>Editing expression</h1>
+
+<%if PrivilegesHelper.has_permission?(get_user.id,'CAN_EDIT_TAP')%>
+<%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => :addToSelected, :type => 'expression', :object_id => @expression.frbr_id})%>
+<%end%>
+
+<div align="right">
+<%= link_to "Copy this Expression", { :action => 'copy', :id => @expression.id }, {:title => "Create a copy of this expression"}
+%>
+</div>
+
+<% form_tag :action => 'update', :id => @expression do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<div class="formSection">
+	<%=render :partial => 'hard_association/show'%>
+</div>
+
+<%=#render :partial => 'access_right/show', :locals => {:object => @expression}
+%>
+
+
+<%=render :partial => 'association/association', :locals => {:object => @expression}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @expression}%>
+</div>
+<%= link_to 'Show', :action => 'show', :id => @expression %> |
+<%= link_to 'Back', :action => 'list' %>

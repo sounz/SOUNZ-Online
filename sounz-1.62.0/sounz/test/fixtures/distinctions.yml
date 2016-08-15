@@ -1,0 +1,14 @@
+
+
+<%time_now = Time.now.strftime("%Y-%m-%d")%>
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+d1:
+  distinction_id: 1
+  contactinfo_id: 1
+  status_id: 1
+  award_name: The ACME Power NZ Best Composer of the year
+  award_info: Award information lorem ipsum
+  updated_by: 1000
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>

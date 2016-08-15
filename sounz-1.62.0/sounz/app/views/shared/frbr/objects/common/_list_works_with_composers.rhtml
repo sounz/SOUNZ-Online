@@ -1,0 +1,21 @@
+<%
+works = PrivilegesHelper.permitted_objects(@login, works)
+
+if works.length >0
+%>
+
+<h2><%=title%></h2>
+<table class="featuredWorks">
+<%for work in works%>
+<tr><td><%= icons_for(work, @login)%><%=link_to work.work_title, :action => 'show', :controller => 'works', :id => work%>&nbsp;<%=show_tap_edit_link_for(work, 'CAN_EDIT_TAP')%></td>
+<td>
+<%
+links_string = []
+work.composers.map{|c| links_string <<  [icons_for(c, @login) +"&nbsp;"+ContributorsHelper.get_link_depending_on_role_type(c, @login)+"&nbsp;"+show_tap_edit_link_for(c, 'CAN_EDIT_CONTRIBUTOR_PROFILE')] }
+%>
+<%=links_string.join(',')%>
+</td></tr>
+<%end%>	
+</table>
+
+<%end%>

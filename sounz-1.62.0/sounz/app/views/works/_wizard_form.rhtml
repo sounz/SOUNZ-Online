@@ -1,0 +1,131 @@
+<%= error_messages_for 'work' %>
+
+<!--[form:work]-->
+<p><label for="work_work_title">Work title</label><br>
+<%= text_field 'work', 'work_title', :size => standard_edit_cols %></p>
+
+<p><label for="work_work_description">Work description</label><br>
+<%= text_area 'work', 'work_description', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+
+<h1>Duration</h1>
+
+<table>
+	<tr>
+		<td><label for="work_intended_duration">Intended duration (seconds)</label></td>
+		<td><%= text_field 'work', 'intended_duration'  , :size => 7%></td>
+	</tr>
+	<tr>
+		<td><label for="work_duration_varies">Duration varies</label></td>
+		<td><select id="work_duration_varies" name="work[duration_varies]"><option value="false" selected>False</option><option value="true">True</option></select></td>
+	</tr>
+	<tr>
+		<td><label for="work_no_duration">No duration</label></td>
+		<td><select id="work_no_duration" name="work[no_duration]"><option value="false" selected>False</option><option value="true">True</option></select></td>
+	</tr>
+</table>
+
+<div class="question">If no duration is specified should the other 2 fields be disabled?</div>
+<h1>Difficulty</h1>
+
+
+<table>
+	<tr>
+		<td><label for="work_difficulty">Difficulty</label></td>
+		<td><%= text_field 'work', 'difficulty'  %></td>
+	</tr>
+	<tr>
+		<td><label for="work_difficulty_note">Difficulty note</label></td>
+		<td><%= text_area 'work', 'difficulty_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+	</tr>
+
+</table>
+
+
+
+
+<h1>Year</h1>
+
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+
+
+<table>
+	<tr>
+		<td><label for="work_year_of_creation">Year of creation</label></td>
+		<td><%= text_field 'work', 'year_of_creation', :size => 4 %></td>
+	</tr>
+	<tr>
+		<td><label for="work_year_of_revision">Year of revision</label></td>
+		<td><%= text_field 'work', 'year_of_revision', :size => 4  %></td>
+	</tr>
+
+</table>
+
+
+
+<!--<h1>Types</h1>
+<div class="question">Are these still required?</div>
+<p><label for="work_applicable_for_youth">Applicable for youth</label><br>
+<select id="work_applicable_for_youth" name="work[applicable_for_youth]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+
+
+<p><label for="work_electroacoustic">Electroacoustic</label><br>
+<select id="work_electroacoustic" name="work[electroacoustic]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="work_improvised">Improvised</label><br>
+<select id="work_improvised" name="work[improvised]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="work_sacred">Sacred</label><br>
+<select id="work_sacred" name="work[sacred]"><option value="false" selected>False</option><option value="true">True</option></select></p>-->
+
+<h1>Source</h1>
+<p><label for="work_text_source_nz">Text source nz</label><br>
+<select id="work_text_source_nz" name="work[text_source_nz]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<h1>ISWC Code</h1>
+<p><label for="work_iswc_code">ISWC code</label><br>
+<%= text_field 'work', 'iswc_code'  %></p>
+
+<h1>Other Notes</h1>
+<p><label for="work_instrumentation">Instrumentation</label><br>
+<%= text_area 'work', 'instrumentation', :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+<p><label for="work_general_note">General note</label><br>
+<%= text_area 'work', 'general_note', :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+<p><label for="work_internal_note">Internal note</label><br>
+<%= text_area 'work', 'internal_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="work_dedication_note">Dedication note</label><br>
+<%= text_area 'work', 'dedication_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="work_commissioned_note">Commissioned note</label><br>
+<%= text_area 'work', 'commissioned_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="work_contents_note">Contents note</label><br>
+<%= text_area 'work', 'contents_note' , :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+<h1>Status</h1>
+<p/>Status:<br><select id="work_status_id" name="work[status_id]">
+        <%= options_from_collection_for_select @statuses, "status_id", "status_desc" %>
+</select></p>
+
+
+<!--[eoform:work]-->
+

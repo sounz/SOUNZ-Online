@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>
+  <% # case for content-managed pages
+    if !@page_title.blank? && @page_title.match('SOUNZ')%>
+    <%= @page_title%>
+  <% else%>
+    SOUNZ <%= yield(:title) %><%= @page_title and " - #{@page_title}" or '' %>
+  <% end %>
+  </title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" href="/sounz.ico" >
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'utilities' %>
+  <%= javascript_include_tag 'swfobject' %>
+ <% if @popup_title %>
+  <%= javascript_include_tag 'submodal'%>
+  <%= stylesheet_link_tag 'submodal'%>
+  <% end %>
+  <%= stylesheet_link_tag 'calendar.css' %>
+  <%= javascript_include_tag 'calendar' %>
+  <!--<%= stylesheet_link_tag 'style_main' %>-->
+    <link href="/stylesheets/style2013.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/search.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/webfonts.css">
+    <script type="text/javascript" src="/javascripts/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery/jquery.selectBox.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery/application.js"></script>
+  <link rel="stylesheet" type="text/css" media="print"
+          href="/stylesheets/print.css" >
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss_feeds">
+  <%= javascript_include_tag 'sleight' %>
+  <%= javascript_include_tag 'common' %>
+  <%= javascript_include_tag 'tinymce/jscripts/tiny_mce/tiny_mce.js' %>
+
+
+
+
+<script type="text/javascript">
+function setStyle(objId, style, value) {
+    document.getElementById(objId).style[style] = value;
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+
+<%
+popped_up_title = @popup_title
+if popped_up_title.blank?
+  popped_up_title = @page_title and " - #{@page_title}" or ''
+end
+%>
+<% if @popup_title %>
+setPopUpLoadingPage("/modal/loading/<%= popped_up_title %>");
+<% end %>
+
+</script>
+
+
+</head>
+<%
+bodyClass="public"
+tabless = is_tabless?(@controller_name_in_context)
+if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CRM')
+  bodyClass="admin"
+end
+-%>
+<body class="<%=bodyClass%>">
+
+<%=render :partial => '/shared/public_pages/admin_menu'%>
+
+<!-- Shopping Cart Block 
+<div id="shoppingCart">
+
+</div>-->
+
+
+<!-- Primary Page Template -->
+
+<div id="container">
+  <a name="top" id="top" style="display:none;">&nbsp;</a>
+
+<!-- Header Area -->
+  <div id="header">
+    <div id="header-inner">
+      <a href="/" title="Return to homepage" class="logo" ><img src="/images/logo.png" alt="Sounz"></a>
+      <%= render :partial => "shared/public_pages/login_box"%>
+      <%= render :partial => "shared/public_pages/search"%>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div id="navigation">
+    <div id="navigation-inner">
+        <ul id="support_navigation">
+          <li><%=link_to "Support Us", "/content/support"%></li>
+        </ul>
+
+			  <ul id="main_navigation">
+				  <li><%=link_to "About", "/content/about"%></li>
+          <li><%=link_to "Events", "/finder/show/events"%></li>
+          <li><%=link_to "News", "/news_articles/?category=current"%></li>
+				  <li><%=link_to "Library", "/content/library"%></li>
+				  <li><%=link_to "Teachers", "/content/teachers"%></li>
+				  <li class="last"><%=link_to "Contributors", "/content/contributors"%></li>
+			  </ul>
+      </div>
+    </div>
+
+
+<!-- Content -->
+    <div id="content">
+      <div id="main-content">
+        <div class="content-section">
+
+<!-- Sub navigation -->
+        <%=yield :tabbed_menu%>
+        <% if flash[:notice] %><p id="flash"><%= flash[:notice] %></p><% end %>
+        <% if flash[:error] %><p id="flashError"><%= flash[:error] %></p><% end %>
+
+          <%=yield %>
+        </div>
+      </div> <!-- Main Content -->
+
+        <div id="first-column">
+
+        <div class="block">
+          <h2>Wishlist</h2>
+          <div id="selectedResults">
+            <%=render :partial => '/finder/selected'%>
+          </div>
+        </div>
+
+        <div class="block">
+          <h2>Shopping Cart</h2>
+          <div id="shopping_cart">
+           <%=render :partial => '/cart/show_cart'%>
+          </div>
+        </div>
+
+        <%if !@login.blank? and PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')%>
+        <div class="block">
+          <h2>Saved Searches:</h2>
+          <div id="savedSearches">
+             <%=render :partial => '/saved_searches/saved_search_list'%>
+          </div>
+        </div>
+      <%end%>
+
+      <%if !@login.blank? and PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CRM')%>
+        <div class="block">
+          <h2>Selected Communications:</h2>
+          <div id="selectedcommunications">
+           <%=render :partial => '/search_communications/selected_communications'%>
+          </div>
+        </div>
+      <%end%>
+
+        <!-- Search result facets -->
+
+        <% if yield :facets %>
+          <%=yield :facets%>   
+        <% end %>
+
+    </div>
+
+  </div>
+
+
+
+<!-- Footer Area -->
+<%=render :partial => 'shared/public_pages/footer'%>
+
+<!-- Inline scripts -->
+<%= javascript_tag "document.cookie = 'tzoffset='+(new Date()).getTimezoneOffset();" unless @user_time_zone %>
+
+<%if GOOGLE_ANALYTICS_ENABLED == true && should_register_google_analytic_hits(@login)%>
+  <%=render :partial => 'shared/public_pages/google_analytics'%>
+<%end%>
+</body>
+</html>

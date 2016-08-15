@@ -1,0 +1,38 @@
+<div id="role_categorization_form">
+<%= error_messages_for 'role_categorization' %>
+
+<!--[form:role_categorization]-->
+<div id="role_categorization_list" class="formelemformat">
+<%= render :partial => '/role_categorizations/role_categorization_list' %>
+</div>
+<br>
+
+<% 
+if @role.organisation.blank? || 
+(!@role.organisation.blank? && @role == Role.get_organisation_primary_role(@role.organisation.organisation_id)) ||
+@role.person.blank?
+%>
+<div class="formelemformat"><%= collection_select(:marketing_category, :id, 
+                          MarketingCategory.find(:all, :order => :display_order), :id, :abbreviation,:prompt => "-- Select a category --") %></div>
+<%=observe_field("marketing_category_id", 
+                 :url => {:controller => :role_categorizations, 
+                          :action => :marketing_category_change, 
+                          :role_id => @role.role_id },
+                 :with => "'id='+value")%>
+
+<div class="formelemformat">
+<div id="subcategory">
+<%if !@marketing_subcategory.blank? %>
+<%=render :partial => '/role_categorizations/role_subcategory_dropdown' %>
+<%else%>
+<i>Subcategories will appear here</i>
+<%end%>
+</div>
+</div>
+
+<br>
+<% end %>
+
+</div>
+
+

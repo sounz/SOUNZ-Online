@@ -1,0 +1,8 @@
+<% for column in ExamSetWork.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @exam_set_work.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @exam_set_work %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,83 @@
+<%if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+
+<h2>Admin Only</h2>
+<dl>
+<%
+# Special case for Manifestation as per WR#51065
+if object.class == Manifestation
+  if object.is_a_score?
+%>
+<dt>Work main category:</dt> 
+<dd>
+<span style="font-size: 130%;">
+<%= object.related_works.map{|rw| rw.main_category.work_subcategory_desc}.join(', ')%></span>
+</dd>
+<br/>
+<% end %>
+<dt>Manifestation code:</dt> 
+<dd><span style="font-size: 130%;">
+&nbsp;<b><%= object.manifestation_code%></b></span>
+</dd>
+<br/>
+<%
+end
+
+# Special case for Distinction as per WR#50291
+if object.class == Distinction && !object.distinction_distinction_types.blank?
+%>
+<dt>Distinction types:</dt> 
+<dd><%= object.distinction_distinction_types.map{|ddt| ddt.distinction_type.distinction_type_name}.join(', ')%>
+</dd>
+<%
+end
+
+# special case for Manifestation/Resource access rights
+if object.class == Manifestation || object.class == Resource 
+access_right_method = object.class.to_s.downcase + "_access_rights"
+%>
+<dt>Access rights:</dt>
+<% access_rights = object.send(access_right_method).map {|mar| mar.access_right_source.capitalize + ": " + mar.access_right.access_right_name}.join('; ') %>
+<dd>
+<% if !access_rights.blank?%>
+<%= access_rights %>
+<% else %>
+<%= '&nbsp;'%>
+<% end %>
+</dd>
+<%
+end
+
+#Passing in a comma separated parameter called fields, and the object to inspect for these values
+fields_array = fields.split(',')
+for field in fields_array
+	fieldname = field.strip
+	value = object.send(fieldname)
+%>
+
+<% if !value.blank?%>
+<dt><%= field.to_s.gsub('_', ' ').strip.capitalize%>:</dt>
+<dd>
+<%if fieldname.ends_with?('_note') && !value.blank?%>
+<%= convert_to_html(value).gsub('<p>','').gsub('</p>','')%>
+<%elsif fieldname == 'updated_by'%>
+<%=Login.find(value).username%>
+<%elsif fieldname == 'status'%>
+<%=value.status_desc%>
+<%elsif fieldname.ends_with?('_type')%>
+<%= value.send(fieldname + '_desc').capitalize%>
+<%elsif fieldname == 'format'%>
+<%= value.format_desc%>
+<%else%>
+<%=value%>
+<%end%>
+</dd>
+<% end %>
+
+<%end%>
+</dl>
+<% if object.class == Manifestation %>
+<%= render :partial => 'items/item_show_list', :locals => { :manifestation => object } %>
+<% end %>
+
+
+<%end%>

@@ -1,0 +1,49 @@
+<% title "Editing marketing campaign - " + @marketing_campaign.campaign_name %>
+
+<div align="right">
+<%=# link_to create_button("New Campaign","New Marketing Campaign"), { :action => 'new', :project => @marketing_campaign.project_id }
+%>
+<%= link_to create_button("Copy Campaign","Clone this marketing campaign"), { :action => 'copy', :id => @marketing_campaign.marketing_campaign_id }%>
+</div>
+
+<% form_tag :action => 'update', :id => @marketing_campaign do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+
+<fieldset>
+<legend>Campaign Mailouts</legend>
+<table>
+<% for mailout in @marketing_campaign.campaign_mailouts %>
+<tr id="<%=mailout.campaign_mailout_id.to_s%>"> 
+<td>&nbsp;
+  <% if mailout.mailout_status.match('n')%>
+  <%= link_to_remote "Delete", :url => { :controller => 'campaign_mailouts', :action => 'destroy', :id => mailout }, 
+                          :confirm => 'Are you sure?', :success => "new Effect.Fade('"+mailout.campaign_mailout_id.to_s+"')" %>
+  <% end %>
+</td>
+<td>&nbsp;</td>
+<td>
+<strong><%= link_to mailout.mailout_description, { :controller => 'campaign_mailouts', :action => 'edit', :id => mailout } %></strong>
+    &nbsp;-&nbsp;<i><%= mailout.mailout_status_display %></i>
+    <% if !mailout.failed_email_delivery_contacts.empty?%>
+    <span class="errorExplanation">partially</span>
+    <% end %>
+</span>
+</td>
+</tr>
+<% end %>
+</table>
+<br>
+<% if params[:action] != 'copy' %>
+<p>
+<%= link_to "New Mailout",  { :controller => 'campaign_mailouts', 
+                              :action => 'new', 
+                              :campaign => @marketing_campaign.marketing_campaign_id } %>
+</p>
+<% end %>  
+</fieldset>
+
+<%=# go_back_link 
+%>

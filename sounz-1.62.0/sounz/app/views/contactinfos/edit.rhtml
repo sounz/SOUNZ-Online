@@ -1,0 +1,23 @@
+<h1><%=@person.full_name%></h1>
+<% form_tag :action => 'update', :id => @contactinfo do %>
+<div id="formformat">
+<%= render :partial => '/roles/form' %></div>
+<div id="buttonsformat" valign="top">
+  <%= submit_tag 'Save' %><br>
+  <%= link_to create_button("Delete", "Delete this person"), { :action => 'destroy', :id => @person }, :confirm => 'Are you sure?', :method => :post %><br>
+  <%= cancel_and_go_back_button %><br>
+</div>
+<div id="formformat"><%= render :partial => 'header_form' %>
+<div align="right"><%= link_to create_button("Copy Contact Info", "Clone the contact info"), { :action => 'copy' }%>
+</div>
+</div>
+
+<div id="formformat"><%= render :partial => 'form' %></div>
+
+<% end %>
+
+<div id="formformat">
+<%= go_back_link %>
+</div>
+
+<%=render :partial => '/shared/tabs/edit_person_tabs', :locals => {:selected_tab => :contactinfo}%>

@@ -1,0 +1,25 @@
+<!-- CURRENTLY NOT IN USE -->
+<h1>Mailouts List</h1>
+
+<table>
+  <tr>
+    <th>Mailout</th>
+    <th>Mailout Type</th>
+    <th>Mailout Status</th>
+    <th>Marketing Campaign</th>
+  </tr>
+  
+<% for campaign_mailout in @campaign_mailouts %>
+  <tr>
+    <td><%= link_to campaign_mailout.mailout_description, {:action => 'edit', :id => campaign_mailout} %></td>
+    <td><%= mailout_type_display(campaign_mailout.mailout_type) %></td>
+    <td><%= campaign_mailout.mailout_status_display %></td>
+    <td><%= campaign_mailout.marketing_campaign.campaign_name %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => campaign_mailout }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @campaign_mailouts %>
+

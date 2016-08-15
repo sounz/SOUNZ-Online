@@ -1,0 +1,10 @@
+<% title "Creating new marketing campaign" %>
+<h2>Create New Marketing Campaign</h2>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+<%=# go_back_link 
+%>

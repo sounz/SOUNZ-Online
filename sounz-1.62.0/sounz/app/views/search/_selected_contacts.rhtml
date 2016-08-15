@@ -1,0 +1,50 @@
+<% if !@contacts.blank? %>
+<%= form_remote_tag :url => { :action => :remove_contacts_from_selection },
+                    :html => { :id => 'selected_contacts_form' }
+%>
+<div align="right">
+<%
+if session[:saved_contact_list_id] != nil || session[:campaign_mailout_id] != nil 
+%> 
+  <strong>Add results below to </strong>
+<% if session[:saved_contact_list_id] != nil %> 
+<%= link_to '"' + SavedContactList.find(session[:saved_contact_list_id]).list_name + '" Saved Contact List', 
+                            { :action => 'add_to_contact_list' } %>
+<br>
+<% end %>
+
+<% if session[:campaign_mailout_id] != nil %>
+   <%= link_to '"' + CampaignMailout.find(session[:campaign_mailout_id]).mailout_description + '" Mailout List',
+                              { :action => 'add_to_mailout' }%>
+<% end %>
+<% end %>
+
+</div><br>
+
+<table width="100%">
+  <tr>
+    <td width="90%" align="right" valign="top">
+      <a href="#" onclick="$$('#selected_contacts_form input.check').each(function(box){box.checked=!box.checked});return false">Select/Deselect All</a>
+    </td>
+    <td rowspan="<%= @contacts.length %>" valign="top" width="10%">
+   <%=submit_tag "Remove"%>
+   </td>
+  </tr>
+<%for contact in @contacts%>
+<tr id="<%= 'selected_'+generate_id(contact) %>">
+<td><%=render :partial => "shared/selected_contacts_editable", :locals => { :contact => contact } %></td>
+</tr>
+<%end%>
+<% if @contacts.length > 10 %>
+  <tr>
+    <td align="right">
+      <a href="#" onclick="$$('#selected_contacts_form input.check').each(function(box){box.checked=!box.checked});return false">Select/Deselect All</a>
+    </td>
+    <td width="10%">
+   <%=submit_tag "Remove"%>
+   </td>
+  </tr>
+<% end %>
+</table>
+</form>
+<% end %>

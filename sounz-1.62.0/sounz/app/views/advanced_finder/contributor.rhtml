@@ -1,0 +1,160 @@
+<%=main_tabs(selected = :people)%>
+<span class="searchLinks">
+<%=link_to image_tag('/images/button-simplesearch.gif', :alt => 'Simple Search'), {:controller=>:finder, :action => :shows, :id => :people}, {:class => 'public_button'}%>
+</span>
+
+<h2>Contributor Advanced Search</h2>
+
+<% form_for(:search_details, :url => {:action => :search_contributors}, :html => { :method => :post, 
+	:id => 'advancedContributorSearchForm' }) do |f| %>
+
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_contributors}, {:class => 'public_button'} %>
+
+<table class="advancedSearchForm">
+	<tr>
+	<th colspan="3">Details</th>	
+	</tr>
+	
+	<tr>
+		<td>Known as</td>
+		<td><%= f.text_field :known_as, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :known_as_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Year of Birth / Establishment</td>
+		<td><%= f.text_field :year_of_birth, :size => 4, :class => 'text' %></td>
+		<td><%= f.check_box  :year_of_birth_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Biography / Profile</td>
+		<td><%= f.text_field :profile, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :profile_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Pull Quote</td>
+		<td><%= f.text_field :pull_quote, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= check_box :search, :pull_quote_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Internal Note</td>
+		<td><%= f.text_field :internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :internal_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	
+	<tr>
+	<th colspan="3">Categories (NOT YET IMPLEMENTED)</th>	
+	</tr>
+
+<!--
+	<tr>
+		<td>Category</td>
+		<td><%= select("search_details", "work_category_id", @categories.to_dropdown(:work_category_desc),
+		:prompt => "-- No work category selected--") %></td>
+		<td><%= f.check_box  :work_category_id_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Assigned Category</td>
+		<td><%= select("search_details", "work_subcategory_id", @sub_categories.to_dropdown(:work_subcategory_desc), :prompt => "-- No work subcategory selected--") %></td>
+		<td><%= f.check_box  :work_subcategory_id_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Additional Subcategory</td>
+		<td><%=select("search_details", "work_subcategory_id", @additional_subcategories.to_dropdown(:work_subcategory_desc),
+		:prompt => "-- No work category selected--" )%></td>
+		<td><%= f.check_box  :work_subcategory_id_not %><strong>Not</strong></td>
+	</tr>
+-->	
+	
+	<tr>
+	<th colspan="3">Other info</th>	
+	</tr>
+	
+	<tr>
+		<td>Role Type</td>
+		<td><%= select("search_details", "role_type_id", @roles.to_dropdown(:role_type_desc), :prompt => "-- All contributor roles --") %></td>
+		<td><%= f.check_box  :role_type_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Composer Status</td>
+		<td><%= select("search_details", "composer_status", @composer_statuses.to_dropdown(), :prompt => "-- All statuses --") %></td>
+		<td><%= f.check_box  :composer_status_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Gender</td>
+		<td><%= select("search_details", "gender", @genders.to_dropdown(), :prompt => "-- All genders --") %></td>
+		<td><%= f.check_box  :gender_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+      <td><label for="search_details_country_id" title="Filter by what country the contact is in">Country</label></td>
+      <td><%= select('search_details', "country_id", Country.to_dropdown(:text => 'country_name', :include_blank => "All Countries"), :selected => @search_details.country_id.to_i
+                   )
+        %>
+      </td>
+      <td><%= check_box :search_details, :country_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+    </tr>
+    <tr>
+      <td><label for="search_details_region_id" title="Filter by region, if the country selected has regions">Region</label></td>
+      <td id="region-selector">
+      <% if !@search_details.country_id.blank? %>
+        <%= select('search_details', 'region_id', Region.find(:all, :conditions => ['country_id =?', @search_details.country_id], :order => 'region_order').collect {|r| [ r.region_name, r.region_id ] }, :include_blank => 'All Regions', :selected => @search_details.region_id.to_i)
+        %>
+      <% else %>
+        All countries and regions will be searched for
+      <% end %>
+      </td>
+      <td><%= f.check_box  :region_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+    </tr>
+
+    <%= observe_field("search_details_country_id", :update => "region-selector", :url => {:action => "country_chosen"}, :with => "'id='+value") %>
+	
+	<tr>
+	<th colspan="3">Flags</th>	
+	</tr>
+	
+	<tr>
+		<td>Deceased</td>
+		<td><%= select("search_details", "deceased", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+	
+	</tr>
+	
+	<tr>
+		<td>APRA Member</td>
+		<td><%= select("search_details", "apra", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+	
+	</tr>
+	
+	<tr>
+		<td>CANZ Member</td>
+		<td><%= select("search_details", "canz", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+	
+	</tr>
+
+	<tr>
+		<th colspan="3">Status</th>
+	</tr>
+	
+	<tr>
+		<td>Status</td><td><%= select("search_details", "status_id", @statuses.to_dropdown, :prompt => "-- All Statuses --") %></td>
+		<td><%= f.check_box  :status_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_contributors}, {:class => 'public_button'} %></td>
+     <td colspan="2" align="right"><input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+
+<% end %>

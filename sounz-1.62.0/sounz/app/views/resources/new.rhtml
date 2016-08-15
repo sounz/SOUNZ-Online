@@ -1,0 +1,9 @@
+<%=main_tabs(selected = :works)%>
+
+
+<h1>New resource</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<% end %>

@@ -1,0 +1,5 @@
+page.redirect_to :action => 'edit', :id => @event
+page.replace_html 'assignedVenue', :partial => 'venue', :locals => {:object => @assignedVenue, :event => @event}
+#page.replace_html 'relationships', :partial => '/shared/frbr/relationships/edit', :locals => {:object => @event}
+page.replace_html 'venueList', ''
+page.visual_effect :highlight, 'assignedVenue'

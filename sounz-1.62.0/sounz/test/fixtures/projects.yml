@@ -1,0 +1,18 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% 
+time_now = Time.now.strftime("%Y-%m-%d")
+for i in 1..10 %>
+project<%=i%>:
+  project_id: <%=i%>
+  project_title: Project <%=i%>
+  project_status: <%=status=rand 3%>
+  <% ago_month = rand(12) + 1
+     future_month = rand(12) + 1
+   %>
+  start_date: <%=ago_month.month.ago.strftime("%Y-%m-%d")%>
+  proposed_finish_date: <%=future_month.month.from_now.strftime("%Y-%m-%d")%>
+  actual_finish_date: <%=status == 2 and 1.week.ago.strftime("%Y-%m-%d") or nil%>
+  created_at: <%=time_now%>
+  updated_at: <%=time_now%>
+  updated_by: 1000
+<% end %>

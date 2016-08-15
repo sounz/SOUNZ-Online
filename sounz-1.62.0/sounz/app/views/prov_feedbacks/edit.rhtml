@@ -1,0 +1,17 @@
+<h1>Editing Feedback</h1>
+
+<%= error_messages_for :prov_feedbacks %>
+
+<% form_for(:prov_feedbacks, :url => prov_feedback_path(@prov_feedbacks), :html => { :method => :put }) do |f| %>
+
+  <%=render :partial => "form", :locals => {:f => f}%>
+  
+  <p><b>Status:</b><br>
+  <%= select("prov_feedbacks", "status_id", @statuses.to_dropdown) %></p>
+  
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to list', prov_feedbacks_path %>

@@ -1,0 +1,3 @@
+<select multiple="multiple" size="10" name="category_filter[]">
+  <%= option_groups_from_collection_for_select(MarketingCategory.find(:all, :order => :abbreviation), "marketing_subcategories", "abbreviation", "marketing_subcategory_id", "abbreviation") %>
+</select>

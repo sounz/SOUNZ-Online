@@ -1,0 +1,37 @@
+<h1>Change password</h1>
+<%if @valid == true%>
+<p>Please enter your new password for username <%=@pcr.login_requested_by.username%> and confirm it by 
+entering the same password into the second box.</p>
+
+
+<form action="/password/update" method="post">
+	<table>
+		<tr>
+			<td><b>New Password</b></td>
+			
+						<td> <input type="password" value="" size="30" name="password1"></td>
+		</tr>
+		<tr>
+			<td><b>Confirmation</b></td>
+			<td> <input type="password" value="" size="30" name="password2"></td>
+
+		</tr>
+<tr>
+<td colspan='2'>	<%= show_simple_captcha(:label => "Captcha: As a security check, please type the text from the image above") %></td>	
+</tr>
+		
+		<tr>
+			<td></td>
+			<td><span style="float:right;"><%= submit_tag "Change Password" %></span></td>	
+		</tr>
+	</table>
+	
+
+
+	
+<input type="hidden" value="<%=@activation_key%>" name="id">
+</form>
+
+<%else%>
+Your activation key appears to be either invalid or expired.  Please make another request to <a href="/password/forgotten">change your password</a>.
+<%end%>

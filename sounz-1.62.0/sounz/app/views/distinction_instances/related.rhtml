@@ -1,0 +1,9 @@
+<%=main_tabs(selected = :events)%>
+<%=start_of_content(@distinction_instance, "Award")%>
+
+<%=render :partial => @sub_partial_path, :locals => {:object => @distinction_instance}%>
+<%=end_of_content(@distinction_instance)%>
+
+
+
+

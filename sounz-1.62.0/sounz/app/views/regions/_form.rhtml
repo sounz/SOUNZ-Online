@@ -1,0 +1,9 @@
+<%= error_messages_for 'region' %>
+
+<!--[form:region]-->
+<p><label for="region_region_name">Region name</label><br>
+<%= text_field 'region', 'region_name'  %></p>
+<%= select('region', "country_id", Country.to_dropdown(:text => 'country_name')) %>
+
+<!--[eoform:region]-->
+

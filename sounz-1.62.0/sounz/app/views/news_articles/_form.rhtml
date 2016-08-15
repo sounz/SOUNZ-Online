@@ -1,0 +1,140 @@
+<%= error_messages_for 'news_article' %>
+
+<!--[form:news_article]-->
+<% 
+#if params[:action] == 'edit' || params[:action] == 'update'
+#type_disabled = true
+#else
+#type_disabled = false
+#end
+%>
+
+<% 
+#   if @news_article.article_type.match('p')
+#     disabled = true
+#   else
+#     disabled = false
+#   end
+%>
+<table>
+<!--
+<tr>
+<th><label for="news_article_article_type">Article type</label></th>
+<td>
+-->
+<%=# select_tag 'news_article[article_type]', 
+   #             options_for_select( [['Story', 'n'], ['PDF', 'p']], 
+   #             selected=@news_article.article_type ),
+   #             { :multiple => false , :disabled => type_disabled } 
+%>
+<%=#observe_field("news_article[article_type]", :url => { :controller => :news_articles,
+   #                                                      :action => :article_type },
+   #    :update => 'article_properties', 
+   #    :with => "'article_type='+escape($('news_article[article_type]').value)",
+   #    :complete => "if (document.getElementById('news_article_content') != null) {tinyMCE.idCounter=0; tinyMCE.execCommand('mceAddControl', false, 'news_article_content');}")
+%>
+<!--
+</td>
+</tr>
+-->
+<%# if params[:action] == 'new'
+%>
+<!--
+<script type="text/javascript">
+ Event.observe(window, 'load', function() {
+-->
+ <%=# remote_function :url => { :controller => :news_articles,
+    #                           :action => :article_type },
+    #   :update => 'article_properties', 
+    #   :with => "'article_type='+escape($('news_article[article_type]').value)",
+    #   :complete => "if (document.getElementById('news_article_content') != null) { tinyMCE.idCounter=0; tinyMCE.execCommand('mceAddControl', false, 'news_article_content');}"
+ %>
+<!--
+ });
+</script>
+-->
+<%# end 
+%>
+
+<tr>
+<th><label for="news_article_headline">Headline</label></th>
+<td><%= text_field 'news_article', 'headline', :size => standard_edit_cols %></td>
+</tr>
+
+<%# if !disabled 
+%>
+
+<tr>
+<th><label for="news_article_content">Content</label></th>
+<td><%= text_area 'news_article', 'content', :cols => standard_edit_cols_mce, 
+                                             :class => 'tiny_mce'%></td>
+</tr>
+
+<tr>
+<th><label for="news_article_precis">Precis</label></th>
+<td>
+<!--<input type="text_area" name="news_article[precis]"-->
+<%= text_area 'news_article', 'precis', :cols => standard_edit_cols_mce, :rows => standard_edit_rows %></td>
+</tr>
+
+<tr>
+<th><label for="news_article_feature">Featured article</label></th>
+<td><%= check_box 'news_article', 'feature', :disabled =>  @news_article.archived %></td>
+</tr>
+
+<tr>
+<th><label for="news_article_archived">Archived</label></th>
+<td><%= check_box 'news_article', 'archived'%></td>
+</tr>
+
+<%# end 
+%>
+
+<tr>
+<th><label for="news_article_article_timestamp">Article date</label></th>
+<td>
+<%= date_field('news_article_timestamp', 'date', :value => @news_article_timestamp[:date], :size => 15) %>&nbsp;
+<%= text_field 'news_article_timestamp', 'time', :value => @news_article_timestamp[:time], :size => 5 %>
+</td>
+</tr>
+
+<tr>
+<th><label for="news_article_status">Article status</label></th>
+<td>
+<%= select('news_article', 'status_id', @statuses.to_dropdown) %>
+</td>
+</tr>
+
+<% if params[:action] != 'new' && params[:action] != 'create' %>
+
+<% if @news_article.created_at != nil %>
+<tr>
+<th><label for="news_article_created_at">Created at</label></th>
+<td>
+<%= dby_date(@news_article.created_at)  %>
+</td>
+</tr>
+<% end %>
+
+<% if @news_article.updated_at != nil %>
+<tr>
+<th><label for="news_article_updated_at">Updated at</label></th>
+<td>
+<%= dby_date(@news_article.updated_at) %>
+</td>
+</tr>
+<% end %>
+
+<% if @news_article.updated_by %>
+<tr>
+<th><label for="news_article_updated_by">Updated by</label></th>
+<td>
+<%=h get_user(@news_article.updated_by).username %>
+</td>
+<% end %>
+</tr>
+<% end %>
+</table>
+
+<!--[eoform:news_article]-->
+

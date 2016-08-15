@@ -1,0 +1,64 @@
+<%
+#Restrict the available relationship types available using the passed in :object local
+object_relationship_types= RelationshipTypesHelper.show_relationship_types_for(object.class.to_s.downcase.to_sym)
+%>
+<div class="relationshipsWidget">
+<fieldset>
+<legend>Relationships for <%=object.class.to_s%></legend>
+<a name="relationships"></a>
+<div class="instruction">
+Choose the type of relationship and which object type you wish to associate with it (e.g. is composed by, and contributor).  Then type into the search box to find relevant FRBR objects.  Click select to choose that object as to create the potential relationship.  Click "Add Relationship" to confirm it. 
+</div>
+
+<%=form_remote_tag  :url => {:controller => 'association', :action => 'create_ajax'}, :method => :post, :html => {:id => 'associations' }%>
+<input type="hidden" name="association[entity_a_type]" id="association_entity_a_type" value="<%=EntityType.find(:first,:conditions =>["entity_type = ?",object.frbr_type]).id%>">
+<input type="hidden" name="association[entity_a_id]" id="association_entity_a_id" value="<%=object.frbr_id%>">
+
+<table>
+<tr>
+<td><%=object.class.to_s%></td>
+<td><%=object.frbr_ui_desc%></td>	
+</tr>	
+
+<tr>
+<td>Relationship Type</td>
+<td><select id="association_type_id" name="association[type_id]"
+	 onchange="new Ajax.Request('/association/restrict_target_object_type', {asynchronous:true, evalScripts:true, parameters:'association_type_id='+escape($('association_type_id').value)+ '&model_id='+escape('<%=generate_id(object)%>')})">
+<option value="none">-- Please select a relationship type --</option>
+<%= options_from_collection_for_select object_relationship_types, "relationship_type_id", "relationship_type_desc"%>
+</select>
+
+
+</td>
+</tr>
+
+<tr>
+<td>Related Object Type</td>
+<td><select id="association_entity_b_type" name="association[entity_b_type]" disabled="true">
+<%=options_from_collection_for_select(EntityType.find(:all, :order => :entity_type),"id","entity_type")%>
+</select></td>	
+</tr>
+
+<tr>
+<td>Search</td>
+<td><%=render :partial => 'shared/spinner_with_suffix', :locals => {:suffix => 'relationships'}%>
+<input id="searchText" name="searchText" type="text" size="30" disabled="true">
+</td>	
+</tr>
+</table>
+
+<%=observe_field_delayed(:searchText, :frequency => 2, :update => :objectList, 
+    :before => "Element.show('spinner_relationships')",
+    :complete => "Element.hide('spinner_relationships')",
+    :url => {:action => :findObjects,:controller => 'association'},
+    :with => "'association_entity_b_type='+escape($('association_entity_b_type').value)"+
+    "+ '&searchText='+escape($('searchText').value)" +
+    "+ '&association_type_id='+escape($('association_type_id').value)"
+    )%>
+
+
+
+<div id="objectList"><span class="instruction">Search results for matching objects will appear here</span></div>
+
+
+</div>

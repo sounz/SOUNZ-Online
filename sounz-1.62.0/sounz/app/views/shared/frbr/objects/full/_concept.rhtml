@@ -1,0 +1,27 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => [],
+			:main_internal_heading => object.concept_name,
+			:subheading => object.concept_type.concept_type_desc,
+			:links => nil,
+			:text => object.concept_type.concept_type_desc,
+			:object => object #for the select this button
+}
+%>
+<%=show_edit_links_if_permission(object)%>
+
+<% if !object.concept_description.blank?%>
+<div class="section">
+<%=show_note(object.concept_description)%>
+</div>
+<% end %>
+
+<%= render :partial => 'shared/frbr/objects/full/concept/concept_links',:locals => {:object => object}%>
+
+
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "created_at,updated_at, updated_by"}%>
+
+<%=show_relationships_if_permission(object)%>

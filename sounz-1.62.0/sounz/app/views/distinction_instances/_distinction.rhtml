@@ -1,0 +1,6 @@
+<%if object != nil%>
+<input type="hidden" id="distinction_id" name="distinction_instance[distinction_id]" value="<%=object.objectData.distinction_id%>">
+<b><A href="/distinctions/edit/<%=object.objectData.distinction_id%>"><%=object.objectData.frbr_ui_desc%></a></b><br>
+<%else%>
+<b>No distinction assigned!</b>
+<%end%>

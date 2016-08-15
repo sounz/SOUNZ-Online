@@ -1,0 +1,40 @@
+<h1>Editing work "<%=@work.work_title%>"</h1>
+<a href="#attachments">Attachments</a>|<a href="#relationships">Relationships</a>|<a href="#expressionList">Expressions</a>
+
+<%= render :partial => 'composer_form'%>
+
+
+<%if @composers.length > 0%>
+<div id="mainWorkForm">
+<%else%>
+<div id="mainWorkForm" style="display:none;">
+<%end%>
+<div id="testing">
+<% form_tag :action => 'update', :id => @work do %>
+
+  <%= render :partial => 'form' %>
+<br>
+
+  <input name="commit" type="submit" value="Save Work Details" class="editButton">
+<% end %>
+
+
+<div class="formSection">
+	<%=render :partial => 'hard_association/show'%>
+</div>
+
+<%=render :partial => 'access_right/show', :locals => {:object => @work}%>
+
+<div class="formSection">
+<%=render :partial => 'association/association', :locals => {:object => @work}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @work}%>
+</div>
+<%= link_to 'Show', :action => 'show', :id => @work %> |
+<%= link_to 'List', :action => 'list' %>
+</div>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @work}%>
+</div>
+</div>
+

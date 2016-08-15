@@ -1,0 +1,7 @@
+<% title 'Related Organisations for ' + @organisation.organisation_name %>
+<%=render :partial => 'related_organisations_table' %>
+<%=render :partial => 'shared/tabs/edit_organisation_tabs', :locals => {:selected_tab => :related} %>
+
+<% form_remote_tag :url => {:action => 'add_relationship', :id => @organisation} do %>
+  <%= render :partial => 'related_organisations_form' %>
+<% end %>

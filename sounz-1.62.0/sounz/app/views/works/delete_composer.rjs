@@ -1,0 +1,10 @@
+#page.visual_effect :highlight, 'sel_'+@dom_id
+#page.visual_effect :fade, 'sel_'+@dom_id
+#page.visual_effect :fold, 'sel_'+@dom_id
+page.replace_html 'sel_'+@dom_id, ""
+#page << "alert('Test');"
+
+if @composers.length == 0
+  page.hide 'mainWorkForm'
+  page.replace_html 'selectedComposerList',  :partial => 'composers_selected'
+end

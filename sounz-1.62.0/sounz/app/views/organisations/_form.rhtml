@@ -1,0 +1,44 @@
+<!-- CURRENTLY NOT IN USE -->
+<fieldset>
+  <legend>Organisation Details</legend>
+  <table>
+    <tr>
+      <th><label for="organisation_organisation_name">Organisation name</label></th>
+      <td><%= text_field 'organisation', 'organisation_name'  %></td>
+    </tr>
+    <tr>
+      <th><label for="organisation_organisation_abbrev">Organisation abbrev</label></th>
+      <td><%= text_field 'organisation', 'organisation_abbrev'  %></td>
+    </tr>
+    <tr>
+      <th><label for="organisation_status_id">Status</label></th>
+      <td><%= select('organisation', 'status_id', @statuses.to_dropdown) %></td>
+    </tr>
+    <tr>
+      <th><label for="organisation_internal_note">Internal note</label></th>
+      <td><%= text_area 'organisation', 'internal_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+    </tr>
+    <tr>
+      <th><label for="organisation_legacy4d_identity_code">F/M legacy code</label></th>
+      <td><%= text_field 'organisation', 'legacy4d_identity_code', :size => 4, :maxlength => 4  %></td>
+    </tr>
+    <% if params[:action] != 'new' && params[:action] != 'create' %>
+    <% if @organisation.created_at != nil %>
+    <tr>
+      <th><label for="person_created_at">Created at</label></th>
+      <td colspan="3"><%= dby_date(@organisation.created_at) %></td>
+    </tr>
+    <% end %>
+    <% if @organisation.updated_at != nil %>
+    <tr>
+      <th><label for="person_updated_at">Updated at</label></th>
+      <td colspan="3"><%= dby_date(@organisation.updated_at)  %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <th><label for="person_updated_by">Updated by</label></th>
+      <td colspan="3"><%=h get_user(@organisation.updated_by).username %></td>
+    </tr>
+    <% end %>
+  </table>
+</fieldset>

@@ -1,0 +1,168 @@
+role_type1:
+  role_type_id: 1
+  role_type_desc: Editor (c)
+  display_order: 26
+role_type2:
+  role_type_id: 2
+  role_type_desc: HOD Music
+  display_order: 8
+role_type3:
+  role_type_id: 3
+  role_type_desc: Private Teacher
+  display_order: 6
+role_type4:
+  role_type_id: 4
+  role_type_desc: School Teacher
+  display_order: 7
+role_type5:
+  role_type_id: 5
+  role_type_desc: Tertiary Teacher
+  display_order: 9 
+role_type6:
+  role_type_id: 6
+  role_type_desc: General Manager
+  display_order: 2
+role_type7:
+  role_type_id: 7
+  role_type_desc: Marketing Manager
+  display_order: 3
+role_type8:
+  role_type_id: 8
+  role_type_desc: Journalist
+  display_order: 27
+role_type9:
+  role_type_id: 9
+  role_type_desc: Librarian
+  display_order: 34
+role_type10:
+  role_type_id: 10
+  role_type_desc: Administrator
+  display_order: 5
+role_type11:
+  role_type_id: 11
+  role_type_desc: Finance Officer
+  display_order: 4
+role_type12:
+  role_type_id: 12
+  role_type_desc: Artist/Dancer/Actor (c)
+  display_order: 16
+role_type13:
+  role_type_id: 13
+  role_type_desc: Playwright (c)
+  display_order: 33
+role_type14:
+  role_type_id: 14
+  role_type_desc: Choreographer (c)
+  display_order: 15
+role_type15:
+  role_type_id: 15
+  role_type_desc: Artistic Director (c)
+  display_order: 17
+role_type16:
+  role_type_id: 16
+  role_type_desc: Politician
+  display_order: 36
+role_type17:
+  role_type_id: 17
+  role_type_desc: Musical Director (c)
+  display_order: 14
+role_type18:
+  role_type_id: 18
+  role_type_desc: Researcher (c)
+  display_order: 28
+role_type19:
+  role_type_id: 19
+  role_type_desc: Broadcaster (c)
+  display_order: 31
+role_type20:
+  role_type_id: 20
+  role_type_desc: Technical Expert
+  display_order: 19
+role_type21:
+  role_type_id: 21
+  role_type_desc: Student
+  display_order: 10 
+role_type22:
+  role_type_id: 22
+  role_type_desc: Supplier
+  display_order: 37
+#role_type23:
+#  role_type_id: 23
+#  role_type_desc: Contributor
+#  display_order: 26
+role_type24:
+  role_type_id: 24
+  role_type_desc: Organisation
+  display_order: 38
+role_type25:
+  role_type_id: 25
+  role_type_desc: Person
+  display_order: 39
+role_type26:
+  role_type_id: 26
+  role_type_desc: Composer (c)
+  display_order: 11
+#role_type27:
+#  role_type_id: 27
+#  role_type_desc: Performer
+#  display_order: 13
+role_type28:
+  role_type_id: 28
+  role_type_desc: Arranger (c)
+  display_order: 12
+role_type29:
+  role_type_id: 29
+  role_type_desc: Funder (c)
+  display_order: 20  
+role_type35:
+  role_type_id: 35
+  role_type_desc: Commissioner (c)
+  display_order: 21
+role_type36:
+  role_type_id: 36
+  role_type_desc: Publisher (c)
+  display_order: 24
+role_type37:
+  role_type_id: 37 
+  role_type_desc: Recording Company (c)
+  display_order: 25
+role_type38:
+  role_type_id: 38
+  role_type_desc: Dedicatee (c)
+  display_order: 22
+#role_type39:
+#  role_type_id: 39
+#  role_type_desc: Author
+#  display_order: 37
+role_type40:
+  role_type_id: 40
+  role_type_desc: Performer - Music (c)
+  display_order: 13
+role_type41:
+  role_type_id: 41
+  role_type_desc: Presenter (c)
+  display_order: 18
+role_type43:
+  role_type_id: 43
+  role_type_desc: Researcher
+  display_order: 35  
+role_type44:
+  role_type_id: 44
+  role_type_desc: Reviewer (c)
+  display_order: 30  
+role_type45:
+  role_type_id: 45
+  role_type_desc: Writer (c)
+  display_order: 32
+role_type46:
+  role_type_id: 46
+  role_type_desc: Publicist
+  display_order: 23                 
+role_type47:
+  role_type_id: 47
+  role_type_desc: Venue (c)
+  display_order: 40   
+role_type48:
+  role_type_id: 48
+  role_type_desc: Unspecified
+  display_order: 1

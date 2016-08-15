@@ -1,0 +1,18 @@
+<h1><%=@cm_content.cm_content_title.camelize%></h1>
+<%render :partial => 'possible_contact_update_link'%>
+
+<div id="cm_content">
+<%=@cm_content.cm_content%>
+</div>
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_CONTENT')%>
+<%=render :partial => 'possible_update_form_links'%>
+<%=render :partial => 'possible_version_details'%>
+
+<div class="division_line">&nbsp;</div><br/>
+<%= go_back_link%>
+
+<div class="editLinks">
+<%= link_to 'Edit', :action => 'edit', :id => @cm_content %>
+</div>
+<%end%>

@@ -1,0 +1,36 @@
+<!-- images first -->
+<%if !media_items.blank?%>
+<%for media_item in media_items
+if media_item.image?
+%>
+<div class="imageWithCaption">
+<div class="image">
+<%=image_tag(media_item.public_filename(:normal))%>
+</div>
+<div class="caption">
+<%=media_item.caption%>
+<%if !media_item.copyright.blank?%>&nbsp;&copy;<%=media_item.copyright%><%end%>
+</div>
+</div>
+<%
+end
+end
+%>
+
+<!-- non images sdsdsdf-->
+<ul class="nonImageAttachmentsList">
+<%for media_item in media_items
+if !media_item.image?
+%>
+<li>
+Non image
+<%= render :partial => 'shared/attachments/attachment_as_file_with_icon', :locals => {:media_item => media_item}%>
+</li>
+<%
+end
+end
+%>
+</ul>
+<%else%>
+<!-- no media items found -->
+<%end%>

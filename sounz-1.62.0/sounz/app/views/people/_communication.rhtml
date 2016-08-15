@@ -1,0 +1,89 @@
+<%= error_messages_for 'communication', 'communication_people' %>
+
+<!--[form:communication]-->
+<table>
+
+  <tr>
+    <th>Person</th>
+    <td><strong>
+     <% if @communication_people && @communication_people.length > 0 %>
+      <% for person in @communication_people %>
+        <%=person.full_name%></br>
+      <% end %>
+      <% else %>
+        <%=@person.full_name%>
+      <% end %>
+    </strong></td>
+  </tr>
+  <tr>
+  <th>Organisation</th><td id="organisation_for_role"><%if @role == nil%>No role<%elsif @role.organisation == nil%>No organisation associated with this role<%else%><%=@role.organisation.organisation_name%><%end%></td>
+  </tr>
+  <tr>
+    <th>Role</th>
+    <td> 
+<span id="roleSelector"><select id="role_role_id" name="role[role_id]">
+<% if @role_info != nil%>
+<option value="0"><%=@role_info%></option>
+<%else%>
+<option value="0" selected>None</option>
+<%end%>
+<optgroup label="Choose Role">
+<%= options_from_collection_for_select(@person.roles, :role_id, :role_name, @role_id) %>
+</optgroup>
+</select></span>
+ <%= link_to_new 'New', 700,500, :action => 'add_role', :id => @person %></td>
+  </tr>
+  <tr>
+	
+<tr>
+	<th><label for="communication_internally_initiated">SOUNZ initiated?</label></th>
+	<td><%= check_box "communication", "internally_initiated" %>
+		</td>
+</tr>
+  
+  <tr>
+    <th><label for="communication_subject">Communication Subject</label></th>
+    <td><%= text_field 'communication', 'communication_subject', :size => standard_edit_cols %></td>
+  </tr>
+  <tr>
+    <th><label for="communication_note">Communication Note</label></th>
+    <td><%= text_area 'communication', 'communication_note', :rows => standard_edit_rows, :cols => standard_edit_cols%></td>
+  </tr>
+  <tr>
+    <th><label for="communication_type">Communication Type</label></th>
+    <td><%= select ('communication', 'communication_type_id', CommunicationType.to_dropdown(:text => 'communication_type_desc')) %></td>
+  </tr>
+  <tr>
+    <th><label for="communication_method">Communication Method</label></th>
+    <td><%= select ('communication', 'communication_method_id', CommunicationMethod.to_dropdown(:text => 'communication_method_desc')) %></td>
+  </tr>
+
+  <tr>
+    <th><label for="communication_priority">Priority</label></th>
+    <td><%= select 'communication', 'priority', DropDown.communication_priorities.to_dropdown %></td>
+  </tr>
+
+ <tr>
+    <th>Started</th>
+    <td>
+    <%= date_field_with_time(@communication.created_at, 'communication', 'created_at') %></td>
+  </tr>
+  <tr>
+  <th>Closed</th><td id="closed_date_field"><%= render :partial => "communication_closed_date_field", :locals => { :communication => @communication, :status => @status_text } %></td>
+  </tr>
+
+  <tr>
+    <th><label for="communication_status">Status</label></th>
+    <td><%= select 'communication', 'status', Communication.statuses %></td>
+  </tr>
+
+
+</table>
+
+    <%=last_updated_by_field("communication")%>
+
+
+<%if !@last_login_to_update.blank?%><div class="lastUpdatedBy">Last updated by <%=@last_login_to_update.username%>, <%=dby_date(@communication.updated_at)%></div><%end%>
+
+<!--[eoform:communication]-->
+

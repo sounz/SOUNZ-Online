@@ -1,0 +1,108 @@
+<% content_for :page_title do %>
+<div id='long'>Search Communications</div>
+<%end%>
+
+<% title 'Search Communications' %>
+
+<h2>Search Communications</h2> 
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_communications, :action => :index, :from => 'reset_search'}, {:class => 'public_button'} %>
+
+<%= form_remote_tag :url => {:action => :find_communications},
+  :update => 'search_results',
+  :id => "communication_search_form", 
+  :before => "Element.show('spinner')",
+  :complete => "Element.hide('spinner')"
+%>
+<table>
+  <tr>
+    <th><label for="search_associated_person" title="Filter by person name. You don't have to enter the whole name">Person name</th>
+    <td><%= text_field :search, :associated_person, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :associated_person_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_associated_organisation" title="Filter by organisation name. You don't have to enter the whole name">Organisation name</label></th>
+    <td><%= text_field :search, :associated_organisation_name, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :associated_organisation_name_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_associated_organisation_abbreviation" title="Filter by organisation abbreviation. You don't have to enter the whole name">Organisation abbreviation</label></th>
+    <td><%= text_field :search, :associated_organisation_abbrev, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :associated_organisation_abbrev_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_subject" title="Filter by communication_subject. You don't have to enter the whole word">Communication subject</label></th>
+    <td><%= text_field :search, :communication_subject, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :communication_subject_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_created_at" title="Filter by started date (click in the boxes to get a calendar)">Started at</label></th>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :communication_created_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :communication_created_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_closed_at" title="Filter by closed date (click in the boxes to get a calendar)">Closed at</label></th
+    <td colspan="2">
+      <table>
+        <tr>
+          <td><strong>From</strong> <%= date_field(:search, :communication_closed_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+          <td><strong>To</strong> <%= date_field(:search, :communication_closed_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_note" title="Filter by communication note. You don't have to enter the whole word">Communication<br> note</label></th>
+    <td><%= text_field :search, :communication_note, :size => standard_edit_cols, :class => 'text' %></td>
+    <td><%= check_box :search, :communication_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_type_filter" title="Filter by what communication type the communications have. Multiple choice is possible">Communication<br> type</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'communication_type_id_ids', 
+                        CommunicationType.find(:all, :order => 'communication_type_id').collect {|ct| [ct.communication_type_id, ct.communication_type_desc] }, 
+                        selected_array = @search.communication_type_id_ids,
+                        size = 10)%>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_method_filter" title="Filter by what communication method the communications have. Multiple choice is possible">Communication method</label></th>
+    <td colspan="2">
+    <%= select_multiple_list('search', 'communication_method_id_ids', 
+                        CommunicationMethod.find(:all, :order => 'communication_method_id').collect {|cm| [cm.communication_method_id, cm.communication_method_desc] }, 
+                        selected_array = @search.communication_method_id_ids,
+                        size = 6)%>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_priority_filter" title="Filter by what priority the communications have">Communication response time</label></th>
+    <td colspan="2"><%= select 'search', 'communication_priority', DropDown.communication_priorities.to_dropdown, :include_blank => "-- Select a response time --" %></td>
+  </tr>
+  <tr>
+    <th><label for="search_communication_status_filter" title="Filter by what status the communications have">Communication status</label></th>
+    <td colspan="2"><%= select 'search', 'communication_status', Communication.statuses, :include_blank => "-- Select a status --" %></td>
+  </tr>
+  
+  <tr><td colspan="3">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :search_communications, :action => :index, :from => 'reset_search'}, {:class => 'public_button'} %></td>
+     <td colspan="2" align="right"> <input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+  
+</table>
+
+</form>
+  
+<div id="search_results"></div>
+<%= render :partial => 'shared/spinner' %>
+
+<%= render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :communication_search} %>
+
+</form>
+
+

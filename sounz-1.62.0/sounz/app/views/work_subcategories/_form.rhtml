@@ -1,0 +1,19 @@
+<%= error_messages_for 'work_subcategory' %>
+
+<!--[form:work_subcategory]-->
+<p/>Main category:<br><select id="work_subcategory_work_category_id" name="work_subcategory[work_category_id]">
+        <%= options_from_collection_for_select @work_categories, "work_category_id", "work_category_desc" %>
+</select></p>
+<p><label for="work_subcategory_work_subcategory_desc">Work subcategory desc</label><br>
+<%= text_area 'work_subcategory', 'work_subcategory_desc'  %></p>
+
+<p><label for="work_subcategory_work_subcategory_abbrev">Work subcategory abbrev</label><br>
+<%= text_area 'work_subcategory', 'work_subcategory_abbrev'  %></p>
+
+<p><label for="work_subcategory_display_order">Display order</label><br>
+<%= text_field 'work_subcategory', 'display_order'  %></p>
+
+<p><label for="work_subcategory_additional">Additional</label><br>
+<%= check_box 'work_subcategory', 'additional'  %></p>
+<!--[eoform:work_subcategory]-->
+

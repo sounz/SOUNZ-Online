@@ -1,0 +1,1 @@
+ALTER TABLE works ADD COLUMN legacy_4d_identity_code TEXT;

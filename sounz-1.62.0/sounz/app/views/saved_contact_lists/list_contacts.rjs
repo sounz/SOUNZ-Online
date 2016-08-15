@@ -1,0 +1,2 @@
+page.replace_html 'existing_contacts', :partial => "existing_contacts_editable"
+page.replace_html 'pagination',        :partial => "shared/page_links_remote", :locals => { :paginator => @saved_list_contacts_pages, :params => {:url => { :action => :list_contacts, :id => @saved_contact_list.saved_contact_list_id} }  }

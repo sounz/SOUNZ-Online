@@ -1,0 +1,4 @@
+<%= render :partial => 'shared/frbr/objects/full/list_of_items', :locals => {:related_items_method => meth,  :related_item_title_method => 'work_title', :items => items, :related_item_description_method => 'work_description', :object => object, :paginator => paginator, :page => @page}
+ %>
+<%= render :partial => 'shared/frbr/objects/full/contributor/composer_links', :locals => {:object => object} %>
+

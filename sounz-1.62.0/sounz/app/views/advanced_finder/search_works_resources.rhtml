@@ -1,0 +1,69 @@
+<%=main_tabs(selected = :music)%>
+
+<h1>Music - Advanced Search Results</h1>
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @result_frbr_objects.length > 3 %>
+<p><a href="#saveForm">Save Current Search</a></p>
+<% end %>
+
+<% if @result_frbr_objects.length < 1 %>
+<p><b>There were no results matching your request</b></p>
+<% else %>
+
+<!-- Result Details -->
+        <div class="search-result-details">
+          <ul>
+            <li class="result-count">
+              Number of results: <span id="numberOfResults" class="searchHeading"><%=session[:work_resource_search_results].length%></span>
+            </li>
+<% if !@search_details.title.blank?%>
+            <li class="result-sort">
+<form action="/advanced_finder/search_works_resources" method="post">   
+Sort by:</span>&nbsp;<%= select_tag "search_details[sort_by]", options_for_select([
+                                                                                           ['Relevance', ''], 
+                                                                                           ['Title', 'title'], 
+                                                                                           ['Composer/Author', 'author']
+                                                                                           ], selected = @search_details.sort_by
+                                                                                          )
+                             %>
+ 
+    <input type="submit" value="Submit" alt="Sort" class="public_button submit">
+</form>
+            </li>
+<% end %>
+            <li class="pagination">
+              <%= will_paginate @results %>
+            </li>
+          </ul>
+        </div>
+
+
+<% end %>
+
+
+
+<div id="liveResults" name="liveResults">
+  <%for object in @result_frbr_objects%>
+	  <%=render :partial => 'finder/result', :locals => {:result => object}%>
+  <%end%>
+</div>
+
+<!-- Result Details -->
+        <div class="search-result-details">
+          <ul>
+            <li class="pagination">
+              <%= will_paginate @results %>
+            </li>
+          </ul>
+        </div>
+
+
+<div class="advancedLink"><a href="sonline_music">Refine Search</a></div>
+<div class="advancedLink"><a href="reset_sonline_music">New Search</a></div>
+<br>
+<%if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH')%>
+<span id="saveForm">
+<%= render :partial => 'saved_searches/saved_search_form', :locals => { :search_type => 'work_resource_advanced_search' }
+%>
+</span>
+<% end %>

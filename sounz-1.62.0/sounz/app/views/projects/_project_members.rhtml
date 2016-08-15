@@ -1,0 +1,46 @@
+<table>
+<tr>
+<th width="450px"><label>Project members</label></th>
+<th width="250px"><label for="project_manager">Project Manager</label></th>
+</tr>
+
+<tr>
+<td>
+<% 
+for person in @project.people
+person_id = generate_id(person)
+manager_id = get_project_manager(@project)
+person_name = person.full_name
+if manager_id != nil && person.person_id == manager_id
+manager_flag = 'PM'
+else
+manager_flag = ''
+end
+%>
+  
+<span id="<%=person_id%>">    
+<%= link_to_remote("Remove", :complete => "new Effect.Fold('"+person_id+"')", :confirm => 'Are you sure you want to remove '+ person_name + '?',
+                                :url => { :action => 'delete_person', 
+                                          :project_id => @project.project_id, 
+                                          :person_id => person.person_id } ) -%>
+&nbsp;
+<%=h person.full_name %>
+&nbsp;
+<span style="color: #933;"><strong><%= manager_flag %></strong></span>
+</span>
+<br>
+
+<% end %>
+</td>
+<td>
+<%= select("project_team_member", "person_id", @project.people.collect {|p| [ p.full_name, p.person_id ] }, 
+                                  { :prompt => '-- Select a project manager --', 
+                                    :selected => get_project_manager(@project)}) %>
+      
+<%=observe_field("project_team_member_person_id", :url => {:action => :change_project_manager}, 
+                  :with => "'member_id='+escape($('project_team_member_person_id').value)"+
+                           "+ '&project_id='+'"+@project.project_id.to_s+"'")
+%>
+</td>
+</tr>
+</table>

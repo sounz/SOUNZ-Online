@@ -1,0 +1,36 @@
+<div class="newsArticles" id= "newsArticles">
+
+  <% content_for :page_title do %>News<%end%>
+
+<% if !@category.blank?%>
+  <% login = Login.find(session[:login]) unless session[:login].blank? %>
+    <h1><%= @title %></h1>
+
+
+    <ul class="news-types">
+      <% 
+      for category in NewsArticle.article_categories
+      category.each_pair do |key, value| 
+
+      li_class = ''
+      #li_class = 'class="current"' if key == @category
+      %>
+
+        <li <%= li_class%>>
+          <%= link_to value, :controller => 'news_articles', :category => key %>
+        </li> 
+
+      <% end %>
+    </ul>
+
+ <!-- <% end %>-->
+
+<% end %>
+
+
+
+  <%= render :partial => 'search_form' %>
+  <div id="articles_list">
+    <%= render :partial => 'search_results' %>
+  </div>
+</div>

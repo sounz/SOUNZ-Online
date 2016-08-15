@@ -1,0 +1,23 @@
+
+<table>
+<% form_for(:frbr_mru, :url => {:action => "select"}, :html => { :method => :post}) do |f| %>
+<%for frbr_object in @mru_frbr_objects
+klass_name = frbr_object.class.to_s.tableize.singularize
+%>
+<tr>
+<td><%=render :partial => 'shared/frbr/objects/brief/'+klass_name, :locals => {:object => frbr_object} %></td>
+<td>
+<% 
+checked = true #FIXME, check for existence currently of expression
+checked ='checked' unless checked == nil%>
+ <input type="checkbox" class="check" name="new_related_frbr[ids][]" <%= checked %> value="<%= generate_id(frbr_object) %>" id="<%= generate_id(frbr_object) %>" />
+	
+</td>	
+</tr>
+<% end %>
+
+<tr>
+  <td colspan="2"><%= submit_tag "Add" %></td>
+</tr>
+<% end %>
+</table>

@@ -1,0 +1,7 @@
+class ManifestationRelationship < ActiveRecord::Base
+set_primary_key "manifestation_relationship_id"
+set_sequence_name "manifestation_relationships_manifestation_relationship_id_seq"
+belongs_to :manifestation
+belongs_to :relationship
+belongs_to :relationship_type
+end

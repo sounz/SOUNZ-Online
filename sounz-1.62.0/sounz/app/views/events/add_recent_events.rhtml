@@ -1,0 +1,12 @@
+<h1>Adding Recent Events to <%=@event.event_title%></h1>
+<div class="instruction">Please select events to add to this event - this will turn <%=@event.event_title%> into an umbrella event, with the following selected events part of it.</div>
+
+<table border="1">
+<% form_for(:events, :url => {:action => "add_multiple_events"}, :html => { :method => :post}) do |f| %>
+<%=hidden_field :event, :id, :value => @event.event_id%>
+<%=render :partial => 'frbr_mru/recent_frbr_objects'%>
+<% end %>
+</table>
+
+
+

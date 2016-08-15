@@ -1,0 +1,36 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+<div class='search_item'>
+	<%if !object.author_note.blank?%><h2 class="resourceAuthorNote"><%=object.author_note%></h2><%end%>
+                    <h3><%= icons_for(object, @login)%><%=link_to object.resource_title, :id => object, :action => 'show', :controller => 'resources'%><%=show_tap_edit_link_for(object)%></h3>
+
+<!-- frbr/objects/search_result/resource.html -->
+
+    <div class="search_item_details">
+
+     <div class="search_item_image"><%=AttachmentHelper.render_search_image(object, :thumb)%></div>
+
+
+      <div class="search_item_details_inner">
+     <p>
+       <%=get_summary_for_text(object.general_note, SUMMARY_LENGTH)%>
+     </p>
+
+    <%=render :partial => 'shared/frbr/objects/search_result/resource_availability', :locals => {:object => object}%>
+          
+                    <% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+                         action = 'addToSelected'
+                       else
+                         action = 'addToSelectedSession'
+                       end
+                    %>
+</div>
+</div>
+                    <div class='options'>
+                        	<p class='list rem'>
+                        	 <%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => 'resource', :object_id => object.frbr_id})%></p>
+<% if quicklink_search.blank? || !quicklink_search %><p class="fullInfo"><%=link_to "Full Info", :id => object, :action => 'show', :controller => 'resources'%></p><% end %>
+                    </div><!-- /.options -->
+             
+</div><!-- /.search_item -->
+

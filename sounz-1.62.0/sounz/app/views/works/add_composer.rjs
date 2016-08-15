@@ -1,0 +1,9 @@
+#page.visual_effect :highlight, @dom_id
+#page.visual_effect :fade, @dom_id
+#page.visual_effect :fold, @dom_id
+page.replace_html @dom_id, ''
+page.replace_html 'selectedComposerList',  :partial => 'composers_selected'
+page.visual_effect :highlight, 'sel_'+@dom_id
+
+#Now show the main work form, as we now have at least one composer
+page.visual_effect :appear, 'mainWorkForm'

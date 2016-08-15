@@ -1,0 +1,26 @@
+<br/>
+<div style="background: #DEE;">
+<span class="actionButton">	
+<%=link_to_remote "Cancel Update", 
+:url => { :controller => 'exam_set_works', :action => :cancel_exam_set_work_form, :exam_set_work_id => exam_set_work_id} %>
+</span>
+
+<% remote_form_for(:exam_set_work, :url => {:controller => 'exam_set_works', 
+                                            :action => 'update_exam_set_work', 
+                                            :exam_set_work_id => exam_set_work_id}) do |form| %>
+
+<%= render :partial => 'exam_set_works/form', :locals => { :manifestation => manifestation, :exam_set_work_id => exam_set_work_id } %>
+
+<%= submit_tag "Save"%>
+
+<% end %>
+</div>
+<br/>
+
+
+
+
+
+  
+
+

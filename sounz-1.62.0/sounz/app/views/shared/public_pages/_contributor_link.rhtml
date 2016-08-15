@@ -1,0 +1,7 @@
+<%
+# Pass in a parameter called contributor_role, and decide to which contributor link to show
+
+link_html = ContributorsHelper.get_link_depending_on_role_type(contributor_role, @login)
+
+%>
+<%=link_html%>

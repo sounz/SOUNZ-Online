@@ -1,0 +1,144 @@
+
+<table>
+<tr><td colspan=2><p><h3> Address Details</h3></p></td></tr>
+<%if @from != 'checkout'%>
+<tr>
+<th><label for="contactinfo_building">Building</label></th>
+<td>
+<%= text_field_tag  'contactinfo[building]', @contactinfo.building, { :size => standard_edit_cols}%>
+</td>
+</tr>
+<%end%>
+<tr>
+<th><label for="contactinfo_street">Street</label><font color="#f00">*</font></th>
+<td>
+<%= text_field_tag  'contactinfo[street]', @contactinfo.street, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_po_box">PO Box</label></th>
+<td>
+<%= text_field_tag  'contactinfo[po_box]', @contactinfo.po_box, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_suburb">Suburb</label><font color="#f00">*</font></th>
+<td>
+<%= text_field_tag  'contactinfo[suburb]', @contactinfo.suburb, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_locality">Locality</label><font color="#f00">*</font></th>
+<td>
+<%= text_field_tag  'contactinfo[locality]', @contactinfo.locality, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+
+<tr>
+<th><label for="contactinfo_postcode">Postcode</label></th>
+<td>
+<%= text_field_tag  'contactinfo[postcode]', @contactinfo.postcode, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr><td colspan=2><p><h3>Country Details</h3></p></td></tr>
+<tr>
+<th><label for="contactinfo_region">Region</label><font color="#f00">*</font></th>
+<td class='formelemformat'><div id="regionSelector">
+
+<% if @contactinfo.region_id != nil %>
+<%= collection_select(:contactinfo, :region_id, 
+Region.find(:all, :conditions => ['country_id =?', @contactinfo.country_id], :order => 'region_order'),
+:region_id,
+:region_name,
+{ :prompt => "-- Select a region --"})
+%>
+<% else %>
+<% @country = @contactinfo.country %>
+<% if @country != nil %>
+<%= render :partial => '/contactinfos/show_regions_for_country', :locals => {:country => @country }%>
+<% end %>
+<% end %>
+</div></td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_country">Country</label><font color="#f00">*</font></th>
+<td>
+<%
+country_disabled = false
+%>
+<%= collection_select(:contactinfo, :country_id, 
+Country.find(:all, :order => 'country_name'),
+:country_id,
+:country_name,
+{ :prompt => "-- Select a country --" })
+%>
+</td>
+
+<%
+country_field =  "contactinfo_country_id"
+parameters = "'country='+escape($('"+country_field+"').value)"
+%>
+<%=  observe_field  "contactinfo_country_id", :update => "regionSelector",
+                                               :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                               :with => parameters
+%>
+
+
+</tr>
+
+<tr><td colspan=2><p><h3>Contact Details</h3></p></td></tr>
+
+<tr>
+<th><label for="contactinfo_email_1">Email</label><font color="#f00">*</font></th>
+<td>
+<%= text_field_tag  'contactinfo[email_1]', @contactinfo.email_1, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_website_urls">Website</label></th>
+<td>
+<%= text_field_tag  'contactinfo[website_urls]', @contactinfo.website_urls, { :size => standard_edit_cols}%>
+</td>
+</tr>
+
+<tr>
+<th><label for="contactinfo_phone">Phone</label></th>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field_tag  'contactinfo[phone_prefix]', @contactinfo.phone_prefix, 
+                                             { :size => 10, 
+                                               :maxlength => 10} %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%"> 
+<%= text_field_tag 'contactinfo[phone]', @contactinfo.phone, 
+                                      { :size => 20, 
+                                        :maxlength => 20}%>
+<br>
+<div class="comment">phone number<font color="#f00">*</font></div>
+</td>
+<td valign="top">
+<%= text_field_tag  'contactinfo[phone_extension]', @contactinfo.phone_extension, 
+                                                 { :size => 10} %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+</table>
+<input type='hidden' name='from' value='<%=@from%>'/>

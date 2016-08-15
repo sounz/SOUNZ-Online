@@ -1,0 +1,30 @@
+<%
+dom_id = "durationForm" #may need to tweak this later if multiple durations on a page
+if !optional%>
+<div id="<%=dom_id%>">
+<%=render :partial => 'duration_as_interval/form', :locals => {:prefix => prefix, :interval_duration => interval_duration, :object_name => object_name, :field_name => field_name}%>
+</div>
+<%else%>
+<%#we now have to decide which state to show the widget in - the condition is the interval_duration being nil%>
+<%if interval_duration == nil
+#This is the duration not specified case	
+%>
+<span id="durationButton">
+	<%= action_button(link_to_remote( "Set Duration",:url =>{ :action => :set_duration, :controller => :duration_as_interval, :optional => optional,  :prefix => prefix, :object_name => object_name, :field_name => field_name}))%>	
+</span>
+<span id="<%=dom_id%>">
+No duration specified
+</span>
+<%else
+#This is the duration specified case
+%>
+<span id="durationButton">
+<%= action_button(link_to_remote( "Set No Duration/Not Applicable",:url =>{ :action => :cancel_duration, :controller => :duration_as_interval, :optional => optional, :prefix => prefix, :object_name => object_name, :field_name => field_name}))%>
+</span>
+<span id="<%=dom_id%>">
+<%=render :partial => 'duration_as_interval/form', :locals => {:prefix => prefix, :interval_duration => interval_duration, :object_name => object_name, :field_name => field_name}%>
+</span>
+
+<%end%>
+
+<%end%>

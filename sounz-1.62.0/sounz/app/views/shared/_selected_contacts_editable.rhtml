@@ -1,0 +1,67 @@
+<%
+role      = contact.role
+role_name = role.role_name unless role.blank?
+
+contactinfo = contact.contactinfo
+
+if role.person != nil
+person = contact.role.person
+end
+if role.organisation != nil
+organisation      = contact.role.organisation
+organisation_name = role.organisation.organisation_list_name(true) unless role.blank?
+end 
+%>
+
+<% 
+if person != nil
+contact_name   = person.full_name
+contact_status = person.status
+elsif organisation != nil
+contact_name   = organisation_name
+contact_status = organisation.status
+end
+%>
+
+<div id="no_borders">
+<table width="100%">
+<tr>
+<td width="95%">
+
+<%=show_status_icon(role.status) unless contact_status.blank?%>
+<%=contact.contactinfo_type_icon %>
+<%=show_status_icon(role.contributor.status) unless role.contributor.blank?%>
+
+<a href="/role_contactinfos/edit/<%= role.role_id%>?role_contactinfo=<%=contact.role_contactinfo_id%>">
+<strong><%=contact_name unless contact_name.blank?%> </strong> -
+
+<%
+  contactinfo.initialize_contactinfo_associated_with_another_contactinfo( contactinfo.default_contactinfo ) unless contactinfo.default_contactinfo.blank?
+%>
+
+<%= role_name %> <strong><%= role.contributor_flag %></strong>
+<% if !person.blank? %>
+, <i><%= organisation_name %></i>
+<% end %>
+- 
+
+<%= contactinfo.get_a_phone_number + '; ' %>
+<%= contactinfo.get_an_email + '; ' %>
+<% locality = '[No locality]' %>
+<% locality = contactinfo.locality unless contactinfo.locality.blank? %>
+<%= locality %>
+&nbsp;
+
+<strong><%= contact.preferred_role_contactinfo_flag %></strong>
+
+</a>
+</td>
+<td width="5%" align="right">
+<% if existing_contacts.blank? || !existing_contacts.blank? && !existing_contacts.include?(contact) %>
+  <% checked ='checked' unless checked == nil%>
+ <input type="checkbox" class="check" name="role_contactinfos[ids][]" <%= checked %> value="<%= generate_id(contact) %>" id="<%= generate_id(contact) %>" />
+<% end %>
+</td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,31 @@
+<h1>Find Person or Organisation</h1> 
+<form id="contact_search_form">
+<table>
+	<tr><td>Name</td><td><%= text_field :search, :person%><%= link_to "New Person", { :controller => 'people',
+	                                                                                  :action => 'new' } %>
+	</td></tr>
+	<tr><td>Organisation</td><td><%= text_field :search, :organisation %><%= link_to "New Organisation", { :controller => 'organisations',
+	                                                                                                       :action => 'new' }%>
+	</td></tr>
+</table>
+</form>
+  <%=  observe_form "contact_search_form",
+ :frequency => 0.5, 
+ :before => "Element.show('spinner')",
+ :complete => "Element.hide('spinner')",
+:update =>"search_results",
+:url => {:action => "find_contacts"}
+  %>
+
+<%=render :partial => "use_saved_list_form"%>
+    
+  <div id="search_results">Results will appear here</div>
+  <%=render :partial => 'shared/spinner'%>
+  
+  <h1>Selected Results</h1>
+<div id="selected_results">Selected result will appear here
+<%= render :partial => 'selected_contacts' %>
+</div>
+<%=render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :basic_search}%>
+
+

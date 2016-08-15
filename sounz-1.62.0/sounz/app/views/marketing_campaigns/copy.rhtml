@@ -1,0 +1,7 @@
+<% title "Copy campaign " + @marketing_campaign.campaign_name %>
+<h2>Copying campaign</h2>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>

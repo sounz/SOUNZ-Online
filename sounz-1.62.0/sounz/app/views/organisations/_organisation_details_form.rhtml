@@ -1,0 +1,14 @@
+<%= error_messages_for 'organisation' %>
+<fieldset>
+  <legend>Organisation Details</legend>
+  <table>
+    <tr>
+      <th><label for="organisation_organisation_name">Organisation name</label></th>
+      <td><%= text_field 'organisation', 'organisation_name'  %></td>
+    </tr>
+    <tr>
+      <th><label for="organisation_organisation_abbrev">Organisation abbrev</label></th>
+      <td><%= text_field 'organisation', 'organisation_abbrev'  %></td>
+    </tr>
+  </table>
+</fieldset>

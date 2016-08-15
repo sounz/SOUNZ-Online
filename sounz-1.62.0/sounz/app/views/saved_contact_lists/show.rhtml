@@ -1,0 +1,13 @@
+<h1><%=@saved_contact_list.list_name%>
+<h2>People</h2>
+<%for person in @saved_contact_list.people%>
+<%=person.contributor_name%><br>
+<%end%>
+
+<h2>Organisations</h2>
+<%for organisation in @saved_contact_list.organisations%>
+<%=organisation.contributor_name%><br>
+<%end%>
+
+<%= link_to 'Edit', :action => 'edit', :id => @saved_contact_list %> |
+<%= link_to 'Back', :action => 'list' %>

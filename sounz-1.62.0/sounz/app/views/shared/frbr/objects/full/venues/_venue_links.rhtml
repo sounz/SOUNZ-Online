@@ -1,0 +1,10 @@
+<!-- links to composer works -->
+<%
+	n_events = object.number_of_held_events
+    n_performers = object.number_of_performers
+
+%>
+<ul class="frbrLinks">
+<li><%if n_events > 0%><%=link_to_if PrivilegesHelper.has_link_permission?(@login, object), "Events ("+n_events.to_s+")", venue_events_url(:id => object)%><%end%></li>
+<li><%if n_performers > 0%><%=link_to_if PrivilegesHelper.has_link_permission?(@login, object), "Arrangements ("+n_performers.to_s+")", venue_performers_url(:id => object)%><%end%></li>
+</ul>

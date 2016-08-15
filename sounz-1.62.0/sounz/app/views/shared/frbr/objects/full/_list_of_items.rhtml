@@ -1,0 +1,121 @@
+<%
+items = PrivilegesHelper.permitted_objects(@login, items)
+x = items
+
+if x
+
+	total = x.length
+	start_page = page
+	if start_page == nil
+		start_page = 0
+	end
+	startx = LISTING_PAGE_SIZE*(start_page.to_i-1)
+	endx = startx+LISTING_PAGE_SIZE-1
+	if endx > (items.length-1)
+		endx = items.length
+	end
+	if !x.blank?
+%>
+<table class="listOfFrbrItems">
+
+<%for i in startx..endx
+y = items[i]
+if y != nil
+%>
+<tr>
+<td>
+<%
+if y.class != Role
+%>
+
+
+<%=link_to y.send(related_item_title_method), :controller => y.class.to_s.tableize , :action => :show, :id => y.id %>
+
+<%else%>
+<%=ContributorsHelper.get_link_depending_on_role_type(y, @login)%>
+<%end%>
+<%desc = y.send(related_item_description_method)
+if !desc.blank?
+%>
+
+<% if y.class == Manifestation 
+%>
+<%= convert_to_html(description_teaser(desc, y))%>
+<% else %>
+<%=desc%>
+<% end %>
+
+<% else %>
+<%= "<br/><br/>" if y.class == Manifestation %>
+<%end%>
+
+</td>
+
+<td>&nbsp;</td>
+
+<% # WR#51709
+ if y.class == Work && (!object.blank? && ((object.class == Contributor && y.composers.uniq != [object.role]) || object.class == Concept || object.class == Distinction))%>
+<%
+links_string = []
+y.composers.uniq.map{|c| links_string <<  [ContributorsHelper.get_link_depending_on_role_type(c, @login)] }
+%>
+<td width="25%">
+<%=links_string.join(', ')%>
+
+<% #WR#55627
+elsif y.class == DistinctionInstance && (!object.blank? && object.class == Contributor)
+frbr_objects = PrivilegesHelper.permitted_objects(@login, y.composite_recipients)
+
+frbr_objects.each do |frbr_object|
+%>
+
+<%if PrivilegesHelper.has_link_permission?(@login, frbr_object)%>
+
+<%if frbr_object.class != Role %>
+<td>
+<% frbr_object.composite_authors.each do |author|%>
+<%=ContributorsHelper.get_link_depending_on_role_type(author, @login)%><br/>
+<% end %>
+</td>
+<td>
+
+<%=link_to frbr_object.frbr_list_title, :action => 'show', :id => frbr_object, :controller => frbr_object.class.to_s.tableize%></li>
+
+<%else
+%>
+<td>
+<%=ContributorsHelper.get_link_depending_on_role_type(frbr_object, @login)%>
+</td>
+<td>&nbsp;
+<%
+end
+end
+
+end%>
+
+<% end%>
+
+
+</td>
+</tr>
+<%end%>
+<%end%>
+</table>
+<%else%>
+<p>No items to show</p>
+<%end%>
+
+<br/>
+
+<%if items.length > LISTING_PAGE_SIZE
+paginator = ActionController::Pagination::Paginator.new(self, items.length , LISTING_PAGE_SIZE, page)
+%>
+<div class="frbrPageLinks">
+<%= render :partial => "shared/page_links", :locals => { :paginator => paginator } %>
+</div>
+<%end%>
+
+<%else%>
+<%end%>
+
+

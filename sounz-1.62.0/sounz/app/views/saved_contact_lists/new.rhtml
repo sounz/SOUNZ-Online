@@ -1,0 +1,11 @@
+<% title "Creating Saved Contact List" %>
+
+<h2>Creating Saved Contact List</h2>
+<fieldset>
+<legend>Saved Contact List Details</legend>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+</fieldset>

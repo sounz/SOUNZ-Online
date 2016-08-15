@@ -1,0 +1,46 @@
+<h1>New sample</h1>
+
+<%= error_messages_for :sample %>
+
+<% form_for(:sample, :url => samples_path) do |f| %>
+  <p>
+    <b>Manifestation</b><br>
+    <%= f.text_field :manifestation_id %>
+  </p>
+
+  <p>
+    <b>Status</b><br>
+    <%= f.text_field :status_id %>
+  </p>
+
+  <p>
+    <b>Sample description</b><br>
+    <%= f.text_area :sample_description %>
+  </p>
+
+  <p>
+    <b>Sample copyright</b><br>
+    <%= f.text_area :sample_copyright %>
+  </p>
+
+  <p>
+    <b>Created at</b><br>
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>
+    <b>Updated at</b><br>
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+  <p>
+    <b>Updated by</b><br>
+    <%= f.text_field :updated_by %>
+  </p>
+
+  <p>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', samples_path %>

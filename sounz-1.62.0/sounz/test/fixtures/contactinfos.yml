@@ -1,0 +1,4272 @@
+contactinfo_2000:
+  contactinfo_id: 2000
+  phone: ""
+  email_1:  "info@nzsm.ac.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2001:
+  contactinfo_id: 2001
+  phone: " 04 463 5369"
+  email_1:  "info@nzsm.ac.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2002:
+  contactinfo_id: 2002
+  phone: " 04 463 5369"
+  email_1:  "info@nzsm.ac.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2003:
+  contactinfo_id: 2003
+  phone: ""
+  email_1:  "info@nzso.co.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2004:
+  contactinfo_id: 2004
+  phone: ""
+  email_1:  "info@nzso.co.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2005:
+  contactinfo_id: 2005
+  phone: ""
+  email_1:  "info@nzso.co.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2006:
+  contactinfo_id: 2006
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2007:
+  contactinfo_id: 2007
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2008:
+  contactinfo_id: 2008
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2009:
+  contactinfo_id: 2009
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2010:
+  contactinfo_id: 2010
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2011:
+  contactinfo_id: 2011
+  phone: ""
+  email_1:  "info@chambermusic.co.nz"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2012:
+  contactinfo_id: 2012
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2013:
+  contactinfo_id: 2013
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2014:
+  contactinfo_id: 2014
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2015:
+  contactinfo_id: 2015
+  phone: ""
+  email_1:  ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1:
+  contactinfo_id: 1
+  country_id: 158
+  region_id:  1
+  street: "Test Street"
+  locality: "Test Locality"
+  suburb: "Test Suburb"
+  internal_note: "Test internal note - need this contactinfo present for distinctions etc."
+  phone: "04 479 0366"
+  phone_alt: "027 444 0241"
+  phone_fax: "04 479 0368"
+  postcode: 6035
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_2:
+  contactinfo_id: 2
+  country_id: 158
+  region_id:  1
+  street: "Little Italy Underground, cnr Vivian and Tory Streets"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: ""
+  email_1: "happymusic2@paradise.net.nz"
+  website_urls: "http://www.myspace.com/happybar"
+  phone: "04 384 1965"
+  phone_alt: ""
+  phone_fax: ""
+  postcode:
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_3:
+  contactinfo_id: 3
+  country_id: 158
+  region_id:  1
+  street: "Massey University Campus, 63 Wallace Street, block one"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: ""
+  website_urls: "http://www.nzsm.ac.nz"
+  phone: ""
+  phone_alt: ""
+  phone_fax: ""
+  postcode:
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_4:
+  contactinfo_id: 4
+  country_id: 158
+  region_id:  1
+  street: "Victoria University, Kelburn Parade"
+  locality: "Wellington"
+  suburb: "Kelburn"
+  internal_note: ""
+  website_urls: "http://www.nzsm.ac.nz"
+  phone: "04 463 5369"
+  email_1: "info@nzsm.ac.nz"
+  phone_alt: ""
+  phone_fax: ""
+  postcode:
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_5:
+  contactinfo_id: 5
+  country_id: 158
+  region_id:  1
+  street: "30 The Terrace"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: ""
+  website_urls: "http://www.standrews.org"
+  phone: "04 472 9211"
+  email_1: "office@standrews.org"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: "6011"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_6:
+  contactinfo_id: 6
+  country_id: 230
+  region_id:
+  street: "36 Wigmore St."
+  locality: "London"
+  suburb: ""
+  internal_note: ""
+  website_urls: "http://www.wigmore-hall.org.uk"
+  phone: "44 20 7258 8200"
+  email_1: "info@wigmore-hall.org.uk"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: "6011"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_7:
+  contactinfo_id: 7
+  country_id: 158
+  region_id:  1
+  street: "19 Beresford Square, Auckland Central ( Corner of Hopetoun Street and Beresford Square)"
+  locality: "Auckland"
+  suburb: ""
+  internal_note: ""
+  website_urls: "www.hopetounalpha.co.nz"
+  phone: "09 373 3112"
+  email_1: "info@hopetounalpha.co.nz"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: "6011"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_8:
+  contactinfo_id: 8
+  country_id: 158
+  region_id:  1
+  street: "30 The Terrace"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: ""
+  website_urls: "www.standrews.org"
+  phone: "04 472 9211"
+  email_1: "office@standrews.org"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: "6011"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_9:
+  contactinfo_id: 9
+  country_id: 158
+  region_id:  1
+  street: "30 The Terrace"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: ""
+  website_urls: "www.standrews.org"
+  phone: "04 472 9211"
+  email_1: "office@standrews.org"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: "6011"
+
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_10:
+  contactinfo_id: 10
+  country_id: 158
+  region_id:  1
+  street: "Cable Street"
+  locality: "Wellington"
+  suburb: ""
+  internal_note: "Established 1998"
+  website_urls: "www.tepapa.govt.nz"
+  phone: "+64 4 381 7000"
+  email_1: "mail@tepapa.govt.nz"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_11:
+  contactinfo_id: 11
+  country_id: 158
+  region_id:  1
+  street: ""
+  locality: ""
+  suburb: ""
+  internal_note: "Established 1998"
+  website_urls: "www.the-edge.co.nz"
+  phone: "+64 9 309 2677"
+  email_1: "mail@tepapa.govt.nz"
+  phone_alt: ""
+  phone_fax: ""
+  postcode: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1000:
+  contactinfo_id: 1000
+  country_id: 158
+  region_id:  19
+  street: "11A Lochiel Road"
+  locality: "Khandallah"
+  internal_note: "(HomeAddress) {1|11A Lochiel Road Khandallah Wellington 6035}"
+  phone: "04 479 0366"
+  phone_alt: "027 444 0241"
+  email_1: "c.blake@xtra.co.nz (h); chris.blake@dia.govt.nz (w)"
+  website_urls: ""
+  phone_fax: "04 479 0368"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1001:
+  contactinfo_id: 1001
+  country_id: 158
+  region_id:  19
+  street: "35 Collingwood Street"
+  locality: "Freemans Bay"
+  internal_note: "(HomeAddress) {1|35 Collingwood Street Freemans Bay Auckland 1011  }"
+  phone: "09 360 2241"
+  phone_alt: "09 373 7599 ext87403"
+  email_1: "e.decastro@auckland.ac.nz"
+  website_urls: ""
+  phone_fax: "09 373 7999 ext87409"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1002:
+  contactinfo_id: 1002
+  country_id: 158
+  region_id:  19
+  street: "c/- Music Department,"
+  locality: "University of Otago"
+  internal_note: "(HomeAddress) {1|18 Mill Street Sawyer's Bay Dunedin 9054}"
+  phone: "03 472 7294"
+  phone_alt: "03 479 8890"
+  email_1: "peter.adams@stonebow.otago.ac.nz"
+  website_urls: ""
+  phone_fax: "03 479 8885"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1003:
+  contactinfo_id: 1003
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|Shirley Anderson 25a Holmdene Avenue Herne Hill London  SE24 9LB, England}"
+  phone: "020 7326 1545"
+  phone_alt: ""
+  email_1: "shirleywirly@yahoo.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1004:
+  contactinfo_id: 1004
+  country_id: 158
+  region_id:  19
+  street: "42 McBeath Avenue"
+  locality: "Hoon Hay"
+  internal_note: "(HomeAddress) {1|42 McBeath Avenue Hoon Hay Christchurch 8002  Christchurch    }"
+  phone: "03 942 1694"
+  phone_alt: "03 349 0415"
+  email_1: "chris.archer@cce.ac.nz"
+  website_urls: ""
+  phone_fax: "03 349 1351"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1005:
+  contactinfo_id: 1005
+  country_id: 158
+  region_id:  19
+  street: "3 Kelly Street"
+  locality: "Mount Eden"
+  internal_note: "(HomeAddress) {1|3 Kelly Street Mount Eden Auckland 3}"
+  phone: "09 606 778"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1006:
+  contactinfo_id: 1006
+  country_id: 158
+  region_id:  19
+  street: "15G Sayegh Street"
+  locality: "Saint Heliers"
+  internal_note: "(HomeAddress) {1|15G Sayegh Street Saint Heliers Auckland}"
+  phone: "09 575 5903"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1007:
+  contactinfo_id: 1007
+  country_id: 158
+  region_id:  19
+  street: "39 Cowan Street"
+  locality: "Ponsonby"
+  internal_note: "(HomeAddress) {1|39 Cowan Street Ponsonby Auckland 1011 }"
+  phone: "09 378 6569"
+  phone_alt: ""
+  email_1: "jonathan.besser@clear.net.nz"
+  website_urls: "http://www.jonathanbesser.com"
+  phone_fax: "09 378 6569"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1008:
+  contactinfo_id: 1008
+  country_id: 158
+  region_id:  19
+  street: "86 Maida Vale Road"
+  locality: "Roseneath"
+  internal_note: "(HomeAddress) {1|86 Maida Vale Road Roseneath Wellington 6011}"
+  phone: "04 970 3451"
+  phone_alt: "04 970 3451"
+  email_1: "chords@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1009:
+  contactinfo_id: 1009
+  country_id: 158
+  region_id:  19
+  street: "27 Torrens Road"
+  locality: "Hillmorton"
+  internal_note: "(HomeAddress) {1|27 Torrens Road Hillmorton Christchurch 8002}"
+  phone: "03 338 3934"
+  phone_alt: ""
+  email_1: "ebiddington@actrix.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1010:
+  contactinfo_id: 1010
+  country_id: 158
+  region_id:  19
+  street: "42 Ariki Road"
+  locality: "Hataitai"
+  internal_note: "(HomeAddress) {1|42 Ariki Road Hataitai Wellington }"
+  phone: "04 970 4745"
+  phone_alt: "04 939 9370"
+  email_1: "mlbiggs@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1011:
+  contactinfo_id: 1011
+  country_id: 158
+  region_id:  19
+  street: "753 South Titirangi Road"
+  locality: "Titirangi"
+  internal_note: "(HomeAddress) {1|753 South Titirangi Road Titirangi Auckland 7}"
+  phone: "09 817 2928"
+  phone_alt: ""
+  email_1: "brigidbisley@hotmail.com"
+  website_urls: ""
+  phone_fax: "09 817 2928"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1012:
+  contactinfo_id: 1012
+  country_id: 158
+  region_id:  19
+  street: "46A Pukeroa Avenue"
+  locality: "Remuera"
+  internal_note: "(HomeAddress) {1|46A Pukeroa Avenue Remuera Auckland 1050}"
+  phone: "09 524 7402"
+  phone_alt: "027 410 3357"
+  email_1: "rod.biss@xtra.co.nz"
+  website_urls: ""
+  phone_fax: "09 524 7153"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1013:
+  contactinfo_id: 1013
+  country_id: 158
+  region_id:  19
+  street: "8 Durham Street"
+  locality: "Aro Valley"
+  internal_note: "(HomeAddress) {1|8 Durham Street Aro Valley Wellington 6002}"
+  phone: "04 934 5369"
+  phone_alt: "04 463 5853"
+  email_1: "Jack.Body@vuw.ac.nz"
+  website_urls: "http://www.jackbody.com"
+  phone_fax: "04 463 5157"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1014:
+  contactinfo_id: 1014
+  country_id: 158
+  region_id:  19
+  street: "18 Glen Brook Road"
+  locality: "Omiha"
+  internal_note: "(HomeAddress) {1|18 Glen Brook Road Omiha Waiheke Island 1081   }"
+  phone: "09 372 9724"
+  phone_alt: ""
+  email_1: "h.bowater@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1015:
+  contactinfo_id: 1015
+  country_id: 158
+  region_id:  19
+  street: "73 Marine Parade"
+  locality: "Eastbourne"
+  internal_note: "(HomeAddress) {1|73 Marine Parade Eastbourne Lower Hutt 5013}"
+  phone: "04 562 0915"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "04 562 0916"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1016:
+  contactinfo_id: 1016
+  country_id: 158
+  region_id:  19
+  street: "Villa 32, Village at the Park"
+  locality: "389 Adelaide Road"
+  internal_note: "(HomeAddress) {1|Villa 32, \Village at the Park\ 389 Adelaide Road Newtown Wellington}"
+  phone: "025 682 9089"
+  phone_alt: ""
+  email_1: "bob_leah@xtra.co.nz bob_leah@xtra.co.nz "
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1017:
+  contactinfo_id: 1017
+  country_id: 158
+  region_id:  19
+  street: "c/- NZ School of Music"
+  locality: "Victoria University"
+  internal_note: "(HomeAddress) {1|144 The Ridgeway Mornington Wellington 6021}"
+  phone: "04 380 1221"
+  phone_alt: "04 463 5862"
+  email_1: "john.psathas@vuw.ac.nz"
+  website_urls: "http://www.johnpsathas.com"
+  phone_fax: "04 463 5157"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1018:
+  contactinfo_id: 1018
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|c/- Tony Carr 370 Joalah Road, Duffys Forest NSW 2084 Australia}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1019:
+  contactinfo_id: 1019
+  country_id: 158
+  region_id:  19
+  street: "21 Thompson Street"
+  locality: "Drummoyne"
+  internal_note: "(HomeAddress) {1|21 Thompson Street Drummoyne Sydney NSW 2047  AUSTRALIA}"
+  phone: "61 2 9181 3697"
+  phone_alt: ""
+  email_1: "johncharles@optusnet.com.au"
+  website_urls: ""
+  phone_fax: "61 2 9181 3697"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1020:
+  contactinfo_id: 1020
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1021:
+  contactinfo_id: 1021
+  country_id: 158
+  region_id:  19
+  street: "SOUNDHOUSE"
+  locality: "174 Springfield Road"
+  internal_note: "(HomeAddress) {1|174 Springfield Road Christchurch 1}"
+  phone: "03 355 9495"
+  phone_alt: ""
+  email_1: "jec20@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1022:
+  contactinfo_id: 1022
+  country_id: 158
+  region_id:  19
+  street: "School of Music,"
+  locality: "University of Canterbury"
+  internal_note: "(HomeAddress) {1|964 Old West Coast Road R.D 1   West Melton                                      Christchurch}"
+  phone: "03 347 4716"
+  phone_alt: "03 366 7001x7631"
+  email_1: "christopher.creebrown@canterbury.ac.nz"
+  website_urls: ""
+  phone_fax: "03 364 2728"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1023:
+  contactinfo_id: 1023
+  country_id: 158
+  region_id:  19
+  street: "4 Leslie Place"
+  locality: "Edinburgh EH4 1NQ"
+  internal_note: "(HomeAddress) {1|4 Leslie Place Edinburgh EH4 1NQ Scotland UNITED KINGDOM}"
+  phone: "44 131 332 9181"
+  phone_alt: ""
+  email_1: "elsie@elsie.fsworld.co.uk"
+  website_urls: ""
+  phone_fax: "44 131 332 9181"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1024:
+  contactinfo_id: 1024
+  country_id: 158
+  region_id:  19
+  street: "c/- Mr. John Weir"
+  locality: "Solicitor"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1025:
+  contactinfo_id: 1025
+  country_id: 158
+  region_id:  19
+  street: "2/66 Curren Street"
+  locality: "Herne Bay"
+  internal_note: "(HomeAddress) {1|2/66 Curran Street Herne Bay Auckland 1002}"
+  phone: "09 360 6558"
+  phone_alt: ""
+  email_1: "pcrowe@hyper.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1026:
+  contactinfo_id: 1026
+  country_id: 158
+  region_id:  19
+  street: "PO Box 66 060"
+  locality: "Beachhaven"
+  internal_note: "(HomeAddress) {1|44 Cresta Ave Beachhaven Auckland 10}"
+  phone: "09 483 5074 and fax"
+  phone_alt: ""
+  email_1: "p.dadson@auckland.ac.nz"
+  website_urls: "http://www.sonicsfromscratch.co.nz"
+  phone_fax: "09 373 7433 (c/-)"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1027:
+  contactinfo_id: 1027
+  country_id: 158
+  region_id:  19
+  street: "29 Prospect  Tce"
+  locality: "Mount Eden"
+  internal_note: "(HomeAddress) {1|29 Prospect Terrace Mount Eden Auckland 1024}"
+  phone: "09 630 1328"
+  phone_alt: ""
+  email_1: "duke110@ihug.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1028:
+  contactinfo_id: 1028
+  country_id: 158
+  region_id:  19
+  street: "48 Shelley Beach Road"
+  locality: "Herne Bay"
+  internal_note: "(HomeAddress) {1|48 Shelley Beach Road Herne Bay Auckland 2}"
+  phone: "09 378 6932"
+  phone_alt: ""
+  email_1: "daverne@ihug.co.nz"
+  website_urls: "http://www.garydaverne.gen.nz"
+  phone_fax: "09 378 6932"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1029:
+  contactinfo_id: 1029
+  country_id: 158
+  region_id:  19
+  street: "Graham Dellow"
+  locality: "18 Pickens Crescent"
+  internal_note: "(HomeAddress) {1|8 Lynch Street Point Chevalier Auckland 2}"
+  phone: "09 8461038"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1030:
+  contactinfo_id: 1030
+  country_id: 158
+  region_id:  19
+  street: "John Densem Estate,  "
+  locality: "c/- Prue Densem"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1031:
+  contactinfo_id: 1031
+  country_id: 158
+  region_id:  19
+  street: "19 Rush Creek Drive"
+  locality: "Massey"
+  internal_note: "(HomeAddress) {1|19 Rush Creek Drive Massey Waitakere 0614}"
+  phone: "09 832 0570"
+  phone_alt: ""
+  email_1: "hug-dix@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1032:
+  contactinfo_id: 1032
+  country_id: 158
+  region_id:  19
+  street: "School of Music"
+  locality: "University of Canterbury"
+  internal_note: "(HomeAddress) {1|18 Cracroft Terrace Christchurch            }"
+  phone: "03 337 3010"
+  phone_alt: "03 364 2987 x7635"
+  email_1: "e.dobson@music.canterbury.ac.nz"
+  website_urls: ""
+  phone_fax: "03 364 2728"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1033:
+  contactinfo_id: 1033
+  country_id: 158
+  region_id:  19
+  street: "PO Box 17071"
+  locality: "Karori"
+  internal_note: "(HomeAddress) {1|40 Croydon Street Karori Wellington}"
+  phone: "04 476 9905"
+  phone_alt: ""
+  email_1: "ddownes@ihug.co.nz"
+  website_urls: "http://www.daviddownes.co.nz"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1034:
+  contactinfo_id: 1034
+  country_id: 158
+  region_id:  19
+  street: "Department of Music,"
+  locality: "University of Otago"
+  internal_note: "(HomeAddress) {1|619 Highgate  Maori Hill Dunedin 9010 }"
+  phone: "03 464 0609"
+  phone_alt: "03 479 8880"
+  email_1: "john.drummond@stonebow.otago.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1035:
+  contactinfo_id: 1035
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|6/21 Ruarangi Road Mt Albert Auckland 1003}"
+  phone: "09 815 8418"
+  phone_alt: ""
+  email_1: "jacke@slingshot.co.nz�"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1036:
+  contactinfo_id: 1036
+  country_id: 158
+  region_id:  19
+  street: "School of Music"
+  locality: "University of Auckland"
+  internal_note: "(HomeAddress) {1|30 O'Neills Road Swanson Waitakere 0614}"
+  phone: "09 630 9257"
+  phone_alt: "09 373 7999 x 87450"
+  email_1: "ja.elmsly@auckland.ac.nz"
+  website_urls: ""
+  phone_fax: "09373 7446or630 9257"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1037:
+  contactinfo_id: 1037
+  country_id: 158
+  region_id:  19
+  street: "103 Grimseys Road"
+  locality: "Christchurch 8051"
+  internal_note: "(HomeAddress) {1|103 Grimseys Road Christchurch 8051}"
+  phone: "03 352 3368"
+  phone_alt: ""
+  email_1: "j.emeleus@ext.canterbury.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1038:
+  contactinfo_id: 1038
+  country_id: 158
+  region_id:  19
+  street: "20 High Street"
+  locality: "Petone"
+  internal_note: "(HomeAddress) {1|20 High Street Petone Wellington}"
+  phone: "04 973 8267"
+  phone_alt: ""
+  email_1: "JXLE@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1039:
+  contactinfo_id: 1039
+  country_id: 158
+  region_id:  19
+  street: "A3, 1 Washington Ave. "
+  locality: "Brooklyn"
+  internal_note: "(HomeAddress) {1|A3, 1 Washington Ave. Brooklyn Wellington 6021}"
+  phone: "04 384 4778"
+  phone_alt: ""
+  email_1: "david.farquhar@clear.net.nz"
+  website_urls: ""
+  phone_fax: " "
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1040:
+  contactinfo_id: 1040
+  country_id: 158
+  region_id:  19
+  street: "174 Owhiro Bay Parade"
+  locality: "Owhiro Bay"
+  internal_note: "(HomeAddress) {1|174  Owhiro Bay Parade Owhiro Bay Wellington 6023 }"
+  phone: ""
+  phone_alt: ""
+  email_1: "gareth@drumdrag.com"
+  website_urls: "http://www.garethfarr.com"
+  phone_fax: "04 971 5382"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1041:
+  contactinfo_id: 1041
+  country_id: 158
+  region_id:  19
+  street: "10 Winston Street  "
+  locality: "Crofton Downs"
+  internal_note: "(HomeAddress) {1|10 Winston Street Crofton Downs Wellington 6035}"
+  phone: "04 479 7304"
+  phone_alt: ""
+  email_1: "helen.fisher@actrix.co.nz"
+  website_urls: ""
+  phone_fax: "04 479 2426 (Levett)"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1042:
+  contactinfo_id: 1042
+  country_id: 158
+  region_id:  19
+  street: "17 Mallam Street"
+  locality: "Karori"
+  internal_note: "(HomeAddress) {1|c/- Jane Freed 17 Mallam Street Karori Wellington 6012}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1043:
+  contactinfo_id: 1043
+  country_id: 158
+  region_id:  19
+  street: "81 Kelly Street"
+  locality: "Inglewood"
+  internal_note: "(HomeAddress) {1|81 Kelly Street Inglewood}"
+  phone: "06 756 7578"
+  phone_alt: ""
+  email_1: "sfrykberg@earsay.com, sfrykberg@gmail.com"
+  website_urls: "http://www.earsay.com/Pages/artists/Artists.html#Susan02"
+  phone_fax: "06 756 7164"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1044:
+  contactinfo_id: 1044
+  country_id: 158
+  region_id:  19
+  street: "11 Karaka Grove"
+  locality: "Waikanae"
+  internal_note: "(HomeAddress) {1|11 Karaka Grove Waikanae}"
+  phone: "04 904 6716"
+  phone_alt: ""
+  email_1: "pjgodfrey@paradise.net.nz"
+  website_urls: ""
+  phone_fax: "04 293 2725"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1045:
+  contactinfo_id: 1045
+  country_id: 158
+  region_id:  19
+  street: "16 Braeside Cresc."
+  locality: "Sandy Bay"
+  internal_note: "(HomeAddress) {1|16 Braeside Cresc. Sandy Bay TAS 7005 Australia}"
+  phone: "+61 3 6226 7380"
+  phone_alt: "Tel +61 3 6225 0768"
+  email_1: "mgrenfel@iinet.net.au; maria@mariagrenfell.com.au"
+  website_urls: "http://www.mariagrenfell.com.au"
+  phone_fax: "Fax +61 3 6226 7333"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1046:
+  contactinfo_id: 1046
+  country_id: 158
+  region_id:  19
+  street: "32 Callum Brae Drive"
+  locality: "Callum Brae"
+  internal_note: "(HomeAddress) {1|32 Callum Brae Drive Callum Brae Hamilton  }"
+  phone: "07 855 6787"
+  phone_alt: "027 509 507"
+  email_1: "griffmusic@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1047:
+  contactinfo_id: 1047
+  country_id: 158
+  region_id:  19
+  street: "Dol pri Borovnici 28A"
+  locality: "Borovnica 1353"
+  internal_note: "(HomeAddress) {1|For cheque: Derek Hall PO Box 28391 Remuera Auckland 1136}"
+  phone: "386 61 574 724"
+  phone_alt: "+386 1 510 8561"
+  email_1: "hall.sorli@siol.net"
+  website_urls: ""
+  phone_fax: "386 61 574 724"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1048:
+  contactinfo_id: 1048
+  country_id: 158
+  region_id:  19
+  street: "P.O. Box 56132"
+  locality: "Dominion Road"
+  internal_note: "(HomeAddress) {1|28 Mewburn Ave Mount Eden Auckland 1030 }"
+  phone: "09 638 9226"
+  phone_alt: "09 630 5963"
+  email_1: "david@dbhmusic.co.nz or dbh1955@hotmail.com"
+  website_urls: "http://www.dbhmusic.co.nz"
+  phone_fax: "09 623 2053 (H)"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1049:
+  contactinfo_id: 1049
+  country_id: 158
+  region_id:  19
+  street: "11 Epuni Street "
+  locality: "Aro Valley"
+  internal_note: "(HomeAddress) {1|11 Epuni Street Aro Valley Wellington 6021}"
+  phone: "04 801 9916"
+  phone_alt: ""
+  email_1: "ross.harris@paradise.net.nz"
+  website_urls: "http://www.rossharris.co.nz"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1050:
+  contactinfo_id: 1050
+  country_id: 158
+  region_id:  19
+  street: "11 Kiwi Street"
+  locality: "Alicetown"
+  internal_note: "(HomeAddress) {1|11 Kiwi Street Alicetown Lower Hutt Wellington 5010}"
+  phone: "04 589 7343"
+  phone_alt: ""
+  email_1: ""
+  website_urls: "http://www.southwest.org.nz/productions/ashley/index.htm"
+  phone_fax: "04 589 7343"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1051:
+  contactinfo_id: 1051
+  country_id: 158
+  region_id:  19
+  street: "4/56 View Road"
+  locality: "Mt Eden"
+  internal_note: "(HomeAddress) {1|4/56 View Road Mt Eden Auckland}"
+  phone: "09 630 3267"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "09 638 3697"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1052:
+  contactinfo_id: 1052
+  country_id: 158
+  region_id:  19
+  street: "16 Mewburn Ave"
+  locality: "Mt. Eden "
+  internal_note: "(HomeAddress) {1|16 Mewburn Ave Mt. Eden  Auckland 1024 }"
+  phone: "09 638 8638"
+  phone_alt: ""
+  email_1: "l_holmes@ihug.co.nz"
+  website_urls: ""
+  phone_fax: "09 638 8638"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1053:
+  contactinfo_id: 1053
+  country_id: 158
+  region_id:  19
+  street: "P. O. Box 87470"
+  locality: "Meadowbank"
+  internal_note: "(HomeAddress) {1|81 Panapa Drive Remuera Auckland 1005}"
+  phone: "09 528 2152"
+  phone_alt: ""
+  email_1: "denise@easy-tax.com"
+  website_urls: ""
+  phone_fax: "09 528 2153"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1054:
+  contactinfo_id: 1054
+  country_id: 158
+  region_id:  19
+  street: "PO Box 11-699"
+  locality: "Wellington"
+  internal_note: "(HomeAddress) {1|Apt 14D  20 Oriental Terrace Wellington}"
+  phone: "04 385 8528"
+  phone_alt: ""
+  email_1: "maarire@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1055:
+  contactinfo_id: 1055
+  country_id: 158
+  region_id:  19
+  street: "14 Carmen Avenue"
+  locality: "Mt Eden"
+  internal_note: "(HomeAddress) {1|14 Carmen Avenue Mt Eden Auckland 1041}"
+  phone: "09 630 7183"
+  phone_alt: ""
+  email_1: "bryony_jagger@paradise.net.nz"
+  website_urls: ""
+  phone_fax: "09 630 7183"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1056:
+  contactinfo_id: 1056
+  country_id: 158
+  region_id:  19
+  street: "19 Winston Street"
+  locality: "Crofton Downs"
+  internal_note: "(HomeAddress) {1|19 Winston Street Crofton Downs Wellington}"
+  phone: "04 479 1894"
+  phone_alt: ""
+  email_1: "jamesshinyo@hotmail.com"
+  website_urls: ""
+  phone_fax: "04 479 1894"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1057:
+  contactinfo_id: 1057
+  country_id: 158
+  region_id:  19
+  street: "21 Sierra Street"
+  locality: "St. Heliers"
+  internal_note: "(HomeAddress) {1|21 Sierra Street St. Heliers Auckland 1105}"
+  phone: "09 575  8857"
+  phone_alt: ""
+  email_1: "caralanjo@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1058:
+  contactinfo_id: 1058
+  country_id: 158
+  region_id:  19
+  street: "3 Sylvan Valley Ave"
+  locality: "Titirangi"
+  internal_note: "(HomeAddress) {1|3 Sylvan Valley Ave Titirangi Auckland 1007}"
+  phone: "09 817 6508"
+  phone_alt: "09 373 7599 x87402"
+  email_1: "kiosk@paradise.net.nz"
+  website_urls: ""
+  phone_fax: "09 817 7817"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1059:
+  contactinfo_id: 1059
+  country_id: 158
+  region_id:  19
+  street: "Appt. C-53"
+  locality: "22 avenue Henri Rol-Tanguy"
+  internal_note: "(HomeAddress) {1|c/- Muriel Dowling 43B Sale Street Howick Auckland}"
+  phone: "00 331 4946 9930"
+  phone_alt: ""
+  email_1: "nigelkeay@wanadoo.fr"
+  website_urls: "http://www.nigelkeay.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1060:
+  contactinfo_id: 1060
+  country_id: 158
+  region_id:  19
+  street: "11 Jersey Road"
+  locality: "London SW17 9RQ"
+  internal_note: "(HomeAddress) {1|11 Jersey Road London SW17 9RQ United Kingdom }"
+  phone: "+44 20 8286 6955"
+  phone_alt: "+44 779 945 3218"
+  email_1: "d.ker@shef.ac.uk"
+  website_urls: "http://www.dorothyker.com"
+  phone_fax: "+44  114 222 0469"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1061:
+  contactinfo_id: 1061
+  country_id: 158
+  region_id:  19
+  street: "6 Bell Road"
+  locality: "Waiwhetu"
+  internal_note: "(HomeAddress) {1|6 Bell Road Waiwhetu Lower Hutt}"
+  phone: "04 566 8904"
+  phone_alt: "04 494 6302"
+  email_1: "mark.langford@aon.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1062:
+  contactinfo_id: 1062
+  country_id: 158
+  region_id:  19
+  street: "School of Music"
+  locality: "University of Auckland"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: "09 737 999"
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1063:
+  contactinfo_id: 1063
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: "http://www.douglaslilburn.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1064:
+  contactinfo_id: 1064
+  country_id: 158
+  region_id:  19
+  street: "P.O. Box H"
+  locality: "Crompond"
+  internal_note: "(HomeAddress) {1|P.O. Box H Crompond New York 10517 UNITED STATES}"
+  phone: "914 528 3239"
+  phone_alt: ""
+  email_1: "ANNEALOCK@aol.com"
+  website_urls: ""
+  phone_fax: "914 528 3239"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1065:
+  contactinfo_id: 1065
+  country_id: 158
+  region_id:  19
+  street: "Music Department"
+  locality: "University of Waikato"
+  internal_note: "(HomeAddress) {1|120 Marshmeadow Road Newstead RD 4 HAMILTON 2021}"
+  phone: "07 856 7735"
+  phone_alt: "07 838 4466 x 8551"
+  email_1: "mlodge@waikato.ac.nz"
+  website_urls: "http://www.waikato.ac.nz/wfass/subjects/music/staff/martin"
+  phone_fax: "07 856 7735"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1066:
+  contactinfo_id: 1066
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|7 Maine Street Dannevirke 5491   }"
+  phone: "06 374 7869"
+  phone_alt: ""
+  email_1: "maconie@xtra.co.nz"
+  website_urls: "http://www.jimstonebraker.com/maconie.html"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1067:
+  contactinfo_id: 1067
+  country_id: 158
+  region_id:  19
+  street: "University College"
+  locality: "315 Leith St."
+  internal_note: "(HomeAddress) {1|15 Claremont Street Maori Hill Dunedin}"
+  phone: "03 4714409"
+  phone_alt: "021 295 8642"
+  email_1: "rmadden@shcs.schoolzone.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1068:
+  contactinfo_id: 1068
+  country_id: 158
+  region_id:  19
+  street: "113 Railway Road"
+  locality: "Sydenham"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "kassmusic@optusnet.com.au"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1069:
+  contactinfo_id: 1069
+  country_id: 158
+  region_id:  19
+  street: "3 Ngata Street"
+  locality: "Ngaio"
+  internal_note: "(HomeAddress) {1|3 Ngata Street Ngaio Wellington 6035}"
+  phone: "04 479 9365"
+  phone_alt: "027 631 4223"
+  email_1: "mccinc@ihug.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1070:
+  contactinfo_id: 1070
+  country_id: 158
+  region_id:  19
+  street: " "
+  locality: " Nelson"
+  internal_note: "(HomeAddress) {1|Flat 2  124 Toi Toi Street Nelson}"
+  phone: "(03) 548 1875"
+  phone_alt: "025 226 4342"
+  email_1: ""
+  website_urls: ""
+  phone_fax: "(03) 548 1865"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1071:
+  contactinfo_id: 1071
+  country_id: 158
+  region_id:  19
+  street: "21 Te Pari Pari Road"
+  locality: "Pukerua Bay"
+  internal_note: "(HomeAddress) {1|21 Te Pari Pari Road Pukerua Bay Wellington}"
+  phone: "04 239 9374"
+  phone_alt: ""
+  email_1: "mupuk@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1072:
+  contactinfo_id: 1072
+  country_id: 158
+  region_id:  19
+  street: "c/- Douglas Mews"
+  locality: "School of Music Victoria Uni"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "04 934 7825"
+  phone_alt: "04 463 5859"
+  email_1: "douglas.mews@vuw.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1073:
+  contactinfo_id: 1073
+  country_id: 158
+  region_id:  19
+  street: "96 Abberley Crescent"
+  locality: "St. Albans"
+  internal_note: "(HomeAddress) {1|96 Abberley Crescent St. Albans Christchurch 8001}"
+  phone: "03  355 8490"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1074:
+  contactinfo_id: 1074
+  country_id: 158
+  region_id:  19
+  street: "4 Waiwetu Street"
+  locality: "Christchurch 8005"
+  internal_note: "(HomeAddress) {1|4 Waiwetu Street Fendalton Christchurch 8005}"
+  phone: "03 351 1158"
+  phone_alt: "03 351 1158"
+  email_1: "philipnorman@nettel.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1075:
+  contactinfo_id: 1075
+  country_id: 158
+  region_id:  19
+  street: "70 Thomas More House"
+  locality: "Barbican"
+  internal_note: "(HomeAddress) {1|70 Thomas More House Barbican London EC2Y 8BT}"
+  phone: "+44 207 628 8001"
+  phone_alt: "+44 7802 785450"
+  email_1: "c.norton@btclick.com"
+  website_urls: "http://www.christophernorton.com"
+  phone_fax: "+44 207 628 8001"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1076:
+  contactinfo_id: 1076
+  country_id: 158
+  region_id:  19
+  street: "c/- 2 Waikuta Road"
+  locality: "Ngongotaha"
+  internal_note: "(HomeAddress) {1|438 Clendenan Avenue Toronto, Ontario CANADA M6P 2X6}"
+  phone: "1 416 767 3952"
+  phone_alt: "1416 533 0209"
+  email_1: "julietpalmer@gmail.com"
+  website_urls: "http://www.music.princeton.edu/~juliet/bio.html"
+  phone_fax: "1 435 407 1664"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1077:
+  contactinfo_id: 1077
+  country_id: 158
+  region_id:  19
+  street: "PO Box 12167"
+  locality: "Thorndon"
+  internal_note: "(HomeAddress) {1|PO Box 12167 Thorndon Wellington}"
+  phone: ""
+  phone_alt: "(04) 474 3086"
+  email_1: "andra.patterson@gmail.com"
+  website_urls: ""
+  phone_fax: "(04) 474 3140"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1078:
+  contactinfo_id: 1078
+  country_id: 158
+  region_id:  19
+  street: "12 Fontenoy Street"
+  locality: "Mount Albert"
+  internal_note: "(HomeAddress) {1|12 Fontenoy Street Mount Albert Auckland 1025}"
+  phone: ""
+  phone_alt: ""
+  email_1: "a_m_e_perkins@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1079:
+  contactinfo_id: 1079
+  country_id: 158
+  region_id:  19
+  street: "c/- 140 Dyers Pass Road"
+  locality: "Christchurch"
+  internal_note: "(HomeAddress) {1|Promenadenstr. 24 8193 Eglisau SWITZERLAND}"
+  phone: "(0041 1) 867 13 48"
+  phone_alt: ""
+  email_1: "kit.powell@solnet.ch"
+  website_urls: ""
+  phone_fax: "(0041 1) 867 13 48"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1080:
+  contactinfo_id: 1080
+  country_id: 158
+  region_id:  19
+  street: "Pruden Estate"
+  locality: "6 Ashton Fitchett Drive"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "385 8429 (Penny)"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1081:
+  contactinfo_id: 1081
+  country_id: 158
+  region_id:  19
+  street: "18 Tapu Place"
+  locality: "RD 2"
+  internal_note: "(HomeAddress) {1|18 Tapu Place RD 2 Motueka 7197}"
+  phone: "03 527 8591"
+  phone_alt: ""
+  email_1: "johnrimmer@xtra.co.nz"
+  website_urls: "http://composers21.com/compdocs/rimmerj.htm"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1082:
+  contactinfo_id: 1082
+  country_id: 158
+  region_id:  19
+  street: "229 Helensburgh Road"
+  locality: "Wakari"
+  internal_note: "(HomeAddress) {1|229 Helensburgh Road Wakari  Dunedin 9010   }"
+  phone: "03 476 2541"
+  phone_alt: "03 479 8881"
+  email_1: "anthony.ritchie@xtra.co.nz"
+  website_urls: "http://www.anthonyritchie.co.nz"
+  phone_fax: "03 477 6078"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1083:
+  contactinfo_id: 1083
+  country_id: 158
+  region_id:  19
+  street: "Villa 2"
+  locality: "12 Mansfield Avenue"
+  internal_note: "(HomeAddress) {1|Villa 2 12 Mansfield Avenue Christchurch 8014}"
+  phone: "03 355 4231"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "03 355 4288"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1084:
+  contactinfo_id: 1084
+  country_id: 158
+  region_id:  19
+  street: "18 Egnot Heights"
+  locality: "Redcliffs"
+  internal_note: "(HomeAddress) {1|18 Egnot Heights Redcliffs Christchurch 8081}"
+  phone: "03 384 0617"
+  phone_alt: "03 389 2039"
+  email_1: "t.ryan@paradise.net.nz"
+  website_urls: ""
+  phone_fax: "03 389 2752"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1085:
+  contactinfo_id: 1085
+  country_id: 158
+  region_id:  19
+  street: "27 Farrell Road"
+  locality: "Bulli"
+  internal_note: "(HomeAddress) {1|27 Farrell Road Bulli New South Wales 2516 AUSTRALIA      }"
+  phone: "+61 2 4285 7559"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1086:
+  contactinfo_id: 1086
+  country_id: 158
+  region_id:  19
+  street: "85 Summer Street"
+  locality: "Ponsonby"
+  internal_note: "(HomeAddress) {1|85 Summer Street Ponsonby Auckland}"
+  phone: "09 376 1849"
+  phone_alt: "027 337 7803"
+  email_1: "scholes@ihug.co.nz"
+  website_urls: ""
+  phone_fax: "09 376 1849"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1087:
+  contactinfo_id: 1087
+  country_id: 158
+  region_id:  19
+  street: "Makoura College"
+  locality: "PO Box 465"
+  internal_note: "(HomeAddress) {1|28 Lees Pakaraka Road RD 6 Masterton }"
+  phone: "06 377 7988"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1088:
+  contactinfo_id: 1088
+  country_id: 158
+  region_id:  19
+  street: "235,Ilam Road"
+  locality: "Christchurch"
+  internal_note: "(HomeAddress) {1|235 Ilam Road Christchurch}"
+  phone: "03 351 6450"
+  phone_alt: ""
+  email_1: "martin.setchell@nzorgan.com"
+  website_urls: "http://www.organist.co.nz"
+  phone_fax: "03 351 6438"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1089:
+  contactinfo_id: 1089
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: "Calle Rafael Llopart 45, 1 2a"
+  internal_note: "(HomeAddress) {1|Calle Rafael Llopart 45,1 2a 08870 Sitges Barcelona,  SPAIN}"
+  phone: "34  93  894 5746"
+  phone_alt: ""
+  email_1: "chrismall@retemail.es"
+  website_urls: ""
+  phone_fax: "34 93 894 5746"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1090:
+  contactinfo_id: 1090
+  country_id: 158
+  region_id:  19
+  street: "Dpt. of Music, City University"
+  locality: "Northampton Square"
+  internal_note: "(HomeAddress) {1|20 Havelock Road Norwich NR2 3HG United Kingdom}"
+  phone: "603 621 721"
+  phone_alt: "+44 20 7040 8284"
+  email_1: "d.smalley@city.ac.uk"
+  website_urls: ""
+  phone_fax: "+44 80 7040 8576"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1091:
+  contactinfo_id: 1091
+  country_id: 158
+  region_id:  19
+  street: "2165 Te Rahu Road"
+  locality: "RD 1"
+  internal_note: "(HomeAddress) {1|2165 Te Rahu Road RD1 Te Awamutu}"
+  phone: ""
+  phone_alt: ""
+  email_1: "rachaelmorgan1@yahoo.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1092:
+  contactinfo_id: 1092
+  country_id: 158
+  region_id:  19
+  street: "c/- Ann Speirs"
+  locality: "93 London Street"
+  internal_note: "(HomeAddress) {1|93 London Street Dunedin Central Dunedin 9016}"
+  phone: "03 477 6994"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1093:
+  contactinfo_id: 1093
+  country_id: 158
+  region_id:  19
+  street: "117 Johnson Street"
+  locality: "Niagara on-the-Lake"
+  internal_note: "(HomeAddress) {1|117 Johnson Street Niagara on-the-Lake Ontario L0S 1J0 CANADA}"
+  phone: "905 468 3414"
+  phone_alt: ""
+  email_1: "annetremain@yahoo.com"
+  website_urls: ""
+  phone_fax: "905 468 1971"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1094:
+  contactinfo_id: 1094
+  country_id: 158
+  region_id:  19
+  street: "9 Fitzwilliam Terrace"
+  locality: "Tawa"
+  internal_note: "(HomeAddress) {1|9 Fitzwilliam Terrace Tawa Wellington 5028 }"
+  phone: "04 232 1231"
+  phone_alt: "04 232 1231"
+  email_1: "craigutting@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1095:
+  contactinfo_id: 1095
+  country_id: 158
+  region_id:  19
+  street: "P.O. Box 47-126"
+  locality: "Ponsonby"
+  internal_note: "(HomeAddress) {1|28 Seymour Street Saint Mary's Bay Auckland 2}"
+  phone: "09 376 4484"
+  phone_alt: ""
+  email_1: "vervid@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1096:
+  contactinfo_id: 1096
+  country_id: 158
+  region_id:  19
+  street: "PO Box 14279"
+  locality: "Kilbirnie"
+  internal_note: "(HomeAddress) {1|PO Box 14279 Kilbirnie Wellington 6241}"
+  phone: "04 387 2559"
+  phone_alt: "04 387 2559"
+  email_1: "GOWMJV@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1097:
+  contactinfo_id: 1097
+  country_id: 158
+  region_id:  19
+  street: "c/- Mrs. Cynthia Greensill"
+  locality: "20 Clifford Street"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "cgreen@earthlight.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1098:
+  contactinfo_id: 1098
+  country_id: 158
+  region_id:  19
+  street: "No contact address"
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1099:
+  contactinfo_id: 1099
+  country_id: 158
+  region_id:  19
+  street: "50 Stepney Ave. 50 Stepney Av"
+  locality: "Harwood"
+  internal_note: "(HomeAddress) {1|8/126 Shirley Road Crows Nest NSW 2065  Dunedin address: 50 Stepney Ave., Harwood RD2, Dunedin}"
+  phone: "03 478 0678 (h)"
+  phone_alt: "+612 9906 5623"
+  email_1: "gillianwhitehead@xtra.co.nz"
+  website_urls: "http://www.artsfoundation.org.nz/whitehead.html"
+  phone_fax: "03 478 0679 (f)"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1100:
+  contactinfo_id: 1100
+  country_id: 158
+  region_id:  19
+  street: "31 Welland Place "
+  locality: "Island Bay"
+  internal_note: "(HomeAddress) {1|31 Welland Place Island Bay Wellington 6002  }"
+  phone: "04 972 5378"
+  phone_alt: ""
+  email_1: "gwilby@paradise.net.nz (Email not working)"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1101:
+  contactinfo_id: 1101
+  country_id: 158
+  region_id:  19
+  street: "43 Webb Street"
+  locality: "Christchurch 8001"
+  internal_note: "(HomeAddress) {1|43 Webb Street Christchurch 8001}"
+  phone: "03 355 7635"
+  phone_alt: "03 365 3153"
+  email_1: "felicity@mozarts.co.nz"
+  website_urls: ""
+  phone_fax: "03 366 0391"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1102:
+  contactinfo_id: 1102
+  country_id: 158
+  region_id:  19
+  street: "Senior Lecturer in Music Tech."
+  locality: "Music, Tech. and Innovation"
+  internal_note: "(HomeAddress) {1|21 Thurnview Road Thurnview Leicester LE5 6HL UNITED KINGDOM}"
+  phone: "+44 (116) 241 0275"
+  phone_alt: ""
+  email_1: "jyoung@dmu.ac.uk"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1103:
+  contactinfo_id: 1103
+  country_id: 158
+  region_id:  19
+  street: "95 Alexander Road"
+  locality: "Raumati Beach"
+  internal_note: "(HomeAddress) {1|95 Alexander Road Raumati Beach Kapiti 5032}"
+  phone: "04 905 5062"
+  phone_alt: ""
+  email_1: "kennethyoung@paradise.net.nz"
+  website_urls: ""
+  phone_fax: "04 905 5062"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1104:
+  contactinfo_id: 1104
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|3 Jane Cowie Avenue Otahuhu Auckland}"
+  phone: "09 270 8303"
+  phone_alt: ""
+  email_1: "izagni@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1105:
+  contactinfo_id: 1105
+  country_id: 158
+  region_id:  19
+  street: "69 Gurney Road"
+  locality: "Kelson"
+  internal_note: "(HomeAddress) {1|69 Gurney Road Kelson Lower Hutt}"
+  phone: "04 565 0823"
+  phone_alt: ""
+  email_1: "btp@ihug.co.nz"
+  website_urls: ""
+  phone_fax: "04 570 0546"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1106:
+  contactinfo_id: 1106
+  country_id: 158
+  region_id:  19
+  street: "24 Simpson Street"
+  locality: "Yarraville"
+  internal_note: "(HomeAddress) {1|24 Simpson Street Yarraville, VIC 3013 Melbourne Australia}"
+  phone: "+61 4 1345 1286"
+  phone_alt: ""
+  email_1: "jdmk@email.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1107:
+  contactinfo_id: 1107
+  country_id: 158
+  region_id:  19
+  street: "Department of English & C."
+  locality: "Goldsmiths College"
+  internal_note: "(HomeAddress) {1|18 Fermor Road London SE23 2HN}"
+  phone: "(0) 208 699 0243"
+  phone_alt: "(0) 207 919 7752"
+  email_1: "r.bolley@gold.ac.uk"
+  website_urls: ""
+  phone_fax: "(0) 207 919 7453  W"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1108:
+  contactinfo_id: 1108
+  country_id: 158
+  region_id:  19
+  street: "Music Department"
+  locality: "University of  Otago"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "03 448 5356"
+  phone_alt: ""
+  email_1: "subl.prima@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1109:
+  contactinfo_id: 1109
+  country_id: 158
+  region_id:  19
+  street: "c/-Mrs. Jean Byars"
+  locality: "83 Grendon Street"
+  internal_note: "(HomeAddress) {1|83 Grendon Street Dunedin 9001}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1110:
+  contactinfo_id: 1110
+  country_id: 158
+  region_id:  19
+  street: "24 Greenway"
+  locality: "Warwick"
+  internal_note: "(HomeAddress) {1|24 Greenway Warwick CV 34 5SG UNITED KINGDOM}"
+  phone: "00 44 1926 402 818"
+  phone_alt: ""
+  email_1: "dieneswilliams@aol.com"
+  website_urls: ""
+  phone_fax: "0044 1603 766 032"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1111:
+  contactinfo_id: 1111
+  country_id: 158
+  region_id:  19
+  street: "4/68 Wambat Street"
+  locality: "Forbes"
+  internal_note: "(HomeAddress) {1|4/68 Wambat Street Forbes NSW 2871 AUSTRALIA}"
+  phone: "+61 (404) 740 141"
+  phone_alt: ""
+  email_1: "rangiwirimu@yahoo.ca"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1112:
+  contactinfo_id: 1112
+  country_id: 158
+  region_id:  19
+  street: "12 Cameron Road"
+  locality: "Bluff Hill"
+  internal_note: "(HomeAddress) {1|12 Cameron Road Bluff Hill Napier 4110}"
+  phone: "(06) 833 6093"
+  phone_alt: "(027) 424 1093"
+  email_1: "josieburdon@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1113:
+  contactinfo_id: 1113
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|Royal New Zealand Ballet C/- PO Box 27050 WELLINGTON}"
+  phone: ""
+  phone_alt: ""
+  email_1: "nick@nzballet.org.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1114:
+  contactinfo_id: 1114
+  country_id: 158
+  region_id:  19
+  street: "Vaia'ata "
+  locality: "1819 Rouse Lake Road 1819 Rous"
+  internal_note: "(HomeAddress) {1|Vaia'ata 1819 Rouse Lake Road Orlando, FL 32817 UNITED STATES OF AMERICA}"
+  phone: "+1 (321) 274 4198"
+  phone_alt: ""
+  email_1: "vaiaata@earthlink.net"
+  website_urls: "http://www.vaiaata.com "
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1115:
+  contactinfo_id: 1115
+  country_id: 158
+  region_id:  19
+  street: "Flat 2"
+  locality: "44 Casterton Street"
+  internal_note: "(HomeAddress) {1|Flat 2 44 Casterton Street London E8 1BN United Kingdom}"
+  phone: ""
+  phone_alt: ""
+  email_1: "mcpats@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1116:
+  contactinfo_id: 1116
+  country_id: 158
+  region_id:  19
+  street: "Chez Laurent Schuh"
+  locality: "16 rue de la Voute"
+  internal_note: "(HomeAddress) {1|Chez Laurent Schuh 16 rue de la Voute Paris 7012 FRANCE}"
+  phone: "61-3-9387 5643"
+  phone_alt: "61-3-9867 0768"
+  email_1: "katharine.neil@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1117:
+  contactinfo_id: 1117
+  country_id: 158
+  region_id:  19
+  street: "31 Sutherland Crescent"
+  locality: "Melrose"
+  internal_note: "(HomeAddress) {1|31 Sutherland Crescent Melrose Wellington}"
+  phone: ""
+  phone_alt: ""
+  email_1: "soundscape@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1118:
+  contactinfo_id: 1118
+  country_id: 158
+  region_id:  19
+  street: "New Zealand School of Music"
+  locality: "Victoria University"
+  internal_note: "(HomeAddress) {1|Flat 4, 146 Abel Smith Street Wellington}"
+  phone: ""
+  phone_alt: "04 463 5864"
+  email_1: "fierce.angel@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1119:
+  contactinfo_id: 1119
+  country_id: 158
+  region_id:  19
+  street: "Melectra Management Ltd."
+  locality: "PO Box 798"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "04 298 2747"
+  phone_alt: "04 298 8700"
+  email_1: "michelle@melectra.co.nz"
+  website_urls: ""
+  phone_fax: "04 298 8701"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1120:
+  contactinfo_id: 1120
+  country_id: 158
+  region_id:  19
+  street: "PO Box 258"
+  locality: "Albany Village"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "wegreenpiano@hotmail.com"
+  website_urls: ""
+  phone_fax: "09  415 8471"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1121:
+  contactinfo_id: 1121
+  country_id: 158
+  region_id:  19
+  street: "4/37 Roslyn Gardens"
+  locality: "Elizabeth Bay"
+  internal_note: "(HomeAddress) {1|4/37 Roslyn Gardens Elizabeth Bay NSW 2011 AUSTRALIA}"
+  phone: ""
+  phone_alt: ""
+  email_1: "samuel_david_piper@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1122:
+  contactinfo_id: 1122
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1123:
+  contactinfo_id: 1123
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|51 Roy St. Palmerston North}"
+  phone: "(06) 355 3908"
+  phone_alt: ""
+  email_1: "tanks@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1124:
+  contactinfo_id: 1124
+  country_id: 158
+  region_id:  19
+  street: "3302 Hawksbrow Point, NW"
+  locality: "Calgary, Alberta"
+  internal_note: "(HomeAddress) {1|3302 Hawksbrow Point, NW Calgary, Alberta Canada T3G-4C9}"
+  phone: "(403) 547-9572"
+  phone_alt: ""
+  email_1: "rtwomey@telusplanet.net"
+  website_urls: "http://www.twomey.org"
+  phone_fax: "(403) 547-9573"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1125:
+  contactinfo_id: 1125
+  country_id: 158
+  region_id:  19
+  street: "c/- Jerudong International Sch"
+  locality: "PO Box 1408"
+  internal_note: "(HomeAddress) {1|5/220 Salisbury Street Christchurch 1}"
+  phone: "03 365 7079"
+  phone_alt: ""
+  email_1: "jamesinstone@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1126:
+  contactinfo_id: 1126
+  country_id: 158
+  region_id:  19
+  street: "PO Box 27 080"
+  locality: "Marion Square"
+  internal_note: "(HomeAddress) {1|25/3 Edward Street Wellington}"
+  phone: "04 384 7049"
+  phone_alt: ""
+  email_1: "alanwellsalan@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1127:
+  contactinfo_id: 1127
+  country_id: 158
+  region_id:  19
+  street: "PO Box 33987"
+  locality: "Takapuna"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "09 488 0343"
+  phone_alt: "021 256 1760"
+  email_1: "music-maker@hotmail.com"
+  website_urls: ""
+  phone_fax: "09 488 0343"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1128:
+  contactinfo_id: 1128
+  country_id: 158
+  region_id:  19
+  street: "PO Box 13 005"
+  locality: "Hamilton 2000"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "07 856 4541"
+  phone_alt: ""
+  email_1: "musik@waikato.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1129:
+  contactinfo_id: 1129
+  country_id: 158
+  region_id:  19
+  street: "35 Bush Road "
+  locality: "Waiatarua"
+  internal_note: "(HomeAddress) {1|35 Bush Road Waiatarua Waitakere 0604}"
+  phone: "(09) 814 9965"
+  phone_alt: ""
+  email_1: "arthur_vogan@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1130:
+  contactinfo_id: 1130
+  country_id: 158
+  region_id:  19
+  street: "8 Wentworth Street"
+  locality: "Mornington"
+  internal_note: "(HomeAddress) {1|8 Wentworth Street Mornington Wellington 6002}"
+  phone: "04 389 8079"
+  phone_alt: "021 252 5226"
+  email_1: "philbrownlee@orcon.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1131:
+  contactinfo_id: 1131
+  country_id: 158
+  region_id:  19
+  street: "27 Burnside Crescent"
+  locality: "Russley"
+  internal_note: "(HomeAddress) {1|27 Burnside Crescent Russley Christchurch 8053}"
+  phone: "03 358 5090"
+  phone_alt: ""
+  email_1: "r.emeleus@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1132:
+  contactinfo_id: 1132
+  country_id: 158
+  region_id:  19
+  street: "31 Naseby Street"
+  locality: "Christchurch"
+  internal_note: "(HomeAddress) {1|31 Naseby Street Christchurch}"
+  phone: "03 355 1920"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1133:
+  contactinfo_id: 1133
+  country_id: 158
+  region_id:  19
+  street: "Fishermans Bay Cottage"
+  locality: "R.D. 3"
+  internal_note: "(HomeAddress) {1|Fishermans Bay Cottage R.D. 3 Akaroa}"
+  phone: ""
+  phone_alt: ""
+  email_1: "gilesh@xtra.co.nz or ojh103@york.ac.uk"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1134:
+  contactinfo_id: 1134
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|33 Fairfax Avenue Northcote Auckland}"
+  phone: ""
+  phone_alt: "(09) 373 7599 x88411"
+  email_1: "warwick@celebration.co.nz"
+  website_urls: "http://www.warwickblair.com"
+  phone_fax: "(09) 373 7446"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1135:
+  contactinfo_id: 1135
+  country_id: 158
+  region_id:  19
+  street: "PO Box 382"
+  locality: "Turramurra"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "elissa@pepperbox.com.au"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1136:
+  contactinfo_id: 1136
+  country_id: 158
+  region_id:  19
+  street: "Lecturer in Music"
+  locality: "School of Arts, Brunel Uni."
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "john.croft@eidosnet.co.uk"
+  website_urls: "http://www.johncroft.info"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1137:
+  contactinfo_id: 1137
+  country_id: 158
+  region_id:  19
+  street: "Chimaera"
+  locality: "PO Box 16-232"
+  internal_note: "(HomeAddress) {1|11 Elphinstone Avenue Mount Roskill Auckland}"
+  phone: ""
+  phone_alt: "021 255 9075"
+  email_1: "chimaera@xtra.co.nz"
+  website_urls: ""
+  phone_fax: "(09) 620 8164 "
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1138:
+  contactinfo_id: 1138
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1139:
+  contactinfo_id: 1139
+  country_id: 158
+  region_id:  19
+  street: "17B Buyu Drive"
+  locality: "Glenmore Park"
+  internal_note: "(HomeAddress) {1|17B Buyu Drive Glenmore Park Penrith, Western Sydney New South Wales 2745 AUSTRALIA AUSTRALIA}"
+  phone: "61 2 4226 9573"
+  phone_alt: "61 2 4736 0865x2865"
+  email_1: "b.crossman@uws.edu.au"
+  website_urls: ""
+  phone_fax: "61 2 4736 0166"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1140:
+  contactinfo_id: 1140
+  country_id: 158
+  region_id:  19
+  street: "47 Northwold"
+  locality: "Stoke Newington"
+  internal_note: "(HomeAddress) {1|47 Northwold Stoke Newington London N16 7DH UK}"
+  phone: "385 8217"
+  phone_alt: ""
+  email_1: "pennyaxtens@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1141:
+  contactinfo_id: 1141
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: "20 Trent Street"
+  internal_note: "(HomeAddress) {1|20 Trent Street Taradale Napier 4100 }"
+  phone: "06 858 4248"
+  phone_alt: ""
+  email_1: "wregglesworth@callsouth.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1142:
+  contactinfo_id: 1142
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1143:
+  contactinfo_id: 1143
+  country_id: 158
+  region_id:  19
+  street: "c/- Samuel Marsden Collegiate"
+  locality: "Private Bag"
+  internal_note: "(HomeAddress) {1|129 Donald Street Karori Wellington}"
+  phone: ""
+  phone_alt: "021 243 9897"
+  email_1: "nswilliams@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1144:
+  contactinfo_id: 1144
+  country_id: 158
+  region_id:  19
+  street: "c/- Loretta Lander"
+  locality: "31 Woodmancote Road"
+  internal_note: "(HomeAddress) {1|c/- Loretta Lander 31 Woodmancote Road Khandallah Wellington}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1145:
+  contactinfo_id: 1145
+  country_id: 158
+  region_id:  19
+  street: "c/- Miriam Frances"
+  locality: "10 Bay View Road"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1146:
+  contactinfo_id: 1146
+  country_id: 158
+  region_id:  19
+  street: "2 Bridge End"
+  locality: "West Thirston"
+  internal_note: "(HomeAddress) {1|2 Bridge End West Thirston Northumberland, NE65 9ED United Kingdom}"
+  phone: "01665 711054"
+  phone_alt: ""
+  email_1: "cherylcamm@tiscali.co.uk"
+  website_urls: "http://www.cherylcamm.co.uk"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1147:
+  contactinfo_id: 1147
+  country_id: 158
+  region_id:  19
+  street: "PO Box 13-621 Woodridge"
+  locality: "Johnsonville"
+  internal_note: "(HomeAddress) {1|2B Glenwood Grove Woodridge Wellington}"
+  phone: "04 478 5544"
+  phone_alt: "04 478 5433"
+  email_1: ""
+  website_urls: ""
+  phone_fax: "04 478 5544"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1148:
+  contactinfo_id: 1148
+  country_id: 158
+  region_id:  19
+  street: "36 Bruce Avenue"
+  locality: "Brooklyn"
+  internal_note: "(HomeAddress) {1|36 Bruce Avenue Brooklyn Wellington 6021}"
+  phone: "(04) 803 3852"
+  phone_alt: ""
+  email_1: "pgbooth@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1149:
+  contactinfo_id: 1149
+  country_id: 158
+  region_id:  19
+  street: "10 Terra Nova Street"
+  locality: "Glen Eden"
+  internal_note: "(HomeAddress) {1|10 Terra Nova Street Glen Eden Waitakere 0602}"
+  phone: "09 818 9976"
+  phone_alt: "027 487 1111"
+  email_1: "andyfrogpowdrell@woosh.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1150:
+  contactinfo_id: 1150
+  country_id: 158
+  region_id:  19
+  street: "c/- JR Quinn & Co Solicitors"
+  locality: "60 Park Street"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1151:
+  contactinfo_id: 1151
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|Reid Line East RD11 Palmerston North}"
+  phone: "06 329 2812"
+  phone_alt: ""
+  email_1: "c.m.s@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1152:
+  contactinfo_id: 1152
+  country_id: 158
+  region_id:  19
+  street: "520 Rue Rielle, #204"
+  locality: "Montreal (Verdun)"
+  internal_note: "(HomeAddress) {1|c/-  20 Apple Terrace Ranui Heights Porirua }"
+  phone: "(04) 237 8975"
+  phone_alt: "+1 (217) 384 1823"
+  email_1: "mathieu_davidson@voila.fr"
+  website_urls: "http://www.elginarea.org/musicfox/"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1153:
+  contactinfo_id: 1153
+  country_id: 158
+  region_id:  19
+  street: "Phnom Penh Post"
+  locality: "No. 10A, Street 264"
+  internal_note: "(HomeAddress) {1|31 Glenbervie Tce Thorndon Wellington}"
+  phone: "+855 (23) 426 568"
+  phone_alt: "+855 (92) 610 039"
+  email_1: "Dan.Poynton@gmail.com"
+  website_urls: "http://www.inza.co.nz/DP_home.html"
+  phone_fax: "+855 (23) 210 309"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1154:
+  contactinfo_id: 1154
+  country_id: 158
+  region_id:  19
+  street: "20 Alexis Avenue"
+  locality: "Mount Albert"
+  internal_note: "(HomeAddress) {1|20 Alexis Avenue Mount Albert Auckland 1025}"
+  phone: "09 849 5657"
+  phone_alt: ""
+  email_1: "john@johnwells.co.nz"
+  website_urls: "http://www.johnwells.co.nz"
+  phone_fax: "09 849 5657"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1155:
+  contactinfo_id: 1155
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1156:
+  contactinfo_id: 1156
+  country_id: 158
+  region_id:  19
+  street: "Swammerdamstraat 18-3"
+  locality: "1091 RT - Amsterdam"
+  internal_note: "(HomeAddress) {1|Swammerdamstraat 18-3 1091 RT - Amsterdam The Netherlands}"
+  phone: "03 467 2771"
+  phone_alt: ""
+  email_1: "alisador@xs4all.nl    OR     jbali@xs4all.nl"
+  website_urls: "http://www.xs4all.nl/~jbali"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1157:
+  contactinfo_id: 1157
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1158:
+  contactinfo_id: 1158
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1159:
+  contactinfo_id: 1159
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1160:
+  contactinfo_id: 1160
+  country_id: 158
+  region_id:  19
+  street: "PO Box 156"
+  locality: "Whitianga"
+  internal_note: "(HomeAddress) {1|8 Otama Beach Road Otama RD2 Whitianga}"
+  phone: "07 866 4331"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "07 866 2827"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1161:
+  contactinfo_id: 1161
+  country_id: 158
+  region_id:  19
+  street: "35 Camden Mews"
+  locality: "London"
+  internal_note: "(HomeAddress) {1|79 Clarence Street Ponsonby Auckland}"
+  phone: "+44 (207) 267 0798"
+  phone_alt: ""
+  email_1: "misterchris98@hotmail.com website: www.capviolin.co.uk"
+  website_urls: "http://www.capviolin.co.uk"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1162:
+  contactinfo_id: 1162
+  country_id: 158
+  region_id:  19
+  street: "22 Ascot Street"
+  locality: "Thorndon"
+  internal_note: "(HomeAddress) {1|22 Ascot Street Thorndon Wellington 6011}"
+  phone: "04 472 1191"
+  phone_alt: "021 538 350"
+  email_1: "samuelholloway@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1163:
+  contactinfo_id: 1163
+  country_id: 158
+  region_id:  19
+  street: "Manock International Pty Ltd"
+  locality: "PO Box 253"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "manock@ozemail.com.au"
+  website_urls: "http://www.mikenock.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1164:
+  contactinfo_id: 1164
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1165:
+  contactinfo_id: 1165
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|22 Seaview Terrace Northland  Wellington 6012}"
+  phone: "04 971 7008"
+  phone_alt: "021 381 673"
+  email_1: "jennylaughton@paradise.net.nz"
+  website_urls: "http://homepages.paradise.net.nz/pattricksongs"
+  phone_fax: "04 971 7034"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1166:
+  contactinfo_id: 1166
+  country_id: 158
+  region_id:  19
+  street: "6 Ranfurly Avenue "
+  locality: "Fairfield"
+  internal_note: "(HomeAddress) {1|c/- Mrs. Jan Melbourne 6 Ranfurly Avenue Hamilton 3214}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1167:
+  contactinfo_id: 1167
+  country_id: 158
+  region_id:  19
+  street: "PO Box 2170"
+  locality: "Dunedin"
+  internal_note: "(HomeAddress) {1| }"
+  phone: "(03) 453 1355"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1168:
+  contactinfo_id: 1168
+  country_id: 158
+  region_id:  19
+  street: "3 Clos Santes Fair"
+  locality: "Earlswood Park, Pencoed"
+  internal_note: "(HomeAddress) {1|3 Clos Santes Fair Earlswood Park, Pencoed South Wales CF35 5LL UNITED KINGDOM Earlswood Park Pencoed Mid Glamorgan CF35 5LL }"
+  phone: "+44 (0) 1656861516"
+  phone_alt: ""
+  email_1: "tecwyn.evans@virgin.net"
+  website_urls: ""
+  phone_fax: "+44 (0) 1656861516"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1169:
+  contactinfo_id: 1169
+  country_id: 158
+  region_id:  19
+  street: "27 Ashford Avenue"
+  locality: "Palmerston North"
+  internal_note: "(HomeAddress) {1|27 Ashford Avenue Palmerston North}"
+  phone: "06 358 1795"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "06 358 1795"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1170:
+  contactinfo_id: 1170
+  country_id: 158
+  region_id:  19
+  street: "c/-  Estate "
+  locality: "Mrs Daphne Griffiths"
+  internal_note: "(HomeAddress) {1|c/-  Estate Mrs Daphne Griffiths 34B Poulton Ave Christchurch 8001}"
+  phone: "03 385 7563"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1171:
+  contactinfo_id: 1171
+  country_id: 158
+  region_id:  19
+  street: "430 Te Moana Rd"
+  locality: "Waikanae Park"
+  internal_note: "(HomeAddress) {1|430 Te Moana Rd Waikanae Park Waikanae 5036}"
+  phone: "04 293 3748"
+  phone_alt: ""
+  email_1: "braydon@xtra.co.nz"
+  website_urls: ""
+  phone_fax: "04 293 3748"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1172:
+  contactinfo_id: 1172
+  country_id: 158
+  region_id:  19
+  street: "Private Box 56132"
+  locality: "Dominion Road"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: "09 638 9226"
+  email_1: "bruce@mediantstudies.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1173:
+  contactinfo_id: 1173
+  country_id: 158
+  region_id:  19
+  street: "c/- Ms. Peggy Haworth"
+  locality: "1/29 Inkerman Street"
+  internal_note: "(HomeAddress) {1|Caughey Preston Geriatic Hospital  Ventnor Road Remuera  Auckland}"
+  phone: "09 634 3149 (Peggy)"
+  phone_alt: ""
+  email_1: "pegworth@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1174:
+  contactinfo_id: 1174
+  country_id: 158
+  region_id:  19
+  street: "Mrs. Ngaire Franchi"
+  locality: "97 Sunnybrae Road"
+  internal_note: "(HomeAddress) {1| }"
+  phone: "09 443 5191"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1175:
+  contactinfo_id: 1175
+  country_id: 158
+  region_id:  19
+  street: "33 Huanui St "
+  locality: "Ranui Heights"
+  internal_note: "(HomeAddress) {1|33 Huanui St Ranui Heights Porirua}"
+  phone: "(04) 238 2242"
+  phone_alt: "(04) 474 3041"
+  email_1: "Bronwyn.Officer@natlib.govt.nz"
+  website_urls: ""
+  phone_fax: "(04) 474 3035"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1176:
+  contactinfo_id: 1176
+  country_id: 158
+  region_id:  19
+  street: "c/- St. Joseph's School"
+  locality: "56 Queen Street"
+  internal_note: "(HomeAddress) {1|c/- St. Joseph's School 56 Queen Street Wairoa}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1177:
+  contactinfo_id: 1177
+  country_id: 158
+  region_id:  19
+  street: "14 Hanrahan Street"
+  locality: "Christchurch 8004"
+  internal_note: "(HomeAddress) {1|14 Hanrahan Street Christchurch 8004}"
+  phone: "03 348 1669"
+  phone_alt: "03 348 1677"
+  email_1: "j.stott@ext.canterbury.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1178:
+  contactinfo_id: 1178
+  country_id: 158
+  region_id:  19
+  street: "154 Siena Place"
+  locality: "Ohoka"
+  internal_note: "(HomeAddress) {1|154 Siena Place Ohoka RD2 Kaiapoi North Canterbury}"
+  phone: "03 312 0122"
+  phone_alt: ""
+  email_1: "patrick.shepherd@canterbury.ac.nz"
+  website_urls: ""
+  phone_fax: "03 312 0144"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1179:
+  contactinfo_id: 1179
+  country_id: 158
+  region_id:  19
+  street: "67 Moxham Avenue"
+  locality: "Hataitai"
+  internal_note: "(HomeAddress) {1|67 Moxham Avenue Hataitai Wellington 6021}"
+  phone: ""
+  phone_alt: ""
+  email_1: "daniel_beban@yahoo.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1180:
+  contactinfo_id: 1180
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|4B Rixon Grove Mount Victoria Wellington 6001}"
+  phone: "04 934 9441"
+  phone_alt: ""
+  email_1: "lachlaninnewzealand@yahoo.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1181:
+  contactinfo_id: 1181
+  country_id: 158
+  region_id:  19
+  street: "57 Croydon Street"
+  locality: "Karori"
+  internal_note: "(HomeAddress) {1|57 Croydon Street Karori Wellington}"
+  phone: "04 971 4763"
+  phone_alt: "027 316 0387"
+  email_1: "k.m.mackenzie@massey.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1182:
+  contactinfo_id: 1182
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1183:
+  contactinfo_id: 1183
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|59 Gordon Road Plimmerton Wellington}"
+  phone: "(04) 233 8565"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1184:
+  contactinfo_id: 1184
+  country_id: 158
+  region_id:  19
+  street: "22 Keswick Close"
+  locality: "Golflands Golflands "
+  internal_note: "(HomeAddress) {1|22 Keswick Close Golflands Manukau 2013}"
+  phone: "09 274 3588"
+  phone_alt: "021 253 0534 "
+  email_1: "ggkiki@excite.ccom"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1185:
+  contactinfo_id: 1185
+  country_id: 158
+  region_id:  19
+  street: "PO Box 9382"
+  locality: "Wellington 6141"
+  internal_note: "(HomeAddress) {1|17 Colombo St. Newtown Wellington}"
+  phone: "04 384 0410"
+  phone_alt: "04 471 1322"
+  email_1: "bron@springload.co.nz"
+  website_urls: ""
+  phone_fax: "04 471 1233"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1186:
+  contactinfo_id: 1186
+  country_id: 158
+  region_id:  19
+  street: "c/- New Zealand School of Musi"
+  locality: "Victoria University"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "562 8522"
+  phone_alt: "463 6448"
+  email_1: "dugal.mckinnon@vuw.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1187:
+  contactinfo_id: 1187
+  country_id: 158
+  region_id:  19
+  street: "11 Jersey Road"
+  locality: "London SW17 9RQ"
+  internal_note: "(HomeAddress) {1|11 Jersey Road London SW17 9RQ United Kingdom 7001}"
+  phone: "+44 208 769 9883"
+  phone_alt: "020 87699883"
+  email_1: "jspeak@fmail.co.uk"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1188:
+  contactinfo_id: 1188
+  country_id: 158
+  region_id:  19
+  street: "60 Liffey Street"
+  locality: "Bluff"
+  internal_note: "(HomeAddress) {1|60 Liffey Street Bluff}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1189:
+  contactinfo_id: 1189
+  country_id: 158
+  region_id:  19
+  street: "3/71A Tanner Street  rong St"
+  locality: "Richmond"
+  internal_note: "(HomeAddress) {1|3/71A Tanner Street Richmond Victoria 3121 AUSTRALIA}"
+  phone: "+61 3 9421 2587"
+  phone_alt: "+61 3 9825 1042"
+  email_1: "msmythe@apra.com.au"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1190:
+  contactinfo_id: 1190
+  country_id: 158
+  region_id:  19
+  street: "93 Buccleugh Street"
+  locality: "Dunedin"
+  internal_note: "(HomeAddress) {1|93 Buccleugh Street Dunedin}"
+  phone: ""
+  phone_alt: ""
+  email_1: "alanraystarrat@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1191:
+  contactinfo_id: 1191
+  country_id: 158
+  region_id:  19
+  street: "PO Box 99309"
+  locality: "Newmarket"
+  internal_note: "(HomeAddress) {1|35 Collingwood Street Freemans Bay Auckland 1011}"
+  phone: "09 520 1720"
+  phone_alt: ""
+  email_1: "laird@atoll.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1192:
+  contactinfo_id: 1192
+  country_id: 158
+  region_id:  19
+  street: "7 Akautangi Way"
+  locality: "Hataitai"
+  internal_note: "(HomeAddress) {1|7 Akautangi Way Haitaitai Wellington}"
+  phone: "04 386 1611"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1193:
+  contactinfo_id: 1193
+  country_id: 158
+  region_id:  19
+  street: "10 Poplar Ave"
+  locality: "Raumati South"
+  internal_note: "(HomeAddress) {1|10 Poplar Ave Raumati South Kapiti Coast 6010}"
+  phone: ""
+  phone_alt: ""
+  email_1: "maulufaulknor@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1194:
+  contactinfo_id: 1194
+  country_id: 158
+  region_id:  19
+  street: "Apt 5F"
+  locality: "22 Queen Street"
+  internal_note: "(HomeAddress) {1|Apt 5F 22 Queen Street Auckland Central Auckland 1010}"
+  phone: ""
+  phone_alt: ""
+  email_1: "matthew@woosh.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1195:
+  contactinfo_id: 1195
+  country_id: 158
+  region_id:  19
+  street: "23 Newland Grove"
+  locality: "Henderson"
+  internal_note: "(HomeAddress) {1|23 Newland Grove Henderson Waitakere 0610}"
+  phone: "09 838 7066"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "09 838 7066"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1196:
+  contactinfo_id: 1196
+  country_id: 158
+  region_id:  19
+  street: "28 Mitchell Ave"
+  locality: "Dunedin"
+  internal_note: "(HomeAddress) {1|28 Mitchell Ave Dunedin}"
+  phone: "03 453 6662"
+  phone_alt: ""
+  email_1: "colin.gibson@stonebow.otago.ac.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1197:
+  contactinfo_id: 1197
+  country_id: 158
+  region_id:  19
+  street: "c/-New Zealand School of Music"
+  locality: "Victoria University"
+  internal_note: "(HomeAddress) {1|Flat 1, 44 Northland Road Northland Wellington 6012   }"
+  phone: "04 977 0407"
+  phone_alt: "04 463 7456"
+  email_1: "michael.norris@xtra.co.nz"
+  website_urls: "http://www.michaelnorris.info"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1198:
+  contactinfo_id: 1198
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1199:
+  contactinfo_id: 1199
+  country_id: 158
+  region_id:  19
+  street: "14 Mataiwhetu Street"
+  locality: "Porirua"
+  internal_note: "(HomeAddress) {1|14 Mataiwhetu Street Porirua}"
+  phone: "04 237 7615"
+  phone_alt: ""
+  email_1: "moirak@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1200:
+  contactinfo_id: 1200
+  country_id: 158
+  region_id:  19
+  street: "16 Illawong Ave"
+  locality: "NSW 2750"
+  internal_note: "(HomeAddress) {1|16 Illawong Ave NSW 2750 Australia}"
+  phone: "+61 (47) 312 979"
+  phone_alt: ""
+  email_1: "c.maclean@uws.edu.au"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1201:
+  contactinfo_id: 1201
+  country_id: 158
+  region_id:  19
+  street: "P.O. Box 9069"
+  locality: "Marion Square"
+  internal_note: "(HomeAddress) {1|22 High Street Island Bay Wellington 6023}"
+  phone: "04 383 7913"
+  phone_alt: "04 384 1965 (Happy)"
+  email_1: "jeffimprov@hotmail.com"
+  website_urls: "http://www.postmoderncore.com/music-jeffhenderson.html"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1202:
+  contactinfo_id: 1202
+  country_id: 158
+  region_id:  19
+  street: "66 Spy Glass Lane"
+  locality: "Whitby"
+  internal_note: "(HomeAddress) {1|66 Spy Glass Lane Whitby Porirua City}"
+  phone: "04 234 8766"
+  phone_alt: "(021) 124 6524"
+  email_1: "roger.glenis@xtra.co.nz"
+  website_urls: ""
+  phone_fax: "04 234 8768"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1203:
+  contactinfo_id: 1203
+  country_id: 158
+  region_id:  19
+  street: "c/- Wallace Arts Trust"
+  locality: "508 Wellesley Street"
+  internal_note: "(HomeAddress) {1|22A Haast Street Remuera Auckland}"
+  phone: "09 302 4831"
+  phone_alt: "09 302 5271"
+  email_1: "filmsound@wave.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1204:
+  contactinfo_id: 1204
+  country_id: 158
+  region_id:  19
+  street: "3 Sylvan Valley Avenue"
+  locality: "Woodlands Park"
+  internal_note: "(HomeAddress) {1|3 Sylvan Valley Ave Woodlands Park Titirangi Auckland 1007}"
+  phone: "09 817 6508"
+  phone_alt: "04 905 1617"
+  email_1: "lozenge@paradise.net.nz"
+  website_urls: "http://www.175east.co.nz/james.htm"
+  phone_fax: "09 817 7817"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1205:
+  contactinfo_id: 1205
+  country_id: 158
+  region_id:  19
+  street: "PO Box 40-510"
+  locality: "Upper Hutt"
+  internal_note: "(HomeAddress) {1|4 Sunnyview Drive Upper Hutt}"
+  phone: "(04) 526 8634"
+  phone_alt: ""
+  email_1: "dell@clear.net.nz"
+  website_urls: ""
+  phone_fax: "(04) 526 8633"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1206:
+  contactinfo_id: 1206
+  country_id: 158
+  region_id:  19
+  street: "Princeton University"
+  locality: "Woolworth Center,Department of"
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: "myoung@princeton.edu"
+  website_urls: "http://www.miriamayoung.com"
+  phone_fax: "+1 (609) 258 6793"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1207:
+  contactinfo_id: 1207
+  country_id: 158
+  region_id:  19
+  street: "PO Box 810"
+  locality: "Christchurch Mail Centre"
+  internal_note: "(HomeAddress) {1|4/6B Macmillan Avenue Cashmere Christchurch 8022  }"
+  phone: "03 332 9694"
+  phone_alt: ""
+  email_1: "rachel.clement@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1208:
+  contactinfo_id: 1208
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1209:
+  contactinfo_id: 1209
+  country_id: 158
+  region_id:  19
+  street: " "
+  locality: ""
+  internal_note: "(HomeAddress) {1|90 Pitchford St. Stratford London E15 4RX UNITED KINGDOM}"
+  phone: "0044 1904 629 226"
+  phone_alt: ""
+  email_1: "lmulgan@yahoo.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1210:
+  contactinfo_id: 1210
+  country_id: 158
+  region_id:  19
+  street: "18 Melrose Avenue"
+  locality: "Owhata"
+  internal_note: "(HomeAddress) {1|18 Melrose Avenue Owhata Rotorua 3010 }"
+  phone: "07 345 3052"
+  phone_alt: ""
+  email_1: "sharonmus_533@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1211:
+  contactinfo_id: 1211
+  country_id: 158
+  region_id:  19
+  street: "70/6 Harvey Street"
+  locality: "Taupo 3330"
+  internal_note: "(HomeAddress) {1|70/6 Harvey Street Taupo 3330}"
+  phone: "07 378 0272"
+  phone_alt: ""
+  email_1: "jeffsands@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1212:
+  contactinfo_id: 1212
+  country_id: 158
+  region_id:  19
+  street: "138 Oxford Terrace"
+  locality: "Epuni"
+  internal_note: "(HomeAddress) {1|138 Oxford Terrace Epuni Lower Hutt 5011}"
+  phone: "04 971 7060"
+  phone_alt: "027 446 2666"
+  email_1: "kinanewilliams@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1213:
+  contactinfo_id: 1213
+  country_id: 158
+  region_id:  19
+  street: "c/- Music Department"
+  locality: "University of Waikato"
+  internal_note: "(HomeAddress) {1|307 Carlton Street Te Awamutu}"
+  phone: "07 870 5116"
+  phone_alt: "07 838 4466 x 6196"
+  email_1: "michaelw@waikato.ac.nz"
+  website_urls: "http://www.michaelfwilliams.co.nz"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1214:
+  contactinfo_id: 1214
+  country_id: 158
+  region_id:  19
+  street: "PO Box 137 217"
+  locality: "Parnell"
+  internal_note: "(HomeAddress) {1|PO Box 137 217 Parnell Auckland}"
+  phone: "09 379 8793"
+  phone_alt: ""
+  email_1: "cockburn@actrix.gen.nz"
+  website_urls: "http://www.nzfilmcomposer.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1215:
+  contactinfo_id: 1215
+  country_id: 158
+  region_id:  19
+  street: "Tomson Golf Gardens"
+  locality: "Phase 3, F1-102"
+  internal_note: "(HomeAddress) {1|Tomson Golf Gardens Phase 3 F1-102 1 Long Dong Avenue Pudong Shanghai 201203 CHINA}"
+  phone: "04 973 6054"
+  phone_alt: "04 474 1780"
+  email_1: "malcolmjm@gmail.com"
+  website_urls: ""
+  phone_fax: "04 474 1761"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1216:
+  contactinfo_id: 1216
+  country_id: 158
+  region_id:  19
+  street: "10A Sylvan Avenue"
+  locality: "Mt Eden"
+  internal_note: "(HomeAddress) {1|10A Sylvan Avenue Mt Eden Auckland 1024}"
+  phone: "09 638 8250"
+  phone_alt: "021 133 7857"
+  email_1: "e.clark@ags.school.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1217:
+  contactinfo_id: 1217
+  country_id: 158
+  region_id:  19
+  street: "Tomson Golf Gardens"
+  locality: "Phase 3,   F1-102"
+  internal_note: "(HomeAddress) {1|Tomson Golf Gardens Phase 3 F1-102 1 Long Dong Avenue Pudong Shanghai 201203 CHINA}"
+  phone: "04 973 6054"
+  phone_alt: ""
+  email_1: "frithaj@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1218:
+  contactinfo_id: 1218
+  country_id: 158
+  region_id:  19
+  street: "28 Churchill Road"
+  locality: "Murrays Bay"
+  internal_note: "(HomeAddress) {1|28 Churchill Road Murrays Bay Auckland}"
+  phone: "09 478 2389"
+  phone_alt: ""
+  email_1: "sarah-mccallum@hotmail.com"
+  website_urls: ""
+  phone_fax: "09 478 2389"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1219:
+  contactinfo_id: 1219
+  country_id: 158
+  region_id:  19
+  street: "72 Finlayson Street"
+  locality: "Lane Cove NSW 2066"
+  internal_note: "(HomeAddress) {1|72 Finlayson Street Lane Cove NSW 2066 Sydney Australia}"
+  phone: "61-2-9427 2303"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: "61-2-9427 2303"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1220:
+  contactinfo_id: 1220
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|c/- 3 Oakdale Street Avonhead Christchurch (possibly his parents)}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1221:
+  contactinfo_id: 1221
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|7439 Highway 70 South Apt. 228 Nashville TN 37221, USA }"
+  phone: "(001) 615 662 3483? "
+  phone_alt: "(615) 322 7651"
+  email_1: "dchilds@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1222:
+  contactinfo_id: 1222
+  country_id: 158
+  region_id:  19
+  street: "2/34 Sentinel Rd"
+  locality: "Herne Bay"
+  internal_note: "(HomeAddress) {1|Norm Skipp 2/34 Sentinel Rd Herne Bay Auckland  }"
+  phone: "09 378 1281"
+  phone_alt: ""
+  email_1: "nskipp@tvnz.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1223:
+  contactinfo_id: 1223
+  country_id: 158
+  region_id:  19
+  street: "94 Ruskin Rd"
+  locality: "Newlands"
+  internal_note: "(HomeAddress) {1|94 Ruskin Rd Newlands Wellington 6037}"
+  phone: "04 472 1969"
+  phone_alt: "027 421 9563"
+  email_1: "c.watson@xtra.co.nz"
+  website_urls: "http://www.chriswatsoncomposer.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1224:
+  contactinfo_id: 1224
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|77 Majoribanks Street Mount Victoria Wellington}"
+  phone: "04 384 4950"
+  phone_alt: ""
+  email_1: "mlo@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1225:
+  contactinfo_id: 1225
+  country_id: 158
+  region_id:  19
+  street: "Flat 9"
+  locality: "381 Adelaide Road"
+  internal_note: "(HomeAddress) {1|Flat 9 381 Adelaide Road Newtown Wellington}"
+  phone: "(04) 389 6866"
+  phone_alt: "(04) 473 7758"
+  email_1: "craigsengelow@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1226:
+  contactinfo_id: 1226
+  country_id: 158
+  region_id:  19
+  street: "P O Box 8541"
+  locality: "Symonds Street"
+  internal_note: "(HomeAddress) {1|}"
+  phone: "09 360 9779"
+  phone_alt: ""
+  email_1: "victoria.k@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1227:
+  contactinfo_id: 1227
+  country_id: 158
+  region_id:  19
+  street: "Apartment 2E"
+  locality: "5 Parliament Street"
+  internal_note: "(HomeAddress) {1|Apartment 2E 5 Parliament Street Auckland Central Auckland 1010}"
+  phone: "09 356 7404"
+  phone_alt: "027 354 5224"
+  email_1: "yvette.a@xtra.co.nz"
+  website_urls: "http://www.yvetteaudain.com"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1228:
+  contactinfo_id: 1228
+  country_id: 158
+  region_id:  19
+  street: "Unit 311 Liberty Senior Living"
+  locality: "259 Handford Road"
+  internal_note: "(HomeAddress) {1|Unit 311 Liberty Senior Living 259 Handford Road Taigum, Queensland 4018 AUSTRALIA}"
+  phone: "06 753 9147"
+  phone_alt: ""
+  email_1: "blume@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1229:
+  contactinfo_id: 1229
+  country_id: 158
+  region_id:  19
+  street: "PO Box 10 214"
+  locality: "Wellington"
+  internal_note: "(HomeAddress) {1|PO Box 10 214 Wellington}"
+  phone: "04 973 0708"
+  phone_alt: ""
+  email_1: "aaron.lloydd@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1230:
+  contactinfo_id: 1230
+  country_id: 158
+  region_id:  19
+  street: "18 Clyde Street"
+  locality: "Epsom"
+  internal_note: "(HomeAddress) {1|18 Clyde Street Epsom Auckland 1051}"
+  phone: "09 522 2898"
+  phone_alt: "027 255 7109"
+  email_1: "chrispadams@hotmail.com OR Patron_Saint@Hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1231:
+  contactinfo_id: 1231
+  country_id: 158
+  region_id:  19
+  street: "Cabin 1R, Avondale Motor Park"
+  locality: "46 Bollard Avenue"
+  internal_note: "(HomeAddress) {1|37C Holly Street Avondale AUCKLAND}"
+  phone: ""
+  phone_alt: ""
+  email_1: "info@ddv.co.nz or jordan@ddv.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1232:
+  contactinfo_id: 1232
+  country_id: 158
+  region_id:  19
+  street: "Universal Children's Audio"
+  locality: "Box 52 076"
+  internal_note: "(HomeAddress) {1|20 Muri Road Pukerua Bay Porirua}"
+  phone: "04 239 9971"
+  phone_alt: "04 237 7009"
+  email_1: "uca@clear.net.nz"
+  website_urls: "http://www.thesacredsite.com/radhasahar.htm"
+  phone_fax: "04 239 9976"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1233:
+  contactinfo_id: 1233
+  country_id: 158
+  region_id:  19
+  street: "1 Ellerton Way"
+  locality: "Karori"
+  internal_note: "(HomeAddress) {1|1 Ellerton Way Karori Wellington}"
+  phone: "04 476 4706"
+  phone_alt: ""
+  email_1: "natalie_says@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1234:
+  contactinfo_id: 1234
+  country_id: 158
+  region_id:  19
+  street: "16-B Tekoah Place"
+  locality: "Judea"
+  internal_note: "(HomeAddress) {1|16-B Tekoah Place Judea Tauranga}"
+  phone: "(07) 578 0543"
+  phone_alt: ""
+  email_1: "klauder@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1235:
+  contactinfo_id: 1235
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|131B Doon Street Waverley Dunedin}"
+  phone: "03 454 3349"
+  phone_alt: "03 454 3349"
+  email_1: "irsinclair@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1236:
+  contactinfo_id: 1236
+  country_id: 158
+  region_id:  19
+  street: "PO Box 10152"
+  locality: "Dominion Road"
+  internal_note: "(HomeAddress) {1|2/8 Sherbourne Rd. Mt. Eden AUCKLAND 1003}"
+  phone: "09 307 1079"
+  phone_alt: ""
+  email_1: "dstabler@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1237:
+  contactinfo_id: 1237
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|324 Graham Avenue, #2 Brooklyn NY 11211 USA}"
+  phone: ""
+  phone_alt: ""
+  email_1: "dion@tinynumbers.com"
+  website_urls: "http://www.sigmaeditions.com/dion.htm"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1238:
+  contactinfo_id: 1238
+  country_id: 158
+  region_id:  19
+  street: "2/39 Todman Street"
+  locality: "Brooklyn"
+  internal_note: "(HomeAddress) {1|2/39 Todman Street Brooklyn Wellington 6021}"
+  phone: ""
+  phone_alt: "(021) 129 3539"
+  email_1: "dlardelli@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1239:
+  contactinfo_id: 1239
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|Maplewood Single Unit EO7C 201 Maple Avenue Ithaca, N.Y. 14850 United States}"
+  phone: "+1 (607) 342-5198"
+  phone_alt: "+64 (21) 260 4991"
+  email_1: "gendallchris@hotmail.com; chrisgendall@gmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1240:
+  contactinfo_id: 1240
+  country_id: 158
+  region_id:  19
+  street: "768 Mt. Eden Rd."
+  locality: "Mt. Eden"
+  internal_note: "(HomeAddress) {1|768 Mt. Eden Road Mt. Eden AUCKLAND}"
+  phone: ""
+  phone_alt: ""
+  email_1: "jennyrose301@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1241:
+  contactinfo_id: 1241
+  country_id: 158
+  region_id:  19
+  street: "440 Buchanans Rd."
+  locality: "RD6 Yaldhurst"
+  internal_note: "(HomeAddress) {1|440 Buchanans Rd. RD6 Yaldhurst Christchurch}"
+  phone: "(03) 35111 359"
+  phone_alt: ""
+  email_1: "alexplaysjazz@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1242:
+  contactinfo_id: 1242
+  country_id: 158
+  region_id:  19
+  street: "Graham Parsons"
+  locality: "12 Athlone Place"
+  internal_note: "(HomeAddress) {1|12 Athlone Place Hokowhitu Palmerston North 4410 }"
+  phone: "(06) 357 1377"
+  phone_alt: ""
+  email_1: "gandmparsons@xtra.co.nz"
+  website_urls: ""
+  phone_fax: "(06) 357 1377"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1243:
+  contactinfo_id: 1243
+  country_id: 158
+  region_id:  19
+  street: "170 Shirley Road"
+  locality: "Papatoetoe"
+  internal_note: "(HomeAddress) {1|170 Shirley Road Papatoetoe Manukau 2025}"
+  phone: ""
+  phone_alt: "021 172 0812"
+  email_1: "williambrahms@hotmail.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1244:
+  contactinfo_id: 1244
+  country_id: 158
+  region_id:  19
+  street: "5-B Kahu Road"
+  locality: "Paremata"
+  internal_note: "(HomeAddress) {1|5-B Kahu Road Paremata Porirua}"
+  phone: "04 233 1174"
+  phone_alt: ""
+  email_1: "studor@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1245:
+  contactinfo_id: 1245
+  country_id: 158
+  region_id:  19
+  street: "11 Greenhill Crescent"
+  locality: "Pakuranga"
+  internal_note: "(HomeAddress) {1|11 Greenhill Crescent Pakuranga Manukau 2010}"
+  phone: "(09) 576 5163"
+  phone_alt: "(021) 297 4326"
+  email_1: "cajyoung@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1246:
+  contactinfo_id: 1246
+  country_id: 158
+  region_id:  19
+  street: "44A Peary Road"
+  locality: "Mount Eden"
+  internal_note: "(HomeAddress) {1|44A Peary Road Mount Eden Auckland}"
+  phone: "(09) 623 2692"
+  phone_alt: "(09) 520 0221 x7845"
+  email_1: "gd@xtra.co.nz, dgordon@diocesan.school.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1247:
+  contactinfo_id: 1247
+  country_id: 158
+  region_id:  19
+  street: "82B Cecil Road"
+  locality: "Wadestown"
+  internal_note: "(HomeAddress) {1|82B Cecil Road Wadestown Wellington 6012}"
+  phone: "04 472 2534"
+  phone_alt: "04 473 5033 "
+  email_1: "alison-grant@xtra.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1248:
+  contactinfo_id: 1248
+  country_id: 158
+  region_id:  19
+  street: "89 Otaki Street"
+  locality: "Miramar"
+  internal_note: "(HomeAddress) {1|89 Otaki Street Miramar Wellington 6022}"
+  phone: "04 388 7654"
+  phone_alt: "021 773 972"
+  email_1: "anna_griff@yahoo.co.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1249:
+  contactinfo_id: 1249
+  country_id: 158
+  region_id:  19
+  street: "73 Holloway Road"
+  locality: "Aro Valley"
+  internal_note: "(HomeAddress) {1|73 Holloway Road Aro Valley Wellington}"
+  phone: ""
+  phone_alt: ""
+  email_1: "treefrog@orcon.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1250:
+  contactinfo_id: 1250
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|80 Rolleston Street Mount Cook Wellington}"
+  phone: ""
+  phone_alt: ""
+  email_1: "st.gallagher@gmail.com"
+  website_urls: "http://www.myspace.com/stephenthomasgallagher"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1251:
+  contactinfo_id: 1251
+  country_id: 158
+  region_id:  19
+  street: "19/58 Cuba Street"
+  locality: "Petone"
+  internal_note: "(HomeAddress) {1|19/58 Cuba Street Petone}"
+  phone: "04 568 6168"
+  phone_alt: ""
+  email_1: "mrga@paradise.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1252:
+  contactinfo_id: 1252
+  country_id: 158
+  region_id:  19
+  street: "Dookinell"
+  locality: "Achill Sound"
+  internal_note: "(HomeAddress) {1|Dookinella Achill Sound Co Mayo IRELAND}"
+  phone: "+11 (353) 98 43015"
+  phone_alt: "+11 863553477"
+  email_1: "brentparker@iolfree.ie"
+  website_urls: ""
+  phone_fax: "+11 (353) 98 43029"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1253:
+  contactinfo_id: 1253
+  country_id: 158
+  region_id:  19
+  street: "39 Thomas Street"
+  locality: "Gore 9710"
+  internal_note: "(HomeAddress) {1|14 Walker Street Riverton Southland }"
+  phone: ""
+  phone_alt: ""
+  email_1: "emmacarle@yahoo.com"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1254:
+  contactinfo_id: 1254
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|2/607 Collinge Road Hastings}"
+  phone: "(06) 878 9159"
+  phone_alt: ""
+  email_1: "kathleenbarry@clear.net.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1255:
+  contactinfo_id: 1255
+  country_id: 158
+  region_id:  19
+  street: "1 Peter Mulgrew St"
+  locality: "New Windsor"
+  internal_note: "(HomeAddress) {1|1 Peter Mulgrew St New Windsor Auckland 1007}"
+  phone: "(09) 6275663"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1256:
+  contactinfo_id: 1256
+  country_id: 158
+  region_id:  19
+  street: "1/10 White Swan Rd"
+  locality: "Mt Roskill"
+  internal_note: "(HomeAddress) {1|1/10 White Swan Rd Mt Roskill Auckland 1041}"
+  phone: ""
+  phone_alt: ""
+  email_1: "johnkey@ak.planet.gen.nz"
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1257:
+  contactinfo_id: 1257
+  country_id: 158
+  region_id:  19
+  street: "5 Frobisher St"
+  locality: "Island Bay"
+  internal_note: "(HomeAddress) {1|5 Frobisher Street Island Bay Wellington}"
+  phone: "(04) 973 6607"
+  phone_alt: ""
+  email_1: "pepe.bv@paradise.net.nz"
+  website_urls: "http://www.baroquevoices.co.nz"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1258:
+  contactinfo_id: 1258
+  country_id: 158
+  region_id:  19
+  street: "One Fat Man Productions"
+  locality: "151 Mahoe Street"
+  internal_note: "(HomeAddress) {1|151 Mahoe Street Hamilton}"
+  phone: ""
+  phone_alt: "(021) 108 5368"
+  email_1: "remy@onefatman.co.nz"
+  website_urls: "http://www.onefatman.co.nz"
+  phone_fax: "(07) 843 6750"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1259:
+  contactinfo_id: 1259
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|}"
+  phone: ""
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1260:
+  contactinfo_id: 1260
+  country_id: 158
+  region_id:  19
+  street: "17 Versailles Street"
+  locality: "Karori"
+  internal_note: "(HomeAddress) {1|17 Versailles Street Karori Wellington 6012}"
+  phone: "04 476 4433"
+  phone_alt: "027 637 3764"
+  email_1: "jonomuso@ihug.co.nz"
+  website_urls: ""
+  phone_fax: "06 758 8842"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1261:
+  contactinfo_id: 1261
+  country_id: 158
+  region_id:  19
+  street: "Apt. 6, \"Braeburn\""
+  locality: "15 Putiki Drive"
+  internal_note: "(HomeAddress) {1|Apt. 6, \Braeburn\ 15 Putiki Drive Wanganui 5001}"
+  phone: "(06) 345 5668"
+  phone_alt: ""
+  email_1: "alancruise_johnston@yahoo.co.nz"
+  website_urls: "http://www.freemusicscore.co.nz"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1262:
+  contactinfo_id: 1262
+  country_id: 158
+  region_id:  19
+  street: ""
+  locality: ""
+  internal_note: "(HomeAddress) {1|37A Anglesea Street Freemans Bay Auckland}"
+  phone: "09 376 3779"
+  phone_alt: ""
+  email_1: "robintoan@gmail.com"
+  website_urls: "http://www.robintoan.com/composer.html"
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1263:
+  contactinfo_id: 1263
+  country_id: 158
+  region_id:  19
+  street: "18 Sunshine Crescent"
+  locality: "Kelson"
+  internal_note: "(HomeAddress) {1|18 Sunshine Crescent Kelson Lower Hutt}"
+  phone: "04 565 3226"
+  phone_alt: ""
+  email_1: ""
+  website_urls: ""
+  phone_fax: ""
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01
+contactinfo_1264:
+  contactinfo_id: 1264
+  country_id: 158
+  region_id:  19
+  street: "34 Ridge Road"
+  locality: "Howick"
+  internal_note: "(HomeAddress) {1|34 Ridge Road Howick Manukau 2014}"
+  phone: ""
+  phone_alt: ""
+  email_1: "clairesmusic@gmail.com"
+  website_urls: "http://www.clairesmusic.com"
+  phone_fax: "(09) 534 3681"
+  updated_by: 1000
+  created_at: 2007-01-01
+  updated_at: 2007-01-01

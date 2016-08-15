@@ -1,0 +1,22 @@
+<div class="formSection">
+<%
+access_right_key = (generate_id(object)+'access_right').to_sym
+%>
+
+<%logger.debug session.to_yaml
+
+%>
+	<h1>Access Rights</h1>
+	  <ul id="accessRightsList">
+		<%for model_access_right in session[access_right_key][:model_access_rights] %>
+		<%=render :partial => 'access_right/single_access_right', :locals => {:model_access_right => model_access_right}%>
+		<%end%>
+	  </ul>
+	
+	<div id="addAccessRightFormArea">
+		<span id="accessRightButton">
+		<%=render :partial => 'access_right/new_form_button', :locals => {:parent_model_id => generate_id(object)}%>
+		</span>
+		<div id="accessRightForm"></div>
+	</div>
+</div>

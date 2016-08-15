@@ -1,0 +1,17 @@
+<div class="newsArticles">
+<% login = Login.find(session[:login]) 
+if PrivilegesHelper.has_permission?(login, 'CAN_EDIT_CONTENT')%>
+<% title 'Creating a News Story' %>
+
+<h2>Creating News Story</h2>
+<br>
+<%= uses_tinymce%>
+
+<% form_tag :action => 'create' do %>
+  <div id="article_properties"
+  <%= render :partial => 'form' %>
+  </div>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+<% end %>
+</div>

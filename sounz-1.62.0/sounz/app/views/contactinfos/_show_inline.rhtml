@@ -1,0 +1,34 @@
+<%if contactinfo.is_empty?(check_visual_only = true)%>
+No contact information provided
+<%else%>
+<div class="contactPhysicalAddressBox">
+	<%if !contactinfo.street.blank?%><%=contactinfo.street%><br><%end%>
+	<%if !contactinfo.locality.blank?%><%=contactinfo.locality%>&nbsp;<%=contactinfo.postcode%><br><%end%>
+	<%if !contactinfo.po_box.blank?%>PO Box <%=contactinfo.po_box%><%end%>
+	
+	<%if !contactinfo.country.blank?%>
+		<%=contactinfo.country.country_name%><br>
+	<% end %>
+</div>
+
+<div class="contactPhoneNumbersBox">
+	<%if !contactinfo.phone.blank?%>Main:<%if ! contactinfo.phone_prefix.blank?%>(<%=contactinfo.phone_prefix%>) <%end%><%=contactinfo.phone%> <%if ! contactinfo.phone_extension.blank?%><%contactinfo.phone_extension%><%end%><br><%end%>
+	<%if !contactinfo.phone_alt.blank?%>Alternative:<%if ! contactinfo.phone_alt_prefix.blank?%>(<%=contactinfo.phone_alt_prefix%>) <%end%><%=contactinfo.phone_alt%> <%if ! contactinfo.phone_alt_extension.blank?%><%contactinfo.phone_alt_extension%><%end%><br><%end%>
+	<%if !contactinfo.phone_fax.blank?%>Fax:<%if ! contactinfo.phone_fax_prefix.blank?%>(<%=contactinfo.phone_fax_prefix%>) <%end%><%=contactinfo.phone_fax%> <%if ! contactinfo.phone_fax_extension.blank?%><%contactinfo.phone_fax_extension%><%end%><br><%end%>
+	<%if !contactinfo.phone_mobile.blank?%>Mobile:<%if ! contactinfo.phone_mobile_prefix.blank?%>(<%=contactinfo.phone_mobile_prefix%>) <%end%><%=contactinfo.phone_mobile%> <%if ! contactinfo.phone_mobile_extension.blank?%><%contactinfo.phone_mobileextension%><%end%><br><%end%>
+</div>
+
+<%if !contactinfo.website_urls.blank?%>
+<ul class="contactUrlsList">
+<%for url in contactinfo.website_urls.split(/\n/)%>
+<li><a href="<%=url%>"><%=url%></a></li>
+<%end%>
+</ul>
+<%end%>
+
+
+<%if !contactinfo.communication_method.blank?%>Preferred method of contact: <%=contactinfo.communication_method.communication_method_desc%>
+<%end%>
+
+<%end%>
+

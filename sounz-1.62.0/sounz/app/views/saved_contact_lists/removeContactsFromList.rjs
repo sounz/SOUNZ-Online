@@ -1,0 +1,19 @@
+#page.replace_html 'possibleNewContacts', :partial => 'shared/possible_contacts_editable', 
+#                                          :locals => { :search_contacts => @search_contacts, 
+#                                                       :id => @saved_contact_list.id, 
+#                                                       :existing_contacts => @existing_contacts }
+#page.replace_html 'existing_count', @saved_contact_list.role_contactinfos.length
+page.replace_html 'existing_contacts', :partial => 'existing_contacts_editable'
+
+if !@saved_list_contacts_pages.blank?
+page.replace_html 'pagination', :partial => "shared/page_links_remote", :locals => { :paginator => @saved_list_contacts_pages, :params => {:url => { :action => :list_contacts, :id => @saved_contact_list.saved_contact_list_id} }  }
+end
+
+# special effects
+#for contact in @contacts
+#hi_contact = 'possible_'+contact
+#page.visual_effect :highlight, hi_contact
+#hi_contact = 'actual_'+contact
+#page.visual_effect :fade, hi_contact
+#end
+

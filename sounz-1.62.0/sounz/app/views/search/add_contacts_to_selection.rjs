@@ -1,0 +1,11 @@
+page.replace_html 'selected_results', :partial => 'selected_contacts'
+#page.replace_html 'contact_search_results', :partial => 'saved_contacts_search_table',  :locals => {:contacts => session[:contacts_from_search]}
+
+for contact_id in @role_contactinfos_ids
+hi_id = 'found_'+contact_id
+page.visual_effect :fade, hi_id
+hi_id = 'selected_'+contact_id
+page.visual_effect :highlight, hi_id
+end
+
+

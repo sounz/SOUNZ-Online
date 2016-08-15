@@ -1,0 +1,29 @@
+<% if ZENCART_ENABLED == true
+cart_content = external_fetch('GET', URI.parse('http://'+ZENCART_SERVER+'/zencart/cartbox.php'),nil)%>
+
+	<% unless cart_content.blank?%>
+	
+		
+		<%= cart_content %>
+		
+<div class="cart-actions">
+	    <% if get_user != nil && get_user.ecommerce_role_exists? %>
+	      <a href="http://<%=ZENCART_SERVER%>/zencart/index.php?main_page=account" class="previous">Previous orders</a><% end %>
+
+  <% if get_user != nil 
+		     if check_user_is_valid(get_user.id) %>
+		       <%= link_to ('Check out', :controller => 'logins', :action => 'web_user_address_details', :from => 'checkout')%>
+		     <% else %>
+		       <b>Your account is not correctly set up for ERP!</b><br/>
+	           Email <a href="mailto:info@sounz.org.nz">tech support</a> for help.
+		     <% end %>
+		<% else %>
+		  <%= link_to ('Check out', :controller => 'people', :action => 'login_from_checkout')%>
+		<% end %>
+	</div>
+	<% end %>
+
+
+<% else %>
+	<p>Shopping functions will be available within the next 24 hours</p>
+<% end %>

@@ -1,0 +1,22 @@
+<% if !object_type_id.blank?
+bits = object_type_id.split("_")
+gid = bits.pop
+object_name = bits.join('_').camelize
+object = object_name.constantize.find(gid.to_i)
+type_format_class_s = object.class.to_s.underscore.split('_').join(' ')
+blank_option = "-- All " + type_format_class_s + " formats --"
+
+if !object.formats.blank?
+formats = object.formats.to_dropdown('format_desc')
+else
+blank_option = "-- All " + type_format_class_s + " formats --"
+formats = ''
+end
+
+else
+blank_option = "-- Select a type first --"
+formats = ''
+end %>
+
+<%= select('search_details', type_format_id_s, formats,
+            	         {:include_blank => blank_option, :selected => object_type_format_id.to_i}) %>

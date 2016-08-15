@@ -1,0 +1,19 @@
+<% content_for :tabbed_menu do %>
+<%# if !button.blank? 
+%>
+<div class="tabbar-new-button">
+  <%=# button 
+  %>
+</div>
+<%# end 
+%>
+<ul id='sub_navigation_small' class='people'>
+  <%=render_tab('Person',         :edit,           selected_tab, {:controller => :people, :action => :edit,  :id => @person})%>
+  <%=render_tab('Roles',          :roles,          selected_tab, {:controller => :people, :action => :roles, :id => @person})%>
+  <%=render_tab('Communications', :communications, selected_tab, {:controller => :communications, :action => :entity_communication_list, :id => @person, :from => 'person'})%>
+  
+  <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_LOGIN') || PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_BORROWED_ITEM')%>
+  <%=render_tab('Privileges', :privileges, selected_tab, {:controller => :people, :action => :privileges_list, :id => @person})%>
+  <% end %>
+</ul>
+<% end %>

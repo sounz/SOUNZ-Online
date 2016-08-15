@@ -1,0 +1,25 @@
+<!-- THIS TEMPLATE IS NOW UNUSED -->
+<%= form_remote_tag :url => {:action => :add_contacts_to_selection },
+    :success => visual_effect(:highlight, "selected_results"),
+    :html => { :id => 'contacts_found' }
+
+%>
+
+<table width="100%">
+  <tr>
+    <td align="right" valign="top">
+      <a href="#" onclick="$$('#contacts_found input.check').each(function(box){box.checked=!box.checked});return false">Select/Deselect All</a>
+    </td>
+    <td rowspan="<%= contacts.length %>" valign="top" width="10%">
+   <%=submit_tag "Select"%><br>
+   </td>
+  </tr>
+
+<%for contact in contacts%>
+<tr>
+<td><%=render :partial => "shared/contact_with_tooltip", :locals => {"contact" => contact, :already_selected => @already_selected}%>
+</td>
+</tr>
+<%end%>
+</table>
+</form>

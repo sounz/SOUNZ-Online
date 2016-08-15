@@ -1,0 +1,9 @@
+<% title "Copy project " + @project.project_title %>
+<h2>Copying project</h2>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+

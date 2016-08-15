@@ -1,0 +1,25 @@
+<h1>Listing relationship_types</h1>
+
+<table>
+  <tr>
+  <% for column in RelationshipType.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for relationship_type in @relationship_types %>
+  <tr>
+  <% for column in RelationshipType.content_columns %>
+    <td><%=h relationship_type.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => relationship_type %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => relationship_type %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => relationship_type }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @relationship_types %>
+
+<%= link_to 'New relationship_type', :action => 'new' %>

@@ -1,0 +1,2 @@
+module CommunicationTypesHelper
+end

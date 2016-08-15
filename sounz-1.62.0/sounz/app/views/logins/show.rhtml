@@ -1,0 +1,32 @@
+<h2>Membership details</h2>
+
+<p><b>Member types assigned to this login</b><br/>
+
+<% for member_type in @member_types%>
+<%=h member_type.member_type_desc%><br/>
+<%end%>
+</p>
+<p><b>Memberships and expiry</b><br/>
+<%for membership in @user_login.memberships%>
+<%if membership.expiry_date.blank?%>
+<%=membership.member_type.member_type_desc%> does not expire.<br/>
+<%else%>
+<%=membership.member_type.member_type_desc%> expires at: <%=membership.expiry_date%>
+<%if membership.pending_payment%>
+<font color='#f00'>UNPAID</font>
+<%end%>
+<br/>
+<%end%>
+<%end%>
+</p>
+<h2>Login Details</h2>
+<% for column in Login.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @user_login.send(column.name) %>
+</p>
+<% end %>
+
+<div class="editLinks">
+<%= link_to 'Edit', :action => 'edit', :id => @user_login %> |
+<%= link_to 'List', :action => 'list' %>
+</div>

@@ -1,0 +1,24 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "sounz.org.nz New Products"
+   xml.link        url_for(:only_path => false, :controller => :manifestations)
+   xml.description "SOUNZ most recently added products for sale"
+
+   @products.each do |product|
+     controller    = product['product_class'].to_s + 's'
+     product_id    = product['product_id']
+     product_title = product['product_title']
+     product_desc  = product['product_desc']
+     xml.item do
+       xml.title       product_title
+       xml.link        url_for(:only_path => false, :controller => controller, :action => :show, :id => product_id)
+       xml.description show_note(product_desc)
+       xml.guid        url_for(:only_path => false, :controller => controller, :action => :show, :id => product_id)
+     end
+   end
+
+ end
+end

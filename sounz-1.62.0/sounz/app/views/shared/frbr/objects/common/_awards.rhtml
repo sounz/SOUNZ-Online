@@ -1,0 +1,15 @@
+<%
+#Pass in an array of distinctions
+if distinctions.length > 0
+%>
+<div class="section">
+<h2>Awards</h2>
+<ul>
+<%for distinction_instance in distinctions%>
+<li><%=link_to distinction_instance.frbr_ui_desc, :controller => 'distinction_instances', :action => 'show', :id => distinction_instance%><br/>
+<%= show_note(distinction_instance.instance_info)%>	
+</li>	
+<%end%>
+</ul>	
+</div>
+<%end%>

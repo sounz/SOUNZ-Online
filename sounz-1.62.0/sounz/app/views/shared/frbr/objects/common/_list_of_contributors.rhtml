@@ -1,0 +1,12 @@
+<%
+#Pass in title, and contributors
+contributors = PrivilegesHelper.permitted_objects(@login, contributors)
+if contributors.length > 0
+%>
+<h2><%=title%></h2>
+<ul>
+<%for role in contributors%>
+<li><%=ContributorsHelper.get_link_depending_on_role_type(role, @login)%></li>
+<%end%>	
+</ul>
+<%end%>

@@ -1,0 +1,23 @@
+<%= error_messages_for 'cm_content' %>
+
+<!--[form:cm_content]-->
+<p><label for="cm_content_name"><b>Page name</b> (the URL will be <b>http://site</b>/content/<b>name</b>)</label><br>
+<%= text_field 'cm_content', 'cm_content_name', :size => standard_edit_cols  %></p>
+
+
+<p><label for="cm_content_cm_content_title"><b>Page heading</b> (heading of content page)</label><br>
+<%= text_field 'cm_content', 'cm_content_title', :size => standard_edit_cols  %></p>
+
+<p><label for="cm_content_cm_page_title"><b>Page title</b> (heading in browser title bar)</label><br>
+<%= text_field 'cm_content', 'cm_page_title', :size => standard_edit_cols  %></p>
+
+<p><label for="cm_content_cm_content"><b>Page content</b></label>
+
+<%= text_area 'cm_content', 'cm_content', {:cols => standard_edit_cols, :disabled => false, :class => 'tiny_mce'}  %>
+</p>
+
+<b>Page status:</b><%= select('cm_content', 'status_id', @statuses.to_dropdown) %>
+<br><br>
+
+<!--[eoform:cm_content]-->
+

@@ -1,0 +1,130 @@
+
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+
+
+<div class='search_item'>
+
+<%
+related_manifestations_all = object.related_manifestations
+related_manifestations = []
+
+n_resources = object.number_of_descriptive_resources
+score_samples = object.all_score_samples
+recording_samples = object.all_recording_samples
+
+n_samples = score_samples.length + recording_samples.length
+%>
+
+<% for man in related_manifestations_all %>
+    <% if man.status_id == 3 %>
+      <% related_manifestations.push(man) %>
+    <% end %>
+<% end %>
+
+<%
+links_string = []
+object.composers.map{|c| links_string <<  [
+	icons_for(c, @login) +
+ContributorsHelper.get_link_depending_on_role_type(c, @login)+
+"&nbsp;&nbsp;"+show_tap_edit_link_for(c, 'CAN_EDIT_CONTRIBUTOR_PROFILE')] }
+%>
+<h2><%=links_string.join('&nbsp;')%></h2>
+<h3><%= icons_for(object, @login)%><a href="/works/show/<%=object.work_id%>"><%=object.work_title%></a>
+<%=show_tap_edit_link_for(object)%></h3> 
+
+<p><%if object.has_duration?%>Duration:&nbsp;<%=object.duration_human_readable%><%end%><%if ! object.year_description.blank?%>&nbsp;Year:&nbsp;<%=object.year_description%><%end%><br>
+<%=object.work_description%></p>
+
+<%if n_samples > 0%>
+
+<div class="samples">
+
+	<%for score_sample in score_samples%>
+	  <%for attachment in score_sample.sample_attachments
+	  score_icon = public_sample_icon(attachment)
+	  %>
+    <div class="score-sample attachment"><%=link_to "Score Sample", sample_url(attachment)%></div>
+	<%end%>
+	<%end%>
+	
+	<%for recording_sample in recording_samples%>
+	  <%for attachment in recording_sample.sample_attachments
+	  media_item = attachment.media_item
+	  audio_icon = public_sample_icon(attachment)
+	  if media_item.is_flv?%>
+	  
+    <div class="video-sample attachment"><a class="videoPopup" onclick="window.open('<%=flash_sample_video_player_url(attachment)%>', 'sounz_video','width=400,height=400')">Video Sample</a></div>
+	<%
+	else
+		%>
+		<div class="audio-sample attachment"><a class="videoPopup" onclick="window.open('<%=flash_sample_music_player_url(attachment)%>', 'sounz_video','width=400,height=200')">Audio Sample</a></div>
+		<%end%>	
+	<%end%>
+	<%end%>
+
+</div>
+
+<%end%>
+
+<%=AttachmentHelper.render_search_image(object, :thumb)%>
+
+    <ul class="select_menu">
+
+      <% if !object.instrumentation.blank? %>
+        <li class="closed" id="<%= 'instrumentations_' + generate_id(object)%>">
+        <a href="#" class="toggle">Instrumentation</a>
+        <div class="content">
+          <%= object.instrumentation %>
+        </div>
+        </li>
+      <% end %>
+
+
+      <% if !object.programme_note.blank? %>
+        <li class="closed" id="<%= 'programme_notes_' + generate_id(object)%>">
+        <a href="#" class="toggle">Programme Note</a>
+        <div class="content">
+          <%= show_note(object.programme_note) %>
+        </div>
+        </li>
+      <% end %>
+
+      <% if !related_manifestations.blank? %>
+        <li class="closed" id="<%= 'availabilities_' + generate_id(object)%>">
+        <a href="#" class="toggle">Availability</a>
+        <div class="content">
+        <%scores = ManifestationsHelper.scores_only(related_manifestations)%>
+        <%sounzmedia = ManifestationsHelper.sounzmedia_only(related_manifestations)%>
+        <%recordings = ManifestationsHelper.recordings_only(related_manifestations)%>
+
+          <ul class="availability-details">
+            <%for myManifestation in scores%>
+              <%=render :partial => '/shared/frbr/objects/search_result/work_availability', :locals => {:manifestation => myManifestation} %>
+            <%end%>
+            <%for myManifestation in sounzmedia%>
+              <%=render :partial => '/shared/frbr/objects/search_result/work_availability', :locals => {:manifestation => myManifestation} %>
+            <%end%>
+            <%for myManifestation in recordings%>
+              <%=render :partial => '/shared/frbr/objects/search_result/work_availability', :locals => {:manifestation => myManifestation} %>
+            <%end%>
+          </ul>
+
+        </div>
+        </li>
+      <% end %>
+
+    </ul>
+
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_SAVE_SEARCH')
+     action = 'addToSelected'
+   else
+     action = 'addToSelectedSession'
+   end
+%>
+<div class="options">
+	<div class="wishlist rem"><%=link_to_remote( 'Add to Wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => action, :type => 'work', :object_id => object.frbr_id})%></div>
+
+<p class="fullInfo"><a href="/works/show/<%=object.work_id%>">Full information</a></p>
+</div>
+</div>

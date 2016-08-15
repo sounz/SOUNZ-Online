@@ -1,0 +1,14 @@
+<%
+dom_id = "attachments_" + generate_id(object)
+%>
+<ul id="<%=dom_id%>" class="attachmentList">
+<%
+if !media_items.blank?
+	for media_item in media_items
+%>
+<%=render :partial => 'shared/attachments/edit_media_item', :locals => {:media_item => media_item, :object => object, :mode => mode}%>
+<%
+end
+%>
+<%end%>
+</ul>

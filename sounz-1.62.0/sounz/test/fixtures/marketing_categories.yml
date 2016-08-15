@@ -1,0 +1,177 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+mc1:
+  marketing_category_id: 1
+  description: Agencies responsible for arts development and policy
+  abbreviation: Agency
+  display_order: 1
+
+mc2:
+  marketing_category_id: 2
+  description: Arts Organisations (non musical)
+  abbreviation: Arts Organisation
+  display_order: 2
+
+mc3:
+  marketing_category_id: 3
+  description: Educational Institutions
+  abbreviation: Educational Institution
+  display_order: 3
+
+mc4:
+  marketing_category_id: 4
+  description: Educational Support Organisations (professional support and learning support)
+  abbreviation: Educational Support Organisation
+  display_order: 4
+
+mc5:
+  marketing_category_id: 5
+  description: Competitions (organisations and instances)
+  abbreviation: Competition
+  display_order: 5
+
+mc6:
+  marketing_category_id: 6
+  description: Presenters and Promoters
+  abbreviation: Presenter - Promoter
+  display_order: 6
+
+mc7:
+  marketing_category_id: 7
+  description: Festivals
+  abbreviation: Festival
+  display_order: 7
+
+mc8:
+  marketing_category_id: 8
+  description: Venues
+  abbreviation: Venue
+  display_order: 8
+
+mc9:
+  marketing_category_id: 9
+  description: Media
+  abbreviation: Media
+  display_order: 9
+
+mc10:
+  marketing_category_id: 10
+  description: Music Industry Organisations
+  abbreviation: Music Industry Organisation
+  display_order: 10
+
+mc11:
+  marketing_category_id: 11
+  description: Performance Support Organisations
+  abbreviation: Performance Support Organisation
+  display_order: 11
+
+mc12:
+  marketing_category_id: 12
+  description: Music Performance Groups and Organisations
+  abbreviation: Music Performance Group/Organisation
+  display_order: 12
+
+mc13:
+  marketing_category_id: 13
+  description: Music Performance - Vocal
+  abbreviation: Music Performance - Vocal
+  display_order: 13
+
+mc14:
+  marketing_category_id: 14
+  description: Music Performance - Instrumental
+  abbreviation: Music Performance - Instrumental
+  display_order: 14
+
+mc15:
+  marketing_category_id: 15
+  description: Music Performance - other
+  abbreviation: Music Performance - other
+  display_order: 15
+
+mc16:
+  marketing_category_id: 16
+  description: Libraries and Archives
+  abbreviation: Library - Archive
+  display_order: 16
+  
+mc17:
+  marketing_category_id: 17
+  description: Art Appreciation Organisations
+  abbreviation: Art Appreciation Organisation
+  display_order: 17
+
+mc18:
+  marketing_category_id: 18
+  description: Cultural Organisations
+  abbreviation: Cultural Organisation
+  display_order: 18
+
+mc19:
+  marketing_category_id: 19
+  description: Funders
+  abbreviation: Funder
+  display_order: 19
+
+mc20:
+  marketing_category_id: 20
+  description: Recording Services
+  abbreviation: Recording Service
+  display_order: 20
+
+mc21:
+  marketing_category_id: 21
+  description: Publishers
+  abbreviation: Publisher
+  display_order: 21
+
+mc22:
+  marketing_category_id: 22
+  description: Music Services
+  abbreviation: Music Service
+  display_order: 22
+
+mc23:
+  marketing_category_id: 23
+  description: Distributors
+  abbreviation: Distributor
+  display_order: 23
+
+mc24:
+  marketing_category_id: 24
+  description: Retailers
+  abbreviation: Retailer
+  display_order: 24
+
+mc25:
+  marketing_category_id: 25
+  description: Suppliers
+  abbreviation: Supplier
+  display_order: 25
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+

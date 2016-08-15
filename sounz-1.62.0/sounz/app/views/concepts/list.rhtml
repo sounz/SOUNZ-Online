@@ -1,0 +1,51 @@
+<h1>Listing concepts</h1>
+
+<%for parent_concept in @parent_concepts%>
+<h1><%=parent_concept.concept_name%>&nbsp;(<%=parent_concept.concept_type.concept_type_desc%>)</h1>
+<%= link_to 'Show', :action => 'show', :id => parent_concept %><% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>&nbsp;|&nbsp;
+<%= link_to 'Edit', :action => 'edit', :id => parent_concept %>
+<%
+end
+children_concepts = parent_concept.children
+if children_concepts.length > 0
+%>
+
+<table>
+  <tr>
+<th>Parent Concept Name</th>
+
+<th>Concept Name</th>
+
+<th>Type</th>
+  </tr>
+  
+<% for concept in children_concepts %>
+  <tr>
+  	<td><%if concept.parent%><%=concept.parent.concept_name%><%end%></td>
+	<td><%=concept.concept_name%></td>
+	<td><%=concept.concept_type.concept_type_desc%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => concept %></td>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => concept %></td>
+    <!--<td>
+    <%=# link_to 'Destroy', { :action => 'destroy', :id => concept }, :confirm => 'Are you sure?', :method => :post 
+    %></td>-->
+    <% end %>
+    
+  </tr>
+<% end %>
+</table>
+<hr/>
+<br/>
+<%else%>
+<p>This concept has no children</p>
+<%end%>
+
+<%end%>
+
+
+<br>
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<%= link_to 'New concept', :action => 'new' %>
+<% end %>

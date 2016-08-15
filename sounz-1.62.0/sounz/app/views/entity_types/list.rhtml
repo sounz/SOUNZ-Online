@@ -1,0 +1,28 @@
+<h1>Listing entity_types</h1>
+
+<table>
+  <tr>
+  <% for column in EntityType.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for entity_type in @entity_types %>
+  <tr>
+  <% for column in EntityType.content_columns %>
+    <td><%=h entity_type.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => entity_type %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => entity_type %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => entity_type }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @entity_types %>
+
+
+
+
+<%= link_to 'New entity_type', :action => 'new' %>

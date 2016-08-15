@@ -1,0 +1,6 @@
+page.replace_html 'numberOfResults', @results[:docs].length > 0 ? pluralize(@results[:total], 'result') : ''
+page.replace_html 'liveResults', :partial => 'result', :collection => @results[:docs]
+page.replace_html 'facetResults', :partial => 'facet_results'
+page.replace_html 'pagination-top', :partial => 'page_links', :locals => {:paginator => @paginator}
+page.replace_html 'pagination-bottom', :partial => 'page_links', :locals => {:paginator => @paginator}
+#page.replace_html 'debug', @results.to_yaml

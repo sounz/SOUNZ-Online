@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+priv1:
+  privilege_id: 1
+  privilege_name: CAN_VIEW_PUBLIC
+  privilege_desc: User can view public content (should always be true)
+priv2:
+  privilege_id: 2
+  privilege_name: CAN_VIEW_PRIVATE
+  privilege_desc: User can view private (e.g. non-published) content
+priv3:
+  privilege_id: 3
+  privilege_name: CAN_EDIT
+  privilege_desc: User can edit site content (should only be true for SOUNZ memebers)
+ 

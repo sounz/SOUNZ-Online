@@ -1,0 +1,30 @@
+<h2>Marketing Categorisation</h2>
+
+<%marketing_category = @marketing_subcategory.marketing_category %>
+
+<% if flash[:notice] %><p id="flash"><%= flash[:notice] %></p><% end %>
+
+<br>
+<table>
+<tr>
+<th><label for="marketing_category_abbreviation">Category Abbreviation</label></th>
+<td><span id="cat_abbrev"><%= marketing_category.abbreviation %></span></td>
+</tr>
+<tr>
+<th><label for="marketing_category_description">Category Description</label></th>
+<td><span id="cat_desc"><%= marketing_category.description  %></span></td>
+</tr>
+<tr>
+<th><label for="marketing_category_abbreviation">Subcategory Abbreviation</label></th>
+<td><span id="subcat_abbrev"><%= @marketing_subcategory.abbreviation %></span></td>
+</tr>
+<tr>
+<th><label for="marketing_category_description">Subcategory Description</label></th>
+<td><span id="subcat_desc"><%= @marketing_subcategory.description  %></span></td>
+</tr>
+</table>
+
+<br>
+
+<%=link_to_popup_callback("Close", @marketing_subcategory.marketing_subcategory_id)%>
+

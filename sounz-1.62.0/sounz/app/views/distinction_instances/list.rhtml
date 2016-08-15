@@ -1,0 +1,35 @@
+<div class="section">
+<h1>Listing Distinction Instances</h1>
+</div>
+
+
+<a href="/distinction_instances/search">Search</a>
+<br/><br/>
+
+<table>
+  <tr>
+<th>Info</th><th>Award Year</th>
+  </tr>
+  
+<% for distinction_instance in @distinction_instances %>
+  <tr>
+  <td><%= show_note(distinction_instance.instance_info).gsub('<p>', '').gsub('</p>', '')%></td>
+<td><%=distinction_instance.award_year%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => distinction_instance %></td>
+    
+     <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+    <td><%= link_to 'Edit', :action => 'edit', :id => distinction_instance %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => distinction_instance }, :confirm => 'Are you sure?', :method => :post %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @distinction_instances %>
+
+ <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+<%= link_to 'New Distinction Instance', :action => 'new' %>
+</div>
+<% end %>

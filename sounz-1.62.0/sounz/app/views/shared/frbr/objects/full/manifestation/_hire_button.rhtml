@@ -1,0 +1,7 @@
+<% if object.available_for_hire %>
+  <% if PrivilegesHelper.has_permission?(get_user, 'IS_AUTHENTICATED') %>
+    <%= link_to ( "Hire", {:controller => :cart, :action => :hire_product, :type => 'manifestation', :method => 'hire', :id => object.id}, :class => 'public_button submit') %>
+  <% else %>
+    <div class="submit-disabled" title="Please login to hire">Hire</div>
+  <% end %>
+<% end %>

@@ -1,0 +1,1220 @@
+country1:
+  country_id: 1
+  country_name: Afghanistan
+  country_abbrev: AF
+
+country2:
+  country_id: 2
+  country_name: Aland Islands
+  country_abbrev: AX
+
+country3:
+  country_id: 3
+  country_name: Albania
+  country_abbrev: AL
+
+country4:
+  country_id: 4
+  country_name: Algeria
+  country_abbrev: DZ
+
+country5:
+  country_id: 5
+  country_name: American Samoa
+  country_abbrev: AS
+
+country6:
+  country_id: 6
+  country_name: Andorra
+  country_abbrev: AD
+
+country7:
+  country_id: 7
+  country_name: Angola
+  country_abbrev: AO
+
+country8:
+  country_id: 8
+  country_name: Anguilla
+  country_abbrev: AI
+
+country9:
+  country_id: 9
+  country_name: Antarctica
+  country_abbrev: AQ
+
+country10:
+  country_id: 10
+  country_name: Antigua and Barbuda
+  country_abbrev: AG
+
+country11:
+  country_id: 11
+  country_name: Argentina
+  country_abbrev: AR
+
+country12:
+  country_id: 12
+  country_name: Armenia
+  country_abbrev: AM
+
+country13:
+  country_id: 13
+  country_name: Aruba
+  country_abbrev: AW
+
+country14:
+  country_id: 14
+  country_name: Australia
+  country_abbrev: AU
+
+country15:
+  country_id: 15
+  country_name: Austria
+  country_abbrev: AT
+
+country16:
+  country_id: 16
+  country_name: Azerbaijan
+  country_abbrev: AZ
+
+country17:
+  country_id: 17
+  country_name: Bahamas
+  country_abbrev: BS
+
+country18:
+  country_id: 18
+  country_name: Bahrain
+  country_abbrev: BH
+
+country19:
+  country_id: 19
+  country_name: Bangladesh
+  country_abbrev: BD
+
+country20:
+  country_id: 20
+  country_name: Barbados
+  country_abbrev: BB
+
+country21:
+  country_id: 21
+  country_name: Belarus
+  country_abbrev: BY
+
+country22:
+  country_id: 22
+  country_name: Belgium
+  country_abbrev: BE
+
+country23:
+  country_id: 23
+  country_name: Belize
+  country_abbrev: BZ
+
+country24:
+  country_id: 24
+  country_name: Benin
+  country_abbrev: BJ
+
+country25:
+  country_id: 25
+  country_name: Bermuda
+  country_abbrev: BM
+
+country26:
+  country_id: 26
+  country_name: Bhutan
+  country_abbrev: BT
+
+country27:
+  country_id: 27
+  country_name: Bolivia
+  country_abbrev: BO
+
+country28:
+  country_id: 28
+  country_name: Bosnia and Herzegovina
+  country_abbrev: BA
+
+country29:
+  country_id: 29
+  country_name: Botswana
+  country_abbrev: BW
+
+country30:
+  country_id: 30
+  country_name: Bouvet Island
+  country_abbrev: BV
+
+country31:
+  country_id: 31
+  country_name: Brazil
+  country_abbrev: BR
+
+country32:
+  country_id: 32
+  country_name: British Indian Ocean Territory
+  country_abbrev: IO
+
+country33:
+  country_id: 33
+  country_name: Brunei Darussalam
+  country_abbrev: BN
+
+country34:
+  country_id: 34
+  country_name: Bulgaria
+  country_abbrev: BG
+
+country35:
+  country_id: 35
+  country_name: Burkina Faso
+  country_abbrev: BF
+
+country36:
+  country_id: 36
+  country_name: Burundi
+  country_abbrev: BI
+
+country37:
+  country_id: 37
+  country_name: Cambodia
+  country_abbrev: KH
+
+country38:
+  country_id: 38
+  country_name: Cameroon
+  country_abbrev: CM
+
+country39:
+  country_id: 39
+  country_name: Canada
+  country_abbrev: CA
+
+country40:
+  country_id: 40
+  country_name: Cape Verde
+  country_abbrev: CV
+
+country41:
+  country_id: 41
+  country_name: Cayman Islands
+  country_abbrev: KY
+
+country42:
+  country_id: 42
+  country_name: Central African Republic
+  country_abbrev: CF
+
+country43:
+  country_id: 43
+  country_name: Chad
+  country_abbrev: TD
+
+country44:
+  country_id: 44
+  country_name: Chile
+  country_abbrev: CL
+
+country45:
+  country_id: 45
+  country_name: China
+  country_abbrev: CN
+
+country46:
+  country_id: 46
+  country_name: Christmas Island
+  country_abbrev: CX
+
+country47:
+  country_id: 47
+  country_name: Cocos (keeling) Islands
+  country_abbrev: CC
+
+country48:
+  country_id: 48
+  country_name: Colombia
+  country_abbrev: CO
+
+country49:
+  country_id: 49
+  country_name: Comoros
+  country_abbrev: KM
+
+country50:
+  country_id: 50
+  country_name: Congo
+  country_abbrev: CG
+
+country51:
+  country_id: 51
+  country_name: Congo, The Democratic Republic Of The
+  country_abbrev: CD
+
+country52:
+  country_id: 52
+  country_name: Cook Islands
+  country_abbrev: CK
+
+country53:
+  country_id: 53
+  country_name: Costa Rica
+  country_abbrev: CR
+
+country54:
+  country_id: 54
+  country_name: Cote D'ivoire
+  country_abbrev: CI
+
+country55:
+  country_id: 55
+  country_name: Croatia
+  country_abbrev: HR
+
+country56:
+  country_id: 56
+  country_name: Cuba
+  country_abbrev: CU
+
+country57:
+  country_id: 57
+  country_name: Cyprus
+  country_abbrev: CY
+
+country58:
+  country_id: 58
+  country_name: Czech Republic
+  country_abbrev: CZ
+
+country59:
+  country_id: 59
+  country_name: Denmark
+  country_abbrev: DK
+
+country60:
+  country_id: 60
+  country_name: Djibouti
+  country_abbrev: DJ
+
+country61:
+  country_id: 61
+  country_name: Dominica
+  country_abbrev: DM
+
+country62:
+  country_id: 62
+  country_name: Dominican Republic
+  country_abbrev: DO
+
+country63:
+  country_id: 63
+  country_name: Ecuador
+  country_abbrev: EC
+
+country64:
+  country_id: 64
+  country_name: Egypt
+  country_abbrev: EG
+
+country65:
+  country_id: 65
+  country_name: El Salvador
+  country_abbrev: SV
+
+country66:
+  country_id: 66
+  country_name: Equatorial Guinea
+  country_abbrev: GQ
+
+country67:
+  country_id: 67
+  country_name: Eritrea
+  country_abbrev: ER
+
+country68:
+  country_id: 68
+  country_name: Estonia
+  country_abbrev: EE
+
+country69:
+  country_id: 69
+  country_name: Ethiopia
+  country_abbrev: ET
+
+country70:
+  country_id: 70
+  country_name: Falkland Islands (malvinas)
+  country_abbrev: FK
+
+country71:
+  country_id: 71
+  country_name: Faroe Islands
+  country_abbrev: FO
+
+country72:
+  country_id: 72
+  country_name: Fiji
+  country_abbrev: FJ
+
+country73:
+  country_id: 73
+  country_name: Finland
+  country_abbrev: FI
+
+country74:
+  country_id: 74
+  country_name: France
+  country_abbrev: FR
+
+country75:
+  country_id: 75
+  country_name: French Guiana
+  country_abbrev: GF
+
+country76:
+  country_id: 76
+  country_name: French Polynesia
+  country_abbrev: PF
+
+country77:
+  country_id: 77
+  country_name: French Southern Territories
+  country_abbrev: TF
+
+country78:
+  country_id: 78
+  country_name: Gabon
+  country_abbrev: GA
+
+country79:
+  country_id: 79
+  country_name: Gambia
+  country_abbrev: GM
+
+country80:
+  country_id: 80
+  country_name: Georgia
+  country_abbrev: GE
+
+country81:
+  country_id: 81
+  country_name: Germany
+  country_abbrev: DE
+
+country82:
+  country_id: 82
+  country_name: Ghana
+  country_abbrev: GH
+
+country83:
+  country_id: 83
+  country_name: Gibraltar
+  country_abbrev: GI
+
+country84:
+  country_id: 84
+  country_name: Greece
+  country_abbrev: GR
+
+country85:
+  country_id: 85
+  country_name: Greenland
+  country_abbrev: GL
+
+country86:
+  country_id: 86
+  country_name: Grenada
+  country_abbrev: GD
+
+country87:
+  country_id: 87
+  country_name: Guadeloupe
+  country_abbrev: GP
+
+country88:
+  country_id: 88
+  country_name: Guam
+  country_abbrev: GU
+
+country89:
+  country_id: 89
+  country_name: Guatemala
+  country_abbrev: GT
+
+country90:
+  country_id: 90
+  country_name: Guernsey
+  country_abbrev: GG
+
+country91:
+  country_id: 91
+  country_name: Guinea
+  country_abbrev: GN
+
+country92:
+  country_id: 92
+  country_name: Guinea-bissau
+  country_abbrev: GW
+
+country93:
+  country_id: 93
+  country_name: Guyana
+  country_abbrev: GY
+
+country94:
+  country_id: 94
+  country_name: Haiti
+  country_abbrev: HT
+
+country95:
+  country_id: 95
+  country_name: Heard Island and Mcdonald Islands
+  country_abbrev: HM
+
+country96:
+  country_id: 96
+  country_name: Holy See (vatican City State)
+  country_abbrev: VA
+
+country97:
+  country_id: 97
+  country_name: Honduras
+  country_abbrev: HN
+
+country98:
+  country_id: 98
+  country_name: Hong Kong
+  country_abbrev: HK
+
+country99:
+  country_id: 99
+  country_name: Hungary
+  country_abbrev: HU
+
+country100:
+  country_id: 100
+  country_name: Iceland
+  country_abbrev: IS
+
+country101:
+  country_id: 101
+  country_name: India
+  country_abbrev: IN
+
+country102:
+  country_id: 102
+  country_name: Indonesia
+  country_abbrev: ID
+
+country103:
+  country_id: 103
+  country_name: Iran, Islamic Republic Of
+  country_abbrev: IR
+
+country104:
+  country_id: 104
+  country_name: Iraq
+  country_abbrev: IQ
+
+country105:
+  country_id: 105
+  country_name: Ireland
+  country_abbrev: IE
+
+country106:
+  country_id: 106
+  country_name: Isle Of Man
+  country_abbrev: IM
+
+country107:
+  country_id: 107
+  country_name: Israel
+  country_abbrev: IL
+
+country108:
+  country_id: 108
+  country_name: Italy
+  country_abbrev: IT
+
+country109:
+  country_id: 109
+  country_name: Jamaica
+  country_abbrev: JM
+
+country110:
+  country_id: 110
+  country_name: Japan
+  country_abbrev: JP
+
+country111:
+  country_id: 111
+  country_name: Jersey
+  country_abbrev: JE
+
+country112:
+  country_id: 112
+  country_name: Jordan
+  country_abbrev: JO
+
+country113:
+  country_id: 113
+  country_name: Kazakhstan
+  country_abbrev: KZ
+
+country114:
+  country_id: 114
+  country_name: Kenya
+  country_abbrev: KE
+
+country115:
+  country_id: 115
+  country_name: Kiribati
+  country_abbrev: KI
+
+country116:
+  country_id: 116
+  country_name: Korea, Democratic People's Republic Of
+  country_abbrev: KP
+
+country117:
+  country_id: 117
+  country_name: Korea, Republic Of
+  country_abbrev: KR
+
+country118:
+  country_id: 118
+  country_name: Kuwait
+  country_abbrev: KW
+
+country119:
+  country_id: 119
+  country_name: Kyrgyzstan
+  country_abbrev: KG
+
+country120:
+  country_id: 120
+  country_name: Lao People's Democratic Republic
+  country_abbrev: LA
+
+country121:
+  country_id: 121
+  country_name: Latvia
+  country_abbrev: LV
+
+country122:
+  country_id: 122
+  country_name: Lebanon
+  country_abbrev: LB
+
+country123:
+  country_id: 123
+  country_name: Lesotho
+  country_abbrev: LS
+
+country124:
+  country_id: 124
+  country_name: Liberia
+  country_abbrev: LR
+
+country125:
+  country_id: 125
+  country_name: Libyan Arab Jamahiriya
+  country_abbrev: LY
+
+country126:
+  country_id: 126
+  country_name: Liechtenstein
+  country_abbrev: LI
+
+country127:
+  country_id: 127
+  country_name: Lithuania
+  country_abbrev: LT
+
+country128:
+  country_id: 128
+  country_name: Luxembourg
+  country_abbrev: LU
+
+country129:
+  country_id: 129
+  country_name: Macao
+  country_abbrev: MO
+
+country130:
+  country_id: 130
+  country_name: Macedonia, The Former Yugoslav Republic Of
+  country_abbrev: MK
+
+country131:
+  country_id: 131
+  country_name: Madagascar
+  country_abbrev: MG
+
+country132:
+  country_id: 132
+  country_name: Malawi
+  country_abbrev: MW
+
+country133:
+  country_id: 133
+  country_name: Malaysia
+  country_abbrev: MY
+
+country134:
+  country_id: 134
+  country_name: Maldives
+  country_abbrev: MV
+
+country135:
+  country_id: 135
+  country_name: Mali
+  country_abbrev: ML
+
+country136:
+  country_id: 136
+  country_name: Malta
+  country_abbrev: MT
+
+country137:
+  country_id: 137
+  country_name: Marshall Islands
+  country_abbrev: MH
+
+country138:
+  country_id: 138
+  country_name: Martinique
+  country_abbrev: MQ
+
+country139:
+  country_id: 139
+  country_name: Mauritania
+  country_abbrev: MR
+
+country140:
+  country_id: 140
+  country_name: Mauritius
+  country_abbrev: MU
+
+country141:
+  country_id: 141
+  country_name: Mayotte
+  country_abbrev: YT
+
+country142:
+  country_id: 142
+  country_name: Mexico
+  country_abbrev: MX
+
+country143:
+  country_id: 143
+  country_name: Micronesia, Federated States Of
+  country_abbrev: FM
+
+country144:
+  country_id: 144
+  country_name: Moldova, Republic Of
+  country_abbrev: MD
+
+country145:
+  country_id: 145
+  country_name: Monaco
+  country_abbrev: MC
+
+country146:
+  country_id: 146
+  country_name: Mongolia
+  country_abbrev: MN
+
+country147:
+  country_id: 147
+  country_name: Montenegro
+  country_abbrev: ME
+
+country148:
+  country_id: 148
+  country_name: Montserrat
+  country_abbrev: MS
+
+country149:
+  country_id: 149
+  country_name: Morocco
+  country_abbrev: MA
+
+country150:
+  country_id: 150
+  country_name: Mozambique
+  country_abbrev: MZ
+
+country151:
+  country_id: 151
+  country_name: Myanmar
+  country_abbrev: MM
+
+country152:
+  country_id: 152
+  country_name: Namibia
+  country_abbrev: NA
+
+country153:
+  country_id: 153
+  country_name: Nauru
+  country_abbrev: NR
+
+country154:
+  country_id: 154
+  country_name: Nepal
+  country_abbrev: NP
+
+country155:
+  country_id: 155
+  country_name: Netherlands
+  country_abbrev: NL
+
+country156:
+  country_id: 156
+  country_name: Netherlands Antilles
+  country_abbrev: AN
+
+country157:
+  country_id: 157
+  country_name: New Caledonia
+  country_abbrev: NC
+
+country158:
+  country_id: 158
+  country_name: New Zealand
+  country_abbrev: NZ
+
+country159:
+  country_id: 159
+  country_name: Nicaragua
+  country_abbrev: NI
+
+country160:
+  country_id: 160
+  country_name: Niger
+  country_abbrev: NE
+
+country161:
+  country_id: 161
+  country_name: Nigeria
+  country_abbrev: NG
+
+country162:
+  country_id: 162
+  country_name: Niue
+  country_abbrev: NU
+
+country163:
+  country_id: 163
+  country_name: Norfolk Island
+  country_abbrev: NF
+
+country164:
+  country_id: 164
+  country_name: Northern Mariana Islands
+  country_abbrev: MP
+
+country165:
+  country_id: 165
+  country_name: Norway
+  country_abbrev: NO
+
+country166:
+  country_id: 166
+  country_name: Oman
+  country_abbrev: OM
+
+country167:
+  country_id: 167
+  country_name: Pakistan
+  country_abbrev: PK
+
+country168:
+  country_id: 168
+  country_name: Palau
+  country_abbrev: PW
+
+country169:
+  country_id: 169
+  country_name: Palestinian Territory, Occupied
+  country_abbrev: PS
+
+country170:
+  country_id: 170
+  country_name: Panama
+  country_abbrev: PA
+
+country171:
+  country_id: 171
+  country_name: Papua New Guinea
+  country_abbrev: PG
+
+country172:
+  country_id: 172
+  country_name: Paraguay
+  country_abbrev: PY
+
+country173:
+  country_id: 173
+  country_name: Peru
+  country_abbrev: PE
+
+country174:
+  country_id: 174
+  country_name: Philippines
+  country_abbrev: PH
+
+country175:
+  country_id: 175
+  country_name: Pitcairn
+  country_abbrev: PN
+
+country176:
+  country_id: 176
+  country_name: Poland
+  country_abbrev: PL
+
+country177:
+  country_id: 177
+  country_name: Portugal
+  country_abbrev: PT
+
+country178:
+  country_id: 178
+  country_name: Puerto Rico
+  country_abbrev: PR
+
+country179:
+  country_id: 179
+  country_name: Qatar
+  country_abbrev: QA
+
+country180:
+  country_id: 180
+  country_name: Reunion
+  country_abbrev: RE
+
+country181:
+  country_id: 181
+  country_name: Romania
+  country_abbrev: RO
+
+country182:
+  country_id: 182
+  country_name: Russian Federation
+  country_abbrev: RU
+
+country183:
+  country_id: 183
+  country_name: Rwanda
+  country_abbrev: RW
+
+country184:
+  country_id: 184
+  country_name: Saint Helena
+  country_abbrev: SH
+
+country185:
+  country_id: 185
+  country_name: Saint Kitts and Nevis
+  country_abbrev: KN
+
+country186:
+  country_id: 186
+  country_name: Saint Lucia
+  country_abbrev: LC
+
+country187:
+  country_id: 187
+  country_name: Saint Pierre and Miquelon
+  country_abbrev: PM
+
+country188:
+  country_id: 188
+  country_name: Saint Vincent and The Grenadines
+  country_abbrev: VC
+
+country189:
+  country_id: 189
+  country_name: Samoa
+  country_abbrev: WS
+
+country190:
+  country_id: 190
+  country_name: San Marino
+  country_abbrev: SM
+
+country191:
+  country_id: 191
+  country_name: Sao Tome and Principe
+  country_abbrev: ST
+
+country192:
+  country_id: 192
+  country_name: Saudi Arabia
+  country_abbrev: SA
+
+country193:
+  country_id: 193
+  country_name: Senegal
+  country_abbrev: SN
+
+country194:
+  country_id: 194
+  country_name: Serbia
+  country_abbrev: RS
+
+country195:
+  country_id: 195
+  country_name: Seychelles
+  country_abbrev: SC
+
+country196:
+  country_id: 196
+  country_name: Sierra Leone
+  country_abbrev: SL
+
+country197:
+  country_id: 197
+  country_name: Singapore
+  country_abbrev: SG
+
+country198:
+  country_id: 198
+  country_name: Slovakia
+  country_abbrev: SK
+
+country199:
+  country_id: 199
+  country_name: Slovenia
+  country_abbrev: SI
+
+country200:
+  country_id: 200
+  country_name: Solomon Islands
+  country_abbrev: SB
+
+country201:
+  country_id: 201
+  country_name: Somalia
+  country_abbrev: SO
+
+country202:
+  country_id: 202
+  country_name: South Africa
+  country_abbrev: ZA
+
+country203:
+  country_id: 203
+  country_name: South Georgia and The South Sandwich Islands
+  country_abbrev: GS
+
+country204:
+  country_id: 204
+  country_name: Spain
+  country_abbrev: ES
+
+country205:
+  country_id: 205
+  country_name: Sri Lanka
+  country_abbrev: LK
+
+country206:
+  country_id: 206
+  country_name: Sudan
+  country_abbrev: SD
+
+country207:
+  country_id: 207
+  country_name: Suriname
+  country_abbrev: SR
+
+country208:
+  country_id: 208
+  country_name: Svalbard and Jan Mayen
+  country_abbrev: SJ
+
+country209:
+  country_id: 209
+  country_name: Swaziland
+  country_abbrev: SZ
+
+country210:
+  country_id: 210
+  country_name: Sweden
+  country_abbrev: SE
+
+country211:
+  country_id: 211
+  country_name: Switzerland
+  country_abbrev: CH
+
+country212:
+  country_id: 212
+  country_name: Syrian Arab Republic
+  country_abbrev: SY
+
+country213:
+  country_id: 213
+  country_name: Taiwan, Province Of China
+  country_abbrev: TW
+
+country214:
+  country_id: 214
+  country_name: Tajikistan
+  country_abbrev: TJ
+
+country215:
+  country_id: 215
+  country_name: Tanzania, United Republic Of
+  country_abbrev: TZ
+
+country216:
+  country_id: 216
+  country_name: Thailand
+  country_abbrev: TH
+
+country217:
+  country_id: 217
+  country_name: Timor-leste
+  country_abbrev: TL
+
+country218:
+  country_id: 218
+  country_name: Togo
+  country_abbrev: TG
+
+country219:
+  country_id: 219
+  country_name: Tokelau
+  country_abbrev: TK
+
+country220:
+  country_id: 220
+  country_name: Tonga
+  country_abbrev: TO
+
+country221:
+  country_id: 221
+  country_name: Trinidad and Tobago
+  country_abbrev: TT
+
+country222:
+  country_id: 222
+  country_name: Tunisia
+  country_abbrev: TN
+
+country223:
+  country_id: 223
+  country_name: Turkey
+  country_abbrev: TR
+
+country224:
+  country_id: 224
+  country_name: Turkmenistan
+  country_abbrev: TM
+
+country225:
+  country_id: 225
+  country_name: Turks and Caicos Islands
+  country_abbrev: TC
+
+country226:
+  country_id: 226
+  country_name: Tuvalu
+  country_abbrev: TV
+
+country227:
+  country_id: 227
+  country_name: Uganda
+  country_abbrev: UG
+
+country228:
+  country_id: 228
+  country_name: Ukraine
+  country_abbrev: UA
+
+country229:
+  country_id: 229
+  country_name: United Arab Emirates
+  country_abbrev: AE
+
+country230:
+  country_id: 230
+  country_name: United Kingdom
+  country_abbrev: GB
+
+country231:
+  country_id: 231
+  country_name: United States
+  country_abbrev: US
+
+country232:
+  country_id: 232
+  country_name: United States Minor Outlying Islands
+  country_abbrev: UM
+
+country233:
+  country_id: 233
+  country_name: Uruguay
+  country_abbrev: UY
+
+country234:
+  country_id: 234
+  country_name: Uzbekistan
+  country_abbrev: UZ
+
+country235:
+  country_id: 235
+  country_name: Vanuatu
+  country_abbrev: VU
+
+country236:
+  country_id: 236
+  country_name: Venezuela
+  country_abbrev: VE
+
+country237:
+  country_id: 237
+  country_name: Viet Nam
+  country_abbrev: VN
+
+country238:
+  country_id: 238
+  country_name: Virgin Islands, British
+  country_abbrev: VG
+
+country239:
+  country_id: 239
+  country_name: Virgin Islands, U.s.
+  country_abbrev: VI
+
+country240:
+  country_id: 240
+  country_name: Wallis and Futuna
+  country_abbrev: WF
+
+country241:
+  country_id: 241
+  country_name: Western Sahara
+  country_abbrev: EH
+
+country242:
+  country_id: 242
+  country_name: Yemen
+  country_abbrev: YE
+
+country243:
+  country_id: 243
+  country_name: Zambia
+  country_abbrev: ZM
+
+country244:
+  country_id: 244
+  country_name: Zimbabwe
+  country_abbrev: ZW
+

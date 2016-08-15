@@ -1,0 +1,4 @@
+ class FrbrMruController < ApplicationController
+   
+  
+end

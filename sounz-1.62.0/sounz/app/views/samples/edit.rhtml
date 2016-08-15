@@ -1,0 +1,29 @@
+<h1>Editing sample for <%=@sample.manifestation.manifestation_title%></h1>
+
+<%= error_messages_for :sample %>
+
+<% form_for(:sample, :url => sample_path(@sample), :html => { :method => :put }) do |f| %>
+ 
+  <p>
+    <b>Sample description</b><br>
+    <%= f.text_area :sample_description, :rows => standard_edit_rows, :cols => standard_edit_cols%>
+  </p>
+
+  <p>
+    <b>Sample copyright</b><br>
+    <%= f.text_area :sample_copyright, :rows => standard_edit_rows, :cols => standard_edit_cols %>
+  </p>
+
+<p>Status:
+<%= select("sample", "status_id", @statuses.to_dropdown) %></p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', sample_path(@sample) %> |
+<%= link_to 'Back to '+@sample.manifestation.manifestation_title, :controller => :manifestations,
+:action => :show, :id => @sample.manifestation %>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @sample}%>

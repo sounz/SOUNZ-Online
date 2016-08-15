@@ -1,0 +1,8 @@
+<% for column in SavedSearch.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @saved_search.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @saved_search %> |
+<%= link_to 'Back', :action => 'list' %>

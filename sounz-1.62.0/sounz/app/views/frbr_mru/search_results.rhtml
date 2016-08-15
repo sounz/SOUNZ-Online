@@ -1,0 +1,14 @@
+
+<%for frbr_object in @mru_frbr_objects
+klass_name = frbr_object.class.to_s.tableize
+klass_name="work"
+%>
+<tr>
+<td><%=render :partial => 'shared/frbr/objects/brief/'+klass_name, :locals => {:object => frbr_object} %></td>
+<td><%= f.check_box :sample_copyright %></td>	
+</tr>
+<% end %>
+
+<tr>
+  <td colspan="2"><%= submit_tag "Update" %></td>
+</tr>

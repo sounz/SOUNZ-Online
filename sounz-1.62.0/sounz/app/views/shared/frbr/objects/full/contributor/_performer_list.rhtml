@@ -1,0 +1,10 @@
+<!--<ul class="inlineList">-->
+<%for contributor_role in contributors%>
+<!--<li>-->
+<% if PrivilegesHelper.has_link_permission?(@login, contributor_role) %>
+<b><%= ContributorsHelper.get_link_depending_on_role_type(contributor_role, @login)%></b>
+<%if contributor_role != contributors.last %>&nbsp;&nbsp;<%end%>
+<% end %>
+<!--</li> -->
+<%end%>	
+<!--</ul> -->

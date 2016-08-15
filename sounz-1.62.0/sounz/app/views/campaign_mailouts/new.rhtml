@@ -1,0 +1,13 @@
+<% title "Creating new mailout" %>
+
+<%= uses_tinymce %>
+
+<h2>Create New Campaign Mailout</h2>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= render :partial => 'shared/form_control_buttons', :locals => { :delete => false } %>
+<% end %>
+
+<%=# go_back_link 
+%>

@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>Person Details</legend>
+  <p>Basic information about a person.</p>
+  <table>
+    <tr>
+      <th><label for="person_nomen_id">Name</label></th>
+      <td>
+       <%= select('person', "nomen_id", Nomen.to_dropdown(:text => 'nomen', :include_blank => "-- Select a nomen --")) 
+        %>
+        <%= text_field 'person', 'first_names', :size => 20  %>
+        <%= text_field 'person', 'last_name', :size => 20  %>
+        <div class="instruction">Order is nomen, first name(s), last name</div>
+      <td>
+    </tr>
+  </table>
+</fieldset>

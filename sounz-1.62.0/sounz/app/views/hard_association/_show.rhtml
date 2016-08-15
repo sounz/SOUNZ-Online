@@ -1,0 +1,35 @@
+<h1><%=@hard_association_title%></h1>
+<%instance_id = generate_id(@frbr_instance)%>
+
+
+
+<ul id="associated_to_<%=generate_id(@frbr_instance)%>">
+	<%for frbr_child in @frbr_children%>
+	<%=render :partial => 'hard_association/associated_frbr_object', :locals => {:frbr_child => frbr_child, :source_id => instance_id}%>
+	<%end%>
+</ul>
+
+<div class="instruction">Search for new objects to add by typing into the box below.
+</div>
+<%=render :partial => 'shared/non_jumpy_spinner_with_suffix', :locals => {:suffix => instance_id}%>
+
+
+
+<div id="find_children_<%=instance_id%>">
+	<input type="text" value="" id="find_children_text_<%=instance_id%>" size="20">
+	<div id="object_list_<%=instance_id%>">
+	</div>
+</div>
+
+
+<%
+js_for_fields = "'search_text='+escape($('find_children_text_"+instance_id+"').value)"+
+"+ '&frbr_object_id="+instance_id+"'"
+%>
+<%=observe_field_delayed('find_children_text_'+ instance_id, :frequency => 2, :update => 'object_list_'+instance_id, 
+    :before => "Element.show('spinner_"+instance_id+"')",
+:complete => "Element.hide('spinner_"+instance_id+"')",
+:url => {:action => :find_objects,:controller => 'hard_association', :child_entity_type => @child_entity_type},
+:with => js_for_fields
+)%>
+<%= render :partial => 'shared/spinner' %>

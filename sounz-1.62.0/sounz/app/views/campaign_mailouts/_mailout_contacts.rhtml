@@ -1,0 +1,111 @@
+<%= form_remote_tag :url => { :action => :mailout_contacts_list, :id => @campaign_mailout.campaign_mailout_id }, 
+:html => { :id => 'campaign_mailout_contacts_form' },
+:before => "Element.show('spinner')",
+:complete => "Element.hide('spinner')" 
+%>
+
+<%
+not_sent = true
+not_sent = false if !@campaign_mailout.mailout_status.match('n')
+contacts = @campaign_mailout_contacts
+%>
+
+<% if !contacts.blank? %>
+You currently have <strong><span id="existing_count"><%=@campaign_mailout.mailout_contacts.length %></span> contacts</strong> in the list.  
+
+<% if  not_sent %>
+To remove any contact from the list please select the contact and click on the 'Remove' button.
+
+<input type="hidden" name="current_page_mailout_contacts" id="current_page_mailout_contacts" value="<%=contacts.map{|c| c.mailout_contact_id}.join(",")%>"> 
+<input type="hidden" name="campaign_mailout_id" id="campaign_mailout_id" value="<%=@campaign_mailout.campaign_mailout_id%>">
+<input type="hidden" name="page" id="page" value="<%=params[:page]%>">
+<% end %>
+
+<table width="100%">
+  <tr>
+    <th width="30%"><label>Contact</label></th>
+    <th width="40%"><label>Target</label></th>
+    <td nowrap><%= selectAllNone('campaign_mailout_contacts_form') if not_sent%></td>
+    <td valign="top" width="10%" rowspan="<%=@campaign_mailout_contacts_pages.items_per_page.to_i + 1%>">
+    <% if not_sent %>
+     <%= submit_tag "Remove\nSelected" %><br/><br/>
+     <span class="actionSubmit">
+       <%= link_to_remote "Remove All", :url => {:action => :mailout_contacts_list, :id => @campaign_mailout.campaign_mailout_id, :remove => 'all'},
+                                        :before => "Element.show('spinner')",
+                                        :complete => "Element.hide('spinner')"
+       %>
+     </span>
+     <% end %>
+    </td>
+  </tr>
+  <tr><td rowspan="1" colspan="3"></td></tr>
+<%# contacts = campaign_mailout.mailout_contacts.sort{|mc, omc| mc.role_contactinfo.role.role_contact_name <=> omc.role_contactinfo.role.role_contact_name } 
+%>
+<% contacts.each do |mc| %>
+  <tr>
+    <td valign="top">
+     <% if !mc.name.blank? %>
+      <%= mc.name %>
+     <% else %>
+     <%= mc.organisation_name%>
+     <% end %>
+      &nbsp;<%= mc.mailing_result_for_ui %>
+    </td>
+    <td valign="top">
+    <% target = '' 
+       if @campaign_mailout.mailout_type == 'p'
+         target += mc.address_line1 unless mc.address_line1.blank? 
+         target += "<br>" + mc.address_line2 unless mc.address_line2.blank? 
+         target += "<br>" + mc.address_line3 unless mc.address_line3.blank? 
+         target += "<br>" + mc.address_line4 unless mc.address_line4.blank? 
+         target += "<br>" + mc.address_line5 unless mc.address_line5.blank? 
+         target += "<br>" + mc.address_line6 unless mc.address_line6.blank? 
+         target += "<br>" + mc.address_line7 unless mc.address_line7.blank? 
+       end
+       if @campaign_mailout.mailout_type == 'e'
+         if !mc.email.blank?
+           target = mc.email
+         else
+           target = "No email"
+         end
+       end 
+    %>
+    <%= link_to target, :controller => 'mailout_contacts', :action => 'edit', :id => mc.mailout_contact_id %>
+    </td>
+    
+    <% if not_sent %>
+    <% checked = nil
+       if !session[:mailout_contacts_to_remove].blank? && session[:mailout_contacts_to_remove].include?(mc)
+         checked = 'checked'
+       end
+    %>
+    
+    <td align="right" valign="top"><input type="checkbox" class='check' <%= checked %> value="<%= generate_id(mc) %>" name="mailout_contact[mailout_contact_id][]" 
+id="<%= generate_id(mc) %>"/></td>
+    <% end %>
+    
+</tr>
+<%end%>
+
+
+<tr><td colspan="3">&nbsp;</td></tr>
+<% end %>
+
+</table>
+
+<%= render :partial => 'shared/spinner' %>
+
+<span id="set_selected"></span>
+
+<%= observe_form( 'campaign_mailout_contacts_form',
+  {
+  :url => { :action => :set_selected_contacts }, 
+  :update => 'set_selected', 
+  :frequency => -1
+  }
+  )
+%>
+
+</form>
+
+

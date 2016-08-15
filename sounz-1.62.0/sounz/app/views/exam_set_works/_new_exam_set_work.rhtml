@@ -1,0 +1,13 @@
+<% remote_form_for(:exam_set_work, :url => {:controller => 'exam_set_works', 
+                                            :action => 'add_exam_set_work'}) do |form| %>
+
+<%= render :partial => 'exam_set_works/form', :locals => { :manifestation => manifestation, :exam_set_work_id => nil } %>
+
+<%= submit_tag "Add"%>
+
+<% end %>
+
+
+  
+
+

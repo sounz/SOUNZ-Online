@@ -1,0 +1,9 @@
+# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
+User-Agent: *User-Agent: *
+Disallow: /finder/show/events*
+Disallow: /finder/show/works*
+Disallow: /finder/show/people*
+Allow: /
+Allow: /finder/show/people
+Allow: /finder/show/works
+Allow: /finder/show/events

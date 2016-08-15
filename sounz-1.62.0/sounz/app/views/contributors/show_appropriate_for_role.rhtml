@@ -1,0 +1,13 @@
+<%=main_tabs(selected = @relevant_tab)%>
+<%=start_of_content(@contributor, "#{@role_type_group.to_s.camelize}")%>
+<%=render :partial => @sub_partial_path, :locals => {:object => @contributor, :page => @page}%>
+
+<%=render :partial => 'shared/frbr/objects/full/contributor/admin_data', :locals => {:object => @contributor}%>
+<%=show_relationships_if_permission(@contributor.role)%>
+
+<%=show_edit_links_if_permission(@contributor.role)%>
+
+
+<%=end_of_content(@contributor)%>
+
+

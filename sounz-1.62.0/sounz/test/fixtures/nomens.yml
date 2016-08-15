@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+nom1:
+  nomen_id: 1
+  nomen: Mr.
+nom2:
+  nomen_id: 2
+  nomen: Mrs
+nom3:
+  nomen_id: 3
+  nomen: Mme.
+nom4:
+  nomen_id: 4
+  nomen: Dr.
+nom5:
+  nomen_id: 5
+  nomen: Ms.
+nom6:
+  nomen_id: 6
+  nomen: Prof.
+nom7:
+  nomen_id: 7
+  nomen: Lady
+nom8:
+  nomen_id: 8
+  nomen: Sir
+nom9:
+  nomen_id: 9
+  nomen: Dame

@@ -1,0 +1,7 @@
+<%= @method.capitalize %> Request Notice
+
+User <%=@user_login%> (<%=@user_email%>) has requested the <%= @method %> of a <%=@type%> (ID: <%=@id%>) <%=@description%>
+
+http://<%=Setting.get_value(Setting::WEBSITE_URL)%>/<%=@type%>s/edit/<%=@id%>
+
+<%=@note%>

@@ -1,0 +1,136 @@
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => object.resource_title,
+			:subheading => object.format.format_desc.camelize+' - '+ object.resource_type.resource_type_desc,
+			:links => nil,
+			:text => nil,
+			:object => object #for the select this button
+}
+%>
+
+<% if !object.general_note.blank?%>
+<div class="section">
+<%=show_note(object.general_note)%>
+</div>
+<% end %>
+
+
+<% 
+publishers = []
+publishers = object.publishers + object.licensers
+
+if !(object.author_note.blank? and object.writers.blank? and object.publisher_note.blank? and !publishers.blank?)
+%>
+<div class="section">
+<table>
+<%=show_value_for_table_row_with_inline_contributors("Author", object.author_note, object.writers, @login)%>
+<%=show_value_for_table_row_with_inline_contributors("Publisher", object.publisher_note, publishers, @login)%>	
+</table>
+</div>
+<% end %>
+
+<div class="buy-hire">
+  <ul class="availability-details" id="buy_and_borrow">
+    <li class="price">
+        <% if !object.item_cost.blank? && object.item_cost > 0 %>
+          <%=number_to_currency(object.item_cost)  %>
+        <% end %>
+    </li>
+    <li>
+      <%=render :partial => 'shared/frbr/objects/full/resource/buy_button', :locals => {:object => object}%>
+      <%=render :partial => 'shared/frbr/objects/full/resource/borrow_button', :locals => {:object => object}%>
+      <%=render :partial => 'shared/frbr/objects/full/resource/hire_button', :locals => {:object => object}%>
+    </li>
+  </ul>
+</div>
+
+<%
+all_assoc_manifs    = object.all_associated_manifestations
+all_assoc_works     = object.all_associated_works
+all_assoc_resources = object.all_associated_resources
+all_assoc_roles     = object.all_associated_roles
+all_assoc_concepts  = object.all_associated_concepts
+
+if all_assoc_works.length > 0 || all_assoc_resources.length > 0 || all_assoc_roles.length > 0 || all_assoc_manifs.length > 0
+%>
+<div class="section">
+<h2>Featuring</h2>
+
+<%=render :partial => 'shared/frbr/objects/common/list_works_with_composers', :locals => {:object => object, :works => all_assoc_works, :title => ""}%>
+
+<%for manif in PrivilegesHelper.permitted_objects(@login, object.all_associated_manifestations)%>
+<%= icons_for(manif, @login)%><%= link_to manif.manifestation_title, :controller => :manifestations, :action => :show, :id => manif.id%>&nbsp;<%=show_tap_edit_link_for(manif, 'CAN_EDIT_TAP')%>
+<br/>
+<%end%>
+<% #describes, released_by, recorded_by associations with roles
+for role in all_assoc_roles%>
+<%= icons_for(role, @login) +"&nbsp;"+ContributorsHelper.get_link_depending_on_role_type(role, @login)+"&nbsp;"+show_tap_edit_link_for(role, 'CAN_EDIT_CONTRIBUTOR_PROFILE') %></li>
+<br/>
+<%end%>	
+
+<% #related_to associations with resources 
+for resource in all_assoc_resources%>
+<%= icons_for(resource, @login)%><%=link_to resource.resource_title, :action => 'show', :controller => 'resources', :id => resource%>&nbsp;<%=show_tap_edit_link_for(resource, 'CAN_EDIT_TAP')%>
+<br>
+<% end %>
+</div>
+<%end
+
+if all_assoc_concepts.length > 0
+%>
+<div class="section">
+<dl>
+<%=render :partial => 'shared/frbr/objects/common/dt_list_of_concepts',
+ :locals => {:object => object, :concepts => all_assoc_concepts, :name => "Influences"}%>
+</dl>
+</div>
+<%end%>
+
+<%= render :partial => 'shared/frbr/objects/common/awards', :locals => {:distinctions => object.distinctions}%>
+
+
+<% if !object.content_note.blank? || !object.dedication_note.blank?%>
+<div class="section">
+<table>
+<%=show_value_for_table_row("Content", convert_to_html(object.content_note), @login)%>
+<%=show_value_for_table_row_with_inline_contributors("Dedication", object.dedication_note, object.dedicatees, @login)%>
+</table>
+</div>
+<%end%>
+
+
+<% if !(object.funder.blank? and object.series_title.blank? and object.publication_year.blank? and object.collation.blank? and object.imprint.blank? and object.copyright.blank?)%>
+<div class="section">
+<table>
+<% if !object.funder.blank?%>
+<tr><th class="informationRowHeader">Funded by</th><td><%=show_value_for_table_row_with_inline_contributors('', '', object.funder, @login).gsub('&nbsp;', '')%></td></tr>
+<% end %>
+
+<%=show_value_for_table_row("Duration", h(object.duration_human_readable), @login)%>
+<%=show_value_for_table_row("Series Title", h(object.series_title), @login)%>
+<%=show_value_for_table_row("ISBN",  h(object.isbn), @login)%>
+<%=show_value_for_table_row("ISMN",  h(object.ismn), @login)%>
+<%=show_value_for_table_row("ISRC",  h(object.isrc), @login)%>
+<%=show_value_for_table_row("ISSN",  h(object.issn), @login)%>
+<%=show_value_for_table_row("Publication Year", h(object.publication_year), @login)%>
+<%=show_value_for_table_row("Imprint", h(object.imprint), @login)%>
+<%=show_value_for_table_row("Copyright", h(object.copyright), @login)%>
+<%=show_value_for_table_row("Collation", h(object.collation), @login)%>
+</table>
+</div>
+<% end %>
+
+<% if !object.sounzmedia.blank? && !object.is_embedded? %>
+	<%= render :partial => 'shared/public_pages/player', :locals => {:object => object }%>                                                        
+<% elsif object.is_embedded? %>
+	<%= object.sounzmedia %>	
+<% end %>
+	
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note, resource_code, mw_code, clonable, downloadable, freight_code, created_at, updated_at, updated_by, status"}%>
+
+
+<%=show_relationships_if_permission(object)%>
+<%=show_edit_links_if_permission(object)%>
+

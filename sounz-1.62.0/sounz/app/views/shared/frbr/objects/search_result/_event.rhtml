@@ -1,0 +1,34 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>"/>
+<%event = object%>
+
+<div class="search_item">
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP') %>
+  <div class="admin">
+    <ul>
+      <li><%=show_tap_edit_link_for(object, 'CAN_EDIT_EVENT')%></li>
+      <li><%= icons_for(object, @login)%></li>
+    </ul>
+  </div>
+<% end %>
+  <h3><%=link_to object.event_title+" (#{object.event_type.event_type_desc})", :action => 'show', :id => object, :controller => :events%><%=%></h3>
+
+  <% if event.event_type.event_type_id == 13 %>
+    <div class="date_in_list">Deadline: <%= EventsHelper.get_deadline(object) %></div>
+  <% end %>
+
+  <div class="date_in_list">
+    <%= eBY_date(object.event_start) %>
+    <%if !object.event_finish.blank?%> to <%=eBY_date(object.event_finish)%><%end%>	
+  </div>
+
+  <div class="summary">
+    <%=get_summary_for_text(object.general_note, SUMMARY_LENGTH)%>
+  </div>
+
+  <%if !event.parent.blank?%>
+    <p>Related Event: <%= link_to event.parent.event_title, :controller => :events, :action => :show, :id => event.parent %></p>
+  <%end%>
+
+  <%=AttachmentHelper.render_search_image(object, :thumb)%>
+
+</div>

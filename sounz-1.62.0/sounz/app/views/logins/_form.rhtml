@@ -1,0 +1,33 @@
+<%= error_messages_for 'login' %>
+
+<!--[form:login]-->
+<p><label for="login_login_agent_class">Login agent class</label><br>
+<%= text_field 'user_login', 'login_agent_class'  %></p>
+
+<p><label for="login_username">Username</label><br>
+<%= text_field 'user_login', 'username'  %></p>
+
+<p><label for="login_extra_password">Password</label><br>
+<% if params[:action] == 'edit' || params[:action] == 'update' %>
+<i>If you wish to change this user's password, enter it below</i></br/>
+<% end %>
+<%= password_field 'login_extra', 'password'  %></p>
+
+<p><label for="login_password_valid_until">Password valid until</label><br>
+<%= date_field_with_time_allowing_blank(@user_login.password_valid_until, 'user_login', 'password_valid_until') %></p>
+
+<p><label for="login_password_forever">Password forever</label><br>
+<%= select("user_login", "password_forever", [['False',false],['True',true]] , :selected => @user_login.password_forever) %></p>
+
+
+<p><label for="login_locked">Locked</label><br>
+<%= select("user_login", "locked", [['False',false],['True',true]] , :selected => @user_login.locked) %></p>
+
+
+<p><label for="login_enabled">Enabled</label><br>
+<%= select("user_login", "enabled", [['False',false],['True',true]] , :selected => @user_login.enabled) %></p>
+
+<p><label for="moneyworks_name">Moneyworks Name</label><br>
+<%= text_field 'user_login', 'moneyworks_name'  %></p>
+<!--[eoform:login]-->
+

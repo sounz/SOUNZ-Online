@@ -1,0 +1,17 @@
+<b>Assigned Additional Categories</b><p/>
+<hr>
+<%categories_found=0%>
+<%if @subcategories != nil%>
+	<%for subcategory in @subcategories%>
+		<%if subcategory.additional%>
+			<span class="actionButton"><%=link_to_remote('Remove',:update => 'additional_subcategories',:url=>{:action => 'removeSubcategory', :subcategory_id=>subcategory.id})%> </span><%=subcategory.work_subcategory_desc%><br>
+			<%categories_found=1%>
+		<%end%>
+	<%end%>
+<%end%>
+
+<%if categories_found==0%>
+No additional categories assigned
+<%end%>
+
+<hr>

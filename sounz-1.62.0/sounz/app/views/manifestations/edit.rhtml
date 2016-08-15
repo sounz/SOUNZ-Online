@@ -1,0 +1,52 @@
+<h2>Editing manifestation</h2>
+<%if PrivilegesHelper.has_permission?(get_user.id,'CAN_EDIT_TAP')%>
+<%=link_to_remote( image_tag("/images/icon_add.gif") + ' Add to wishlist',:update => "selectedResults",:url =>{ :controller => :finder,:action => :addToSelected, :type => 'manifestation', :object_id => @manifestation.frbr_id})%>
+<%end%><br>
+<a href="#exam_info">Exam Info</a>|
+<a href="#items">Items</a>|
+<a href="#attachments">Attachments</a>|
+<a href="#samples">Samples</a>|
+<a href="#relationships">Relationships</a>
+<%
+if @has_no_samples_or_attachments
+%>
+<p>
+Please note that this work has <%=@no_samples_or_attachments_message%>
+</p>
+<%end%>
+<div class="editForm">
+<% form_tag :action => 'update', :id => @manifestation do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+</div>
+	
+<%= render :partial => 'exam_set_works/exam_set_works_widget', :locals => { :manifestation => @manifestation } %>
+    
+
+<fieldset id="items">
+	<legend>Items for Manifestation: <%=@manifestation.manifestation_code %> (<%=@manifestation.manifestation_id%>)</legend>
+	<ul id="items_list">
+     <%= render :partial => 'items/item_edit_list', :locals => { :entity => @manifestation } %>
+    </ul>
+    <div id="new_item_form">
+     <%=render :partial => 'items/add_item_form_button', :locals => { :entity => @manifestation }%>
+    </div>
+</fieldset>
+
+<div class="formSection">
+	<%=render :partial => 'hard_association/show'%>
+</div>
+
+<%=render :partial => 'access_right/show', :locals => {:object => @manifestation}%>
+
+<%=render :partial => 'shared/attachments/attachment_form_link', :locals => {:object => @manifestation}%>
+<div id="samples">
+<%=render :partial => 'manifestation_samples', :locals => {:manifestation => @manifestation}%>
+</div>
+<%=render :partial => 'association/association', :locals => {:object => @manifestation}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @manifestation}%>
+</div>
+
+

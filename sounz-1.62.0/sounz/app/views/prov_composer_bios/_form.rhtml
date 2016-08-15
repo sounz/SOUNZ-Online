@@ -1,0 +1,99 @@
+
+  <p>
+    <b>Name</b><br>
+    <%= f.text_field :name, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Email Address (internal use only)</b><br>
+    <%= f.text_field :email, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Date of birth (optional)</b>&nbsp;<%= f.text_field :date_of_birth, :size => 4 %>
+  </p>
+
+
+
+  <p>
+    <b>Biography or Profile</b><br><span class="instruction">200-300 words</span><br>
+<b>I am replacing my current biography</b>&nbsp;<%= f.check_box :replacing_bio %><br>
+<b>I am replacing my current profile</b>&nbsp;<%= f.check_box :amending_bio %>
+<br>
+    <%= f.text_area :bio, :cols => standard_edit_cols, :rows => 3*standard_edit_rows %>
+  </p>
+
+  <p>
+    <b>Author or source of biography or profile</b><br>
+    <%= f.text_field :author_or_source, :size => standard_edit_cols %>
+  </p>
+
+  <p>
+    <b>Pull quote</b><br />
+<span class="instruction">You can provide a <b>short</b> attributed quote if you wish.</span><br />
+    <%= f.text_area :pull_quote, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+  <p>
+  If you wish to have a photograph displayed with your bio please email this to <a href="mailto:info@sounz.org.nz">info@sounz.org.nz</a>
+  </p>
+
+  <p>
+    <b>Website</b><br>
+    <%= f.text_field :website, :size => standard_edit_cols %>
+<br><span class="instruction">A link will be included to this site from your profile on SOUNZ online.</span>
+  </p>
+
+ 
+    <h2>Awards</h2>
+ <p><span class="instruction">Please note any awards you have received as a result of your musical activities.  Examples would be residencies, prizes or recognition for a body of work.</span><br>
+    <%= f.text_area :awards, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+
+
+<h2>Selected Works</h2>
+<div class='instruction'>Fully represented composers, please nominate up to <b>10 works</b>, which will appear on the site with your biography as your selected works.</div>
+<p>
+  <b>Please use my current list of selected works</b>&nbsp;<%= f.check_box :use_my_current_works %><br/>OR
+</p>
+
+<p>
+  <b>Please delete the following works from my current list of selected works</b><br>
+  <%= f.text_area :selected_works_to_delete, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+</p>
+
+
+  <p>
+    <b>Please add the following works to my list of selected works</b><br>
+    <%= f.text_area :selected_works_to_add, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>
+
+
+<h2>Publisher Information (for internal use)</h2>
+<div>Please note below any arrangements you have with publishers, which SOUNZ should be aware of when promoting your music.</div>
+
+ <%= f.text_area :publisher_info, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+
+<br/><h2>Other Information (for internal use)</h2>
+  <p>
+    <strong>For composers</strong> - I have already completed the composers agreement&nbsp;<%= f.check_box :pub_licence_already %>
+  </p>
+
+  <p>
+    <strong>For performers</strong> - I have provided SOUNZ with a list of previous performances of New Zealand music &nbsp;<%= f.check_box :pub_licence_forms_send %>
+  </p>
+
+  <p>
+    Are you a member of CANZ?&nbsp;<%= f.check_box :member_canz %>
+  </p>
+
+  <p>
+    Are you a member of APRA?&nbsp;<%= f.check_box :member_apra %>
+  </p>
+
+<h2>Other Contact Information</h2>
+  <p>
+    <span class="instruction">Please note any other contact details that may assist us to stay in touch with you and promote your music.</span><br>
+    <%= f.text_area :other_contact, :cols => standard_edit_cols, :rows => standard_edit_rows %>
+  </p>

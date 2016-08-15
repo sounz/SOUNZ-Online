@@ -1,0 +1,11 @@
+#Delete the child object added and insert it into the master list
+if @succesful_addition
+page.visual_effect :highlight, @dom_id
+page.visual_effect :fade, @dom_id
+page.visual_effect :fold, @dom_id
+page.insert_html :bottom, @parent_dom_id, :partial => 'associated_frbr_object', 
+                  :locals => {:frbr_child => @child_model, :source_id => @source_id}
+page.visual_effect :highlight, @new_child_dom_id
+else
+  page << @alert
+end

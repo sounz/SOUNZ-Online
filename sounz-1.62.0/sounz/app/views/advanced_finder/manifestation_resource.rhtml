@@ -1,0 +1,314 @@
+<%=main_tabs(selected = :works)%>
+<h2>Manifestation/Resource Advanced Search</h2>
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_manifestation_resource}, {:class => 'public_button'} %>
+<% form_for(:search_details, :url => {:action => :search_manifestations_resources}, :html => { :method => :post, 
+	:id => 'advancedManifestationResourceSearchForm' }) do |f| %>
+
+<table class="advancedSearchForm">
+	<tr>
+	<th>Search:</th>
+	<th colspan="2">
+	Manifestations &nbsp;&nbsp;<%= radio_button(:search_details, :entity_to_search, "manifestation") %>&nbsp;&nbsp;&nbsp;&nbsp;
+	Resources &nbsp;&nbsp;<%= radio_button(:search_details, :entity_to_search, "resource")%>&nbsp;&nbsp;&nbsp;&nbsp;
+	Both &nbsp;&nbsp;<%= radio_button(:search_details, :entity_to_search, "both")%>
+	</th>
+	</tr>
+
+	<tr>
+		<td>Work Title</td>
+		<td><%= f.text_field :work_title, :size => standard_edit_cols,
+		:disabled => true
+		
+		 %></td>
+		<td><%= f.check_box  :work_title_not , :disabled => true%><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Title</td>
+		<td><%= f.text_field :title, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :title_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Author Note</td>
+		<td><%= f.text_field :author_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :author_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Series Title</td>
+		<td><%= f.text_field :series_title, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :series_title_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+
+
+	<tr>
+		<td>Year of Publication</td>
+		<td><%= f.text_field :publication_year, :size => 4, :class => 'text' %></td>
+		<td><%= f.check_box  :publication_year_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>	
+	<tr>
+		<td>ISBN</td>
+		<td><%= f.text_field :isbn, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :isbn_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>ISMN</td>
+		<td><%= f.text_field :ismn, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :ismn_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>ISRC</td>
+		<td><%= f.text_field :isrc, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :isrc_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Imprint</td>
+		<td><%= f.text_field :imprint, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :imprint_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Publisher Note</td>
+		<td><%= f.text_field :publisher_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :publisher_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Dedication Note</td>
+		<td><%= f.text_field :dedication_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :dedication_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>General Note</td>
+		<td><%= f.text_field :general_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :general_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Internal Note</td>
+		<td><%= f.text_field :internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :internal_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>MW Code</td>
+		<td><%= f.text_field :mw_code, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :mw_code_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Catalogue Code / Resource Code</td>
+		<td><%= f.text_field :code, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :code_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Freight Code</td>
+		<td><%= f.text_field :freight_code, :size => 4, :class => 'text' %></td>
+		<td><%= f.check_box  :freight_code_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+                <td>Created at</td>
+                <td>
+	          <table>
+	            <tr>
+	              <td><strong>From</strong> <%= date_field(:search_details, :created_at_from, :size => 10, :class => 'text') %>&nbsp;</td>
+	              <td><strong>To</strong> <%= date_field(:search_details, :created_at_to, :size => 10, :class => 'text') %>&nbsp;</td>
+	            </tr>
+	          </table>
+                </td>
+	</tr>
+
+	
+	<tr>
+	<th colspan="3">Manifestations</th>	
+	</tr>
+	
+	<tr>
+		<td>Manifestation Type</td>			
+			<td><%= select("search_details", "manifestation_type_id", 
+					ManifestationType.find(:all, :order => 'manifestation_type_id').to_dropdown(:manifestation_type_desc),
+					:selected=>@search_details.manifestation_type_id.to_i,
+					:include_blank => "-- All manifestation types --") %>
+		    </td>
+			
+		<td><%= f.check_box  :manifestation_type_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+<%=observe_field("search_details_manifestation_type_id", :update => :manifestation_type_formats,
+	                                                     :url => {:action => 'type_formats'}, 
+	:with => "'manifestation_type_id='+escape($('search_details_manifestation_type_id').value) + '&type_format_id=manifestation_type_format_id'")%>
+			
+	<tr>
+		<td>Manifestation Format</td>
+		<td>
+		<span id="manifestation_type_formats">
+		<% manifestation_type_id = nil
+		   manifestation_type_id = generate_id(ManifestationType.find(@search_details.manifestation_type_id)) unless @search_details.manifestation_type_id.blank?
+		%>
+		
+		<%= render :partial => 'type_formats', :locals => { :object_type_id => manifestation_type_id, :object_type_format_id => @search_details.manifestation_type_format_id.to_i, :type_format_id_s => 'manifestation_type_format_id'}%>
+		</span>
+		</td>
+		
+		
+		<td><%= f.check_box  :manifestation_type_format_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+<!--	       :manifestation_type_id, :manifestation_type_format_id, 
+      :resource_type_id, :resource_type_format_id, -->
+
+	<tr>
+	<th colspan="3">Resources</th>	
+	</tr>
+	
+	<tr>
+		<td>Resource Type</td>
+		<td><%= select("search_details", "resource_type_id", 
+				@resource_types.to_dropdown(:resource_type_desc),
+				:selected=>@search_details.resource_type_id.to_i,
+				:include_blank => "-- All resource types --") %>
+		</td>
+		<td><%= f.check_box  :resource_type_id_not %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Resource Format</td>		
+		<td><span id="resource_type_formats">
+		<% resource_type_id = nil
+		   resource_type_id = generate_id(ResourceType.find(@search_details.resource_type_id.to_i)) unless @search_details.resource_type_id.blank?
+		%>
+		
+		<%= render :partial => 'type_formats', :locals => { :object_type_id => resource_type_id, :object_type_format_id => @search_details.resource_type_format_id.to_i, :type_format_id_s => 'resource_type_format_id'}%>
+		</span></td>
+		
+		<td><%= f.check_box  :resource_type_format_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<%=observe_field(:search_details_resource_type_id, :update => :resource_type_formats,
+	                                                     :url => {:action => 'type_formats'}, 
+	:with => "'resource_type_id='+escape($('search_details_resource_type_id').value) + '&type_format_id=resource_type_format_id'")%>
+	
+	<tr>
+	<th colspan="3">Work Categories</th>	
+	</tr>
+	
+	<tr>
+		<td>Category</td>
+		<td><%= select("search_details", "work_category_id", @categories.to_dropdown(:work_category_desc),
+		options = {:prompt => "-- All work categories --"},
+		html_options = {:disabled => 'true'}	
+		) %></td>
+		<td><%= f.check_box  :work_category_id_not, :disabled => true %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Assigned Category</td>
+		<td><%= select("search_details", "work_subcategory_id", @sub_categories.to_dropdown(:work_subcategory_desc), 
+		options = {:prompt => "-- All work subcategories --"},
+		html_options = { :disabled => 'true'}
+		) %></td>
+		<td><%= f.check_box  :work_subcategory_id_not, :disabled => true %><strong>Not</strong></td>
+	</tr>
+
+	<tr>
+		<td>Additional Subcategory</td>
+		<td><%=select("search_details", "work_subcategory_id", @additional_subcategories.to_dropdown(:work_subcategory_desc),
+		options = {:prompt => "-- All additional subcategories --"},
+		html_options = { :disabled => 'true'}
+		)%></td>
+		<td><%= f.check_box  :work_subcategory_id_not, :disabled => true %><strong>Not</strong></td>
+	</tr>
+	
+
+	
+	<tr>
+	<th colspan="3">Flags</th>	
+	</tr>
+	
+
+	<tr>
+		<td>Item Exists</td>
+		<td><%= select("search_details", "item_exists", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td><!--<%=# f.check_box  :item_exists_not, :class => 'checkbox' 
+		%><strong>Not</strong>--></td>
+	</tr>
+	
+	<tr>
+	  <td>Item Type</td>
+	  <td><%= select("search_details", "item_type_id", ItemType.find(:all).to_dropdown(:item_type_desc),
+			:include_blank => "-- No item type selected--", :selected => @search_details.item_type_id.to_i) %>
+	  </td>
+	  <td><%= f.check_box  :item_type_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Available for Loan</td>
+		<td><%= select("search_details", "available_for_loan", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td><!--<%=# f.check_box  :available_for_loan_not, :class => 'checkbox' 
+		%><strong>Not</strong>--></td>
+	</tr>
+
+	<tr>
+		<td>Available for Sale</td>
+		<td><%= select("search_details", "available_for_sale", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td><!--<%=# f.check_box  :available_for_sale_not, :class => 'checkbox' 
+		%><strong>Not</strong>--></td>
+	</tr>
+	
+	<tr>
+		<td>Available for Hire</td>
+		<td><%= select("search_details", "available_for_hire", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td><!--<%=# f.check_box  :available_for_hire_not, :class => 'checkbox' 
+		%><strong>Not</strong>--></td>
+	</tr>
+	
+	<tr>
+		<td>Cloneable</td>
+		<td><%= select("search_details", "cloneable", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td><!--<%=# f.check_box  :cloneable_not, :class => 'checkbox' 
+		%><strong>Not</strong>--></td>
+	</tr>
+	
+	<tr>
+		<td>Downloadable</td>
+		<td><%= select("search_details", "downloadable", DropDown.true_false_dont_care.to_dropdown, :prompt => "-- Does not matter --") %>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th colspan="3">Status</th>
+	</tr>
+	
+	<tr>
+		<td>Status</td><td><%= select("search_details", "status_id", @statuses.to_dropdown, :selected => @search_details.status_id.to_i, :include_blank => "-- All Statuses --") %></td>
+		<td><%= f.check_box  :status_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+	</table>
+	<br>
+	<table width="100%">
+	<tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_manifestation_resource}, {:class => 'public_button'} %></td>
+     <td align="right"><input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+    </tr>
+   
+  </table>
+<% end %>
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('resource_type_formats', '/advanced_finder/type_formats', {asynchronous:true, evalScripts:true, parameters:'resource_type_id='+escape($('search_details_resource_type_id').value) + '&type_format_id=resource_type_format_id' + '&selected_type_format='+escape($('search_details_resource_type_format_id').value) }) });</script>
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('manifestation_type_formats', '/advanced_finder/type_formats', {asynchronous:true, evalScripts:true, parameters:'manifestation_type_id='+escape($('search_details_manifestation_type_id').value) + '&type_format_id=manifestation_type_format_id' + '&selected_type_format='+escape($('search_details_manifestation_type_format_id').value) })});</script>

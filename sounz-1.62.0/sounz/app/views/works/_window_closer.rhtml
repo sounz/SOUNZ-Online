@@ -1,0 +1,6 @@
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'utilities' %>
+<script>
+new Ajax.Updater(window.top.document.getElementById('assignedSuperwork'), '/works/assignSuperworkFromPopup', {asynchronous:false, evalScripts:true, parameters:{type: 'Superwork',object_id: '<%=superwork_id%>'}} );
+window.top.hidePopWin(true);
+</script>

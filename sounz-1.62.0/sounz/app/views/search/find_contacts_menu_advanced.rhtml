@@ -1,0 +1,31 @@
+<h1>Find Person or Organisation</h1> 
+
+<%= form_remote_tag :url => {:action => :find_contacts_advanced }, :update => 'search_results',:id => "contact_search_form" %>
+
+
+<table>
+	<tr><td>Name</td><td><%= text_field :search, :person%></td></tr>
+	<tr><td>Organisation</td><td><%= text_field :search, :organisation %></td></tr>
+	<tr><td>Category</td><td><%=render :partial => 'shared/category_multiple_select_form'%></td></tr>
+	<tr><td>Role</td><td><%= collection_select_multiple("search", "role_id" , @role_types, "id", "role_type_desc", 10) %></td></tr>
+	<tr><td>Country</td><td><%= select('search', "country_id", Country.to_dropdown(:text => 'country_name'), :prompt => "All Countries" ) %></td></tr>
+	<tr><td>Region</td><td id="regionSelector">All countries and regions will be searched for</td></tr>
+	<tr><td>Valid Email</td><td> <%= check_box "search", "valid_email" %></td></tr>
+	<tr><td>Modified Since</td><td><%= date_field(:search, :modified_since, :value => @proposed_finish_date, :size => 15) %></td></tr>
+	<tr><td>Valid Keywords</td><td><%= text_field :search, :keywords%></td></tr>
+</table>
+
+<div align="right"><%= submit_tag "Find"%></div>
+</form>
+
+<%=  observe_field("search_country_id", :update =>"regionSelector",:url => {:action => "countryChosen"}, :with => "'id='+value") %>
+  
+<div id="search_results">Results will appear here</div>
+  
+<h1>Selected Results</h1>
+<div id="selected_results">Selected result will appear here
+<%= render :partial => 'selected_contacts' %>
+</div>
+
+<%=render :partial => '/shared/tabs/crm_searches_tabs', :locals => {:selected_tab => :advanced_search}%>
+ 

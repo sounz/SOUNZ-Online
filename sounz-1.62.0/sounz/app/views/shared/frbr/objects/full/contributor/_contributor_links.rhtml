@@ -1,0 +1,17 @@
+<ul>
+<%
+#pass in an array of frbr_methods and the contributor as a var of name object, e.g. frbr_methods = ["compositions", "writings", "arrangements", "commissioned_works", "creations", "improvised_works"] using locals
+for frbr_method in frbr_methods
+number_of_items = object.role.send('number_of_'+frbr_method)
+if number_of_items > 0
+
+	page_title = FrbrHelper.get_page_title_for_method(frbr_method)
+%>
+<li><%=link_to "#{page_title} (#{number_of_items}",
+send("contributor_#{page_title.tableize.gsub(' ','_')}_url", :id => object)
+%>)</li>
+<%
+end
+end
+%>
+</ul>

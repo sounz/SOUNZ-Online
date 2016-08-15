@@ -1,0 +1,111 @@
+<%= error_messages_for 'expression' %>
+<%= error_messages_for 'work' %>
+
+<fieldset>
+<legend>Parent Work</legend>
+<%if @show_works_widget%>
+Find works: <input id="searchWorkText" name="searchWorkText" type="text" size="30">
+<%=observe_field(:searchWorkText, :frequency => 0.25, :update => :workList,:url => {:action => :findWorks}, :with => "'query='+value")%>
+<div id="workList" name="workList"></div>
+
+Assigned Work: <span id="assignedWork" name="assignedWork"><%=render :partial => 'work', :locals=> {:object=> @assignedWork}%></span>
+<%else%>
+Assigned Work:<span id="assignedWork" name="assignedWork"><%=render :partial => 'work', :locals=> {:object=> @assignedWork}%></span>
+<%end%>
+</fieldset>
+
+
+
+<fieldset>
+<legend>Main Details</legend>
+<p><label for="expression_expression_title">Expression title</label><br>
+<%= text_field 'expression', 'expression_title', :size => standard_edit_cols  %></p>
+<p>Mode:
+<%=select("expression", "mode_id", @modes.to_dropdown, options = {},
+html_options = {:onchange => "new Ajax.Request('/expressions/mode_changed', {asynchronous:true, evalScripts:true, parameters:'expression_mode_id='+value})"})%>
+</p>
+
+<p><label for="expression_edition">Edition</label>
+<%= select('expression', 'edition', Expression.editions)  %>
+</p>
+
+</fieldset>
+
+
+
+
+
+<!--[form:expression]-->
+
+<fieldset>
+<legend>Dates</legend>
+<div id="datesWidget">
+<%= render :partial => 'dates_widget_with_buttons'%>
+</div>
+</fieldset>
+
+
+<fieldset>
+	<legend>Other Details</legend>
+	
+<p><label for="expression_duration">Duration</label><br>
+<%=render :partial => 'duration_as_interval/duration_form', :locals => {:prefix => 'expr_dur', :interval_duration => @interval_duration, :object_name => 'expression', :field_name => 'duration', :optional => true}%>
+</p>
+
+<p><label for="expression_partial_expression">Partial expression</label><br>
+<%=check_box 'expression', 'partial_expression'%></p>
+
+
+<%=observe_field(:expression_partial_expression, :frequency => 0.1,:url => {:action => :partial_expression_status_changed}, 
+:with => "status")%>
+<div id="partial_text_note_area">
+<%#create the initial state%>
+<%
+@partial_status = @expression.partial_expression.to_s.downcase
+%>
+
+<%
+if @expression.partial_expression == true%>
+<%=render :partial => 'partial_text_area'%>
+<%end%>
+</div>
+
+
+
+<p><label for="expression_players_count">Players Count</label><br>
+<%= text_field 'expression', 'players_count', :size => 3  %></p>
+</fieldset>
+
+<% if params[:action] == 'edit' || params[:action] == 'update' %>
+<fieldset>
+	<legend>Languages</legend>
+
+<div id="expression_languages">
+<%= render :partial => 'languages_form', :locals => { :expression => @expression }%>
+</div>
+
+</fieldset>
+<% end %>
+
+<fieldset>
+	<legend>Notes</legend>
+
+<p><label for="expression_use_restriction_note">Performance Restriction note</label><br>
+<%= select 'expression', 'use_restriction_note', DropDown.expression_availabilities.to_dropdown %></p>
+
+
+<p><label for="expression_general_note">Performance or General note</label><br>
+<%= text_area 'expression', 'general_note', :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+<p><label for="expression_internal_note">Internal note</label><br>
+<%= text_area 'expression', 'internal_note' , :rows => standard_edit_rows, :cols => standard_edit_cols %></p>
+</fieldset>
+
+
+<fieldset>
+	<legend>Status</legend>
+<p>Status:<%= select("expression", "status_id", @statuses.to_dropdown) %></p>
+</fieldset>
+
+<!--[eoform:expression]-->
+

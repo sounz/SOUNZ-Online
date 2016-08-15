@@ -1,0 +1,20 @@
+<%	child_model_id = generate_id(frbr_child)
+confirm_message = 'Are you sure you wish to '+@removal_mode.downcase+' '+frbr_child.frbr_ui_desc+'?'
+if @removal_mode == "Delete"
+	if frbr_child.class == Expression
+		confirm_message = confirm_message + 
+		FrbrDeletionHelper.convert_count_hash_for_popup(FrbrDeletionHelper.objects_to_delete_for_expression(frbr_child))
+	elsif frbr_child.class == Manifestation
+		confirm_message = confirm_message + FrbrDeletionHelper.convert_count_hash_for_popup(FrbrDeletionHelper.objects_to_delete_for_manifestation(frbr_child))
+	end
+end
+
+%>
+<li id="attached_<%=child_model_id%>">
+<span class="actionButton"><%= link_to_remote @removal_mode, :confirm => confirm_message, :url => {:controller => :hard_association, :action => :detach_child, :id => child_model_id, :source_id => source_id},
+:before => "Element.show('spinner')",
+:complete => "Element.hide('spinner')"
+%></span>
+		<%=frbr_child.frbr_ui_desc%>
+	
+</li>

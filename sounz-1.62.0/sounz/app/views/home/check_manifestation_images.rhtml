@@ -1,0 +1,24 @@
+<h1>Manifestation Images</h1>
+<%for manifestation_id in @manifestation_ids
+manifestation = Manifestation.find(manifestation_id)
+%>
+<hr>
+<h2><%=manifestation.manifestation_title%></h2>
+	<%@random_manifestation = manifestation%>
+	<%= render :partial => 'shared/attachments/show_list', :locals => {:media_items => manifestation.media_items}%>
+<h3>Cropped as for home page</h3>
+	<%
+	for ca in @random_manifestation.manifestation_attachments
+		if ca.attachment_type_id ==  AttachmentType::MAIN_IMAGE.attachment_type_id
+			begin
+				image_path = get_random_spotlight_image(ca.media_item)
+			rescue
+				image_path = "ERROR"
+			end
+		end
+	end
+	-%>
+	<%=image_tag(image_path)%>
+		
+<%
+end%>

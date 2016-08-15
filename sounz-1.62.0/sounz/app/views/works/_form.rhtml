@@ -1,0 +1,117 @@
+<%= error_messages_for 'work' %>
+
+
+
+<div class="formSection">
+<!--[form:work]-->
+<p><label for="work_work_title">Work title</label><br>
+<%= text_field 'work', 'work_title', :size => standard_edit_cols, :onchange => "populate_superwork_search('tweak')" %></p>
+
+<p><label for="work_work_description">Work description</label><br>
+<%= text_area 'work', 'work_description', :cols => standard_edit_cols, :rows => 2  %></p>
+
+<p><label for="work_instrumentation">Instrumentation</label><br>
+<%= text_area 'work', 'instrumentation', :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+</div>
+
+<div class="formSection">
+<h1>Superworks</h1>
+Assigned Superwork:<span id="assignedSuperwork"><%=render :partial => '/works/superwork', :locals=> {:object=> @assignedSuperwork}%></span>
+
+<div class="instruction">The following superworks were found by searching for the title of the work you entered. If you require to search for another enter the alternative name below</div>
+
+<%= text_field 'search', 'superwork_titles', :size => standard_edit_cols %>
+
+<%=observe_field(:search_superwork_titles, :frequency => 0.25, :update => :superworkList,:url => {:action => :findSuperworks, :controller => :works},  :before => "Element.show('spinner')", :complete => "Element.hide('spinner')", :with => "'query='+value")%>
+
+<%=observe_field(:work_work_title, :frequency => 0.25, :update => :superworkList,:url => {:action => :findSuperworks, :controller => :works},  :before => "Element.show('spinner')", :complete => "Element.hide('spinner')", :with => "'query='+value")%>
+
+<%=render :partial => 'shared/spinner'%>
+<div id="superworkList"></div>
+
+<div class="instruction">Alternatively one can create a brand new superwork to assign to this work.</div>
+<span class="actionButton"><%= link_to_new 'Add a new Superwork', 600,400,:action => 'addSuperwork' ,:controller => :works, :id => @work %></span>
+</div>
+
+<div class="formSection">
+<%=render :partial=> '/works/work_categorizations', :locals =>{:work => @work}%>
+</div>
+
+<div class="formSection">
+
+
+<p><label for="work_duration">Duration</label><br>
+<%=render :partial => 'duration_as_interval/duration_form', :locals => {:prefix => 'work_dur', :interval_duration => @interval_duration, :object_name => 'work', :field_name => 'intended_duration', :optional => true}%></p>
+
+
+
+<p><label for="work_duration_varies">Variable Duration</label>
+  <%= check_box "work", "duration_varies" %>
+</p>
+
+</div>
+<div class="formSection">
+<h1>Difficulty</h1>
+
+
+<table>
+	<tr>
+		<td><label for="work_difficulty">Difficulty</label></td>
+		<td><%= select("work", "difficulty", DropDown.work_difficulties.to_dropdown) %></td>
+	</tr>
+	<tr>
+		<td><label for="work_difficulty_note">Difficulty note</label></td>
+		<td><%= text_area 'work', 'difficulty_note', :rows => standard_edit_rows, :cols => standard_edit_cols %></td>
+	</tr>
+
+</table>
+</div>
+
+
+
+<div class="formSection">
+<h1>Year</h1>
+<table>
+	<tr>
+		<td><label for="work_year_of_creation">Year of creation</label></td>
+		<td><%= text_field 'work', 'year_of_creation', :size => 4 %></td>
+		<td><label for="work_year_of_revision">&nbsp;Year of revision</label></td>
+		<td><%= text_field 'work', 'year_of_revision', :size => 4  %></td>
+	</tr>
+</table>
+</div>
+
+
+
+<div class="formSection">
+<h1>ISWC Code</h1>
+<p><label for="work_iswc_code">ISWC code</label><br>
+<%= text_field 'work', 'iswc_code'  %></p>
+</div>
+
+<div class="formSection">
+<h1>Other Notes</h1>
+
+<p><label for="work_programme_note">Programme Note</label><br>
+<%= text_area 'work', 'programme_note' , :cols => standard_edit_cols, :rows => 3*standard_edit_rows %></p>
+
+<p><label for="work_contents_note">Contents note</label><br>
+<%= text_area 'work', 'contents_note' , :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+<p><label for="work_commissioned_note">Commissioned note</label><br>
+<%= text_area 'work', 'commissioned_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+<p><label for="work_dedication_note">Dedication note</label><br>
+<%= text_area 'work', 'dedication_note', :cols => standard_edit_cols, :rows => 2  %></p>
+
+<p><label for="work_text_note">Text note</label><br>
+<%= text_area 'work', 'text_note', :cols => standard_edit_cols, :rows => standard_edit_rows %></p>
+
+<p><label for="work_internal_note">Internal note</label><br>
+<%= text_area 'work', 'internal_note', :cols => standard_edit_cols, :rows => standard_edit_rows  %></p>
+
+</div>
+<p>Status:<%= select("work", "status_id", @statuses.to_dropdown) %></p>
+
+<!--[eoform:work]-->
+</div>

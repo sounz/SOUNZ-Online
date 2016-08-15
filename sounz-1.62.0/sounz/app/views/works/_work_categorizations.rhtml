@@ -1,0 +1,58 @@
+
+<h1>Categories</h1>
+<div class="instruction">
+Works must be assigned a primary category (for physical cataloguing purposes), and optionally a number of secondary, or additional categories.
+Use the drop down lists and '<i>+&nbsp;Assign&nbsp;to&nbsp;this&nbsp;category</i>' links to categorise the work.
+<p/>
+The '-' links alongside assigned additional categories can be used to remove a categorisation. 
+<p/>To change the primary category, simply select a new one from the dropdowns and click the '<i>+&nbsp;Assign&nbsp;to&nbsp;this&nbsp;category</i>' link.
+</div>
+
+
+<table>
+	<tr>
+		<td valign="top"><div id="subcategories"><%=render :partial => '/works/subcategories'%></div></td>
+		<td valign="top"><div id="additional_subcategories"><%=render :partial => '/works/additional_subcategories'%></div></td>
+	</tr>
+	<tr><th><!--Category--></th><th><!--Additional Categories--></th></tr>
+	<tr>
+		<td class="instruction"><!--Select Category--></td>
+		<td  class="instruction"><!--Select Additional Categories--></td>
+	</tr>
+	<tr>
+		<td><select id="work_category" name="work_category" style="width: 300px">
+		<option value="0">Select a category</option>
+		<%= options_from_collection_for_select @work_categories, "work_category_id", "work_category_desc"%>
+		</select>
+		<%=observe_field(:work_category, :frequency => 0.5, :update => :work_subcategory_id,:url => {:action => :findSubcategories,:controller => 'works'}, :with => "'category='+value")%>
+		</td>
+		
+		
+		<td><select id="work_additional_subcategory_id" name="work_subcategory_id">
+		<option value="0">Select an additional category</option>
+		<%= options_from_collection_for_select @work_additional_subcategories, "work_subcategory_id", "work_subcategory_desc"%>
+		</select><br>
+		</td>
+	</tr>
+	<tr>
+		<td><select id="work_subcategory_id" name="work_subcategory_id">
+		<option value='0'>Select a category in the box above</option>
+		</select><br><br>
+	
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+			<td><span class="actionButton">	<%=link_to_remote 'Assign to this Category', :confirm => 'Are you sure you want to assign this category?',:update => 'subcategories', :url=> {:id=>@work.id,:action => 'assignSubcategory',:controller => 'works',:address => ''},:with => "'subcategory_id='+encodeURIComponent($F('work_subcategory_id'))",:method => :get%></span>
+			</td>
+			<td>
+				<span class="actionButton"><%=link_to_remote 'Add this Category', :update => 'additional_subcategories', :url=> {:id=>@work.id,:action => 'assignSubcategory',:controller => 'works', :address => ''},:with => "'additional=1&subcategory_id='+encodeURIComponent($F('work_additional_subcategory_id'))",:method => :get%>
+			</span></td>
+		</tr>
+		
+	
+</table>
+
+
+<script type="text/javascript">addLoadEvent(function() {new Ajax.Updater('work_subcategory_id', '/works/findSubcategories', {asynchronous:true, evalScripts:true, parameters:'category='+encodeURIComponent($F('work_category'))} ) });</script>

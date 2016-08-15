@@ -1,0 +1,28 @@
+<%if object != nil
+unique_relationships = object.relationships.uniq.sort_by{|r|r.relationship_type.relationship_type_desc}	
+if unique_relationships.length > 0
+%>
+<div class="related_items">
+<h2>Related items</h2>
+<%end%>
+
+
+<%for rel in unique_relationships%>
+    <%reltype=RelationshipType.find(rel.relationship_type_id)%>
+    <%my_entity=EntityType.entityIdToType(rel.ent_entity_type_id)%>
+    <%if EntityType.entityIdToType(rel.ent_entity_type_id) == object.frbr_type then my_entity=EntityType.entityIdToType(rel.entity_type_id) end%>
+    <%related_objects=eval('rel.'+my_entity+'s')%>
+    <%for related_object in related_objects%>
+        <%if rel.entity_type_id == rel.ent_entity_type_id then%>
+        <%if related_object.id != object.id then%>
+            <b><%=reltype.relationship_type_desc%></b> <%=my_entity%> <%=render :partial => '/shared/frbr/objects/terse/'+related_object.frbr_type, :locals =>{:object => related_object}%>
+        <%end%>
+      <%else%>
+      <b><%=reltype.relationship_type_desc%></b> <%=my_entity%> <%=render :partial => '/shared/frbr/objects/terse/'+related_object.frbr_type, :locals =>{:object => related_object}%>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+<%else%>
+<p>ERROR - object was nil for relationship rendering</p>
+<%end%>

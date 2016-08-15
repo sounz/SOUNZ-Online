@@ -1,0 +1,27 @@
+examboard_1:
+  examboard_id: 1
+  examboard_name: NZMEB
+
+examboard_2:
+  examboard_id: 2
+  examboard_name: Trinity Guildhall
+
+examboard_3:
+  examboard_id: 3
+  examboard_name: ABRSM
+
+examboard_4:
+  examboard_id: 4
+  examboard_name: St Cecilia Examinations 
+
+examboard_5:
+  examboard_id: 5
+  examboard_name: Modern School of Music
+
+examboard_6:
+  examboard_id: 6
+  examboard_name: National Flute Association
+  
+examboard_7:
+  examboard_id: 7
+  examboard_name: AMEB

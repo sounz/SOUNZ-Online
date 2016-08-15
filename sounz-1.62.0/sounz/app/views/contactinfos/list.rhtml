@@ -1,0 +1,24 @@
+<h1>Listing contactinfos</h1>
+
+<table>
+  <tr>
+  <% for column in Contactinfo.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for contactinfo in @contactinfos %>
+  <tr>
+  <% for column in Contactinfo.content_columns %>
+    <td><%=h contactinfo.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => contactinfo %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => contactinfo %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => contactinfo }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @contactinfos %>
+
+<%= link_to 'New contactinfo', :action => 'new' %>

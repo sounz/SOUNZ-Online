@@ -1,0 +1,36 @@
+<% for column in Person.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @person.send(column.name) %>
+</p>
+<% end %>
+
+<h1>Marketing Categorization</h1>
+<%= render :partial => 'person_categorisation_list' %>
+
+<h1>Roles & Associated Organisations</h1>
+
+<% form_tag :action => 'person_roles', :id => @person do%>
+
+<%for role in @person.roles%>
+<strong><%=role.to_string%></strong>
+ 
+<br>
+<%end%>
+<% end %>
+
+<h1>Communications</h1>
+<p align="right"><%= link_to 'Add Communication', :action => 'add_communication', :id => @person %></p>
+<% if @communications.length > 0 %>
+<ul>
+  <% for communication in @communications %>
+  <li><%= link_to communication.communication_subject,
+            :action => 'update_communication',
+            :id     => communication.communication_id %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>No communications with this person</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @person %> |
+<%= link_to 'Back', :action => 'list' %>

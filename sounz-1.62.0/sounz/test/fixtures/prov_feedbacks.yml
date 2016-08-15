@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  visit_daily: false
+  visit_weekly: false
+  visit_monthly: false
+  visit_as_needed: false
+  use_educator: false
+  use_student: false
+  use_performer: false
+  use_composer: false
+  use_conductor: false
+  use_arts_mgr: false
+  use_customer: false
+  use_member: false
+  use_retailer: false
+  use_other: false
+  find_what: false
+  how_improve_website: MyText
+  how_improve_services: MyText
+  how_improve_resources: MyText
+  comments: MyText
+  respond_contact: MyText
+two:
+  id: 2
+  visit_daily: false
+  visit_weekly: false
+  visit_monthly: false
+  visit_as_needed: false
+  use_educator: false
+  use_student: false
+  use_performer: false
+  use_composer: false
+  use_conductor: false
+  use_arts_mgr: false
+  use_customer: false
+  use_member: false
+  use_retailer: false
+  use_other: false
+  find_what: false
+  how_improve_website: MyText
+  how_improve_services: MyText
+  how_improve_resources: MyText
+  comments: MyText
+  respond_contact: MyText

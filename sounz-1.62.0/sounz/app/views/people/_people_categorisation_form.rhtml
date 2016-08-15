@@ -1,0 +1,32 @@
+<div id="person_categorsation_form">
+<%= error_messages_for 'people_categorization' %>
+
+<!--[form:people_categorization]-->
+
+<div id="new_categorisation_link" align="right">
+ <span id="new_category_link">
+ <%=render :partial => 'new_categorisation_popup_link', :locals => {:contextual_category_id => '0', :contextual_text => ''}   %>  </id>                         
+</div>
+
+
+<div id="person_categorisation_list" class="formelemformat">
+<%= render :partial => 'person_categorisation_list' %>
+</div>
+
+<div class="formelemformat"><%= collection_select(:marketing_category, :id, 
+                          MarketingCategory.find(:all, :order => :abbreviation), :id, :abbreviation,:prompt => "-- Select a category --") %></div>
+<%=observe_field("marketing_category_id", :url => {:action => :marketing_category_change},:with => "'id='+value")%>
+
+<div class="formelemformat">
+<div id="subcategory">
+<%if @marketing_subcategory%>
+<%=render :partial => 'people_subcategory_dropdown' %>
+<%else%>
+<i>Subcategories will appear here</i>
+<%end%>
+
+</div>
+</div>
+</div>
+
+

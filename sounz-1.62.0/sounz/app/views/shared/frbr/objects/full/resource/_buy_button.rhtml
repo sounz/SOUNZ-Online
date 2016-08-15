@@ -1,0 +1,13 @@
+<% if ZENCART_ENABLED && object.available_for_sale %>
+  <% if (object.downloadable && (!get_user.blank? && (get_user.has_membership?('Online Member') || get_user.has_membership?('Superuser')))) || !object.downloadable %>
+    <% form_remote_tag :update => "shopping_cart", :url => {:controller => :cart, :action => :add_product_to_cart, :type => 'resource', :method => 'sale', :id => object.id}, :loading => "alert('"+escape_javascript(object.frbr_ui_desc)+" added to cart')" do %>
+      <ul class="buy">
+        <li><span class="textfield_count_lable">Quantity:</span></li>
+        <li><input id="count" name="count" type="text" value="1" size="1" class="textfield_count"></li>
+        <li><%= submit_tag ((object.item_cost == 0.0) ? "Free" : "Buy"), :class => "public_button submit" %></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <div class="submit-disabled">Only online members can purchase downloads</div>
+  <% end %>
+<% end %>

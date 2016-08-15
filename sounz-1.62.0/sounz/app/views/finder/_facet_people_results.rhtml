@@ -1,0 +1,247 @@
+<div id='facets'>
+<%
+facet_fields_results = @results[:facets]['facet_fields']
+
+#deal with the 2 layer cases first
+role_groups = facet_fields_results['role_type_group_for_solr_s']
+
+role_group_facet = {
+   :name => 'People and Organisations',
+  # :facet_name => 'role_type_group_key',
+  # :data => role_group_array
+ }
+
+#fixme  inside an if!
+
+if @role_group_key.blank?
+	
+	role_group_facet[:facet_name]='role_group'
+	role_group_array = [
+		{:category => 'composer', :name => 'Composers', :count => role_groups["composer"]},
+		{:category => 'commissioner', :name => 'Commissioners', :count => role_groups["commissioner"]},
+		{:category => 'performer', :name => 'Performers', :count => role_groups["performer"]},
+		{:category => 'publisher', :name => 'Publishers', :count => role_groups["publisher"]},
+		{:category => 'presenter', :name => 'Presenters', :count => role_groups["presenter"]}
+	]
+	role_group_facet[:data]=role_group_array
+	
+
+
+
+else
+	#Role group chosen, not role type
+	if @role_type.blank?
+		#This is the case of showing the role group with fields below
+		role_group_facet[:subfacet]=@role_group_key.camelize
+		role_group_facet[:params]=[:role_group]
+													
+		role_types_array = FacetViewHelper.convert_role_types_to_view_array(facet_fields_results)												
+		role_group_facet[:data] = role_types_array
+		role_group_facet[:facet_name]='role_type'
+	#role group and role type chosen - we do have the composer special case to cater for though
+	else
+		if @role_type.id  == 26 # Composer (1640 coding, not to hot..)
+			
+			if @status.blank?
+				role_group_facet[:params]= [:role_group, :role_type]
+				role_group_facet[:subfacet]=@role_group_key.camelize
+				role_group_facet[:target]=@role_type.role_type_desc.gsub(' (c)', '') 
+			
+
+				tiers = facet_fields_results['fully_represented_for_solr_s']
+				tier_array = [
+					{:category => 'fully_represented', :name => 'Fully Represented', :count => tiers["true"]},
+					{:category => 'not_fully_represented', :name => 'Not Fully Represented', :count => tiers["false"]},
+					]
+				role_group_facet[:data]=tier_array
+			 	role_group_facet[:facet_name]="status"
+
+			#a status has been selected
+			else
+				
+				role_group_facet[:params]= [:role_group, :role_type,:status]
+				role_group_facet[:subfacet]=@role_group_key.camelize
+				role_group_facet[:target]=@role_type.role_type_desc.gsub(' (c)', '') 
+				role_group_facet[:sub_target]=@status.camelize
+			end
+			
+		
+		else
+			role_group_facet[:params]= [:role_group, :role_type]
+			role_group_facet[:name]="People and Organisations" #@role_type.role_type_desc
+			role_group_facet[:subfacet]=@role_group_key.camelize
+			role_group_facet[:target]=@role_type.role_type_desc.gsub(' (c)', '') # @role_group.camelize
+		end
+	end
+	
+
+end
+
+award_facet = {:name => 'Awards Received'}
+
+if @distinction_type_id.blank?
+	#Show distinction types
+	award_facet[:facet_name] = 'distinction_type'
+	award_facet[:data] = FacetViewHelper.distinction_types_to_view_array(@results[:facets]['facet_fields'], 'awards_received_for_solr_t')
+else
+	award_facet[:subfacet] = @distinction_type.distinction_type_name
+  	award_facet[:params] = [:distinction_type]
+end
+
+#Deal with the year results facet first
+year_results = facet_fields_results['year_of_creation_range_for_solr_s']
+year_facet = {
+	:name => 'Born or Established'
+}
+
+if @born_key.blank?
+	year_keys = ['1900-1949', '1950-1959','1960-1969','1970-1979','1980-1989','1990-1999', '2000-2009']
+	year_result_array = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::BORN_FACET_DETAILS,
+	 												year_keys, 
+													facet_fields_results)
+	year_facet[:facet_name] = 'born'
+	year_facet[:data] = year_result_array
+else
+	year_facet[:subfacet]= @born_key
+	year_facet[:params]= [:born]
+end
+
+
+
+#---------------------------------
+#Deal with the where facet
+inside_nz = facet_fields_results['inside_nz_for_solr_s']
+outside_nz = facet_fields_results['outside_nz_for_solr_s']
+
+
+
+where_facet = {
+   :name => 'Where'
+ }
+
+#This is the case of no where being chosen, ie show facet for in and outside of nz
+if @where.blank?
+	where_array = [
+	  {:category => 'inside_nz', :name => 'From New Zealand', :count => inside_nz["true"]},
+	  {:category => 'outside_nz',   :name => 'From Outside New Zealand', :count => outside_nz["true"]}
+	]
+	where_facet[:facet_name] = 'where'
+	where_facet[:data] = where_array
+	
+	
+#in the case of inside NZ, we wish to show the regions
+elsif @where == 'inside_nz'
+	
+	#if a region id is not passed in we show all the region facets available - this is a 'middle case'
+	if @region.blank?
+		where_facet[:subfacet]= 'From New Zealand'
+		where_facet[:params]= [:where]
+
+		#these are the regions in alphabetical order
+		#May need to reintroduce north and south island later
+		where_region_keys = [2,4,14,5,9,12,1,15,6,16,7,3,10,8,11,13,17,18,19].map{|k|k.to_s} #strings needed...
+		where_result_array = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::REGION_DETAILS,
+		 												where_region_keys, 
+														facet_fields_results)
+		where_facet[:data] = where_result_array
+		where_facet[:facet_name]='region'
+		
+
+	
+	#otherwise we have both a region and an inside nz chosen
+	else
+		
+		where_facet[:params]= [:where, :region]
+		where_facet[:name]='Where'
+		where_facet[:target]=@region.region_name
+		where_facet[:subfacet]='From New Zealand'
+	end
+	
+elsif @where == 'outside_nz'
+	#FIXME - fix these!
+	#if a country restriction is not passed in we show all the country groups available - this is a 'middle case'
+	if @country_facet_key.blank?
+		where_facet[:subfacet]= 'From Outside Zealand'
+		where_facet[:params]= [:where]
+
+	
+		where_country_keys = ['canada', 'australia', 'unitedstates', 'unitedkingdom', 'other']
+		where_result_array = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::COUNTRY_DETAILS,
+		 												where_country_keys, 
+														facet_fields_results)
+		where_facet[:data] = where_result_array
+		where_facet[:facet_name]='country'
+	
+	#otherwise we have both a region and an inside nz chosen
+	else
+		#FIXME TO DO
+		where_facet[:params]= [:where, :country]
+		where_facet[:name]='Where'
+		where_facet[:target]=FacetHelper::COUNTRY_DETAILS[:facets][@country_facet_key][:text]
+		where_facet[:subfacet]='From Outside New Zealand'
+	end
+end
+
+
+
+
+
+#----- deal with the a to z facet
+alphabet_facet = {:name => 'Starts With'}
+
+
+#This is the case where is no last letter chosen
+if @last_name.blank?
+
+	alphabet_facet[:facet_name]= 'last_name'
+
+
+	last_name_keys = FacetHelper::NAME_FACET_DETAILS[:facets].keys.sort
+	other_key = last_name_keys.select {|v| v =~ /Other/}
+	last_name_keys = last_name_keys.reject {|v| v =~ /Other/}
+	last_name_keys.push(other_key.to_s)
+	
+	last_name_result_array = FacetViewHelper.convert_query_hash_to_view_array(FacetHelper::NAME_FACET_DETAILS,
+													last_name_keys, 
+												facet_fields_results)
+	alphabet_facet[:data] = last_name_result_array
+	alphabet_facet[:facet_name]='last_name'
+
+
+	
+	
+
+	logger.debug "********************"
+	logger.debug "********************"
+	logger.debug "********************"
+	logger.debug "********************"
+	logger.debug last_name_result_array.length
+	for thing in last_name_result_array
+		logger.debug "#{thing.class}:#{thing}"
+	end
+
+#This is the composer/last_name chosen facet
+else
+	alphabet_facet[:params]= [ :last_name]
+	#alphabet_facet[:facet]=@last_name
+	alphabet_facet[:subfacet]=@last_name.upcase
+end
+
+
+%>
+
+
+<%
+#DEBUG
+logger.debug "=============YEAR FACET: #{year_facet.to_yaml}"
+logger.debug "*** FACET RESULT FIELDS ***"
+logger.debug facet_fields_results.to_yaml
+%>
+<%= render :partial => 'facet_block', :locals => { :facet => role_group_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => where_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => year_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => award_facet } %>
+<%= render :partial => 'facet_block', :locals => { :facet => alphabet_facet } %>
+
+</div>
+

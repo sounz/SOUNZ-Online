@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>Role</legend>
+  <p>You can create a role for a person, or you can use the default role. Roles do not have to be associated with organisations.</p>
+  <p><a href="" onclick="role_toggle(this); return false;">Make a Role</a></p>
+  <script type="text/javascript">
+    function role_toggle(link) {
+      Element.toggle('role_container');
+      if ($('role_container').style.display == 'none') {
+        link.innerHTML = 'Make a Role';
+      }
+      else {
+        link.innerHTML = 'Use the Default Role';
+      }
+    }
+  </script>
+  <%= render :partial => 'roles/form', :locals => { :display => false } %>
+</fieldset>

@@ -1,0 +1,61 @@
+<%if PrivilegesHelper.has_permission?(@login,'CAN_VIEW_TAP')%>
+<%#Show additional 'edit-only' fields%>
+<div class="section">
+<h2>Private (Admin only) Data</h2>
+
+
+<dt>Status:</dt>
+<dd><%=object.status.status_desc%></dd>
+
+<dt>Assigned Categories:</dt>
+<dd>
+<table><tr><td>Main Category:</td><td>(<%=object.main_category.legacy_4d_identity_code%>) <%=object.main_category.work_subcategory_desc%></td></tr>
+<tr><td>Additional Categories:</td><td>
+<%for category in object.work_subcategories%>
+<%if category.additional%>
+(<%=category.legacy_4d_identity_code%>) <%=category.work_subcategory_desc%>
+<%end%>
+<%end%>
+</td></tr></table>
+</dd>
+
+<%if object.superwork != nil%>
+<dt>Superwork:</dt>
+<dd><%=link_to object.superwork.frbr_ui_desc, :action => :show, :controller => :superworks, :id => object.superwork %>
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_TAP')%>
+<!-- superwork edit link starts -->
+&nbsp;&nbsp;&nbsp;
+<span style="border-bottom: 1px solid #6CC1ED;">
+<%= link_to "Edit &raquo;", { :controller => :superworks, :action => :edit, :id => object.superwork} %>
+</span>
+<!-- superwork edit link ends -->
+<% end %>
+
+</dd>
+<%end%>
+
+
+<dt>Relationships:</dt><br>
+<dd>
+<%for rel in object.frbr_relationships%>
+<%=rel.relType.to_s%> 
+<%=link_to rel.relatedObject.frbr_ui_desc, :action => :show, :controller => rel.relatedObject.frbr_type+'s', :id => rel.relatedObject %>
+
+<%if PrivilegesHelper.has_permission?(@login,'CAN_EDIT_TAP')%>
+<!-- object edit link starts -->
+<%
+if !rel.relatedObject.frbr_type.match('role')%>
+&nbsp;&nbsp;&nbsp;
+<span style="border-bottom: 1px solid #6CC1ED;">
+<%= link_to "Edit &raquo;", :controller => rel.relatedObject.frbr_type+'s', :action => :edit, :id => rel.relatedObject %>
+</span>
+<% end %>
+<!-- object edit link ends -->
+<% end %>
+
+<br>
+<%end%>
+</dd>
+</div>
+<%end%>

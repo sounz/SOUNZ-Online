@@ -1,0 +1,108 @@
+<fieldset>
+<legend>Mailout Contact Details for <%= @mailout_contact.name %></legend>
+<%= error_messages_for 'mailout_contact' %>
+
+<!--[form:mailout_contact]-->
+<%
+form_disabled = false
+form_disabled = true if !@mailout_contact.campaign_mailout.mailout_status.match('n') && !@mailout_contact.delivery_failed
+%>
+<table>
+  <tr>
+    <th><label for="mailout_contact_name">Name</label></th>
+    <td>
+     <table>
+       <tr>
+         <td><%= text_field 'mailout_contact', 'nomen', :size => 8, :disabled => form_disabled  %></td>
+         <td><%= text_field 'mailout_contact', 'name', :size => standard_edit_cols, :disabled => form_disabled %></td>
+       </tr>
+     </table>
+    </td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_role_title">Role title</label></th>
+    <td><%= text_field 'mailout_contact', 'role_title', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_organisation_name">Organisation name</label></th>
+    <td><%= text_field 'mailout_contact', 'organisation_name', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_salutation">Salutation</label></th>
+    <td><%= text_field 'mailout_contact', 'salutation', :size => standard_edit_cols, :disabled => form_disabled  %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_building">Building</label></th>
+    <td><%= text_field 'mailout_contact', 'building', :size => standard_edit_cols, :disabled => form_disabled  %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_street">Street</label></th>
+    <td><%= text_field 'mailout_contact', 'street', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_po_box">PO Box</label></th>
+    <td><%= text_field 'mailout_contact', 'po_box', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_suburb">Suburb</label></th>
+    <td><%= text_field 'mailout_contact', 'suburb', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_locality">Locality</label></th>
+    <td><%= text_field 'mailout_contact', 'locality', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_postcode">Post code</label></th>
+    <td><%= text_field 'mailout_contact', 'postcode', :size => standard_edit_cols,  :disabled => form_disabled  %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_region">Region</label></th>
+    <td><%= text_field 'mailout_contact', 'region', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_country">Country</label></th>
+    <td><%= text_field 'mailout_contact', 'country', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_email">Email</label></th>
+    <td><%= text_field 'mailout_contact', 'email', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_phone">Phone</label></th>
+    <td><%= text_field 'mailout_contact', 'phone', :size => standard_edit_cols, :disabled => form_disabled   %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_fax">Fax</label></th>
+    <td><%= text_field 'mailout_contact', 'fax', :size => standard_edit_cols, :disabled => form_disabled  %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_mobile_sms">Mobile sms</label></th>
+    <td><%= text_field 'mailout_contact', 'mobile_sms', :size => standard_edit_cols, :disabled => form_disabled  %></td>
+  </tr>
+  <tr>
+    <th><label for="mailout_contact_delivery_failed">Delivery failed</label></th>
+    <td><%=h @mailout_contact.delivery_failed %>
+  </tr>
+  <% if params[:action] != 'new' && params[:action] != 'create' %>
+  <% if @mailout_contact.created_at != nil %>
+  <tr>
+    <th><label for="mailout_contact_created_at">Created at</label></th>
+    <td><%= dby_date(@mailout_contact.created_at) %></td>
+  </tr>
+  <% end %>
+  <% if @mailout_contact.updated_at != nil %>
+  <tr>
+    <th><label for="mailout_contact_updated_at">Updated at</label></th>
+    <td><%= dby_date(@mailout_contact.updated_at)  %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <th><label for="mailout_contact_updated_by">Updated by</label></th>
+    <td><%=h get_user(@mailout_contact.updated_by).username %></td>
+  </tr>
+  <% end %>
+  </table>
+
+<!--[eoform:mailout_contact]-->
+
+</fieldset>

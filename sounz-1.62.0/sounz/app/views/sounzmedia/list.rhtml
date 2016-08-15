@@ -1,0 +1,31 @@
+<h1>Listing Media on demand</h1>
+
+<table>
+  <tr>
+<th>Title</th>
+  </tr>
+  
+<% for media in @results %>
+<% type = "#{media.class.to_s.tableize.singularize}" %>
+  <tr>
+    <% if type == "manifestation" %>
+      <td><%=h media.manifestation_title %></td>	
+      <td><%= link_to 'Show', :controller => 'manifestations', :action => 'show', :id => media %></td>
+    <% else %>
+      <td><%=h media.resource_title %></td>	
+      <td><%= link_to 'Show', :controller => 'resources', :action => 'show', :id => media %></td>
+    <% end %>
+    
+    <% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+       <% if type == "manifestation" %>
+        <td><%= link_to 'Edit', :controller => 'manifestations', :action => 'edit', :id => media %></td>
+      <% else %>
+        <td><%= link_to 'Edit', :controller => 'resources', :action => 'edit', :id => media %></td>
+      <% end %>  
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @results %>

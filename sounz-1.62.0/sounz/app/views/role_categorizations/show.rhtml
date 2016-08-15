@@ -1,0 +1,8 @@
+<% for column in RoleCategorization.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @role_categorization.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @role_categorization %> |
+<%= link_to 'Back', :action => 'list' %>

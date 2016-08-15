@@ -1,0 +1,28 @@
+<h1>Listing Roles</h1>
+
+<table>
+  <tr>
+  <% for column in Role.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for role in @roles %>
+  <tr>
+  <% for column in Role.content_columns %>
+   <% column_data = "" %>
+   <% if role.send(column.name) != nil%>
+    <% column_data = role.send(column.name) %>
+   <% end %>
+    <td><%= link_to (column_data, :action => 'show', :id => role) %></td>
+  <% end %>
+    <td><%= link_to 'Edit', :action => 'edit', :id => role %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => role }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @roles %>
+
+<%= link_to 'New role', :action => 'new' %>

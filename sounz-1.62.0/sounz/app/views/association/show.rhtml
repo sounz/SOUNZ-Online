@@ -1,0 +1,61 @@
+
+
+<form action="/association/create" method="post">    
+First Entity Type<br>
+<%=collection_select("association","entity_a_type",@entity_types,"id","entity_type")%>
+<%=observe_field("association_entity_a_type", :update => :association_entity_a_id,:url => {:action => :ajax_types},:with => "'type='+value")%>
+ 
+<%=collection_select("association","entity_a_id",@superworks,"id","superwork_title")%><br>
+
+<table>
+<tr><td>Association Type<br>
+<select id="association_type_id" name="association[type_id]">
+<%= options_from_collection_for_select @assoc_types, "relationship_type_id", "relationship_type_desc" %>
+</select>
+</td><td>
+
+</td></tr></table>
+Second Entity Type<br>
+<%=collection_select("association","entity_b_type",@entity_types,"id","entity_type")%>
+<%=observe_field("association_entity_b_type", :update => :association_entity_b_id,:url => {:action => :ajax_types},:with => "'type='+value")%>
+<%=collection_select("association","entity_b_id",@superworks,"id","superwork_title")%>
+<br>
+<input type="submit" name="add" value="Add Relationship"/>
+</form>
+<b>Existing Relationships:</b><br><br>
+
+
+<% for rel in @relationships
+
+entity_a_list=eval("rel."+rel.entity_type+"s")
+entity_b_list=eval("rel."+rel.ent_entity_type+"s")
+c=0
+for entity_a_object in entity_a_list %>
+    <%if c==0 then%>
+    <a href="/association/delete/<%=rel.id%>">X</a> <%=rel.entity_type%> <%=render :partial => 'frbr_objects/'+rel.entity_type, :locals => { :object => entity_a_object}%> (<%=entity_a_object.id%>)
+    <%reltype=RelationshipType.find(entity_a_object.relationship_type_id)%>
+    <%=reltype.relationship_type_desc%> 
+    <%end%>
+<%c=c+1%>
+<%end%>
+
+<% for entity_b_object in entity_b_list %>
+<%if rel.entity_type == rel.ent_entity_type then%>
+    <%if entity_b_object.id != entity_a_list[0].id then%>
+    <%=rel.ent_entity_type%> <%=render :partial => 'frbr_objects/'+rel.ent_entity_type, :locals => { :object => entity_b_list[1]}%> (<%=entity_b_list[1].id%>)
+    <%reltype=RelationshipType.find(entity_b_object.relationship_type_id)%>
+    <%=reltype.relationship_type_desc%>
+    <%end%>
+<%else%>
+    <%=rel.ent_entity_type%> <%=render :partial => 'frbr_objects/'+rel.ent_entity_type, :locals => { :object => entity_b_object}%> (<%=entity_b_object.id%>)
+   <%reltype=RelationshipType.find(entity_b_object.relationship_type_id)%>
+   <%=reltype.relationship_type_desc%>     
+<%end%>
+ 
+<%end%>
+<br>
+
+
+
+
+<% end %>

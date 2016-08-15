@@ -1,0 +1,5 @@
+<%=main_tabs(selected = :works)%>
+<%=start_of_content(@manifestation, "Manifestation")%>
+
+<%=render :partial => @sub_partial_path, :locals => {:object => @manifestation}%>
+<%=end_of_content(@manifestation)%>

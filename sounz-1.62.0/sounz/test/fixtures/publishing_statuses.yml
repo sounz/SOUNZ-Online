@@ -1,0 +1,16 @@
+ps1:
+  status_id: 1
+  status_desc: Pending
+ps2:
+  status_id: 2
+  status_desc: Approved
+ps3:
+  status_id: 3
+  status_desc: Published
+ps4:
+  status_id: 4
+  status_desc: Withdrawn
+ps5:
+    status_id: 5
+    status_desc: Masked  
+

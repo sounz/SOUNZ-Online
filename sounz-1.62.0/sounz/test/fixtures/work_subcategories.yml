@@ -1,0 +1,1148 @@
+--- 
+work_subcategory_1: 
+  display_order: 1
+  work_category_id: 1
+  legacy_4d_identity_code: 1101
+  work_subcategory_desc: Full orchestra
+  work_subcategory_id: 1
+work_subcategory_2: 
+  display_order: 4
+  work_category_id: 1
+  legacy_4d_identity_code: 1102
+  work_subcategory_desc: Chamber orchestra
+  work_subcategory_id: 2
+work_subcategory_3: 
+  display_order: 2
+  work_category_id: 1
+  legacy_4d_identity_code: 1103
+  work_subcategory_desc: Full orchestra with soloist
+  work_subcategory_id: 3
+work_subcategory_4: 
+  display_order: 5
+  work_category_id: 1
+  legacy_4d_identity_code: 1104
+  work_subcategory_desc: Chamber orchestra with soloist
+  work_subcategory_id: 4
+work_subcategory_5: 
+  display_order: 3
+  work_category_id: 1
+  legacy_4d_identity_code: 1105
+  work_subcategory_desc: Full orchestra with multiple soloists
+  work_subcategory_id: 5
+work_subcategory_6: 
+  display_order: 6
+  work_category_id: 1
+  legacy_4d_identity_code: 1106
+  work_subcategory_desc: Chamber orchestra with multiple soloists
+  work_subcategory_id: 6
+work_subcategory_7: 
+  display_order: 9
+  work_category_id: 1
+  legacy_4d_identity_code: 1110
+  work_subcategory_desc: Concert Band or Symphonic Band
+  work_subcategory_id: 7
+work_subcategory_8: 
+  display_order: 7
+  work_category_id: 1
+  legacy_4d_identity_code: 1112
+  work_subcategory_desc: String Orchestra
+  work_subcategory_id: 8
+work_subcategory_9: 
+  display_order: 8
+  work_category_id: 1
+  legacy_4d_identity_code: 1113
+  work_subcategory_desc: String Orchestra with soloist/s
+  work_subcategory_id: 9
+work_subcategory_10: 
+  display_order: 10
+  work_category_id: 2
+  legacy_4d_identity_code: 1201
+  work_subcategory_desc: Piano solo
+  work_subcategory_id: 10
+work_subcategory_11: 
+  display_order: 11
+  work_category_id: 2
+  legacy_4d_identity_code: 1202
+  work_subcategory_desc: Organ (pipe or reed) solo
+  work_subcategory_id: 11
+work_subcategory_12: 
+  display_order: 12
+  work_category_id: 2
+  legacy_4d_identity_code: 1204
+  work_subcategory_desc: Electronic piano or organ solo
+  work_subcategory_id: 12
+work_subcategory_13: 
+  display_order: 13
+  work_category_id: 2
+  legacy_4d_identity_code: 1205
+  work_subcategory_desc: Accordion solo
+  work_subcategory_id: 13
+work_subcategory_14: 
+  display_order: 15
+  work_category_id: 2
+  legacy_4d_identity_code: 1206
+  work_subcategory_desc: Piano - duo or duet
+  work_subcategory_id: 14
+work_subcategory_15: 
+  display_order: 16
+  work_category_id: 2
+  legacy_4d_identity_code: 1207
+  work_subcategory_desc: Piano/s - 5 or more hands
+  work_subcategory_id: 15
+work_subcategory_16: 
+  display_order: 17
+  work_category_id: 2
+  legacy_4d_identity_code: 1209
+  work_subcategory_desc: Keyboard ensemble or orchestra
+  work_subcategory_id: 16
+work_subcategory_17: 
+  display_order: 14
+  work_category_id: 2
+  legacy_4d_identity_code: 1212
+  work_subcategory_desc: Other keyboard instruments solo
+  work_subcategory_id: 17
+work_subcategory_18: 
+  display_order: 18
+  work_category_id: 3
+  legacy_4d_identity_code: 1301
+  work_subcategory_desc: Violin - solo or with keyboard
+  work_subcategory_id: 18
+work_subcategory_19: 
+  display_order: 19
+  work_category_id: 3
+  legacy_4d_identity_code: 1302
+  work_subcategory_desc: Viola - solo or with keyboard
+  work_subcategory_id: 19
+work_subcategory_20: 
+  display_order: 20
+  work_category_id: 3
+  legacy_4d_identity_code: 1303
+  work_subcategory_desc: Cello - solo or with keyboard
+  work_subcategory_id: 20
+work_subcategory_21: 
+  display_order: 21
+  work_category_id: 3
+  legacy_4d_identity_code: 1304
+  work_subcategory_desc: Double bass - solo or with keyboard
+  work_subcategory_id: 21
+work_subcategory_22: 
+  display_order: 22
+  work_category_id: 3
+  legacy_4d_identity_code: 1305
+  work_subcategory_desc: Other bowed string instruments - solo or with keyboard
+  work_subcategory_id: 22
+work_subcategory_23: 
+  display_order: 23
+  work_category_id: 3
+  legacy_4d_identity_code: 1306
+  work_subcategory_desc: String Duos
+  work_subcategory_id: 23
+work_subcategory_24: 
+  display_order: 24
+  work_category_id: 3
+  legacy_4d_identity_code: 1307
+  work_subcategory_desc: String Trios
+  work_subcategory_id: 24
+work_subcategory_25: 
+  display_order: 25
+  work_category_id: 3
+  legacy_4d_identity_code: 1308
+  work_subcategory_desc: String Quartets
+  work_subcategory_id: 25
+work_subcategory_26: 
+  display_order: 26
+  work_category_id: 3
+  legacy_4d_identity_code: 1309
+  work_subcategory_desc: String Quintets
+  work_subcategory_id: 26
+work_subcategory_27: 
+  display_order: 30
+  work_category_id: 3
+  legacy_4d_identity_code: 1310
+  work_subcategory_desc: Solo String Ensemble (9+)
+  work_subcategory_id: 27
+work_subcategory_28: 
+  display_order: 27
+  work_category_id: 3
+  legacy_4d_identity_code: 1312
+  work_subcategory_desc: String Sextets
+  work_subcategory_id: 28
+work_subcategory_29: 
+  display_order: 28
+  work_category_id: 3
+  legacy_4d_identity_code: 1313
+  work_subcategory_desc: String Septets
+  work_subcategory_id: 29
+work_subcategory_30: 
+  display_order: 29
+  work_category_id: 3
+  legacy_4d_identity_code: 1314
+  work_subcategory_desc: String Octets
+  work_subcategory_id: 30
+work_subcategory_31: 
+  display_order: 31
+  work_category_id: 4
+  legacy_4d_identity_code: 1401
+  work_subcategory_desc: Guitar - solo or with keyboard
+  work_subcategory_id: 31
+work_subcategory_32: 
+  display_order: 32
+  work_category_id: 4
+  legacy_4d_identity_code: 1402
+  work_subcategory_desc: Harp - solo or with keyboard
+  work_subcategory_id: 32
+work_subcategory_33: 
+  display_order: 33
+  work_category_id: 4
+  legacy_4d_identity_code: 1403
+  work_subcategory_desc: Electric Guitar - solo or with keyboard
+  work_subcategory_id: 33
+work_subcategory_34: 
+  display_order: 35
+  work_category_id: 4
+  legacy_4d_identity_code: 1404
+  work_subcategory_desc: Plectral String Duos
+  work_subcategory_id: 34
+work_subcategory_35: 
+  display_order: 36
+  work_category_id: 4
+  legacy_4d_identity_code: 1405
+  work_subcategory_desc: Plectral String Trios
+  work_subcategory_id: 35
+work_subcategory_36: 
+  display_order: 37
+  work_category_id: 4
+  legacy_4d_identity_code: 1406 
+  work_subcategory_desc: Plectral String Quartets
+  work_subcategory_id: 36
+work_subcategory_37: 
+  display_order: 38
+  work_category_id: 4
+  legacy_4d_identity_code: 1407
+  work_subcategory_desc: Plectral String Ensembles (5-8 players)
+  work_subcategory_id: 37
+work_subcategory_38: 
+  display_order: 39
+  work_category_id: 4
+  legacy_4d_identity_code: 1409
+  work_subcategory_desc: Plectral String Ensemble (9+) or Orchestra
+  work_subcategory_id: 38
+work_subcategory_39: 
+  display_order: 34
+  work_category_id: 4
+  legacy_4d_identity_code: 1410
+  work_subcategory_desc: Other plectral string solo - solo or with keyboard
+  work_subcategory_id: 39
+work_subcategory_40: 
+  display_order: 40
+  work_category_id: 5
+  legacy_4d_identity_code: 1501
+  work_subcategory_desc: Flute and piccolo - solo or with keyboard
+  work_subcategory_id: 40
+work_subcategory_41: 
+  display_order: 41
+  work_category_id: 5
+  legacy_4d_identity_code: 1502
+  work_subcategory_desc: Oboe and Cor Anglais - solo or with keyboard
+  work_subcategory_id: 41
+work_subcategory_42: 
+  display_order: 42
+  work_category_id: 5
+  legacy_4d_identity_code: 1503
+  work_subcategory_desc: Clarinet - solo or with keyboard
+  work_subcategory_id: 42
+work_subcategory_43: 
+  display_order: 43
+  work_category_id: 5
+  legacy_4d_identity_code: 1504 
+  work_subcategory_desc: Bassoon - solo or with keyboard
+  work_subcategory_id: 43
+work_subcategory_44: 
+  display_order: 44
+  work_category_id: 5
+  legacy_4d_identity_code: 1505
+  work_subcategory_desc: Saxophone - solo or with keyboard
+  work_subcategory_id: 44
+work_subcategory_45: 
+  display_order: 45
+  work_category_id: 5
+  legacy_4d_identity_code: 1506
+  work_subcategory_desc: Recorder - solo or with keyboard
+  work_subcategory_id: 45
+work_subcategory_46: 
+  display_order: 47
+  work_category_id: 5
+  legacy_4d_identity_code: 1507
+  work_subcategory_desc: Wind Duos
+  work_subcategory_id: 46
+work_subcategory_47: 
+  display_order: 48
+  work_category_id: 5
+  legacy_4d_identity_code: 1508
+  work_subcategory_desc: Wind Trios
+  work_subcategory_id: 47
+work_subcategory_48: 
+  display_order: 49
+  work_category_id: 5
+  legacy_4d_identity_code: 1509
+  work_subcategory_desc: Wind Quartets
+  work_subcategory_id: 48
+work_subcategory_49: 
+  display_order: 50
+  work_category_id: 5
+  legacy_4d_identity_code: 1510
+  work_subcategory_desc: Wind Quintets
+  work_subcategory_id: 49
+work_subcategory_50: 
+  display_order: 54
+  work_category_id: 5
+  legacy_4d_identity_code: 1512
+  work_subcategory_desc: Solo Wind Ensembles (9+)
+  work_subcategory_id: 50
+work_subcategory_51: 
+  display_order: 46
+  work_category_id: 5
+  legacy_4d_identity_code: 1513
+  work_subcategory_desc: Other woodwind solo - solo or with keyboard
+  work_subcategory_id: 51
+work_subcategory_52: 
+  display_order: 51
+  work_category_id: 5
+  legacy_4d_identity_code: 1514
+  work_subcategory_desc: Wind Sextets
+  work_subcategory_id: 52
+work_subcategory_53: 
+  display_order: 52
+  work_category_id: 5
+  legacy_4d_identity_code: 1515
+  work_subcategory_desc: Wind Septets
+  work_subcategory_id: 53
+work_subcategory_54: 
+  display_order: 53
+  work_category_id: 5
+  legacy_4d_identity_code: 1516
+  work_subcategory_desc: Wind Octets
+  work_subcategory_id: 54
+work_subcategory_55: 
+  display_order: 55
+  work_category_id: 5
+  legacy_4d_identity_code: 1517
+  work_subcategory_desc: Wind Band or Orchestra
+  work_subcategory_id: 55
+work_subcategory_56: 
+  display_order: 56
+  work_category_id: 6
+  legacy_4d_identity_code: 1601
+  work_subcategory_desc: Trumpet - solo or with keyboard
+  work_subcategory_id: 56
+work_subcategory_57: 
+  display_order: 57
+  work_category_id: 6
+  legacy_4d_identity_code: 1602
+  work_subcategory_desc: Horn - solo or with keyboard
+  work_subcategory_id: 57
+work_subcategory_58: 
+  display_order: 58
+  work_category_id: 6
+  legacy_4d_identity_code: 1603
+  work_subcategory_desc: Trombone - solo or with keyboard
+  work_subcategory_id: 58
+work_subcategory_59: 
+  display_order: 59
+  work_category_id: 6
+  legacy_4d_identity_code: 1604
+  work_subcategory_desc: Tuba - solo or with keyboard
+  work_subcategory_id: 59
+work_subcategory_60: 
+  display_order: 60
+  work_category_id: 6
+  legacy_4d_identity_code: 1605
+  work_subcategory_desc: Other brass solo - solo or with keyboard
+  work_subcategory_id: 60
+work_subcategory_61: 
+  display_order: 61
+  work_category_id: 6
+  legacy_4d_identity_code: 1606
+  work_subcategory_desc: Brass Duos
+  work_subcategory_id: 61
+work_subcategory_62: 
+  display_order: 62
+  work_category_id: 6
+  legacy_4d_identity_code: 1607
+  work_subcategory_desc: Brass Trios
+  work_subcategory_id: 62
+work_subcategory_63: 
+  display_order: 63
+  work_category_id: 6
+  legacy_4d_identity_code: 1608
+  work_subcategory_desc: Brass Quartets
+  work_subcategory_id: 63
+work_subcategory_64: 
+  display_order: 64
+  work_category_id: 6
+  legacy_4d_identity_code: 1609
+  work_subcategory_desc: Brass Quintets
+  work_subcategory_id: 64
+work_subcategory_65: 
+  display_order: 68
+  work_category_id: 6
+  legacy_4d_identity_code: 1611
+  work_subcategory_desc: Brass Ensemble (9+)
+  work_subcategory_id: 65
+work_subcategory_66: 
+  display_order: 69
+  work_category_id: 6
+  legacy_4d_identity_code: 1612
+  work_subcategory_desc: Brass Band or Military Band
+  work_subcategory_id: 66
+work_subcategory_67: 
+  display_order: 65
+  work_category_id: 6
+  legacy_4d_identity_code: 1613
+  work_subcategory_desc: Brass Sextets
+  work_subcategory_id: 67
+work_subcategory_68: 
+  display_order: 66
+  work_category_id: 6
+  legacy_4d_identity_code: 1614
+  work_subcategory_desc: Brass Septets
+  work_subcategory_id: 68
+work_subcategory_69: 
+  display_order: 67
+  work_category_id: 6
+  legacy_4d_identity_code: 1615
+  work_subcategory_desc: Brass Octets
+  work_subcategory_id: 69
+work_subcategory_70: 
+  display_order: 70
+  work_category_id: 7
+  legacy_4d_identity_code: 1701
+  work_subcategory_desc: Percussionist - solo or with keyboard
+  work_subcategory_id: 70
+work_subcategory_71: 
+  display_order: 71
+  work_category_id: 7
+  legacy_4d_identity_code: 1702
+  work_subcategory_desc: Percussion Duo
+  work_subcategory_id: 71
+work_subcategory_72: 
+  display_order: 74
+  work_category_id: 7
+  legacy_4d_identity_code: 1703
+  work_subcategory_desc: Percussion Quintet
+  work_subcategory_id: 72
+work_subcategory_73: 
+  display_order: 76
+  work_category_id: 7
+  legacy_4d_identity_code: 1705
+  work_subcategory_desc: Percussion Ensemble (7+)
+  work_subcategory_id: 73
+work_subcategory_74: 
+  display_order: 72
+  work_category_id: 7
+  legacy_4d_identity_code: 1707
+  work_subcategory_desc:  Percussion Trio
+  work_subcategory_id: 74
+work_subcategory_75: 
+  display_order: 73
+  work_category_id: 7
+  legacy_4d_identity_code: 1708
+  work_subcategory_desc: Percussion Quartet
+  work_subcategory_id: 75
+work_subcategory_76: 
+  display_order: 75
+  work_category_id: 7
+  legacy_4d_identity_code: 1709
+  work_subcategory_desc: Percussion Sextet
+  work_subcategory_id: 76
+work_subcategory_77: 
+  display_order: 77
+  work_category_id: 7
+  legacy_4d_identity_code: 1710
+  work_subcategory_desc: Gamelan
+  work_subcategory_id: 77
+work_subcategory_78: 
+  display_order: 78
+  work_category_id: 8
+  legacy_4d_identity_code: 1801
+  work_subcategory_desc: Mixed Chamber Duos (without keyboard)
+  work_subcategory_id: 78
+work_subcategory_79: 
+  display_order: 79
+  work_category_id: 8
+  legacy_4d_identity_code: 1802
+  work_subcategory_desc: Mixed Chamber Trios (with keyboard)
+  work_subcategory_id: 79
+work_subcategory_80: 
+  display_order: 80
+  work_category_id: 8
+  legacy_4d_identity_code: 1803
+  work_subcategory_desc: Mixed Chamber Trios (without keyboard)
+  work_subcategory_id: 80
+work_subcategory_81: 
+  display_order: 81
+  work_category_id: 8
+  legacy_4d_identity_code: 1804
+  work_subcategory_desc: Mixed Chamber Quartets (with keyboard)
+  work_subcategory_id: 81
+work_subcategory_82: 
+  display_order: 82
+  work_category_id: 8
+  legacy_4d_identity_code: 1805
+  work_subcategory_desc: Mixed Chamber Quartets (without keyboard)
+  work_subcategory_id: 82
+work_subcategory_83: 
+  display_order: 83
+  work_category_id: 8
+  legacy_4d_identity_code: 1806
+  work_subcategory_desc: Mixed Chamber Quintets (with keyboard)
+  work_subcategory_id: 83
+work_subcategory_84: 
+  display_order: 84
+  work_category_id: 8
+  legacy_4d_identity_code: 1807
+  work_subcategory_desc: Mixed Chamber Quintets (without keyboard)
+  work_subcategory_id: 84
+work_subcategory_85: 
+  display_order: 85
+  work_category_id: 8
+  legacy_4d_identity_code: 1808
+  work_subcategory_desc: Mixed Chamber Sextets
+  work_subcategory_id: 85
+work_subcategory_86: 
+  display_order: 86
+  work_category_id: 8
+  legacy_4d_identity_code: 1809
+  work_subcategory_desc: Mixed Chamber Septets
+  work_subcategory_id: 86
+work_subcategory_87: 
+  display_order: 87
+  work_category_id: 8
+  legacy_4d_identity_code: 1810
+  work_subcategory_desc: Mixed Chamber Octets
+  work_subcategory_id: 87
+work_subcategory_88: 
+  display_order: 88
+  work_category_id: 8
+  legacy_4d_identity_code: 1811
+  work_subcategory_desc: Mixed Chamber Nonets
+  work_subcategory_id: 88
+work_subcategory_89: 
+  display_order: 89
+  work_category_id: 8
+  legacy_4d_identity_code: 1812
+  work_subcategory_desc: Mixed Chamber Ensembles (10+)
+  work_subcategory_id: 89
+work_subcategory_90: 
+  display_order: 90
+  work_category_id: 8
+  legacy_4d_identity_code: 1813
+  work_subcategory_desc: Mixed Chamber Ensembles - unspecified size
+  work_subcategory_id: 90
+work_subcategory_91: 
+  display_order: 91
+  work_category_id: 9
+  legacy_4d_identity_code: 1901
+  work_subcategory_desc: Electroacoustic
+  work_subcategory_id: 91
+work_subcategory_92: 
+  display_order: 92
+  work_category_id: 9
+  legacy_4d_identity_code: 1903
+  work_subcategory_desc: Multimedia
+  work_subcategory_id: 92
+work_subcategory_93: 
+  display_order: 93
+  work_category_id: 9
+  legacy_4d_identity_code: 1905
+  work_subcategory_desc: Live Electronics
+  work_subcategory_id: 93
+work_subcategory_94: 
+  display_order: 94
+  work_category_id: 9
+  legacy_4d_identity_code: 1909
+  work_subcategory_desc: Sound Installations
+  work_subcategory_id: 94
+work_subcategory_95: 
+  display_order: 95
+  work_category_id: 10
+  legacy_4d_identity_code: 2005
+  work_subcategory_desc: Unspecified Voice - solo or with keyboard
+  work_subcategory_id: 95
+work_subcategory_96: 
+  display_order: 96
+  work_category_id: 10
+  legacy_4d_identity_code: 2006
+  work_subcategory_desc: Unspecified Voice with other instrument
+  work_subcategory_id: 96
+work_subcategory_97: 
+  display_order: 97
+  work_category_id: 10
+  legacy_4d_identity_code: 2007
+  work_subcategory_desc: Soprano or Mezzo - solo or with keyboard
+  work_subcategory_id: 97
+work_subcategory_98: 
+  display_order: 98
+  work_category_id: 10
+  legacy_4d_identity_code: 2008
+  work_subcategory_desc: Soprano and Mezzo with other instrument
+  work_subcategory_id: 98
+work_subcategory_99: 
+  display_order: 99
+  work_category_id: 10
+  legacy_4d_identity_code: 2009 
+  work_subcategory_desc: Contralto or Alto - solo or with keyboard
+  work_subcategory_id: 99
+work_subcategory_100: 
+  display_order: 100
+  work_category_id: 10
+  legacy_4d_identity_code: 2010
+  work_subcategory_desc: Contralto or Alto with other instrument
+  work_subcategory_id: 100
+work_subcategory_101: 
+  display_order: 101
+  work_category_id: 10
+  legacy_4d_identity_code: 2011 
+  work_subcategory_desc: Countertenor - solo or with keyboard
+  work_subcategory_id: 101
+work_subcategory_102: 
+  display_order: 102
+  work_category_id: 10
+  legacy_4d_identity_code: 2012 
+  work_subcategory_desc: Countertenor with other instrument
+  work_subcategory_id: 102
+work_subcategory_103: 
+  display_order: 103
+  work_category_id: 10
+  legacy_4d_identity_code: 2013 
+  work_subcategory_desc: Tenor - solo or with keyboard
+  work_subcategory_id: 103
+work_subcategory_104: 
+  display_order: 104
+  work_category_id: 10
+  legacy_4d_identity_code: 2014
+  work_subcategory_desc: Tenor with other instrument
+  work_subcategory_id: 104
+work_subcategory_105: 
+  display_order: 105
+  work_category_id: 10
+  legacy_4d_identity_code: 2015
+  work_subcategory_desc: Baritone or Bass - solo or with keyboard
+  work_subcategory_id: 105
+work_subcategory_106: 
+  display_order: 106
+  work_category_id: 10
+  legacy_4d_identity_code: 2016 
+  work_subcategory_desc: Baritone or Bass with other instrument
+  work_subcategory_id: 106
+work_subcategory_107: 
+  display_order: 108
+  work_category_id: 10
+  legacy_4d_identity_code: 2017 
+  work_subcategory_desc: Female Voice with instrumental ensemble
+  work_subcategory_id: 107
+work_subcategory_108: 
+  display_order: 109
+  work_category_id: 10
+  legacy_4d_identity_code: 2020 
+  work_subcategory_desc: Male Voice with instrumental ensemble
+  work_subcategory_id: 108
+work_subcategory_109: 
+  display_order: 107
+  work_category_id: 10
+  legacy_4d_identity_code: 2021
+  work_subcategory_desc: Unspecified Voice with instrumental ensemble
+  work_subcategory_id: 109
+work_subcategory_111: 
+  display_order: 112
+  work_category_id: 11
+  legacy_4d_identity_code: 2101 
+  work_subcategory_desc: Female Duos - unaccomp. or with keyboard
+  work_subcategory_id: 111
+work_subcategory_112: 
+  display_order: 113
+  work_category_id: 11
+  legacy_4d_identity_code: 2102 
+  work_subcategory_desc: Male Duos - unaccomp. or with keyboard
+  work_subcategory_id: 112
+work_subcategory_113: 
+  display_order: 111
+  work_category_id: 11
+  legacy_4d_identity_code: 2103
+  work_subcategory_desc: Mixed or Unspecified Vocal Duos - unaccomp. or with keyboard
+  work_subcategory_id: 113
+work_subcategory_114: 
+  display_order: 115
+  work_category_id: 11
+  legacy_4d_identity_code: 2104
+  work_subcategory_desc: Vocal Trios - unaccomp. or with keyboard
+  work_subcategory_id: 114
+work_subcategory_115: 
+  display_order: 117
+  work_category_id: 11
+  legacy_4d_identity_code: 2105
+  work_subcategory_desc: Vocal Ensemble (5-8) - unaccomp. or with keyboard
+  work_subcategory_id: 115
+work_subcategory_116: 
+  display_order: 114
+  work_category_id: 11
+  legacy_4d_identity_code: 2106 
+  work_subcategory_desc: Vocal Duos with instruments
+  work_subcategory_id: 116
+work_subcategory_117: 
+  display_order: 118
+  work_category_id: 11
+  legacy_4d_identity_code: 2107 
+  work_subcategory_desc: Vocal Ensembles (3-8 voices) with instruments
+  work_subcategory_id: 117
+work_subcategory_118:
+  display_order: 116
+  work_category_id: 11
+  legacy_4d_identity_code: 2108
+  work_subcategory_desc: Vocal Quartets - unaccomp. or with keyboard
+  work_subcategory_id: 118
+work_subcategory_119: 
+  display_order: 119
+  work_category_id: 12
+  legacy_4d_identity_code: 2201 
+  work_subcategory_desc: Mixed Choir - unaccompanied
+  work_subcategory_id: 119
+work_subcategory_120: 
+  display_order: 121
+  work_category_id: 12
+  legacy_4d_identity_code: 2202
+  work_subcategory_desc: Mixed Choir with full orchestra - with or without soloists
+  work_subcategory_id: 120
+work_subcategory_121: 
+  display_order: 122
+  work_category_id: 12
+  legacy_4d_identity_code: 2203 
+  work_subcategory_desc: Mixed Choir with chamber orchestra - with or without soloists
+  work_subcategory_id: 121
+work_subcategory_122: 
+  display_order: 120
+  work_category_id: 12
+  legacy_4d_identity_code: 2205
+  work_subcategory_desc: Mixed Choir with keyboard - with or without soloists
+  work_subcategory_id: 122
+work_subcategory_123: 
+  display_order: 123
+  work_category_id: 12
+  legacy_4d_identity_code: 2206
+  work_subcategory_desc: Mixed Choir with instrumental accomp. - with or without soloists
+  work_subcategory_id: 123
+work_subcategory_124: 
+  display_order: 124
+  work_category_id: 12
+  legacy_4d_identity_code: 2210
+  work_subcategory_desc:  Womens Choir unaccompanied - with or without soloists
+  work_subcategory_id: 124
+work_subcategory_125: 
+  display_order: 128
+  work_category_id: 12
+  legacy_4d_identity_code: 2212 
+  work_subcategory_desc:  Childrens Choir +/- accomp. - with or without soloists
+  work_subcategory_id: 125
+work_subcategory_126: 
+  display_order: 125
+  work_category_id: 12
+  legacy_4d_identity_code: 2213 
+  work_subcategory_desc: Womens Choir with accomp. - with or without soloists
+  work_subcategory_id: 126
+work_subcategory_127: 
+  display_order: 127
+  work_category_id: 12
+  legacy_4d_identity_code: 2214 
+  work_subcategory_desc: Male Voice Choir with accomp. - with or without soloists
+  work_subcategory_id: 127
+work_subcategory_128: 
+  display_order: 128
+  work_category_id: 13
+  legacy_4d_identity_code: 2301
+  work_subcategory_desc: Opera and Operetta
+  work_subcategory_id: 128
+work_subcategory_129: 
+  display_order: 129
+  work_category_id: 13
+  legacy_4d_identity_code: 2302
+  work_subcategory_desc: Musical
+  work_subcategory_id: 129
+work_subcategory_130: 
+  display_order: 130
+  work_category_id: 15
+  legacy_4d_identity_code: 0001
+  work_subcategory_desc: Sacred
+  work_subcategory_id: 130
+  additional: TRUE
+work_subcategory_131: 
+  display_order: 131
+  work_category_id: 15
+  legacy_4d_identity_code: 0002
+  work_subcategory_desc: For Educational Use
+  work_subcategory_id: 131
+  additional: TRUE
+work_subcategory_132: 
+  display_order: 134
+  work_category_id: 15
+  legacy_4d_identity_code: 0003
+  work_subcategory_desc: Audience Participation
+  work_subcategory_id: 132
+  additional: TRUE
+work_subcategory_133: 
+  display_order: 135
+  work_category_id: 15
+  legacy_4d_identity_code: 0004
+  work_subcategory_desc: For Community or Massed Performance
+  work_subcategory_id: 133
+  additional: TRUE
+work_subcategory_134: 
+  display_order: 139
+  work_category_id: 15
+  legacy_4d_identity_code: 0005
+  work_subcategory_desc: Theatrical Elements
+  work_subcategory_id: 134
+  additional: TRUE
+work_subcategory_135: 
+  display_order: 140
+  work_category_id: 15
+  legacy_4d_identity_code: 0006
+  work_subcategory_desc: Improvised Elements
+  work_subcategory_id: 135
+  additional: TRUE
+work_subcategory_136: 
+  display_order: 141
+  work_category_id: 15
+  legacy_4d_identity_code: 0007
+  work_subcategory_desc: Multimedia Elements
+  work_subcategory_id: 136
+  additional: TRUE
+work_subcategory_137: 
+  display_order: 142
+  work_category_id: 15
+  legacy_4d_identity_code: 0008
+  work_subcategory_desc: Electroacoustic Elements
+  work_subcategory_id: 137
+  additional: TRUE
+work_subcategory_138: 
+  display_order: 146
+  work_category_id: 15
+  legacy_4d_identity_code: 0009
+  work_subcategory_desc: Unspecified or Variable Instrumentation
+  work_subcategory_id: 138
+  additional: TRUE
+work_subcategory_139: 
+  display_order: 147
+  work_category_id: 15
+  legacy_4d_identity_code: 0010
+  work_subcategory_desc: Includes Historic Instruments
+  work_subcategory_id: 139
+  additional: TRUE  
+work_subcategory_140: 
+  display_order: 148
+  work_category_id: 15
+  legacy_4d_identity_code: 0011
+  work_subcategory_desc: Includes Ethnic Instruments
+  work_subcategory_id: 140
+  additional: TRUE              
+work_subcategory_141: 
+  display_order: 175
+  work_category_id: 15
+  legacy_4d_identity_code: 0012
+  work_subcategory_desc: Requires Found Instruments
+  work_subcategory_id: 141
+  additional: TRUE      
+work_subcategory_142: 
+  display_order: 176
+  work_category_id: 15
+  legacy_4d_identity_code: 0013
+  work_subcategory_desc: Requires Amplified Instruments
+  work_subcategory_id: 142
+  additional: TRUE         
+work_subcategory_143: 
+  display_order: 179
+  work_category_id: 15
+  legacy_4d_identity_code: 0014
+  work_subcategory_desc: Includes Taonga Puoru
+  work_subcategory_id: 143
+  additional: TRUE      
+work_subcategory_144: 
+  display_order: 181
+  work_category_id: 15
+  legacy_4d_identity_code: 0015
+  work_subcategory_desc: Concerto
+  work_subcategory_id: 144
+  additional: TRUE        
+work_subcategory_145: 
+  display_order: 182
+  work_category_id: 15
+  legacy_4d_identity_code: 0016
+  work_subcategory_desc: Symphony
+  work_subcategory_id: 145
+  additional: TRUE      
+work_subcategory_146: 
+  display_order: 183
+  work_category_id: 15
+  legacy_4d_identity_code: 0017
+  work_subcategory_desc: Piano Trio
+  work_subcategory_id: 146
+  additional: TRUE      
+work_subcategory_147: 
+  display_order: 184
+  work_category_id: 15
+  legacy_4d_identity_code: 0018
+  work_subcategory_desc: Wind Quintet
+  work_subcategory_id: 147
+  additional: TRUE      
+work_subcategory_148: 
+  display_order: 185
+  work_category_id: 15
+  legacy_4d_identity_code: 0019
+  work_subcategory_desc: Piano Quartet
+  work_subcategory_id: 148
+  additional: TRUE      
+work_subcategory_149: 
+  display_order: 149
+  work_category_id: 14
+  legacy_4d_identity_code: 2401
+  work_subcategory_desc: Taonga Puoro - solo or with keyboard
+  work_subcategory_id: 149
+work_subcategory_150: 
+  display_order: 150
+  work_category_id: 14
+  legacy_4d_identity_code: 2402
+  work_subcategory_desc: Taonga Puoro Duo
+  work_subcategory_id: 150
+work_subcategory_151: 
+  display_order: 151
+  work_category_id: 14
+  legacy_4d_identity_code: 2403
+  work_subcategory_desc: Taonga Puoro Trio
+  work_subcategory_id: 151
+work_subcategory_152: 
+  display_order: 152
+  work_category_id: 14
+  legacy_4d_identity_code: 2404
+  work_subcategory_desc: Taonga Puoro Quartet
+  work_subcategory_id: 152
+work_subcategory_153: 
+  display_order: 153
+  work_category_id: 14
+  legacy_4d_identity_code: 2405
+  work_subcategory_desc: Taonga Puoro Ensemble (5+)
+  work_subcategory_id: 153
+work_subcategory_154: 
+  display_order: 154
+  work_category_id: 16
+  legacy_4d_identity_code: 2518
+  work_subcategory_desc: Graphic Score
+  work_subcategory_id: 154  
+work_subcategory_155: 
+  display_order: 155
+  work_category_id: 16
+  legacy_4d_identity_code: 2516
+  work_subcategory_desc: Jazz and Blues
+  work_subcategory_id: 155
+work_subcategory_156: 
+  display_order: 156
+  work_category_id: 10
+  legacy_4d_identity_code: 2023
+  work_subcategory_desc: Spoken Word with accompanying instruments
+  work_subcategory_id: 156 
+work_subcategory_157: 
+  display_order: 157
+  work_category_id: 16
+  legacy_4d_identity_code: 2507
+  work_subcategory_desc: Performance Music or Street Theatre
+  work_subcategory_id: 157 
+work_subcategory_158: 
+  display_order: 158
+  work_category_id: 16
+  legacy_4d_identity_code: 2509
+  work_subcategory_desc: Rock Music
+  work_subcategory_id: 158 
+work_subcategory_159: 
+  display_order: 159
+  work_category_id: 16
+  legacy_4d_identity_code: 2510
+  work_subcategory_desc: Arrangements or orchestrations
+  work_subcategory_id: 159 
+work_subcategory_160: 
+  display_order: 160
+  work_category_id: 16
+  legacy_4d_identity_code: 2512
+  work_subcategory_desc: Music using audience participation
+  work_subcategory_id: 160 
+work_subcategory_161: 
+  display_order: 161
+  work_category_id: 16
+  legacy_4d_identity_code: 2503
+  work_subcategory_desc: Incidental music for theatre
+  work_subcategory_id: 161 
+work_subcategory_162: 
+  display_order: 162
+  work_category_id: 16
+  legacy_4d_identity_code: 2502
+  work_subcategory_desc: Unspecified or variable instrumentation
+  work_subcategory_id: 162 
+work_subcategory_163: 
+  display_order: 163
+  work_category_id: 16
+  legacy_4d_identity_code: 2503
+  work_subcategory_desc: Music Theatre
+  work_subcategory_id: 163 
+work_subcategory_164: 
+  display_order: 164
+  work_category_id: 7
+  legacy_4d_identity_code: 1706
+  work_subcategory_desc: Percussion ensemble - unspecified size
+  work_subcategory_id: 164 
+work_subcategory_165: 
+  display_order: 165
+  work_category_id: 16
+  legacy_4d_identity_code: 2505
+  work_subcategory_desc: Ballet, Dance, Dance-drama
+  work_subcategory_id: 165 
+work_subcategory_166: 
+  display_order: 126
+  work_category_id: 12
+  legacy_4d_identity_code: 2211
+  work_subcategory_desc: Male Voice Choir unaccompanied - with or without soloist/s
+  work_subcategory_id: 166 
+work_subcategory_167: 
+  display_order: 167
+  work_category_id: 16
+  legacy_4d_identity_code: 2515
+  work_subcategory_desc: Early Instruments
+  work_subcategory_id: 167 
+work_subcategory_168: 
+  display_order: 168
+  work_category_id: 17
+  legacy_4d_identity_code: 2701
+  work_subcategory_desc: For educational use
+  work_subcategory_id: 168 
+work_subcategory_169: 
+  display_order: 169
+  work_category_id: 16
+  legacy_4d_identity_code: 2504
+  work_subcategory_desc: Music for Films, TV, video or Radio
+  work_subcategory_id: 169 
+work_subcategory_170: 
+  display_order: 170
+  work_category_id: 16
+  legacy_4d_identity_code: 2514
+  work_subcategory_desc: Massed / Community Ensembles
+  work_subcategory_id: 170 
+work_subcategory_171: 
+  display_order: 171
+  work_category_id: 16
+  legacy_4d_identity_code: 2501
+  work_subcategory_desc: Unsuitable for any other category
+  work_subcategory_id: 171 
+work_subcategory_172: 
+  display_order: 172
+  work_category_id: 16
+  legacy_4d_identity_code: 2511
+  work_subcategory_desc: Music for found instruments
+  work_subcategory_id: 172 
+work_subcategory_173: 
+  display_order: 173
+  work_category_id: 16
+  legacy_4d_identity_code: 2508
+  work_subcategory_desc: Spoken word with accompanying instruments
+  work_subcategory_id: 173 
+work_subcategory_174: 
+  display_order: 174
+  work_category_id: 16
+  legacy_4d_identity_code: 2517
+  work_subcategory_desc: Folk music
+  work_subcategory_id: 174 
+work_subcategory_175: 
+  display_order: 130
+  work_category_id: 13
+  legacy_4d_identity_code: 2303
+  work_subcategory_desc: Music Theatre
+  work_subcategory_id: 175 
+work_subcategory_176: 
+  display_order: 132
+  work_category_id: 15
+  legacy_4d_identity_code: 0020
+  work_subcategory_desc: Suitable for Youth
+  work_subcategory_id: 176
+  additional: TRUE
+work_subcategory_177: 
+  display_order: 133
+  work_category_id: 15
+  legacy_4d_identity_code: 0021
+  work_subcategory_desc: New Zealand Text
+  work_subcategory_id: 177
+  additional: TRUE
+work_subcategory_178: 
+  display_order: 136
+  work_category_id: 15
+  legacy_4d_identity_code: 0022
+  work_subcategory_desc: Incidental Music for Theatre
+  work_subcategory_id: 178
+  additional: TRUE
+work_subcategory_179: 
+  display_order: 137
+  work_category_id: 15
+  legacy_4d_identity_code: 0023
+  work_subcategory_desc: Music for Dance/Ballet
+  work_subcategory_id: 179
+  additional: TRUE
+work_subcategory_180: 
+  display_order: 138
+  work_category_id: 15
+  legacy_4d_identity_code: 0024
+  work_subcategory_desc: Music for Film and TV
+  work_subcategory_id: 180
+  additional: TRUE
+work_subcategory_181: 
+  display_order: 143
+  work_category_id: 15
+  legacy_4d_identity_code: 0025
+  work_subcategory_desc: Includes Live Electronics
+  work_subcategory_id: 181
+  additional: TRUE
+work_subcategory_182: 
+  display_order: 144
+  work_category_id: 15
+  legacy_4d_identity_code: 0026
+  work_subcategory_desc: Includes Spoken Word
+  work_subcategory_id: 182
+  additional: TRUE
+work_subcategory_183: 
+  display_order: 145
+  work_category_id: 15
+  legacy_4d_identity_code: 0027
+  work_subcategory_desc: Orchestration
+  work_subcategory_id: 183
+  additional: TRUE
+work_subcategory_184: 
+  display_order: 177
+  work_category_id: 15
+  legacy_4d_identity_code: 0028
+  work_subcategory_desc: Ringtones
+  work_subcategory_id: 184
+  additional: TRUE
+work_subcategory_185: 
+  display_order: 178
+  work_category_id: 15
+  legacy_4d_identity_code: 0029
+  work_subcategory_desc: Music for Video Games
+  work_subcategory_id: 185
+  additional: TRUE
+work_subcategory_186: 
+  display_order: 180
+  work_category_id: 15
+  legacy_4d_identity_code: 0030
+  work_subcategory_desc: Includes Gamelan Instruments
+  work_subcategory_id: 186
+  additional: TRUE
+work_subcategory_187: 
+  display_order: 186
+  work_category_id: 15
+  legacy_4d_identity_code: 0031
+  work_subcategory_desc: Sonatas
+  work_subcategory_id: 187
+  additional: TRUE

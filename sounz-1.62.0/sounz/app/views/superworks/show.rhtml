@@ -1,0 +1,5 @@
+<%=main_tabs(selected = :works)%>
+<%=start_of_content(@superwork, "Superwork")%>
+
+<%=render :partial => '/shared/frbr/objects/full/superwork', :locals => {:object => @superwork}%>
+<%=end_of_content(@superwork)%>

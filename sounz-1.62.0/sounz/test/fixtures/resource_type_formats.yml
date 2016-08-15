@@ -1,0 +1,969 @@
+--- 
+resource_type_formats_233: 
+  resource_type_format_id: "248"
+  format_id: "8"
+  resource_type_id: "10"
+resource_type_formats_126: 
+  resource_type_format_id: "141"
+  format_id: "30"
+  resource_type_id: "19"
+resource_type_formats_152: 
+  resource_type_format_id: "167"
+  format_id: "26"
+  resource_type_id: "20"
+resource_type_formats_206: 
+  resource_type_format_id: "221"
+  format_id: "30"
+  resource_type_id: "4"
+resource_type_formats_018: 
+  resource_type_format_id: "18"
+  format_id: "4"
+  resource_type_id: "16"
+resource_type_formats_045: 
+  resource_type_format_id: "60"
+  format_id: "21"
+  resource_type_id: "1"
+resource_type_formats_071: 
+  resource_type_format_id: "86"
+  format_id: "3"
+  resource_type_id: "9"
+resource_type_formats_234: 
+  resource_type_format_id: "249"
+  format_id: "2"
+  resource_type_id: "10"
+resource_type_formats_127: 
+  resource_type_format_id: "142"
+  format_id: "13"
+  resource_type_id: "19"
+resource_type_formats_153: 
+  resource_type_format_id: "168"
+  format_id: "8"
+  resource_type_id: "20"
+resource_type_formats_207: 
+  resource_type_format_id: "222"
+  format_id: "13"
+  resource_type_id: "4"
+resource_type_formats_019: 
+  resource_type_format_id: "19"
+  format_id: "1"
+  resource_type_id: "16"
+resource_type_formats_046: 
+  resource_type_format_id: "61"
+  format_id: "22"
+  resource_type_id: "1"
+resource_type_formats_072: 
+  resource_type_format_id: "87"
+  format_id: "27"
+  resource_type_id: "9"
+resource_type_formats_235: 
+  resource_type_format_id: "250"
+  format_id: "4"
+  resource_type_id: "10"
+resource_type_formats_154: 
+  resource_type_format_id: "169"
+  format_id: "2"
+  resource_type_id: "20"
+resource_type_formats_180: 
+  resource_type_format_id: "195"
+  format_id: "31"
+  resource_type_id: "6"
+resource_type_formats_208: 
+  resource_type_format_id: "223"
+  format_id: "3"
+  resource_type_id: "4"
+resource_type_formats_047: 
+  resource_type_format_id: "62"
+  format_id: "26"
+  resource_type_id: "1"
+resource_type_formats_073: 
+  resource_type_format_id: "88"
+  format_id: "28"
+  resource_type_id: "9"
+resource_type_formats_236: 
+  resource_type_format_id: "251"
+  format_id: "1"
+  resource_type_id: "10"
+resource_type_formats_155: 
+  resource_type_format_id: "170"
+  format_id: "4"
+  resource_type_id: "20"
+resource_type_formats_181: 
+  resource_type_format_id: "196"
+  format_id: "23"
+  resource_type_id: "6"
+resource_type_formats_209: 
+  resource_type_format_id: "224"
+  format_id: "27"
+  resource_type_id: "4"
+resource_type_formats_048: 
+  resource_type_format_id: "63"
+  format_id: "8"
+  resource_type_id: "1"
+resource_type_formats_074: 
+  resource_type_format_id: "89"
+  format_id: "11"
+  resource_type_id: "18"
+resource_type_formats_128: 
+  resource_type_format_id: "143"
+  format_id: "3"
+  resource_type_id: "19"
+resource_type_formats_237: 
+  resource_type_format_id: "252"
+  format_id: "9"
+  resource_type_id: "10"
+resource_type_formats_156: 
+  resource_type_format_id: "171"
+  format_id: "1"
+  resource_type_id: "20"
+resource_type_formats_182: 
+  resource_type_format_id: "197"
+  format_id: "21"
+  resource_type_id: "6"
+resource_type_formats_049: 
+  resource_type_format_id: "64"
+  format_id: "2"
+  resource_type_id: "1"
+resource_type_formats_075: 
+  resource_type_format_id: "90"
+  format_id: "31"
+  resource_type_id: "18"
+resource_type_formats_129: 
+  resource_type_format_id: "144"
+  format_id: "27"
+  resource_type_id: "19"
+resource_type_formats_183: 
+  resource_type_format_id: "198"
+  format_id: "22"
+  resource_type_id: "6"
+resource_type_formats_076: 
+  resource_type_format_id: "91"
+  format_id: "23"
+  resource_type_id: "18"
+resource_type_formats_157: 
+  resource_type_format_id: "172"
+  format_id: "9"
+  resource_type_id: "20"
+resource_type_formats_238: 
+  resource_type_format_id: "253"
+  format_id: "30"
+  resource_type_id: "10"
+resource_type_formats_184: 
+  resource_type_format_id: "199"
+  format_id: "26"
+  resource_type_id: "6"
+resource_type_formats_077: 
+  resource_type_format_id: "92"
+  format_id: "21"
+  resource_type_id: "18"
+resource_type_formats_158: 
+  resource_type_format_id: "173"
+  format_id: "30"
+  resource_type_id: "20"
+resource_type_formats_239: 
+  resource_type_format_id: "254"
+  format_id: "13"
+  resource_type_id: "10"
+resource_type_formats_078: 
+  resource_type_format_id: "93"
+  format_id: "22"
+  resource_type_id: "18"
+resource_type_formats_159: 
+  resource_type_format_id: "174"
+  format_id: "13"
+  resource_type_id: "20"
+resource_type_formats_185: 
+  resource_type_format_id: "200"
+  format_id: "8"
+  resource_type_id: "6"
+resource_type_formats_079: 
+  resource_type_format_id: "94"
+  format_id: "26"
+  resource_type_id: "18"
+resource_type_formats_186: 
+  resource_type_format_id: "201"
+  format_id: "2"
+  resource_type_id: "6"
+resource_type_formats_187: 
+  resource_type_format_id: "202"
+  format_id: "4"
+  resource_type_id: "6"
+resource_type_formats_188: 
+  resource_type_format_id: "203"
+  format_id: "1"
+  resource_type_id: "6"
+resource_type_formats_189: 
+  resource_type_format_id: "204"
+  format_id: "9"
+  resource_type_id: "6"
+resource_type_formats_001: 
+  resource_type_format_id: "1"
+  format_id: "2"
+  resource_type_id: "13"
+resource_type_formats_002: 
+  resource_type_format_id: "2"
+  format_id: "4"
+  resource_type_id: "13"
+resource_type_formats_003: 
+  resource_type_format_id: "3"
+  format_id: "1"
+  resource_type_id: "13"
+resource_type_formats_110: 
+  resource_type_format_id: "125"
+  format_id: "30"
+  resource_type_id: "14"
+resource_type_formats_004: 
+  resource_type_format_id: "4"
+  format_id: "9"
+  resource_type_id: "13"
+resource_type_formats_030: 
+  resource_type_format_id: "45"
+  format_id: "22"
+  resource_type_id: "7"
+resource_type_formats_111: 
+  resource_type_format_id: "126"
+  format_id: "13"
+  resource_type_id: "14"
+resource_type_formats_005: 
+  resource_type_format_id: "5"
+  format_id: "30"
+  resource_type_id: "13"
+resource_type_formats_031: 
+  resource_type_format_id: "46"
+  format_id: "26"
+  resource_type_id: "7"
+resource_type_formats_112: 
+  resource_type_format_id: "127"
+  format_id: "3"
+  resource_type_id: "14"
+resource_type_formats_006: 
+  resource_type_format_id: "6"
+  format_id: "13"
+  resource_type_id: "13"
+resource_type_formats_032: 
+  resource_type_format_id: "47"
+  format_id: "8"
+  resource_type_id: "7"
+resource_type_formats_113: 
+  resource_type_format_id: "128"
+  format_id: "27"
+  resource_type_id: "14"
+resource_type_formats_220: 
+  resource_type_format_id: "235"
+  format_id: "1"
+  resource_type_id: "22"
+resource_type_formats_033: 
+  resource_type_format_id: "48"
+  format_id: "2"
+  resource_type_id: "7"
+resource_type_formats_114: 
+  resource_type_format_id: "129"
+  format_id: "28"
+  resource_type_id: "14"
+resource_type_formats_140: 
+  resource_type_format_id: "155"
+  format_id: "1"
+  resource_type_id: "11"
+resource_type_formats_221: 
+  resource_type_format_id: "236"
+  format_id: "9"
+  resource_type_id: "22"
+resource_type_formats_007: 
+  resource_type_format_id: "7"
+  format_id: "3"
+  resource_type_id: "13"
+resource_type_formats_034: 
+  resource_type_format_id: "49"
+  format_id: "4"
+  resource_type_id: "7"
+resource_type_formats_060: 
+  resource_type_format_id: "75"
+  format_id: "23"
+  resource_type_id: "9"
+resource_type_formats_115: 
+  resource_type_format_id: "130"
+  format_id: "11"
+  resource_type_id: "19"
+resource_type_formats_141: 
+  resource_type_format_id: "156"
+  format_id: "9"
+  resource_type_id: "11"
+resource_type_formats_222: 
+  resource_type_format_id: "237"
+  format_id: "30"
+  resource_type_id: "22"
+resource_type_formats_223: 
+  resource_type_format_id: "238"
+  format_id: "13"
+  resource_type_id: "22"
+resource_type_formats_008: 
+  resource_type_format_id: "8"
+  format_id: "27"
+  resource_type_id: "13"
+resource_type_formats_035: 
+  resource_type_format_id: "50"
+  format_id: "1"
+  resource_type_id: "7"
+resource_type_formats_061: 
+  resource_type_format_id: "76"
+  format_id: "21"
+  resource_type_id: "9"
+resource_type_formats_116: 
+  resource_type_format_id: "131"
+  format_id: "31"
+  resource_type_id: "19"
+resource_type_formats_142: 
+  resource_type_format_id: "157"
+  format_id: "30"
+  resource_type_id: "11"
+resource_type_formats_224: 
+  resource_type_format_id: "239"
+  format_id: "3"
+  resource_type_id: "22"
+resource_type_formats_009: 
+  resource_type_format_id: "9"
+  format_id: "28"
+  resource_type_id: "13"
+resource_type_formats_036: 
+  resource_type_format_id: "51"
+  format_id: "9"
+  resource_type_id: "7"
+resource_type_formats_062: 
+  resource_type_format_id: "77"
+  format_id: "22"
+  resource_type_id: "9"
+resource_type_formats_143: 
+  resource_type_format_id: "158"
+  format_id: "13"
+  resource_type_id: "11"
+resource_type_formats_225: 
+  resource_type_format_id: "240"
+  format_id: "27"
+  resource_type_id: "22"
+resource_type_formats_037: 
+  resource_type_format_id: "52"
+  format_id: "30"
+  resource_type_id: "7"
+resource_type_formats_063: 
+  resource_type_format_id: "78"
+  format_id: "26"
+  resource_type_id: "9"
+resource_type_formats_117: 
+  resource_type_format_id: "132"
+  format_id: "23"
+  resource_type_id: "19"
+resource_type_formats_144: 
+  resource_type_format_id: "159"
+  format_id: "3"
+  resource_type_id: "11"
+resource_type_formats_170: 
+  resource_type_format_id: "185"
+  format_id: "2"
+  resource_type_id: "5"
+resource_type_formats_226: 
+  resource_type_format_id: "241"
+  format_id: "28"
+  resource_type_id: "22"
+resource_type_formats_038: 
+  resource_type_format_id: "53"
+  format_id: "13"
+  resource_type_id: "7"
+resource_type_formats_064: 
+  resource_type_format_id: "79"
+  format_id: "8"
+  resource_type_id: "9"
+resource_type_formats_090: 
+  resource_type_format_id: "105"
+  format_id: "11"
+  resource_type_id: "2"
+resource_type_formats_118: 
+  resource_type_format_id: "133"
+  format_id: "21"
+  resource_type_id: "19"
+resource_type_formats_145: 
+  resource_type_format_id: "160"
+  format_id: "27"
+  resource_type_id: "11"
+resource_type_formats_171: 
+  resource_type_format_id: "186"
+  format_id: "4"
+  resource_type_id: "5"
+resource_type_formats_039: 
+  resource_type_format_id: "54"
+  format_id: "3"
+  resource_type_id: "7"
+resource_type_formats_065: 
+  resource_type_format_id: "80"
+  format_id: "2"
+  resource_type_id: "9"
+resource_type_formats_091: 
+  resource_type_format_id: "106"
+  format_id: "31"
+  resource_type_id: "2"
+resource_type_formats_119: 
+  resource_type_format_id: "134"
+  format_id: "22"
+  resource_type_id: "19"
+resource_type_formats_146: 
+  resource_type_format_id: "161"
+  format_id: "28"
+  resource_type_id: "11"
+resource_type_formats_172: 
+  resource_type_format_id: "187"
+  format_id: "1"
+  resource_type_id: "5"
+resource_type_formats_227: 
+  resource_type_format_id: "242"
+  format_id: "11"
+  resource_type_id: "10"
+resource_type_formats_066: 
+  resource_type_format_id: "81"
+  format_id: "4"
+  resource_type_id: "9"
+resource_type_formats_092: 
+  resource_type_format_id: "107"
+  format_id: "23"
+  resource_type_id: "2"
+resource_type_formats_147: 
+  resource_type_format_id: "162"
+  format_id: "11"
+  resource_type_id: "20"
+resource_type_formats_173: 
+  resource_type_format_id: "188"
+  format_id: "9"
+  resource_type_id: "5"
+resource_type_formats_228: 
+  resource_type_format_id: "243"
+  format_id: "31"
+  resource_type_id: "10"
+resource_type_formats_067: 
+  resource_type_format_id: "82"
+  format_id: "1"
+  resource_type_id: "9"
+resource_type_formats_093: 
+  resource_type_format_id: "108"
+  format_id: "21"
+  resource_type_id: "2"
+resource_type_formats_148: 
+  resource_type_format_id: "163"
+  format_id: "31"
+  resource_type_id: "20"
+resource_type_formats_174: 
+  resource_type_format_id: "189"
+  format_id: "30"
+  resource_type_id: "5"
+resource_type_formats_229: 
+  resource_type_format_id: "244"
+  format_id: "23"
+  resource_type_id: "10"
+resource_type_formats_068: 
+  resource_type_format_id: "83"
+  format_id: "9"
+  resource_type_id: "9"
+resource_type_formats_094: 
+  resource_type_format_id: "109"
+  format_id: "22"
+  resource_type_id: "2"
+resource_type_formats_149: 
+  resource_type_format_id: "164"
+  format_id: "23"
+  resource_type_id: "20"
+resource_type_formats_175: 
+  resource_type_format_id: "190"
+  format_id: "13"
+  resource_type_id: "5"
+resource_type_formats_069: 
+  resource_type_format_id: "84"
+  format_id: "30"
+  resource_type_id: "9"
+resource_type_formats_095: 
+  resource_type_format_id: "110"
+  format_id: "26"
+  resource_type_id: "2"
+resource_type_formats_176: 
+  resource_type_format_id: "191"
+  format_id: "3"
+  resource_type_id: "5"
+resource_type_formats_096: 
+  resource_type_format_id: "111"
+  format_id: "8"
+  resource_type_id: "2"
+resource_type_formats_177: 
+  resource_type_format_id: "192"
+  format_id: "27"
+  resource_type_id: "5"
+resource_type_formats_097: 
+  resource_type_format_id: "112"
+  format_id: "2"
+  resource_type_id: "2"
+resource_type_formats_178: 
+  resource_type_format_id: "193"
+  format_id: "28"
+  resource_type_id: "5"
+resource_type_formats_098: 
+  resource_type_format_id: "113"
+  format_id: "4"
+  resource_type_id: "2"
+resource_type_formats_179: 
+  resource_type_format_id: "194"
+  format_id: "11"
+  resource_type_id: "6"
+resource_type_formats_099: 
+  resource_type_format_id: "114"
+  format_id: "1"
+  resource_type_id: "2"
+resource_type_formats_100: 
+  resource_type_format_id: "115"
+  format_id: "9"
+  resource_type_id: "2"
+resource_type_formats_020: 
+  resource_type_format_id: "20"
+  format_id: "9"
+  resource_type_id: "16"
+resource_type_formats_101: 
+  resource_type_format_id: "116"
+  format_id: "30"
+  resource_type_id: "2"
+resource_type_formats_021: 
+  resource_type_format_id: "21"
+  format_id: "30"
+  resource_type_id: "16"
+resource_type_formats_102: 
+  resource_type_format_id: "117"
+  format_id: "13"
+  resource_type_id: "2"
+resource_type_formats_210: 
+  resource_type_format_id: "225"
+  format_id: "28"
+  resource_type_id: "4"
+resource_type_formats_022: 
+  resource_type_format_id: "22"
+  format_id: "13"
+  resource_type_id: "16"
+resource_type_formats_103: 
+  resource_type_format_id: "118"
+  format_id: "3"
+  resource_type_id: "2"
+resource_type_formats_211: 
+  resource_type_format_id: "226"
+  format_id: "11"
+  resource_type_id: "22"
+resource_type_formats_023: 
+  resource_type_format_id: "23"
+  format_id: "3"
+  resource_type_id: "16"
+resource_type_formats_104: 
+  resource_type_format_id: "119"
+  format_id: "27"
+  resource_type_id: "2"
+resource_type_formats_130: 
+  resource_type_format_id: "145"
+  format_id: "28"
+  resource_type_id: "19"
+resource_type_formats_024: 
+  resource_type_format_id: "24"
+  format_id: "27"
+  resource_type_id: "16"
+resource_type_formats_050: 
+  resource_type_format_id: "65"
+  format_id: "4"
+  resource_type_id: "1"
+resource_type_formats_105: 
+  resource_type_format_id: "120"
+  format_id: "28"
+  resource_type_id: "2"
+resource_type_formats_131: 
+  resource_type_format_id: "146"
+  format_id: "11"
+  resource_type_id: "11"
+resource_type_formats_212: 
+  resource_type_format_id: "227"
+  format_id: "31"
+  resource_type_id: "22"
+resource_type_formats_025: 
+  resource_type_format_id: "25"
+  format_id: "28"
+  resource_type_id: "16"
+resource_type_formats_051: 
+  resource_type_format_id: "66"
+  format_id: "1"
+  resource_type_id: "1"
+resource_type_formats_132: 
+  resource_type_format_id: "147"
+  format_id: "31"
+  resource_type_id: "11"
+resource_type_formats_213: 
+  resource_type_format_id: "228"
+  format_id: "23"
+  resource_type_id: "22"
+resource_type_formats_240: 
+  resource_type_format_id: "255"
+  format_id: "3"
+  resource_type_id: "10"
+resource_type_formats_026: 
+  resource_type_format_id: "41"
+  format_id: "11"
+  resource_type_id: "7"
+resource_type_formats_052: 
+  resource_type_format_id: "67"
+  format_id: "9"
+  resource_type_id: "1"
+resource_type_formats_106: 
+  resource_type_format_id: "121"
+  format_id: "2"
+  resource_type_id: "14"
+resource_type_formats_133: 
+  resource_type_format_id: "148"
+  format_id: "23"
+  resource_type_id: "11"
+resource_type_formats_214: 
+  resource_type_format_id: "229"
+  format_id: "21"
+  resource_type_id: "22"
+resource_type_formats_241: 
+  resource_type_format_id: "256"
+  format_id: "27"
+  resource_type_id: "10"
+resource_type_formats_027: 
+  resource_type_format_id: "42"
+  format_id: "31"
+  resource_type_id: "7"
+resource_type_formats_053: 
+  resource_type_format_id: "68"
+  format_id: "30"
+  resource_type_id: "1"
+resource_type_formats_107: 
+  resource_type_format_id: "122"
+  format_id: "4"
+  resource_type_id: "14"
+resource_type_formats_134: 
+  resource_type_format_id: "149"
+  format_id: "21"
+  resource_type_id: "11"
+resource_type_formats_160: 
+  resource_type_format_id: "175"
+  format_id: "3"
+  resource_type_id: "20"
+resource_type_formats_215: 
+  resource_type_format_id: "230"
+  format_id: "22"
+  resource_type_id: "22"
+resource_type_formats_242: 
+  resource_type_format_id: "257"
+  format_id: "28"
+  resource_type_id: "10"
+resource_type_formats_028: 
+  resource_type_format_id: "43"
+  format_id: "23"
+  resource_type_id: "7"
+resource_type_formats_054: 
+  resource_type_format_id: "69"
+  format_id: "13"
+  resource_type_id: "1"
+resource_type_formats_080: 
+  resource_type_format_id: "95"
+  format_id: "8"
+  resource_type_id: "18"
+resource_type_formats_108: 
+  resource_type_format_id: "123"
+  format_id: "1"
+  resource_type_id: "14"
+resource_type_formats_135: 
+  resource_type_format_id: "150"
+  format_id: "22"
+  resource_type_id: "11"
+resource_type_formats_161: 
+  resource_type_format_id: "176"
+  format_id: "27"
+  resource_type_id: "20"
+resource_type_formats_055: 
+  resource_type_format_id: "70"
+  format_id: "3"
+  resource_type_id: "1"
+resource_type_formats_081: 
+  resource_type_format_id: "96"
+  format_id: "2"
+  resource_type_id: "18"
+resource_type_formats_109: 
+  resource_type_format_id: "124"
+  format_id: "9"
+  resource_type_id: "14"
+resource_type_formats_136: 
+  resource_type_format_id: "151"
+  format_id: "26"
+  resource_type_id: "11"
+resource_type_formats_162: 
+  resource_type_format_id: "177"
+  format_id: "28"
+  resource_type_id: "20"
+resource_type_formats_216: 
+  resource_type_format_id: "231"
+  format_id: "26"
+  resource_type_id: "22"
+resource_type_formats_029: 
+  resource_type_format_id: "44"
+  format_id: "21"
+  resource_type_id: "7"
+resource_type_formats_056: 
+  resource_type_format_id: "71"
+  format_id: "27"
+  resource_type_id: "1"
+resource_type_formats_082: 
+  resource_type_format_id: "97"
+  format_id: "4"
+  resource_type_id: "18"
+resource_type_formats_137: 
+  resource_type_format_id: "152"
+  format_id: "8"
+  resource_type_id: "11"
+resource_type_formats_163: 
+  resource_type_format_id: "178"
+  format_id: "11"
+  resource_type_id: "5"
+resource_type_formats_217: 
+  resource_type_format_id: "232"
+  format_id: "8"
+  resource_type_id: "22"
+resource_type_formats_057: 
+  resource_type_format_id: "72"
+  format_id: "28"
+  resource_type_id: "1"
+resource_type_formats_083: 
+  resource_type_format_id: "98"
+  format_id: "1"
+  resource_type_id: "18"
+resource_type_formats_138: 
+  resource_type_format_id: "153"
+  format_id: "2"
+  resource_type_id: "11"
+resource_type_formats_164: 
+  resource_type_format_id: "179"
+  format_id: "31"
+  resource_type_id: "5"
+resource_type_formats_190: 
+  resource_type_format_id: "205"
+  format_id: "30"
+  resource_type_id: "6"
+resource_type_formats_218: 
+  resource_type_format_id: "233"
+  format_id: "2"
+  resource_type_id: "22"
+resource_type_formats_058: 
+  resource_type_format_id: "73"
+  format_id: "11"
+  resource_type_id: "9"
+resource_type_formats_084: 
+  resource_type_format_id: "99"
+  format_id: "9"
+  resource_type_id: "18"
+resource_type_formats_165: 
+  resource_type_format_id: "180"
+  format_id: "23"
+  resource_type_id: "5"
+resource_type_formats_191: 
+  resource_type_format_id: "206"
+  format_id: "13"
+  resource_type_id: "6"
+resource_type_formats_219: 
+  resource_type_format_id: "234"
+  format_id: "4"
+  resource_type_id: "22"
+resource_type_formats_059: 
+  resource_type_format_id: "74"
+  format_id: "31"
+  resource_type_id: "9"
+resource_type_formats_085: 
+  resource_type_format_id: "100"
+  format_id: "30"
+  resource_type_id: "18"
+resource_type_formats_139: 
+  resource_type_format_id: "154"
+  format_id: "4"
+  resource_type_id: "11"
+resource_type_formats_166: 
+  resource_type_format_id: "181"
+  format_id: "21"
+  resource_type_id: "5"
+resource_type_formats_192: 
+  resource_type_format_id: "207"
+  format_id: "3"
+  resource_type_id: "6"
+resource_type_formats_086: 
+  resource_type_format_id: "101"
+  format_id: "13"
+  resource_type_id: "18"
+resource_type_formats_167: 
+  resource_type_format_id: "182"
+  format_id: "22"
+  resource_type_id: "5"
+resource_type_formats_193: 
+  resource_type_format_id: "208"
+  format_id: "27"
+  resource_type_id: "6"
+resource_type_formats_087: 
+  resource_type_format_id: "102"
+  format_id: "3"
+  resource_type_id: "18"
+resource_type_formats_168: 
+  resource_type_format_id: "183"
+  format_id: "26"
+  resource_type_id: "5"
+resource_type_formats_194: 
+  resource_type_format_id: "209"
+  format_id: "28"
+  resource_type_id: "6"
+resource_type_formats_088: 
+  resource_type_format_id: "103"
+  format_id: "27"
+  resource_type_id: "18"
+resource_type_formats_169: 
+  resource_type_format_id: "184"
+  format_id: "8"
+  resource_type_id: "5"
+resource_type_formats_195: 
+  resource_type_format_id: "210"
+  format_id: "11"
+  resource_type_id: "4"
+resource_type_formats_089: 
+  resource_type_format_id: "104"
+  format_id: "28"
+  resource_type_id: "18"
+resource_type_formats_196: 
+  resource_type_format_id: "211"
+  format_id: "31"
+  resource_type_id: "4"
+resource_type_formats_197: 
+  resource_type_format_id: "212"
+  format_id: "23"
+  resource_type_id: "4"
+resource_type_formats_198: 
+  resource_type_format_id: "213"
+  format_id: "21"
+  resource_type_id: "4"
+resource_type_formats_199: 
+  resource_type_format_id: "214"
+  format_id: "22"
+  resource_type_id: "4"
+resource_type_formats_010: 
+  resource_type_format_id: "10"
+  format_id: "11"
+  resource_type_id: "16"
+resource_type_formats_011: 
+  resource_type_format_id: "11"
+  format_id: "31"
+  resource_type_id: "16"
+resource_type_formats_012: 
+  resource_type_format_id: "12"
+  format_id: "23"
+  resource_type_id: "16"
+resource_type_formats_200: 
+  resource_type_format_id: "215"
+  format_id: "26"
+  resource_type_id: "4"
+resource_type_formats_013: 
+  resource_type_format_id: "13"
+  format_id: "21"
+  resource_type_id: "16"
+resource_type_formats_120: 
+  resource_type_format_id: "135"
+  format_id: "26"
+  resource_type_id: "19"
+resource_type_formats_201: 
+  resource_type_format_id: "216"
+  format_id: "8"
+  resource_type_id: "4"
+resource_type_formats_014: 
+  resource_type_format_id: "14"
+  format_id: "22"
+  resource_type_id: "16"
+resource_type_formats_040: 
+  resource_type_format_id: "55"
+  format_id: "27"
+  resource_type_id: "7"
+resource_type_formats_121: 
+  resource_type_format_id: "136"
+  format_id: "8"
+  resource_type_id: "19"
+resource_type_formats_202: 
+  resource_type_format_id: "217"
+  format_id: "2"
+  resource_type_id: "4"
+resource_type_formats_041: 
+  resource_type_format_id: "56"
+  format_id: "28"
+  resource_type_id: "7"
+resource_type_formats_122: 
+  resource_type_format_id: "137"
+  format_id: "2"
+  resource_type_id: "19"
+resource_type_formats_203: 
+  resource_type_format_id: "218"
+  format_id: "4"
+  resource_type_id: "4"
+resource_type_formats_015: 
+  resource_type_format_id: "15"
+  format_id: "26"
+  resource_type_id: "16"
+resource_type_formats_230: 
+  resource_type_format_id: "245"
+  format_id: "21"
+  resource_type_id: "10"
+resource_type_formats_042: 
+  resource_type_format_id: "57"
+  format_id: "11"
+  resource_type_id: "1"
+resource_type_formats_123: 
+  resource_type_format_id: "138"
+  format_id: "4"
+  resource_type_id: "19"
+resource_type_formats_204: 
+  resource_type_format_id: "219"
+  format_id: "1"
+  resource_type_id: "4"
+resource_type_formats_016: 
+  resource_type_format_id: "16"
+  format_id: "8"
+  resource_type_id: "16"
+resource_type_formats_231: 
+  resource_type_format_id: "246"
+  format_id: "22"
+  resource_type_id: "10"
+resource_type_formats_124: 
+  resource_type_format_id: "139"
+  format_id: "1"
+  resource_type_id: "19"
+resource_type_formats_150: 
+  resource_type_format_id: "165"
+  format_id: "21"
+  resource_type_id: "20"
+resource_type_formats_017: 
+  resource_type_format_id: "17"
+  format_id: "2"
+  resource_type_id: "16"
+resource_type_formats_043: 
+  resource_type_format_id: "58"
+  format_id: "31"
+  resource_type_id: "1"
+resource_type_formats_232: 
+  resource_type_format_id: "247"
+  format_id: "26"
+  resource_type_id: "10"
+resource_type_formats_070: 
+  resource_type_format_id: "85"
+  format_id: "13"
+  resource_type_id: "9"
+resource_type_formats_125: 
+  resource_type_format_id: "140"
+  format_id: "9"
+  resource_type_id: "19"
+resource_type_formats_151: 
+  resource_type_format_id: "166"
+  format_id: "22"
+  resource_type_id: "20"
+resource_type_formats_205: 
+  resource_type_format_id: "220"
+  format_id: "9"
+  resource_type_id: "4"
+resource_type_formats_044: 
+  resource_type_format_id: "59"
+  format_id: "23"
+  resource_type_id: "1"

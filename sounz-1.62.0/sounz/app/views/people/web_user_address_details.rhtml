@@ -1,0 +1,29 @@
+<% title 'Verify Postal Address' %>
+<div class="section">
+<h1>Verify Postal Address</h1>
+</div>
+
+<p>
+<b>You need to supply a postal address to us in order to use the shopping cart.</b><br/>
+Please check the existing details we have for you  below, or fill in the required information.
+(<font color="#f00">*</font> indicates required field)
+</p>
+
+<%= error_messages_for 'user_login' %>
+<%= error_messages_for 'person' %>
+<%= error_messages_for 'role' %>
+<%= error_messages_for 'contactinfo' %>
+<%= error_messages_for 'role_contactinfo' %>
+
+<%for message in @extra_messages%>
+<b><font color="#f00"><%=message%></font></b><br/>
+<%end%>
+
+<% form_tag :action => 'update_web_user_address_details' do %>
+  <%= render :partial => 'web_user_contactinfo_form' %>
+  <%if @from == 'checkout'%>
+  <%= submit_tag 'Continue the Checkout Process' %>
+  <%else%>
+  <%= submit_tag 'Update your details' %>
+  <%end%>
+<% end %>

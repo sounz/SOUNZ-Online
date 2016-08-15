@@ -1,0 +1,17 @@
+<form id="people_and_organisations">
+Search for: Name <%= text_field_with_auto_complete :person, :first_names, :limit => 20 %>
+<br>
+Organisation: <%= text_field_with_auto_complete :organisation, :organisation_name, :limit => 20 %>
+    <%=submit_tag 'Search'%>
+</form>
+    
+  <%=  observe_form "people_and_organisations",
+ :frequency => 0.5, 
+:update =>"search_results",
+:url => {:action => "search_by_name_and_organisation"}
+  %>  
+  <h2>Search Results</h2>
+  <div id="search_results">Results will appear here</div>
+
+<h2>Selected People</h2>
+    

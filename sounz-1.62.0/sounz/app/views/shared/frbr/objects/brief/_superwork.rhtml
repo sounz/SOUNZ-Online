@@ -1,0 +1,7 @@
+<b><%=object.superwork_title%></b>
+<% composers = object.works_evidenced_composers
+if !composers.blank?
+%>
+(<%=composers.map{|r|r.contributor_names}.join(',')%>)
+<%end%>
+&nbsp;<%= icons_for(object, @login)%><br>

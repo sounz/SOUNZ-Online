@@ -1,0 +1,6 @@
+<%if object != nil%>
+<input type="hidden" id="event_id" name="distinction_instance[event_id]" value="<%=object.objectData.event_id%>">
+<b><A href="/events/edit/<%=object.objectData.event_id%>"><%=object.objectData.frbr_ui_desc%></a></b><br>
+<%else%>
+<b>No event assigned!</b>
+<%end%>

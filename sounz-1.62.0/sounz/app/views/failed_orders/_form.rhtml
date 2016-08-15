@@ -1,0 +1,381 @@
+<%= error_messages_for 'order' %>
+
+<% if !@merchant_ref.blank? %>
+
+<fieldset>
+<legend>Transaction Details</legend>
+<%= hidden_field_tag "id", @dps_pxpay_id %>
+
+<table>
+
+<tr>
+<th><label>Merchant reference</label></th>
+<td>&nbsp;&nbsp;<%= @merchant_ref %></td>
+</tr>
+
+<tr>
+<th><label>Transaction amount</label></th>
+<td>&nbsp;&nbsp;$<%= @total_amount %>
+<%= hidden_field "order", "order_total", :value => @total_amount %></td>
+</tr>
+
+</table>
+
+</fieldset>
+
+<fieldset>
+<legend>Order Details</legend>
+
+<%= hidden_field "order", "customers_id", :value => @customer_login.login_id %>
+<table>
+<tr>
+<th><label>Customer name</label></th>
+<td><%= hidden_field "order", "customers_name", :value => @customer_name %><%= @customer_name %></td>
+</tr>
+
+<tr>
+<th><label>Customer company</label></th>
+<td>
+<% if !@customer_login.organisation.blank? %>
+<%= hidden_field "order", "customers_company", :value => @customer_login.organisation.organisation_list_name(true) %><%= @customer_login.organisation.organisation_list_name%>
+<% end %>
+</td>
+</tr>
+
+<tr>
+<th><label>Customer username</label></th>
+<td><%= @customer_username %></td>
+</tr>
+
+<tr>
+<th><label>Customer general details</label></th>
+<td><a href="<%= @customer_url %>"><%= @customer_url%></a></td>
+</tr>
+
+<tr>
+<th>Date purchased</th>
+<td>
+<%= hidden_field "order", "date_purchased", :value => @transaction_pg_timestamp %>
+<%= @transaction_pg_timestamp%>
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><br/></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h2>Products</h2>
+<p class="note">
+Please note - 'Products' section displays the items that were added to the customer's shopping cart before or on the day of that transaction and are still in the cart. Please confirm with the customer the exact products purchased.
+</p>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+
+<% if @selected_products.blank? 
+# display error message
+%>
+<span class="errorExplanation">There are no products in the customer's shopping cart added before that transaction. The order cannot be re-created from this screen. Please contact the customer</span>
+
+<% else 
+# display products with the check boxes for selection
+%>
+<% @selected_products.each do |product|
+   selected = ''
+   selected = 'checked' if @checked_products.include?("products_#{product['product_id']}")
+%>
+
+<input name="products[ids][]" type="checkbox" value="products_<%= product['product_id']%>" id="products_<%= product['product_id']%>" <%= selected %> /> <%= product['ui_details'] %><br/>
+<% end %>
+
+<% end %>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><br/></td>
+</tr>
+
+<% if !@selected_products.blank? %>
+<tr>
+<td colspan="2"><h2>Postal Address</h2></td>
+</tr>
+
+<tr>
+<th>Street</th>
+<td><%= text_field "contactinfo", "street", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Suburb</th>
+<td><%= text_field "contactinfo", "suburb", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Locality</th>
+<td><%= text_field "contactinfo", "locality", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Postcode</th>
+<td><%= text_field "contactinfo", "postcode", :size => 10 %></td>
+</tr>
+
+<tr>
+<th>Region</th>
+<td class='formelemformat'><div id="regionSelector">
+
+<% if @contactinfo.region_id != nil %>
+<%= collection_select(:contactinfo, :region_id, 
+Region.find(:all, :conditions => ['country_id =?', @contactinfo.country_id], :order => 'region_order'),
+:region_id,
+:region_name,
+{ :prompt => "-- Select a region --"})
+%>
+<% else %>
+<% @country = @contactinfo.country %>
+<% if @country != nil %>
+<%= render :partial => '/contactinfos/show_regions_for_country', :locals => {:country => @country }%>
+<% end %>
+<% end %>
+</div></td>
+</tr>
+
+<tr>
+<th>Country</th>
+<td>
+
+<%= collection_select(:contactinfo, :country_id, 
+Country.find(:all, :order => 'country_name'),
+:country_id,
+:country_name,
+{ :prompt => "-- Select a country --" })
+%>
+</td>
+
+<%
+country_field =  "contactinfo_country_id"
+parameters = "'country='+escape($('"+country_field+"').value)"
+%>
+<%=  observe_field  "contactinfo_country_id", :update => "regionSelector",
+                                               :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                               :with => parameters
+%>
+</tr>
+
+<tr>
+<th>Email</th>
+<td>
+<%= text_field "contactinfo", "email_1", :size => standard_edit_cols %>
+</td>
+</tr>
+
+<tr>
+<th>Phone</th>
+<td>
+<div id="no_borders">
+<table width="80%">
+<tr>
+<td width="20%">
+<%= text_field "contactinfo", "phone_prefix", :size => 10, :maxlength => 10 %>
+<br>
+<div class="comment">area code</div>
+</td>
+<td width="35%"> 
+<%= text_field "contactinfo", "phone", :size => 20, :maxlength => 20%>
+<br>
+<div class="comment">phone number</div>
+</td>
+<td valign="top">
+<%= text_field "contactinfo", "phone_extension", :size => 10 %>
+<br>
+<div class="comment">extension</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h2>Delivery Address</h2>
+<p class="note">Please note - if you leave Delivery Address fields empty they will default to Customer's Postal Address</p></td>
+</tr>
+
+<tr>
+<th>Person name</th>
+<td><%= text_field "delivery_contactinfo", "name", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Organisation name</th>
+<td><%= text_field "delivery_contactinfo", "company", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Street</th>
+<td><%= text_field "delivery_contactinfo", "street", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Suburb</th>
+<td><%= text_field "delivery_contactinfo", "suburb", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Locality</th>
+<td><%= text_field "delivery_contactinfo", "locality", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Postcode</th>
+<td><%= text_field "delivery_contactinfo", "postcode", :size => 10 %></td>
+</tr>
+
+<tr>
+<th>Region</th>
+<td class='formelemformat'>
+<div id="deliveryRegionSelector"> </div></td>
+</tr>
+
+<tr>
+<th>Country</th>
+<td>
+<%= collection_select(:delivery_contactinfo, :country_id, 
+Country.find(:all, :order => 'country_name'),
+:country_id,
+:country_name,
+{ :prompt => "-- Select a country --" })
+%>
+</td>
+
+<%
+country_field =  "delivery_contactinfo_country_id"
+parameters = "'country='+escape($('"+country_field+"').value)"
+%>
+<%=  observe_field  "delivery_contactinfo_country_id", :update => "deliveryRegionSelector",
+                                               :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                               :with => parameters
+%>
+</tr>
+
+<tr>
+<td colspan="2">
+<h2>Billing Address</h2>
+<p class="note">Please note - if you leave Billing Address fields empty they will default to Customer's Postal Address</p>
+</td>
+</tr>
+
+<tr>
+<th>Person name</th>
+<td><%= text_field "billing_contactinfo", "name", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Organisation name</th>
+<td><%= text_field "billing_contactinfo", "company", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Street</th>
+<td><%= text_field "billing_contactinfo", "street", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Suburb</th>
+<td><%= text_field "billing_contactinfo", "suburb", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Locality</th>
+<td><%= text_field "billing_contactinfo", "locality", :size => standard_edit_cols %></td>
+</tr>
+
+<tr>
+<th>Postcode</th>
+<td><%= text_field "billing_contactinfo", "postcode", :size => 10 %></td>
+</tr>
+
+<tr>
+<th>Region</th>
+<td class='formelemformat'>
+<div id="billingRegionSelector"> </div></td>
+</tr>
+
+<tr>
+<th>Country</th>
+<td>
+<%= collection_select(:billing_contactinfo, :country_id,
+Country.find(:all, :order => 'country_name'),
+:country_id,
+:country_name,
+{ :prompt => "-- Select a country --" })
+%>
+</td>
+
+<%
+country_field =  "billing_contactinfo_country_id"
+parameters = "'country='+escape($('"+country_field+"').value)"
+%>
+<%=  observe_field  "billing_contactinfo_country_id", :update => "billingRegionSelector",
+                                               :url => {:controller => "contactinfos", :action => "countryChosen"}, 
+                                               :with => parameters
+%>
+</tr>
+
+<tr>
+<td colspan="2"><br/></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h2>Other</h2>
+</td>
+</tr>
+
+<tr>
+<th>Payment method</th>
+<td>
+<%= @payment_method%>
+<%= hidden_field "order", "payment_method", :value => @payment_method %>
+<%= hidden_field "order", "payment_module_code", :value => @payment_module_code %>
+</td>
+</tr>
+
+<tr>
+<th>Shipping method</th>
+<td><%= select "order", "shipping_module_code", FailedOrdersHelper::SHIPPING_MODULES_ENABLED.invert.sort, {:include_blank => "-- Select shipping method --"} %></td>
+</tr>
+
+<tr>
+<th>Currency</th>
+<td><%= @currency %>
+<%= hidden_field "order", "currency", :value => @currency %>
+<%= hidden_field "order", "currency_value", :value => @currency_value %>
+</td>
+</tr>
+
+<tr>
+<th>Tax</th>
+<td><%= number_to_currency(@order_tax)%>
+<%= hidden_field "order", "order_tax", :value => @order_tax %>
+</td>
+</tr>
+
+<tr>
+<th>Order status</th>
+<td><%= select_tag("order[orders_status]", options_for_select(FailedOrdersHelper.order_statuses, @order.orders_status.to_i))%></td>
+</tr>
+
+<% end %>
+
+</table>
+
+</fieldset>
+
+<% end %>

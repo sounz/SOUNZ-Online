@@ -1,0 +1,82 @@
+<div class="newsArticles">
+<% content_for :page_title do %><%= @title%><%end%>
+
+<% title @title %>
+<h1><%= @title %></h1>
+
+<% 
+for category in NewsArticle.article_categories
+category.each_pair do |key, value| 
+
+%>
+
+<li style="padding:0;margin:0;list-style-type:none;display:inline;">
+<%= link_to value, :controller => 'news_articles', :category => key %>
+</li> 
+<% if NewsArticle.article_categories.last != category %>
+|
+<% end %>
+<% end %>
+<% end %>
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+<% 
+for p_category in NewsArticle.pending_article_categories
+p_category.each_pair do |p_key, p_value| 
+
+li_class = ''
+li_class = 'class="current"' if p_key == @category
+%>
+
+|<li <%=li_class%> style="padding:0;margin:0;list-style-type:none;display:inline;">
+<%= link_to p_value, :controller => 'news_articles', :action => :pending_articles, :category => p_key %>
+</li>
+
+<% end %>
+<% end %>
+<% end %>
+
+<% if @category.match('pending_sounznews')%>
+<br><br>
+<table width="100%">
+<% @news_articles.each do |article| 
+for media_item in article.media_items
+%>
+<tr>
+<td>
+<li>
+<%=link_to article.headline + ', ' + dby_date(article.article_timestamp), media_item.public_filename %>
+<%=media_item.mime_type_and_size%>
+</li>
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+<%= link_to "Edit", { :controller => 'news_articles', :action => 'edit', :id => article.news_article_id }%>
+<% end %>
+</td>
+</tr>
+<% end %>
+<% end %>
+</table>
+<% else %>
+
+<div id="articles_list">
+<%= render :partial => 'articles_list', :locals => { :news_articles => @news_articles, 
+                                                     :selected_article => nil,
+                                                     :category => @category
+ 													} %>
+</div>
+
+<% end %>
+<%= go_to_top_link%>
+
+
+<% if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_CONTENT')%>
+<div class="editLinks">
+<%= link_to 'Create New Article', :action => 'new' %>
+</div>
+<% end %>
+
+
+</div>

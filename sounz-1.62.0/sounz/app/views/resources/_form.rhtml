@@ -1,0 +1,147 @@
+<%= error_messages_for 'resource' %>
+
+<!--[form:resource]-->
+<fieldset>
+  <legend>Main Info</legend>
+<p><label for="resource_resource_title">Resource title</label><br>
+<%= text_field 'resource', 'resource_title', :size => standard_edit_cols  %></p>
+
+<p><label for="resource_resource_title_alt">Resource title alt</label><br>
+<%= text_field 'resource', 'resource_title_alt', :size => standard_edit_cols  %></p>
+
+<p><label for="resource_resource_code">Resource Code: </label>
+<strong><%= @resource.resource_code %></strong></p>
+
+<p><label for="resource_author_note">Author note</label><br>
+<%= text_area 'resource', 'author_note',  :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+
+<p><label for="resource_series_title">Series title</label><br>
+<%= text_field 'resource', 'series_title' , :size => standard_edit_cols %></p>
+
+
+
+<br>
+<p><label for="resource_resource_type_id">Resource Type</label>
+<br>
+<%=select("resource", "resource_type_id", @resource_types.to_dropdown(:resource_type_desc),
+options = {:prompt => '-- Please select a resource type --'},
+html_options = {:onchange => "new Ajax.Request('/resources/tweak_format_dropdown', {asynchronous:true, evalScripts:true, parameters:'type='+value})"})%>
+<p/>
+
+<div id="formatDropdown">
+  <%=render :partial => 'format_dropdown'%>
+</div>
+
+<p><label for="resource_copyright">Copyright</label><br>
+<%= text_field 'resource', 'copyright', :size => standard_edit_cols  %></p>
+
+
+<p><label for="resource_publication_year">Publication year</label><br>
+<%= text_field 'resource', 'publication_year', :size => 4  %></p>
+
+</fieldset>
+
+
+<fieldset>
+  <legend>Time</legend>
+<p><label fpr="resource_duration">Duration</label><br>
+<%=render :partial => 'duration_as_interval/duration_form', :locals => {:prefix => 'resource_dur', :interval_duration => @interval_duration, :object_name => 'resource', :field_name => 'duration', :optional => true}%>
+</p>
+</fieldset>
+
+
+<fieldset>
+  <legend>Cataloguing</legend>
+<p><label for="resource_isbn">ISBN</label><br>
+<%= text_field 'resource', 'isbn', :size => 20  %></p>
+
+<p><label for="resource_ismn">ISMN</label><br>
+<%= text_field 'resource', 'ismn', :size => 20  %></p>
+
+<p><label for="resource_isrc">ISRC</label><br>
+<%= text_field 'resource', 'isrc', :size => 20  %></p>
+
+<p><label for="resource_issn">ISSN</label><br>
+<%= text_field 'resource', 'issn' , :size => standard_edit_cols %></p>
+
+
+<p><label for="resource_imprint">Imprint</label><br>
+<%= text_field 'resource', 'imprint',  :size => standard_edit_cols  %></p>
+
+<p><label for="resource_collation">Collation</label><br>
+<%= text_field 'resource', 'collation', :size => standard_edit_cols  %></p>
+
+</fieldset>
+
+<fieldset>
+  <legend>Notes</legend>
+
+  <p><label for="resource_dedication_note">Dedication note</label><br>
+  <%= text_area 'resource', 'dedication_note',  :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+  <p><label for="resource_publisher_note">Publisher note</label><br>
+  <%= text_area 'resource', 'publisher_note',  :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+<p><label for="resource_general_note">General note</label><br>
+<%= text_area 'resource', 'general_note',  :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+
+<p><label for="resource_content_note">Content note</label><br>
+<%= text_area 'resource', 'content_note' , :rows => standard_edit_rows, :cols => standard_edit_cols %></p>
+
+<p><label for="resource_internal_note">Internal note</label><br>
+<%= text_area 'resource', 'internal_note', :rows => standard_edit_rows, :cols => standard_edit_cols  %></p>
+
+</fieldset>
+
+<fieldset>
+  <legend>Availability</legend>
+<p><label for="resource_item_cost">Cost</label><br>
+<%= text_field 'resource', 'item_cost', :size => 10 %>
+</p>
+
+<table>
+<tr><td>Available for Loan</td><td><%=check_box 'resource', 'available_for_loan'%></td></tr>
+<tr><td>Available for Hire</td><td><%=check_box 'resource', 'available_for_hire'%></td></tr>
+<tr><td>Available for Sale</td><td><%=check_box 'resource', 'available_for_sale'%></td></tr>
+<tr><td>Downloadable</td><td><%=check_box 'resource', 'downloadable'%></td></tr>
+<tr><td>Cloneable</td><td><%=check_box 'resource', 'clonable'%></td></tr>	
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Media on Demand</legend>
+<table>
+  <tr><td>
+  <label for="resource_sounzmedia">Media</label>
+  </td><td>
+  <%= text_area 'resource', 'sounzmedia' %>
+  </td></tr><tr><td></td><td>
+  Enter the filename or URL for this Media on Demand or copy paste the embedded script code.
+  </td></tr>
+</table>
+</fieldset>
+
+<fieldset>
+  <legend>Moneyworks</legend>
+  <p><label for="resource_freight_code">Freight Code</label><br>
+  <%= text_field 'resource', 'freight_code', :size => 10 %>
+  </p>
+  
+  <div class="instruction">It is not sure if this is required</div>
+<p><label for="resource_mw_code">Moneyworks Code</label><br>
+<%= text_field 'resource', 'mw_code', :size => 10 %>
+</p>
+</fieldset>
+
+<fieldset>
+  <legend>Status</legend>
+<p><label for="resource_status_id">Resource Status</label><br>
+<%= select("resource", "status_id", @statuses.to_dropdown) %>
+</p>
+</fieldset>
+<%=hidden_field 'back', 'link', :value => @backlink%>
+
+<!--[eoform:resource]-->
+

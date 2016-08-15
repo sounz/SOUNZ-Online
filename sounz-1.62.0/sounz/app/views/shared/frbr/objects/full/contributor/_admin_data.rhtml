@@ -1,0 +1,16 @@
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<h4>Contributor</h4>
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object, :fields => "internal_note, apra_member, canz_member, profile_other, permission_note, legacy4d_identity_code, created_at, updated_at, updated_by, status"}%>
+
+
+<h4>Role</h4>
+<%=render :partial => 'shared/internal_pages/admin_info', :locals => {:object => object.role, :fields => "person_id, organisation_id, general_note, archive, created_at, updated_at, updated_by, status"}%>
+
+
+<div class="editLinks">
+	<%if !object.role.person.blank?%><%=link_to "Edit", :controller => 'people', :action => 'edit', :id => object.role.person%><%end%>
+	<%if !object.role.organisation.blank?%><%=link_to "Edit", :controller => 'organisations', :action => 'edit', :id => object.role.organisation%><%end%>
+</div>
+
+
+<%end%>

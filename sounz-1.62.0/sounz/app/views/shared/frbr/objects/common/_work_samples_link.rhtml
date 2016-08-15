@@ -1,0 +1,15 @@
+<%#Pass in a media item object, and a title e.g. Score%>
+
+<%if media_item.is_flv?%>
+<a class="videoPopup" onclick="window.open('<%=flash_sample_video_player_url(sample_attachment)%>', 'sounz_video','width=400,height=400')"><%=title%></a>
+
+<%elsif media_item.is_mp3?%>
+<%=title%>
+<%else%>
+<%=link_to title, media_item.public_filename%>
+<%end%>
+
+<%if !media_item.size.blank?%>(<%=bytes_to_size(media_item.size)%>)<%end%>
+<%if !media_item.copyright.blank?%>&copy;<%=media_item.copyright%><%end%>
+
+

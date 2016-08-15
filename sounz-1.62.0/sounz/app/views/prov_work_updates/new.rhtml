@@ -1,0 +1,15 @@
+<h1>Lodge or Update a Work</h1>
+
+<%= error_messages_for :prov_work_updates %>
+
+<% form_for(:prov_work_updates, :url => prov_work_updates_path) do |f| %>
+  
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+  
+  <p>Thank you for keeping us up to date with your work.</p>
+  
+<% end %>

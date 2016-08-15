@@ -1,0 +1,15 @@
+<b>Completed steps:</b><p/>
+<%for step in @frbr_core["completed_steps"]%>
+	<%=step%><br>
+<%end%>
+<%if @frbr_core["completed_steps"].length < 1%>
+	No steps completed
+<%end%>
+<p/>
+<b>Steps to complete:</b><br>
+<%for step in @frbr_core["steps_to_go"]%>
+	<%=step%><br>
+<%end%>
+
+<p/>
+Current step: <%=@frbr_core["step"]%><p/>

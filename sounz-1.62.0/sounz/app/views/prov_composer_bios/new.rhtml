@@ -1,0 +1,17 @@
+<h1>Provide or Update Contributor Profile</h1>
+<p>A biography is to be submitted by all composers and performers.</p>
+
+<%= error_messages_for :prov_composer_bios %>
+
+<% form_for(:prov_composer_bios, :url => prov_composer_bios_path) do |f| %>
+
+<%=render :partial => "form", :locals => {:f => f}%>
+
+<ul class="form-actions">
+   <li class="submit"><input type="submit" value="Submit" class="submit public_button"></li>
+</ul>
+
+<% end %>
+
+<p>Thank you for keeping us up to date.</p>
+

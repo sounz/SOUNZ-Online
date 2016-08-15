@@ -1,0 +1,41 @@
+<%=main_tabs(selected = :works)%>
+<h2>Manifestation Resource Search Results</h2>
+
+<% if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH') && @result_frbr_objects.length > 3 %>
+<a href="#saveForm">Save Current Search</a>
+<br><br>
+<% end %>
+
+<% if @result_frbr_objects.length < 1 %>
+<p><b>There were no results matching your request</b></p>
+<% else %>
+<p>
+Number of results: <span id="numberOfResults" class="searchHeading"><%=session[:man_res_search_results].length%></span>
+</p>
+<% end %>
+
+<%= will_paginate @result_frbr_objects %>
+
+<div id="liveResults" name="liveResults">
+	<table width="100%">
+  <%for object in @result_frbr_objects%>
+	<tr>
+	 <td><%=render :partial => 'finder/result', :locals => {:result => object}%></td>
+	</tr>
+<%end%>
+	</table>
+
+</div>
+
+<%= will_paginate @result_frbr_objects %>
+
+<div class="advancedLink"><a href="manifestation_resource">Refine Search</a></div>
+<br>
+<%if PrivilegesHelper.has_permission?(@login,'CAN_SAVE_SEARCH')%>
+<span id="saveForm">
+<%= render :partial => 'saved_searches/saved_search_form', :locals => { :search_type => 'advanced_man_res' }
+%>
+</span>
+<% end %>
+
+

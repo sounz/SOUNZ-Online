@@ -1,0 +1,9 @@
+if @saved
+  page.replace_html 'new_item_form', :partial => 'items/add_item_form_button', :locals => {:entity => @entity}
+  page.replace_html 'items_list', :partial => 'items/item_edit_list', :locals => {:entity => @entity}
+  page.visual_effect :highlight, @dom_id
+else
+  page.replace_html 'new_item_form', :partial => 'items/new_item_form', :locals  =>{:entity => @entity, :item => @item }
+  page.visual_effect :shake, 'new_item_form'
+end
+

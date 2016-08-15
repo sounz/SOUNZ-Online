@@ -1,0 +1,40 @@
+<%# form_tag ({:action => 'find_people'}, :id => 'project_members_form') do 
+%>
+
+<table>
+   <tr>
+    <th>Person Name </th>   
+    <td>      
+     <%= text_field :project_members, :search %>
+     <%=# hidden_field :project_members, :id, :value => @project.project_id
+      %>
+    </td>
+    <td>
+<span class="actionButton">     
+     <%= link_to_remote "Search", :url => { :action => "find_people", :id => @project.project_id }, 
+                                  :update => "project_members_preview", 
+                                  :loading => "Element.show('project_members_preview')",
+                                  :with => "'project_members_search=' + escape($('project_members_search').value)"
+     %>
+</span>
+    </td>
+  </tr>
+</table>
+
+<%# end 
+%>
+  
+<table>
+  <tr id="project_members_preview" style="display:none;">
+    <td colspan="2">
+     <i>Search results will appear here</i>
+    </td>
+  </tr>
+</table>
+
+<%=# observe_form "project_members_form", :frequency => 0.25,
+   #                                      :minimum => 3,
+   #                                      :update => "project_members_preview",
+   #                                      :loading => "Element.show('project_members_preview')",
+                                          %>
+

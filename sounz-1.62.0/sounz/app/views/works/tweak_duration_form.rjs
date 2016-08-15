@@ -1,0 +1,6 @@
+if @show_duration
+page.replace_html 'durationFormTimeSection', :partial => 'duration_details'
+page.visual_effect :highlight, 'durationFormTimeSection'
+else
+page.replace_html 'durationFormTimeSection', ''
+end

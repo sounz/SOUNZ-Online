@@ -1,0 +1,10 @@
+<fieldset>
+	<legend>New Access Right</legend>
+<table>
+<tr><td>Right</td>
+	<td><%= select("model_access_right", "access_right_id", @access_rights.to_dropdown(:access_right_name), :prompt => '-- Please select an access right --') %></td></tr>
+<tr><td>Source</td>
+	<td><%= select("model_access_right", "access_right_source", DropDown.access_right_sources.to_dropdown, :prompt => '-- Please select the source of the access right --') %></td></tr>
+</table>
+<%=hidden_field "model_access_right_parent", "parent_model_id", :value => @model_id%>
+</fieldset>

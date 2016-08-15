@@ -1,0 +1,36 @@
+<%
+# Assumes local images is set.
+
+#$('src').value='';$('alt').value='';insertAction();
+%>
+
+
+All images for: <%= action_button(	link_to_remote( "This item only",
+								:url =>{ :action => :item_only_attachments,
+								:id => generate_id(@relevant_object)})) %>
+|<%= action_button(	link_to_remote( "For this type",
+								:url =>{ :action => :all_group_attachments,
+								:id => generate_id(@relevant_object)})) %>
+|<%= action_button(	link_to_remote( "MCE Attachments",
+								:url =>{ :action => :all_mce_attachments,
+								:id => generate_id(@relevant_object)})) %>
+								
+<% if images.size > 0 %>
+<ul>
+  <% images.each do |image| 
+	%>
+  <% 
+     image_desc = "Picture"
+     image_desc = image.media_item_desc unless image.media_item_desc.blank? 
+  %>
+    <li style="padding:0;margin:0;list-style-type:none;display:inline;">
+      <a href="javascript:void(0)" onclick="<%="ts_insert_image('#{image.public_filename()}', '#{image_desc}', 'media_item_#{image.media_item_id}');" %>">
+        <%=image_tag(image.public_filename(:thumb))%>
+      </a>
+    </li>
+  <% end
+ 	%>
+</ul>
+<% else %>
+ No Images Uploaded Yet.
+<% end %>

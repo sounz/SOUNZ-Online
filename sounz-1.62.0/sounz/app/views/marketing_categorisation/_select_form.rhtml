@@ -1,0 +1,6 @@
+<%= collection_select(:marketing_category, :id, 
+                          MarketingCategory.find(:all, :order => :abbreviation), :id, :abbreviation,:prompt => "-- Select a category --") %>
+<%=# link_to 'New Category', :action => 'new_category', :person_id => session[:person_for_new_categorisation] 
+%>
+                          
+<%=observe_field("marketing_category_id", :url => {:action => :change},:with => "'id='+value")%>

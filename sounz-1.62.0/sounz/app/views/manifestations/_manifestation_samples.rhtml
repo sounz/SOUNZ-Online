@@ -1,0 +1,12 @@
+<div class="samplesWidget">
+<fieldset>
+	<legend accesskey="s">Samples</legend>
+<ul id="sampleAttachments">
+<%=render :partial => 'samples_edit_list', :locals => {:manifestation => @manifestation}%>
+</ul>
+
+<div id="new_sample_form">
+<%=render :partial => 'add_sample_form_button', :locals => {:manifestation => @manifestation}%>
+</div>
+</fieldset>
+</div>

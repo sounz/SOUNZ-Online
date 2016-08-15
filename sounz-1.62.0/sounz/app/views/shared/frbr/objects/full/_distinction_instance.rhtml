@@ -1,0 +1,94 @@
+<%
+award_year_string = ""
+award_year_string = "Awarded: #{object.award_year}" unless object.award_year.blank?
+parent_award_link = link_to(object.distinction.award_name, :action => :show, :controller => :distinctions,
+:id => object.distinction
+)
+%>
+<%=
+render :partial => 'shared/public_pages/heading', 
+:locals => {
+			:attachments => [], #object.send("#{object.class.to_s.tableize.singularize}_attachments"),
+			:main_internal_heading => parent_award_link,
+			:text => nil,
+			:links => nil,
+			:subheading => award_year_string,
+			:object => object #for the select this button
+}
+%>
+
+<div class='section'>
+<h2>Award Information</h2>
+<%=show_note(object.distinction.award_info)%>
+<%=show_note(object.distinction.general_note)%>
+</div>
+
+<div class='section'>
+	<table>
+	<%=show_value_for_table_row("Established", h(object.distinction.awarded_since_year), @login)%>
+	</table>	
+</div>
+
+
+
+
+<div class="section">
+<h2>Award Details</h2>
+<%=convert_to_html(object.instance_info)%>
+</div>
+
+
+<%if object.event_id != nil && PrivilegesHelper.has_link_permission?(@login, Event.find(object.event_id))%>
+<div class="section">
+<h2>Award featured at:</h2>
+<p><%=render :partial => '/shared/frbr/objects/search_result/event', :locals => {:object => Event.find(object.event_id)}%></p>
+</div>
+<%end%>
+
+<%
+links = PrivilegesHelper.permitted_objects(@login, object.composite_recipients)
+links.push(object.distinction)
+if links.length > 0
+%>
+<div class="section">	
+
+<h2>Links</h2>
+<ul>
+<%for frbr_object in links
+
+%>
+<li>
+<%if PrivilegesHelper.has_link_permission?(@login, frbr_object)%>
+<%if frbr_object.class != Role %>
+<%=link_to frbr_object.frbr_list_title, :action => 'show', :id => frbr_object, :controller => frbr_object.class.to_s.tableize%></li>
+<%else
+%>
+<%=ContributorsHelper.get_link_depending_on_role_type(frbr_object, @login)%>
+<%
+end
+end
+end
+%>
+</ul>
+</div>
+<%end%>
+
+
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<p/>
+<h2>Admin only</h2>
+<p><b>Distinction Internal Note:</b>: <%=h object.distinction.internal_note %></p>
+<p><b>Distinction Instance Internal Note:</b>: <%=h object.distinction.internal_note %></p>
+
+<%end%>
+
+<%=show_relationships_if_permission(object)%>
+<%if PrivilegesHelper.has_permission?(@login, 'CAN_EDIT_TAP')%>
+<div class="editLinks">
+	<%=render :partial => 'shared/last_updated_by', :locals => {:object => object}%>
+<%= link_to "Edit this instance", :controller => "distinction_instances", :action => "edit", :id => object %><br>
+<%= link_to "Edit parent distinction", :controller => "distinctions", :action => "edit", :id => object.distinction.id %>
+</div>
+<%end%>
+
+

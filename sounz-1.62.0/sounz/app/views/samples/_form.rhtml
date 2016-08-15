@@ -1,0 +1,19 @@
+<%= error_messages_for 'sample' %>
+
+<!--[form:sample]-->
+<p><label for="sample_sample_description">Sample description</label><br>
+<%= text_area 'sample', 'sample_description'  %></p>
+
+<p><label for="sample_sample_copyright">Sample copyright</label><br>
+<%= text_area 'sample', 'sample_copyright'  %></p>
+
+<p><label for="sample_created_at">Created at</label><br>
+<%= datetime_select 'sample', 'created_at'  %></p>
+
+<p><label for="sample_updated_at">Updated at</label><br>
+<%= datetime_select 'sample', 'updated_at'  %></p>
+
+<p><label for="sample_updated_by">Updated by</label><br>
+<%= text_field 'sample', 'updated_by'  %></p>
+<!--[eoform:sample]-->
+

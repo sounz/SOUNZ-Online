@@ -1,0 +1,68 @@
+<input type="hidden" name="association[entity_b_id]" id="association_entity_b_id" value="<%=object.frbr_id%>">
+<%if ! object.person.blank?%>
+	<table><tr>
+	<%if object.contributor != nil%>
+		<%myDescription=object.contributor.role.contributor_names%>
+		<%myStatus=object.contributor.composer_status_as_public_site_string%>
+		
+		<%if !object.contributor.profile_other.blank?%>
+			<%myProfile=summary_of(convert_to_html(object.contributor.profile_other), 400)%>
+		<%else%>
+			<%myProfile=""%>
+		<%end%>
+
+	<%else%>
+	
+		<%myDescription=object.person.full_name%>
+		<%myStatus=''%>
+		<%myProfile=''%>
+	
+	<%end%>
+
+	<td><b>
+	<%if object.contributor != nil%>
+		<%=link_to myDescription + " ("+object.role_type.role_type_desc+")", :action => :show, :controller => object.frbr_type+'s' , :id => object%>
+	<%else%>
+		<%=myDescription + " ("+object.role_type.role_type_desc+")"%>
+	<%end%>
+	
+	<%if !myStatus.blank?%>(<%=myStatus%>)<%end%>
+		</b>
+
+		<%=myProfile%>
+		</td><td>
+
+		<%if object.contributor != nil%>
+			<%for attachment in object.contributor.contributor_attachments%>
+				<%media_item=attachment.media_item%>
+				<%if media_item.image?%>
+					<%=image_tag(media_item.public_filename(:thumb))%>
+					<%
+					break #only show one
+				end%>
+			<%end%>
+		<%end%>
+	</td></tr></table><p/>
+<%else%>
+	<%myDescription=object.organisation.organisation_name%>
+	<%myStatus=""%>
+	
+	<%if object.contributor != nil%>
+		<%if !object.contributor.profile_other.blank?%>
+			<%myProfile=summary_of(convert_to_html(object.contributor.profile_other), 400)%>
+		<%else%>
+			<%myProfile=""%>
+		<%end%>
+
+
+		<%=link_to myDescription + " ("+object.role_type.role_type_desc+")", :action => :show, :controller => object.frbr_type+'s' , :id => object%>
+	<%else%>
+		<%=myDescription + " ("+object.role_type.role_type_desc+")"%>
+	<%end%>
+	<%=myProfile%>	
+	
+	<%#if object.contributor != nil%>
+	<%#object.contributor.role.contributor_names%>
+	<%#end%>
+
+<%end%>

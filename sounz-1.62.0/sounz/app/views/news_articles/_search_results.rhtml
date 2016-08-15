@@ -1,0 +1,89 @@
+<!-- Result Details -->
+<div class="search-result-details">
+  <ul>
+    <li class="result-count">
+      <%if ! @search_term.blank?%>
+        <%= @data[:results][:docs].length > 0 ? pluralize(@data[:results][:total], 'result') + ' for <i>' + @search_term +'</i>' : 'There were no results matching your request' %>
+      <%end%>
+    </li>
+    <li class="pagination">
+      <% if !@data[:results].blank? &&  @data[:results][:docs].length > 0 %>
+        <% search_parts = {}
+            params[:search].each_pair do |k,v|
+              search_parts['search[' + k.to_s + ']'] = v.to_s
+            end
+            search_url = search_parts
+        %>
+
+
+        <%= render :partial => 'shared/page_links_remote',
+                 :locals => {
+                  :paginator => @data[:paginator],
+                  :params => {
+                    :url => search_url,
+                    :update => 'articles_list'
+                  }
+                } %>
+       <% end %>
+    </li>
+  </ul>
+</div>
+
+<% if !@data[:results].blank? %>
+<% 
+for news_article in @data[:results][:docs]
+link_name = news_article.headline 
+%>
+
+  <div class='search_item'>
+
+  <h2><%= link_to news_article.headline, :controller => 'news_articles', :action => 'show', :id => news_article.news_article_id, :category => @category 
+  %></h2>
+
+  <% if !news_article.news_article_attachments.blank? %>
+  <%= image_tag(news_article.news_article_attachments[0].media_item.public_filename(:thumb)) %>
+  <% else %>
+  &nbsp;
+  <% end %>
+<div class="date_in_list"><%= eBY_date(news_article.article_timestamp)%></div>
+
+<%= news_article.precis unless news_article.precis.blank? %>
+<%= strip_tags summary_of(news_article.content, 250) if news_article.precis.blank? && !news_article.content.blank?%>
+
+  </div>
+
+<% end %>
+
+
+
+
+
+<%
+
+search_parts = {}
+params[:search].each_pair do |k,v|
+  search_parts['search[' + k.to_s + ']'] = v.to_s
+end
+
+search_url = search_parts
+%>
+<div class="search-result-details-bottom">
+  <ul>
+    <li class="pagination">
+<%= render :partial => 'shared/page_links_remote',
+       :locals => {
+        :paginator => @data[:paginator],
+        :params => {
+          :url => search_url,
+          :update => 'articles_list'
+        }
+        }
+%>
+    </li>
+  </ul>
+</div>
+
+<div class="division_line">&nbsp;</div><br/>
+<%= go_back_link%>
+
+<% end %>

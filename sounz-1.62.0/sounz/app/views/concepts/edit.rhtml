@@ -1,0 +1,13 @@
+
+<h1>Editing Concept: <%=@concept.frbr_ui_desc%></h1>
+
+<% form_tag :action => 'update', :id => @concept do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+<%=render :partial => 'association/association', :locals => {:object => @concept}%>
+<div id="relationships">
+<%=render :partial => '/shared/frbr/relationships/edit', :locals => {:object => @concept}%>
+</div>
+<%= link_to 'Show', :action => 'show', :id => @concept %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,30 @@
+<h1>Login Search Results: <%=@search_term%></h1>
+<form action="/logins/find" method="get">
+	<input type="text" size="30" name="searchTerm" value="<%=@search_term%>">
+	<%= submit_tag "Search" %>
+</form>
+
+<table>
+	  <tr>
+	<th>Username</th>
+	<th>Person/Org</th>
+	<th>Created</th>
+	  </tr>
+	
+	
+<%for login in @logins%>
+<tr>
+	<td><%=login.username%></td>
+	<td><%=login.name%></td>
+	<td><%=dmy_date(login.created_at)%></td>
+  <td><%= link_to 'Show', :action => 'show', :id => login %></td>
+  <td><%= link_to 'Edit', :action => 'edit', :id => login %></td>
+  <% if !login.person.nil? %>
+    <td><%= link_to 'Roles', :controller => 'people', :action => 'roles', :id => login.person.id %></td>
+  <% else %>
+    <td></td>
+  <% end %>
+
+</tr>
+<%end%>	
+</table>

@@ -1,0 +1,8 @@
+<%if object != nil%>
+<span class="actionButton"><%= link_to_remote( 'Remove Venue', :url =>{ :action => :removeVenue, :event => event})%></span>
+
+<input type="hidden" id="event_venue_role_id" name="venue[role_id]" value="<%=object.objectData.role_id%>">
+<b><A href="/role_contactinfos/edit/<%=object.objectData.role_id%>"><%=object.objectData.frbr_ui_desc%></a></b><br>
+<%else%>
+<b>No venue assigned!</b>
+<%end%>

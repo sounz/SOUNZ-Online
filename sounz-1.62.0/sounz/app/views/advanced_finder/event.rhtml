@@ -1,0 +1,129 @@
+<%=main_tabs(selected = :events)%>
+
+<span class="searchLinks">
+<%=link_to image_tag('/images/button-simplesearch.gif', :alt => 'Simple Search'), {:controller=>:finder, :action => :shows, :id => :events}, {:class => 'public_button'}%>
+</span>
+
+<h2>Event Advanced Search</h2>
+
+<%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_event}, {:class => 'public_button'} %>
+
+<% form_for(:search_details, :url => {:action => :search_events}, :html => { :method => :post, 
+	:id => 'advancedEventSearchForm' }) do |f| %>
+
+<table class="advancedSearchForm">
+	<tr>
+	<th colspan="3">Text Fields</th>	
+	</tr>
+	
+	<tr>
+		<td>Title</td>
+		<td><%= f.text_field :title, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :title_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Venue</td>
+		<td><%= f.text_field :venue, :size => standard_edit_cols %></td>
+		<td><%= f.check_box  :venue_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>General Note</td>
+		<td><%= f.text_field :general_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :general_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Booking and Ticket Note</td>
+		<td><%= f.text_field :booking_ticket_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :booking_ticket_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Event Start</td>
+		<td colspan="2">
+	      <table>
+	        <tr>
+	          <td><strong>From</strong> <%= date_field(:search_details, :event_start_from, :size => 10, :class => 'text') %>&nbsp;</td>
+	          <td><strong>To</strong> <%= date_field(:search_details, :event_start_to, :size => 10, :class => 'text') %>&nbsp;</td>
+	        </tr>
+	      </table>
+        </td>
+	</tr>
+	
+	<tr>
+		<td>Locality</td>
+		<td><%= f.text_field :locality, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :locality_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Prize Info Note</td>
+		<td><%= f.text_field :prize_info_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :prize_info_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+	<tr>
+		<td>Internal Note</td>
+		<td><%= f.text_field :internal_note, :size => standard_edit_cols, :class => 'text' %></td>
+		<td><%= f.check_box  :internal_note_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+
+
+	
+	<tr>
+	<th colspan="3">Event Details</th>	
+	</tr>
+	
+	<tr>
+		<td>Event Type</td>			
+			<td><%= select("search_details", "event_type_id", 
+					@event_types.to_dropdown(:event_type_desc),
+					:selected=>@search_details.event_type_id.to_i,
+					:include_blank => "-- All types --"
+			) %></td>
+			
+		<td><%= f.check_box  :event_type_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	
+
+	<tr>
+      <td><label for="search_details_country_id" title="Filter by what country the contact is in">Country</label></td>
+      <td><%= select('search_details', "country_id", Country.to_dropdown(:text => 'country_name', :include_blank => "All Countries"), :selected => @search_details.country_id.to_i
+                   )
+        %>
+      </td>
+      <td><%= check_box :search_details, :country_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+    </tr>
+    <tr>
+      <td><label for="search_details_region_id" title="Filter by region, if the country selected has regions">Region</label></td>
+      <td id="region-selector">
+      <% if !@search_details.country_id.blank? %>
+        <%= select('search_details', 'region_id', Region.find(:all, :conditions => ['country_id =?', @search_details.country_id], :order => 'region_order').collect {|r| [ r.region_name, r.region_id ] }, :include_blank => 'All Regions', :selected => @search_details.region_id.to_i)
+        %>
+      <% else %>
+        All countries and regions will be searched for
+      <% end %>
+      </td>
+      <td><%= f.check_box  :region_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+    </tr>
+
+    <%= observe_field("search_details_country_id", :update => "region-selector", :url => {:action => "country_chosen"}, :with => "'id='+value") %>
+
+	<tr>
+		<th colspan="3">Status</th>
+	</tr>
+	
+	<tr>
+		<td>Status</td><td><%= select("search_details", "status_id", @statuses.to_dropdown, :selected => @search_details.status_id.to_i, :include_blank => "-- All Statuses --") %></td>
+		<td><%= f.check_box  :status_id_not, :class => 'checkbox' %><strong>Not</strong></td>
+	</tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
+   <tr>
+     <td align="left"><%= link_to image_tag('/images/button-resetsearch.gif', :alt => 'Reset Search'), {:controller => :advanced_finder, :action => :reset_event}, {:class => 'public_button'} %></td>
+     <td colspan="2" align="right"><input type="image" src="/images/button-search.gif" value="Submit" alt="Search" class="public_button"></td>
+   </tr>
+</table>
+
+<% end %>

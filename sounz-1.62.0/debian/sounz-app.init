@@ -1,0 +1,92 @@
+#! /bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          sounz-app
+# Required-Start:    $all
+# Required-Stop:     $all
+# Should-Start:      $all
+# Should-Stop:       $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Startup Script for the SOUNZ mongrel servers
+# Description:       This script will start the mongrel servers for the SOUNZ application.
+### END INIT INFO
+
+set -e
+
+PACKAGE=sounz
+CONFDIR=/etc/${PACKAGE}
+CONF=${CONFDIR}/${PACKAGE}.conf
+test -r $CONF || exit 0
+. $CONF
+
+NAME=sounz-app
+DAEMON=${SOUNZ_HOME}/bin/${NAME}
+test -x $DAEMON || exit 0
+
+THIS=$0
+OP=$1
+shift
+
+case "$OP" in
+  start)
+    echo "starting $NAME"
+    ulimit -n 4096
+    if [ -x /sbin/start-stop-daemon ]; then
+      /sbin/start-stop-daemon --start --chuid ${SOUNZ_USER} --exec $DAEMON
+    else
+      su - ${SOUNZ_USER} -c $DAEMON
+    fi
+    sleep 1
+    echo "$NAME started"
+    
+    # Start replication
+    ${SOUNZ_HOME}/scripts/dr/start-replication.sh
+
+    # Hard restart apache2. This is so that mod_proxy re-connects to
+    # the Rails application Mongrel servers.
+    /usr/sbin/invoke-rc.d apache2 restart || true    
+    ;;
+    
+  stop)
+    echo "stopping $NAME"
+    ls ${SOUNZ_LOGS}/${NAME}*.pid >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+	    PIDFILES="`ls ${SOUNZ_LOGS}/${NAME}*.pid`"
+	    if [ "$PIDFILES" != "" ] ; then
+		    for PIDFILE in $PIDFILES ; do
+		      if [ -f $PIDFILE ]; then
+		        if [ -x /sbin/start-stop-daemon ]; then
+		          # Note: signal 9 seemed to be necessary on the live servers
+		          # for some reason - not sure why exactly. The default SIGTERM
+		          # (15) was working on other servers, but not on slayer.
+		          /sbin/start-stop-daemon --stop --signal 9 --pidfile $PIDFILE --oknodo >/dev/null 2>&1
+		        else
+		          kill -9 `cat $PIDFILE`
+		        fi
+		        rm -f $PIDFILE
+		      fi
+		    done
+		  fi
+	    sleep 1
+	  fi
+	  rm -f ${SOUNZ_LOGS}/${NAME}*.pid
+    echo "$NAME stopped"
+
+    # Stop replication
+    ${SOUNZ_HOME}/scripts/dr/stop-replication.sh
+    ;;
+    
+  restart|force-reload)
+    $THIS stop
+    sleep 2
+    $THIS start
+    ;;
+    
+  *)
+    echo "Usage: $THIS $NAME start|stop|restart|force-reload"
+    exit 1
+    ;;
+esac
+
+exit 0

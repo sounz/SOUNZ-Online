@@ -1,0 +1,8 @@
+<% for column in SounzService.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @sounz_service.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @sounz_service %> |
+<%= link_to 'Back', :action => 'list' %>

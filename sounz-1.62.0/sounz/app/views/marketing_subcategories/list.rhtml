@@ -1,0 +1,25 @@
+<h1>Listing marketing_subcategories</h1>
+
+<table>
+  <tr>
+  <% for column in MarketingSubcategory.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for marketing_subcategory in @marketing_subcategories %>
+  <tr>
+  <% for column in MarketingSubcategory.content_columns %>
+    <td><%=h marketing_subcategory.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => marketing_subcategory %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => marketing_subcategory %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => marketing_subcategory }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= will_paginate @marketing_subcategories %>
+
+<%= link_to 'New marketing_subcategory', :action => 'new' %>

@@ -1,0 +1,13 @@
+<p>
+Your search for "<%=@search_query%>" produced the following results
+</p>
+
+
+<%for communication in @communications%>
+<%if communication != nil%>
+<%= link_to communication.to_string, :controller => :people, :action => :edit_communication, :id => communication.communication_id%>
+<%else%>
+SOLR RETURNED RECORD NOT FOUND IN THE DATABASE
+<%end%>
+<br>
+<%end%>

@@ -1,0 +1,23 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+
+#Monkey patch from http://blog.caboo.se/articles/2007/2/13/what-about-those-bloated-tests
+class Rake::Task
+  def detract(prerequisite)
+    @prerequisites.delete(prerequisite)
+  end
+end
+
+%w(units functionals integration recent uncommitted).each do |task|
+  Rake::Task["test:#{task}"].detract('db:test:prepare')
+  Rake::Task["test:#{task}"].enhance(['environment'])
+end

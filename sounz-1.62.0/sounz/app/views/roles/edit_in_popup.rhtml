@@ -1,0 +1,6 @@
+<h1>Editing Role</h1>
+
+<% form_tag :action => 'update_role_for_person', :id => @role do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>

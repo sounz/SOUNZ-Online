@@ -1,0 +1,10 @@
+The 'sounz' source package comprises the wherewithall to generate several binary
+packages as follows:
+ sounz            Common package, establishes users, common scripts etc.
+ sounz-frontend   Sets up a front-end webserver
+ sounz-backend    Comprises the database and backend cronjobs for SOUNZ
+ sounz-app        The main application, coded in Ruby on Rails
+
+The package is dedicated to allowing SOUNZ (sounz.org.nz) to maintain all data
+pertaining to New Zealand Music, and providing as platform for the public
+at large to discover it.

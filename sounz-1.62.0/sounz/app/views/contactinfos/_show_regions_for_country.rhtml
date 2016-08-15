@@ -1,0 +1,18 @@
+<% disabled = nil unless !disabled.blank?
+if !disabled.blank? 
+disabled = true
+else
+disabled = false
+end
+%>
+
+<%if country.regions.size == 0%>No regions are stored for <%=country.country_name%>
+<%else%>
+<%= collection_select(:contactinfo, :region_id, 
+Region.find(:all, :conditions => ['country_id =?', country.country_id], :order => 'region_order'),
+:region_id,
+:region_name,
+{ :include_blank => "-- Select a region --" }, {:disabled => disabled })
+%>
+<% end %>
+

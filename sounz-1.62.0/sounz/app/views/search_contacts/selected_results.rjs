@@ -1,0 +1,2 @@
+page.replace_html 'selected_results', :partial => 'selected_contacts'
+page.replace_html 'pagination', :partial => "shared/page_links_remote", :locals => { :paginator => @selected_contacts_pages, :params => { :url => { :action => :selected_results } } }

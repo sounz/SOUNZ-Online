@@ -1,0 +1,27 @@
+<h1>Listing saved_contact_people</h1>
+
+<table>
+  <tr>
+  <% for column in SavedContactPerson.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for saved_contact_person in @saved_contact_people %>
+  <tr>
+  <% for column in SavedContactPerson.content_columns %>
+    <td><%=h saved_contact_person.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => saved_contact_person %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => saved_contact_person %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => saved_contact_person }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @saved_contact_person_pages.current.previous } if @saved_contact_person_pages.current.previous %>
+<%= link_to 'Next page', { :page => @saved_contact_person_pages.current.next } if @saved_contact_person_pages.current.next %> 
+
+<br>
+
+<%= link_to 'New saved_contact_person', :action => 'new' %>

@@ -1,0 +1,8 @@
+if @new_mode.requires_date_and_premiere?
+  page.replace_html 'datesWidget', :partial => 'dates_widget_with_buttons', :locals => {:expression => @expression}
+else
+  page.replace_html 'datesWidget', 'The mode '+@new_mode.mode_desc+' does not require date information'
+end
+
+#Longer times caused some yellow to hang around
+page.visual_effect :highlight, 'datesWidget', :duration => 0.4
